@@ -1,0 +1,107 @@
+RESPONSE ANALYSIS REPORT
+==================================================
+
+Target URL: https://wafid.com/
+Analysis Time: 2025-11-04 18:11:33
+
+FORMS ANALYSIS:
+------------------------------
+BUTTONS ANALYSIS:
+------------------------------
+Button 1:
+  Type: button
+  Content: <i class="bars icon"></i>
+                            <i class="x icon"></i>
+  ID: None
+  Name: N/A
+
+LINKS ANALYSIS:
+------------------------------
+Link 1:
+  HREF: /
+  Text: 
+
+Link 2:
+  HREF: /
+  Text: Home
+
+Link 3:
+  HREF: /book-appointment/
+  Text: Book an Appointment
+
+Link 4:
+  HREF: /search-slip/
+  Text: Appointment Slips
+
+Link 5:
+  HREF: /medical-status-search/
+  Text: Medical Examination Result
+
+Link 6:
+  HREF: /medical-center/medical-center/
+  Text: Wafid Medical Centers Accreditation
+
+Link 7:
+  HREF: /medical-center/search/
+  Text: Medical Centers List
+
+Link 8:
+  HREF: /guidelines/
+  Text: Guidelines
+
+Link 9:
+  HREF: /faq/
+  Text: FAQs
+
+Link 10:
+  HREF: /static/pdf/Regulations%20of%20Medical%20Examination%20of%20Expatriates%20Coming%20to%20GCC%20States%20for%20Work%20or%20Residence.pdf
+  Text: Rules and regulations
+
+Link 11:
+  HREF: /contact-us/
+  Text: Contact Us
+
+Link 12:
+  HREF: /select-type/
+  Text: Login
+
+Link 13:
+  HREF: tel:+966920023560
+  Text: +966920023560
+
+Link 14:
+  HREF: /select-type/
+  Text: Login
+
+Link 15:
+  HREF: /book-appointment/
+  Text: Book an Appointment
+
+Link 16:
+  HREF: /medical-status-search/
+  Text: View Medical Reports
+
+Link 17:
+  HREF: /medical-center/medical-center/
+  Text: Apply
+
+Link 18:
+  HREF: /medical-center/search/
+  Text: Medical Centers List
+
+Link 19:
+  HREF: https://www.instagram.com/ghc_gcc/channel/?hl=en
+  Text: 
+
+Link 20:
+  HREF: https://ar-ar.facebook.com/GHCouncil/
+  Text: 
+
+Link 21:
+  HREF: https://twitter.com/ghc_gcc
+  Text: 
+
+Link 22:
+  HREF: https://www.youtube.com/channel/UCrKbHYpmpC_OrAfZ5P_qZXA
+  Text: 
+

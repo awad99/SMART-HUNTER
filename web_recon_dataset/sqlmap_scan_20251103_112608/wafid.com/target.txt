@@ -1,0 +1,1 @@
+http://wafid.com:80/index.php?option=com_content&view=article&id=1:welcome-to-joomla&catid=1:latest-news&Itemid=50 (GET)  # /usr/bin/sqlmap -u http://wafid.com:80/index.php?option=com_content&view=article&id=1:welcome-to-joomla&catid=1:latest-news&Itemid=50 --batch --level=3 --risk=2 --output-dir=web_recon_dataset/sqlmap_scan_20251103_112608 --forms --crawl=2

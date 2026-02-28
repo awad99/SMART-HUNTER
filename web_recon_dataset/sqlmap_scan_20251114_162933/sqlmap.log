@@ -1,0 +1,32 @@
+        ___
+       __H__
+ ___ ___[,]_____ ___ ___  {1.9.8#stable}
+|_ -| . [.]     | .'| . |
+|___|_  [']_|_|_|__,|  _|
+      |_|V...       |_|   https://sqlmap.org
+
+[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program
+
+[*] starting @ 16:29:33 /2025-11-14/
+
+[16:29:33] [WARNING] using '/mnt/c/Users/awad/Downloads/pyarmor/auto_PenTest/web_recon_dataset/sqlmap_scan_20251114_162933' as the output directory
+[16:29:33] [INFO] fetched random HTTP User-Agent header value 'Mozilla/5.0 (Windows; U; Windows NT 5.2; en-US) AppleWebKit/532.2 (KHTML, like Gecko) Chrome/4.0.222.6 Safari/532.2' from file '/usr/share/sqlmap/data/txt/user-agents.txt'
+do you want to check for the existence of site's sitemap(.xml) [y/N] N
+[16:29:33] [INFO] starting crawler for target URL 'https://chaturbate.com/?id=FUZZ'
+[16:29:33] [INFO] searching for links with depth 1
+[16:29:33] [INFO] starting 2 threads
+[16:29:34] [CRITICAL] connection exception detected ('can't establish SSL connection'). skipping URL 'https://chaturbate.com/?id=FUZZ'
+[16:29:34] [CRITICAL] connection exception detected ('can't establish SSL connection'). skipping URL 'https://chaturbate.com'
+do you want to normalize crawling results [Y/n] Y
+do you want to store crawling results to a temporary file for eventual further processing with other tools [y/N] N
+[1/1] URL:
+GET https://chaturbate.com/?id=FUZZ
+do you want to test this URL? [Y/n/q]
+> Y
+[16:29:34] [INFO] testing URL 'https://chaturbate.com/?id=FUZZ'
+[16:29:34] [INFO] using '/mnt/c/Users/awad/Downloads/pyarmor/auto_PenTest/web_recon_dataset/sqlmap_scan_20251114_162933/results-11142025_0429pm.csv' as the CSV results file in multiple targets mode
+[16:29:35] [ERROR] can't establish SSL connection, skipping to the next target
+[16:29:35] [INFO] you can find results of scanning in multiple targets mode inside the CSV file '/mnt/c/Users/awad/Downloads/pyarmor/auto_PenTest/web_recon_dataset/sqlmap_scan_20251114_162933/results-11142025_0429pm.csv'
+
+[*] ending @ 16:29:35 /2025-11-14/
+

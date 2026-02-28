@@ -1,0 +1,28 @@
+[
+  {
+    "url": "https://www.coinhako.com/",
+    "status_code": 200,
+    "headers": {
+      "date": "Fri, 27 Feb 2026 19:36:16 GMT",
+      "content-type": "text/html",
+      "transfer-encoding": "chunked",
+      "connection": "keep-alive",
+      "x-frame-options": "SAMEORIGIN",
+      "server": "cloudflare",
+      "cache-control": "no-store",
+      "last-modified": "Fri, 27 Feb 2026 09:18:09 GMT",
+      "x-amz-version-id": ".UlDZ8QYrBE74p8Edvjoukuh_RW7enja",
+      "x-content-type-options": "nosniff",
+      "via": "1.1 dda7799d8b238a0cfe4bb363587dd4bc.cloudfront.net (CloudFront)",
+      "x-cache": "Miss from cloudfront",
+      "x-amz-cf-pop": "SIN52-P1",
+      "x-amz-cf-id": "-YQ7kmW_g6oDqt4SRf-CPTE-05j4HzEjDsVCcy9kPPjiTSKyoOtj3A==",
+      "set-cookie": "__cf_bm=k9Wvzz4KmBiADHZCm1mXc8p3eBekYQx8ig28NdDXfL0-1772220976.3662512-1.0.1.1-4R5JlKYkZ48eST9ZfSyJ4kSY4hIAyNdvYynfJx8DA7j8TFHforIMnFFqJqRp327FhOD3la3y2KLuhrkGMm0XDa3iBBtbgh5lbetOAUCmmUk.hL6rZ_3HAvTlIvctg3Ym; HttpOnly; Secure; Path=/; Domain=coinhako.com; Expires=Fri, 27 Feb 2026 20:06:16 GMT",
+      "cf-cache-status": "DYNAMIC",
+      "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+      "content-encoding": "gzip",
+      "cf-ray": "9d4a214e4a76e276-MRS"
+    },
+    "timestamp": "2026-02-27T22:36:41.773143"
+  }
+]

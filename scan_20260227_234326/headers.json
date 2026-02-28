@@ -1,0 +1,37 @@
+[
+  {
+    "url": "https://www.paypal.com/ae/home",
+    "status_code": 200,
+    "headers": {
+      "connection": "keep-alive",
+      "decision": "undefined",
+      "access-control-expose-headers": "Server-Timing",
+      "dc": "ccg11-origin-www-1.paypal.com",
+      "origin-trial": "AmF3SS0NWoXo3HaojgmIVVXavukRnZH597u+xZNXRCiKWzSKzfNPHw9NC32GmblY12+HXpkCEYeYGyvRBNkkJg0AAABbeyJvcmlnaW4iOiJodHRwczovL3BheXBhbC5jb206NDQzIiwiZmVhdHVyZSI6IlRwY2QiLCJleHBpcnkiOjE3MzUzNDM5OTksImlzU3ViZG9tYWluIjp0cnVlfQ==",
+      "cache-control": "max-age=0, no-cache, no-store, must-revalidate",
+      "timing-allow-origin": "*",
+      "content-encoding": "gzip",
+      "via": "1.1 varnish, 1.1 varnish, 1.1 varnish",
+      "x-content-type-options": "nosniff",
+      "accept-ranges": "none",
+      "paypal-debug-id": "f587944446aa4",
+      "content-type": "text/html; charset=utf-8",
+      "content-security-policy": "default-src 'self' https://*.paypal.com https://*.paypalobjects.com; frame-src 'self' https://*.paypal.com https://*.paypalobjects.com https://www.youtube-nocookie.com https://www.xoom.com https://*.paypal-mktg.com https://*.company-target.com https://*.qualtrics.com; script-src 'nonce-NTY1YTExNzEtMmI0NS00NzZjLWIzMTgtZmNhMTk4NjgwYTll' 'self' https://*.paypal.com https://*.paypalobjects.com https://assets-cdn.s-xoom.com https://pypd.paypal-mktg.com 'unsafe-inline'; connect-src 'self' https://nominatim.openstreetmap.org https://*.paypal.com https://*.paypalobjects.com https://www.google-analytics.com https://www.analytics.google.com https://region1.google-analytics.com https://region1.analytics.google.com https://*.salesforce.com https://*.force.com https://nexus.ensighten.com https://api.paypal-retaillocator.com https://paypal.us-4.evergage.com https://browser-intake-us5-datadoghq.com https://*.company-target.com https://*.demandbase.com https://*.adsrvr.org https://prod.uidapi.com https://*.qualtrics.com; style-src 'self' https://*.paypal.com https://*.paypalobjects.com https://assets-cdn.s-xoom.com 'unsafe-inline'; font-src 'self' https://*.paypal.com https://*.paypalobjects.com https://assets-cdn.s-xoom.com data:; img-src 'self' https: data: https://www.google-analytics.com https://www.analytics.google.com https://region1.google-analytics.com https://region1.analytics.google.com; form-action 'self' https://*.paypal.com https://*.salesforce.com https://secure.opinionlab.com https://*.paypal-mktg.com https://*.paypal-corp.com https://signup.partnerize.com; base-uri 'self' https://*.paypal.com; object-src 'none'; frame-ancestors 'self' https://*.paypal.com; upgrade-insecure-requests;; report-uri https://www.paypal.com/csplog/api/log/csp",
+      "set-cookie": "LANG=en_US%3BAE; Max-Age=31556000; Domain=.paypal.com; Path=/; Expires=Sat, 28 Feb 2026 05:28:57 GMT; HttpOnly; Secure, ts=vreXpYrS%3D1866919381%26vteXpYrS%3D1772226781%26vr%3Da0d729e319c73697031d7322fffffffe%26vt%3Da0d729e319c73697031d7322fffffffd%26vtyp%3Dnew; Path=/; Domain=paypal.com; Expires=Mon, 26 Feb 2029 20:43:01 GMT; HttpOnly; Secure, ts_c=vr%3Da0d729e319c73697031d7322fffffffe%26vt%3Da0d729e319c73697031d7322fffffffd; Path=/; Domain=paypal.com; Expires=Mon, 26 Feb 2029 20:43:01 GMT; Secure",
+      "permissions-policy": "ch-ua-platform-version=(self \"https://c.paypal.com\"),ch-ua-arch=(self \"https://c.paypal.com\"),ch-ua-wow64=(self \"https://c.paypal.com\"),ch-ua-model=(self \"https://c.paypal.com\"),ch-ua-bitness=(self \"https://c.paypal.com\"),ch-ua-full-version=(self \"https://c.paypal.com\"),ch-ua-full-version-list=(self \"https://c.paypal.com\")",
+      "accept-ch": "sec-ch-ua-full, sec-ch-ua-arch, sec-ch-ua-model, sec-ch-ua-platform-version, sec-ch-ua-full-version, sec-ch-ua-full-version-list, sec-ch-ua-bitness, sec-ch-ua-wow64",
+      "x-xss-protection": "1; mode=block",
+      "etag": "W/\"24193-eo42SbKFDN8gGzc/i1jC7uAo0NM\"",
+      "date": "Fri, 27 Feb 2026 20:43:01 GMT",
+      "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+      "x-served-by": "cache-fjr990021-FJR, cache-fjr990021-FJR",
+      "x-cache": "MISS, MISS, MISS, MISS, MISS, MISS, MISS, MISS",
+      "x-cache-hits": "0, 0, 0, 0, 0, 0, 0, 0",
+      "x-timer": "S1772224981.368190,VS0,VE192",
+      "vary": "Accept-Encoding",
+      "server-timing": "\"traceparent;desc=\"00-0000000000000000000f17689321bd1a-07e43c94f2f1fdf1-01\"\";content-encoding;desc=\"gzip\",x-cdn;desc=\"fastly\"",
+      "transfer-encoding": "chunked"
+    },
+    "timestamp": "2026-02-27T23:43:26.609332"
+  }
+]

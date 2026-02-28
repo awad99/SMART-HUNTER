@@ -1,0 +1,6 @@
+https://www.coinbase.com/signin?locale=FUZZ
+https://www.coinbase.com/signup?country=FUZZ
+https://www.coinbase.com/signup?currency=FUZZ
+https://www.coinbase.com/signup?mobile=FUZZ
+https://www.coinbase.com/signup?japan_bespoke_content=FUZZ
+https://www.coinbase.com/signup?logged_in=FUZZ

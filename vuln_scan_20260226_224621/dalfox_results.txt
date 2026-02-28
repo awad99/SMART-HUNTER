@@ -1,0 +1,65 @@
+
+=== XSSTRIKE SCAN ===
+[*] Running XSStrike with crawling...
+[91m
+	XSStrike [97mv3.1.5
+[0m
+[97m[~][0m Crawling the target [0m
+[97m[~][0m Parsing irWatch/Login/Login/Login-User?Hash=FUZZ [0m[!!] Unable to connect to the target. [0m
+[!!] Unable to connect to the target. [0m
+[!!] Unable to connect to the target. [0m
+[!!] Unable to connect to the target. [0m
+[93m[!][0m Progress: 2/2 [0m
+[91m
+	XSStrike [97mv3.1.5
+[0m
+[97m[~][0m Crawling the target [0m
+[97m[~][0m Parsing n/Login-User?IsPasswordFieldVisible=FUZZ [0m[!!] Unable to connect to the target. [0m
+[!!] Unable to connect to the target. [0m
+[!!] Unable to connect to the target. [0m
+[!!] Unable to connect to the target. [0m
+[93m[!][0m Progress: 2/2 [0m
+[91m
+	XSStrike [97mv3.1.5
+[0m
+[97m[~][0m Crawling the target [0m
+[97m[~][0m Parsing n/Login/Login-User?RememberUsername=FUZZ [0m[!!] Unable to connect to the target. [0m
+[!!] Unable to connect to the target. [0m
+[!!] Unable to connect to the target. [0m
+[!!] Unable to connect to the target. [0m
+[93m[!][0m Progress: 2/2 [0m
+[91m
+	XSStrike [97mv3.1.5
+[0m
+[97m[~][0m Crawling the target [0m
+[97m[~][0m Parsing gin-User?__RequestVerificationToken=FUZZ [0m[!!] Unable to connect to the target. [0m
+[!!] Unable to connect to the target. [0m
+[!!] Unable to connect to the target. [0m
+[!!] Unable to connect to the target. [0m
+[93m[!][0m Progress: 2/2 [0m
+[91m
+	XSStrike [97mv3.1.5
+[0m
+[97m[~][0m Crawling the target [0m
+[97m[~][0m Parsing ch/Login/Login/Login-User?ReturnUrl=FUZZ [0m[!!] Unable to connect to the target. [0m
+[!!] Unable to connect to the target. [0m
+[92m[+][0m Potentially vulnerable objects found at https://emmconsole.stc.com.sa/AirWatch/Login/Login/Login-User [0m
+[91m------------------------------------------------------------[0m
+9   [91mwindow.location[0m = authedUserRedirectTarget;11  $('#Hash').val(window.[93mlocation.hash[0m);77  [91msetTimeout[0m(function () {17  [91m[91mdocument.location[0m[0m = document.[93mlocation.href[0m.replace(/lang=[^&;]+/i, '');[91m------------------------------------------------------------[0m
+[!!] Unable to connect to the target. [0m
+[!!] Unable to connect to the target. [0m
+[!!] Unable to connect to the target. [0m
+[!!] Unable to connect to the target. [0m
+[!!] Unable to connect to the target. [0m
+[!!] Unable to connect to the target. [0m
+[!!] Unable to connect to the target. [0m
+[!!] Unable to connect to the target. [0m
+[!!] Unable to connect to the target. [0m
+[!!] Unable to connect to the target. [0m
+[!!] Unable to connect to the target. [0m
+[!!] Unable to connect to the target. [0m
+[!!] Unable to connect to the target. [0m
+[!!] Unable to connect to the target. [0m
+[!!] Unable to connect to the target. [0m
+[!!] Unable to connect to the target. [0m
+[93m[!][0m Progress: 2/2 [0m

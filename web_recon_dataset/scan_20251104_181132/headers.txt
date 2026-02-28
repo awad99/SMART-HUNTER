@@ -1,0 +1,26 @@
+CAPTURED HEADERS
+==================================================
+
+URL: https://wafid.com/
+Status: 200
+Timestamp: 2025-11-04T18:11:33.353673
+Headers:
+  date: Tue, 04 Nov 2025 15:10:23 GMT
+  content-type: text/html; charset=utf-8
+  transfer-encoding: chunked
+  connection: keep-alive
+  content-encoding: gzip
+  x-frame-options: DENY
+  vary: Cookie
+  x-content-type-options: nosniff
+  referrer-policy: same-origin
+  cross-origin-opener-policy: same-origin
+  x-xss-protection: 1
+  strict-transport-security: max-age=15768000
+  x-router-id: wafid-gcc
+  x-request-id: 4b3b8f588200bfa7d2ba9e00965e1838
+  cf-cache-status: DYNAMIC
+  set-cookie: __cf_bm=0V.q_0iI7qd1pv_doazcl5Yt8n3CrmYK5oLRJ4M5FSE-1762269023-1.0.1.1-VWg6B3EKLn5kpmY0lmkdlGwVTJInrC51LCyLkGwip5XJ1NPAKHbBf0X.82faNFwrx8Po_U9dqGBmH7v_N82cf.Y8FMddCSgKP_8w3ae8GUA; path=/; expires=Tue, 04-Nov-25 15:40:23 GMT; domain=.wafid.com; HttpOnly; Secure; SameSite=None
+  server: cloudflare
+  cf-ray: 999509b6fd2cf911-DMM
+--------------------------------------------------

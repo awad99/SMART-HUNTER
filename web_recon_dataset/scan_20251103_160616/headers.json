@@ -1,0 +1,30 @@
+[
+  {
+    "url": "https://pay.hrsd.gov.sa/",
+    "timestamp": "2025-11-03T16:06:18.294074",
+    "status_code": 302,
+    "headers": {
+      "connection": "keep-alive",
+      "location": "/PartyPayment/Index",
+      "strict-transport-security": "max-age=2592000",
+      "x-frame-options": "DENY",
+      "set-cookie": "ADRUM_BTa=R%3A0%7Cg%3Abf90f564-3e19-47d7-8217-1161a627aef8%7Cn%3Acustomer1_9b039fc7-7637-4a08-b1dc-022a54a242d1; expires=Mon, 03 Nov 2025 13:05:40 GMT; path=/; secure; HttpOnly, SameSite=None; expires=Mon, 03 Nov 2025 13:05:40 GMT; path=/; secure; HttpOnly, ADRUM_BT1=R%3A0%7Ci%3A234975; expires=Mon, 03 Nov 2025 13:05:40 GMT; path=/; secure; HttpOnly, JYTLVSYA=02f10a79d4-6e0a-4d6z5xdUQ5116h11Ou4rw1L27ZDZDtT58R_PpX-eM6CN3o9AoFNYA3pf3B43scOhtF-g4; path=/; SameSite=None; Secure, TS01ad336f=01db6aa05d039c425bd00356e2c3c3724e8ae97136b3cbb6492f9a4595d21e8356048b3d550a2c20e0953c06a9b7efc0262f2077d1ed416b7d220aec5e05a90e76e9a9ccd5e6b556baac7dbfe4f3ddcf3f99b42dbf11853ccaf5aa78d370ebcba50b2dfe9082b58c4319805dcf1ceaffbadf0c3e49; Path=/; Domain=.pay.hrsd.gov.sa",
+      "date": "Mon, 03 Nov 2025 13:05:10 GMT",
+      "transfer-encoding": "chunked"
+    }
+  },
+  {
+    "url": "https://pay.hrsd.gov.sa/PartyPayment/Index",
+    "timestamp": "2025-11-03T16:06:18.691104",
+    "status_code": 200,
+    "headers": {
+      "content-type": "text/html; charset=utf-8",
+      "connection": "keep-alive",
+      "strict-transport-security": "max-age=2592000",
+      "x-frame-options": "DENY",
+      "set-cookie": "ADRUM_BTa=R%3A0%7Cg%3Ae102f2bc-c510-45c6-b536-ee84ec5cde9b%7Cn%3Acustomer1_9b039fc7-7637-4a08-b1dc-022a54a242d1; expires=Mon, 03 Nov 2025 13:05:41 GMT; path=/; secure; HttpOnly, SameSite=None; expires=Mon, 03 Nov 2025 13:05:41 GMT; path=/; secure; HttpOnly, ADRUM_BT1=R%3A0%7Ci%3A234976; expires=Mon, 03 Nov 2025 13:05:41 GMT; path=/; secure; HttpOnly, JYTLVSYA=02f10a79d4-6e0a-4dQpJz51I7_Wd3rMO4LBjJ9-_T5Qu9tKoBruHYzpV-1P8aP64OhalZY9IKz8UkJJ5l--E; path=/; SameSite=None; Secure, TS01ad336f=01db6aa05d7c602865ae68f6f35af18262113e27c489638cf7abca84147b0ad63eae57bd053c845a5db6ef24322bd20e77aa7a01e650af5af196e21635538df43255817219759211063cf1b1bd0daf87e5fb623ef374dc3ceaed686e66c4c664f72dbeb779c7ff37b1459c6383c726b861595292c1; Path=/; Domain=.pay.hrsd.gov.sa",
+      "date": "Mon, 03 Nov 2025 13:05:10 GMT",
+      "transfer-encoding": "chunked"
+    }
+  }
+]

@@ -1,0 +1,1 @@
+https://www.cyphact.com?Reason of Contact=FUZZ&Reason of Contact=FUZZ (GET)  # /usr/bin/sqlmap -u "https://www.cyphact.com?Reason of Contact=FUZZ&Reason of Contact=FUZZ" --batch --forms --crawl=2 --level=2 --risk=2 --threads=5 --random-agent --output-dir=web_recon_dataset/sqlmap_scan_20251206_211612

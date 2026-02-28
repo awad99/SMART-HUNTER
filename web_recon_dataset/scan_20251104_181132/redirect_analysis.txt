@@ -1,0 +1,27 @@
+REDIRECT CHAIN ANALYSIS
+==================================================
+
+Original URL: https://wafid.com/
+Final URL: https://wafid.com/
+Total redirects: 1
+
+REDIRECT CHAIN:
+------------------------------
+1. ORIGINAL: https://wafid.com/
+2. REDIRECT 200: https://wafid.com/
+    -> Location: 
+    -> Server: N/A
+3. FINAL: https://wafid.com/ (Status: 200)
+
+SECURITY ANALYSIS:
+------------------------------
+No domain changes (same-site redirects)
+No HTTP to HTTPS upgrade detected
+
+SUMMARY:
+------------------------------
+Original: https://wafid.com/
+Final: https://wafid.com/
+Redirect count: 1
+Domain changes: 1
+Security upgrade: No

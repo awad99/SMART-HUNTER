@@ -1,0 +1,23 @@
+[
+  {
+    "name": "LANG",
+    "value": "en_US%3BAE",
+    "domain": "www.paypal.com",
+    "url": "https://www.paypal.com/ae/home",
+    "timestamp": "2026-02-27T23:43:26.609003"
+  },
+  {
+    "name": "ts",
+    "value": "vreXpYrS%3D1866919381%26vteXpYrS%3D1772226781%26vr%3Da0d729e319c73697031d7322fffffffe%26vt%3Da0d729e319c73697031d7322fffffffd%26vtyp%3Dnew",
+    "domain": "www.paypal.com",
+    "url": "https://www.paypal.com/ae/home",
+    "timestamp": "2026-02-27T23:43:26.609221"
+  },
+  {
+    "name": "ts_c",
+    "value": "vr%3Da0d729e319c73697031d7322fffffffe%26vt%3Da0d729e319c73697031d7322fffffffd",
+    "domain": "www.paypal.com",
+    "url": "https://www.paypal.com/ae/home",
+    "timestamp": "2026-02-27T23:43:26.609241"
+  }
+]

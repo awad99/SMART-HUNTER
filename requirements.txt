@@ -1,0 +1,11 @@
+beautifulsoup4
+fuzzywuzzy
+httpx
+joblib
+numpy
+pandas
+pymetasploit3
+python-nmap
+requests
+scikit-learn
+tld

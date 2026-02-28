@@ -1,0 +1,27 @@
+REDIRECT CHAIN ANALYSIS
+==================================================
+
+Original URL: https://www.moenergy.gov.sa/ar
+Final URL: https://www.moenergy.gov.sa/ar
+Total redirects: 1
+
+REDIRECT CHAIN:
+------------------------------
+1. ORIGINAL: https://www.moenergy.gov.sa/ar
+2. REDIRECT 200: https://www.moenergy.gov.sa/ar
+    -> Location: 
+    -> Server: N/A
+3. FINAL: https://www.moenergy.gov.sa/ar (Status: 200)
+
+SECURITY ANALYSIS:
+------------------------------
+No domain changes (same-site redirects)
+No HTTP to HTTPS upgrade detected
+
+SUMMARY:
+------------------------------
+Original: https://www.moenergy.gov.sa/ar
+Final: https://www.moenergy.gov.sa/ar
+Redirect count: 1
+Domain changes: 1
+Security upgrade: No

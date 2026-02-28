@@ -1,0 +1,30 @@
+REDIRECT CHAIN ANALYSIS
+==================================================
+
+Original URL: https://pay.hrsd.gov.sa/
+Final URL: https://pay.hrsd.gov.sa/PartyPayment/Index
+Total redirects: 2
+
+REDIRECT CHAIN:
+------------------------------
+1. ORIGINAL: https://pay.hrsd.gov.sa/
+2. REDIRECT 302: https://pay.hrsd.gov.sa/
+    -> Location: /PartyPayment/Index
+    -> Server: N/A
+3. REDIRECT 200: https://pay.hrsd.gov.sa/PartyPayment/Index
+    -> Location: 
+    -> Server: N/A
+4. FINAL: https://pay.hrsd.gov.sa/PartyPayment/Index (Status: 200)
+
+SECURITY ANALYSIS:
+------------------------------
+No domain changes (same-site redirects)
+No HTTP to HTTPS upgrade detected
+
+SUMMARY:
+------------------------------
+Original: https://pay.hrsd.gov.sa/
+Final: https://pay.hrsd.gov.sa/PartyPayment/Index
+Redirect count: 2
+Domain changes: 1
+Security upgrade: No

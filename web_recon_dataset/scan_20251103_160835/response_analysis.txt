@@ -1,0 +1,370 @@
+RESPONSE ANALYSIS REPORT
+==================================================
+
+Target URL: https://www.moenergy.gov.sa/ar
+Analysis Time: 2025-11-03 16:08:37
+
+FORMS ANALYSIS:
+------------------------------
+BUTTONS ANALYSIS:
+------------------------------
+Button 1:
+  Type: button
+  Content: <span _ngcontent-ng-c4227305884>كيف تتحقق</span><span _ngcontent-ng-c4227305884 class="d-inline-flex fs-6"><i _ngcontent-ng-c4227305884 class="verify-icon hgi hgi-stroke hgi-arrow-down-01 rotation-transition"></i></span>
+  ID: None
+  Name: N/A
+
+Button 2:
+  Type: button
+  Content: <span _ngcontent-ng-c4227305884 class="d-inline-flex fs-5"><i _ngcontent-ng-c4227305884 class="hgi hgi-stroke hgi-zoom-in-area"></i></span>
+  ID: None
+  Name: N/A
+
+Button 3:
+  Type: button
+  Content: <span _ngcontent-ng-c4227305884 class="d-inline-flex fs-5"><i _ngcontent-ng-c4227305884 class="hgi hgi-stroke hgi-mic-01"></i></span>
+  ID: None
+  Name: N/A
+
+Button 4:
+  Type: button
+  Content: <span _ngcontent-ng-c4227305884 class="d-inline-flex fs-5"><i _ngcontent-ng-c4227305884 class="hgi hgi-stroke hgi-view"></i></span>
+  ID: None
+  Name: N/A
+
+Button 5:
+  Type: button
+  Content: <span _ngcontent-ng-c2145522021 class="d-inline-flex fs-1"><i _ngcontent-ng-c2145522021 class="hgi hgi-stroke hgi-more-horizontal"></i></span>
+  ID: None
+  Name: N/A
+
+Button 6:
+  Type: button
+  Content: <span _ngcontent-ng-c2145522021 class="d-inline-flex fs-1"><i _ngcontent-ng-c2145522021 class="hgi hgi-stroke hgi-menu-01"></i></span>
+  ID: None
+  Name: N/A
+
+Button 7:
+  Type: button
+  Content: 
+  ID: None
+  Name: N/A
+
+Button 8:
+  Type: button
+  Content: 
+  ID: None
+  Name: N/A
+
+Button 9:
+  Type: button
+  Content: 
+  ID: None
+  Name: N/A
+
+Button 10:
+  Type: button
+  Content: <span class="d-inline-flex fs-4 lh-1"><i class="hgi hgi-stroke hgi-arrow-left-01 rtl-flip"></i></span>
+  ID: None
+  Name: N/A
+
+Button 11:
+  Type: button
+  Content: <span class="d-inline-flex fs-4 lh-1"><i class="hgi hgi-stroke hgi-arrow-right-01 rtl-flip"></i></span>
+  ID: None
+  Name: N/A
+
+Button 12:
+  Type: button
+  Content: <span class="d-inline-flex fs-4 lh-1"><i class="hgi hgi-stroke hgi-arrow-left-01 rtl-flip"></i></span>
+  ID: None
+  Name: N/A
+
+Button 13:
+  Type: button
+  Content: <span class="d-inline-flex fs-4 lh-1"><i class="hgi hgi-stroke hgi-arrow-right-01 rtl-flip"></i></span>
+  ID: None
+  Name: N/A
+
+Button 14:
+  Type: button
+  Content: <span class="d-inline-flex fs-4 lh-1"><i class="hgi hgi-stroke hgi-arrow-left-01 rtl-flip"></i></span>
+  ID: None
+  Name: N/A
+
+Button 15:
+  Type: button
+  Content: <span class="d-inline-flex fs-4 lh-1"><i class="hgi hgi-stroke hgi-arrow-right-01 rtl-flip"></i></span>
+  ID: None
+  Name: N/A
+
+Button 16:
+  Type: button
+  Content: <span class="d-inline-flex fs-4 lh-1"><i class="hgi hgi-stroke hgi-arrow-left-01 rtl-flip"></i></span>
+  ID: None
+  Name: N/A
+
+Button 17:
+  Type: button
+  Content: <span class="d-inline-flex fs-4 lh-1"><i class="hgi hgi-stroke hgi-arrow-right-01 rtl-flip"></i></span>
+  ID: None
+  Name: N/A
+
+LINKS ANALYSIS:
+------------------------------
+Link 1:
+  HREF: /ar
+  Text: 
+
+Link 2:
+  HREF: /ar/ministry
+  Text: الوزارة
+
+Link 3:
+  HREF: /ar/e-services
+  Text: الخدمات الالكترونية
+
+Link 4:
+  HREF: /ar/eco-system
+  Text: منظومة الطاقة
+
+Link 5:
+  HREF: /ar/media-center
+  Text: المركز الإعلامي
+
+Link 6:
+  HREF: /ar/digital-documents
+  Text: المستندات الرقمية
+
+Link 7:
+  HREF: /ar/careers
+  Text: التوظيف
+
+Link 8:
+  HREF: /ar/contact-us
+  Text: اتصل بنا
+
+Link 9:
+  HREF: #
+  Text: بحث
+
+Link 10:
+  HREF: #
+  Text: العربية
+
+Link 11:
+  HREF: /ar/e-services
+  Text: تفاصيل أكثر
+
+Link 12:
+  HREF: https://wpcenergy2026.org
+  Text: سجل الآن
+
+Link 13:
+  HREF: /ar/ministry/initiatives/taqahtech-accelerator/about
+  Text: سجل الآن
+
+Link 14:
+  HREF: /ar/e-services
+  Text: عرض الكل
+
+Link 15:
+  HREF: /ar/e-services/new-allocation
+  Text: تفاصيل الخدمة
+
+Link 16:
+  HREF: https://takhsees.moenergy.gov.sa/
+  Text: بدء الخدمة
+
+Link 17:
+  HREF: /ar/e-services/new-petroleum-permit
+  Text: تفاصيل الخدمة
+
+Link 18:
+  HREF: https://petroleum-trading.moenergy.gov.sa
+  Text: بدء الخدمة
+
+Link 19:
+  HREF: /ar/e-services/new-petroleum-license
+  Text: تفاصيل الخدمة
+
+Link 20:
+  HREF: https://petroleum-trading.moenergy.gov.sa
+  Text: بدء الخدمة
+
+Link 21:
+  HREF: /ar/e-services/edit-takhsees-license
+  Text: تفاصيل الخدمة
+
+Link 22:
+  HREF: https://takhsees.moenergy.gov.sa
+  Text: بدء الخدمة
+
+Link 23:
+  HREF: /ar/e-services/renew-allocation
+  Text: تفاصيل الخدمة
+
+Link 24:
+  HREF: https://takhsees.moenergy.gov.sa
+  Text: بدء الخدمة
+
+Link 25:
+  HREF: /ar/e-services/edit-allocation
+  Text: تفاصيل الخدمة
+
+Link 26:
+  HREF: https://takhsees.moenergy.gov.sa
+  Text: بدء الخدمة
+
+Link 27:
+  HREF: /ar/e-services/transfer-takhsees-license
+  Text: تفاصيل الخدمة
+
+Link 28:
+  HREF: https://takhsees.moenergy.gov.sa
+  Text: بدء الخدمة
+
+Link 29:
+  HREF: /ar/e-services/extend-takhsees-license
+  Text: تفاصيل الخدمة
+
+Link 30:
+  HREF: https://takhsees.moenergy.gov.sa
+  Text: بدء الخدمة
+
+Link 31:
+  HREF: /ar/e-services/new-takhsees-license
+  Text: تفاصيل الخدمة
+
+Link 32:
+  HREF: https://takhsees.moenergy.gov.sa
+  Text: بدء الخدمة
+
+Link 33:
+  HREF: /ar/e-services/cancel-petroleum-license
+  Text: تفاصيل الخدمة
+
+Link 34:
+  HREF: https://petroleum-trading.moenergy.gov.sa
+  Text: بدء الخدمة
+
+Link 35:
+  HREF: /ar/media-center/news
+  Text: عرض الكل
+
+Link 36:
+  HREF: /ar/media-center/news/opec-members-reaffirm-commitment-to-maintaining-oil-market-stability
+  Text: قراءة المزيد
+
+Link 37:
+  HREF: /ar/media-center/news/launch-of-the-cisco-kaust-ai-institute
+  Text: قراءة المزيد
+
+Link 38:
+  HREF: /ar/media-center/news/principal-buyer-awards-five-renewable-projects-achieving-new-record-capacity
+  Text: قراءة المزيد
+
+Link 39:
+  HREF: /ar/media-center/news/energy-backed-carbon-recycling-initiative-earns-saso-quality-mark-accreditation
+  Text: قراءة المزيد
+
+Link 40:
+  HREF: /ar/media-center/news/inauguration-of-yamamah-steel-for-wind-energy-systems
+  Text: قراءة المزيد
+
+Link 41:
+  HREF: /ar/media-center/news/opec-commits-to-market-stability-and-production-adjustments-for-november
+  Text: قراءة المزيد
+
+Link 42:
+  HREF: /ar/media-center/news/hrh-minister-of-energy-visits-kaust
+  Text: قراءة المزيد
+
+Link 43:
+  HREF: /ar/media-center/news/62nd-jmmc-meeting
+  Text: قراءة المزيد
+
+Link 44:
+  HREF: /ar/media-center/news/natural-gas-distribution-prequalification
+  Text: قراءة المزيد
+
+Link 45:
+  HREF: /ar/media-center/news/saudi-arabia-elected-to-iaea-board-of-governors-membership
+  Text: قراءة المزيد
+
+Link 46:
+  HREF: /ar/ministry/about/projects
+  Text: عرض الكل
+
+Link 47:
+  HREF: /ar/ministry/about/projects/wadi-aldawaser-solar-power-plant
+  Text: قراءة المزيد
+
+Link 48:
+  HREF: /ar/ministry/about/projects/layla-solar-power-plant
+  Text: قراءة المزيد
+
+Link 49:
+  HREF: /ar/ministry/about/projects/saad2-solar-power-plant
+  Text: قراءة المزيد
+
+Link 50:
+  HREF: /ar/ministry/about/projects/al-kahfa-solar-power-plant
+  Text: قراءة المزيد
+
+Link 51:
+  HREF: /ar/ministry/about/projects/sudair-solar-power-plant
+  Text: قراءة المزيد
+
+Link 52:
+  HREF: /ar/ministry/about/projects/saad1-solar-power-plant
+  Text: قراءة المزيد
+
+Link 53:
+  HREF: /ar/ministry/about/projects/ar-rass2-solar-power-plant
+  Text: قراءة المزيد
+
+Link 54:
+  HREF: /ar/ministry/about/projects/al-shuaibah-1-and-2-solar-power-plant
+  Text: قراءة المزيد
+
+Link 55:
+  HREF: /ar/ministry/about/projects/jeddah-solar-power-plant
+  Text: قراءة المزيد
+
+Link 56:
+  HREF: /ar/ministry/about/projects/rabigh-solar-power-plant
+  Text: قراءة المزيد
+
+Link 57:
+  HREF: https://nrrc.gov.sa/ar/Pages/default.aspx
+  Text: 
+
+Link 58:
+  HREF: https://sera.gov.sa/
+  Text: 
+
+Link 59:
+  HREF: https://cdmdna.gov.sa/
+  Text: 
+
+Link 60:
+  HREF: https://www.kapsarc.org/ar/
+  Text: 
+
+Link 61:
+  HREF: /ar/eco-system/programs/oil-sustainability-program/about
+  Text: 
+
+Link 62:
+  HREF: https://www.seec.gov.sa/ar
+  Text: 
+
+Link 63:
+  HREF: https://www.energy.gov.sa/ar/pages/default.aspx
+  Text: 
+
+Link 64:
+  HREF: /ar/eco-system/programs/oil-sustainability-program/about
+  Text: 
+

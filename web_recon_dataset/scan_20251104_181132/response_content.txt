@@ -1,0 +1,439 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://objectstorage.me-jeddah-1.oraclecloud.com/n/axcv6afvufi6/b/Rum-JS-Public/o/elastic-apm-rum.umd.min.js"
+            crossorigin></script>
+
+    <script>
+        elasticApm.init({
+            serviceName: 'GCC-Frontend',
+            serverUrl: 'https://apm-lean.acuative-me.com:8200',
+            environment: 'Production',
+        })
+    </script>
+
+
+    <link rel="icon" type="image/x-icon" href="/static/svg/logo-favicon-light.svg">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-146902071-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-146902071-1');
+    </script>
+
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Wafid | وافد</title>
+    <meta name="description" content="Wafid is a program under the umbrella of the Gulf Health Council that enables individuals bound to work or reside in the GCC to book their medical check-up appointments.
+    وافد هو احدى برامج مجلس الصحة الخليجي غرضه توفير مواعيد الفحص الطبي للوافدين القادمين الى دول مجلس التعاون الخليجي بغرض العمل او الإقامة.">
+    <meta name="keywords"
+          content="Wafid, GCC, GHC, Medical center, Gulf Cooperation Council States, Medical Examinations, health check-up, appointment, medical centers accreditation, Accreditation status">
+
+
+    <!-- ISO 3166-1-alpha-2 Flags style-->
+    
+
+    <link rel="stylesheet" href="/static/country-flags/image_sprite/ip2location-image-sprite.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" crossorigin=""/>
+
+
+    
+                
+                    <link rel="stylesheet" href="/static/vendor/semantic/dist/semantic.min.css">
+                    <link rel="stylesheet" href="/static/css/semantic-responsive.css">
+
+                    <!-- Glide.js styles -->
+                    <link rel="stylesheet" href="/static/css/vendor/glide.core.min.css">
+                    <link rel="stylesheet" href="/static/css/vendor/glide.theme.min.css">
+
+                    <!-- CropperJS styles -->
+                    <link rel="stylesheet" href="/static/css/vendor/cropper.min.css">
+
+                    <!-- Custom styles -->
+                    <link rel="stylesheet" href="/static/css/main.css">
+                    <link rel="stylesheet" href="/static/css/menu.css">
+                    <link rel="stylesheet" href="/static/css/instant-notifications.css">
+                    <!-- <link rel="stylesheet" href="/static/css/pages/faq.css"> -->
+
+                    <!-- Components -->
+                    <link rel="stylesheet" href="/static/css/pages/landing.css">
+                    <link rel="stylesheet" href="/static/css/components/breadcrumbs.css">
+                    <link rel="stylesheet" href="/static/css/components/cards.css">
+                    <link rel="stylesheet" href="/static/css/components/forms.css">
+                    <link rel="stylesheet" href="/static/css/components/glide.css">
+                    <link rel="stylesheet" href="/static/css/components/menu.css">
+                    <link rel="stylesheet" href="/static/css/components/table.css">
+                    <link rel="stylesheet" href="/static/css/components/message.css">
+                    <link rel="stylesheet" href="/static/css/components/modal.css">
+                    <link rel="stylesheet" href="/static/css/components/icons.css">
+                
+            
+    
+</head>
+<body>
+
+    
+        <div class="ui menu basic borderless gcc-menu">
+            
+                <div class="item">
+                    <a href="/" id="gcc-header-icon-continer" class="header item brand menu-lsc-fix">
+                        <img class="ui image" src="/static/svg/logo.svg">
+                    </a>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+                    <div class="ui container">
+                    <div class="ui grid gcc-submenu-wrapper">
+                        <div class="full wide column">
+                            <div class="ui menu stackable gcc-submenu">
+                                <div class="ui container centered gcc-submenu-continer width-edit">
+                                    
+
+    
+
+<a class="active-item item" href="/">Home</a>
+
+<!---->
+<!--    <div class="ui pointing dropdown item ">-->
+<!--        GHC accreditation-->
+<!--        <i class="dropdown icon"></i>-->
+<!--        <div class="menu">-->
+<!--            <a class="item"-->
+<!--               href="/accreditation/apply/">Apply for accreditation </a>-->
+<!--            <a class="item"-->
+<!--               href="/accreditation/status/">Check accreditation status</a>-->
+<!--        </div>-->
+<!--    </div>-->
+<!---->
+
+
+
+
+    <div class="ui pointing dropdown item ">
+        Medical Examinations
+        <i class="dropdown icon"></i>
+        <div class="menu">
+            <a class="item"
+               href="/book-appointment/">Book an Appointment </a>
+            <a class="item"
+               href="/search-slip/">Appointment Slips</a>
+            <a class="item"
+               href="/medical-status-search/">Medical Examination Result</a>
+        </div>
+    </div>
+
+
+
+<!--<a class=" item"-->
+<!--   href="/medical-status-search/">Health Check-Up</a>-->
+
+<!--<a class=" item"-->
+<!--   href="/medical-center/medical-center/">Medical centers</a>-->
+
+
+    <div class="ui pointing dropdown item ">
+        Medical Centers
+        <i class="dropdown icon"></i>
+        <div class="menu">
+            <a class="item"
+               href="/medical-center/medical-center/">Wafid Medical Centers Accreditation</a>
+            <a class="item"
+               href="/medical-center/search/">Medical Centers List</a>
+        </div>
+    </div>
+
+
+
+<a class=" item"
+   href="/guidelines/">Guidelines</a>
+
+<!---->
+<!--    <div class="ui pointing dropdown item ">-->
+<!--        Check status-->
+<!--        <i class="dropdown icon"></i>-->
+<!--        <div class="menu">-->
+<!--            <a class="item"-->
+<!--               href="/medical-status-search/">Check candidate status</a>-->
+<!--            <a class="item"-->
+<!--               href="/certificate-search/">Membership certeficate</a>-->
+<!--        </div>-->
+<!--    </div>-->
+<!---->
+
+
+<a class=" item"
+   href="/faq/">FAQs</a>
+<!--<a class="item" href="/static/pdf/Regulations%20of%20Medical%20Examination%20of%20Expatriates%20Coming%20to%20GCC%20States%20for%20Work%20or%20Residence.pdf"-->
+<!--   target="_blank">Rules and regulations</a>-->
+
+<a class=" item" href="/contact-us/">Contact Us</a>
+
+
+
+                                    
+                                        <a class="item mobile tablet only"
+                                           href="/select-type/">Login</a>
+                                    
+
+                                    
+                                        <div class="item support-phone mobile tablet only">
+                                            <img src="/static/svg/headset.svg" class="support-icon">
+                                            <b>
+                                                <a href="tel:+966920023560">+966920023560</a>
+                                            </b>
+                                        </div>
+                                    
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+            </div>
+
+                <div class="right menu" style="padding-right: 3%">
+                    
+                    
+                        <div class="item tablet or lower hidden">
+                            <a class="ui secondary button" id="gcc-header-login-botton"
+                               href="/select-type/">Login</a>
+                        </div>
+                    
+
+                    <div class="mobile tablet only right menu menu-icon menu-lsc-fix">
+                        <button class="button basic" id="menubutton">
+                            <i class="bars icon"></i>
+                            <i class="x icon"></i>
+                        </button>
+                    </div>
+                </div>
+
+            
+        </div>
+    
+
+    
+    
+
+
+
+
+
+    <main class="">
+        
+
+<div id="generic-download-file" data-bs-dismiss="modal" class="messages" style="display: none;">
+    <div class="ui message" id="message-type">
+        <i class="close icon" onclick="closeMessageBox()"></i>
+        <div class="header" id="message-content">
+        </div>
+    </div>
+</div>
+
+<script>
+    // Close button handler
+    function closeMessageBox() {
+        const msgBox = document.getElementById("generic-download-file");
+        msgBox.style.display = 'none';
+    }
+</script>
+
+        
+            <!-- start of heart flags & welcoming sentance  -->
+            <div class="ui container">
+                <img class="gcc-bg-hart-img" src="/static/svg/Group.svg" alt="watermark">
+                    <h1 class="w-txt">Welcome to Wafid</h1>
+                    <h2 class="w-txt2">Wafid is an individual seeking employment or residency in any of The Gulf Cooperation Council States.</h2>
+                    <h3 class="w-txt3">We wish you good health and happiness.</h3>
+            </div>
+            <!-- end of heart flags & welcoming sentance  -->
+
+            <!-- start of two ui cards   -->
+            <div class="ui container container-landing" >
+                <div class="ui grid">
+                    <div class="ui two stackable cards">
+                        <div class="ui card ">
+                            <div class="ui content">
+                                <img  class="ui avatar image massive" src="/static/svg/Bigger_icons2.svg" alt="medical examination">
+                                <h4 class="ui large header gcc-card-header">Medical Examinations</h4>
+                                <h5 class="tiny meta c-text">Book your health check-up appointment or view your test results</h5>
+                                <div class= "buttons-handling">
+                                    <div class="ui grid c-buttons">
+                                        <div class="fluid two wide columns" style="margin:5px 0 5px 0;">
+                                            <a class="fluid ui primary large button text-transform-none" href="/book-appointment/">Book an Appointment</a>
+                                        </div>
+                                        <div class="fluid two wide columns" style="margin:5px 0 5px 0;">
+                                            <a class="fluid ui secondary large button"  href="/medical-status-search/">View Medical Reports</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ui card ">
+                            <div class="ui content">
+                                <img  class="ui avatar image massive" src="/static/svg/medical-center-avtar.svg" alt="medical centers">
+                                <h4 class="ui large header gcc-card-header">Medical Centers</h4>
+                                <h5 class="tiny meta c-text">Apply for Wafid medical centers accreditation or check your accreditation status</h5>
+                                <div class= "buttons-handling">
+                                    <div class="ui grid c-buttons">
+                                        <div class="fluid two wide columns" style="margin:5px 0 5px 0;">
+                                            <a class="fluid ui primary large button" href="/medical-center/medical-center/">Apply</a>
+                                        </div>
+                                        <div class="fluid two wide columns" style="margin:5px 0 5px 0;">
+                                            <a class="fluid ui secondary large button"  href="/medical-center/search/">Medical Centers List</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end of two ui cards   -->
+
+            <script>
+                // this is id  gcc-header-login-botton , exist in the base.html
+                // changing the semantic ui button name from secondary to primary in login header.
+
+                let login_btn=document.getElementById("gcc-header-login-botton");
+                login_btn.className="ui primary button";
+                login_btn.href="/select-type/";
+
+                 // this is id  gcc-header-icon-continer , exist in the base.html
+                // changing wafid logo from colors logo to white logo
+
+                let header_icon=document.getElementById("gcc-header-icon-continer");
+                header_icon.innerHTML=`<img class="ui image" src="/static/svg/white-logo.svg" alt="wafid logo">`
+            </script>
+
+
+    </main>
+
+
+
+    <div class="ui vertical basic segment footer">
+    <div class="ui container center aligned">
+    <div class="ui container center aligned">
+        <img class="footer-logo" src="/static/svg/gcc-old-logo-white.svg" alt="gulf health council logo">
+        <div class="social-media-icons">
+            <a href="https://www.instagram.com/ghc_gcc/channel/?hl=en"><img class="social-media-icons-colors"
+                                                                            src="/static/svg/instagram.svg"
+                                                                            alt="instagram"></a>
+            <a href=" https://ar-ar.facebook.com/GHCouncil/"><img class="social-media-icons-colors"
+                                                                  src="/static/svg/facebook.svg" alt="facebook"></a>
+            <a href="https://twitter.com/ghc_gcc"><img class="social-media-icons-colors"
+                                                       src="/static/svg/twitter.svg" alt="twitter"></a>
+            <a href="https://www.youtube.com/channel/UCrKbHYpmpC_OrAfZ5P_qZXA"><img class="social-media-icons-colors"
+                                                                                    src="/static/svg/youtube.svg"
+                                                                                    alt="youtube"></a>
+        </div>
+        <div class="copyright">
+            <div class="copyright">
+                <span>@ 2025 </span>
+                Gulf Health Council. All rights reserved
+            </div>
+            
+        </div>
+    </div>
+
+
+    
+
+<script src="/static/jsi18n/en/djangojs.js"></script>
+
+    <script src="/static/vendor/jquery.min.js"></script>
+    <script src="/static/vendor/semantic/dist/semantic.min.js"></script>
+    <script src="/static/js/vendor/jquery.inputmask.min.js"></script>
+    <script src="/static/js/vendor/cropper.min.js"></script>
+    <script src="/static/js/vendor/jquery-cropper.min.js"></script>
+    <script src="/static/js/vendor/glide.min.js"></script>
+    <script src="/static/js/vendor/js.cookie.js"></script>
+    <script src="/static/js/main.js"></script>
+    <script src="/static/js/table-config.js"></script>
+    <script src="/static/js/purify.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.ui.dropdown').dropdown();
+            $('.ui.dropdown.item').dropdown({on: 'hover'});
+            $('.ui.checkbox').checkbox();
+            $('.message .close')
+                .on('click', function () {
+                    $(this)
+                        .closest('.message')
+                        .transition('fade');
+                });
+        });
+    </script>
+
+    <!-- start forms and widgets-specific -->
+    <script src="/static/vendor/semantic-ui-calendar/calendar.min.js"></script>
+    <script src="/static/vendor/semantic/dist/components/dropdown.js"></script>
+    <script src="/static/vendor/state-machine/state-machine.min.js"></script>
+    <script src="/static/js/calendar-widget.js"></script>
+    <script src="/static/js/vendor/moment.js"></script>
+    <script src="/static/js/components/single-dropdown-widget.js"></script>
+    <script src="/static/js/components/multiple-dropdown-widget.js"></script>
+    <script src="/static/js/captcha.js"></script>
+    <script src="/static/js/components/file-widget.js"></script>
+    <script src="/static/js/components/number-input-widget.js"></script>
+    <script src="/static/js/components/labeled-select-widget.js"></script>
+    <script src="/static/js/city-country-controls.js"></script>
+
+    <!-- end forms and widgets-specific -->
+
+
+
+        
+    <script>
+        const markerIsActive = '';
+        const markerProjectID = '';
+        if (markerIsActive === 'True') {
+            window.markerConfig = {
+                project: markerProjectID,
+                source: 'snippet'
+            };
+
+            !function (e, r, a) {
+                if (!e.__Marker) {
+                    e.__Marker = {};
+                    var t = [], n = {__cs: t};
+                    ["show", "hide", "isVisible", "capture", "cancelCapture", "unload", "reload", "isExtensionInstalled", "setReporter", "setCustomData", "on", "off"].forEach(function (e) {
+                        n[e] = function () {
+                            var r = Array.prototype.slice.call(arguments);
+                            r.unshift(e), t.push(r)
+                        }
+                    }), e.Marker = n;
+                    var s = r.createElement("script");
+                    s.async = 1, s.src = "https://edge.marker.io/latest/shim.js";
+                    var i = r.getElementsByTagName("script")[0];
+                    i.parentNode.insertBefore(s, i)
+                }
+            }(window, document);
+        }
+    </script>
+
+        
+            <script src="/static/js/instant-notifications.js"></script>
+        
+    
+</body>
+</html>

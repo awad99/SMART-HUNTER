@@ -1,0 +1,5 @@
+# Target: https://ipsar.chi.gov.sa/
+GET: []
+POST: []
+ENDPOINTS:
+/_next/static/chunks/webpack-c3df9b82ebdbc893.js

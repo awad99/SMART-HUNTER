@@ -1,0 +1,1 @@
+https://chaturbate.com/?id=FUZZ (GET)  # /usr/bin/sqlmap -u https://chaturbate.com/?id=FUZZ --batch --forms --crawl=2 --level=2 --risk=2 --threads=5 --random-agent --output-dir=web_recon_dataset/sqlmap_scan_20251114_162933

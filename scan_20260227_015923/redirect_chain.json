@@ -1,0 +1,16 @@
+[
+  {
+    "url": "https://ipsar.chi.gov.sa/",
+    "type": "ORIGINAL"
+  },
+  {
+    "url": "https://ipsar.chi.gov.sa/",
+    "status_code": 200,
+    "location": ""
+  },
+  {
+    "url": "https://ipsar.chi.gov.sa/",
+    "type": "FINAL",
+    "status": 200
+  }
+]

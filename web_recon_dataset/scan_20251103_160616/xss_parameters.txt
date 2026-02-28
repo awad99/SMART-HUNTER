@@ -1,0 +1,12 @@
+# XSS Testing Parameters
+# Target: https://pay.hrsd.gov.sa/PartyPayment/Index
+# Generated: 2025-11-03 16:06:18
+
+GET_PARAMETERS:
+
+POST_PARAMETERS:
+
+ENDPOINTS:
+/assets/css/main.rtl.css
+/assets/shared/bootstrap/css/bootstrap.min.rtl.css
+/assets/shared/bootstrap/css/floating-labels.css

@@ -1,0 +1,1 @@
+http://google.com?id=FUZZ (GET)  # /usr/bin/sqlmap -u google.com?id=FUZZ --batch --forms --crawl=2 --level=2 --risk=2 --threads=5 --random-agent --output-dir=web_recon_dataset/sqlmap_scan_20251113_201823

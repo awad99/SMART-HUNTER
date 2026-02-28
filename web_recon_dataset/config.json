@@ -1,0 +1,20 @@
+{
+  "ai_bug_hunter": {
+    "dataset_dir": "/mnt/c/Users/awad/Downloads/pyarmor/auto_PenTest/web_recon_dataset",
+    "models_dir": "/mnt/c/Users/awad/Downloads/pyarmor/auto_PenTest/web_recon_dataset/ml_models",
+    "auto_retrain": true,
+    "min_confidence_threshold": 0.5,
+    "scan_timeout": 3600
+  },
+  "scanning": {
+    "enable_sqlmap": true,
+    "enable_dalfox": true,
+    "enable_commix": true,
+    "parallel_scans": false
+  },
+  "learning": {
+    "auto_update": true,
+    "retrain_after_scans": 10,
+    "keep_history": true
+  }
+}

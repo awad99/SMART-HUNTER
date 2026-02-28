@@ -1,0 +1,50 @@
+RESPONSE ANALYSIS REPORT
+==================================================
+
+Target URL: https://pay.hrsd.gov.sa/PartyPayment/Index
+Analysis Time: 2025-11-03 16:06:18
+
+FORMS ANALYSIS:
+------------------------------
+BUTTONS ANALYSIS:
+------------------------------
+Button 1:
+  Type: button
+  Content: استعلام
+  ID: None
+  Name: N/A
+
+Button 2:
+  Type: button
+  Content: دفع
+  ID: None
+  Name: N/A
+
+Button 3:
+  Type: button
+  Content: 
+  ID: None
+  Name: N/A
+
+Button 4:
+  Type: button
+  Content: إلغاء
+  ID: None
+  Name: N/A
+
+Button 5:
+  Type: button
+  Content: تأكيد الدفعة
+  ID: None
+  Name: N/A
+
+LINKS ANALYSIS:
+------------------------------
+Link 1:
+  HREF: #
+  Text: 
+
+Link 2:
+  HREF: #
+  Text: 
+

@@ -1,0 +1,1 @@
+https://www.syfe.com/_next/image?url=/_next/static/media/selfwealth.8f5af9ec.webp&w=1080&q=75 (GET)  # /usr/bin/sqlmap -u https://www.syfe.com/?id=FUZZ --batch --forms --crawl=2 --level=2 --risk=2 --threads=5 --random-agent --output-dir=web_recon_dataset/sqlmap_scan_20251123_175859

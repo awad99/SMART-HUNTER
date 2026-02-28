@@ -1,0 +1,50 @@
+# XSS Testing Parameters
+# Target: https://wafid.com/
+# Generated: 2025-11-04 18:11:33
+
+GET_PARAMETERS:
+
+POST_PARAMETERS:
+
+ENDPOINTS:
+/static/css/semantic-responsive.css
+/static/css/components/modal.css
+/static/css/components/cards.css
+/certificate-search/
+https://www.youtube.com/channel/UCrKbHYpmpC_OrAfZ5P_qZXA
+/static/css/vendor/glide.theme.min.css
+/accreditation/apply/
+/static/css/components/menu.css
+/guidelines/
+/static/css/components/breadcrumbs.css
+/static/svg/logo-favicon-light.svg
+/static/css/vendor/cropper.min.css
+/static/css/instant-notifications.css
+/medical-center/search/
+/static/css/pages/landing.css
+/static/css/components/icons.css
+/medical-status-search/
+/
+/contact-us/
+/faq/
+https://unpkg.com/leaflet/dist/leaflet.css
+/select-type/
+/static/css/components/table.css
+https://twitter.com/ghc_gcc
+/accreditation/status/
+/search-slip/
+/static/css/components/glide.css
+/static/css/vendor/glide.core.min.css
+https://www.instagram.com/ghc_gcc/channel/?hl=en
+/book-appointment/
+/static/pdf/Regulations%20of%20Medical%20Examination%20of%20Expatriates%20Coming%20to%20GCC%20States%20for%20Work%20or%20Residence.pdf
+/static/country-flags/image_sprite/ip2location-image-sprite.css
+/medical-center/medical-center/
+/static/css/components/forms.css
+/static/css/menu.css
+tel:+966920023560
+ https://ar-ar.facebook.com/GHCouncil/
+/static/vendor/semantic/dist/semantic.min.css
+/static/css/main.css
+/static/css/pages/faq.css
+/static/css/components/message.css

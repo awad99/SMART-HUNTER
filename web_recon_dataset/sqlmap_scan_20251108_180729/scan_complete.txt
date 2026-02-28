@@ -1,0 +1,3 @@
+Scan completed at: Sat Nov  8 06:19:36 PM +03 2025
+Target: https://relevant-harpoon.europe1.hackviser.space
+Log file: web_recon_dataset/sqlmap_scan_20251108_180729/sqlmap.log

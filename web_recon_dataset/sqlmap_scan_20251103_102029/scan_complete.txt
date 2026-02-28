@@ -1,0 +1,3 @@
+Scan completed at: Mon Nov  3 10:51:00 AM +03 2025
+Target: http://wafid.com:80/index.php?option=com_content&view=article&id=19&Itemid=27
+Status: SUCCESS

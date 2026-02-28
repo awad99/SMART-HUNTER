@@ -1,0 +1,6 @@
+# Test URLs with Parameters
+# Base URL: https://pay.hrsd.gov.sa/PartyPayment/Index
+
+https://pay.hrsd.gov.sa/assets/css/main.rtl.css
+https://pay.hrsd.gov.sa/assets/shared/bootstrap/css/bootstrap.min.rtl.css
+https://pay.hrsd.gov.sa/assets/shared/bootstrap/css/floating-labels.css

@@ -1,0 +1,16 @@
+[
+  {
+    "url": "https://www.coinhako.com/",
+    "type": "ORIGINAL"
+  },
+  {
+    "url": "https://www.coinhako.com/",
+    "status_code": 200,
+    "location": ""
+  },
+  {
+    "url": "https://www.coinhako.com/",
+    "type": "FINAL",
+    "status": 200
+  }
+]

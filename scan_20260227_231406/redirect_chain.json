@@ -1,0 +1,16 @@
+[
+  {
+    "url": "https://superhuman.com/",
+    "type": "ORIGINAL"
+  },
+  {
+    "url": "https://superhuman.com/",
+    "status_code": 200,
+    "location": ""
+  },
+  {
+    "url": "https://superhuman.com/",
+    "type": "FINAL",
+    "status": 200
+  }
+]

@@ -1,0 +1,19 @@
+CAPTURED HEADERS
+==================================================
+
+URL: https://www.moenergy.gov.sa/ar
+Status: 200
+Timestamp: 2025-11-03T16:08:37.180142
+Headers:
+  cache-control: public, s-maxage=600, stale-while-revalidate=120
+  keep-alive: timeout=5
+  content-type: text/html;charset=UTF-8
+  content-encoding: gzip
+  vary: Accept-Encoding
+  x-oneagent-js-injection: true
+  x-ruxit-js-agent: true
+  server-timing: dtSInfo;desc="0", dtRpid;desc="-617022041"
+  set-cookie: dtCookieb1cszwja=v_4_srv_10_sn_2D2B2E1881B698F8FAB25075436A0847_perc_100000_ol_0_mul_1_app-3A17645d10b08eaee2_1_rcs-3Acss_0; Path=/; Domain=.moenergy.gov.sa, Pres_Cookie=!nPDVUDpcMw39EkuoK4kJbdR6wkW7qwnZ3HSPytB2kFoMH0NfrRVqIt24E4j69cvBa0KDvKuhERF37g==; path=/; Httponly; Secure, TS0119b84c=01f256ae49597372099e2e796af5a3bf1d2a26e2fa35b2e7682783c1192f01f4c9794954b217c68618cf0c1bb382402c75f3902ae25f9e6d96cb1fe70b98374de765ca6ba8; Path=/, TS01b71098=01f256ae490285f74c6e068167e4a09b194c59cfb835b2e7682783c1192f01f4c9794954b2a52f489968689d5f91f1d485754742c2d1bf2f3aad34121fe71df3660212777c; path=/; domain=.moenergy.gov.sa
+  date: Mon, 03 Nov 2025 13:07:29 GMT
+  transfer-encoding: chunked
+--------------------------------------------------

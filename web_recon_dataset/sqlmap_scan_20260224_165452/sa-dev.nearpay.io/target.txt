@@ -1,0 +1,1 @@
+https://sa-dev.nearpay.io/?query=FUZZ (GET)  # /mnt/c/Users/awad/Downloads/pyarmor/auto_PenTest/autoPenTest/bin/sqlmap -u https://sa-dev.nearpay.io/?query=FUZZ --batch --forms --crawl=2 --level=2 --risk=2 --threads=5 --random-agent --output-dir=web_recon_dataset/sqlmap_scan_20260224_165452

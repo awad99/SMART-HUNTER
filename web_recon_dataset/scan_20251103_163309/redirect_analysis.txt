@@ -1,0 +1,27 @@
+REDIRECT CHAIN ANALYSIS
+==================================================
+
+Original URL: https://www.syfe.com/
+Final URL: https://www.syfe.com/
+Total redirects: 1
+
+REDIRECT CHAIN:
+------------------------------
+1. ORIGINAL: https://www.syfe.com/
+2. REDIRECT 200: https://www.syfe.com/
+    -> Location: 
+    -> Server: N/A
+3. FINAL: https://www.syfe.com/ (Status: 200)
+
+SECURITY ANALYSIS:
+------------------------------
+No domain changes (same-site redirects)
+No HTTP to HTTPS upgrade detected
+
+SUMMARY:
+------------------------------
+Original: https://www.syfe.com/
+Final: https://www.syfe.com/
+Redirect count: 1
+Domain changes: 1
+Security upgrade: No

@@ -1,0 +1,10 @@
+# Target: https://www.coinhako.com/
+GET: []
+POST: []
+ENDPOINTS:
+favicon.ico
+https://www-cdn.coinesto.com
+/
+https://fonts.gstatic.com
+styles.1be9c44a9b7c228a.css
+https://www.coinhako.com/

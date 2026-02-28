@@ -1,0 +1,540 @@
+RESPONSE ANALYSIS REPORT
+==================================================
+
+Target URL: https://www.syfe.com/
+Analysis Time: 2025-11-03 16:33:12
+
+FORMS ANALYSIS:
+------------------------------
+BUTTONS ANALYSIS:
+------------------------------
+LINKS ANALYSIS:
+------------------------------
+Link 1:
+  HREF: /
+  Text: 
+
+Link 2:
+  HREF: /
+  Text: 
+
+Link 3:
+  HREF: #
+  Text: EnglishSINGAPORE
+
+Link 4:
+  HREF: #
+  Text: English
+
+Link 5:
+  HREF: #
+  Text: 繁體中文
+
+Link 6:
+  HREF: https://www.selfwealth.com.au/
+  Text: EnglishAUSTRALIA
+
+Link 7:
+  HREF: #
+  Text: 
+
+Link 8:
+  HREF: /managed-portfolio
+  Text: investMANAGED PORTFOLIOSInvestments curated by wealth experts
+
+Link 9:
+  HREF: /brokerage
+  Text: tradeBROKERAGE Access Singapore and U.S. stock markets
+
+Link 10:
+  HREF: /cash-management
+  Text: saveCASH MANAGEMENTInvestment solutions for idle cash
+
+Link 11:
+  HREF: /srs
+  Text: SRS PORTFOLIOS
+
+Link 12:
+  HREF: /private-wealth
+  Text: PRIVATE  WEALTHAll the boring stuff that you (hopefully won’t) need.
+
+Link 13:
+  HREF: /syfe-for-business
+  Text: SYFE FOR BUSINESSAll the boring stuff that you (hopefully won’t) need.
+
+Link 14:
+  HREF: /core
+  Text: Core Portfolios
+
+Link 15:
+  HREF: /income-plus
+  Text: Income+
+
+Link 16:
+  HREF: /brokerage/ucits
+  Text: UCITS ETFs
+
+Link 17:
+  HREF: /managed-portfolio
+  Text: View All
+
+Link 18:
+  HREF: /reit-plus
+  Text: REIT+
+
+Link 19:
+  HREF: /brokerage/us-stocks
+  Text: US Stocks &amp; ETFs
+
+Link 20:
+  HREF: /cash-management/cash-plus-flexi
+  Text: Cash+ Flexi
+
+Link 21:
+  HREF: /cash-management
+  Text: CASH MANAGEMENT
+
+Link 22:
+  HREF: /cash-management/cash-plus-flexi
+  Text: Cash+ Flexi
+
+Link 23:
+  HREF: /cash-management/cash-plus-guaranteed
+  Text: Cash+ Guaranteed
+
+Link 24:
+  HREF: /brokerage
+  Text: BROKERAGE
+
+Link 25:
+  HREF: /brokerage/us-stocks
+  Text: US Stocks &amp; ETFs
+
+Link 26:
+  HREF: /brokerage/sgx
+  Text: SGX
+
+Link 27:
+  HREF: /brokerage/hkex
+  Text: HKEX
+
+Link 28:
+  HREF: /brokerage/ucits
+  Text: UCITS ETFs
+
+Link 29:
+  HREF: /managed-portfolio
+  Text: MANAGED PORTFOLIOS
+
+Link 30:
+  HREF: /core
+  Text: Core Portfolios
+
+Link 31:
+  HREF: /reit-plus
+  Text: REIT+
+
+Link 32:
+  HREF: /select-themes
+  Text: Thematic Portfolios
+
+Link 33:
+  HREF: /income-plus
+  Text: Income+
+
+Link 34:
+  HREF: /managed-portfolio
+  Text: View All
+
+Link 35:
+  HREF: /srs
+  Text: SRS PORTFOLIOSAll the boring stuff that you (hopefully won’t) need.
+
+Link 36:
+  HREF: /private-wealth
+  Text: PRIVATE  WEALTHAll the boring stuff that you (hopefully won’t) need.
+
+Link 37:
+  HREF: /syfe-for-business
+  Text: SYFE FOR BUSINESSAll the boring stuff that you (hopefully won’t) need.
+
+Link 38:
+  HREF: /about-us
+  Text: About Us
+
+Link 39:
+  HREF: /investment-strategy
+  Text: Investment Strategy
+
+Link 40:
+  HREF: /pricing
+  Text: Pricing
+
+Link 41:
+  HREF: /security
+  Text: Security
+
+Link 42:
+  HREF: /media-centre
+  Text: Media Centre
+
+Link 43:
+  HREF: /careers
+  Text: Careers
+
+Link 44:
+  HREF: /syfe-promotions
+  Text: Promotions
+
+Link 45:
+  HREF: https://www.syfe.com/magazine/
+  Text: Insights
+
+Link 46:
+  HREF: /financial-calculators
+  Text: Tools
+
+Link 47:
+  HREF: https://www.syfe.com/magazine/
+  Text: Syfe Magazine
+
+Link 48:
+  HREF: /financial-calculators
+  Text: Tools
+
+Link 49:
+  HREF: /learn
+  Text: Learn
+
+Link 50:
+  HREF: /faq
+  Text: FAQs
+
+Link 51:
+  HREF: /contact-us
+  Text: Contact Us
+
+Link 52:
+  HREF: /legal
+  Text: Legal
+
+Link 53:
+  HREF: /financial-advisors
+  Text: Consult Us
+
+Link 54:
+  HREF: /careers
+  Text: Careers
+
+Link 55:
+  HREF: /media-centre
+  Text: Media Centre
+
+Link 56:
+  HREF: /login
+  Text: LOG IN
+
+Link 57:
+  HREF: /select-product
+  Text: GET STARTED
+
+Link 58:
+  HREF: #
+  Text: EnglishSINGAPORE
+
+Link 59:
+  HREF: #
+  Text: English
+
+Link 60:
+  HREF: #
+  Text: 繁體中文
+
+Link 61:
+  HREF: https://www.selfwealth.com.au/
+  Text: EnglishAUSTRALIA
+
+Link 62:
+  HREF: /open-store
+  Text: Download
+
+Link 63:
+  HREF: /select-product
+  Text: Get started
+
+Link 64:
+  HREF: /managed-portfolio
+  Text: Learn more
+
+Link 65:
+  HREF: /brokerage
+  Text: Learn more
+
+Link 66:
+  HREF: /cash-management
+  Text: Learn more
+
+Link 67:
+  HREF: /srs
+  Text: Find Out More
+
+Link 68:
+  HREF: /income-plus
+  Text: About Income+
+
+Link 69:
+  HREF: https://www.ft.com/content/9d94678f-5926-42b1-94d5-589f24a2ee70
+  Text: Financial Times
+
+Link 70:
+  HREF: https://www.bloomberg.com/news/articles/2021-12-15/singapore-s-syfe-enters-stockbroking-on-retail-investor-wave
+  Text: The Business Times
+
+Link 71:
+  HREF: https://www.bloomberg.com/news/articles/2021-12-15/singapore-s-syfe-enters-stockbroking-on-retail-investor-wave
+  Text: Bloomberg
+
+Link 72:
+  HREF: https://www.straitstimes.com/business/companies-markets/singapores-syfe-enters-stockbroking-on-retail-investor-wave
+  Text: The Straits Times
+
+Link 73:
+  HREF: https://techcrunch.com/2021/07/13/investment-app-syfe-raises-29-6m-series-b-led-by-returning-investor-valar-ventures/
+  Text: TechCrunch
+
+Link 74:
+  HREF: https://www.cnbc.com/video/2020/09/23/robo-advisor-syfe-wants-to-be-holistic-platform-with-proprietary-products.html
+  Text: CNBC
+
+Link 75:
+  HREF: https://www.ft.com/content/9d94678f-5926-42b1-94d5-589f24a2ee70
+  Text: Financial Times
+
+Link 76:
+  HREF: https://www.bloomberg.com/news/articles/2021-12-15/singapore-s-syfe-enters-stockbroking-on-retail-investor-wave
+  Text: The Business Times
+
+Link 77:
+  HREF: https://www.bloomberg.com/news/articles/2021-12-15/singapore-s-syfe-enters-stockbroking-on-retail-investor-wave
+  Text: Bloomberg
+
+Link 78:
+  HREF: https://www.straitstimes.com/business/companies-markets/singapores-syfe-enters-stockbroking-on-retail-investor-wave
+  Text: The Straits Times
+
+Link 79:
+  HREF: https://techcrunch.com/2021/07/13/investment-app-syfe-raises-29-6m-series-b-led-by-returning-investor-valar-ventures/
+  Text: TechCrunch
+
+Link 80:
+  HREF: https://www.cnbc.com/video/2020/09/23/robo-advisor-syfe-wants-to-be-holistic-platform-with-proprietary-products.html
+  Text: CNBC
+
+Link 81:
+  HREF: https://www.ft.com/content/9d94678f-5926-42b1-94d5-589f24a2ee70
+  Text: Financial Times
+
+Link 82:
+  HREF: https://www.bloomberg.com/news/articles/2021-12-15/singapore-s-syfe-enters-stockbroking-on-retail-investor-wave
+  Text: The Business Times
+
+Link 83:
+  HREF: https://www.bloomberg.com/news/articles/2021-12-15/singapore-s-syfe-enters-stockbroking-on-retail-investor-wave
+  Text: Bloomberg
+
+Link 84:
+  HREF: https://www.straitstimes.com/business/companies-markets/singapores-syfe-enters-stockbroking-on-retail-investor-wave
+  Text: The Straits Times
+
+Link 85:
+  HREF: https://techcrunch.com/2021/07/13/investment-app-syfe-raises-29-6m-series-b-led-by-returning-investor-valar-ventures/
+  Text: TechCrunch
+
+Link 86:
+  HREF: https://www.cnbc.com/video/2020/09/23/robo-advisor-syfe-wants-to-be-holistic-platform-with-proprietary-products.html
+  Text: CNBC
+
+Link 87:
+  HREF: https://www.syfe.com
+  Text: 
+
+Link 88:
+  HREF: https://www.syfe.com/
+  Text: Singapore
+
+Link 89:
+  HREF: /en-hk?rp=ls
+  Text: HONG KONG
+
+Link 90:
+  HREF: https://www.selfwealth.com.au/
+  Text: AUSTRALIA
+
+Link 91:
+  HREF: https://play.google.com/store/apps/details?id=com.syfe&amp;hl=en_SG&amp;gl=SG&amp;pli=1
+  Text: 
+
+Link 92:
+  HREF: https://apps.apple.com/sg/app/syfe/id1497156434
+  Text: 
+
+Link 93:
+  HREF: https://www.instagram.com/SyfeSG/
+  Text: 
+
+Link 94:
+  HREF: https://www.facebook.com/SyfeSG/
+  Text: 
+
+Link 95:
+  HREF: https://x.com/SyfeSG
+  Text: 
+
+Link 96:
+  HREF: https://www.linkedin.com/company/syfe/mycompany/
+  Text: 
+
+Link 97:
+  HREF: https://api.whatsapp.com/send?phone=6531381215&amp;amp;text=Hi%2c%20Got%20your%20reference%20from%20your%20Website.%20I%20want%20to%20learn%20more%20about%20digital%20visiting%20card%20and%20make%20one%20for%20me.&amp;amp;source=&amp;amp;data=&amp;amp;app_absent=
+  Text: 
+
+Link 98:
+  HREF: https://www.syfe.com/static/docs/Consolidated_disclaimers_and_disclosures.pdf
+  Text: here
+
+Link 99:
+  HREF: /managed-portfolio
+  Text: MANAGED PORTFOLIOS
+
+Link 100:
+  HREF: /core/equity100
+  Text: Core Equity100
+
+Link 101:
+  HREF: /core/core-growth
+  Text: Core Growth
+
+Link 102:
+  HREF: /core/core-balanced
+  Text: Core Balanced
+
+Link 103:
+  HREF: /core/core-defensive
+  Text: Core Defensive
+
+Link 104:
+  HREF: /select-themes
+  Text: Thematic Portfolios
+
+Link 105:
+  HREF: /private-wealth
+  Text: Private Credit Funds
+
+Link 106:
+  HREF: /income-plus
+  Text: Income+
+
+Link 107:
+  HREF: /reit-plus
+  Text: REIT+
+
+Link 108:
+  HREF: /select-custom
+  Text: Custom
+
+Link 109:
+  HREF: /brokerage
+  Text: brokerage
+
+Link 110:
+  HREF: /brokerage/us-stocks
+  Text: US Stocks &amp; ETFs
+
+Link 111:
+  HREF: /brokerage/sgx
+  Text: SGX
+
+Link 112:
+  HREF: /brokerage/hkex
+  Text: HKEX
+
+Link 113:
+  HREF: /brokerage/ucits
+  Text: UCITS ETFs
+
+Link 114:
+  HREF: /srs
+  Text: SRS
+
+Link 115:
+  HREF: /private-wealth
+  Text: PRIVATE WEALTH
+
+Link 116:
+  HREF: /syfe-for-business
+  Text: SYFE FOR BUSINESS
+
+Link 117:
+  HREF: /cash-management
+  Text: CASH MANAGEMENT
+
+Link 118:
+  HREF: /cash-management/cash-plus-flexi
+  Text: Cash+ Flexi
+
+Link 119:
+  HREF: /about-us
+  Text: About Us
+
+Link 120:
+  HREF: /investment-strategy
+  Text: Investment Strategy
+
+Link 121:
+  HREF: /pricing
+  Text: Pricing
+
+Link 122:
+  HREF: /security
+  Text: Security
+
+Link 123:
+  HREF: /magazine/
+  Text: Syfe Magazine
+
+Link 124:
+  HREF: /financial-calculators
+  Text: Tools
+
+Link 125:
+  HREF: /faq
+  Text: FAQs
+
+Link 126:
+  HREF: /contact-us
+  Text: Contact Us
+
+Link 127:
+  HREF: /legal
+  Text: Legal
+
+Link 128:
+  HREF: /careers
+  Text: Careers
+
+Link 129:
+  HREF: /financial-advisors
+  Text: Consult Us
+
+Link 130:
+  HREF: /media-centre
+  Text: Media Centre
+
+Link 131:
+  HREF: #
+  Text: Continue to Syfe Singapore
+
+Link 132:
+  HREF: #
+  Text: Go to Syfe Hong Kong
+

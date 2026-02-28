@@ -1,0 +1,27 @@
+CAPTURED COOKIES
+==================================================
+
+Name: dtCookieb1cszwja
+Value: v_4_srv_10_sn_2D2B2E1881B698F8FAB25075436A0847_perc_100000_ol_0_mul_1_app-3A17645d10b08eaee2_1_rcs-3Acss_0
+Domain: www.moenergy.gov.sa
+URL: https://www.moenergy.gov.sa/ar
+Timestamp: 2025-11-03T16:08:37.179924
+------------------------------
+Name: TS01b71098
+Value: 01f256ae490285f74c6e068167e4a09b194c59cfb835b2e7682783c1192f01f4c9794954b2a52f489968689d5f91f1d485754742c2d1bf2f3aad34121fe71df3660212777c
+Domain: www.moenergy.gov.sa
+URL: https://www.moenergy.gov.sa/ar
+Timestamp: 2025-11-03T16:08:37.180026
+------------------------------
+Name: Pres_Cookie
+Value: !nPDVUDpcMw39EkuoK4kJbdR6wkW7qwnZ3HSPytB2kFoMH0NfrRVqIt24E4j69cvBa0KDvKuhERF37g==
+Domain: www.moenergy.gov.sa
+URL: https://www.moenergy.gov.sa/ar
+Timestamp: 2025-11-03T16:08:37.180074
+------------------------------
+Name: TS0119b84c
+Value: 01f256ae49597372099e2e796af5a3bf1d2a26e2fa35b2e7682783c1192f01f4c9794954b217c68618cf0c1bb382402c75f3902ae25f9e6d96cb1fe70b98374de765ca6ba8
+Domain: www.moenergy.gov.sa
+URL: https://www.moenergy.gov.sa/ar
+Timestamp: 2025-11-03T16:08:37.180113
+------------------------------

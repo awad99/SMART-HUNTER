@@ -1,0 +1,1 @@
+https://kaltokan.com/?s=Search... (GET)  # /usr/bin/sqlmap -u https://kaltokan.com/?s=FUZZ --batch --forms --crawl=2 --level=2 --risk=2 --threads=5 --random-agent --output-dir=web_recon_dataset/sqlmap_scan_20251112_204532

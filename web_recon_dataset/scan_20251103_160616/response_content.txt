@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>الدفع اونلاين</title>
+
+    <link rel="stylesheet" href="/assets/shared/bootstrap/css/floating-labels.css" />
+    <script src="/lib/jquery/jquery.min.js"></script>
+    <script src="/assets/js/tether.min.js"></script>
+    <script src="/assets/js/popper.js"></script>
+    <script src="/assets/shared/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/assets/shared/font-awesome-5.1/js/all.min.js"></script>
+    <script src="/assets/js/scripts.js"></script>
+
+    <script src="/assets/js/jquery.validate.js"></script>
+    <script src="/assets/js/jquery.validate.unobtrusive.min.js"></script>
+
+    <script src="/Content/Helper/GeneralClass.js"></script>
+    <script src="/Content/Helper/APIHelper.js"></script>
+    <script src="/Content/Helper/Grid.js"></script>
+
+    <script src="/Content/sweetalert/loadingoverlay.min.js"></script>
+    <script src="/Content/Internal JS/Datatable/jquery.twbsPagination.js"></script>
+    <script src="/Content/Internal JS/Datatable/jquery.twbsPagination.min.js"></script>
+
+    <script src="/Content/Culture.js"></script>
+    <script src="/assets/js/momentjs.js"></script>
+    <script src="/assets/js/moment-with-locales.js"></script>
+    <script src="/assets/js/moment-hijri.js"></script>
+    <script src="/assets/js/bootstrap-hijri-datetimepicker.js"></script>
+        <link rel="stylesheet" href="/assets/shared/bootstrap/css/bootstrap.min.rtl.css" />
+        <link rel="stylesheet" href="/assets/css/main.rtl.css" />
+</head>
+
+<body>
+    <div>
+
+        <div class="col-md-12">
+            <div class="w-100 card shadow-none border-0">
+                <div class="card-body d-flex align-items-center justify-content-between p-md-5 p-4 mx-lg-5 mx-0">
+                    <a href="#" style="background-color:transparent;">
+                            <img src="../assets/images/Arabic-Logo.png" width="175" />
+                    </a>
+                    <div class="d-flex align-items-center">
+                        <a href="#" class="GIFIcon" onclick="toggleLanguage('en-US')">
+                            <img src="/assets/images/WorldIcon.svg" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+<script src="/content/Views/PartyPayment/PartyPayment.js"></script>
+<div>
+    <img src="../assets/images/MHRSD-Background.png" style="position:fixed; bottom:0; left:0; z-index:-10; height:100%; background-size:cover;" />
+</div>
+<div class="p-md-5 p-4 mx-lg-5 mx-0">
+    <div class="row">
+        <div class="col-12">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <div class="card">
+                        <div class="card-body p-4">
+
+                            <div class="h5 h5-responsive mb-3 font-weight-normal text-center">
+                                
+                                أدخل رقم دفع سداد المراد الاستعلام عنه في الحقل التالي
+                            </div>
+                            <div class="d-flex mt-5 mb-3">
+                                <div class="form-floating me-3 w-100">
+                                    <input type="text" class="form-control" id="billingAccountNo" placeholder="">
+                                    <label>رقم دفع سداد</label>
+                                    <span id="Required" class="text-danger" hidden>ادخل رقم دفع سداد</span>
+
+                                </div>
+
+                                <div class="d-flex justify-content-center">
+                                    <button class="btn btn-primary" id="invoiceBtn" onclick="PartyPayment.inquery();">استعلام</button>
+                                </div>
+                            </div>
+                            <div class="p-4 border rounded mt-3" style="overflow-x:auto;">
+                                
+<table class="inquiryTable w-100" id="inquiryTable">
+    <thead>
+        <tr>
+            <th scope="col">إختر</th>
+            <th scope="col">رقم الفاتورة</th>
+            <th scope="col">قيمة الفاتورة</th>
+            <th scope="col">تاريخ الاستحقاق</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+
+
+
+                            </div>
+                            <span id="ResponseSuccessFalid" class="text-danger"></span>
+
+
+                            <div class="d-flex justify-content-center mt-3">
+                                <button type="submit" id="btnPay" onclick="PartyPayment.OpenPaymentConfirmation();" class="btn btn-primary" hidden>
+                                    دفع
+                                </button>
+                            </div>
+                            <span id="errText" class="text-danger" hidden>الرجاء إختيار فاتورة واحدة على الأقل</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal modal-lg fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+        <div class="modal-content p-3">
+            <div class="modal-header">
+                <div class="h5 h5-responsive mb-0">تأكيد الأقساط المختارة</div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body py-4">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="border rounded p-4" style="overflow-x:auto;">
+                            <table id="selectedBillsTbl" class="w-100">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">رقم الفاتورة</th>
+                                        <th scope="col">قيمة الفاتورة</th>
+                                        <th scope="col">تاريخ الاستحقاق</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div id="totalAmount"></div>
+                    <div id="billingAccountNo" hidden></div>
+                </div>
+                <div class="row" id="myForm">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إلغاء</button>
+                <button id="btnConfirm" class="btn btn-primary">تأكيد الدفعة</button>
+            </div>
+        </div>
+    </div>
+</div>
+        </div>
+    </div>
+</div>
+<script>
+    var globalResourcesIndex =
+    {
+     SADADnumberDoesNotExist: 'رقم سداد غير موجود او أن الفاتورة تم دفعها او اغلاقها'
+    };
+</script>
+
+    
+    <script src="/Content/Internal JS/Datatable/jquery.dataTables.js"></script>
+
+    <script>
+        var globalResources = {
+        };
+
+        var userLang = 'ar';
+
+    </script>
+
+    <script>
+        function toggleLanguage(lang) {
+            $.ajax({
+                url: '/Home/SetCulture',
+                type: 'POST',
+                data: {
+                    'culture': 'en-US',
+                    'returnUrl': '~/PartyPayment/Index'
+                },
+                dataType: 'json',
+                success: function (data) {
+                    location.reload();
+                },
+                error: function (er) {
+                    console.log(er);
+                }
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,2 @@
+Target URL,Place,Parameter,Technique(s),Note(s)
+https://filesos.stc.com.sa/op/embed.aspx?src=\\servername\path1\path2\file,GET,src,T,false positive or unexploitable

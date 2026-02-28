@@ -1,0 +1,103 @@
+        ___
+       __H__
+ ___ ___[,]_____ ___ ___  {1.10.2#pip}
+|_ -| . [']     | .'| . |
+|___|_  [,]_|_|_|__,|  _|
+      |_|V...       |_|   https://sqlmap.org
+
+[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program
+
+[*] starting @ 22:21:18 /2026-02-24/
+
+[22:21:18] [WARNING] using '/mnt/c/Users/awad/Downloads/pyarmor/auto_PenTest/web_recon_dataset/sqlmap_scan_20260224_222112' as the output directory
+[22:21:18] [INFO] fetched random HTTP User-Agent header value 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36' from file '/mnt/c/Users/awad/Downloads/pyarmor/auto_PenTest/autoPenTest/lib/python3.13/site-packages/sqlmap/data/txt/user-agents.txt'
+do you want to check for the existence of site's sitemap(.xml) [y/N] N
+[22:21:18] [INFO] starting crawler for target URL 'https://wallet.tg/?query=FUZZ'
+[22:21:18] [INFO] searching for links with depth 1
+[22:21:18] [INFO] starting 2 threads
+[22:21:20] [INFO] searching for links with depth 2
+[22:21:20] [INFO] starting 5 threads
+[22:21:21] [WARNING] it appears that you have been blocked by the target server
+got a 308 redirect to 'https://wallet.tg/docs/xstocks-terms'. Do you want to follow? [Y/n] Y
+[22:21:23] [CRITICAL] unable to connect to the target URL. sqlmap is going to retry the request(s)
+[22:21:23] [WARNING] if the problem persists please check that the provided target URL is reachable. In case that it is, you can try to rerun with proxy switches ('--proxy', '--proxy-file'...)
+[22:21:29] [CRITICAL] unable to connect to the target URL
+do you want to normalize crawling results [Y/n] Y
+do you want to store crawling results to a temporary file for eventual further processing with other tools [y/N] N
+[1/1] URL:
+GET https://wallet.tg/?query=FUZZ
+do you want to test this URL? [Y/n/q]
+> Y
+[22:21:29] [INFO] testing URL 'https://wallet.tg/?query=FUZZ'
+[22:21:29] [INFO] using '/mnt/c/Users/awad/Downloads/pyarmor/auto_PenTest/web_recon_dataset/sqlmap_scan_20260224_222112/results-02242026_1021pm.csv' as the CSV results file in multiple targets mode
+you have not declared cookie(s), while server wants to set its own ('__cf_bm=LZPCzve3W8w...gq81aLiWFg'). Do you want to use those [Y/n] Y
+[22:21:30] [INFO] checking if the target is protected by some kind of WAF/IPS
+[22:21:31] [CRITICAL] WAF/IPS identified as 'CloudFlare'
+are you sure that you want to continue with further target testing? [Y/n] Y
+[22:21:31] [WARNING] please consider usage of tamper scripts (option '--tamper')
+[22:21:31] [INFO] testing if the target URL content is stable
+[22:21:32] [WARNING] target URL content is not stable (i.e. content differs). sqlmap will base the page comparison on a sequence matcher. If no dynamic nor injectable parameters are detected, or in case of junk results, refer to user's manual paragraph 'Page comparison'
+how do you want to proceed? [(C)ontinue/(s)tring/(r)egex/(q)uit] C
+[22:21:32] [INFO] testing if GET parameter 'query' is dynamic
+[22:21:33] [WARNING] GET parameter 'query' does not appear to be dynamic
+[22:21:34] [WARNING] heuristic (basic) test shows that GET parameter 'query' might not be injectable
+[22:21:35] [INFO] testing for SQL injection on GET parameter 'query'
+[22:21:35] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[22:21:49] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[22:21:58] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (comment)'
+[22:22:06] [INFO] testing 'MySQL RLIKE boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause'
+[22:22:17] [INFO] testing 'PostgreSQL AND boolean-based blind - WHERE or HAVING clause (CAST)'
+[22:22:29] [INFO] testing 'Oracle AND boolean-based blind - WHERE or HAVING clause (CTXSYS.DRITHSX.SN)'
+[22:22:40] [INFO] testing 'SQLite AND boolean-based blind - WHERE, HAVING, GROUP BY or HAVING clause (JSON)'
+[22:22:51] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[22:22:52] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL)'
+[22:22:53] [INFO] testing 'Boolean-based blind - Parameter replace (CASE)'
+[22:22:55] [INFO] testing 'MySQL >= 5.0 boolean-based blind - ORDER BY, GROUP BY clause'
+[22:22:56] [INFO] testing 'PostgreSQL boolean-based blind - ORDER BY, GROUP BY clause'
+[22:22:57] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
+[22:23:04] [INFO] testing 'MySQL >= 5.6 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (GTID_SUBSET)'
+[22:23:10] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[22:23:16] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (IN)'
+[22:23:22] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (CONVERT)'
+[22:23:28] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (CONCAT)'
+[22:23:34] [INFO] testing 'Oracle AND error-based - WHERE or HAVING clause (XMLType)'
+[22:23:40] [INFO] testing 'Oracle AND error-based - WHERE or HAVING clause (UTL_INADDR.GET_HOST_ADDRESS)'
+[22:23:46] [INFO] testing 'MySQL >= 5.1 error-based - PROCEDURE ANALYSE (EXTRACTVALUE)'
+[22:23:52] [INFO] testing 'MySQL >= 5.1 error-based - Parameter replace (EXTRACTVALUE)'
+[22:23:52] [INFO] testing 'PostgreSQL error-based - Parameter replace'
+[22:23:53] [INFO] testing 'Microsoft SQL Server/Sybase error-based - Stacking (EXEC)'
+[22:23:58] [INFO] testing 'Generic inline queries'
+[22:23:58] [INFO] testing 'MySQL inline queries'
+[22:23:59] [INFO] testing 'PostgreSQL inline queries'
+[22:23:59] [INFO] testing 'Microsoft SQL Server/Sybase inline queries'
+[22:24:00] [INFO] testing 'Oracle inline queries'
+[22:24:00] [INFO] testing 'MySQL >= 5.0.12 stacked queries (comment)'
+[22:24:06] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[22:24:10] [INFO] testing 'PostgreSQL stacked queries (heavy query - comment)'
+[22:24:15] [INFO] testing 'Microsoft SQL Server/Sybase stacked queries (comment)'
+[22:24:20] [INFO] testing 'Microsoft SQL Server/Sybase stacked queries (DECLARE - comment)'
+[22:24:24] [INFO] testing 'Oracle stacked queries (DBMS_PIPE.RECEIVE_MESSAGE - comment)'
+[22:24:29] [INFO] testing 'Oracle stacked queries (heavy query - comment)'
+[22:24:34] [INFO] testing 'MySQL >= 5.0.12 AND time-based blind (query SLEEP)'
+[22:24:40] [INFO] testing 'MySQL >= 5.0.12 AND time-based blind (SLEEP)'
+[22:24:46] [INFO] testing 'MySQL < 5.0.12 AND time-based blind (BENCHMARK)'
+[22:24:52] [INFO] testing 'MySQL >= 5.0.12 RLIKE time-based blind'
+[22:24:59] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind'
+[22:25:04] [INFO] testing 'PostgreSQL AND time-based blind (heavy query)'
+[22:25:12] [INFO] testing 'Microsoft SQL Server/Sybase time-based blind (IF)'
+[22:25:17] [INFO] testing 'Microsoft SQL Server/Sybase AND time-based blind (heavy query)'
+[22:25:23] [INFO] testing 'Oracle AND time-based blind'
+[22:25:29] [INFO] testing 'Oracle AND time-based blind (heavy query)'
+[22:25:35] [INFO] testing 'Informix AND time-based blind (heavy query)'
+[22:25:41] [INFO] testing 'MySQL >= 5.0.12 time-based blind - Parameter replace'
+it is recommended to perform only basic UNION tests if there is not at least one other (potential) technique found. Do you want to reduce the number of requests? [Y/n] Y
+[22:25:42] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[22:25:55] [INFO] testing 'MySQL UNION query (NULL) - 1 to 10 columns'
+[22:26:09] [WARNING] GET parameter 'query' does not seem to be injectable
+[22:26:09] [ERROR] all tested parameters do not appear to be injectable. Try to increase values for '--level'/'--risk' options if you wish to perform more tests. If you suspect that there is some kind of protection mechanism involved (e.g. WAF) maybe you could try to use option '--tamper' (e.g. '--tamper=space2comment'), skipping to the next target
+[22:26:09] [WARNING] HTTP error codes detected during run:
+403 (Forbidden) - 440 times
+[22:26:09] [INFO] you can find results of scanning in multiple targets mode inside the CSV file '/mnt/c/Users/awad/Downloads/pyarmor/auto_PenTest/web_recon_dataset/sqlmap_scan_20260224_222112/results-02242026_1021pm.csv'
+
+[*] ending @ 22:26:09 /2026-02-24/
+

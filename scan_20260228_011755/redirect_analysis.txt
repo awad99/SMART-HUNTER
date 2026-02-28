@@ -1,0 +1,14 @@
+REDIRECT CHAIN ANALYSIS
+==================================================
+Original : https://www.coinbase.com/security
+Final    : https://www.coinbase.com/security
+Hops     : 1
+
+CHAIN:
+  1. ORIGINAL: https://www.coinbase.com/security
+  2. 200: https://www.coinbase.com/security → 
+  3. FINAL: https://www.coinbase.com/security (200)
+
+SECURITY:
+  Domains     : 1 (www.coinbase.com)
+  HTTP→HTTPS  : No

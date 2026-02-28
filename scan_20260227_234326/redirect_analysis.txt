@@ -1,0 +1,14 @@
+REDIRECT CHAIN ANALYSIS
+==================================================
+Original : https://www.paypal.com/ae/home
+Final    : https://www.paypal.com/ae/home
+Hops     : 1
+
+CHAIN:
+  1. ORIGINAL: https://www.paypal.com/ae/home
+  2. 200: https://www.paypal.com/ae/home → 
+  3. FINAL: https://www.paypal.com/ae/home (200)
+
+SECURITY:
+  Domains     : 1 (www.paypal.com)
+  HTTP→HTTPS  : No

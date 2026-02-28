@@ -1,0 +1,2 @@
+https://www.paypal.com/ae/home?locale.x=FUZZ
+https://www.paypal.com/ae/home?tab=FUZZ

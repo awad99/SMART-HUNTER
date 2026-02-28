@@ -1,0 +1,33 @@
+AI Bug Hunter - Setup Log
+============================================================
+Setup Date: 2025-11-08 17:00:01
+============================================================
+
+[16:59:41] [CHECK] Checking dependencies...
+[16:59:49] [OK] ✓ pandas installed
+[16:59:49] [OK] ✓ numpy installed
+[16:59:59] [OK] ✓ scikit-learn installed
+[16:59:59] [OK] ✓ joblib installed
+[17:00:01] [OK] ✓ httpx installed
+[17:00:01] [OK] All dependencies satisfied
+[17:00:01] [CHECK] Checking required files...
+[17:00:01] [OK] ✓ url_connection.py found
+[17:00:01] [OK] ✓ URL_checkIfhaveVun.py found
+[17:00:01] [OK] ✓ get_parmtras.sh found
+[17:00:01] [OK] ✓ run_sqlmap.sh found
+[17:00:01] [OK] ✓ run_dalfox.sh found
+[17:00:01] [SETUP] Creating directory structure...
+[17:00:01] [OK] ✓ /mnt/c/Users/awad/Downloads/pyarmor/auto_PenTest/web_recon_dataset already exists
+[17:00:01] [OK] ✓ Created /mnt/c/Users/awad/Downloads/pyarmor/auto_PenTest/web_recon_dataset/ml_models
+[17:00:01] [OK] ✓ Created /mnt/c/Users/awad/Downloads/pyarmor/auto_PenTest/web_recon_dataset/scans
+[17:00:01] [OK] ✓ Created /mnt/c/Users/awad/Downloads/pyarmor/auto_PenTest/web_recon_dataset/reports
+[17:00:01] [CHECK] Checking for existing training data...
+[17:00:01] [OK] ✓ Found reconnaissance data: 2 records
+[17:00:01] [OK] ✓ Found vulnerability data: 1 records
+[17:00:01] [CHECK] Checking for trained models...
+[17:00:01] [INFO] ✗ SQL Injection model not found
+[17:00:01] [INFO] ✗ XSS model not found
+[17:00:01] [INFO] ✗ Command Injection model not found
+[17:00:01] [INFO] ✗ General Vulnerability model not found
+[17:00:01] [SETUP] Creating sample configuration...
+[17:00:01] [OK] ✓ Configuration saved to /mnt/c/Users/awad/Downloads/pyarmor/auto_PenTest/web_recon_dataset/config.json

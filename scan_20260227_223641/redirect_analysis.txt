@@ -1,0 +1,14 @@
+REDIRECT CHAIN ANALYSIS
+==================================================
+Original : https://www.coinhako.com/
+Final    : https://www.coinhako.com/
+Hops     : 1
+
+CHAIN:
+  1. ORIGINAL: https://www.coinhako.com/
+  2. 200: https://www.coinhako.com/ → 
+  3. FINAL: https://www.coinhako.com/ (200)
+
+SECURITY:
+  Domains     : 1 (www.coinhako.com)
+  HTTP→HTTPS  : No

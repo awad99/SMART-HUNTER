@@ -1,0 +1,14 @@
+REDIRECT CHAIN ANALYSIS
+==================================================
+Original : https://superhuman.com/
+Final    : https://superhuman.com/
+Hops     : 1
+
+CHAIN:
+  1. ORIGINAL: https://superhuman.com/
+  2. 200: https://superhuman.com/ → 
+  3. FINAL: https://superhuman.com/ (200)
+
+SECURITY:
+  Domains     : 1 (superhuman.com)
+  HTTP→HTTPS  : No
