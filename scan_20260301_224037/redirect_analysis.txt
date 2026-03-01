@@ -1,0 +1,14 @@
+REDIRECT CHAIN ANALYSIS
+==================================================
+Original : https://eero.com/
+Final    : https://eero.com/
+Hops     : 1
+
+CHAIN:
+  1. ORIGINAL: https://eero.com/
+  2. 200: https://eero.com/ → 
+  3. FINAL: https://eero.com/ (200)
+
+SECURITY:
+  Domains     : 1 (eero.com)
+  HTTP→HTTPS  : No

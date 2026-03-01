@@ -1,0 +1,31 @@
+[
+  {
+    "url": "https://bounty.github.com/",
+    "status_code": 200,
+    "headers": {
+      "connection": "keep-alive",
+      "content-length": "10152",
+      "server": "GitHub.com",
+      "content-type": "text/html; charset=utf-8",
+      "last-modified": "Thu, 12 Feb 2026 21:22:18 GMT",
+      "access-control-allow-origin": "*",
+      "etag": "W/\"698e448a-86bc\"",
+      "expires": "Sun, 01 Mar 2026 11:15:22 GMT",
+      "cache-control": "max-age=600",
+      "content-encoding": "gzip",
+      "x-proxy-cache": "MISS",
+      "x-github-request-id": "D552:3EEA30:7D183:BC9C1:69A41D6E",
+      "accept-ranges": "bytes",
+      "date": "Sun, 01 Mar 2026 11:06:13 GMT",
+      "via": "1.1 varnish",
+      "age": "7",
+      "x-served-by": "cache-fjr990023-FJR",
+      "x-cache": "HIT",
+      "x-cache-hits": "2",
+      "x-timer": "S1772363174.818632,VS0,VE0",
+      "vary": "Accept-Encoding",
+      "x-fastly-request-id": "3bfb910de2967a9b7d3aa36c2a379ec04a6671ce"
+    },
+    "timestamp": "2026-03-01T14:06:43.212099"
+  }
+]

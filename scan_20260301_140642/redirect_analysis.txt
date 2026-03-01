@@ -1,0 +1,14 @@
+REDIRECT CHAIN ANALYSIS
+==================================================
+Original : https://bounty.github.com/
+Final    : https://bounty.github.com/
+Hops     : 1
+
+CHAIN:
+  1. ORIGINAL: https://bounty.github.com/
+  2. 200: https://bounty.github.com/ → 
+  3. FINAL: https://bounty.github.com/ (200)
+
+SECURITY:
+  Domains     : 1 (bounty.github.com)
+  HTTP→HTTPS  : No

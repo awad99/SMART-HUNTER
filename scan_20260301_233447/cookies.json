@@ -1,0 +1,79 @@
+[
+  {
+    "name": "GUID",
+    "value": "09034116114393695618",
+    "domain": "sa.trip.com",
+    "url": "https://sa.trip.com/",
+    "timestamp": "2026-03-01T23:34:48.043979"
+  },
+  {
+    "name": "GUID.sig",
+    "value": "U0hbj5-re_xdLRuz3BJVc-b--UFagyRSmIirisyCStM",
+    "domain": "sa.trip.com",
+    "url": "https://sa.trip.com/",
+    "timestamp": "2026-03-01T23:34:48.044047"
+  },
+  {
+    "name": "UBT_VID",
+    "value": "1772397257393.f11aMsYBzG76",
+    "domain": "sa.trip.com",
+    "url": "https://sa.trip.com/",
+    "timestamp": "2026-03-01T23:34:48.044067"
+  },
+  {
+    "name": "ibu_online_jump_site_result",
+    "value": "{\"isShowSuggestion\":false}",
+    "domain": "sa.trip.com",
+    "url": "https://sa.trip.com/",
+    "timestamp": "2026-03-01T23:34:48.044081"
+  },
+  {
+    "name": "ibulanguage",
+    "value": "AR",
+    "domain": "sa.trip.com",
+    "url": "https://sa.trip.com/",
+    "timestamp": "2026-03-01T23:34:48.044121"
+  },
+  {
+    "name": "ibulocale",
+    "value": "ar_sa",
+    "domain": "sa.trip.com",
+    "url": "https://sa.trip.com/",
+    "timestamp": "2026-03-01T23:34:48.044163"
+  },
+  {
+    "name": "cookiePricesDisplayed",
+    "value": "SAR",
+    "domain": "sa.trip.com",
+    "url": "https://sa.trip.com/",
+    "timestamp": "2026-03-01T23:34:48.044207"
+  },
+  {
+    "name": "ibusite",
+    "value": "SA",
+    "domain": "sa.trip.com",
+    "url": "https://sa.trip.com/",
+    "timestamp": "2026-03-01T23:34:48.044248"
+  },
+  {
+    "name": "ibugroup",
+    "value": "trip",
+    "domain": "sa.trip.com",
+    "url": "https://sa.trip.com/",
+    "timestamp": "2026-03-01T23:34:48.044305"
+  },
+  {
+    "name": "ibu_country",
+    "value": "SA",
+    "domain": "sa.trip.com",
+    "url": "https://sa.trip.com/",
+    "timestamp": "2026-03-01T23:34:48.044347"
+  },
+  {
+    "name": "ibu_cookie_strict",
+    "value": "0",
+    "domain": "sa.trip.com",
+    "url": "https://sa.trip.com/",
+    "timestamp": "2026-03-01T23:34:48.044366"
+  }
+]

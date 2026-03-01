@@ -1,0 +1,16 @@
+[
+  {
+    "url": "https://www.rockstargames.com/",
+    "type": "ORIGINAL"
+  },
+  {
+    "url": "https://www.rockstargames.com/",
+    "status_code": 200,
+    "location": ""
+  },
+  {
+    "url": "https://www.rockstargames.com/",
+    "type": "FINAL",
+    "status": 200
+  }
+]

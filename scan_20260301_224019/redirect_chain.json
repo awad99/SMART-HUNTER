@@ -1,0 +1,16 @@
+[
+  {
+    "url": "https://vercel.com/",
+    "type": "ORIGINAL"
+  },
+  {
+    "url": "https://vercel.com/",
+    "status_code": 200,
+    "location": ""
+  },
+  {
+    "url": "https://vercel.com/",
+    "type": "FINAL",
+    "status": 200
+  }
+]

@@ -1,6 +1,0 @@
-https://emmconsole.stc.com.sa/AirWatch/Login/Login/Login-User?Hash=FUZZ
-https://emmconsole.stc.com.sa/AirWatch/Login/Login/Login-User?IsPasswordFieldVisible=FUZZ
-https://emmconsole.stc.com.sa/AirWatch/Login/Login/Login-User?RememberUsername=FUZZ
-https://emmconsole.stc.com.sa/AirWatch/Login/Login/Login-User?__RequestVerificationToken=FUZZ
-https://emmconsole.stc.com.sa/AirWatch/Login/Login/Login-User?ReturnUrl=FUZZ
-https://emmconsole.stc.com.sa/AirWatch/Login/Login/Login-User?UserName=FUZZ

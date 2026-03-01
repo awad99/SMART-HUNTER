@@ -1,1 +1,11 @@
-https://bumba.global/?email=FUZZ
+https://www.m-pesa.africa/?id=FUZZ
+https://www.m-pesa.africa/?search=FUZZ
+https://www.m-pesa.africa/?q=FUZZ
+https://www.m-pesa.africa/?query=FUZZ
+https://www.m-pesa.africa/?page=FUZZ
+https://www.m-pesa.africa/?user=FUZZ
+https://www.m-pesa.africa/?name=FUZZ
+https://www.m-pesa.africa/?cat=FUZZ
+https://www.m-pesa.africa/?file=FUZZ
+https://www.m-pesa.africa/?cmd=FUZZ
+https://www.m-pesa.africa/?action=FUZZ

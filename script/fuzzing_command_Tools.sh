@@ -9,8 +9,9 @@ Wordlist=$(cat WordList_Use.txt)
 result_file="ffuf_results.json"
 
 echo "Starting fuzzing..."
-echo "Starting fuzzing for subdomains..."
-ffuf -w "$Wordlist" -u "https://FUZZ/$URL" \
+echo "Starting directory fuzzing..."
+URL="${URL%/}"
+ffuf -w "$Wordlist" -u "$URL/FUZZ" \
      -mc 200 \
      -t 50 \
      -o "$result_file" \

@@ -1,0 +1,16 @@
+[
+  {
+    "url": "https://www.helium.com/",
+    "type": "ORIGINAL"
+  },
+  {
+    "url": "https://www.helium.com/",
+    "status_code": 200,
+    "location": ""
+  },
+  {
+    "url": "https://www.helium.com/",
+    "type": "FINAL",
+    "status": 200
+  }
+]

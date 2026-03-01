@@ -1,0 +1,14 @@
+REDIRECT CHAIN ANALYSIS
+==================================================
+Original : https://vercel.com/
+Final    : https://vercel.com/
+Hops     : 1
+
+CHAIN:
+  1. ORIGINAL: https://vercel.com/
+  2. 200: https://vercel.com/ → 
+  3. FINAL: https://vercel.com/ (200)
+
+SECURITY:
+  Domains     : 1 (vercel.com)
+  HTTP→HTTPS  : No

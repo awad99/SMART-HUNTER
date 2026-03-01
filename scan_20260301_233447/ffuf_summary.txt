@@ -1,0 +1,2 @@
+# https://sa.trip.com/
+[200] https://sa.trip.com/hotels

@@ -1,0 +1,4 @@
+# Target: https://coinhako.com/
+GET: []
+POST: []
+ENDPOINTS:

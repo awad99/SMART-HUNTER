@@ -1,0 +1,185 @@
+        ___
+       __H__
+ ___ ___[']_____ ___ ___  {1.9.11#stable}
+|_ -| . [(]     | .'| . |
+|___|_  [']_|_|_|__,|  _|
+      |_|V...       |_|   https://sqlmap.org
+
+[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program
+
+[*] starting @ 22:51:21 /2026-03-01/
+
+[22:51:21] [INFO] fetched random HTTP User-Agent header value 'Mozilla/5.0 (X11; CrOS x86_64 14816.131.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36' from file '/usr/share/sqlmap/data/txt/user-agents.txt'
+[22:51:21] [INFO] parsing multiple targets list from 'sqli_parameters.txt'
+[22:51:21] [INFO] starting crawler for target URL 'https://eero.com/?id=FUZZ' (1/11)
+do you want to check for the existence of site's sitemap(.xml) [y/N] N
+[22:51:21] [INFO] starting 2 threads
+do you want to normalize crawling results [Y/n] Y
+do you want to store crawling results to a temporary file for eventual further processing with other tools [y/N] N
+[1/1] URL:
+GET https://eero.com/?id=FUZZ
+do you want to test this URL? [Y/n/q]
+> Y
+[22:51:23] [INFO] testing URL 'https://eero.com/?id=FUZZ'
+[22:51:23] [INFO] using '/home/awad/.local/share/sqlmap/output/results-03012026_1051pm.csv' as the CSV results file in multiple targets mode
+[22:51:24] [INFO] testing if the target URL content is stable
+[22:51:24] [ERROR] there was an error checking the stability of page because of lack of content. Please check the page request results (and probable errors) by using higher verbosity levels
+[22:51:24] [INFO] testing if GET parameter 'id' is dynamic
+[22:51:26] [WARNING] GET parameter 'id' does not appear to be dynamic
+[22:51:26] [WARNING] heuristic (basic) test shows that GET parameter 'id' might not be injectable
+[22:51:27] [INFO] skipping GET parameter 'id'
+[22:51:27] [ERROR] all tested parameters do not appear to be injectable. Try to increase values for '--level'/'--risk' options if you wish to perform more tests. If you suspect that there is some kind of protection mechanism involved (e.g. WAF) maybe you could try to use option '--tamper' (e.g. '--tamper=space2comment'), skipping to the next target
+[22:51:27] [INFO] you can find results of scanning in multiple targets mode inside the CSV file '/home/awad/.local/share/sqlmap/output/results-03012026_1051pm.csv'
+[22:51:27] [INFO] starting crawler for target URL 'https://eero.com/?search=FUZZ' (2/11)
+[22:51:27] [INFO] starting 2 threads
+[1/1] URL:
+GET https://eero.com/?search=FUZZ
+do you want to test this URL? [Y/n/q]
+> Y
+[22:51:29] [INFO] testing URL 'https://eero.com/?search=FUZZ'
+[22:51:30] [INFO] testing if the target URL content is stable
+[22:51:31] [ERROR] there was an error checking the stability of page because of lack of content. Please check the page request results (and probable errors) by using higher verbosity levels
+[22:51:31] [INFO] testing if GET parameter 'search' is dynamic
+[22:51:32] [WARNING] GET parameter 'search' does not appear to be dynamic
+[22:51:33] [WARNING] heuristic (basic) test shows that GET parameter 'search' might not be injectable
+[22:51:34] [INFO] skipping GET parameter 'search'
+[22:51:34] [ERROR] all tested parameters do not appear to be injectable. Try to increase values for '--level'/'--risk' options if you wish to perform more tests. If you suspect that there is some kind of protection mechanism involved (e.g. WAF) maybe you could try to use option '--tamper' (e.g. '--tamper=space2comment'), skipping to the next target
+[22:51:34] [INFO] you can find results of scanning in multiple targets mode inside the CSV file '/home/awad/.local/share/sqlmap/output/results-03012026_1051pm.csv'
+[22:51:34] [INFO] starting crawler for target URL 'https://eero.com/?q=FUZZ' (3/11)
+[22:51:34] [INFO] starting 2 threads
+[1/1] URL:
+GET https://eero.com/?q=FUZZ
+do you want to test this URL? [Y/n/q]
+> Y
+[22:51:35] [INFO] testing URL 'https://eero.com/?q=FUZZ'
+[22:51:38] [INFO] testing if the target URL content is stable
+[22:51:39] [ERROR] there was an error checking the stability of page because of lack of content. Please check the page request results (and probable errors) by using higher verbosity levels
+[22:51:39] [INFO] testing if GET parameter 'q' is dynamic
+[22:51:40] [WARNING] GET parameter 'q' does not appear to be dynamic
+[22:51:41] [WARNING] heuristic (basic) test shows that GET parameter 'q' might not be injectable
+[22:51:42] [INFO] skipping GET parameter 'q'
+[22:51:42] [ERROR] all tested parameters do not appear to be injectable. Try to increase values for '--level'/'--risk' options if you wish to perform more tests. If you suspect that there is some kind of protection mechanism involved (e.g. WAF) maybe you could try to use option '--tamper' (e.g. '--tamper=space2comment'), skipping to the next target
+[22:51:42] [INFO] you can find results of scanning in multiple targets mode inside the CSV file '/home/awad/.local/share/sqlmap/output/results-03012026_1051pm.csv'
+[22:51:42] [INFO] starting crawler for target URL 'https://eero.com/?query=FUZZ' (4/11)
+[22:51:42] [INFO] starting 2 threads
+[1/1] URL:
+GET https://eero.com/?query=FUZZ
+do you want to test this URL? [Y/n/q]
+> Y
+[22:51:43] [INFO] testing URL 'https://eero.com/?query=FUZZ'
+[22:51:44] [INFO] testing if the target URL content is stable
+[22:51:45] [ERROR] there was an error checking the stability of page because of lack of content. Please check the page request results (and probable errors) by using higher verbosity levels
+[22:51:45] [INFO] testing if GET parameter 'query' is dynamic
+[22:51:46] [WARNING] GET parameter 'query' does not appear to be dynamic
+[22:51:47] [WARNING] heuristic (basic) test shows that GET parameter 'query' might not be injectable
+[22:51:48] [INFO] skipping GET parameter 'query'
+[22:51:48] [ERROR] all tested parameters do not appear to be injectable. Try to increase values for '--level'/'--risk' options if you wish to perform more tests. If you suspect that there is some kind of protection mechanism involved (e.g. WAF) maybe you could try to use option '--tamper' (e.g. '--tamper=space2comment'), skipping to the next target
+[22:51:48] [INFO] you can find results of scanning in multiple targets mode inside the CSV file '/home/awad/.local/share/sqlmap/output/results-03012026_1051pm.csv'
+[22:51:48] [INFO] starting crawler for target URL 'https://eero.com/?page=FUZZ' (5/11)
+[22:51:48] [INFO] starting 2 threads
+[1/1] URL:
+GET https://eero.com/?page=FUZZ
+do you want to test this URL? [Y/n/q]
+> Y
+[22:51:50] [INFO] testing URL 'https://eero.com/?page=FUZZ'
+[22:51:50] [INFO] testing if the target URL content is stable
+[22:51:51] [ERROR] there was an error checking the stability of page because of lack of content. Please check the page request results (and probable errors) by using higher verbosity levels
+[22:51:51] [INFO] testing if GET parameter 'page' is dynamic
+[22:51:52] [WARNING] GET parameter 'page' does not appear to be dynamic
+[22:51:54] [WARNING] heuristic (basic) test shows that GET parameter 'page' might not be injectable
+[22:51:55] [INFO] skipping GET parameter 'page'
+[22:51:55] [ERROR] all tested parameters do not appear to be injectable. Try to increase values for '--level'/'--risk' options if you wish to perform more tests. If you suspect that there is some kind of protection mechanism involved (e.g. WAF) maybe you could try to use option '--tamper' (e.g. '--tamper=space2comment'), skipping to the next target
+[22:51:55] [INFO] you can find results of scanning in multiple targets mode inside the CSV file '/home/awad/.local/share/sqlmap/output/results-03012026_1051pm.csv'
+[22:51:55] [INFO] starting crawler for target URL 'https://eero.com/?user=FUZZ' (6/11)
+[22:51:55] [INFO] starting 2 threads
+[1/1] URL:
+GET https://eero.com/?user=FUZZ
+do you want to test this URL? [Y/n/q]
+> Y
+[22:51:57] [INFO] testing URL 'https://eero.com/?user=FUZZ'
+[22:51:57] [INFO] testing if the target URL content is stable
+[22:51:58] [ERROR] there was an error checking the stability of page because of lack of content. Please check the page request results (and probable errors) by using higher verbosity levels
+[22:51:58] [INFO] testing if GET parameter 'user' is dynamic
+[22:51:59] [WARNING] GET parameter 'user' does not appear to be dynamic
+[22:52:00] [WARNING] heuristic (basic) test shows that GET parameter 'user' might not be injectable
+[22:52:01] [INFO] skipping GET parameter 'user'
+[22:52:01] [ERROR] all tested parameters do not appear to be injectable. Try to increase values for '--level'/'--risk' options if you wish to perform more tests. If you suspect that there is some kind of protection mechanism involved (e.g. WAF) maybe you could try to use option '--tamper' (e.g. '--tamper=space2comment'), skipping to the next target
+[22:52:01] [INFO] you can find results of scanning in multiple targets mode inside the CSV file '/home/awad/.local/share/sqlmap/output/results-03012026_1051pm.csv'
+[22:52:01] [INFO] starting crawler for target URL 'https://eero.com/?name=FUZZ' (7/11)
+[22:52:01] [INFO] starting 2 threads
+[1/1] URL:
+GET https://eero.com/?name=FUZZ
+do you want to test this URL? [Y/n/q]
+> Y
+[22:52:03] [INFO] testing URL 'https://eero.com/?name=FUZZ'
+[22:52:04] [INFO] testing if the target URL content is stable
+[22:52:05] [ERROR] there was an error checking the stability of page because of lack of content. Please check the page request results (and probable errors) by using higher verbosity levels
+[22:52:05] [INFO] testing if GET parameter 'name' is dynamic
+[22:52:06] [WARNING] GET parameter 'name' does not appear to be dynamic
+[22:52:07] [WARNING] heuristic (basic) test shows that GET parameter 'name' might not be injectable
+[22:52:08] [INFO] skipping GET parameter 'name'
+[22:52:08] [ERROR] all tested parameters do not appear to be injectable. Try to increase values for '--level'/'--risk' options if you wish to perform more tests. If you suspect that there is some kind of protection mechanism involved (e.g. WAF) maybe you could try to use option '--tamper' (e.g. '--tamper=space2comment'), skipping to the next target
+[22:52:08] [INFO] you can find results of scanning in multiple targets mode inside the CSV file '/home/awad/.local/share/sqlmap/output/results-03012026_1051pm.csv'
+[22:52:08] [INFO] starting crawler for target URL 'https://eero.com/?cat=FUZZ' (8/11)
+[22:52:08] [INFO] starting 2 threads
+[1/1] URL:
+GET https://eero.com/?cat=FUZZ
+do you want to test this URL? [Y/n/q]
+> Y
+[22:52:09] [INFO] testing URL 'https://eero.com/?cat=FUZZ'
+[22:52:10] [INFO] testing if the target URL content is stable
+[22:52:11] [ERROR] there was an error checking the stability of page because of lack of content. Please check the page request results (and probable errors) by using higher verbosity levels
+[22:52:11] [INFO] testing if GET parameter 'cat' is dynamic
+[22:52:12] [WARNING] GET parameter 'cat' does not appear to be dynamic
+[22:52:13] [WARNING] heuristic (basic) test shows that GET parameter 'cat' might not be injectable
+[22:52:14] [INFO] skipping GET parameter 'cat'
+[22:52:14] [ERROR] all tested parameters do not appear to be injectable. Try to increase values for '--level'/'--risk' options if you wish to perform more tests. If you suspect that there is some kind of protection mechanism involved (e.g. WAF) maybe you could try to use option '--tamper' (e.g. '--tamper=space2comment'), skipping to the next target
+[22:52:14] [INFO] you can find results of scanning in multiple targets mode inside the CSV file '/home/awad/.local/share/sqlmap/output/results-03012026_1051pm.csv'
+[22:52:14] [INFO] starting crawler for target URL 'https://eero.com/?file=FUZZ' (9/11)
+[22:52:14] [INFO] starting 2 threads
+[1/1] URL:
+GET https://eero.com/?file=FUZZ
+do you want to test this URL? [Y/n/q]
+> Y
+[22:52:16] [INFO] testing URL 'https://eero.com/?file=FUZZ'
+[22:52:17] [INFO] testing if the target URL content is stable
+[22:52:18] [ERROR] there was an error checking the stability of page because of lack of content. Please check the page request results (and probable errors) by using higher verbosity levels
+[22:52:18] [INFO] testing if GET parameter 'file' is dynamic
+[22:52:19] [WARNING] GET parameter 'file' does not appear to be dynamic
+[22:52:20] [WARNING] heuristic (basic) test shows that GET parameter 'file' might not be injectable
+[22:52:21] [INFO] skipping GET parameter 'file'
+[22:52:21] [ERROR] all tested parameters do not appear to be injectable. Try to increase values for '--level'/'--risk' options if you wish to perform more tests. If you suspect that there is some kind of protection mechanism involved (e.g. WAF) maybe you could try to use option '--tamper' (e.g. '--tamper=space2comment'), skipping to the next target
+[22:52:21] [INFO] you can find results of scanning in multiple targets mode inside the CSV file '/home/awad/.local/share/sqlmap/output/results-03012026_1051pm.csv'
+[22:52:21] [INFO] starting crawler for target URL 'https://eero.com/?cmd=FUZZ' (10/11)
+[22:52:21] [INFO] starting 2 threads
+[1/1] URL:
+GET https://eero.com/?cmd=FUZZ
+do you want to test this URL? [Y/n/q]
+> Y
+[22:52:22] [INFO] testing URL 'https://eero.com/?cmd=FUZZ'
+[22:52:23] [INFO] testing if the target URL content is stable
+[22:52:24] [ERROR] there was an error checking the stability of page because of lack of content. Please check the page request results (and probable errors) by using higher verbosity levels
+[22:52:24] [INFO] testing if GET parameter 'cmd' is dynamic
+[22:52:25] [WARNING] GET parameter 'cmd' does not appear to be dynamic
+[22:52:26] [WARNING] heuristic (basic) test shows that GET parameter 'cmd' might not be injectable
+[22:52:27] [INFO] skipping GET parameter 'cmd'
+[22:52:27] [ERROR] all tested parameters do not appear to be injectable. Try to increase values for '--level'/'--risk' options if you wish to perform more tests. If you suspect that there is some kind of protection mechanism involved (e.g. WAF) maybe you could try to use option '--tamper' (e.g. '--tamper=space2comment'), skipping to the next target
+[22:52:27] [INFO] you can find results of scanning in multiple targets mode inside the CSV file '/home/awad/.local/share/sqlmap/output/results-03012026_1051pm.csv'
+[22:52:27] [INFO] starting crawler for target URL 'https://eero.com/?action=FUZZ' (11/11)
+[22:52:27] [INFO] starting 2 threads
+[1/1] URL:
+GET https://eero.com/?action=FUZZ
+do you want to test this URL? [Y/n/q]
+> Y
+[22:52:28] [INFO] testing URL 'https://eero.com/?action=FUZZ'
+[22:52:29] [INFO] testing if the target URL content is stable
+[22:52:30] [ERROR] there was an error checking the stability of page because of lack of content. Please check the page request results (and probable errors) by using higher verbosity levels
+[22:52:30] [INFO] testing if GET parameter 'action' is dynamic
+[22:52:31] [WARNING] GET parameter 'action' does not appear to be dynamic
+[22:52:32] [WARNING] heuristic (basic) test shows that GET parameter 'action' might not be injectable
+[22:52:33] [INFO] skipping GET parameter 'action'
+[22:52:33] [ERROR] all tested parameters do not appear to be injectable. Try to increase values for '--level'/'--risk' options if you wish to perform more tests. If you suspect that there is some kind of protection mechanism involved (e.g. WAF) maybe you could try to use option '--tamper' (e.g. '--tamper=space2comment'), skipping to the next target
+[22:52:33] [INFO] you can find results of scanning in multiple targets mode inside the CSV file '/home/awad/.local/share/sqlmap/output/results-03012026_1051pm.csv'
+
+[*] ending @ 22:52:33 /2026-03-01/
+

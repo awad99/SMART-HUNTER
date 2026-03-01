@@ -1,1 +1,0 @@
-https://superhuman.com/auth/signup?screen_hint=FUZZ

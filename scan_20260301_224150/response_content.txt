@@ -1,0 +1,1484 @@
+<!DOCTYPE html> <html lang="en-US"> <head><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){let e=document.location.href;if(!e.match(/[?&]nonitro/)){if(e.indexOf("?")==-1){if(e.indexOf("#")==-1){document.location.href=e+"?nonitro=1"}else{document.location.href=e.replace("#","?nonitro=1#")}}else{if(e.indexOf("#")==-1){document.location.href=e+"&nonitro=1"}else{document.location.href=e.replace("#","&nonitro=1#")}}}}</script><link rel="preconnect" href="https://cdn-ilcmnif.nitrocdn.com" /><meta charset="UTF-8" /><meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>Home - Chia Network</title><meta property="og:locale" content="en_US" /><meta property="og:type" content="website" /><meta property="og:title" content="Home" /><meta property="og:description" content="News and Newsworthy Dive into expert insights, company updates, and industry trends on our blog. One Market, Any Asset Leverage ... Read more" /><meta property="og:url" content="https://www.chia.net/" /><meta property="og:site_name" content="Chia Network" /><meta property="article:modified_time" content="2025-09-19T20:27:05+00:00" /><meta property="og:image" content="https://patterns.generateblocks.com/wp-content/uploads/2023/09/gb-logo-black-2.svg" /><meta name="twitter:card" content="summary_large_image" /><meta name="msapplication-TileImage" content="https://www.chia.net/wp-content/uploads/2024/09/chia_icon_blue.png" /><meta name="generator" content="NitroPack" /><script>var NPSH,NitroScrollHelper;NPSH=NitroScrollHelper=function(){let e=null;const o=window.sessionStorage.getItem("nitroScrollPos");function t(){let e=JSON.parse(window.sessionStorage.getItem("nitroScrollPos"))||{};if(typeof e!=="object"){e={}}e[document.URL]=window.scrollY;window.sessionStorage.setItem("nitroScrollPos",JSON.stringify(e))}window.addEventListener("scroll",function(){if(e!==null){clearTimeout(e)}e=setTimeout(t,200)},{passive:true});let r={};r.getScrollPos=()=>{if(!o){return 0}const e=JSON.parse(o);return e[document.URL]||0};r.isScrolled=()=>{return r.getScrollPos()>document.documentElement.clientHeight*.5};return r}();</script><script>(function(){var a=false;var e=document.documentElement.classList;var i=navigator.userAgent.toLowerCase();var n=["android","iphone","ipad"];var r=n.length;var o;var d=null;for(var t=0;t<r;t++){o=n[t];if(i.indexOf(o)>-1)d=o;if(e.contains(o)){a=true;e.remove(o)}}if(a&&d){e.add(d);if(d=="iphone"||d=="ipad"){e.add("ios")}}})();</script>   <style>
+img:is([sizes="auto" i], [sizes^="auto," i]) {
+	contain-intrinsic-size: 3000px 1500px;
+}
+</style>    <link rel="canonical" href="https://www.chia.net/" />          <script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.chia.net/","url":"https://www.chia.net/","name":"Home - Chia Network","isPartOf":{"@id":"https://www.chia.net/#website"},"about":{"@id":"https://www.chia.net/#organization"},"primaryImageOfPage":{"@id":"https://www.chia.net/#primaryimage"},"image":{"@id":"https://www.chia.net/#primaryimage"},"thumbnailUrl":"https://patterns.generateblocks.com/wp-content/uploads/2023/09/gb-logo-black-2.svg","datePublished":"2024-08-08T20:58:17+00:00","dateModified":"2025-09-19T20:27:05+00:00","breadcrumb":{"@id":"https://www.chia.net/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://www.chia.net/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"https://www.chia.net/#primaryimage","url":"https://patterns.generateblocks.com/wp-content/uploads/2023/09/gb-logo-black-2.svg","contentUrl":"https://patterns.generateblocks.com/wp-content/uploads/2023/09/gb-logo-black-2.svg"},{"@type":"BreadcrumbList","@id":"https://www.chia.net/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home"}]},{"@type":"WebSite","@id":"https://www.chia.net/#website","url":"https://www.chia.net/","name":"Chia Network","description":"Tokenize any asset","publisher":{"@id":"https://www.chia.net/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.chia.net/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"},{"@type":"Organization","@id":"https://www.chia.net/#organization","name":"Chia Network","url":"https://www.chia.net/","logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://www.chia.net/#/schema/logo/image/","url":"https://www.chia.net/wp-content/uploads/2024/09/chia_logo_new_blue.png","contentUrl":"https://www.chia.net/wp-content/uploads/2024/09/chia_logo_new_blue.png","width":745,"height":285,"caption":"Chia Network"},"image":{"@id":"https://www.chia.net/#/schema/logo/image/"}}]}</script>  <link rel="alternate" type="application/rss+xml" title="Chia Network &raquo; Feed" href="https://www.chia.net/feed/" /> <script>
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16.0.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16.0.1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.chia.net\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.8.3"}};
+/*! This file is auto-generated */
+!function(s,n){var o,i,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),a=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===a[t]})}function u(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);for(var n=e.getImageData(16,16,1,1),a=0;a<n.data.length;a++)if(0!==n.data[a])return!1;return!0}function f(e,t,n,a){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!a(e,"\ud83e\udedf")}return!1}function g(e,t,n,a){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):s.createElement("canvas"),o=r.getContext("2d",{willReadFrequently:!0}),i=(o.textBaseline="top",o.font="600 32px Arial",{});return e.forEach(function(e){i[e]=t(o,e,n,a)}),i}function t(e){var t=s.createElement("script");t.src=e,t.defer=!0,s.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",i=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){s.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+g.toString()+"("+[JSON.stringify(i),f.toString(),p.toString(),u.toString()].join(",")+"));",a=new Blob([e],{type:"text/javascript"}),r=new Worker(URL.createObjectURL(a),{name:"wpTestEmojiSupports"});return void(r.onmessage=function(e){c(n=e.data),r.terminate(),t(n)})}catch(e){}c(n=g(i,f,p,u))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+</script> <link rel='stylesheet' id='generatepress-fonts-css' media='all' href="https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/static/optimized/rev-791a503/www.chia.net/wp-content/uploads/generatepress/fonts/434b43a975c1034b25ffc6b4395ab9c2.fonts.css" /> <style id='wp-emoji-styles-inline-css'>
+img.wp-smiley, img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style> <link rel='stylesheet' id='wp-block-library-css' media='all' href="https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/static/optimized/rev-791a503/www.chia.net/wp-includes/css/dist/block-library/32d447e14b3b16bd53397eae0d748d66.style.min.css" /> <style id='classic-theme-styles-inline-css'>
+/*! This file is auto-generated */
+.wp-block-button__link {
+	color: #fff;
+	background-color: #32373c;
+	border-radius: 9999px;
+	box-shadow: none;
+	text-decoration: none;
+	padding: calc(.667em + 2px) calc(1.333em + 2px);
+	font-size: 1.125em;
+}
+
+.wp-block-file__button {
+	background: #32373c;
+	color: #fff;
+	text-decoration: none;
+}
+</style> <style id='global-styles-inline-css'>
+:root {
+	--wp--preset--aspect-ratio--square: 1;
+	--wp--preset--aspect-ratio--4-3: 4/3;
+	--wp--preset--aspect-ratio--3-4: 3/4;
+	--wp--preset--aspect-ratio--3-2: 3/2;
+	--wp--preset--aspect-ratio--2-3: 2/3;
+	--wp--preset--aspect-ratio--16-9: 16/9;
+	--wp--preset--aspect-ratio--9-16: 9/16;
+	--wp--preset--color--black: #000;
+	--wp--preset--color--cyan-bluish-gray: #abb8c3;
+	--wp--preset--color--white: #fff;
+	--wp--preset--color--pale-pink: #f78da7;
+	--wp--preset--color--vivid-red: #cf2e2e;
+	--wp--preset--color--luminous-vivid-orange: #ff6900;
+	--wp--preset--color--luminous-vivid-amber: #fcb900;
+	--wp--preset--color--light-green-cyan: #7bdcb5;
+	--wp--preset--color--vivid-green-cyan: #00d084;
+	--wp--preset--color--pale-cyan-blue: #8ed1fc;
+	--wp--preset--color--vivid-cyan-blue: #0693e3;
+	--wp--preset--color--vivid-purple: #9b51e0;
+	--wp--preset--color--contrast-2: var(--contrast-2);
+	--wp--preset--color--contrast-3: var(--contrast-3);
+	--wp--preset--color--base: var(--base);
+	--wp--preset--color--base-2: var(--base-2);
+	--wp--preset--color--base-3: var(--base-3);
+	--wp--preset--color--accent: var(--accent);
+	--wp--preset--color--shock: var(--shock);
+	--wp--preset--color--mystic-blue: var(--mystic-blue);
+	--wp--preset--color--periwinkle-pursuit: var(--periwinkle-pursuit);
+	--wp--preset--color--stark-blue: var(--stark-blue);
+	--wp--preset--color--contrast: var(--contrast);
+	--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg, rgba(6, 147, 227, 1) 0%, #9b51e0 100%);
+	--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg, #7adcb4 0%, #00d082 100%);
+	--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg, rgba(252, 185, 0, 1) 0%, rgba(255, 105, 0, 1) 100%);
+	--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg, rgba(255, 105, 0, 1) 0%, #cf2e2e 100%);
+	--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg, #eee 0%, #a9b8c3 100%);
+	--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg, #4aeadc 0%, #9778d1 20%, #cf2aba 40%, #ee2c82 60%, #fb6962 80%, #fef84c 100%);
+	--wp--preset--gradient--blush-light-purple: linear-gradient(135deg, #ffceec 0%, #9896f0 100%);
+	--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg, #fecda5 0%, #fe2d2d 50%, #6b003e 100%);
+	--wp--preset--gradient--luminous-dusk: linear-gradient(135deg, #ffcb70 0%, #c751c0 50%, #4158d0 100%);
+	--wp--preset--gradient--pale-ocean: linear-gradient(135deg, #fff5cb 0%, #b6e3d4 50%, #33a7b5 100%);
+	--wp--preset--gradient--electric-grass: linear-gradient(135deg, #caf880 0%, #71ce7e 100%);
+	--wp--preset--gradient--midnight: linear-gradient(135deg, #020381 0%, #2874fc 100%);
+	--wp--preset--font-size--small: 13px;
+	--wp--preset--font-size--medium: 20px;
+	--wp--preset--font-size--large: 36px;
+	--wp--preset--font-size--x-large: 42px;
+	--wp--preset--spacing--20: .44rem;
+	--wp--preset--spacing--30: .67rem;
+	--wp--preset--spacing--40: 1rem;
+	--wp--preset--spacing--50: 1.5rem;
+	--wp--preset--spacing--60: 2.25rem;
+	--wp--preset--spacing--70: 3.38rem;
+	--wp--preset--spacing--80: 5.06rem;
+	--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, .2);
+	--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, .4);
+	--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, .2);
+	--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);
+	--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);
+}
+
+:where(.is-layout-flex) {
+	gap: .5em;
+}
+
+:where(.is-layout-grid) {
+	gap: .5em;
+}
+
+body .is-layout-flex {
+	display: flex;
+}
+
+.is-layout-flex {
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+.is-layout-flex > :is(*, div) {
+	margin: 0;
+}
+
+body .is-layout-grid {
+	display: grid;
+}
+
+.is-layout-grid > :is(*, div) {
+	margin: 0;
+}
+
+:where(.wp-block-columns.is-layout-flex) {
+	gap: 2em;
+}
+
+:where(.wp-block-columns.is-layout-grid) {
+	gap: 2em;
+}
+
+:where(.wp-block-post-template.is-layout-flex) {
+	gap: 1.25em;
+}
+
+:where(.wp-block-post-template.is-layout-grid) {
+	gap: 1.25em;
+}
+
+.has-black-color {
+	color: var(--wp--preset--color--black) !important;
+}
+
+.has-cyan-bluish-gray-color {
+	color: var(--wp--preset--color--cyan-bluish-gray) !important;
+}
+
+.has-white-color {
+	color: var(--wp--preset--color--white) !important;
+}
+
+.has-pale-pink-color {
+	color: var(--wp--preset--color--pale-pink) !important;
+}
+
+.has-vivid-red-color {
+	color: var(--wp--preset--color--vivid-red) !important;
+}
+
+.has-luminous-vivid-orange-color {
+	color: var(--wp--preset--color--luminous-vivid-orange) !important;
+}
+
+.has-luminous-vivid-amber-color {
+	color: var(--wp--preset--color--luminous-vivid-amber) !important;
+}
+
+.has-light-green-cyan-color {
+	color: var(--wp--preset--color--light-green-cyan) !important;
+}
+
+.has-vivid-green-cyan-color {
+	color: var(--wp--preset--color--vivid-green-cyan) !important;
+}
+
+.has-pale-cyan-blue-color {
+	color: var(--wp--preset--color--pale-cyan-blue) !important;
+}
+
+.has-vivid-cyan-blue-color {
+	color: var(--wp--preset--color--vivid-cyan-blue) !important;
+}
+
+.has-vivid-purple-color {
+	color: var(--wp--preset--color--vivid-purple) !important;
+}
+
+.has-black-background-color {
+	background-color: var(--wp--preset--color--black) !important;
+}
+
+.has-cyan-bluish-gray-background-color {
+	background-color: var(--wp--preset--color--cyan-bluish-gray) !important;
+}
+
+.has-white-background-color {
+	background-color: var(--wp--preset--color--white) !important;
+}
+
+.has-pale-pink-background-color {
+	background-color: var(--wp--preset--color--pale-pink) !important;
+}
+
+.has-vivid-red-background-color {
+	background-color: var(--wp--preset--color--vivid-red) !important;
+}
+
+.has-luminous-vivid-orange-background-color {
+	background-color: var(--wp--preset--color--luminous-vivid-orange) !important;
+}
+
+.has-luminous-vivid-amber-background-color {
+	background-color: var(--wp--preset--color--luminous-vivid-amber) !important;
+}
+
+.has-light-green-cyan-background-color {
+	background-color: var(--wp--preset--color--light-green-cyan) !important;
+}
+
+.has-vivid-green-cyan-background-color {
+	background-color: var(--wp--preset--color--vivid-green-cyan) !important;
+}
+
+.has-pale-cyan-blue-background-color {
+	background-color: var(--wp--preset--color--pale-cyan-blue) !important;
+}
+
+.has-vivid-cyan-blue-background-color {
+	background-color: var(--wp--preset--color--vivid-cyan-blue) !important;
+}
+
+.has-vivid-purple-background-color {
+	background-color: var(--wp--preset--color--vivid-purple) !important;
+}
+
+.has-black-border-color {
+	border-color: var(--wp--preset--color--black) !important;
+}
+
+.has-cyan-bluish-gray-border-color {
+	border-color: var(--wp--preset--color--cyan-bluish-gray) !important;
+}
+
+.has-white-border-color {
+	border-color: var(--wp--preset--color--white) !important;
+}
+
+.has-pale-pink-border-color {
+	border-color: var(--wp--preset--color--pale-pink) !important;
+}
+
+.has-vivid-red-border-color {
+	border-color: var(--wp--preset--color--vivid-red) !important;
+}
+
+.has-luminous-vivid-orange-border-color {
+	border-color: var(--wp--preset--color--luminous-vivid-orange) !important;
+}
+
+.has-luminous-vivid-amber-border-color {
+	border-color: var(--wp--preset--color--luminous-vivid-amber) !important;
+}
+
+.has-light-green-cyan-border-color {
+	border-color: var(--wp--preset--color--light-green-cyan) !important;
+}
+
+.has-vivid-green-cyan-border-color {
+	border-color: var(--wp--preset--color--vivid-green-cyan) !important;
+}
+
+.has-pale-cyan-blue-border-color {
+	border-color: var(--wp--preset--color--pale-cyan-blue) !important;
+}
+
+.has-vivid-cyan-blue-border-color {
+	border-color: var(--wp--preset--color--vivid-cyan-blue) !important;
+}
+
+.has-vivid-purple-border-color {
+	border-color: var(--wp--preset--color--vivid-purple) !important;
+}
+
+.has-vivid-cyan-blue-to-vivid-purple-gradient-background {
+	background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;
+}
+
+.has-light-green-cyan-to-vivid-green-cyan-gradient-background {
+	background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;
+}
+
+.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background {
+	background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;
+}
+
+.has-luminous-vivid-orange-to-vivid-red-gradient-background {
+	background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;
+}
+
+.has-very-light-gray-to-cyan-bluish-gray-gradient-background {
+	background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;
+}
+
+.has-cool-to-warm-spectrum-gradient-background {
+	background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;
+}
+
+.has-blush-light-purple-gradient-background {
+	background: var(--wp--preset--gradient--blush-light-purple) !important;
+}
+
+.has-blush-bordeaux-gradient-background {
+	background: var(--wp--preset--gradient--blush-bordeaux) !important;
+}
+
+.has-luminous-dusk-gradient-background {
+	background: var(--wp--preset--gradient--luminous-dusk) !important;
+}
+
+.has-pale-ocean-gradient-background {
+	background: var(--wp--preset--gradient--pale-ocean) !important;
+}
+
+.has-electric-grass-gradient-background {
+	background: var(--wp--preset--gradient--electric-grass) !important;
+}
+
+.has-midnight-gradient-background {
+	background: var(--wp--preset--gradient--midnight) !important;
+}
+
+.has-small-font-size {
+	font-size: var(--wp--preset--font-size--small) !important;
+}
+
+.has-medium-font-size {
+	font-size: var(--wp--preset--font-size--medium) !important;
+}
+
+.has-large-font-size {
+	font-size: var(--wp--preset--font-size--large) !important;
+}
+
+.has-x-large-font-size {
+	font-size: var(--wp--preset--font-size--x-large) !important;
+}
+
+:where(.wp-block-post-template.is-layout-flex) {
+	gap: 1.25em;
+}
+
+:where(.wp-block-post-template.is-layout-grid) {
+	gap: 1.25em;
+}
+
+:where(.wp-block-columns.is-layout-flex) {
+	gap: 2em;
+}
+
+:where(.wp-block-columns.is-layout-grid) {
+	gap: 2em;
+}
+
+:root :where(.wp-block-pullquote) {
+	font-size: 1.5em;
+	line-height: 1.6;
+}
+</style> <link rel='stylesheet' id='ctf_styles-css' media='all' href="https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/static/optimized/rev-791a503/www.chia.net/wp-content/plugins/custom-twitter-feeds-pro/css/91ee3c3e3a60d979809695f9b3bdbf13.ctf-styles.min.css" />   <link rel='stylesheet' id='rangeable-css-css' media='all' href="https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/static/optimized/rev-791a503/www.chia.net/wp-content/themes/generatepress_child/css/32d447e14b3b16bd53397eae0d748d66.rangeable.css" /> <link rel='stylesheet' id='calculator-custom-css-css' media='all' href="https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/static/optimized/rev-791a503/www.chia.net/wp-content/themes/generatepress_child/css/32d447e14b3b16bd53397eae0d748d66.calculator.css" /> <link rel='stylesheet' id='generate-widget-areas-css' media='all' href="https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/static/optimized/rev-791a503/www.chia.net/wp-content/themes/generatepress/assets/css/components/af6cb5bfb91ce2d78377e57c8d18ffc0.widget-areas.min.css" /> <link rel='stylesheet' id='generate-style-css' media='all' href="https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/static/optimized/rev-791a503/www.chia.net/wp-content/themes/generatepress/assets/css/af6cb5bfb91ce2d78377e57c8d18ffc0.main.min.css" /> <style id='generate-style-inline-css'>
+body {
+	background-color: var(--base-3);
+	color: var(--contrast);
+}
+
+a {
+	color: var(--stark-blue);
+}
+
+a:hover, a:focus, a:active {
+	color: var(--periwinkle-pursuit);
+}
+
+.grid-container {
+	max-width: 1350px;
+}
+
+.wp-block-group__inner-container {
+	max-width: 1350px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.site-header .header-image {
+	width: 100px;
+}
+
+:root {
+	--contrast-2: #575760;
+	--contrast-3: #b2b2be;
+	--base: #f0f0f0;
+	--base-2: #f7f8f9;
+	--base-3: #fff;
+	--accent: #1e73be;
+	--shock: #e5fe75;
+	--mystic-blue: #d2e3fe;
+	--periwinkle-pursuit: #a8bef1;
+	--stark-blue: #42506c;
+	--contrast: #2c323c;
+}
+
+:root .has-contrast-2-color {
+	color: var(--contrast-2);
+}
+
+:root .has-contrast-2-background-color {
+	background-color: var(--contrast-2);
+}
+
+:root .has-contrast-3-color {
+	color: var(--contrast-3);
+}
+
+:root .has-contrast-3-background-color {
+	background-color: var(--contrast-3);
+}
+
+:root .has-base-color {
+	color: var(--base);
+}
+
+:root .has-base-background-color {
+	background-color: var(--base);
+}
+
+:root .has-base-2-color {
+	color: var(--base-2);
+}
+
+:root .has-base-2-background-color {
+	background-color: var(--base-2);
+}
+
+:root .has-base-3-color {
+	color: var(--base-3);
+}
+
+:root .has-base-3-background-color {
+	background-color: var(--base-3);
+}
+
+:root .has-accent-color {
+	color: var(--accent);
+}
+
+:root .has-accent-background-color {
+	background-color: var(--accent);
+}
+
+:root .has-shock-color {
+	color: var(--shock);
+}
+
+:root .has-shock-background-color {
+	background-color: var(--shock);
+}
+
+:root .has-mystic-blue-color {
+	color: var(--mystic-blue);
+}
+
+:root .has-mystic-blue-background-color {
+	background-color: var(--mystic-blue);
+}
+
+:root .has-periwinkle-pursuit-color {
+	color: var(--periwinkle-pursuit);
+}
+
+:root .has-periwinkle-pursuit-background-color {
+	background-color: var(--periwinkle-pursuit);
+}
+
+:root .has-stark-blue-color {
+	color: var(--stark-blue);
+}
+
+:root .has-stark-blue-background-color {
+	background-color: var(--stark-blue);
+}
+
+:root .has-contrast-color {
+	color: var(--contrast);
+}
+
+:root .has-contrast-background-color {
+	background-color: var(--contrast);
+}
+
+body, button, input, select, textarea {
+	font-family: var(--gp-font--inter);
+}
+
+h1 {
+	font-family: var(--gp-font--poppins);
+	font-weight: 700;
+}
+
+h2 {
+	font-family: var(--gp-font--poppins);
+	font-weight: 600;
+}
+
+button:not(.menu-toggle), html input[type="button"], input[type="reset"], input[type="submit"], .button, .wp-block-button .wp-block-button__link {
+	font-family: var(--gp-font--poppins);
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: var(--gp-font--poppins);
+}
+
+.site-description {
+	font-family: var(--gp-font--inter);
+}
+
+.main-title {
+	font-family: var(--gp-font--poppins);
+}
+
+.main-navigation a, .main-navigation .menu-toggle, .main-navigation .menu-bar-items {
+	font-family: var(--gp-font--poppins);
+	font-weight: 600;
+	font-size: 25px;
+}
+
+h3 {
+	font-family: var(--gp-font--poppins);
+	font-weight: 500;
+}
+
+.top-bar {
+	background-color: #636363;
+	color: #fff;
+}
+
+.top-bar a {
+	color: #fff;
+}
+
+.top-bar a:hover {
+	color: #303030;
+}
+
+.site-header {
+	background-color: var(--base-3);
+}
+
+.main-title a, .main-title a:hover {
+	color: var(--stark-blue);
+}
+
+.site-description {
+	color: var(--contrast-2);
+}
+
+.main-navigation, .main-navigation ul ul {
+	background-color: rgba(255, 255, 255, 0);
+}
+
+.main-navigation .main-nav ul li a, .main-navigation .menu-toggle, .main-navigation .menu-bar-items {
+	color: var(--contrast);
+}
+
+.main-navigation .main-nav ul li:not([class*="current-menu-"]):hover > a, .main-navigation .main-nav ul li:not([class*="current-menu-"]):focus > a, .main-navigation .main-nav ul li.sfHover:not([class*="current-menu-"]) > a, .main-navigation .menu-bar-item:hover > a, .main-navigation .menu-bar-item.sfHover > a {
+	color: var(--periwinkle-pursuit);
+}
+
+button.menu-toggle:hover, button.menu-toggle:focus {
+	color: var(--contrast);
+}
+
+.main-navigation .main-nav ul li[class*="current-menu-"] > a {
+	color: var(--accent);
+}
+
+.navigation-search input[type="search"], .navigation-search input[type="search"]:active, .navigation-search input[type="search"]:focus, .main-navigation .main-nav ul li.search-item.active > a, .main-navigation .menu-bar-items .search-item.active > a {
+	color: var(--periwinkle-pursuit);
+}
+
+.main-navigation ul ul {
+	background-color: var(--base);
+}
+
+.separate-containers .inside-article, .separate-containers .comments-area, .separate-containers .page-header, .one-container .container, .separate-containers .paging-navigation, .inside-page-header {
+	background-color: var(--base-3);
+}
+
+.entry-title a {
+	color: var(--contrast);
+}
+
+.entry-title a:hover {
+	color: var(--contrast-2);
+}
+
+.entry-meta {
+	color: var(--contrast-2);
+}
+
+.sidebar .widget {
+	background-color: var(--base-3);
+}
+
+.footer-widgets {
+	background-color: var(--base-3);
+}
+
+.site-info {
+	background-color: var(--base-3);
+}
+
+input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], input[type="tel"], input[type="number"], textarea, select {
+	color: var(--contrast);
+	background-color: var(--base-2);
+	border-color: var(--base);
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="number"]:focus, textarea:focus, select:focus {
+	color: var(--contrast);
+	background-color: var(--base-2);
+	border-color: var(--contrast-3);
+}
+
+button, html input[type="button"], input[type="reset"], input[type="submit"], a.button, a.wp-block-button__link:not(.has-background) {
+	color: #fff;
+	background-color: #424f6d;
+}
+
+button:hover, html input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover, a.button:hover, button:focus, html input[type="button"]:focus, input[type="reset"]:focus, input[type="submit"]:focus, a.button:focus, a.wp-block-button__link:not(.has-background):active, a.wp-block-button__link:not(.has-background):focus, a.wp-block-button__link:not(.has-background):hover {
+	color: #fff;
+	background-color: #586582;
+}
+
+a.generate-back-to-top {
+	background-color: rgba(0, 0, 0, .4);
+	color: #fff;
+}
+
+a.generate-back-to-top:hover, a.generate-back-to-top:focus {
+	background-color: rgba(0, 0, 0, .6);
+	color: #fff;
+}
+
+:root {
+	--gp-search-modal-bg-color: var(--base-3);
+	--gp-search-modal-text-color: var(--contrast);
+	--gp-search-modal-overlay-bg-color: rgba(0, 0, 0, .2);
+}
+
+@media (max-width: 768px) {
+	.main-navigation .menu-bar-item:hover > a, .main-navigation .menu-bar-item.sfHover > a {
+		background: none;
+		color: var(--contrast);
+	}
+}
+
+.inside-header {
+	padding: 25px 40px 25px 40px;
+}
+
+.nav-below-header .main-navigation .inside-navigation.grid-container, .nav-above-header .main-navigation .inside-navigation.grid-container {
+	padding: 0px 20px 0px 20px;
+}
+
+.site-main .wp-block-group__inner-container {
+	padding: 40px;
+}
+
+.separate-containers .paging-navigation {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.entry-content .alignwide, body:not(.no-sidebar) .entry-content .alignfull {
+	margin-left: -40px;
+	width: calc(100% + 80px);
+	max-width: calc(100% + 80px);
+}
+
+.rtl .menu-item-has-children .dropdown-menu-toggle {
+	padding-left: 20px;
+}
+
+.rtl .main-navigation .main-nav ul li.menu-item-has-children > a {
+	padding-right: 20px;
+}
+
+@media (max-width:768px) {
+	.separate-containers .inside-article, .separate-containers .comments-area, .separate-containers .page-header, .separate-containers .paging-navigation, .one-container .site-content, .inside-page-header {
+		padding: 30px;
+	}
+	
+	.site-main .wp-block-group__inner-container {
+		padding: 30px;
+	}
+	
+	.inside-top-bar {
+		padding-right: 30px;
+		padding-left: 30px;
+	}
+	
+	.inside-header {
+		padding-right: 30px;
+		padding-left: 30px;
+	}
+	
+	.widget-area .widget {
+		padding-top: 30px;
+		padding-right: 30px;
+		padding-bottom: 30px;
+		padding-left: 30px;
+	}
+	
+	.footer-widgets-container {
+		padding-top: 30px;
+		padding-right: 30px;
+		padding-bottom: 30px;
+		padding-left: 30px;
+	}
+	
+	.inside-site-info {
+		padding-right: 30px;
+		padding-left: 30px;
+	}
+	
+	.entry-content .alignwide, body:not(.no-sidebar) .entry-content .alignfull {
+		margin-left: -30px;
+		width: calc(100% + 60px);
+		max-width: calc(100% + 60px);
+	}
+	
+	.one-container .site-main .paging-navigation {
+		margin-bottom: 20px;
+	}
+}
+
+/* End cached CSS */
+.is-right-sidebar {
+	width: 30%;
+}
+
+.is-left-sidebar {
+	width: 30%;
+}
+
+.site-content .content-area {
+	width: 100%;
+}
+
+@media (max-width: 768px) {
+	.main-navigation .menu-toggle, .sidebar-nav-mobile:not(#sticky-placeholder) {
+		display: block;
+	}
+	
+	.main-navigation ul, .gen-sidebar-nav, .main-navigation:not(.slideout-navigation):not(.toggled) .main-nav > ul, .has-inline-mobile-toggle #site-navigation .inside-navigation > *:not(.navigation-search):not(.main-nav) {
+		display: none;
+	}
+	
+	.nav-align-right .inside-navigation, .nav-align-center .inside-navigation {
+		justify-content: space-between;
+	}
+	
+	.has-inline-mobile-toggle .mobile-menu-control-wrapper {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	
+	.has-inline-mobile-toggle .inside-header {
+		flex-direction: row;
+		text-align: left;
+		flex-wrap: wrap;
+	}
+	
+	.has-inline-mobile-toggle .header-widget, .has-inline-mobile-toggle #site-navigation {
+		flex-basis: 100%;
+	}
+	
+	.nav-float-left .has-inline-mobile-toggle #site-navigation {
+		order: 10;
+	}
+}
+
+.footer-widgets {
+	background-image: url("https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/images/optimized/rev-194430a/chia.net/wp-content/uploads/2024/09/gradient-hero.png");
+}
+
+.footer-widgets.nitro-lazy {
+	background-image: none !important;
+}
+
+.dynamic-author-image-rounded {
+	border-radius: 100%;
+}
+
+.dynamic-featured-image, .dynamic-author-image {
+	vertical-align: middle;
+}
+
+.one-container.blog .dynamic-content-template:not(:last-child), .one-container.archive .dynamic-content-template:not(:last-child) {
+	padding-bottom: 0px;
+}
+
+.dynamic-entry-excerpt > p:last-child {
+	margin-bottom: 0px;
+}
+
+.page-hero .inside-page-hero.grid-container {
+	max-width: calc(1350px - 0px - 0px);
+}
+
+.inside-page-hero > *:last-child {
+	margin-bottom: 0px;
+}
+
+.header-wrap {
+	position: absolute;
+	left: 0px;
+	right: 0px;
+	z-index: 10;
+}
+
+.header-wrap .site-header {
+	background: transparent;
+}
+</style>  <link rel='stylesheet' id='generateblocks-global-css' media='all' href="https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/static/optimized/rev-791a503/www.chia.net/wp-content/uploads/generateblocks/c9b76a901c55c82bbb9a6462e223a724.style-global.css" /> <link rel='stylesheet' id='generateblocks-css' media='all' href="https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/static/optimized/rev-791a503/www.chia.net/wp-content/uploads/generateblocks/b4230474fc0bab197dc00e2854f23475.style-40.css" /> <link rel='stylesheet' id='generate-offside-css' media='all' href="https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/static/optimized/rev-791a503/www.chia.net/wp-content/plugins/gp-premium/menu-plus/functions/css/91ee3c3e3a60d979809695f9b3bdbf13.offside.min.css" /> <style id='generate-offside-inline-css'>
+:root {
+	--gp-slideout-width: 265px;
+}
+
+.slideout-navigation.main-navigation {
+	background-color: var(--base-3);
+}
+
+.slideout-navigation.main-navigation .main-nav ul li a {
+	color: var(--stark-blue);
+}
+
+.slideout-navigation.main-navigation ul ul {
+	background-color: var(--base-2);
+}
+
+.slideout-navigation.main-navigation .main-nav ul ul li a {
+	color: var(--stark-blue);
+}
+
+.slideout-navigation, .slideout-navigation a {
+	color: var(--stark-blue);
+}
+
+.slideout-navigation button.slideout-exit {
+	color: var(--stark-blue);
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.slide-opened nav.toggled .menu-toggle:before {
+	display: none;
+}
+
+@media (max-width: 768px) {
+	.menu-bar-item.slideout-toggle {
+		display: none;
+	}
+}
+
+.slideout-navigation.main-navigation .main-nav ul li a {
+	font-style: normal;
+	font-size: 20px;
+}
+
+.slideout-navigation.main-navigation .main-nav ul ul li a {
+	font-size: 15px;
+}
+</style> <link rel='stylesheet' id='generate-navigation-branding-css' media='all' href="https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/static/optimized/rev-791a503/www.chia.net/wp-content/plugins/gp-premium/menu-plus/functions/css/91ee3c3e3a60d979809695f9b3bdbf13.navigation-branding-flex.min.css" /> <style id='generate-navigation-branding-inline-css'>
+@media (max-width: 768px) {
+	.site-header, #site-navigation, #sticky-navigation {
+		display: none !important;
+		opacity: 0;
+	}
+	
+	#mobile-header {
+		display: block !important;
+		width: 100% !important;
+	}
+	
+	#mobile-header .main-nav > ul {
+		display: none;
+	}
+	
+	#mobile-header.toggled .main-nav > ul, #mobile-header .menu-toggle, #mobile-header .mobile-bar-items {
+		display: block;
+	}
+	
+	#mobile-header .main-nav {
+		-ms-flex: 0 0 100%;
+		flex: 0 0 100%;
+		-webkit-box-ordinal-group: 5;
+		-ms-flex-order: 4;
+		order: 4;
+	}
+}
+
+.main-navigation.has-branding .inside-navigation.grid-container, .main-navigation.has-branding.grid-container .inside-navigation:not(.grid-container) {
+	padding: 0px 40px 0px 40px;
+}
+
+.main-navigation.has-branding:not(.grid-container) .inside-navigation:not(.grid-container) .navigation-branding {
+	margin-left: 10px;
+}
+
+.navigation-branding img, .site-logo.mobile-header-logo img {
+	height: 60px;
+	width: auto;
+}
+
+.navigation-branding .main-title {
+	line-height: 60px;
+}
+
+@media (max-width: 768px) {
+	.main-navigation.has-branding.nav-align-center .menu-bar-items, .main-navigation.has-sticky-branding.navigation-stick.nav-align-center .menu-bar-items {
+		margin-left: auto;
+	}
+	
+	.navigation-branding {
+		margin-right: auto;
+		margin-left: 10px;
+	}
+	
+	.navigation-branding .main-title, .mobile-header-navigation .site-logo {
+		margin-left: 10px;
+	}
+	
+	.main-navigation.has-branding .inside-navigation.grid-container {
+		padding: 0px;
+	}
+}
+</style> <script id="jquery-core-js" src="https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/static/optimized/rev-791a503/www.chia.net/wp-includes/js/jquery/render-blocking-f43b551b749a36845288913120943cc6.jquery.min.js"></script> <script id="jquery-migrate-js" src="https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/static/optimized/rev-791a503/www.chia.net/wp-includes/js/jquery/render-blocking-558973c0fd98109493258c8470e94016.jquery-migrate.min.js"></script> <link rel="https://api.w.org/" href="https://www.chia.net/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://www.chia.net/wp-json/wp/v2/pages/40" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.chia.net/xmlrpc.php?rsd" /> <link rel='shortlink' href='https://www.chia.net/' /> <link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://www.chia.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.chia.net%2F" /> <link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://www.chia.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.chia.net%2F&#038;format=xml" /> <link rel="icon" sizes="32x32" href="https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/images/optimized/rev-194430a/www.chia.net/wp-content/uploads/2024/09/chia_icon_blue.png" /> <link rel="icon" sizes="192x192" href="https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/images/optimized/rev-194430a/www.chia.net/wp-content/uploads/2024/09/chia_icon_blue.png" /> <link rel="apple-touch-icon" href="https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/images/optimized/rev-194430a/www.chia.net/wp-content/uploads/2024/09/chia_icon_blue.png" />  <style id="wp-custom-css">/* -------------- */
+
+/* Main Nav */
+@media screen and (max-width: 768px) {
+	.nav-button-chia {
+		display: none;
+	}
+}
+
+#main {
+	margin-bottom: 0;
+	margin-top: 0;
+}
+
+/* Hiding nav items on desktop */
+@media only screen and (min-width: 1024px) {
+	#menu-item-17013, #menu-item-858, #menu-item-752, #menu-item-753 {
+		display: none;
+	}
+}
+
+/* Nav Buttons */
+.custom-nav-button {
+	background-color: var(--stark-blue);
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	color: #fff;
+	display: inline-flex;
+	font-size: 17px;
+	font-weight: 600;
+	margin-right: 20px;
+	padding: 15px 20px;
+	text-align: center;
+	transition: all .2s ease 0s;
+}
+
+/* Home Hero CSS */
+.home-header-section {
+	display: flex;
+	align-items: center;
+	/* Center contents vertically in both columns */
+	padding-left: 2rem;
+}
+
+/* Set the widths for left and right columns */
+.home-header-section > div:first-child {
+	width: 66.66667%;
+	/* Left column - 2/3 width */
+	display: flex;
+	/* Enable flex for centering */
+	flex-direction: column;
+	/* Arrange children vertically */
+	justify-content: center;
+}
+
+.home-header-section > div:last-child {
+	width: 33.33333%;
+	/* Right column - 1/3 width */
+	display: flex;
+	/* Enable flex for centering */
+	flex-direction: column;
+	/* Arrange children vertically */
+	justify-content: center;
+}
+
+/* Home Hero Featured */
+.hero-feature-item:hover {
+	box-shadow: 0px 5px 7px 0px rgba(0, 0, 0, 10%);
+}
+
+/* ------------------------- */
+
+/* ------------------------- */
+
+/* ------------------------- */
+
+/* Make left column full width and hide right column on smaller screens */
+@media (max-width: 768px) {
+	.home-header-section > div:first-child {
+		width: 100%;
+	}
+	
+	.home-header-section > div:last-child {
+		display: none;
+	}
+}
+
+.main-hero-text {
+	padding-right: 5rem;
+	padding-bottom: 2rem;
+	color: #42506c;
+}
+
+/* Top Nav Buttons */
+.gb-button-ae4e993c {
+	font-size: 15px;
+}
+
+@media (max-width: 1200px) {
+	.menu-bar-items .hide-on-tablet {
+		display: none !important;
+	}
+}
+
+/* ------------------------- */
+
+/* ------------------------- */
+
+/* ------------------------- */
+
+/* Team Page */
+.team-profile:hover {
+	box-shadow: 0px 5px 7px 0px rgba(0, 0, 0, 10%);
+}
+
+/* ------------------------- */
+
+/* ------------------------- */
+
+/* ------------------------- */
+
+/* WP Forms */
+
+/* ------------------------- */
+
+/* ------------------------- */
+
+/* ------------------------- */
+
+/* Buy XCH page table */
+
+/* Set a fixed width and prevent text wrapping for all table cells and headers */
+.wp-block-table th, .wp-block-table td {
+	width: 10%;
+	/* Ensures all cells have the same width */
+	white-space: nowrap;
+	/* Prevents text from wrapping */
+	text-align: center;
+	/* Center-aligns text */
+	padding: 10px;
+	/* Adjust padding for better appearance */
+	box-sizing: border-box;
+}
+
+/* Style for cells with "yes" */
+.wp-block-table td[data-content="yes"] {
+	background-color: #e8f8eb;
+	/* Light green background */
+	color: #228b22;
+	/* Green text color */
+	font-weight: bold;
+	text-align: center;
+	position: relative;
+}
+
+.wp-block-table td[data-content="yes"]:before {
+	content: "✔";
+	/* Checkmark */
+	font-size: 1.2em;
+	display: block;
+}
+
+.wp-block-table td[data-content="yes"]::after {
+	content: "";
+	/* Hide the original text */
+	display: none;
+}
+
+/* Style for cells with "no" */
+.wp-block-table td[data-content="no"] {
+	background-color: #fdeae5;
+	/* Light red background */
+	color: #f00;
+	/* Red text color */
+	font-weight: bold;
+	text-align: center;
+	position: relative;
+}
+
+.wp-block-table td[data-content="no"]:before {
+	content: "✘";
+	/* X mark */
+	font-size: 1.2em;
+	display: block;
+}
+
+.wp-block-table td[data-content="no"]::after {
+	content: "";
+	/* Hide the original text */
+	display: none;
+}
+
+/* ------------------------- */
+
+/* Container that allows horizontal scrolling on mobile */
+.wp-block-table.alignwide {
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+.wp-block-table.alignwide table {
+	width: 100%;
+	/* Ensure table fits within its container on desktop */
+	table-layout: auto;
+	/* Allows table cells to resize based on content */
+	border-collapse: collapse;
+}
+
+@media screen and (max-width: 768px) {
+	.wp-block-table.alignwide table {
+		min-width: 600px;
+	}
+}
+
+@media screen and (min-width: 769px) {
+	.wp-block-table.alignwide table {
+		width: 100%;
+	}
+}
+
+/* ------------------------- */
+
+/* ------------------------- */
+
+/* ------------------------- */
+@media only screen and (max-width: 768px) {
+	.menu-bar-items a.gb-button {
+		display: none;
+	}
+}
+
+/* Readjust the form width for smaller devices */
+@media only screen and (max-width: 600px) {}
+
+/* Apply custom styles to WPForms submit button */
+button.wpforms-submit {
+	background-color: var(--shock) !important;
+	border-bottom-left-radius: 10px !important;
+	border-bottom-right-radius: 10px !important;
+	border-top-left-radius: 10px !important;
+	border-top-right-radius: 10px !important;
+	color: var(--stark-blue) !important;
+	display: inline-flex !important;
+	font-family: poppins !important;
+	font-weight: 600 !important;
+	padding: .75rem 1.5rem !important;
+	text-decoration: none !important;
+	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, .2) !important;
+}
+
+button.wpforms-submit:hover {
+	background-color: #d2e96a !important;
+}
+
+.wpforms-form input[type=submit]:hover, .wpforms-form input[type=submit]:active, .wpforms-form button[type=submit]:hover, .wpforms-form button[type=submit]:active, .wpforms-form .wpforms-page-button:hover, .wpforms-form .wpforms-page-button:active {
+	background-color: #d7e87c;
+}
+
+/* ------------------------- */
+
+/* ------------------------- */
+
+/* ------------------------- */
+
+/* Change color of all icons with the gb-icon class in GeneratePress */
+.gb-icon {
+	fill: #42506c;
+	/* Changes the color of SVG icons */
+	color: #42506c;
+}
+
+/* List Items Social */
+.social-list-chia {
+	list-style-type: none;
+	/* Remove bullets */
+	margin: 0;
+	/* Remove default margin */
+	padding: 0;
+}
+
+.social-list-chia li {
+	display: block;
+	/* Ensure each list item takes up a full line */
+	margin-bottom: .5em;
+}
+
+.main-navigation a, .main-navigation .menu-toggle, .main-navigation .menu-bar-items {
+	font-family: var(--gp-font--poppins);
+	font-weight: 600;
+	font-size: 17px;
+	color: var(--periwinkle-pursuit);
+}
+
+.menu-bar-item {
+	color: #42506c;
+}
+
+.menu-bar-items a.gb-button:hover {
+	color: #42506c;
+}
+
+/* Apply styles to links within entry content, blog posts, and footer, but exclude GeneratePress buttons */
+.entry-content a:not(.wp-block-button__link):not(.gb-button):not(.generatepress-button), .blog a:not(.wp-block-button__link):not(.gb-button):not(.generatepress-button), .single-post a:not(.wp-block-button__link):not(.gb-button):not(.generatepress-button), .footer-widget a:not(.wp-block-button__link):not(.gb-button):not(.generatepress-button), .site-footer a:not(.wp-block-button__link):not(.gb-button):not(.generatepress-button) {
+	color: #42506c;
+	/* Set link color */
+	text-decoration: none;
+	/* Remove underline */
+	font-weight: 700;
+	/* Add heavier weight to the font */
+	transition: font-weight .2s ease;
+}
+
+.entry-content a:not(.wp-block-button__link):not(.gb-button):not(.generatepress-button):hover, .blog a:not(.wp-block-button__link):not(.gb-button):not(.generatepress-button):hover, .single-post a:not(.wp-block-button__link):not(.gb-button):not(.generatepress-button):hover, .footer-widget a:not(.wp-block-button__link):not(.gb-button):not(.generatepress-button):hover, .site-footer a:not(.wp-block-button__link):not(.gb-button):not(.generatepress-button):hover {
+	color: var(--periwinkle-pursuit);
+}
+
+@media only screen and (max-width: 768px) {
+	.menu-toggle .gp-icon path {
+		fill: #42506c;
+	}
+}
+
+.menu-bar-item .gp-icon svg {
+	width: 22px;
+	/* Set width to 25px */
+	height: 22px;
+}
+
+.sha256-checksum {
+	word-wrap: break-word;
+	word-break: break-all;
+	white-space: normal;
+	background-color: #fbffe8;
+	font-family: monospace;
+}
+
+/* Center blog post pagination */
+.nav-links {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 8px;
+	/* Optional: adds spacing between pagination items */
+	margin: 20px 0;
+}
+
+.nav-links .page-numbers {
+	padding: 8px 12px;
+	border-radius: 4px;
+	text-decoration: none;
+	color: #333;
+}
+
+.nav-links .page-numbers.current {
+	background-color: #f5f5f5;
+	/* Adjust to your desired highlight color */
+	font-weight: bold;
+	color: #000;
+}
+
+/* Style for read more button */
+.read-more-container .read-more.button {
+	border-radius: 10px;
+	color: #fff !important;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+input[type="search"] {
+	background-color: #fff;
+}
+
+.wp-block-search .wp-block-search__button {
+	border-radius: 10px;
+}
+
+#wp-block-categories-1 {
+	background-color: #fff;
+}
+
+/* No results -  Search */
+.no-results {
+	padding: 15px;
+	margin-bottom: 50px;
+}
+
+/* Twitter Feed Plugin */
+#ctf .ctf-item {
+	padding: 15px;
+}
+
+.ctf-tweet-meta {
+	text-align: right !important;
+}
+
+.ctf-author-screenname {
+	display: none !important;
+}
+
+a.ctf-tweet-text-link {
+	color: #42506c !important;
+	text-decoration: none !important;
+	font-weight: 400 !important;
+}
+
+a.ctf-tweet-text-link:hover {
+	color: #a8bef1 !important;
+}
+
+.ctf-tweet-date {
+	display: none !important;
+}
+
+/* ---------------- */
+
+/* Blog Post Styling */
+.blog-img-width {
+	width: 100%;
+	height: auto;
+	display: block;
+	margin: 1rem auto;
+	border: 2px solid #d2e3fe;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
+}
+
+@media (min-width: 768px) {
+	.blog-img-width {
+		width: 90%;
+	}
+}
+
+/* Media Page */
+.spacing-01 {
+	display: inline-block;
+	width: 1em;
+}
+</style> <script nitro-exclude>window.IS_NITROPACK=!0;window.NITROPACK_STATE='FRESH';</script><style>.nitro-cover{visibility:hidden!important;}</style><script nitro-exclude>(function(){const e=document.createElement("link");if(!(e.relList&&e.relList.supports&&e.relList.supports("prefetch"))){return}let t=document.cookie.includes("9d63262f59cd9b3378f01392c");let n={initNP_PPL:function(){if(window.NP_PPL!==undefined)return;window.NP_PPL={prefetches:[],lcpEvents:[],other:[]}},logPrefetch:function(e,n,r){let o=JSON.parse(window.sessionStorage.getItem("nitro_prefetched_urls"));if(o===null)o={};if(o[e]===undefined){o[e]={type:n,initiator:r};window.sessionStorage.setItem("nitro_prefetched_urls",JSON.stringify(o))}if(!t)return;window.NP_PPL.prefetches.push({url:e,type:n,initiator:r,timestamp:performance.now()})},logLcpEvent:function(e,n=null){if(!t)return;window.NP_PPL.lcpEvents.push({message:e,data:n,timestamp:performance.now()})},logOther:function(e,n=null){if(!t)return;window.NP_PPL.other.push({message:e,data:n,timestamp:performance.now()})}};if(t){n.initNP_PPL()}let r=0;const o=300;let l=".chia.net";let c=new RegExp(l+"$");function a(){return performance.now()-r>o}function u(){let e;let t=performance.now();const r={capture:true,passive:true};document.addEventListener("touchstart",o,r);document.addEventListener("mouseover",l,r);function o(e){t=performance.now();const n=e.target.closest("a");if(!n||!s(n)){return}g(n.href,"TOUCH")}function l(r){n.logOther("mouseoverListener() called",r);if(performance.now()-t<1111){return}const o=r.target.closest("a");if(!o||!s(o)){return}o.addEventListener("mouseout",c,{passive:true});e=setTimeout(function(){n.logOther("mouseoverTimer CALLBACK called",r);g(o.href,"HOVER");e=undefined},85)}function c(t){if(t.relatedTarget&&t.target.closest("a")==t.relatedTarget.closest("a")){return}if(e){clearTimeout(e);e=undefined}}}function f(){if(!PerformanceObserver.supportedEntryTypes.includes("largest-contentful-paint")){n.logLcpEvent("PerformanceObserver does not support LCP events in this browser.");return}let e=new PerformanceObserver(e=>{n.logLcpEvent("LCP_DETECTED",e.getEntries().at(-1).element);C=e.getEntries().at(-1).element});let t=function(e){k=window.requestIdleCallback(O);window.removeEventListener("load",t)};I.forEach(e=>{window.addEventListener(e,P,{once:true})});e.observe({type:"largest-contentful-paint",buffered:true});window.addEventListener("load",t)}function s(e){if(!e){n.logOther("Link Not Prefetchable: empty link element.",e);return false}if(!e.href){n.logOther("Link Not Prefetchable: empty href attribute.",e);return false}let t=e.href;let r=null;try{r=new URL(t)}catch(t){n.logOther("Link Not Prefetchable: "+t,e);return false}let o="."+r.hostname.replace("www.","");if(!["http:","https:"].includes(e.protocol)){n.logOther("Link Not Prefetchable: missing protocol in the URL.",e);return false}if(e.protocol=="http:"&&location.protocol=="https:"){n.logOther("Link Not Prefetchable: URL is HTTP but the current page is HTTPS.",e);return false}if(e.getAttribute("href").charAt(0)=="#"||e.hash&&e.pathname+e.search==location.pathname+location.search){n.logOther("Link Not Prefetchable: URL is the current location but with a hash.",e);return false}if(c.exec(o)===null){n.logOther("Link Not Prefetchable: Different domain.",e);return false}for(i=0;i<x.length;i++){if(t.match(x[i])!==null){n.logOther("Link Not Prefetchable: Excluded URL "+t+".",{link:e,regex:x[i]});return false}}return true}function p(){let e=navigator.connection;if(!e){return false}if(e.saveData){n.logOther("Data Saving Mode detected.");return true}return false}function d(){if(M!==null){return M}M=p();return M}if(!window.requestIdleCallback){window.requestIdleCallback=function(e,t){var t=t||{};var n=1;var r=t.timeout||n;var o=performance.now();return setTimeout(function(){e({get didTimeout(){return t.timeout?false:performance.now()-o-n>r},timeRemaining:function(){return Math.max(0,n+(performance.now()-o))}})},n)}}if(!window.cancelIdleCallback){window.cancelIdleCallback=function(e){clearTimeout(e)}}let h=function(e,t){n.logLcpEvent("MUTATION_DETECTED",e);clearTimeout(R);R=setTimeout(T,500,e)};let m=function(){return window.NavAI!==undefined};let g=function(e,t="",o=false){if(b.indexOf(e)>-1){n.logOther("Prefetch skipped: URL is already prefetched.",e);return}if(b.length>15){n.logOther("Prefetch skipped: Maximum prefetches threshold reached.");return}if(!o&&!a()){n.logOther("Prefetch skipped: on cooldown",e);return}if(d()){n.logOther("Prefetch skipped: limited connection",e);return}if(m()){n.logOther("Prefetch skipped: NavAI is present",e);return}let l="prefetch";if(HTMLScriptElement.supports&&HTMLScriptElement.supports("speculationrules")){l=Math.floor(Math.random()*2)===1?"prefetch":"prerender";if(l==="prefetch"){L(e)}if(l==="prerender"){E(e)}}else{L(e)}b.push(e);r=performance.now();n.logPrefetch(e,l,t);return true};function L(e){const t=document.createElement("link");t.rel="prefetch";t.setAttribute("nitro-exclude",true);t.type="text/html";t.href=e;document.head.appendChild(t)}function E(e){let t={prerender:[{source:"list",urls:[e]}]};let n=document.createElement("script");n.type="speculationrules";n.textContent=JSON.stringify(t);document.body.appendChild(n)}function w(e){let t=document.querySelector("body");while(e!=t){if(v(e)){e=e.parentElement;n.logOther("Skipping LCP container level: Inside a <nav> element.",e);continue}let t=Array.from(e.querySelectorAll("a"));n.logOther("filtering links...",t);t=t.filter(t=>{if(v(t)){n.logOther("Skipping link: Inside a <nav> element.",e);return false}return s(t)});if(t.length>0)return[t,e];e=e.parentElement}return[[],null]}function v(e){return e.closest("nav")!==null||e.nodeName=="NAV"}function P(e){S=true;if(y&&!U){_()}}function O(e){y=true;if(S&&!U){if(_()){window.cancelIdleCallback(k)}else{A++;if(A>2){window.cancelIdleCallback(k);n.logLcpEvent("IDLE_CALLBACK_CANCELLED")};}}}function _(){if(C==null){n.logLcpEvent("doLcpPrefetching_CALLBACK_CALLED_WITHOUT_LCP_ELEMENT");return false}let e=[];[e,N]=w(C);if(e.length==0){n.logLcpEvent("NO_LINKS_FOUND");return false}if(e.length>0){g(e[0].href,"LCP",!U);U=true}D.observe(N,{subtree:true,childList:true,attributes:true});n.logLcpEvent("MUTATION_OBSERVER_REGISTERED");window.cancelIdleCallback(k);n.logLcpEvent("IDLE_CALLBACK_CANCELLED")};function T(e){n.logLcpEvent("MUTATION_RESCAN_TRIGGERED",e);let t=w(N)[0];if(t.length>0){g(t[0].href,"LCP_MUTATION")}}let b=[];let C=null;let N=null;let k=0;let A=0;let I=["mousemove","click","keydown","touchmove","touchstart"];let S=false;let y=false;const D=new MutationObserver(h);let R=0;let U=false;let M=null;let x=JSON.parse(atob("W10="));if(Object.prototype.toString.call(x)==="[object Object]"){n.logOther("EXCLUDES_AS_OBJECT",x);let e=[];for(const t in x){e.push(x[t])}x=e}x=x.map(e=>new RegExp(e));if(navigator.connection){navigator.connection.onchange=function(e,t){M=null;n.logOther("Connection changed",{effectiveType:navigator.connection.effectiveType,rtt:navigator.connection.rtt,downlink:navigator.connection.downlink,saveData:navigator.connection.saveData})}}f();u()})();</script><style id="nitro-fonts">
+@font-face {
+	font-display: auto;
+	font-family: "Poppins";
+	font-style: normal;
+	font-weight: 500;
+	src: url("https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/static/source/rev-791a503/chiaprod.wpenginepowered.com/wp-content/uploads/generatepress/fonts/poppins/pxiByp8kv8JHgFVrLGT9Z1xlFQ.woff2") format("woff2");
+}
+
+@font-face {
+	font-display: auto;
+	font-family: "Poppins";
+	font-style: normal;
+	font-weight: 600;
+	src: url("https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/static/source/rev-791a503/chiaprod.wpenginepowered.com/wp-content/uploads/generatepress/fonts/poppins/pxiByp8kv8JHgFVrLEj6Z1xlFQ.woff2") format("woff2");
+}
+
+@font-face {
+	font-display: auto;
+	font-family: "Poppins";
+	font-style: normal;
+	font-weight: 700;
+	src: url("https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/static/source/rev-791a503/chiaprod.wpenginepowered.com/wp-content/uploads/generatepress/fonts/poppins/pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2") format("woff2");
+}
+</style><link rel="stylesheet" href="https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/static/optimized/rev-791a503/www.chia.net/externalFontFace/nitro-noimport-8f4673ae69ab4c629a9551aa9e15f821-stylesheet.css" /><script nitro-exclude>(()=>{window.NitroPack=window.NitroPack||{coreVersion:"dev",isCounted:!1};let e=document.createElement("script");if(e.src="https://nitroscripts.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK",e.async=!0,e.id="nitro-script",document.head.appendChild(e),!window.NitroPack.isCounted){window.NitroPack.isCounted=!0;let t=()=>{navigator.sendBeacon("https://to.getnitropack.com/p",JSON.stringify({siteId:"SdxHpHyRpoDLUSisOrozgIwlDySqySfK",url:window.location.href,isOptimized:!!window.IS_NITROPACK,coreVersion:"dev",missReason:window.NPTelemetryMetadata?.missReason||"",pageType:window.NPTelemetryMetadata?.pageType||"",isEligibleForOptimization:!!window.NPTelemetryMetadata?.isEligibleForOptimization}))};(()=>{let e=()=>new Promise(e=>{"complete"===document.readyState?e():window.addEventListener("load",e)}),i=()=>new Promise(e=>{document.prerendering?document.addEventListener("prerenderingchange",e,{once:!0}):e()}),a=async()=>{await i(),await e(),t()};a()})(),window.addEventListener("pageshow",e=>{if(e.persisted){let i=document.prerendering||self.performance?.getEntriesByType?.("navigation")[0]?.activationStart>0;"visible"!==document.visibilityState||i||t()}})}})();</script></head> <body class="home wp-singular page-template-default page page-id-40 wp-custom-logo wp-embed-responsive wp-theme-generatepress wp-child-theme-generatepress_child post-image-aligned-center slideout-enabled slideout-both sticky-menu-fade mobile-header mobile-header-logo no-sidebar nav-float-right separate-containers header-aligned-left dropdown-hover full-width-content contained-content" itemtype="https://schema.org/WebPage" itemscope><script>(function(){if(typeof NPSH!=="undefined"&&NPSH.isScrolled()){setTimeout(()=>{document.body.classList.remove("nitro-cover")},1e3);document.body.classList.add("nitro-cover");window.addEventListener("load",function(){document.body.classList.remove("nitro-cover")})}})();</script> <div class="header-wrap"><a class="screen-reader-text skip-link" href="#content" title="Skip to content">Skip to content</a> <header class="site-header has-inline-mobile-toggle" id="masthead" aria-label="Site" itemtype="https://schema.org/WPHeader" itemscope> <div class="inside-header grid-container"> <div class="site-logo"> <a href="https://www.chia.net/" rel="home"> <img class="header-image is-logo-image" alt="Chia Network" width="745" height="285" src="https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/images/optimized/rev-194430a/www.chia.net/wp-content/uploads/2024/09/chia_logo_new_blue.png" /> </a> </div> <nav class="main-navigation mobile-menu-control-wrapper" id="mobile-menu-control-wrapper" aria-label="Mobile Toggle"> <div class="menu-bar-items"> <a class="gb-button gb-button-4ccf858f gb-button-text nav-button-chia custom-nav-button" href="https://docs.chia.net/dev-guides-home/" target="_blank" rel="noopener noreferrer">Develop</a> <a class="gb-button gb-button-0d260ec0 gb-button-text nav-button-chia custom-nav-button" href="https://www.chia.net/buy-xch/">Buy XCH</a> <p></p> <a class="gb-button gb-button-f237a12a gb-button-text nav-button-chia custom-nav-button" href="/downloads/">Download</a> <span class="menu-bar-item slideout-toggle hide-on-mobile has-svg-icon"><a href="#" role="button" aria-label="Open Off-Canvas Panel"><span class="gp-icon pro-menu-bars"> <svg viewbox="0 0 512 512" aria-hidden="true" role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1em" height="1em"> <path d="M0 96c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24z"></path> </svg> </span></a></span></div> <button data-nav="site-navigation" class="menu-toggle" aria-controls="generate-slideout-menu" aria-expanded="false"> <span class="gp-icon icon-menu-bars"><svg viewbox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M0 96c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24z"></path></svg><svg viewbox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M71.029 71.029c9.373-9.372 24.569-9.372 33.942 0L256 222.059l151.029-151.03c9.373-9.372 24.569-9.372 33.942 0 9.372 9.373 9.372 24.569 0 33.942L289.941 256l151.03 151.029c9.372 9.373 9.372 24.569 0 33.942-9.373 9.372-24.569 9.372-33.942 0L256 289.941l-151.029 151.03c-9.373 9.372-24.569 9.372-33.942 0-9.372-9.373-9.372-24.569 0-33.942L222.059 256 71.029 104.971c-9.372-9.373-9.372-24.569 0-33.942z"></path></svg></span><span class="screen-reader-text">Menu</span> </button> </nav> <nav class="main-navigation has-menu-bar-items sub-menu-right" id="site-navigation" aria-label="Primary" itemtype="https://schema.org/SiteNavigationElement" itemscope> <div class="inside-navigation grid-container"> <button class="menu-toggle" aria-controls="generate-slideout-menu" aria-expanded="false"> <span class="gp-icon icon-menu-bars"><svg viewbox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M0 96c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24z"></path></svg><svg viewbox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M71.029 71.029c9.373-9.372 24.569-9.372 33.942 0L256 222.059l151.029-151.03c9.373-9.372 24.569-9.372 33.942 0 9.372 9.373 9.372 24.569 0 33.942L289.941 256l151.03 151.029c9.372 9.373 9.372 24.569 0 33.942-9.373 9.372-24.569 9.372-33.942 0L256 289.941l-151.029 151.03c-9.373 9.372-24.569 9.372-33.942 0-9.372-9.373-9.372-24.569 0-33.942L222.059 256 71.029 104.971c-9.372-9.373-9.372-24.569 0-33.942z"></path></svg></span><span class="screen-reader-text">Menu</span> </button> <div class="menu-bar-items"> <a class="gb-button gb-button-4ccf858f gb-button-text nav-button-chia custom-nav-button" href="https://docs.chia.net/dev-guides-home/" target="_blank" rel="noopener noreferrer">Develop</a> <a class="gb-button gb-button-0d260ec0 gb-button-text nav-button-chia custom-nav-button" href="https://www.chia.net/buy-xch/">Buy XCH</a> <p></p> <a class="gb-button gb-button-f237a12a gb-button-text nav-button-chia custom-nav-button" href="/downloads/">Download</a> <span class="menu-bar-item slideout-toggle hide-on-mobile has-svg-icon"><a href="#" role="button" aria-label="Open Off-Canvas Panel"><span class="gp-icon pro-menu-bars"> <svg viewbox="0 0 512 512" aria-hidden="true" role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1em" height="1em"> <path d="M0 96c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24z"></path> </svg> </span></a></span></div> </div> </nav> </div> </header> <nav id="mobile-header" itemtype="https://schema.org/SiteNavigationElement" itemscope class="main-navigation mobile-header-navigation has-branding has-menu-bar-items"> <div class="inside-navigation grid-container grid-parent"> <div class="site-logo mobile-header-logo"> <a href="https://www.chia.net/" title="Chia Network" rel="home"> <img alt="Chia Network" class="is-logo-image" width="745" height="285" src="https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/images/optimized/rev-194430a/www.chia.net/wp-content/uploads/2024/09/chia_logo_new_blue.png" /> </a> </div> <button class="menu-toggle" aria-controls="mobile-menu" aria-expanded="false"> <span class="gp-icon icon-menu-bars"><svg viewbox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M0 96c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24z"></path></svg><svg viewbox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M71.029 71.029c9.373-9.372 24.569-9.372 33.942 0L256 222.059l151.029-151.03c9.373-9.372 24.569-9.372 33.942 0 9.372 9.373 9.372 24.569 0 33.942L289.941 256l151.03 151.029c9.372 9.373 9.372 24.569 0 33.942-9.373 9.372-24.569 9.372-33.942 0L256 289.941l-151.029 151.03c-9.373 9.372-24.569 9.372-33.942 0-9.372-9.373-9.372-24.569 0-33.942L222.059 256 71.029 104.971c-9.372-9.373-9.372-24.569 0-33.942z"></path></svg></span><span class="screen-reader-text">Menu</span> </button> <div class="menu-bar-items"> <a class="gb-button gb-button-4ccf858f gb-button-text nav-button-chia custom-nav-button" href="https://docs.chia.net/dev-guides-home/" target="_blank" rel="noopener noreferrer">Develop</a> <a class="gb-button gb-button-0d260ec0 gb-button-text nav-button-chia custom-nav-button" href="https://www.chia.net/buy-xch/">Buy XCH</a> <p></p> <a class="gb-button gb-button-f237a12a gb-button-text nav-button-chia custom-nav-button" href="/downloads/">Download</a> <span class="menu-bar-item slideout-toggle hide-on-mobile has-svg-icon"><a href="#" role="button" aria-label="Open Off-Canvas Panel"><span class="gp-icon pro-menu-bars"> <svg viewbox="0 0 512 512" aria-hidden="true" role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1em" height="1em"> <path d="M0 96c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24z"></path> </svg> </span></a></span></div> </div> </nav> </div><div class="gb-container gb-container-3336276a"> <div class="gb-container gb-container-eab2d3eb"> <div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex"> <div class="wp-block-column is-vertically-aligned-center is-layout-flow wp-block-column-is-layout-flow" style="flex-basis: 60%;"><div class="gb-container gb-container-1c35dce8 gbp-section__headline"> <h1 class="gb-headline gb-headline-fee2cfe4 gb-headline-text gbp-section__headline">24/7 Global Markets Built on 3<sup>rd</sup> Gen Blockchain Technology</h1> <a class="gb-button gb-button-4076d367 gb-button-text shock-button-main button-shadow" href="https://chia.net/contact/">Get In Touch</a> </div></div> <div class="wp-block-column is-vertically-aligned-center is-layout-flow wp-block-column-is-layout-flow" style="flex-basis: 40%;"><div class="gb-grid-wrapper gb-grid-wrapper-d6914a51"> <div class="gb-grid-column gb-grid-column-09b2669a"><div class="gb-container gb-container-09b2669a feat-hero-item-chia"><a class="gb-container-link" href="https://www.chia.net/finance/"></a> <h5 class="gb-headline gb-headline-7cd7cf0b feat-hero-text-chia"><span class="gb-icon"><svg id="Layer_3" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 600 600"><defs><style>.cls-1{fill:#42506C}</style></defs><path class="cls-1" d="M149.96 344.83c41.88 0 75.96 34.08 75.96 75.96s-34.08 75.96-75.96 75.96S74 462.67 74 420.79s34.08-75.96 75.96-75.96m0-30C91.44 314.83 44 362.27 44 420.79s47.44 105.96 105.96 105.96 105.96-47.44 105.96-105.96-47.44-105.96-105.96-105.96ZM450.04 344.83c41.88 0 75.96 34.08 75.96 75.96s-34.08 75.96-75.96 75.96-75.96-34.08-75.96-75.96 34.08-75.96 75.96-75.96m0-30c-58.52 0-105.96 47.44-105.96 105.96s47.44 105.96 105.96 105.96S556 479.31 556 420.79s-47.44-105.96-105.96-105.96ZM300.1 84.92c13.23 0 26.32 3.53 37.88 10.19 17.57 10.14 30.14 26.52 35.39 46.12 5.25 19.6 2.56 40.07-7.59 57.64-6.79 11.77-16.59 21.49-28.33 28.12-11.44 6.46-24.42 9.87-37.55 9.87s-26.33-3.53-37.88-10.19c-17.57-10.14-30.14-26.52-35.39-46.12-5.25-19.6-2.56-40.07 7.59-57.64 6.79-11.77 16.59-21.49 28.33-28.12a76.502 76.502 0 0 1 37.55-9.87m0-30c-36.62 0-72.24 19.01-91.86 53-29.26 50.68-11.9 115.48 38.78 144.74 16.69 9.63 34.9 14.21 52.88 14.21 36.62 0 72.24-19.01 91.86-53 29.26-50.68 11.9-115.48-38.78-144.74-16.69-9.63-34.9-14.21-52.88-14.21Z"></path></svg></span><span class="gb-headline-text">Deliver new asset classes with the Future of Financial Rails</span></h5> </div></div> <div class="gb-grid-column gb-grid-column-49f6d701"><div class="gb-container gb-container-49f6d701 feat-hero-item-chia"><a class="gb-container-link" href="https://chia.net/climate/"></a> <h5 class="gb-headline gb-headline-7bce2a87 feat-hero-text-chia"><span class="gb-icon"><svg id="Layer_3" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 600 600"><defs><style>.cls-1{fill:#42506C}</style></defs><path class="cls-1" d="M300 315.58c58.01 0 105.21 47.2 105.21 105.21S358.01 526 300 526s-105.21-47.2-105.21-105.21S241.99 315.58 300 315.58m0-30c-74.67 0-135.21 60.54-135.21 135.21S225.33 556 300 556s135.21-60.54 135.21-135.21S374.67 285.58 300 285.58Z"></path><path class="cls-1" d="M300 195.38c44.16 0 85.67 17.2 116.89 48.42s48.42 72.74 48.42 116.89-17.2 85.67-48.42 116.89S344.15 526 300 526s-85.67-17.2-116.89-48.42-48.42-72.74-48.42-116.89 17.2-85.67 48.42-116.89 72.74-48.42 116.89-48.42m0-30c-107.87 0-195.31 87.44-195.31 195.31S192.13 556 300 556s195.31-87.44 195.31-195.31S407.87 165.38 300 165.38Z"></path><path class="cls-1" d="M300 74c30.52 0 60.12 5.97 87.96 17.75 26.91 11.38 51.08 27.68 71.85 48.45 20.77 20.77 37.06 44.94 48.45 71.85 11.78 27.84 17.75 57.44 17.75 87.96s-5.97 60.12-17.75 87.96c-11.38 26.91-27.68 51.08-48.45 71.85-20.77 20.77-44.94 37.06-71.85 48.45-27.84 11.78-57.44 17.75-87.96 17.75s-60.12-5.97-87.96-17.75c-26.91-11.38-51.08-27.68-71.85-48.45-20.77-20.77-37.06-44.94-48.45-71.85-11.78-27.84-17.75-57.44-17.75-87.96s5.97-60.12 17.75-87.96c11.38-26.91 27.68-51.08 48.45-71.85 20.77-20.77 44.94-37.06 71.85-48.45C239.88 79.97 269.48 74 300 74m0-30C158.62 44 44 158.62 44 300s114.62 256 256 256 256-114.62 256-256S441.38 44 300 44Z"></path></svg></span><span class="gb-headline-text">Lead the next evolution of Carbon Market Infrastructure</span></h5> </div></div> <div class="gb-grid-column gb-grid-column-3990d381"><div class="gb-container gb-container-3990d381 feat-hero-item-chia"><a class="gb-container-link" href="https://chia.net/luxury/"></a> <h5 class="gb-headline gb-headline-c23322cd feat-hero-text-chia"><span class="gb-icon"><svg id="Layer_3" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 600 600"><defs><style>.cls-2{fill:none;stroke:#42506C;stroke-linecap:round;stroke-miterlimit:10;stroke-width:30px}</style></defs><path d="m300 119.05 41.01 120.68 4.76 14 14 4.76 120.68 41.01-120.68 41.01-14 4.76-4.76 14L300 479.95l-41.01-120.68-4.76-14-14-4.76-120.68-41.01 120.68-41.01 14-4.76 4.76-14L300 119.05m0-63.3c-5.63 0-11.27 3.21-13.45 9.63l-55.96 164.7-164.7 55.96c-12.84 4.36-12.84 22.53 0 26.9l164.7 55.96 55.96 164.7c2.18 6.42 7.82 9.63 13.45 9.63s11.27-3.21 13.45-9.63l55.96-164.7 164.7-55.96c12.84-4.36 12.84-22.53 0-26.9l-164.7-55.96-55.96-164.7c-2.18-6.42-7.82-9.63-13.45-9.63Z" style="fill:#42506C"></path><path class="cls-2" d="m395.33 204.67 49.73-49.73M154.94 445.06l49.73-49.73M395.33 395.33l49.73 49.73M154.94 154.94l49.73 49.73"></path></svg></span><span class="gb-headline-text">Enable authentication and provenance for luxury products</span></h5> </div></div> </div></div> </div> </div> </div> <div class="site grid-container container hfeed" id="page"> <div class="site-content" id="content"> <div class="content-area" id="primary"> <main class="site-main" id="main"> <article id="post-40" class="post-40 page type-page status-publish" itemtype="https://schema.org/CreativeWork" itemscope> <div class="inside-article"> <div class="entry-content" itemprop="text"> <div class="gb-container gb-container-bb868a13 alignfull gbp-section"> <div class="gb-container gb-container-1bdd27bb"> <div class="gb-container gb-container-1002b635"> <div class="gb-container gb-container-7924cbc4"> <figure class="gb-block-image gb-block-image-45c72db7"><img decoding="async" class="gb-image gb-image-45c72db7" alt="" title="gb-logo-black-2" src="https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/images/source/rev-194430a/patterns.generateblocks.com/wp-content/uploads/2023/09/gb-logo-black-2.svg" /></figure> </div> <div class="gb-container gb-container-1c123b30"> <figure class="gb-block-image gb-block-image-a992e08c"><img decoding="async" class="gb-image gb-image-a992e08c" alt="" title="gb-logo-black-2" src="https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/images/source/rev-194430a/patterns.generateblocks.com/wp-content/uploads/2023/09/gb-logo-black-2.svg" /></figure> </div> <div class="gb-container gb-container-fc4056aa"> <figure class="gb-block-image gb-block-image-8fff74cf"><img decoding="async" class="gb-image gb-image-8fff74cf" alt="" title="gb-logo-black-2" src="https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/images/source/rev-194430a/patterns.generateblocks.com/wp-content/uploads/2023/09/gb-logo-black-2.svg" /></figure> </div> <div class="gb-container gb-container-2a02a570"> <figure class="gb-block-image gb-block-image-d7d24e39"><img decoding="async" class="gb-image gb-image-d7d24e39" alt="" title="gb-logo-black-2" src="https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/images/source/rev-194430a/patterns.generateblocks.com/wp-content/uploads/2023/09/gb-logo-black-2.svg" /></figure> </div> <div class="gb-container gb-container-0fd2f519"> <figure class="gb-block-image gb-block-image-e9b116b3"><img decoding="async" class="gb-image gb-image-e9b116b3" alt="" title="gb-logo-black-2" src="https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/images/source/rev-194430a/patterns.generateblocks.com/wp-content/uploads/2023/09/gb-logo-black-2.svg" /></figure> </div> <div class="gb-container gb-container-f4204d5c"> <figure class="gb-block-image gb-block-image-72cc910f"><img decoding="async" class="gb-image gb-image-72cc910f" alt="" title="gb-logo-black-2" src="https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/images/source/rev-194430a/patterns.generateblocks.com/wp-content/uploads/2023/09/gb-logo-black-2.svg" /></figure> </div> <div class="gb-container gb-container-eed801d9"> <figure class="gb-block-image gb-block-image-9dfb85bd"><img decoding="async" class="gb-image gb-image-9dfb85bd" alt="" title="gb-logo-black-2" src="https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/images/source/rev-194430a/patterns.generateblocks.com/wp-content/uploads/2023/09/gb-logo-black-2.svg" /></figure> </div> </div> </div> </div> <div class="gb-container gb-container-088b798e alignfull gbp-section"> <div class="gb-container gb-container-2e885841 gbp-section__inner"> <div class="gb-container gb-container-6b57d86a"> <h2 class="gb-headline gb-headline-5db2f10e gb-headline-text gbp-section__headline">News and Newsworthy</h2> </div> <div class="gb-container gb-container-8d12567f"> <div class="gb-headline gb-headline-21624a80 gb-headline-text gbp-section__text">Dive into expert insights, company updates, and industry trends on our blog.</div> </div> </div> <div class="gb-container gb-container-96a8373f"> <div class="gb-grid-wrapper gb-grid-wrapper-b68d5df1"> <div class="gb-grid-column gb-grid-column-00aad356"><div class="gb-container gb-container-00aad356"><a class="gb-container-link" href="https://www.permuto.capital/2025/09/its-a-long-way-to-the-top-if-you-wanna-rock-n-roll/" rel="noopener noreferrer" target="_blank"></a> <figure class="wp-block-image size-full"><img fetchpriority="high" decoding="async" width="1557" height="2142" alt="" class="wp-image-17187" style="aspect-ratio: 1;object-fit: cover;" srcset="https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/images/optimized/rev-194430a/www.chia.net/wp-content/uploads/2025/05/joel-filipe-M2oJ7Uq_0rc-unsplash-scaled-e1746077603102.jpg 1557w, https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/images/optimized/rev-194430a/www.chia.net/wp-content/uploads/2025/05/joel-filipe-M2oJ7Uq_0rc-unsplash-scaled-e1746077603102-218x300.jpg 218w, https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/images/optimized/rev-194430a/www.chia.net/wp-content/uploads/2025/05/joel-filipe-M2oJ7Uq_0rc-unsplash-scaled-e1746077603102-744x1024.jpg 744w, https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/images/optimized/rev-194430a/www.chia.net/wp-content/uploads/2025/05/joel-filipe-M2oJ7Uq_0rc-unsplash-scaled-e1746077603102-768x1057.jpg 768w, https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/images/optimized/rev-194430a/www.chia.net/wp-content/uploads/2025/05/joel-filipe-M2oJ7Uq_0rc-unsplash-scaled-e1746077603102-1117x1536.jpg 1117w, https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/images/optimized/rev-194430a/www.chia.net/wp-content/uploads/2025/05/joel-filipe-M2oJ7Uq_0rc-unsplash-scaled-e1746077603102-1489x2048.jpg 1489w" sizes="(max-width: 1557px) 100vw, 1557px" src="https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/images/optimized/rev-194430a/www.chia.net/wp-content/uploads/2025/05/joel-filipe-M2oJ7Uq_0rc-unsplash-scaled-e1746077603102.jpg" /></figure> <h3 class="gb-headline gb-headline-96383856 gb-headline-text gbp-section__headline">Permuto Summer Update &#8211; &#8217;33 to &#8217;40 Act</h3> <div class="gb-headline gb-headline-4ba3dcd2 gb-headline-text gbp-section__headline">Today Permuto shared some exciting news and updated information on its progress! While the timing has adjusted a bit, the process continues with expanded opportunities&#8230;.. <a href="https://www.permuto.capital/2025/09/its-a-long-way-to-the-top-if-you-wanna-rock-n-roll/"><strong>Read more</strong></a></div> </div></div> <div class="gb-grid-column gb-grid-column-fcb2e7b3"><div class="gb-container gb-container-fcb2e7b3"><a class="gb-container-link" href="https://www.chia.net/2025/07/31/chia-network-successfully-completes-soc-2-audit/"></a> <figure class="wp-block-image size-full"><img decoding="async" width="658" height="481" alt="" class="wp-image-17496" style="aspect-ratio: 1;object-fit: cover;" srcset="https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/images/optimized/rev-194430a/www.chia.net/wp-content/uploads/2025/09/Cloud-Wallet_Section-1-1-edited.png 658w, https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/images/optimized/rev-194430a/www.chia.net/wp-content/uploads/2025/09/Cloud-Wallet_Section-1-1-edited-300x219.png 300w" sizes="(max-width: 658px) 100vw, 658px" src="https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/images/optimized/rev-194430a/www.chia.net/wp-content/uploads/2025/09/Cloud-Wallet_Section-1-1-edited.png" /></figure> <h3 class="gb-headline gb-headline-6b52c239 gb-headline-text gbp-section__headline">Chia Network Successfully Completes SOC 2 Audit&nbsp;</h3> <div class="gb-headline gb-headline-f035b100 gb-headline-text gbp-section__text">Chia Network Inc. (Chia Network) today announced its successful completion of its SOC 2 examination as of July 24, 2025 and includes the following scopes:&nbsp;Software&#8230; <a href="https://www.chia.net/2025/07/31/chia-network-successfully-completes-soc-2-audit/"><strong>Read more</strong></a></div> </div></div> <div class="gb-grid-column gb-grid-column-dbf27022"><div class="gb-container gb-container-dbf27022"><a class="gb-container-link" href="https://www.chia.net/2025/06/03/the-challenges-of-trading-securities-on-most-blockchains/"></a> <figure class="wp-block-image size-full"><img decoding="async" width="1707" height="2560" alt="" class="wp-image-17469" style="aspect-ratio: 1;object-fit: cover;" srcset="https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/images/optimized/rev-194430a/www.chia.net/wp-content/uploads/2025/07/joel-filipe-eJG7suWnrKU-unsplash-scaled-e1752684080623.jpg 1707w, https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/images/optimized/rev-194430a/www.chia.net/wp-content/uploads/2025/07/joel-filipe-eJG7suWnrKU-unsplash-scaled-e1752684080623-200x300.jpg 200w, https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/images/optimized/rev-194430a/www.chia.net/wp-content/uploads/2025/07/joel-filipe-eJG7suWnrKU-unsplash-scaled-e1752684080623-683x1024.jpg 683w, https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/images/optimized/rev-194430a/www.chia.net/wp-content/uploads/2025/07/joel-filipe-eJG7suWnrKU-unsplash-scaled-e1752684080623-768x1152.jpg 768w, https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/images/optimized/rev-194430a/www.chia.net/wp-content/uploads/2025/07/joel-filipe-eJG7suWnrKU-unsplash-scaled-e1752684080623-1024x1536.jpg 1024w, https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/images/optimized/rev-194430a/www.chia.net/wp-content/uploads/2025/07/joel-filipe-eJG7suWnrKU-unsplash-scaled-e1752684080623-1366x2048.jpg 1366w" sizes="(max-width: 1707px) 100vw, 1707px" src="https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/images/optimized/rev-194430a/www.chia.net/wp-content/uploads/2025/07/joel-filipe-eJG7suWnrKU-unsplash-scaled-e1752684080623.jpg" /></figure> <h3 class="gb-headline gb-headline-536c11c6 gb-headline-text gbp-section__headline">The Challenges of Trading Securities on Most Blockchains</h3> <div class="gb-headline gb-headline-8f742c6c gb-headline-text gbp-section__text">Securities law has developed and formalized over decades, with technology enhancing and augmenting the way we&#8230; <strong><a href="https://www.chia.net/2025/06/03/the-challenges-of-trading-securities-on-most-blockchains/">Read more</a></strong></div> </div></div> </div> <div class="gb-container gb-container-99db4820 alignwide"> <a class="gb-button gb-button-19b4d345 gb-button-text shock-button-main button-shadow" href="https://www.chia.net/blog/">See All Blog Posts</a> </div> </div> </div> <div class="gb-container gb-container-891062b6 alignfull gbp-section"> <div class="gb-container gb-container-d6e1f197 gbp-section__inner">  <div id="ctf" class="ctf ctf-type-usertimeline  ctf-carousel ctf-styles ctf-feed-1 ctf-carousel ctf-boxed-style ctf-fixed-height ctf-rebranded-x" data-ctfshortcode="{&quot;feed&quot;:&quot;1&quot;}" data-ctfdisablelinks="false" data-ctflinktextcolor="#" data-ctfmaxmedia="4" data-ctfimagecols="auto" data-ctf-cols="3" data-ctf-tabletcols="2" data-ctf-mobilecols="1" data-ctf-interval="4250" data-ctf-loop="infinity" data-ctf-rows="true" data-ctf-navarrows="true" data-ctf-arrows="below" data-ctf-height="tallest" data-ctf-pag="true" data-header-size="medium" data-feedid="1" data-postid="40" data-feed="1" data-ctfneeded="-9"> <div class="ctf-tweet-items"> <div class="ctf-item ctf-author-chia_project ctf-new" id="ctf_2027422877935616191"> <div class="ctf-author-box"> <div class="ctf-author-box-link"> <a href="https://twitter.com/chia_project" class="ctf-author-avatar" target="_blank" rel="nofollow noopener noreferrer"> <img loading="lazy" decoding="async" alt="chia_project avatar" data-avatar="https://pbs.twimg.com/profile_images/1854555022685614084/DzQWmz2L_normal.png" width="48" height="48" src="https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/images/optimized/rev-194430a/www.chia.net/wp-content/plugins/custom-twitter-feeds-pro/img/placeholder.png" /> </a> <a href="https://twitter.com/chia_project" target="_blank" rel="nofollow noopener noreferrer" class="ctf-author-name">Chia Network</a> <span class="ctf-verified"><svg class="svg-inline--fa fa-check-circle fa-w-16" aria-hidden="true" aria-label="verified" data-fa-processed="" data-prefix="fa" data-icon="check-circle" role="img" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><path fill="currentColor" d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path></svg></span> <a href="https://twitter.com/chia_project" class="ctf-author-screenname" target="_blank" rel="nofollow noopener noreferrer">@chia_project</a> <span class="ctf-screename-sep">&middot;</span> <div class="ctf-tweet-meta"> <a href="https://twitter.com/chia_project/status/2027422877935616191" class="ctf-tweet-date" target="_blank" rel="nofollow noopener noreferrer">5h <span class="ctf-screenreader"> 2027422877935616191</span></a> </div> </div> </div> <div class="ctf-tweet-content ctf-disable-lightbox"> <a class="ctf-tweet-text-link" href="https://twitter.com/chia_project/status/2027422877935616191" target="_blank" rel="noopener noreferrer"> <p class="ctf-tweet-text">February Update: <br /> <br /> 1/ Technical Dialogue: Bram Cohen and community developers sat down for a roundtable on mempool parallelism and its role <a href="#" class="ctf_more">...</a><span class="ctf_remaining">in network optimization. <br /> <br /> 2/ Infrastructure: A look at the design principles behind the Chia Cloud Wallet for secure, simplified asset </span></p> </a> </div> <div class="ctf-tweet-actions"> </div> </div> <div class="ctf-item ctf-author-chia_project ctf-new" id="ctf_2027155322159182128"> <div class="ctf-author-box"> <div class="ctf-author-box-link"> <a href="https://twitter.com/chia_project" class="ctf-author-avatar" target="_blank" rel="nofollow noopener noreferrer"> <img loading="lazy" decoding="async" alt="chia_project avatar" data-avatar="https://pbs.twimg.com/profile_images/1854555022685614084/DzQWmz2L_normal.png" width="48" height="48" src="https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/images/optimized/rev-194430a/www.chia.net/wp-content/plugins/custom-twitter-feeds-pro/img/placeholder.png" /> </a> <a href="https://twitter.com/chia_project" target="_blank" rel="nofollow noopener noreferrer" class="ctf-author-name">Chia Network</a> <span class="ctf-verified"><svg class="svg-inline--fa fa-check-circle fa-w-16" aria-hidden="true" aria-label="verified" data-fa-processed="" data-prefix="fa" data-icon="check-circle" role="img" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><path fill="currentColor" d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path></svg></span> <a href="https://twitter.com/chia_project" class="ctf-author-screenname" target="_blank" rel="nofollow noopener noreferrer">@chia_project</a> <span class="ctf-screename-sep">&middot;</span> <div class="ctf-tweet-meta"> <a href="https://twitter.com/chia_project/status/2027155322159182128" class="ctf-tweet-date" target="_blank" rel="nofollow noopener noreferrer">23h <span class="ctf-screenreader"> 2027155322159182128</span></a> </div> </div> </div> <div class="ctf-tweet-content ctf-disable-lightbox"> <a class="ctf-tweet-text-link" href="https://twitter.com/chia_project/status/2027155322159182128" target="_blank" rel="noopener noreferrer"> <p class="ctf-tweet-text">We're celebrating 5 years of Mainnet! Join us on Thursday, March 19 @ 12pm PT for our annual celebration event (link in the comments), and <a href="#" class="ctf_more">...</a><span class="ctf_remaining">stay tuned for more updates! </span></p> </a> </div> <div class="ctf-tweet-actions"> </div> </div> <div class="ctf-item ctf-author-chia_project ctf-new ctf-retweet" id="ctf_2026783422887375331"> <div class="ctf-context"> <a href="https://twitter.com/intent/user?screen_name=chia_project" target="_blank" rel="nofollow noopener noreferrer" class="ctf-retweet-icon"><svg class="svg-inline--fa fa-w-16" viewbox="0 0 24 24" aria-hidden="true" aria-label="retweet" role="img"><path fill="currentColor" d="M23.77 15.67c-.292-.293-.767-.293-1.06 0l-2.22 2.22V7.65c0-2.068-1.683-3.75-3.75-3.75h-5.85c-.414 0-.75.336-.75.75s.336.75.75.75h5.85c1.24 0 2.25 1.01 2.25 2.25v10.24l-2.22-2.22c-.293-.293-.768-.293-1.06 0s-.294.768 0 1.06l3.5 3.5c.145.147.337.22.53.22s.383-.072.53-.22l3.5-3.5c.294-.292.294-.767 0-1.06zm-10.66 3.28H7.26c-1.24 0-2.25-1.01-2.25-2.25V6.46l2.22 2.22c.148.147.34.22.532.22s.384-.073.53-.22c.293-.293.293-.768 0-1.06l-3.5-3.5c-.293-.294-.768-.294-1.06 0l-3.5 3.5c-.294.292-.294.767 0 1.06s.767.293 1.06 0l2.22-2.22V16.7c0 2.068 1.683 3.75 3.75 3.75h5.85c.414 0 .75-.336.75-.75s-.337-.75-.75-.75z"></path></svg><span class="ctf-screenreader">Retweet on Twitter</span></a> <a href="https://twitter.com/chia_project" target="_blank" rel="nofollow noopener noreferrer" class="ctf-retweet-text">Chia Network Retweeted</a> </div> <div class="ctf-author-box"> <div class="ctf-author-box-link"> <a href="https://twitter.com/silicondotnet" class="ctf-author-avatar" target="_blank" rel="nofollow noopener noreferrer"> <img loading="lazy" decoding="async" alt="silicondotnet avatar" data-avatar="https://pbs.twimg.com/profile_images/1952786522866106371/Sn1yNf6u_normal.jpg" width="48" height="48" src="https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/images/optimized/rev-194430a/www.chia.net/wp-content/plugins/custom-twitter-feeds-pro/img/placeholder.png" /> </a> <a href="https://twitter.com/silicondotnet" target="_blank" rel="nofollow noopener noreferrer" class="ctf-author-name">Silicon.net</a> <span class="ctf-verified"><svg class="svg-inline--fa fa-check-circle fa-w-16" aria-hidden="true" aria-label="verified" data-fa-processed="" data-prefix="fa" data-icon="check-circle" role="img" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><path fill="currentColor" d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path></svg></span> <a href="https://twitter.com/silicondotnet" class="ctf-author-screenname" target="_blank" rel="nofollow noopener noreferrer">@silicondotnet</a> <span class="ctf-screename-sep">&middot;</span> <div class="ctf-tweet-meta"> <a href="https://twitter.com/silicondotnet/status/2026779541637931234" class="ctf-tweet-date" target="_blank" rel="nofollow noopener noreferrer">25 Feb <span class="ctf-screenreader"> 2026779541637931234</span></a> </div> </div> </div> <div class="ctf-tweet-content ctf-disable-lightbox"> <a class="ctf-tweet-text-link" href="https://twitter.com/silicondotnet/status/2026779541637931234" target="_blank" rel="noopener noreferrer"> <p class="ctf-tweet-text">Last call for $BYC in our pre-deposit campaign. We will no longer accept BYC deposits after Friday 2/27. @Circuit_DAO @chia_project</p> </a> </div> <div class="ctf-tweet-actions"> </div> </div> <div class="ctf-item ctf-author-chia_project ctf-new" id="ctf_2026336360978862164"> <div class="ctf-author-box"> <div class="ctf-author-box-link"> <a href="https://twitter.com/chia_project" class="ctf-author-avatar" target="_blank" rel="nofollow noopener noreferrer"> <img loading="lazy" decoding="async" alt="chia_project avatar" data-avatar="https://pbs.twimg.com/profile_images/1854555022685614084/DzQWmz2L_normal.png" width="48" height="48" src="https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/images/optimized/rev-194430a/www.chia.net/wp-content/plugins/custom-twitter-feeds-pro/img/placeholder.png" /> </a> <a href="https://twitter.com/chia_project" target="_blank" rel="nofollow noopener noreferrer" class="ctf-author-name">Chia Network</a> <span class="ctf-verified"><svg class="svg-inline--fa fa-check-circle fa-w-16" aria-hidden="true" aria-label="verified" data-fa-processed="" data-prefix="fa" data-icon="check-circle" role="img" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><path fill="currentColor" d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path></svg></span> <a href="https://twitter.com/chia_project" class="ctf-author-screenname" target="_blank" rel="nofollow noopener noreferrer">@chia_project</a> <span class="ctf-screename-sep">&middot;</span> <div class="ctf-tweet-meta"> <a href="https://twitter.com/chia_project/status/2026336360978862164" class="ctf-tweet-date" target="_blank" rel="nofollow noopener noreferrer">24 Feb <span class="ctf-screenreader"> 2026336360978862164</span></a> </div> </div> </div> <div class="ctf-tweet-content ctf-disable-lightbox"> <a class="ctf-tweet-text-link" href="https://twitter.com/chia_project/status/2026336360978862164" target="_blank" rel="noopener noreferrer"> <p class="ctf-tweet-text">"The Chia Cloud Wallet is a web-based solution that combines security and utility with the convenience and accessibility of modern <a href="#" class="ctf_more">...</a><span class="ctf_remaining">financial applications."</span></p> </a> </div> <div class="ctf-tweet-actions"> </div> </div> <div class="ctf-item ctf-author-chia_project ctf-new" id="ctf_2024913831374585898"> <div class="ctf-author-box"> <div class="ctf-author-box-link"> <a href="https://twitter.com/chia_project" class="ctf-author-avatar" target="_blank" rel="nofollow noopener noreferrer"> <img loading="lazy" decoding="async" alt="chia_project avatar" data-avatar="https://pbs.twimg.com/profile_images/1854555022685614084/DzQWmz2L_normal.png" width="48" height="48" src="https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/images/optimized/rev-194430a/www.chia.net/wp-content/plugins/custom-twitter-feeds-pro/img/placeholder.png" /> </a> <a href="https://twitter.com/chia_project" target="_blank" rel="nofollow noopener noreferrer" class="ctf-author-name">Chia Network</a> <span class="ctf-verified"><svg class="svg-inline--fa fa-check-circle fa-w-16" aria-hidden="true" aria-label="verified" data-fa-processed="" data-prefix="fa" data-icon="check-circle" role="img" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><path fill="currentColor" d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path></svg></span> <a href="https://twitter.com/chia_project" class="ctf-author-screenname" target="_blank" rel="nofollow noopener noreferrer">@chia_project</a> <span class="ctf-screename-sep">&middot;</span> <div class="ctf-tweet-meta"> <a href="https://twitter.com/chia_project/status/2024913831374585898" class="ctf-tweet-date" target="_blank" rel="nofollow noopener noreferrer">20 Feb <span class="ctf-screenreader"> 2024913831374585898</span></a> </div> </div> </div> <div class="ctf-tweet-content ctf-disable-lightbox"> <a class="ctf-tweet-text-link" href="https://twitter.com/chia_project/status/2024913831374585898" target="_blank" rel="noopener noreferrer"> <p class="ctf-tweet-text">Get the Chia Cloud Wallet and take security into your own hands today. </p> </a> </div> <div class="ctf-tweet-actions"> </div> </div> <div class="ctf-item ctf-author-chia_project ctf-new" id="ctf_2024550439115514177"> <div class="ctf-author-box"> <div class="ctf-author-box-link"> <a href="https://twitter.com/chia_project" class="ctf-author-avatar" target="_blank" rel="nofollow noopener noreferrer"> <img loading="lazy" decoding="async" alt="chia_project avatar" data-avatar="https://pbs.twimg.com/profile_images/1854555022685614084/DzQWmz2L_normal.png" width="48" height="48" src="https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/images/optimized/rev-194430a/www.chia.net/wp-content/plugins/custom-twitter-feeds-pro/img/placeholder.png" /> </a> <a href="https://twitter.com/chia_project" target="_blank" rel="nofollow noopener noreferrer" class="ctf-author-name">Chia Network</a> <span class="ctf-verified"><svg class="svg-inline--fa fa-check-circle fa-w-16" aria-hidden="true" aria-label="verified" data-fa-processed="" data-prefix="fa" data-icon="check-circle" role="img" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><path fill="currentColor" d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path></svg></span> <a href="https://twitter.com/chia_project" class="ctf-author-screenname" target="_blank" rel="nofollow noopener noreferrer">@chia_project</a> <span class="ctf-screename-sep">&middot;</span> <div class="ctf-tweet-meta"> <a href="https://twitter.com/chia_project/status/2024550439115514177" class="ctf-tweet-date" target="_blank" rel="nofollow noopener noreferrer">19 Feb <span class="ctf-screenreader"> 2024550439115514177</span></a> </div> </div> </div> <div class="ctf-tweet-content ctf-disable-lightbox"> <a class="ctf-tweet-text-link" href="https://twitter.com/chia_project/status/2024550439115514177" target="_blank" rel="noopener noreferrer"> <p class="ctf-tweet-text">The Chia way of doing things is different. We're making it easier with the Chia Cloud Platform. feat. @vskapoor </p> </a> </div> <div class="ctf-tweet-actions"> </div> </div> <div class="ctf-item ctf-author-chia_project ctf-new" id="ctf_2024212639421722917"> <div class="ctf-author-box"> <div class="ctf-author-box-link"> <a href="https://twitter.com/chia_project" class="ctf-author-avatar" target="_blank" rel="nofollow noopener noreferrer"> <img loading="lazy" decoding="async" alt="chia_project avatar" data-avatar="https://pbs.twimg.com/profile_images/1854555022685614084/DzQWmz2L_normal.png" width="48" height="48" src="https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/images/optimized/rev-194430a/www.chia.net/wp-content/plugins/custom-twitter-feeds-pro/img/placeholder.png" /> </a> <a href="https://twitter.com/chia_project" target="_blank" rel="nofollow noopener noreferrer" class="ctf-author-name">Chia Network</a> <span class="ctf-verified"><svg class="svg-inline--fa fa-check-circle fa-w-16" aria-hidden="true" aria-label="verified" data-fa-processed="" data-prefix="fa" data-icon="check-circle" role="img" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><path fill="currentColor" d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path></svg></span> <a href="https://twitter.com/chia_project" class="ctf-author-screenname" target="_blank" rel="nofollow noopener noreferrer">@chia_project</a> <span class="ctf-screename-sep">&middot;</span> <div class="ctf-tweet-meta"> <a href="https://twitter.com/chia_project/status/2024212639421722917" class="ctf-tweet-date" target="_blank" rel="nofollow noopener noreferrer">18 Feb <span class="ctf-screenreader"> 2024212639421722917</span></a> </div> </div> </div> <div class="ctf-tweet-content ctf-disable-lightbox"> <a class="ctf-tweet-text-link" href="https://twitter.com/chia_project/status/2024212639421722917" target="_blank" rel="noopener noreferrer"> <p class="ctf-tweet-text">In case you missed it, our developer roundtable on mempool parallelism is available now on Youtube! Check the comments for the link.</p> </a> </div> <div class="ctf-tweet-actions"> </div> </div> <div class="ctf-item ctf-author-chia_project ctf-new" id="ctf_2023507858273587388"> <div class="ctf-author-box"> <div class="ctf-author-box-link"> <a href="https://twitter.com/chia_project" class="ctf-author-avatar" target="_blank" rel="nofollow noopener noreferrer"> <img loading="lazy" decoding="async" alt="chia_project avatar" data-avatar="https://pbs.twimg.com/profile_images/1854555022685614084/DzQWmz2L_normal.png" width="48" height="48" src="https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/images/optimized/rev-194430a/www.chia.net/wp-content/plugins/custom-twitter-feeds-pro/img/placeholder.png" /> </a> <a href="https://twitter.com/chia_project" target="_blank" rel="nofollow noopener noreferrer" class="ctf-author-name">Chia Network</a> <span class="ctf-verified"><svg class="svg-inline--fa fa-check-circle fa-w-16" aria-hidden="true" aria-label="verified" data-fa-processed="" data-prefix="fa" data-icon="check-circle" role="img" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><path fill="currentColor" d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path></svg></span> <a href="https://twitter.com/chia_project" class="ctf-author-screenname" target="_blank" rel="nofollow noopener noreferrer">@chia_project</a> <span class="ctf-screename-sep">&middot;</span> <div class="ctf-tweet-meta"> <a href="https://twitter.com/chia_project/status/2023507858273587388" class="ctf-tweet-date" target="_blank" rel="nofollow noopener noreferrer">16 Feb <span class="ctf-screenreader"> 2023507858273587388</span></a> </div> </div> </div> <div class="ctf-tweet-content ctf-disable-lightbox"> <a class="ctf-tweet-text-link" href="https://twitter.com/chia_project/status/2023507858273587388" target="_blank" rel="noopener noreferrer"> <p class="ctf-tweet-text">Tackle your transaction anxiety with Clawbacks, the best undo button in digital finance. </p> </a> </div> <div class="ctf-tweet-actions"> </div> </div> <div class="ctf-item ctf-author-chia_project ctf-new" id="ctf_2022055435625550106"> <div class="ctf-author-box"> <div class="ctf-author-box-link"> <a href="https://twitter.com/chia_project" class="ctf-author-avatar" target="_blank" rel="nofollow noopener noreferrer"> <img loading="lazy" decoding="async" alt="chia_project avatar" data-avatar="https://pbs.twimg.com/profile_images/1854555022685614084/DzQWmz2L_normal.png" width="48" height="48" src="https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/images/optimized/rev-194430a/www.chia.net/wp-content/plugins/custom-twitter-feeds-pro/img/placeholder.png" /> </a> <a href="https://twitter.com/chia_project" target="_blank" rel="nofollow noopener noreferrer" class="ctf-author-name">Chia Network</a> <span class="ctf-verified"><svg class="svg-inline--fa fa-check-circle fa-w-16" aria-hidden="true" aria-label="verified" data-fa-processed="" data-prefix="fa" data-icon="check-circle" role="img" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><path fill="currentColor" d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path></svg></span> <a href="https://twitter.com/chia_project" class="ctf-author-screenname" target="_blank" rel="nofollow noopener noreferrer">@chia_project</a> <span class="ctf-screename-sep">&middot;</span> <div class="ctf-tweet-meta"> <a href="https://twitter.com/chia_project/status/2022055435625550106" class="ctf-tweet-date" target="_blank" rel="nofollow noopener noreferrer">12 Feb <span class="ctf-screenreader"> 2022055435625550106</span></a> </div> </div> </div> <div class="ctf-tweet-content ctf-disable-lightbox"> <a class="ctf-tweet-text-link" href="https://twitter.com/chia_project/status/2022055435625550106" target="_blank" rel="noopener noreferrer"> <p class="ctf-tweet-text">We're live now! Join the developer roundtable on mempool parallelism here - </p> </a> </div> <div class="ctf-tweet-actions"> </div> </div> <div class="ctf-item ctf-author-chia_project ctf-new" id="ctf_2021715752123085111"> <div class="ctf-author-box"> <div class="ctf-author-box-link"> <a href="https://twitter.com/chia_project" class="ctf-author-avatar" target="_blank" rel="nofollow noopener noreferrer"> <img loading="lazy" decoding="async" alt="chia_project avatar" data-avatar="https://pbs.twimg.com/profile_images/1854555022685614084/DzQWmz2L_normal.png" width="48" height="48" src="https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/images/optimized/rev-194430a/www.chia.net/wp-content/plugins/custom-twitter-feeds-pro/img/placeholder.png" /> </a> <a href="https://twitter.com/chia_project" target="_blank" rel="nofollow noopener noreferrer" class="ctf-author-name">Chia Network</a> <span class="ctf-verified"><svg class="svg-inline--fa fa-check-circle fa-w-16" aria-hidden="true" aria-label="verified" data-fa-processed="" data-prefix="fa" data-icon="check-circle" role="img" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><path fill="currentColor" d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path></svg></span> <a href="https://twitter.com/chia_project" class="ctf-author-screenname" target="_blank" rel="nofollow noopener noreferrer">@chia_project</a> <span class="ctf-screename-sep">&middot;</span> <div class="ctf-tweet-meta"> <a href="https://twitter.com/chia_project/status/2021715752123085111" class="ctf-tweet-date" target="_blank" rel="nofollow noopener noreferrer">11 Feb <span class="ctf-screenreader"> 2021715752123085111</span></a> </div> </div> </div> <div class="ctf-tweet-content ctf-disable-lightbox"> <a class="ctf-tweet-text-link" href="https://twitter.com/chia_project/status/2021715752123085111" target="_blank" rel="noopener noreferrer"> <p class="ctf-tweet-text">🌱 Version 2.6.0 of the Chia reference client is now available for download. Upgrading is recommended. <br /> <br /> This release includes python 3.13<a href="#" class="ctf_more">...</a><span class="ctf_remaining"> support, walletConnect improvements, and various bug fixes.</span></p> </a> </div> <div class="ctf-tweet-actions"> </div> </div> <div class="ctf-item ctf-author-chia_project ctf-new ctf-retweet" id="ctf_2021673299420549494"> <div class="ctf-context"> <a href="https://twitter.com/intent/user?screen_name=chia_project" target="_blank" rel="nofollow noopener noreferrer" class="ctf-retweet-icon"><svg class="svg-inline--fa fa-w-16" viewbox="0 0 24 24" aria-hidden="true" aria-label="retweet" role="img"><path fill="currentColor" d="M23.77 15.67c-.292-.293-.767-.293-1.06 0l-2.22 2.22V7.65c0-2.068-1.683-3.75-3.75-3.75h-5.85c-.414 0-.75.336-.75.75s.336.75.75.75h5.85c1.24 0 2.25 1.01 2.25 2.25v10.24l-2.22-2.22c-.293-.293-.768-.293-1.06 0s-.294.768 0 1.06l3.5 3.5c.145.147.337.22.53.22s.383-.072.53-.22l3.5-3.5c.294-.292.294-.767 0-1.06zm-10.66 3.28H7.26c-1.24 0-2.25-1.01-2.25-2.25V6.46l2.22 2.22c.148.147.34.22.532.22s.384-.073.53-.22c.293-.293.293-.768 0-1.06l-3.5-3.5c-.293-.294-.768-.294-1.06 0l-3.5 3.5c-.294.292-.294.767 0 1.06s.767.293 1.06 0l2.22-2.22V16.7c0 2.068 1.683 3.75 3.75 3.75h5.85c.414 0 .75-.336.75-.75s-.337-.75-.75-.75z"></path></svg><span class="ctf-screenreader">Retweet on Twitter</span></a> <a href="https://twitter.com/chia_project" target="_blank" rel="nofollow noopener noreferrer" class="ctf-retweet-text">Chia Network Retweeted</a> </div> <div class="ctf-author-box"> <div class="ctf-author-box-link"> <a href="https://twitter.com/hoffmang" class="ctf-author-avatar" target="_blank" rel="nofollow noopener noreferrer"> <img loading="lazy" decoding="async" alt="hoffmang avatar" data-avatar="https://pbs.twimg.com/profile_images/1928862068444377089/lF9EpqMc_normal.jpg" width="48" height="48" src="https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/images/optimized/rev-194430a/www.chia.net/wp-content/plugins/custom-twitter-feeds-pro/img/placeholder.png" /> </a> <a href="https://twitter.com/hoffmang" target="_blank" rel="nofollow noopener noreferrer" class="ctf-author-name">Gene Hoffman hoffmang.xch 🌱</a> <span class="ctf-verified"><svg class="svg-inline--fa fa-check-circle fa-w-16" aria-hidden="true" aria-label="verified" data-fa-processed="" data-prefix="fa" data-icon="check-circle" role="img" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><path fill="currentColor" d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path></svg></span> <a href="https://twitter.com/hoffmang" class="ctf-author-screenname" target="_blank" rel="nofollow noopener noreferrer">@hoffmang</a> <span class="ctf-screename-sep">&middot;</span> <div class="ctf-tweet-meta"> <a href="https://twitter.com/hoffmang/status/2021673182764396985" class="ctf-tweet-date" target="_blank" rel="nofollow noopener noreferrer">11 Feb <span class="ctf-screenreader"> 2021673182764396985</span></a> </div> </div> </div> <div class="ctf-tweet-content ctf-disable-lightbox"> <a class="ctf-tweet-text-link" href="https://twitter.com/hoffmang/status/2021673182764396985" target="_blank" rel="noopener noreferrer"> <p class="ctf-tweet-text">“The recent era of crypto investing... [is] going to be transposed or replaced by us using these same rails, these crypto rails, to bring<a href="#" class="ctf_more">...</a><span class="ctf_remaining"> banking [and] financial services to the whole world. And so, it’s going to be real world assets with much lower returns.”</span></p> </a> </div> <div class="ctf-tweet-actions"> </div> </div> <div class="ctf-item ctf-author-chia_project ctf-new" id="ctf_2021323115343536618"> <div class="ctf-author-box"> <div class="ctf-author-box-link"> <a href="https://twitter.com/chia_project" class="ctf-author-avatar" target="_blank" rel="nofollow noopener noreferrer"> <img loading="lazy" decoding="async" alt="chia_project avatar" data-avatar="https://pbs.twimg.com/profile_images/1854555022685614084/DzQWmz2L_normal.png" width="48" height="48" src="https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/images/optimized/rev-194430a/www.chia.net/wp-content/plugins/custom-twitter-feeds-pro/img/placeholder.png" /> </a> <a href="https://twitter.com/chia_project" target="_blank" rel="nofollow noopener noreferrer" class="ctf-author-name">Chia Network</a> <span class="ctf-verified"><svg class="svg-inline--fa fa-check-circle fa-w-16" aria-hidden="true" aria-label="verified" data-fa-processed="" data-prefix="fa" data-icon="check-circle" role="img" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><path fill="currentColor" d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path></svg></span> <a href="https://twitter.com/chia_project" class="ctf-author-screenname" target="_blank" rel="nofollow noopener noreferrer">@chia_project</a> <span class="ctf-screename-sep">&middot;</span> <div class="ctf-tweet-meta"> <a href="https://twitter.com/chia_project/status/2021323115343536618" class="ctf-tweet-date" target="_blank" rel="nofollow noopener noreferrer">10 Feb <span class="ctf-screenreader"> 2021323115343536618</span></a> </div> </div> </div> <div class="ctf-tweet-content ctf-disable-lightbox"> <a class="ctf-tweet-text-link" href="https://twitter.com/chia_project/status/2021323115343536618" target="_blank" rel="noopener noreferrer"> <p class="ctf-tweet-text">Don't forget! Thurs Feb 12 @ 1pm PT, we are hosting a developer roundtable to discuss mempool parallelism. Come hear from @bramcohen and <a href="#" class="ctf_more">...</a><span class="ctf_remaining">developers in the community discuss this technical topic. Link in the comments.</span></p> </a> </div> <div class="ctf-tweet-actions"> </div> </div> </div> <span class="ctf-resized-image-data" data-feedid="1" data-resized="[]"></span> </div> </div> </div> <div class="gb-container gb-container-890a72b3 alignfull gbp-section"> <div class="gb-container gb-container-74ff2d80 gbp-section__inner"> <div class="gb-container gb-container-867b4eec"> <h2 class="gb-headline gb-headline-66b40f91 gb-headline-text gbp-section__headline">One Market, Any Asset</h2> </div> <div class="gb-container gb-container-d219b713"> <div class="gb-headline gb-headline-67d5a3c9 gb-headline-text gbp-section__text">Leverage Chia Network’s blockchain technology to ensure data integrity, prove authenticity, and maintain auditable provenance of your assets </div> </div> </div> <div class="gb-container gb-container-910b4e97"> <div class="gb-grid-wrapper gb-grid-wrapper-462144a7"> <div class="gb-grid-column gb-grid-column-c7279cdd"><div class="gb-container gb-container-c7279cdd"> <h4 class="gb-headline gb-headline-425a3da4 gb-headline-text">Tokenize</h4> <h3 class="gb-headline gb-headline-67d3e921 gb-headline-text gbp-card__title"><strong>Digitize and track with an immutable system of record</strong></h3> <p class="gb-headline gb-headline-656e4dff gb-headline-text">Build and maintain trust and transparency in the integrity of your transaction data through the digital transformation of your products and assets</p> </div></div> <div class="gb-grid-column gb-grid-column-4c518c0c"><div class="gb-container gb-container-4c518c0c"> <h4 class="gb-headline gb-headline-96a0041a gb-headline-text">Custody</h4> <h3 class="gb-headline gb-headline-3fccdfa9 gb-headline-text gbp-card__title"><strong>Maintain complete control</strong></h3> <p class="gb-headline gb-headline-63e105d1 gb-headline-text">Enable advanced protection capabilities and recovery tools to secure your digital assets and portfolio</p> </div></div> <div class="gb-grid-column gb-grid-column-b13d84fd"><div class="gb-container gb-container-b13d84fd"> <h4 class="gb-headline gb-headline-15141642 gb-headline-text">Trade</h4> <h3 class="gb-headline gb-headline-d441f629 gb-headline-text gbp-card__title"><strong>Trade with anyone, anywhere, anytime</strong></h3> <p class="gb-headline gb-headline-b8cc4bca gb-headline-text">Transact with your assets across borders and peer-to-peer to increase global discoverability and liquidity</p> </div></div> </div> </div> </div> <div class="gb-container gb-container-34ed4ba8 alignfull"> <h2 class="gb-headline gb-headline-64905700 gb-headline-text"><strong>Talk to Our Team to Learn More</strong></h2> <div class="gb-container gb-container-6107fbf7"> <a class="gb-button gb-button-6281c7da gb-button-text button-shadow shock-button-main" href="https://chia.net/contact/">Get in Touch</a> </div> </div> </div> </div> </article> </main> </div> <script nitro-exclude>
+    document.cookie = 'nitroCachedPage=' + (!window.NITROPACK_STATE ? '0' : '1') + '; path=/; SameSite=Lax';
+</script> <script nitro-exclude>
+    if (!window.NITROPACK_STATE || window.NITROPACK_STATE != 'FRESH') {
+        var proxyPurgeOnly = 0;
+        if (typeof navigator.sendBeacon !== 'undefined') {
+            var nitroData = new FormData(); nitroData.append('nitroBeaconUrl', 'aHR0cHM6Ly93d3cuY2hpYS5uZXQv'); nitroData.append('nitroBeaconCookies', 'W10='); nitroData.append('nitroBeaconHash', '93ac81b65ac5515fec2567c017eeaaf6df4e6a4b449697ccf017686d596eb8a856daccc528b8e56295a63bd0a6314dd7f476ceb661c68defac0d9c596ec89859'); nitroData.append('proxyPurgeOnly', ''); nitroData.append('layout', 'home'); navigator.sendBeacon(location.href, nitroData);
+        } else {
+            var xhr = new XMLHttpRequest(); xhr.open('POST', location.href, true); xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); xhr.send('nitroBeaconUrl=aHR0cHM6Ly93d3cuY2hpYS5uZXQv&nitroBeaconCookies=W10=&nitroBeaconHash=93ac81b65ac5515fec2567c017eeaaf6df4e6a4b449697ccf017686d596eb8a856daccc528b8e56295a63bd0a6314dd7f476ceb661c68defac0d9c596ec89859&proxyPurgeOnly=&layout=home');
+        }
+    }
+</script> </div> </div> <div class="site-footer footer-bar-active footer-bar-align-right"> <div class="gb-container gb-container-c9d6f954 alignfull"> <div class="gb-container gb-container-58530714 alignfull"> <div class="gb-grid-wrapper gb-grid-wrapper-cb877747"> <div class="gb-grid-column gb-grid-column-72f995ce"><div class="gb-container gb-container-72f995ce"> <div class="gb-container gb-container-c99729dd"> <div class="is-default-size wp-block-site-logo"><a href="https://www.chia.net/" class="custom-logo-link" rel="home" aria-current="page"><img loading="lazy" width="745" height="285" class="custom-logo" alt="Chia Network" decoding="async" srcset="https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/images/optimized/rev-194430a/www.chia.net/wp-content/uploads/2024/09/chia_logo_new_blue.png 745w, https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/images/optimized/rev-194430a/www.chia.net/wp-content/uploads/2024/09/chia_logo_new_blue-300x115.png 300w" sizes="auto, (max-width: 745px) 100vw, 745px" src="https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/images/optimized/rev-194430a/www.chia.net/wp-content/uploads/2024/09/chia_logo_new_blue.png" /></a></div> </div> <div class="gb-container gb-container-e8111f90"> <a class="gb-button gb-button-aab581cd" href="https://github.com/Chia-Network" target="_blank" rel="noopener noreferrer"><span class="gb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 127.14 96.36"><path fill="#42506" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" clip-rule="evenodd" fill-rule="evenodd"></path></svg></span></a> <a class="gb-button gb-button-a19278d0" href="https://twitter.com/chia_project" target="_blank" rel="noopener noreferrer"><span class="gb-icon"><svg aria-hidden="true" role="img" height="1em" width="1em" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"></path></svg></span></a> <a class="gb-button gb-button-2ed13c27" href="https://www.youtube.com/c/Chia-Network" target="_blank" rel="noopener noreferrer"><span class="gb-icon"><svg aria-hidden="true" role="img" height="1em" width="1em" viewbox="0 0 576 512" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path></svg></span></a> <a class="gb-button gb-button-b0835372" href="https://www.linkedin.com/company/chia-network" target="_blank" rel="noopener noreferrer"><span class="gb-icon"><svg aria-hidden="true" role="img" height="1em" width="1em" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path></svg></span></a> <a class="gb-button gb-button-2b1348dc" href="https://discord.gg/chia" target="_blank" rel="noopener noreferrer"><span class="gb-icon"><svg viewbox="0 0 127.14 96.36" xmlns="http://www.w3.org/2000/svg"><path d="M107.7 8.07A105.15 105.15 0 0 0 81.47 0a72.06 72.06 0 0 0-3.36 6.83 97.68 97.68 0 0 0-29.11 0A72.37 72.37 0 0 0 45.64 0a105.89 105.89 0 0 0-26.25 8.09C2.79 32.65-1.71 56.6.54 80.21a105.73 105.73 0 0 0 32.17 16.15 77.7 77.7 0 0 0 6.89-11.11 68.42 68.42 0 0 1-10.85-5.18c.91-.66 1.8-1.34 2.66-2a75.57 75.57 0 0 0 64.32 0c.87.71 1.76 1.39 2.66 2a68.68 68.68 0 0 1-10.87 5.19 77 77 0 0 0 6.89 11.1 105.25 105.25 0 0 0 32.19-16.14c2.64-27.38-4.51-51.11-18.9-72.15ZM42.45 65.69C36.18 65.69 31 60 31 53s5-12.74 11.43-12.74S54 46 53.89 53s-5.05 12.69-11.44 12.69Zm42.24 0C78.41 65.69 73.25 60 73.25 53s5-12.74 11.44-12.74S96.23 46 96.12 53s-5.04 12.69-11.43 12.69Z"></path></svg></span></a> </div> </div></div> <div class="gb-grid-column gb-grid-column-c6347738"><div class="gb-container gb-container-c6347738"> <p class="gb-headline gb-headline-bbe23c95 gb-headline-text"><a href="https://www.chia.net/about/" data-type="page" data-id="483">About</a><br /><a href="https://www.chia.net/blog/" data-type="page" data-id="16681">Blog</a><br /><a href="https://www.chia.net/team/" data-type="page" data-id="379">Team</a><br /><a href="https://www.chia.net/white-paper/" data-type="page" data-id="416">White Paper</a><br /><a href="https://www.chia.net/compliance/" data-type="page" data-id="375">Compliance</a><br /><a href="https://www.chia.net/soc-2/" data-type="page" data-id="17551">SOC 2 Compliance</a> <br /><a href="https://shop.chia.net/" data-type="link" data-id="https://shop.chia.net/" target="_blank" rel="noreferrer noopener">Shop</a><br /><a href="https://www.chia.net/media/" data-type="page" data-id="16923">Media</a><br /><a href="https://www.chia.net/contact/" data-type="page" data-id="669">Contact</a></p> </div></div> <div class="gb-grid-column gb-grid-column-23b3e5bd"><div class="gb-container gb-container-23b3e5bd"> <p class="gb-headline gb-headline-f2114309 gb-headline-text"><a href="https://www.chia.net/chia-cloud-wallet/" data-type="page" data-id="17394">Chia Cloud Wallet</a><br /><a href="https://www.chia.net/finance/" data-type="page" data-id="17179">Finance</a><br /><a href="https://www.chia.net/luxury/" data-type="page" data-id="177">Luxury</a><br /><a href="https://www.chia.net/climate/" data-type="page" data-id="391">Climate</a></p> <p class="gb-headline gb-headline-c4546e0b gb-headline-text"><a href="https://docs.chia.net/dev-guides-home/" data-type="link" data-id="https://docs.chia.net/dev-guides-home/" target="_blank" rel="noreferrer noopener">Develop</a><br /><a href="https://www.chia.net/buy-xch/" data-type="page" data-id="490">Buy XCH<br /></a><a href="https://www.chia.net/downloads/" data-type="page" data-id="658">Download</a><br /><a href="https://docs.chia.net/farming-guide/" data-type="link" data-id="https://docs.chia.net/farming-guide/">Start Farming</a></p> </div></div> </div> <div style="height: 30px;" aria-hidden="true" class="wp-block-spacer"></div> <div class="gb-grid-wrapper gb-grid-wrapper-34d49720"> <div class="gb-grid-column gb-grid-column-7e499a82"><div class="gb-container gb-container-7e499a82"> <p class="gb-headline gb-headline-f32b963e gb-headline-text">©2026 Chia Network Inc.</p> </div></div> <div class="gb-grid-column gb-grid-column-16414486"><div class="gb-container gb-container-16414486"> <p class="gb-headline gb-headline-086b3f5b gb-headline-text"><a href="https://www.chia.net/terms/" data-type="page" data-id="593">Terms of Use</a> | <a href="https://www.chia.net/privacy/" data-type="page" data-id="3">Privacy</a> | <a href="https://www.chia.net/ip-trademarks/" data-type="page" data-id="595">IP &amp; Trademarks</a></p> </div></div> </div> </div> </div></div> <nav id="generate-slideout-menu" class="main-navigation slideout-navigation" itemtype="https://schema.org/SiteNavigationElement" itemscope> <div class="inside-navigation grid-container grid-parent"> <div class="main-nav"><ul id="menu-main" class=" slideout-menu"><li id="menu-item-268" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-268"><a href="#">Solutions<span role="presentation" class="dropdown-menu-toggle"><span class="gp-icon icon-arrow"><svg viewbox="0 0 330 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M305.913 197.085c0 2.266-1.133 4.815-2.833 6.514L171.087 335.593c-1.7 1.7-4.249 2.832-6.515 2.832s-4.815-1.133-6.515-2.832L26.064 203.599c-1.7-1.7-2.832-4.248-2.832-6.514s1.132-4.816 2.832-6.515l14.162-14.163c1.7-1.699 3.966-2.832 6.515-2.832 2.266 0 4.815 1.133 6.515 2.832l111.316 111.317 111.316-111.317c1.7-1.699 4.249-2.832 6.515-2.832s4.815 1.133 6.515 2.832l14.162 14.163c1.7 1.7 2.833 4.249 2.833 6.515z"></path></svg></span></span></a> <ul class="sub-menu"> <li id="menu-item-17250" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17250"><a href="https://www.chia.net/finance/">Finance</a></li> <li id="menu-item-859" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-859"><a href="https://www.chia.net/luxury/">Luxury</a></li> <li id="menu-item-458" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-458"><a href="https://www.chia.net/climate/">Climate</a></li> <li id="menu-item-17459" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17459"><a href="https://www.chia.net/chia-cloud-wallet/">Chia Cloud Wallet</a></li> </ul> </li> <li id="menu-item-267" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-267"><a href="#">Learn<span role="presentation" class="dropdown-menu-toggle"><span class="gp-icon icon-arrow"><svg viewbox="0 0 330 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M305.913 197.085c0 2.266-1.133 4.815-2.833 6.514L171.087 335.593c-1.7 1.7-4.249 2.832-6.515 2.832s-4.815-1.133-6.515-2.832L26.064 203.599c-1.7-1.7-2.832-4.248-2.832-6.514s1.132-4.816 2.832-6.515l14.162-14.163c1.7-1.699 3.966-2.832 6.515-2.832 2.266 0 4.815 1.133 6.515 2.832l111.316 111.317 111.316-111.317c1.7-1.699 4.249-2.832 6.515-2.832s4.815 1.133 6.515 2.832l14.162 14.163c1.7 1.7 2.833 4.249 2.833 6.515z"></path></svg></span></span></a> <ul class="sub-menu"> <li id="menu-item-732" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-732"><a href="https://www.chia.net/about/">About</a></li> <li id="menu-item-460" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-460"><a href="https://www.chia.net/team/">Team</a></li> <li id="menu-item-860" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-860"><a href="https://www.chia.net/white-paper/">White Paper</a></li> <li id="menu-item-16263" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16263"><a href="https://www.chia.net/compliance/">Compliance</a></li> </ul> </li> <li id="menu-item-16712" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16712"><a href="https://www.chia.net/blog/">Blog</a></li> <li id="menu-item-270" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-270"><a target="_blank" href="https://docs.chia.net/farming-guide/">Start Farming</a></li> <li id="menu-item-858" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-858"><a target="_blank" href="https://docs.chia.net">Develop</a></li> <li id="menu-item-752" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-752"><a href="https://www.chia.net/?page_id=490">Buy XCH &#8211; old</a></li> <li id="menu-item-753" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-753"><a href="https://www.chia.net/downloads/">Download</a></li> <li id="menu-item-17017" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17017"><a href="https://shop.chia.net">Shop</a></li> <li id="menu-item-17263" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17263"><a href="https://www.chia.net/media/">Media</a></li> <li id="menu-item-16652" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16652"><a href="https://www.chia.net/contact/">Contact</a></li> </ul></div> </div> </nav> <div class="slideout-overlay"> <button class="slideout-exit has-svg-icon"> <span class="gp-icon pro-close"> <svg viewbox="0 0 512 512" aria-hidden="true" role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1em" height="1em"> <path d="M71.029 71.029c9.373-9.372 24.569-9.372 33.942 0L256 222.059l151.029-151.03c9.373-9.372 24.569-9.372 33.942 0 9.372 9.373 9.372 24.569 0 33.942L289.941 256l151.03 151.029c9.372 9.373 9.372 24.569 0 33.942-9.373 9.372-24.569 9.372-33.942 0L256 289.941l-151.029 151.03c-9.373 9.372-24.569 9.372-33.942 0-9.372-9.373-9.372-24.569 0-33.942L222.059 256 71.029 104.971c-9.372-9.373-9.372-24.569 0-33.942z"></path> </svg> </span> <span class="screen-reader-text">Close</span> </button> </div> <script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/wp-*.php","\/wp-admin\/*","\/wp-content\/uploads\/*","\/wp-content\/*","\/wp-content\/plugins\/*","\/wp-content\/themes\/generatepress_child\/*","\/wp-content\/themes\/generatepress\/*","\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script> <script>
+(function () {
+function initTracking() {
+var _paq = window._paq = window._paq || [];
+_paq.push(['trackPageView']);_paq.push(['enableLinkTracking']);_paq.push(['alwaysUseSendBeacon']);_paq.push(['setTrackerUrl', "\/\/www.chia.net\/wp-content\/plugins\/matomo\/app\/matomo.php"]);_paq.push(['setSiteId', '1']);var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+g.type='text/javascript'; g.async=true; g.src="\/\/www.chia.net\/wp-content\/uploads\/matomo\/matomo.js"; s.parentNode.insertBefore(g,s);
+}
+if (document.prerendering) {
+ document.addEventListener('prerenderingchange', initTracking, {once: true});
+} else {
+ initTracking();
+}
+})();
+</script> <script id="generate-a11y">
+!function(){"use strict";if("querySelector"in document&&"addEventListener"in window){var e=document.body;e.addEventListener("pointerdown",(function(){e.classList.add("using-mouse")}),{passive:!0}),e.addEventListener("keydown",(function(){e.classList.remove("using-mouse")}),{passive:!0})}}();
+</script> <script>
+ var relevanssi_rt_regex = /(&|\?)_(rt|rt_nonce)=(\w+)/g
+ var newUrl = window.location.search.replace(relevanssi_rt_regex, '')
+ if (newUrl.substr(0, 1) == '&') {
+  newUrl = '?' + newUrl.substr(1)
+ }
+ history.replaceState(null, null, window.location.pathname + newUrl + window.location.hash)
+</script> <style type="text/css" data-ctf-style="1">
+.ctf-feed-1 .ctf-tweet-text, .ctf-feed-1 .ctf-quoted-tweet-text {
+	color: #42506c !important;
+}
+
+.ctf-feed-1 .ctf-tweet-actions a {
+	font-size: 12px !important;
+}
+
+.ctf-feed-1 .ctf-quoted-tweet {
+	color: #42506c !important;
+}
+
+.ctf-feed-1 .ctf-twitterlink {
+	font-size: 9px !important;
+	color: #42506c !important;
+}
+
+.ctf-feed-1.ctf-fixed-height {
+	height: 300px !important;
+}
+
+.ctf-feed-1.ctf-boxed-style .ctf-item {
+	background-color: #fff !important;
+	border-radius: 10px;
+}
+</style><style id='core-block-supports-inline-css'>
+.wp-container-core-columns-is-layout-9d6595d7 {
+	flex-wrap: nowrap;
+}
+</style> <script id="generate-offside-js-extra">
+var offSide = {"side":"right"};
+</script> <script id="generate-offside-js" src="https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/static/optimized/rev-791a503/www.chia.net/wp-content/plugins/gp-premium/menu-plus/functions/js/render-blocking-91ee3c3e3a60d979809695f9b3bdbf13.offside.min.js"></script> <script id="rangeable-js-js" src="https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/static/optimized/rev-791a503/www.chia.net/wp-content/themes/generatepress_child/js/render-blocking-rangeable.min.js"></script> <script id="calculator-custom-js-js" src="https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/static/optimized/rev-791a503/www.chia.net/wp-content/themes/generatepress_child/js/render-blocking-calculator.js"></script>  <script id="generate-menu-js-before">
+var generatepressMenu = {"toggleOpenedSubMenus":true,"openSubMenuLabel":"Open Sub-Menu","closeSubMenuLabel":"Close Sub-Menu"};
+</script> <script id="generate-menu-js" src="https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/static/optimized/rev-791a503/www.chia.net/wp-content/themes/generatepress/assets/js/render-blocking-af6cb5bfb91ce2d78377e57c8d18ffc0.menu.min.js"></script> <script id="ctf_scripts-js-extra">
+var ctfOptions = {"ajax_url":"https:\/\/www.chia.net\/wp-admin\/admin-ajax.php","nonce":"fb3b315fb8","font_method":"svg","placeholder":"https:\/\/www.chia.net\/wp-content\/plugins\/custom-twitter-feeds-pro\/img\/placeholder.png","resized_url":"https:\/\/www.chia.net\/wp-content\/uploads\/sb-twitter-feed-images\/"};
+</script> <script id="ctf_scripts-js" src="https://cdn-ilcmnif.nitrocdn.com/SdxHpHyRpoDLUSisOrozgIwlDySqySfK/assets/static/optimized/rev-791a503/www.chia.net/wp-content/plugins/custom-twitter-feeds-pro/js/render-blocking-91ee3c3e3a60d979809695f9b3bdbf13.ctf-scripts.min.js"></script> </body> </html> 

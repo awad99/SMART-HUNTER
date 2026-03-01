@@ -1,0 +1,50 @@
+        ___
+       __H__
+ ___ ___[)]_____ ___ ___  {1.9.11#stable}
+|_ -| . [']     | .'| . |
+|___|_  [']_|_|_|__,|  _|
+      |_|V...       |_|   https://sqlmap.org
+
+[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program
+
+[*] starting @ 14:18:25 /2026-03-01/
+
+[14:18:25] [INFO] fetched random HTTP User-Agent header value 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.3 Safari/605.1.15 Ddg/18.6' from file '/usr/share/sqlmap/data/txt/user-agents.txt'
+[14:18:25] [INFO] parsing multiple targets list from 'sqli_parameters.txt'
+[14:18:25] [INFO] starting crawler for target URL 'https://www.figma.com/community/website-templates?editor_type=FUZZ' (1/2)
+do you want to check for the existence of site's sitemap(.xml) [y/N] N
+[14:18:25] [INFO] starting 2 threads
+do you want to normalize crawling results [Y/n] Y
+do you want to store crawling results to a temporary file for eventual further processing with other tools [y/N] N
+[1/1] URL:
+GET https://www.figma.com/community/website-templates?editor_type=FUZZ
+do you want to test this URL? [Y/n/q]
+> Y
+[14:18:25] [INFO] testing URL 'https://www.figma.com/community/website-templates?editor_type=FUZZ'
+[14:18:25] [INFO] using '/home/awad/.local/share/sqlmap/output/results-03012026_0218pm.csv' as the CSV results file in multiple targets mode
+[14:18:25] [INFO] testing if the target URL content is stable
+[14:18:26] [ERROR] there was an error checking the stability of page because of lack of content. Please check the page request results (and probable errors) by using higher verbosity levels
+[14:18:26] [INFO] testing if GET parameter 'editor_type' is dynamic
+[14:18:27] [WARNING] GET parameter 'editor_type' does not appear to be dynamic
+[14:18:27] [WARNING] heuristic (basic) test shows that GET parameter 'editor_type' might not be injectable
+[14:18:27] [INFO] skipping GET parameter 'editor_type'
+[14:18:27] [ERROR] all tested parameters do not appear to be injectable. Try to increase values for '--level'/'--risk' options if you wish to perform more tests. If you suspect that there is some kind of protection mechanism involved (e.g. WAF) maybe you could try to use option '--tamper' (e.g. '--tamper=space2comment'), skipping to the next target
+[14:18:27] [INFO] you can find results of scanning in multiple targets mode inside the CSV file '/home/awad/.local/share/sqlmap/output/results-03012026_0218pm.csv'
+[14:18:27] [INFO] starting crawler for target URL 'https://www.figma.com/?context=FUZZ' (2/2)
+[14:18:27] [INFO] starting 2 threads
+[1/1] URL:
+GET https://www.figma.com/?context=FUZZ
+do you want to test this URL? [Y/n/q]
+> Y
+[14:18:28] [INFO] testing URL 'https://www.figma.com/?context=FUZZ'
+[14:18:28] [INFO] testing if the target URL content is stable
+[14:18:28] [ERROR] there was an error checking the stability of page because of lack of content. Please check the page request results (and probable errors) by using higher verbosity levels
+[14:18:28] [INFO] testing if GET parameter 'context' is dynamic
+[14:18:28] [WARNING] GET parameter 'context' does not appear to be dynamic
+[14:18:29] [WARNING] heuristic (basic) test shows that GET parameter 'context' might not be injectable
+[14:18:29] [INFO] skipping GET parameter 'context'
+[14:18:29] [ERROR] all tested parameters do not appear to be injectable. Try to increase values for '--level'/'--risk' options if you wish to perform more tests. If you suspect that there is some kind of protection mechanism involved (e.g. WAF) maybe you could try to use option '--tamper' (e.g. '--tamper=space2comment'), skipping to the next target
+[14:18:29] [INFO] you can find results of scanning in multiple targets mode inside the CSV file '/home/awad/.local/share/sqlmap/output/results-03012026_0218pm.csv'
+
+[*] ending @ 14:18:29 /2026-03-01/
+

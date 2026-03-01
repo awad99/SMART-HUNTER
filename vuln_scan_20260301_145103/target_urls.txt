@@ -1,0 +1,12 @@
+https://www.privy.io/?notes=FUZZ
+https://www.privy.io/?details=FUZZ
+https://www.privy.io/?Email=FUZZ
+https://www.privy.io/?subject=FUZZ
+https://www.privy.io/?message=FUZZ
+https://www.privy.io/?description=FUZZ
+https://www.privy.io/?feedback=FUZZ
+https://www.privy.io/?remarks=FUZZ
+https://www.privy.io/?title=FUZZ
+https://www.privy.io/?company=FUZZ
+https://www.privy.io/?comments=FUZZ
+https://www.privy.io/?website=FUZZ

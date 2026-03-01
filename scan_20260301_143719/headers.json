@@ -1,0 +1,37 @@
+[
+  {
+    "url": "https://sa-en.ring.com/",
+    "status_code": 429,
+    "headers": {
+      "date": "Sun, 01 Mar 2026 11:36:50 GMT",
+      "content-type": "text/html; charset=UTF-8",
+      "content-length": "13413",
+      "connection": "close",
+      "accept-ch": "Sec-CH-UA-Bitness, Sec-CH-UA-Arch, Sec-CH-UA-Full-Version, Sec-CH-UA-Mobile, Sec-CH-UA-Model, Sec-CH-UA-Platform-Version, Sec-CH-UA-Full-Version-List, Sec-CH-UA-Platform, Sec-CH-UA, UA-Bitness, UA-Arch, UA-Full-Version, UA-Mobile, UA-Model, UA-Platform-Version, UA-Platform, UA",
+      "cf-mitigated": "challenge",
+      "critical-ch": "Sec-CH-UA-Bitness, Sec-CH-UA-Arch, Sec-CH-UA-Full-Version, Sec-CH-UA-Mobile, Sec-CH-UA-Model, Sec-CH-UA-Platform-Version, Sec-CH-UA-Full-Version-List, Sec-CH-UA-Platform, Sec-CH-UA, UA-Bitness, UA-Arch, UA-Full-Version, UA-Mobile, UA-Model, UA-Platform-Version, UA-Platform, UA",
+      "cross-origin-embedder-policy": "require-corp",
+      "cross-origin-opener-policy": "same-origin",
+      "cross-origin-resource-policy": "same-origin",
+      "origin-agent-cluster": "?1",
+      "permissions-policy": "accelerometer=(),browsing-topics=(),camera=(),clipboard-read=(),clipboard-write=(),geolocation=(),gyroscope=(),hid=(),interest-cohort=(),magnetometer=(),microphone=(),payment=(),publickey-credentials-get=(),screen-wake-lock=(),serial=(),sync-xhr=(),usb=()",
+      "referrer-policy": "same-origin",
+      "server-timing": "chlray;desc=\"9d57ddc54fe5e229\", cfRequestDuration;dur=14.999866",
+      "x-content-type-options": "nosniff",
+      "x-frame-options": "SAMEORIGIN",
+      "cache-control": "private, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0",
+      "expires": "Thu, 01 Jan 1970 00:00:01 GMT",
+      "report-to": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=MTM8Az%2Bd1A6rPP7nzVe2iOWl07N06OYGQ%2Fa1DDkaGg9wxBaY85RdcvdJUSAUeyfFlCxFxByAn8ZBVcA9t5jZ3iBKgW8c7mPDsPerQqgPz378zOL9e%2BKBsqXyndgVCiC1\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+      "nel": "{\"success_fraction\":0.01,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+      "vary": "Accept-Encoding",
+      "x-xss-protection": "1; mode=block",
+      "x-permitted-cross-domain-policies": "none",
+      "x-download-options": "noopen",
+      "x-shopid": ", deprecation date Feb 28 2026",
+      "server": "cloudflare",
+      "cf-ray": "9d57ddc54fe5e229-MRS",
+      "alt-svc": "h3=\":443\"; ma=86400"
+    },
+    "timestamp": "2026-03-01T14:37:20.065414"
+  }
+]

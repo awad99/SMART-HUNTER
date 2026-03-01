@@ -1,0 +1,16 @@
+[
+  {
+    "url": "https://sa.trip.com/",
+    "type": "ORIGINAL"
+  },
+  {
+    "url": "https://sa.trip.com/",
+    "status_code": 200,
+    "location": ""
+  },
+  {
+    "url": "https://sa.trip.com/",
+    "type": "FINAL",
+    "status": 200
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "url": "https://www.flipkart.com/",
+    "status_code": 403,
+    "headers": {
+      "x-captcha-validate": "true",
+      "access-control-allow-headers": "x-captcha-validate",
+      "access-control-expose-headers": "x-captcha-validate",
+      "access-control-allow-credentials": "true",
+      "access-control-allow-origin": "https://www.flipkart.com",
+      "content-length": "787",
+      "content-type": "text/html"
+    },
+    "timestamp": "2026-03-01T16:26:29.345764"
+  }
+]

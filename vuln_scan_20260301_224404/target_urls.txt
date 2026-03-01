@@ -1,0 +1,11 @@
+https://eero.com/?id=FUZZ
+https://eero.com/?search=FUZZ
+https://eero.com/?q=FUZZ
+https://eero.com/?query=FUZZ
+https://eero.com/?page=FUZZ
+https://eero.com/?user=FUZZ
+https://eero.com/?name=FUZZ
+https://eero.com/?cat=FUZZ
+https://eero.com/?file=FUZZ
+https://eero.com/?cmd=FUZZ
+https://eero.com/?action=FUZZ

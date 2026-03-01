@@ -1,0 +1,30 @@
+[
+  {
+    "name": "selected_country",
+    "value": "en_INT",
+    "domain": "www.23andme.com",
+    "url": "https://www.23andme.com/en-int/",
+    "timestamp": "2026-03-01T17:03:33.765088"
+  },
+  {
+    "name": "ttam_locale",
+    "value": "INT",
+    "domain": "www.23andme.com",
+    "url": "https://www.23andme.com/en-int/",
+    "timestamp": "2026-03-01T17:03:33.765154"
+  },
+  {
+    "name": "__cf_bm",
+    "value": "mPCxq5qEFQkXaxXnamTbwDais7LeqXow.XUHS8uodsU-1772373783-1.0.1.1-Q7QZ.MIBYm1ywmeyB4TFkqGnZa_k7ZJ5z_48_Zgdz.6lKPZ1TF2oGp.Bs_bdWRQBnBURUt2xE3KYMC6K1_9hs50PKXrL.HTsNIWsvgmw_6o",
+    "domain": "www.23andme.com",
+    "url": "https://www.23andme.com/en-int/",
+    "timestamp": "2026-03-01T17:03:33.765174"
+  },
+  {
+    "name": "_cfuvid",
+    "value": "aZdVOhC2bpbOO9VkxBLIAtmT_lxsYv5hwZb9_CS1wAk-1772373783815-0.0.1.1-604800000",
+    "domain": "www.23andme.com",
+    "url": "https://www.23andme.com/en-int/",
+    "timestamp": "2026-03-01T17:03:33.765187"
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "name": "_v-consent",
+    "value": "%7B%22essential%22%3Atrue%2C%22analytics%22%3Atrue%2C%22marketing%22%3Atrue%2C%22functional%22%3Atrue%2C%22version%22%3A1%7D",
+    "domain": "vercel.com",
+    "url": "https://vercel.com/",
+    "timestamp": "2026-03-01T22:40:19.654010"
+  },
+  {
+    "name": "_v-anonymous-id",
+    "value": "dpSheEfBYUBwvni2zzzmR",
+    "domain": "vercel.com",
+    "url": "https://vercel.com/",
+    "timestamp": "2026-03-01T22:40:19.654080"
+  },
+  {
+    "name": "_v-anonymous-id-renewed",
+    "value": "1",
+    "domain": "vercel.com",
+    "url": "https://vercel.com/",
+    "timestamp": "2026-03-01T22:40:19.654125"
+  }
+]

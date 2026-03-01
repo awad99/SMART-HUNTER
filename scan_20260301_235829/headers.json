@@ -1,0 +1,24 @@
+[
+  {
+    "url": "https://coinhako.com/",
+    "status_code": 429,
+    "headers": {
+      "date": "Sun, 01 Mar 2026 20:57:59 GMT",
+      "content-type": "application/json",
+      "content-length": "79",
+      "connection": "keep-alive",
+      "retry-after": "60",
+      "cache-control": "private, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0",
+      "expires": "Thu, 01 Jan 1970 00:00:01 GMT",
+      "referrer-policy": "same-origin",
+      "x-frame-options": "SAMEORIGIN",
+      "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+      "x-content-type-options": "nosniff",
+      "vary": "accept-encoding",
+      "set-cookie": "__cf_bm=NGjMATEh8ik1VpKtuVDoWRbxoX5oWoIKDJjPFWvXo0A-1772398679.3710551-1.0.1.1-HwlCfABDjwkJE1cEaA_RafWgP3sZY_HEpp02en8z4WdHMl57VS561qoRbHwJaqAFZUC9co5xWNTpbBnqD0JCBOeZ.gUgE3biIgKjckrkH97n3R1.La7wsh1JU_JygO92; HttpOnly; Secure; Path=/; Domain=coinhako.com; Expires=Sun, 01 Mar 2026 21:27:59 GMT",
+      "server": "cloudflare",
+      "cf-ray": "9d5b13c21c0c73ab-MRS"
+    },
+    "timestamp": "2026-03-01T23:58:29.560373"
+  }
+]

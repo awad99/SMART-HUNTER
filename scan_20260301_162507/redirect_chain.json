@@ -1,0 +1,16 @@
+[
+  {
+    "url": "https://www.zerobounce.net/",
+    "type": "ORIGINAL"
+  },
+  {
+    "url": "https://www.zerobounce.net/",
+    "status_code": 200,
+    "location": ""
+  },
+  {
+    "url": "https://www.zerobounce.net/",
+    "type": "FINAL",
+    "status": 200
+  }
+]

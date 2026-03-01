@@ -1,0 +1,2 @@
+https://vercel.com/,a)}),b=window.fetch,window.fetch=async(c,d)=>{let g=new URL(c instanceof Request?c.url:c,location.href),j=FUZZ
+https://vercel.com/,a)}),b=window.fetch,window.fetch=async(c,d)=\u003e{let g=new URL(c instanceof Request?c.url:c,location.href),j=FUZZ

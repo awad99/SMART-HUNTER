@@ -1,0 +1,14 @@
+REDIRECT CHAIN ANALYSIS
+==================================================
+Original : https://www.rockstargames.com/
+Final    : https://www.rockstargames.com/
+Hops     : 1
+
+CHAIN:
+  1. ORIGINAL: https://www.rockstargames.com/
+  2. 200: https://www.rockstargames.com/ → 
+  3. FINAL: https://www.rockstargames.com/ (200)
+
+SECURITY:
+  Domains     : 1 (www.rockstargames.com)
+  HTTP→HTTPS  : No

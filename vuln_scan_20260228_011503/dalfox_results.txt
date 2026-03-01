@@ -1,3 +1,0 @@
-
-=== XSSTRIKE SCAN ===
-[*] Running XSStrike with crawling...

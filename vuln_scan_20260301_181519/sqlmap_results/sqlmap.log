@@ -1,0 +1,377 @@
+        ___
+       __H__
+ ___ ___[)]_____ ___ ___  {1.9.11#stable}
+|_ -| . [(]     | .'| . |
+|___|_  ["]_|_|_|__,|  _|
+      |_|V...       |_|   https://sqlmap.org
+
+[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program
+
+[*] starting @ 18:20:31 /2026-03-01/
+
+[18:20:31] [INFO] fetched random HTTP User-Agent header value 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0 Unique/97.7.7239.70' from file '/usr/share/sqlmap/data/txt/user-agents.txt'
+[18:20:31] [INFO] parsing multiple targets list from 'sqli_parameters.txt'
+[18:20:31] [INFO] starting crawler for target URL 'https://stripe.com/lp/vertical-saas-benchmark-2025?utm_medium=FUZZ' (1/5)
+do you want to check for the existence of site's sitemap(.xml) [y/N] N
+[18:20:31] [INFO] starting 2 threads
+do you want to normalize crawling results [Y/n] Y
+do you want to store crawling results to a temporary file for eventual further processing with other tools [y/N] N
+[18:20:35] [INFO] found a total of 3 targets
+[1/3] Form:
+POST https://stripe.com/-api/form
+POST data: analytics_cid=&analytics_event_id=&formId=2082&cms_marketo_unique_id=page_url&mostRecentLanguage=en&FF_UTM_Campaign_First_Click__c=Undefined&FF_UTM_Campaign_Last_Click__c=Undefined&FF_UTM_Content_First_Click__c=Undefined&FF_UTM_Content_Last_Click__c=Undefined&FF_UTM_Medium_First_Click__c=Direct&FF_UTM_Medium_Last_Click__c=Direct&FF_UTM_Source_First_Click__c=direct&FF_UTM_Source_Last_Click__c=direct&FF_UTM_Term_First_Click__c=Undefined&FF_UTM_Term_Last_Click__c=Undefined&FF_Conversion_Page__c=Undefined&FF_Conversion_Date__c=null&Referrer_URL__c=Undefined&firstName=&lastName=&email=&website=&company=&Job_Level_Form__c=C-level&Job_Function_Form__c=Chief%20Executive%20Officer&Country__c=AF&marketingOptIn=1
+do you want to test this form? [Y/n/q] 
+> Y
+Edit POST data [default: analytics_cid=&analytics_event_id=&formId=2082&cms_marketo_unique_id=page_url&mostRecentLanguage=en&FF_UTM_Campaign_First_Click__c=Undefined&FF_UTM_Campaign_Last_Click__c=Undefined&FF_UTM_Content_First_Click__c=Undefined&FF_UTM_Content_Last_Click__c=Undefined&FF_UTM_Medium_First_Click__c=Direct&FF_UTM_Medium_Last_Click__c=Direct&FF_UTM_Source_First_Click__c=direct&FF_UTM_Source_Last_Click__c=direct&FF_UTM_Term_First_Click__c=Undefined&FF_UTM_Term_Last_Click__c=Undefined&FF_Conversion_Page__c=Undefined&FF_Conversion_Date__c=null&Referrer_URL__c=Undefined&firstName=&lastName=&email=&website=&company=&Job_Level_Form__c=C-level&Job_Function_Form__c=Chief%20Executive%20Officer&Country__c=AF&marketingOptIn=1] (Warning: blank fields detected): analytics_cid=&analytics_event_id=&formId=2082&cms_marketo_unique_id=page_url&mostRecentLanguage=en&FF_UTM_Campaign_First_Click__c=Undefined&FF_UTM_Campaign_Last_Click__c=Undefined&FF_UTM_Content_First_Click__c=Undefined&FF_UTM_Content_Last_Click__c=Undefined&FF_UTM_Medium_First_Click__c=Direct&FF_UTM_Medium_Last_Click__c=Direct&FF_UTM_Source_First_Click__c=direct&FF_UTM_Source_Last_Click__c=direct&FF_UTM_Term_First_Click__c=Undefined&FF_UTM_Term_Last_Click__c=Undefined&FF_Conversion_Page__c=Undefined&FF_Conversion_Date__c=null&Referrer_URL__c=Undefined&firstName=&lastName=&email=&website=&company=&Job_Level_Form__c=C-level&Job_Function_Form__c=Chief Executive Officer&Country__c=AF&marketingOptIn=1
+do you want to fill blank fields with random values? [Y/n] Y
+[18:20:35] [INFO] using '/home/awad/.local/share/sqlmap/output/results-03012026_0620pm.csv' as the CSV results file in multiple targets mode
+[18:20:36] [WARNING] the web server responded with an HTTP error code (400) which could interfere with the results of the tests
+[18:20:36] [CRITICAL] previous heuristics detected that the target is protected by some kind of WAF/IPS
+[18:20:36] [INFO] testing if the target URL content is stable
+[18:20:37] [INFO] target URL content is stable
+[18:20:37] [INFO] testing if POST parameter 'analytics_cid' is dynamic
+[18:20:44] [WARNING] POST parameter 'analytics_cid' does not appear to be dynamic
+[18:20:45] [WARNING] heuristic (basic) test shows that POST parameter 'analytics_cid' might not be injectable
+[18:20:46] [INFO] skipping POST parameter 'analytics_cid'
+[18:20:46] [INFO] testing if POST parameter 'analytics_event_id' is dynamic
+[18:20:47] [INFO] POST parameter 'analytics_event_id' appears to be dynamic
+[18:20:50] [WARNING] heuristic (basic) test shows that POST parameter 'analytics_event_id' might not be injectable
+[18:20:51] [INFO] skipping POST parameter 'analytics_event_id'
+[18:20:51] [INFO] testing if POST parameter 'formId' is dynamic
+[18:20:52] [INFO] POST parameter 'formId' appears to be dynamic
+[18:20:57] [WARNING] heuristic (basic) test shows that POST parameter 'formId' might not be injectable
+[18:20:58] [INFO] skipping POST parameter 'formId'
+[18:20:58] [INFO] testing if POST parameter 'cms_marketo_unique_id' is dynamic
+[18:21:02] [INFO] POST parameter 'cms_marketo_unique_id' appears to be dynamic
+[18:21:03] [WARNING] heuristic (basic) test shows that POST parameter 'cms_marketo_unique_id' might not be injectable
+[18:21:04] [INFO] skipping POST parameter 'cms_marketo_unique_id'
+[18:21:04] [INFO] testing if POST parameter 'mostRecentLanguage' is dynamic
+[18:21:12] [INFO] POST parameter 'mostRecentLanguage' appears to be dynamic
+[18:21:13] [WARNING] heuristic (basic) test shows that POST parameter 'mostRecentLanguage' might not be injectable
+[18:21:14] [INFO] skipping POST parameter 'mostRecentLanguage'
+[18:21:14] [INFO] testing if POST parameter 'FF_UTM_Campaign_First_Click__c' is dynamic
+[18:21:15] [INFO] POST parameter 'FF_UTM_Campaign_First_Click__c' appears to be dynamic
+[18:21:15] [WARNING] heuristic (basic) test shows that POST parameter 'FF_UTM_Campaign_First_Click__c' might not be injectable
+[18:21:17] [INFO] skipping POST parameter 'FF_UTM_Campaign_First_Click__c'
+[18:21:17] [INFO] testing if POST parameter 'FF_UTM_Campaign_Last_Click__c' is dynamic
+[18:21:18] [INFO] POST parameter 'FF_UTM_Campaign_Last_Click__c' appears to be dynamic
+[18:21:19] [WARNING] heuristic (basic) test shows that POST parameter 'FF_UTM_Campaign_Last_Click__c' might not be injectable
+[18:21:20] [INFO] skipping POST parameter 'FF_UTM_Campaign_Last_Click__c'
+[18:21:20] [INFO] testing if POST parameter 'FF_UTM_Content_First_Click__c' is dynamic
+[18:21:21] [INFO] POST parameter 'FF_UTM_Content_First_Click__c' appears to be dynamic
+[18:21:22] [WARNING] heuristic (basic) test shows that POST parameter 'FF_UTM_Content_First_Click__c' might not be injectable
+[18:21:23] [INFO] skipping POST parameter 'FF_UTM_Content_First_Click__c'
+[18:21:23] [INFO] testing if POST parameter 'FF_UTM_Content_Last_Click__c' is dynamic
+[18:21:24] [INFO] POST parameter 'FF_UTM_Content_Last_Click__c' appears to be dynamic
+[18:21:25] [WARNING] heuristic (basic) test shows that POST parameter 'FF_UTM_Content_Last_Click__c' might not be injectable
+[18:21:26] [INFO] skipping POST parameter 'FF_UTM_Content_Last_Click__c'
+[18:21:26] [INFO] testing if POST parameter 'FF_UTM_Medium_First_Click__c' is dynamic
+[18:21:27] [INFO] POST parameter 'FF_UTM_Medium_First_Click__c' appears to be dynamic
+[18:21:28] [WARNING] heuristic (basic) test shows that POST parameter 'FF_UTM_Medium_First_Click__c' might not be injectable
+[18:21:28] [INFO] skipping POST parameter 'FF_UTM_Medium_First_Click__c'
+[18:21:28] [INFO] testing if POST parameter 'FF_UTM_Medium_Last_Click__c' is dynamic
+[18:21:29] [INFO] POST parameter 'FF_UTM_Medium_Last_Click__c' appears to be dynamic
+[18:21:31] [WARNING] heuristic (basic) test shows that POST parameter 'FF_UTM_Medium_Last_Click__c' might not be injectable
+[18:21:32] [INFO] skipping POST parameter 'FF_UTM_Medium_Last_Click__c'
+[18:21:32] [INFO] testing if POST parameter 'FF_UTM_Source_First_Click__c' is dynamic
+[18:21:33] [INFO] POST parameter 'FF_UTM_Source_First_Click__c' appears to be dynamic
+[18:21:40] [WARNING] heuristic (basic) test shows that POST parameter 'FF_UTM_Source_First_Click__c' might not be injectable
+[18:21:41] [INFO] skipping POST parameter 'FF_UTM_Source_First_Click__c'
+[18:21:41] [INFO] testing if POST parameter 'FF_UTM_Source_Last_Click__c' is dynamic
+[18:21:41] [INFO] POST parameter 'FF_UTM_Source_Last_Click__c' appears to be dynamic
+[18:21:44] [WARNING] heuristic (basic) test shows that POST parameter 'FF_UTM_Source_Last_Click__c' might not be injectable
+[18:21:45] [INFO] skipping POST parameter 'FF_UTM_Source_Last_Click__c'
+[18:21:45] [INFO] testing if POST parameter 'FF_UTM_Term_First_Click__c' is dynamic
+[18:21:47] [INFO] POST parameter 'FF_UTM_Term_First_Click__c' appears to be dynamic
+[18:21:48] [WARNING] heuristic (basic) test shows that POST parameter 'FF_UTM_Term_First_Click__c' might not be injectable
+[18:21:49] [INFO] skipping POST parameter 'FF_UTM_Term_First_Click__c'
+[18:21:49] [INFO] testing if POST parameter 'FF_UTM_Term_Last_Click__c' is dynamic
+[18:21:51] [INFO] POST parameter 'FF_UTM_Term_Last_Click__c' appears to be dynamic
+[18:21:51] [WARNING] heuristic (basic) test shows that POST parameter 'FF_UTM_Term_Last_Click__c' might not be injectable
+[18:21:53] [INFO] skipping POST parameter 'FF_UTM_Term_Last_Click__c'
+[18:21:53] [INFO] testing if POST parameter 'FF_Conversion_Page__c' is dynamic
+[18:21:54] [INFO] POST parameter 'FF_Conversion_Page__c' appears to be dynamic
+[18:21:55] [WARNING] heuristic (basic) test shows that POST parameter 'FF_Conversion_Page__c' might not be injectable
+[18:22:02] [INFO] skipping POST parameter 'FF_Conversion_Page__c'
+[18:22:02] [INFO] testing if POST parameter 'FF_Conversion_Date__c' is dynamic
+[18:22:03] [INFO] POST parameter 'FF_Conversion_Date__c' appears to be dynamic
+[18:22:04] [WARNING] heuristic (basic) test shows that POST parameter 'FF_Conversion_Date__c' might not be injectable
+[18:22:04] [INFO] skipping POST parameter 'FF_Conversion_Date__c'
+[18:22:04] [INFO] testing if POST parameter 'Referrer_URL__c' is dynamic
+[18:22:06] [INFO] POST parameter 'Referrer_URL__c' appears to be dynamic
+[18:22:06] [WARNING] heuristic (basic) test shows that POST parameter 'Referrer_URL__c' might not be injectable
+[18:22:14] [INFO] skipping POST parameter 'Referrer_URL__c'
+[18:22:14] [INFO] testing if POST parameter 'firstName' is dynamic
+[18:22:15] [INFO] POST parameter 'firstName' appears to be dynamic
+[18:22:16] [WARNING] heuristic (basic) test shows that POST parameter 'firstName' might not be injectable
+[18:22:18] [INFO] skipping POST parameter 'firstName'
+[18:22:18] [INFO] testing if POST parameter 'lastName' is dynamic
+[18:22:19] [INFO] POST parameter 'lastName' appears to be dynamic
+[18:22:20] [WARNING] heuristic (basic) test shows that POST parameter 'lastName' might not be injectable
+[18:22:20] [INFO] skipping POST parameter 'lastName'
+[18:22:20] [INFO] testing if POST parameter 'email' is dynamic
+[18:22:21] [INFO] POST parameter 'email' appears to be dynamic
+[18:22:22] [WARNING] heuristic (basic) test shows that POST parameter 'email' might not be injectable
+[18:22:24] [INFO] skipping POST parameter 'email'
+[18:22:24] [INFO] testing if POST parameter 'website' is dynamic
+[18:22:29] [INFO] POST parameter 'website' appears to be dynamic
+[18:22:31] [WARNING] heuristic (basic) test shows that POST parameter 'website' might not be injectable
+[18:22:32] [INFO] skipping POST parameter 'website'
+[18:22:32] [INFO] testing if POST parameter 'company' is dynamic
+[18:22:33] [INFO] POST parameter 'company' appears to be dynamic
+[18:22:34] [WARNING] heuristic (basic) test shows that POST parameter 'company' might not be injectable
+[18:22:37] [INFO] skipping POST parameter 'company'
+[18:22:37] [INFO] testing if POST parameter 'Job_Level_Form__c' is dynamic
+[18:22:45] [INFO] POST parameter 'Job_Level_Form__c' appears to be dynamic
+[18:22:47] [WARNING] heuristic (basic) test shows that POST parameter 'Job_Level_Form__c' might not be injectable
+[18:22:48] [INFO] skipping POST parameter 'Job_Level_Form__c'
+[18:22:48] [INFO] testing if POST parameter 'Job_Function_Form__c' is dynamic
+[18:22:49] [INFO] POST parameter 'Job_Function_Form__c' appears to be dynamic
+[18:22:49] [WARNING] heuristic (basic) test shows that POST parameter 'Job_Function_Form__c' might not be injectable
+[18:22:50] [INFO] skipping POST parameter 'Job_Function_Form__c'
+[18:22:50] [INFO] testing if POST parameter 'Country__c' is dynamic
+[18:22:51] [INFO] POST parameter 'Country__c' appears to be dynamic
+[18:22:52] [WARNING] heuristic (basic) test shows that POST parameter 'Country__c' might not be injectable
+[18:22:56] [INFO] skipping POST parameter 'Country__c'
+[18:22:56] [INFO] testing if POST parameter 'marketingOptIn' is dynamic
+[18:22:57] [INFO] POST parameter 'marketingOptIn' appears to be dynamic
+[18:23:01] [WARNING] heuristic (basic) test shows that POST parameter 'marketingOptIn' might not be injectable
+[18:23:03] [INFO] skipping POST parameter 'marketingOptIn'
+[18:23:03] [ERROR] all tested parameters do not appear to be injectable. Try to increase values for '--level'/'--risk' options if you wish to perform more tests. If you suspect that there is some kind of protection mechanism involved (e.g. WAF) maybe you could try to use option '--tamper' (e.g. '--tamper=space2comment'), skipping to the next target
+[18:23:03] [WARNING] HTTP error codes detected during run:
+400 (Bad Request) - 4 times, 429 (Too Many Requests) - 83 times
+[2/3] URL:
+GET https://stripe.com/lp/vertical-saas-benchmark-2025?utm_medium=FUZZ
+do you want to test this URL? [Y/n/q]
+> Y
+[18:23:03] [INFO] testing URL 'https://stripe.com/lp/vertical-saas-benchmark-2025?utm_medium=FUZZ'
+you have not declared cookie(s), while server wants to set its own ('cid=a7516a60-69...5b0be64c56'). Do you want to use those [Y/n] Y
+[18:23:04] [CRITICAL] previous heuristics detected that the target is protected by some kind of WAF/IPS
+[18:23:04] [INFO] testing if the target URL content is stable
+[18:23:07] [WARNING] target URL content is not stable (i.e. content differs). sqlmap will base the page comparison on a sequence matcher. If no dynamic nor injectable parameters are detected, or in case of junk results, refer to user's manual paragraph 'Page comparison'
+how do you want to proceed? [(C)ontinue/(s)tring/(r)egex/(q)uit] C
+[18:23:07] [INFO] testing if GET parameter 'utm_medium' is dynamic
+[18:23:09] [WARNING] GET parameter 'utm_medium' does not appear to be dynamic
+[18:23:11] [WARNING] heuristic (basic) test shows that GET parameter 'utm_medium' might not be injectable
+[18:23:14] [INFO] skipping GET parameter 'utm_medium'
+[18:23:14] [ERROR] all tested parameters do not appear to be injectable. Try to increase values for '--level'/'--risk' options if you wish to perform more tests. If you suspect that there is some kind of protection mechanism involved (e.g. WAF) maybe you could try to use option '--tamper' (e.g. '--tamper=space2comment'), skipping to the next target
+[3/3] URL:
+GET https://stripe.com/lp/vertical-saas-benchmark-2025?utm_medium=owned-surfaces&utm_source=33d6&utm_campaign=GLOBAL_4250&utm_content=819a&utm_term=a6a6d7b23e01
+do you want to test this URL? [Y/n/q]
+> Y
+[18:23:14] [INFO] testing URL 'https://stripe.com/lp/vertical-saas-benchmark-2025?utm_medium=owned-surfaces&utm_source=33d6&utm_campaign=GLOBAL_4250&utm_content=819a&utm_term=a6a6d7b23e01'
+you have not declared cookie(s), while server wants to set its own ('cid=ea6711d0-9d...4e7ee8ec43'). Do you want to use those [Y/n] Y
+[18:23:15] [CRITICAL] previous heuristics detected that the target is protected by some kind of WAF/IPS
+[18:23:15] [INFO] testing if the target URL content is stable
+[18:23:17] [WARNING] target URL content is not stable (i.e. content differs). sqlmap will base the page comparison on a sequence matcher. If no dynamic nor injectable parameters are detected, or in case of junk results, refer to user's manual paragraph 'Page comparison'
+how do you want to proceed? [(C)ontinue/(s)tring/(r)egex/(q)uit] C
+[18:23:18] [INFO] skipping previously processed GET parameter 'utm_medium'
+[18:23:18] [INFO] testing if GET parameter 'utm_source' is dynamic
+[18:23:19] [WARNING] GET parameter 'utm_source' does not appear to be dynamic
+[18:23:20] [WARNING] heuristic (basic) test shows that GET parameter 'utm_source' might not be injectable
+[18:23:23] [INFO] skipping GET parameter 'utm_source'
+[18:23:23] [INFO] testing if GET parameter 'utm_campaign' is dynamic
+[18:23:27] [WARNING] GET parameter 'utm_campaign' does not appear to be dynamic
+[18:23:28] [WARNING] heuristic (basic) test shows that GET parameter 'utm_campaign' might not be injectable
+[18:23:30] [INFO] skipping GET parameter 'utm_campaign'
+[18:23:30] [INFO] testing if GET parameter 'utm_content' is dynamic
+[18:23:33] [WARNING] GET parameter 'utm_content' does not appear to be dynamic
+[18:23:34] [WARNING] heuristic (basic) test shows that GET parameter 'utm_content' might not be injectable
+[18:23:36] [INFO] skipping GET parameter 'utm_content'
+[18:23:36] [INFO] testing if GET parameter 'utm_term' is dynamic
+[18:23:38] [WARNING] GET parameter 'utm_term' does not appear to be dynamic
+[18:23:40] [WARNING] heuristic (basic) test shows that GET parameter 'utm_term' might not be injectable
+[18:23:42] [INFO] skipping GET parameter 'utm_term'
+[18:23:42] [ERROR] all tested parameters do not appear to be injectable. Try to increase values for '--level'/'--risk' options if you wish to perform more tests. If you suspect that there is some kind of protection mechanism involved (e.g. WAF) maybe you could try to use option '--tamper' (e.g. '--tamper=space2comment'), skipping to the next target
+[18:23:42] [INFO] you can find results of scanning in multiple targets mode inside the CSV file '/home/awad/.local/share/sqlmap/output/results-03012026_0620pm.csv'
+[18:23:42] [INFO] starting crawler for target URL 'https://stripe.com/lp/vertical-saas-benchmark-2025?utm_source=FUZZ' (2/5)
+[18:23:42] [INFO] starting 2 threads
+[18:23:47] [INFO] found a total of 3 targets
+[1/3] Form:
+POST https://stripe.com/-api/form
+POST data: analytics_cid=&analytics_event_id=&formId=2082&cms_marketo_unique_id=page_url&mostRecentLanguage=en&FF_UTM_Campaign_First_Click__c=Undefined&FF_UTM_Campaign_Last_Click__c=Undefined&FF_UTM_Content_First_Click__c=Undefined&FF_UTM_Content_Last_Click__c=Undefined&FF_UTM_Medium_First_Click__c=Direct&FF_UTM_Medium_Last_Click__c=Direct&FF_UTM_Source_First_Click__c=direct&FF_UTM_Source_Last_Click__c=direct&FF_UTM_Term_First_Click__c=Undefined&FF_UTM_Term_Last_Click__c=Undefined&FF_Conversion_Page__c=Undefined&FF_Conversion_Date__c=null&Referrer_URL__c=Undefined&firstName=&lastName=&email=&website=&company=&Job_Level_Form__c=C-level&Job_Function_Form__c=Chief%20Executive%20Officer&Country__c=AF&marketingOptIn=1
+do you want to test this form? [Y/n/q] 
+> Y
+Edit POST data [default: analytics_cid=&analytics_event_id=&formId=2082&cms_marketo_unique_id=page_url&mostRecentLanguage=en&FF_UTM_Campaign_First_Click__c=Undefined&FF_UTM_Campaign_Last_Click__c=Undefined&FF_UTM_Content_First_Click__c=Undefined&FF_UTM_Content_Last_Click__c=Undefined&FF_UTM_Medium_First_Click__c=Direct&FF_UTM_Medium_Last_Click__c=Direct&FF_UTM_Source_First_Click__c=direct&FF_UTM_Source_Last_Click__c=direct&FF_UTM_Term_First_Click__c=Undefined&FF_UTM_Term_Last_Click__c=Undefined&FF_Conversion_Page__c=Undefined&FF_Conversion_Date__c=null&Referrer_URL__c=Undefined&firstName=&lastName=&email=&website=&company=&Job_Level_Form__c=C-level&Job_Function_Form__c=Chief%20Executive%20Officer&Country__c=AF&marketingOptIn=1] (Warning: blank fields detected): analytics_cid=&analytics_event_id=&formId=2082&cms_marketo_unique_id=page_url&mostRecentLanguage=en&FF_UTM_Campaign_First_Click__c=Undefined&FF_UTM_Campaign_Last_Click__c=Undefined&FF_UTM_Content_First_Click__c=Undefined&FF_UTM_Content_Last_Click__c=Undefined&FF_UTM_Medium_First_Click__c=Direct&FF_UTM_Medium_Last_Click__c=Direct&FF_UTM_Source_First_Click__c=direct&FF_UTM_Source_Last_Click__c=direct&FF_UTM_Term_First_Click__c=Undefined&FF_UTM_Term_Last_Click__c=Undefined&FF_Conversion_Page__c=Undefined&FF_Conversion_Date__c=null&Referrer_URL__c=Undefined&firstName=&lastName=&email=&website=&company=&Job_Level_Form__c=C-level&Job_Function_Form__c=Chief Executive Officer&Country__c=AF&marketingOptIn=1
+do you want to fill blank fields with random values? [Y/n] Y
+[18:23:48] [WARNING] the web server responded with an HTTP error code (429) which could interfere with the results of the tests
+[18:23:48] [CRITICAL] previous heuristics detected that the target is protected by some kind of WAF/IPS
+[18:23:48] [INFO] testing if the target URL content is stable
+[18:23:55] [INFO] target URL content is stable
+[18:23:55] [INFO] skipping previously processed POST parameter 'analytics_cid'
+[18:23:55] [INFO] skipping previously processed POST parameter 'analytics_event_id'
+[18:23:55] [INFO] skipping previously processed POST parameter 'formId'
+[18:23:55] [INFO] skipping previously processed POST parameter 'cms_marketo_unique_id'
+[18:23:55] [INFO] skipping previously processed POST parameter 'mostRecentLanguage'
+[18:23:55] [INFO] skipping previously processed POST parameter 'FF_UTM_Campaign_First_Click__c'
+[18:23:55] [INFO] skipping previously processed POST parameter 'FF_UTM_Campaign_Last_Click__c'
+[18:23:55] [INFO] skipping previously processed POST parameter 'FF_UTM_Content_First_Click__c'
+[18:23:55] [INFO] skipping previously processed POST parameter 'FF_UTM_Content_Last_Click__c'
+[18:23:55] [INFO] skipping previously processed POST parameter 'FF_UTM_Medium_First_Click__c'
+[18:23:55] [INFO] skipping previously processed POST parameter 'FF_UTM_Medium_Last_Click__c'
+[18:23:55] [INFO] skipping previously processed POST parameter 'FF_UTM_Source_First_Click__c'
+[18:23:55] [INFO] skipping previously processed POST parameter 'FF_UTM_Source_Last_Click__c'
+[18:23:55] [INFO] skipping previously processed POST parameter 'FF_UTM_Term_First_Click__c'
+[18:23:55] [INFO] skipping previously processed POST parameter 'FF_UTM_Term_Last_Click__c'
+[18:23:55] [INFO] skipping previously processed POST parameter 'FF_Conversion_Page__c'
+[18:23:55] [INFO] skipping previously processed POST parameter 'FF_Conversion_Date__c'
+[18:23:55] [INFO] skipping previously processed POST parameter 'Referrer_URL__c'
+[18:23:55] [INFO] skipping previously processed POST parameter 'firstName'
+[18:23:55] [INFO] skipping previously processed POST parameter 'lastName'
+[18:23:55] [INFO] skipping previously processed POST parameter 'email'
+[18:23:55] [INFO] skipping previously processed POST parameter 'website'
+[18:23:55] [INFO] skipping previously processed POST parameter 'company'
+[18:23:55] [INFO] skipping previously processed POST parameter 'Job_Level_Form__c'
+[18:23:55] [INFO] skipping previously processed POST parameter 'Job_Function_Form__c'
+[18:23:55] [INFO] skipping previously processed POST parameter 'Country__c'
+[18:23:55] [INFO] skipping previously processed POST parameter 'marketingOptIn'
+[18:23:55] [ERROR] all tested parameters do not appear to be injectable. Try to increase values for '--level'/'--risk' options if you wish to perform more tests. Please retry with the switch '--text-only' (along with --technique=BU) as this case looks like a perfect candidate (low textual content along with inability of comparison engine to detect at least one dynamic parameter). If you suspect that there is some kind of protection mechanism involved (e.g. WAF) maybe you could try to use option '--tamper' (e.g. '--tamper=space2comment'), skipping to the next target
+[18:23:55] [WARNING] HTTP error codes detected during run:
+429 (Too Many Requests) - 2 times
+[18:23:55] [INFO] skipping 'https://stripe.com/lp/vertical-saas-benchmark-2025?utm_source=FUZZ'
+[18:23:55] [INFO] skipping 'https://stripe.com/lp/vertical-saas-benchmark-2025?utm_medium=owned-surfaces&utm_source=33d6&utm_campaign=GLOBAL_4250&utm_content=819a&utm_term=a6a6d7b23e01'
+[18:23:55] [INFO] you can find results of scanning in multiple targets mode inside the CSV file '/home/awad/.local/share/sqlmap/output/results-03012026_0620pm.csv'
+[18:23:55] [INFO] starting crawler for target URL 'https://stripe.com/lp/vertical-saas-benchmark-2025?utm_campaign=FUZZ' (3/5)
+[18:23:55] [INFO] starting 2 threads
+[18:24:00] [INFO] found a total of 3 targets
+[1/3] Form:
+POST https://stripe.com/-api/form
+POST data: analytics_cid=&analytics_event_id=&formId=2082&cms_marketo_unique_id=page_url&mostRecentLanguage=en&FF_UTM_Campaign_First_Click__c=Undefined&FF_UTM_Campaign_Last_Click__c=Undefined&FF_UTM_Content_First_Click__c=Undefined&FF_UTM_Content_Last_Click__c=Undefined&FF_UTM_Medium_First_Click__c=Direct&FF_UTM_Medium_Last_Click__c=Direct&FF_UTM_Source_First_Click__c=direct&FF_UTM_Source_Last_Click__c=direct&FF_UTM_Term_First_Click__c=Undefined&FF_UTM_Term_Last_Click__c=Undefined&FF_Conversion_Page__c=Undefined&FF_Conversion_Date__c=null&Referrer_URL__c=Undefined&firstName=&lastName=&email=&website=&company=&Job_Level_Form__c=C-level&Job_Function_Form__c=Chief%20Executive%20Officer&Country__c=AF&marketingOptIn=1
+do you want to test this form? [Y/n/q] 
+> Y
+Edit POST data [default: analytics_cid=&analytics_event_id=&formId=2082&cms_marketo_unique_id=page_url&mostRecentLanguage=en&FF_UTM_Campaign_First_Click__c=Undefined&FF_UTM_Campaign_Last_Click__c=Undefined&FF_UTM_Content_First_Click__c=Undefined&FF_UTM_Content_Last_Click__c=Undefined&FF_UTM_Medium_First_Click__c=Direct&FF_UTM_Medium_Last_Click__c=Direct&FF_UTM_Source_First_Click__c=direct&FF_UTM_Source_Last_Click__c=direct&FF_UTM_Term_First_Click__c=Undefined&FF_UTM_Term_Last_Click__c=Undefined&FF_Conversion_Page__c=Undefined&FF_Conversion_Date__c=null&Referrer_URL__c=Undefined&firstName=&lastName=&email=&website=&company=&Job_Level_Form__c=C-level&Job_Function_Form__c=Chief%20Executive%20Officer&Country__c=AF&marketingOptIn=1] (Warning: blank fields detected): analytics_cid=&analytics_event_id=&formId=2082&cms_marketo_unique_id=page_url&mostRecentLanguage=en&FF_UTM_Campaign_First_Click__c=Undefined&FF_UTM_Campaign_Last_Click__c=Undefined&FF_UTM_Content_First_Click__c=Undefined&FF_UTM_Content_Last_Click__c=Undefined&FF_UTM_Medium_First_Click__c=Direct&FF_UTM_Medium_Last_Click__c=Direct&FF_UTM_Source_First_Click__c=direct&FF_UTM_Source_Last_Click__c=direct&FF_UTM_Term_First_Click__c=Undefined&FF_UTM_Term_Last_Click__c=Undefined&FF_Conversion_Page__c=Undefined&FF_Conversion_Date__c=null&Referrer_URL__c=Undefined&firstName=&lastName=&email=&website=&company=&Job_Level_Form__c=C-level&Job_Function_Form__c=Chief Executive Officer&Country__c=AF&marketingOptIn=1
+do you want to fill blank fields with random values? [Y/n] Y
+[18:24:01] [WARNING] the web server responded with an HTTP error code (429) which could interfere with the results of the tests
+[18:24:01] [CRITICAL] previous heuristics detected that the target is protected by some kind of WAF/IPS
+[18:24:01] [INFO] testing if the target URL content is stable
+[18:24:03] [INFO] target URL content is stable
+[18:24:03] [INFO] skipping previously processed POST parameter 'analytics_cid'
+[18:24:03] [INFO] skipping previously processed POST parameter 'analytics_event_id'
+[18:24:03] [INFO] skipping previously processed POST parameter 'formId'
+[18:24:03] [INFO] skipping previously processed POST parameter 'cms_marketo_unique_id'
+[18:24:03] [INFO] skipping previously processed POST parameter 'mostRecentLanguage'
+[18:24:03] [INFO] skipping previously processed POST parameter 'FF_UTM_Campaign_First_Click__c'
+[18:24:03] [INFO] skipping previously processed POST parameter 'FF_UTM_Campaign_Last_Click__c'
+[18:24:03] [INFO] skipping previously processed POST parameter 'FF_UTM_Content_First_Click__c'
+[18:24:03] [INFO] skipping previously processed POST parameter 'FF_UTM_Content_Last_Click__c'
+[18:24:03] [INFO] skipping previously processed POST parameter 'FF_UTM_Medium_First_Click__c'
+[18:24:03] [INFO] skipping previously processed POST parameter 'FF_UTM_Medium_Last_Click__c'
+[18:24:03] [INFO] skipping previously processed POST parameter 'FF_UTM_Source_First_Click__c'
+[18:24:03] [INFO] skipping previously processed POST parameter 'FF_UTM_Source_Last_Click__c'
+[18:24:03] [INFO] skipping previously processed POST parameter 'FF_UTM_Term_First_Click__c'
+[18:24:03] [INFO] skipping previously processed POST parameter 'FF_UTM_Term_Last_Click__c'
+[18:24:03] [INFO] skipping previously processed POST parameter 'FF_Conversion_Page__c'
+[18:24:03] [INFO] skipping previously processed POST parameter 'FF_Conversion_Date__c'
+[18:24:03] [INFO] skipping previously processed POST parameter 'Referrer_URL__c'
+[18:24:03] [INFO] skipping previously processed POST parameter 'firstName'
+[18:24:03] [INFO] skipping previously processed POST parameter 'lastName'
+[18:24:03] [INFO] skipping previously processed POST parameter 'email'
+[18:24:03] [INFO] skipping previously processed POST parameter 'website'
+[18:24:03] [INFO] skipping previously processed POST parameter 'company'
+[18:24:03] [INFO] skipping previously processed POST parameter 'Job_Level_Form__c'
+[18:24:03] [INFO] skipping previously processed POST parameter 'Job_Function_Form__c'
+[18:24:03] [INFO] skipping previously processed POST parameter 'Country__c'
+[18:24:03] [INFO] skipping previously processed POST parameter 'marketingOptIn'
+[18:24:03] [ERROR] all tested parameters do not appear to be injectable. Try to increase values for '--level'/'--risk' options if you wish to perform more tests. Please retry with the switch '--text-only' (along with --technique=BU) as this case looks like a perfect candidate (low textual content along with inability of comparison engine to detect at least one dynamic parameter). If you suspect that there is some kind of protection mechanism involved (e.g. WAF) maybe you could try to use option '--tamper' (e.g. '--tamper=space2comment'), skipping to the next target
+[18:24:03] [WARNING] HTTP error codes detected during run:
+429 (Too Many Requests) - 2 times
+[18:24:03] [INFO] skipping 'https://stripe.com/lp/vertical-saas-benchmark-2025?utm_campaign=FUZZ'
+[18:24:03] [INFO] skipping 'https://stripe.com/lp/vertical-saas-benchmark-2025?utm_medium=owned-surfaces&utm_source=33d6&utm_campaign=GLOBAL_4250&utm_content=819a&utm_term=a6a6d7b23e01'
+[18:24:03] [INFO] you can find results of scanning in multiple targets mode inside the CSV file '/home/awad/.local/share/sqlmap/output/results-03012026_0620pm.csv'
+[18:24:03] [INFO] starting crawler for target URL 'https://stripe.com/lp/vertical-saas-benchmark-2025?utm_content=FUZZ' (4/5)
+[18:24:03] [INFO] starting 2 threads
+[18:24:07] [INFO] found a total of 3 targets
+[1/3] Form:
+POST https://stripe.com/-api/form
+POST data: analytics_cid=&analytics_event_id=&formId=2082&cms_marketo_unique_id=page_url&mostRecentLanguage=en&FF_UTM_Campaign_First_Click__c=Undefined&FF_UTM_Campaign_Last_Click__c=Undefined&FF_UTM_Content_First_Click__c=Undefined&FF_UTM_Content_Last_Click__c=Undefined&FF_UTM_Medium_First_Click__c=Direct&FF_UTM_Medium_Last_Click__c=Direct&FF_UTM_Source_First_Click__c=direct&FF_UTM_Source_Last_Click__c=direct&FF_UTM_Term_First_Click__c=Undefined&FF_UTM_Term_Last_Click__c=Undefined&FF_Conversion_Page__c=Undefined&FF_Conversion_Date__c=null&Referrer_URL__c=Undefined&firstName=&lastName=&email=&website=&company=&Job_Level_Form__c=C-level&Job_Function_Form__c=Chief%20Executive%20Officer&Country__c=AF&marketingOptIn=1
+do you want to test this form? [Y/n/q] 
+> Y
+Edit POST data [default: analytics_cid=&analytics_event_id=&formId=2082&cms_marketo_unique_id=page_url&mostRecentLanguage=en&FF_UTM_Campaign_First_Click__c=Undefined&FF_UTM_Campaign_Last_Click__c=Undefined&FF_UTM_Content_First_Click__c=Undefined&FF_UTM_Content_Last_Click__c=Undefined&FF_UTM_Medium_First_Click__c=Direct&FF_UTM_Medium_Last_Click__c=Direct&FF_UTM_Source_First_Click__c=direct&FF_UTM_Source_Last_Click__c=direct&FF_UTM_Term_First_Click__c=Undefined&FF_UTM_Term_Last_Click__c=Undefined&FF_Conversion_Page__c=Undefined&FF_Conversion_Date__c=null&Referrer_URL__c=Undefined&firstName=&lastName=&email=&website=&company=&Job_Level_Form__c=C-level&Job_Function_Form__c=Chief%20Executive%20Officer&Country__c=AF&marketingOptIn=1] (Warning: blank fields detected): analytics_cid=&analytics_event_id=&formId=2082&cms_marketo_unique_id=page_url&mostRecentLanguage=en&FF_UTM_Campaign_First_Click__c=Undefined&FF_UTM_Campaign_Last_Click__c=Undefined&FF_UTM_Content_First_Click__c=Undefined&FF_UTM_Content_Last_Click__c=Undefined&FF_UTM_Medium_First_Click__c=Direct&FF_UTM_Medium_Last_Click__c=Direct&FF_UTM_Source_First_Click__c=direct&FF_UTM_Source_Last_Click__c=direct&FF_UTM_Term_First_Click__c=Undefined&FF_UTM_Term_Last_Click__c=Undefined&FF_Conversion_Page__c=Undefined&FF_Conversion_Date__c=null&Referrer_URL__c=Undefined&firstName=&lastName=&email=&website=&company=&Job_Level_Form__c=C-level&Job_Function_Form__c=Chief Executive Officer&Country__c=AF&marketingOptIn=1
+do you want to fill blank fields with random values? [Y/n] Y
+[18:24:09] [WARNING] the web server responded with an HTTP error code (429) which could interfere with the results of the tests
+[18:24:09] [CRITICAL] previous heuristics detected that the target is protected by some kind of WAF/IPS
+[18:24:09] [INFO] testing if the target URL content is stable
+[18:24:10] [INFO] target URL content is stable
+[18:24:10] [INFO] skipping previously processed POST parameter 'analytics_cid'
+[18:24:10] [INFO] skipping previously processed POST parameter 'analytics_event_id'
+[18:24:10] [INFO] skipping previously processed POST parameter 'formId'
+[18:24:10] [INFO] skipping previously processed POST parameter 'cms_marketo_unique_id'
+[18:24:10] [INFO] skipping previously processed POST parameter 'mostRecentLanguage'
+[18:24:10] [INFO] skipping previously processed POST parameter 'FF_UTM_Campaign_First_Click__c'
+[18:24:10] [INFO] skipping previously processed POST parameter 'FF_UTM_Campaign_Last_Click__c'
+[18:24:10] [INFO] skipping previously processed POST parameter 'FF_UTM_Content_First_Click__c'
+[18:24:10] [INFO] skipping previously processed POST parameter 'FF_UTM_Content_Last_Click__c'
+[18:24:10] [INFO] skipping previously processed POST parameter 'FF_UTM_Medium_First_Click__c'
+[18:24:10] [INFO] skipping previously processed POST parameter 'FF_UTM_Medium_Last_Click__c'
+[18:24:10] [INFO] skipping previously processed POST parameter 'FF_UTM_Source_First_Click__c'
+[18:24:10] [INFO] skipping previously processed POST parameter 'FF_UTM_Source_Last_Click__c'
+[18:24:10] [INFO] skipping previously processed POST parameter 'FF_UTM_Term_First_Click__c'
+[18:24:10] [INFO] skipping previously processed POST parameter 'FF_UTM_Term_Last_Click__c'
+[18:24:10] [INFO] skipping previously processed POST parameter 'FF_Conversion_Page__c'
+[18:24:10] [INFO] skipping previously processed POST parameter 'FF_Conversion_Date__c'
+[18:24:10] [INFO] skipping previously processed POST parameter 'Referrer_URL__c'
+[18:24:10] [INFO] skipping previously processed POST parameter 'firstName'
+[18:24:10] [INFO] skipping previously processed POST parameter 'lastName'
+[18:24:10] [INFO] skipping previously processed POST parameter 'email'
+[18:24:10] [INFO] skipping previously processed POST parameter 'website'
+[18:24:10] [INFO] skipping previously processed POST parameter 'company'
+[18:24:10] [INFO] skipping previously processed POST parameter 'Job_Level_Form__c'
+[18:24:10] [INFO] skipping previously processed POST parameter 'Job_Function_Form__c'
+[18:24:10] [INFO] skipping previously processed POST parameter 'Country__c'
+[18:24:10] [INFO] skipping previously processed POST parameter 'marketingOptIn'
+[18:24:10] [ERROR] all tested parameters do not appear to be injectable. Try to increase values for '--level'/'--risk' options if you wish to perform more tests. Please retry with the switch '--text-only' (along with --technique=BU) as this case looks like a perfect candidate (low textual content along with inability of comparison engine to detect at least one dynamic parameter). If you suspect that there is some kind of protection mechanism involved (e.g. WAF) maybe you could try to use option '--tamper' (e.g. '--tamper=space2comment'), skipping to the next target
+[18:24:10] [WARNING] HTTP error codes detected during run:
+429 (Too Many Requests) - 2 times
+[18:24:10] [INFO] skipping 'https://stripe.com/lp/vertical-saas-benchmark-2025?utm_content=FUZZ'
+[18:24:10] [INFO] skipping 'https://stripe.com/lp/vertical-saas-benchmark-2025?utm_medium=owned-surfaces&utm_source=33d6&utm_campaign=GLOBAL_4250&utm_content=819a&utm_term=a6a6d7b23e01'
+[18:24:10] [INFO] you can find results of scanning in multiple targets mode inside the CSV file '/home/awad/.local/share/sqlmap/output/results-03012026_0620pm.csv'
+[18:24:10] [INFO] starting crawler for target URL 'https://stripe.com/lp/vertical-saas-benchmark-2025?utm_term=FUZZ' (5/5)
+[18:24:10] [INFO] starting 2 threads
+[18:24:13] [INFO] found a total of 3 targets
+[1/3] Form:
+POST https://stripe.com/-api/form
+POST data: analytics_cid=&analytics_event_id=&formId=2082&cms_marketo_unique_id=page_url&mostRecentLanguage=en&FF_UTM_Campaign_First_Click__c=Undefined&FF_UTM_Campaign_Last_Click__c=Undefined&FF_UTM_Content_First_Click__c=Undefined&FF_UTM_Content_Last_Click__c=Undefined&FF_UTM_Medium_First_Click__c=Direct&FF_UTM_Medium_Last_Click__c=Direct&FF_UTM_Source_First_Click__c=direct&FF_UTM_Source_Last_Click__c=direct&FF_UTM_Term_First_Click__c=Undefined&FF_UTM_Term_Last_Click__c=Undefined&FF_Conversion_Page__c=Undefined&FF_Conversion_Date__c=null&Referrer_URL__c=Undefined&firstName=&lastName=&email=&website=&company=&Job_Level_Form__c=C-level&Job_Function_Form__c=Chief%20Executive%20Officer&Country__c=AF&marketingOptIn=1
+do you want to test this form? [Y/n/q] 
+> Y
+Edit POST data [default: analytics_cid=&analytics_event_id=&formId=2082&cms_marketo_unique_id=page_url&mostRecentLanguage=en&FF_UTM_Campaign_First_Click__c=Undefined&FF_UTM_Campaign_Last_Click__c=Undefined&FF_UTM_Content_First_Click__c=Undefined&FF_UTM_Content_Last_Click__c=Undefined&FF_UTM_Medium_First_Click__c=Direct&FF_UTM_Medium_Last_Click__c=Direct&FF_UTM_Source_First_Click__c=direct&FF_UTM_Source_Last_Click__c=direct&FF_UTM_Term_First_Click__c=Undefined&FF_UTM_Term_Last_Click__c=Undefined&FF_Conversion_Page__c=Undefined&FF_Conversion_Date__c=null&Referrer_URL__c=Undefined&firstName=&lastName=&email=&website=&company=&Job_Level_Form__c=C-level&Job_Function_Form__c=Chief%20Executive%20Officer&Country__c=AF&marketingOptIn=1] (Warning: blank fields detected): analytics_cid=&analytics_event_id=&formId=2082&cms_marketo_unique_id=page_url&mostRecentLanguage=en&FF_UTM_Campaign_First_Click__c=Undefined&FF_UTM_Campaign_Last_Click__c=Undefined&FF_UTM_Content_First_Click__c=Undefined&FF_UTM_Content_Last_Click__c=Undefined&FF_UTM_Medium_First_Click__c=Direct&FF_UTM_Medium_Last_Click__c=Direct&FF_UTM_Source_First_Click__c=direct&FF_UTM_Source_Last_Click__c=direct&FF_UTM_Term_First_Click__c=Undefined&FF_UTM_Term_Last_Click__c=Undefined&FF_Conversion_Page__c=Undefined&FF_Conversion_Date__c=null&Referrer_URL__c=Undefined&firstName=&lastName=&email=&website=&company=&Job_Level_Form__c=C-level&Job_Function_Form__c=Chief Executive Officer&Country__c=AF&marketingOptIn=1
+do you want to fill blank fields with random values? [Y/n] Y
+[18:24:14] [WARNING] the web server responded with an HTTP error code (429) which could interfere with the results of the tests
+[18:24:14] [CRITICAL] previous heuristics detected that the target is protected by some kind of WAF/IPS
+[18:24:14] [INFO] testing if the target URL content is stable
+[18:24:14] [INFO] target URL content is stable
+[18:24:14] [INFO] skipping previously processed POST parameter 'analytics_cid'
+[18:24:14] [INFO] skipping previously processed POST parameter 'analytics_event_id'
+[18:24:14] [INFO] skipping previously processed POST parameter 'formId'
+[18:24:14] [INFO] skipping previously processed POST parameter 'cms_marketo_unique_id'
+[18:24:14] [INFO] skipping previously processed POST parameter 'mostRecentLanguage'
+[18:24:14] [INFO] skipping previously processed POST parameter 'FF_UTM_Campaign_First_Click__c'
+[18:24:14] [INFO] skipping previously processed POST parameter 'FF_UTM_Campaign_Last_Click__c'
+[18:24:14] [INFO] skipping previously processed POST parameter 'FF_UTM_Content_First_Click__c'
+[18:24:14] [INFO] skipping previously processed POST parameter 'FF_UTM_Content_Last_Click__c'
+[18:24:14] [INFO] skipping previously processed POST parameter 'FF_UTM_Medium_First_Click__c'
+[18:24:14] [INFO] skipping previously processed POST parameter 'FF_UTM_Medium_Last_Click__c'
+[18:24:14] [INFO] skipping previously processed POST parameter 'FF_UTM_Source_First_Click__c'
+[18:24:14] [INFO] skipping previously processed POST parameter 'FF_UTM_Source_Last_Click__c'
+[18:24:14] [INFO] skipping previously processed POST parameter 'FF_UTM_Term_First_Click__c'
+[18:24:14] [INFO] skipping previously processed POST parameter 'FF_UTM_Term_Last_Click__c'
+[18:24:14] [INFO] skipping previously processed POST parameter 'FF_Conversion_Page__c'
+[18:24:14] [INFO] skipping previously processed POST parameter 'FF_Conversion_Date__c'
+[18:24:14] [INFO] skipping previously processed POST parameter 'Referrer_URL__c'
+[18:24:14] [INFO] skipping previously processed POST parameter 'firstName'
+[18:24:14] [INFO] skipping previously processed POST parameter 'lastName'
+[18:24:14] [INFO] skipping previously processed POST parameter 'email'
+[18:24:14] [INFO] skipping previously processed POST parameter 'website'
+[18:24:14] [INFO] skipping previously processed POST parameter 'company'
+[18:24:14] [INFO] skipping previously processed POST parameter 'Job_Level_Form__c'
+[18:24:14] [INFO] skipping previously processed POST parameter 'Job_Function_Form__c'
+[18:24:14] [INFO] skipping previously processed POST parameter 'Country__c'
+[18:24:14] [INFO] skipping previously processed POST parameter 'marketingOptIn'
+[18:24:15] [ERROR] all tested parameters do not appear to be injectable. Try to increase values for '--level'/'--risk' options if you wish to perform more tests. Please retry with the switch '--text-only' (along with --technique=BU) as this case looks like a perfect candidate (low textual content along with inability of comparison engine to detect at least one dynamic parameter). If you suspect that there is some kind of protection mechanism involved (e.g. WAF) maybe you could try to use option '--tamper' (e.g. '--tamper=space2comment'), skipping to the next target
+[18:24:15] [WARNING] HTTP error codes detected during run:
+429 (Too Many Requests) - 2 times
+[18:24:15] [INFO] skipping 'https://stripe.com/lp/vertical-saas-benchmark-2025?utm_term=FUZZ'
+[18:24:15] [INFO] skipping 'https://stripe.com/lp/vertical-saas-benchmark-2025?utm_medium=owned-surfaces&utm_source=33d6&utm_campaign=GLOBAL_4250&utm_content=819a&utm_term=a6a6d7b23e01'
+[18:24:15] [INFO] you can find results of scanning in multiple targets mode inside the CSV file '/home/awad/.local/share/sqlmap/output/results-03012026_0620pm.csv'
+
+[*] ending @ 18:24:14 /2026-03-01/
+

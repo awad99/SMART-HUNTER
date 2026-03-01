@@ -1,0 +1,29 @@
+[
+  {
+    "url": "https://www.helium.com/",
+    "status_code": 200,
+    "headers": {
+      "date": "Sun, 01 Mar 2026 19:40:25 GMT",
+      "content-type": "text/html",
+      "transfer-encoding": "chunked",
+      "connection": "keep-alive",
+      "alt-svc": "h3=\":443\"; ma=86400",
+      "cache-control": "public, max-age=0, must-revalidate",
+      "content-security-policy": "frame-ancestors 'none';",
+      "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+      "last-modified": "Fri, 27 Feb 2026 18:52:47 GMT",
+      "link": "<https://framerusercontent.com>; rel=\"preconnect\", <https://framerusercontent.com>; rel=\"preconnect\"; crossorigin=\"\"",
+      "server": "cloudflare",
+      "server-timing": "region;desc=\"eu-central-1\", cache;desc=\"cached\", ssg-status;desc=\"optimized\", version;desc=\"bcc70cf\", route;dur=1;desc=\"id=R360wNtkD&locale=default\"",
+      "strict-transport-security": "max-age=31536000",
+      "vary": "Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "cf-cache-status": "DYNAMIC",
+      "x-frame-options": "DENY",
+      "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=pKsZGLbMpgr3JsfAQODaxRp9WK%2FwffZeVKOjnEm2cs0%2FQJZEprabYb%2F7QgV4hu3TnBQM8noCDCnVAEMiJEw%2BqOlubiuGJtJBl%2FNM7fK1\"}]}",
+      "content-encoding": "gzip",
+      "cf-ray": "9d5aa2208c8aad93-MRS"
+    },
+    "timestamp": "2026-03-01T22:40:55.455242"
+  }
+]

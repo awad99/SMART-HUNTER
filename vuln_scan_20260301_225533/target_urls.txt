@@ -1,0 +1,11 @@
+https://www.helium.com/?id=FUZZ
+https://www.helium.com/?search=FUZZ
+https://www.helium.com/?q=FUZZ
+https://www.helium.com/?query=FUZZ
+https://www.helium.com/?page=FUZZ
+https://www.helium.com/?user=FUZZ
+https://www.helium.com/?name=FUZZ
+https://www.helium.com/?cat=FUZZ
+https://www.helium.com/?file=FUZZ
+https://www.helium.com/?cmd=FUZZ
+https://www.helium.com/?action=FUZZ

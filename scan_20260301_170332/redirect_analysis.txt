@@ -1,0 +1,14 @@
+REDIRECT CHAIN ANALYSIS
+==================================================
+Original : https://www.23andme.com/en-int/
+Final    : https://www.23andme.com/en-int/
+Hops     : 1
+
+CHAIN:
+  1. ORIGINAL: https://www.23andme.com/en-int/
+  2. 200: https://www.23andme.com/en-int/ → 
+  3. FINAL: https://www.23andme.com/en-int/ (200)
+
+SECURITY:
+  Domains     : 1 (www.23andme.com)
+  HTTP→HTTPS  : No

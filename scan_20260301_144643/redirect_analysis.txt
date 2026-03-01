@@ -1,0 +1,14 @@
+REDIRECT CHAIN ANALYSIS
+==================================================
+Original : https://www.privy.io/
+Final    : https://www.privy.io/
+Hops     : 1
+
+CHAIN:
+  1. ORIGINAL: https://www.privy.io/
+  2. 200: https://www.privy.io/ → 
+  3. FINAL: https://www.privy.io/ (200)
+
+SECURITY:
+  Domains     : 1 (www.privy.io)
+  HTTP→HTTPS  : No

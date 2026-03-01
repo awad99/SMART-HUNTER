@@ -1,0 +1,16 @@
+[
+  {
+    "url": "https://coinhako.com/",
+    "type": "ORIGINAL"
+  },
+  {
+    "url": "https://coinhako.com/",
+    "status_code": 429,
+    "location": ""
+  },
+  {
+    "url": "https://coinhako.com/",
+    "type": "FINAL",
+    "status": 429
+  }
+]

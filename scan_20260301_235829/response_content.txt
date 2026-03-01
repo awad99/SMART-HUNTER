@@ -1,0 +1,7 @@
+{
+  "errors": [
+    {
+      "message": "You are being rate limited"
+    }
+  ]
+}

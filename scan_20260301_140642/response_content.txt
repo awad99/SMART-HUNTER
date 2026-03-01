@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="/css/normalize.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="/css/site.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="/css/github-octicons.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="/js/modernizr.custom.67567.js"></script>
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>GitHub Security | GitHub Bug Bounty</title>
+<meta name="generator" content="Jekyll v4.3.1" />
+<meta property="og:title" content="GitHub Security" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Bug Bounty Program" />
+<meta property="og:description" content="Bug Bounty Program" />
+<link rel="canonical" href="https://bounty.github.com/" />
+<meta property="og:url" content="https://bounty.github.com/" />
+<meta property="og:site_name" content="GitHub Bug Bounty" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="GitHub Security" />
+<meta name="twitter:site" content="@githubsecurity" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","description":"Bug Bounty Program","headline":"GitHub Security","name":"GitHub Bug Bounty","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://bounty.github.com/images/noircat@2x.png"}},"url":"https://bounty.github.com/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body id="">
+    <header class="site-header">
+      <div class="container clearfix">
+        <a href="/index.html#home" class="site-header-logo">GitHub Security</a>
+        <ul class="top-nav">
+          <li><a href="/index.html#rewards" class="top-nav-rewards">Rewards</a></li>
+          <li><a href="/index.html#scope" class="top-nav-scope">Scope</a></li>
+          <li><a href="/index.html#targets" class="top-nav-targets">Targets</a></li>
+          <li><a href="/index.html#rules" class="top-nav-rules">Rules</a></li>
+          <li><a href="/index.html#faqs" class="top-nav-faqs">FAQs</a></li>
+          <li class="nav-button"><a href="https://hackerone.com/github">Submit a vulnerability</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <section class="site-section site-section-hero">
+  <div class="container container-intro">
+    <canvas class="smoke"></canvas>
+    <div class="hero-copy">
+      <h1 class="hero-heading">GitHub Bug Bounty</h1>
+      <p>Software security researchers are increasingly engaging with internet companies to hunt down vulnerabilities. Our bounty program gives a tip of the hat to these researchers and provides rewards of $30,000 or more for critical vulnerabilities.</p>
+
+      <p>If you have found a vulnerability, <a href="https://hackerone.com/github">submit it here</a>.</p>
+
+<p>You can find useful information in our <a href="#rules">rules</a>, <a href="#scope">scope</a>, <a href="#targets">targets</a> and <a href="#faqs">FAQ</a> sections.</p>
+
+<p>Happy hacking!</p>
+
+    </div>
+  </div>
+</section>
+
+<section id="rewards" class="site-section">
+  <div class="container">
+    <h2 class="with-anchor">Rewards</h2>
+
+    <dl class="rewards">
+      <p>All bounty submissions are rated by GitHub using a purposefully simple scale. Each vulnerability is unique, but the following is a rough guideline we use internally for rating and rewarding submissions:</p>
+
+      
+        <hr/>
+        <span class="available-bounty-summary"><strong>$20,000</strong> - <strong>$30,000+</strong></span>
+        <dt>Critical</dt>
+        <dd>
+          <p>Critical severity issues present a direct and immediate risk to a broad array of our users or to a GitHub product itself. They often affect relatively low-level/foundational components in one of our application stacks or infrastructure. For example:</p>
+
+<ul>
+  <li>arbitrary code/command execution on a server in our production network</li>
+  <li>arbitrary SQL queries on a production database</li>
+  <li>bypassing the login process, either password or 2FA</li>
+  <li>access to sensitive production user data or access to internal production systems</li>
+  <li>accessing another user’s data in the GitHub Actions service</li>
+</ul>
+
+<p>The upper bound for critical vulnerabilities, $30,000, is only a guideline, and GitHub may reward higher amounts for exceptional reports.</p>
+
+        </dd>
+      
+        <hr/>
+        <span class="available-bounty-summary"><strong>$10,000</strong> - <strong>$20,000</strong></span>
+        <dt>High</dt>
+        <dd>
+          <p>High severity issues allow an attacker to read or modify highly sensitive data that they are not authorized to access. They are generally more narrow in scope than critical issues, though they may still grant an attacker extensive access. For example:</p>
+
+<ul>
+  <li>injecting attacker controlled content into GitHub.com (XSS) that bypasses CSP</li>
+  <li>bypassing authorization logic to grant a repository or package collaborator more access than intended</li>
+  <li>discovering sensitive user or GitHub data in a publicly exposed resource, such as an S3 bucket</li>
+  <li>overwriting a customer repository or package that should be inaccessible</li>
+  <li>gaining access to a non-critical resource that only employees should be able to reach</li>
+  <li>using the GitHub Actions repo-scoped GitHub token to access high-risk private content outside of that repository</li>
+  <li>sending authentication credentials from a client app to an unintended server</li>
+  <li>code execution in a client app that requires no user interaction, such as arbitrary code execution upon repo clone or via a protocol handler</li>
+</ul>
+
+        </dd>
+      
+        <hr/>
+        <span class="available-bounty-summary"><strong>$4,000</strong> - <strong>$10,000</strong></span>
+        <dt>Medium</dt>
+        <dd>
+          <p>Medium severity issues allow an attacker to read or modify limited amounts of data that they are not authorized to access. They generally grant access to less sensitive information than high severity issues. For example:</p>
+
+<ul>
+  <li>disclosing the title of issues in private repositories, which should be be inaccessible</li>
+  <li>injecting attacker controlled content into GitHub.com (XSS) but not bypassing CSP or executing sensitive actions with another user’s session</li>
+  <li>bypassing CSRF validation for low risk actions, such as starring a repository or unsubscribing from a mailing list</li>
+  <li>code execution in a client app that requires minimal, expected user interaction, such as performing actions on a repository or <a href="https://docs.npmjs.com/cli/v7/using-npm/config#ignore-scripts">with a package</a> that a user would not expect to lead to code execution</li>
+  <li>package integrity compromise, i.e., downloading a package that does not match the integrity as defined in <code class="language-plaintext highlighter-rouge">package-lock.json</code></li>
+</ul>
+
+        </dd>
+      
+        <hr/>
+        <span class="available-bounty-summary"><strong>$617</strong> - <strong>$2,000</strong></span>
+        <dt>Low</dt>
+        <dd>
+          <p>Low severity issues allow an attacker to access extremely limited amounts of data. They may violate an expectation for how something is intended to work but allow nearly no escalation of privilege or ability to trigger unintended behavior by an attacker. For example:</p>
+
+<ul>
+  <li>signing up arbitrary users for access to an “early access feature” without their consent</li>
+  <li>creating an issue comment that bypasses our image proxying filter by providing a malformed URL</li>
+  <li>triggering verbose or debug error pages without proof of exploitability or obtaining sensitive information</li>
+  <li>triggering application exceptions that could affect many users</li>
+  <li>injecting JavaScript event handlers into links, etc., that are mitigated by CSP on GitHub.com</li>
+  <li>disclosing the existence of private packages on npm that should be inaccessible, e.g., through error messages (but not through timing attacks, which are ineligible)</li>
+  <li>novel supply chain vulnerabilities that affect a GitHub product but are not solely limited to that product</li>
+  <li>credentials such as those from the <code class="language-plaintext highlighter-rouge">.npmrc</code> file or from GitHub Enterprise Server being leaked in logs</li>
+</ul>
+
+        </dd>
+      
+    </dl>
+  </div>
+</section>
+
+<section id="scope" class="site-section site-section-light">
+  <div class="container">
+    <h2 class="with-anchor">Scope</h2>
+    <dl class="scope">
+      <p>GitHub runs a number of services but only submissions under the following domains are eligible for rewards. Any GitHub-owned domains not listed below are <em>not</em> in scope, <em>not</em> eligible for rewards, and <em>not</em> covered by <a href="#legal_safe_harbor">our legal safe harbor</a>.</p>
+
+
+      
+        <h3>github.com</h3>
+        This is our main domain for hosting user-facing GitHub services.
+
+
+        
+          All subdomains under <tt>github.com</tt> are in-scope <b>except</b>:
+          <ul>
+            
+            <li><tt>blog.github.com</tt></li>
+            
+            <li><tt>community.github.com</tt></li>
+            
+            <li><tt>email.enterprise.github.com</tt></li>
+            
+            <li><tt>email.finance.github.com</tt></li>
+            
+            <li><tt>email.staging.finance.github.com</tt></li>
+            
+            <li><tt>email.support.github.com</tt></li>
+            
+            <li><tt>email.verify.github.com</tt></li>
+            
+            <li><tt>google7650dcf6146f04d8.github.com</tt></li>
+            
+            <li><tt>k1._domainkey.github.com</tt></li>
+            
+            <li><tt>k1._domainkey.mcmail.github.com</tt></li>
+            
+            <li><tt>mcmail.github.com</tt></li>
+            
+            <li><tt>resources.github.com</tt></li>
+            
+            <li><tt>*.resources.github.com</tt></li>
+            
+            <li><tt>sgmail.github.com</tt></li>
+            
+            <li><tt>*.sgmail.github.com</tt></li>
+            
+            <li><tt>shop.github.com</tt></li>
+            
+            <li><tt>smtp.github.com</tt></li>
+            
+            <li><tt>*.smtp.github.com</tt></li>
+            
+          </ul>
+        
+      
+        <h3>githubassets.com</h3>
+        This is our domain for hosting static assets.
+
+
+        
+          All subdomains under <tt>githubassets.com</tt> are in-scope.
+        
+      
+        <h3>githubusercontent.com</h3>
+        This is our domain for hosting and rendering users’ data.
+
+
+        
+          All subdomains under <tt>githubusercontent.com</tt> are in-scope.
+        
+      
+        <h3>githubapp.com</h3>
+        This is our domain for hosting employee-facing services.
+
+
+        
+          All subdomains under <tt>githubapp.com</tt> are in-scope <b>except</b>:
+          <ul>
+            
+            <li><tt>atom-io.githubapp.com</tt></li>
+            
+            <li><tt>atom-io-staging.githubapp.com</tt></li>
+            
+            <li><tt>email.enterprise-staging.githubapp.com</tt></li>
+            
+            <li><tt>email.haystack.githubapp.com</tt></li>
+            
+            <li><tt>reply.githubapp.com</tt></li>
+            
+          </ul>
+        
+      
+        <h3>githubwebhooks.net</h3>
+        This is our domain for receiving webhooks for employee-facing services.
+
+
+        
+          All subdomains under <tt>githubwebhooks.net</tt> are in-scope.
+        
+      
+        <h3>github.net</h3>
+        This is our domain for hosting GitHub’s internal production services. Many of these services are not accessible from outside our internal network.
+
+
+        
+          All subdomains under <tt>github.net</tt> are in-scope.
+        
+      
+        <h3>npmjs.com</h3>
+        This is the domain for npm’s public-facing websites.
+
+
+        
+          All subdomains under <tt>npmjs.com</tt> are in-scope.
+        
+      
+        <h3>npmjs.org</h3>
+        This is the domain for npm’s registry, public-facing databases, and APIs.
+
+
+        
+          All subdomains under <tt>npmjs.org</tt> are in-scope.
+        
+      
+    </dl>
+  </div>
+</section>
+
+<section id="targets" class="site-section">
+  <div class="container">
+    <h2 class="with-anchor">Targets</h2>
+
+    <dl class="targets">
+      <p>In addition to our <a href="#scope">scope</a>, we want to share a high-level overview of GitHub's services:</p>
+
+      
+        <h3>Core GitHub services available to all users</h3>
+
+        <ul>
+          
+          <li><a href="/targets/github.html">GitHub.com</a></li>
+          
+          <li><a href="/targets/github-api.html">GitHub API</a></li>
+          
+          <li><a href="/targets/csp.html">GitHub CSP</a></li>
+          
+          <li><a href="/targets/github-actions.html">GitHub Actions</a></li>
+          
+          <li><a href="/targets/github-pages.html">GitHub Pages</a></li>
+          
+          <li><a href="/targets/gist.html">GitHub Gist</a></li>
+          
+        </ul>
+      
+        <h3>On-premise and hosted GitHub for enterprise customers</h3>
+
+        <ul>
+          
+          <li><a href="/targets/github-enterprise-server.html">GitHub Enterprise Server</a></li>
+          
+          <li><a href="/targets/github-enterprise-cloud.html">GitHub Enterprise Cloud</a></li>
+          
+        </ul>
+      
+        <h3>GitHub Apps that are owned and operated by GitHub</h3>
+
+        <ul>
+          
+          <li><a href="/targets/dependabot.html">Dependabot</a></li>
+          
+        </ul>
+      
+        <h3>First-party clients for accessing GitHub</h3>
+
+        <ul>
+          
+          <li><a href="/targets/github-desktop.html">GitHub Desktop</a></li>
+          
+          <li><a href="/targets/github-for-mobile.html">GitHub Mobile</a></li>
+          
+          <li><a href="/targets/github-cli.html">GitHub CLI</a></li>
+          
+        </ul>
+      
+        <h3>Other GitHub services</h3>
+
+        <ul>
+          
+          <li><a href="/targets/github-copilot.html">GitHub Copilot</a></li>
+          
+          <li><a href="/targets/github-education.html">GitHub Education</a></li>
+          
+          <li><a href="/targets/github-learning-lab.html">GitHub Learning Lab</a></li>
+          
+        </ul>
+      
+        <h3>Infrastructure owned and operated by GitHub</h3>
+
+        <ul>
+          
+          <li><a href="/targets/githubapp-com.html">*.githubapp.com</a></li>
+          
+          <li><a href="/targets/github-net.html">*.github.net</a></li>
+          
+          <li><a href="/targets/github-credentials.html">GitHub Credentials</a></li>
+          
+        </ul>
+      
+        <h3>npm</h3>
+
+        <ul>
+          
+          <li><a href="/targets/npm-registry.html">npm Registry</a></li>
+          
+          <li><a href="/targets/npm-cli.html">npm CLI</a></li>
+          
+        </ul>
+      
+    </dl>
+  </div>
+</section>
+
+<section id="rules" class="site-section site-section-light">
+  <div class="container">
+    <h2 class="with-anchor">Rules</h2>
+
+    <dl class="q-and-a">
+      
+      <a class="rule-link" id="before_you_start">&nbsp;</a>
+      <dt>Before you start</dt>
+      <dd>
+        <ul>
+  <li>
+    <p>Check the <a href="#scope">list of domains</a> that are in scope for the Bug Bounty program and the <a href="#targets">list of targets</a> for useful information for getting started.</p>
+  </li>
+  <li>
+    <p>Check the list of bugs that have been <a href="/ineligible.html">classified as ineligible</a>. Submissions which are ineligible will likely be closed as <code class="language-plaintext highlighter-rouge">Not Applicable</code>.</p>
+  </li>
+  <li>
+    <p>Check the <a href="https://github.blog/changelog/">GitHub Changelog</a> for recently launched features.</p>
+  </li>
+  <li>
+    <p>Never attempt non-technical attacks such as social engineering, phishing, or physical attacks against our employees, users, or infrastructure.</p>
+  </li>
+  <li>
+    <p>When in doubt, contact us at <code class="language-plaintext highlighter-rouge">bounty@github.com</code>.</p>
+  </li>
+  <li>
+    <p>By participating in GitHub’s Bug Bounty program (the “Program”), you acknowledge that you have read and agree to GitHub’s <a href="https://docs.github.com/en/github/site-policy/github-terms-of-service">Terms of Service</a> as well as the following:</p>
+
+    <ul>
+      <li>
+        <p>you are not currently a GitHub employee or contractor, were not a GitHub employee or contractor within six months prior to submission, and you did not collaborate on your submission with anyone who was.</p>
+      </li>
+      <li>
+        <p>your participation in the Program will not violate any law applicable to you, or disrupt or compromise any data that is not your own.</p>
+      </li>
+      <li>
+        <p>you are solely responsible for any applicable taxes, withholding or otherwise, arising from or relating to your participation in the Program, including from any bounty payments.</p>
+      </li>
+      <li>
+        <p>GitHub reserves the right to terminate or discontinue the Program at its discretion.</p>
+      </li>
+      <li>
+        <p>Only test for vulnerabilities on sites you know to be operated by GitHub and are <a href="#scope">in-scope</a>. Some sites hosted on subdomains of <code class="language-plaintext highlighter-rouge">GitHub.com</code> are operated by third parties and should not be tested.</p>
+      </li>
+      <li>
+        <p>We cannot reward any individual on any U.S. sanctions list, or any individual residing in any U.S.-sanctioned country or region. For more information, please see https://www.hackerone.com/disclosure-guidelines.</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+        
+      </dd>
+
+      
+      <a class="rule-link" id="legal_safe_harbor">&nbsp;</a>
+      <dt>Legal safe harbor</dt>
+      <dd>
+        <p>Your research is covered by the <a href="https://docs.github.com/en/site-policy/security-policies/github-bug-bounty-program-legal-safe-harbor">GitHub Bug Bounty Program Legal Safe Harbor</a> policy. In summary:</p>
+
+<ul>
+  <li>
+    <p>We consider security research and vulnerability disclosure activities conducted consistent with this policy as “authorized” conduct under the Computer Fraud and Abuse Act, the DMCA, and other applicable computer use laws such as Cal. Penal Code 502(c). We waive any potential DMCA claim against you for circumventing the technological measures we have used to protect the applications in this bug bounty program’s scope.</p>
+  </li>
+  <li>
+    <p>We want you to coordinate disclosure through our bug bounty program, and don’t want researchers put in fear of legal consequences because of their good faith attempts to comply with our bug bounty policy. We cannot bind any third party, so do not assume this protection extends to any third party. If in doubt, ask us before engaging in any specific action you think might go outside the bounds of our policy.</p>
+  </li>
+  <li>
+    <p>Because both identifying and non-identifying information can put a researcher at risk, we limit what we share with third parties. We may provide non-identifying substantive information from your report to an affected third party, but only after notifying you and receiving a commitment that the third party will not pursue legal action against you. We will only share identifying information (name, email address, phone number, etc.) with a third party if you give your written permission.</p>
+  </li>
+  <li>If your security research as part of the bug bounty program violates certain restrictions in our site policies, the safe harbor terms permit a limited exemption.</li>
+  <li>If you cannot accept a bounty reward for any reason, please ensure that you inform us when you submit your report, as there is no way to rescind the payment once awarded.</li>
+</ul>
+
+        
+      </dd>
+
+      
+      <a class="rule-link" id="performing_your_research">&nbsp;</a>
+      <dt>Performing your research</dt>
+      <dd>
+        <ul>
+  <li>
+    <p>Do not impact other users with your testing, this includes testing vulnerabilities in repositories or organizations you do not own. If you are attempting to find an authorization bypass, you must use accounts you own.</p>
+  </li>
+  <li>
+    <p>We recommend adding your HackerOne <code class="language-plaintext highlighter-rouge">@wearehackerone.com</code> email address to any GitHub account that you use to perform security research and testing. If you use multiple GitHub accounts for testing, <a href="https://docs.hackerone.com/hackers/hacker-email-alias.html#multiple-aliases">you can use aliases of your HackerOne email address</a>. Clearly identifying accounts that are associated with bounty research helps our teams to differentiate between possibly malicious activity and that of researchers involved in our Bug Bounty program. Please note that adding your HackerOne email address does not provide any exemptions to our Terms of Service or permit you to act beyond our bounty rules and scope.</p>
+  </li>
+  <li>
+    <p>The following are <strong>never</strong> allowed and are ineligible for reward. We may suspend your GitHub account and ban your IP address for:</p>
+
+    <ul>
+      <li>Performing distributed denial of service (DDoS) or other volumetric attacks</li>
+      <li>Spamming content</li>
+      <li>Large-scale vulnerability scanners, scrapers, or automated tools which produce excessive amounts of traffic.
+        <ul>
+          <li>Note: We <em>do</em> allow the use of automated tools so long as they do not produce excessive amounts of traffic. For example, running one <code class="language-plaintext highlighter-rouge">nmap</code> scan against one host is allowed, but sending 65,000 requests in two minutes using Burp Suite Intruder is excessive.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Researching denial-of-service attacks is allowed and eligible for rewards only if you follow these rules:</p>
+
+    <ul>
+      <li>There are no limits for researching denial of service vulnerabilities against your own instance of <a href="/targets/github-enterprise-server.html">GitHub Enterprise Server</a>. We strongly recommend/prefer this method for researching denial of service issues.</li>
+      <li>If you choose to test on GitHub proper (i.e. <code class="language-plaintext highlighter-rouge">https://github.com</code>)
+        <ul>
+          <li>Research <strong>must</strong> be performed in organizations or repositories you own</li>
+          <li>Stop <strong>immediately</strong> if you believe you have affected the availability of our services. Don’t worry about demonstrating the full impact of your vulnerability, GitHub’s security team will be able to determine the impact.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+        
+      </dd>
+
+      
+      <a class="rule-link" id="handling_personally_identifiable_information_pii">&nbsp;</a>
+      <dt>Handling personally identifiable information (PII)</dt>
+      <dd>
+        <ul>
+  <li>Personally identifying information (PII) includes:
+    <ul>
+      <li>legal and/or full names</li>
+      <li>names or usernames combined with other identifiers like phone numbers or email addresses</li>
+      <li>health or financial information (including insurance information, social security numbers, etc.)</li>
+      <li>information about political or religious affiliations</li>
+      <li>information about race, ethnicity, sexual orientation, gender, or other identifying information that could be used for discriminatory purposes</li>
+    </ul>
+  </li>
+  <li>
+    <p>Do not intentionally access others’ PII. If you suspect a service provides access to PII, limit queries to your own personal information.</p>
+  </li>
+  <li>
+    <p>Report the vulnerability <em>immediately</em> and do not attempt to access any other data. The GitHub Security team will assess the scope and impact of the PII exposure.</p>
+  </li>
+  <li>
+    <p>Limit the amount of data returned from services. For SQL injection, for example, limit the number of rows returned</p>
+  </li>
+  <li>
+    <p>You must delete all your local, stored, or cached copies of data containing PII as soon as possible. We may ask you to sign a certificate of deletion and confidentiality agreement regarding the exact information you accessed. This agreement will not affect your bounty reward.</p>
+  </li>
+  <li>We may ask you for the usernames and IP addresses used during your testing to assess the impact of the vulnerability</li>
+</ul>
+
+        
+      </dd>
+
+      
+      <a class="rule-link" id="reporting_your_vulnerability">&nbsp;</a>
+      <dt>Reporting your vulnerability</dt>
+      <dd>
+        <ul>
+  <li>
+    <p>Submissions must include written instructions for reproducing the vulnerability. Submissions without clear reproduction steps or which only include reproduction steps in video form may be ineligible for a reward.</p>
+  </li>
+  <li>
+    <p>When reporting vulnerabilities you must keep all information on HackerOne. Do not post information to video-sharing or pastebin sites. Videos and images can be uploaded directly via HackerOne.</p>
+  </li>
+  <li>
+    <p>For vulnerabilities involving personally identifiable information, please explain the kind of PII you believe is exposed and limit the amount of PII data included in your submissions. For textual information and screenshots, please only include redacted data in your submission.</p>
+  </li>
+  <li>
+    <p>During the course of an investigation, it may take time to resolve the issue you have reported. We ask that you refrain from publicly disclosing details regarding an issue you’ve reported until the fix has been publicly made available.</p>
+  </li>
+</ul>
+
+        
+      </dd>
+
+      
+      <a class="rule-link" id="receiving_your_award">&nbsp;</a>
+      <dt>Receiving your award</dt>
+      <dd>
+        <ul>
+  <li>
+    <p>All reward amounts are determined by our <a href="/#rewards">severity guidelines</a>.</p>
+  </li>
+  <li>
+    <p>In addition to the bounty reward, some reports will also receive a coupon code that can be redeemed for swag items at <a href="https://bugbounty.printengine.com/">the GitHub Bug Bounty Merch Shop</a>. For more information about the store, <a href="https://bugbounty.printengine.com/faqs">please visit the shop’s FAQ page</a>.</p>
+  </li>
+  <li>
+    <p>When duplicates occur, we only award the first report that was received (provided that it can be fully reproduced).</p>
+  </li>
+  <li>
+    <p>You are free to publish write-ups about your vulnerability, and GitHub will not limit what you write. We may pay out your reward before the vulnerability is patched, so we may ask that you delay publishing to keep other GitHub users safe.</p>
+  </li>
+  <li>
+    <p>GitHub is a CVE Numbering Authority (CNA) for GitHub Enterprise Server. Eligible Bug Bounty submissions that affect GitHub Enterprise Server may be assigned CVEs. These CVEs will be shared with submitters via HackerOne and listed in the GitHub Enterprise Server <a href="https://enterprise.github.com/releases">release notes</a>.</p>
+  </li>
+  <li>
+    <p>If you would prefer to donate your bounty reward to an established 501(c)(3) charitable organization, GitHub will match your donation. If the bounty has already been processed into your account, it can no longer be donated through HackerOne and is no longer eligible for matching donations. To reduce the likelihood of a bounty being processed before it can be donated, we recommend <a href="https://docs.hackerone.com/hackers/payout-methods.html">changing your payment preferences to monthly in your account settings</a>. To donate your reward and have it matched, submit a support ticket to HackerOne with the following information:</p>
+    <ul>
+      <li>the report ID for which you want to donate the bounty;</li>
+      <li>the name and website of the charity you want to donate to;</li>
+      <li>that you would like the donation matched using GitHub’s process; and</li>
+      <li>whether you want to be named as the donor or would prefer to remain anonymous. Keep in mind that we can only attribute the donation to you if the charity allows us to give a name.</li>
+    </ul>
+  </li>
+</ul>
+
+        
+      </dd>
+
+      
+    </dl>
+  </div>
+</section>
+
+<section id="faqs" class="site-section">
+  <div class="container">
+    <h2 class="with-anchor">FAQs</h2>
+
+    <dl class="q-and-a">
+      
+      <a class="faq-link" id="faq-0">&nbsp;</a>
+      <dt>How is the bounty reward determined?</dt>
+      <dd>
+        <p>Our security and development teams take many factors into account when determining a reward. These factors include the complexity of successfully exploiting the vulnerability, the potential exposure, as well as the percentage of impacted users and systems. Sometimes an otherwise critical vulnerability has a very low impact simply because it is mitigated by some other component, e.g., it requires user interaction, it relies on an obscure web browser, or it would need to be combined with another vulnerability that does not currently exist. Our teams use <a href="/#rewards">our documented severity guidelines</a> to determine the bounty reward amounts rather than correlating with CVSS ratings. Additionally, at least two GitHub security engineers agree on the severity and amount before a payout is made.</p>
+
+        
+      </dd>
+
+      
+      <a class="faq-link" id="faq-1">&nbsp;</a>
+      <dt>Can I submit a video proof-of-concept?</dt>
+      <dd>
+        <p>You can certainly attach a video if you believe it will clarify your submission. However, all submissions must also include step-by-step instructions to reproduce the bug. The security team will let you know if we think a video will clarify your report. Submissions which only include video reproduction steps will have a longer response time and we may close your submission as <code class="language-plaintext highlighter-rouge">Not Applicable</code>.</p>
+
+        
+      </dd>
+
+      
+      <a class="faq-link" id="faq-2">&nbsp;</a>
+      <dt>Did my submission just get rejected by a bot?</dt>
+      <dd>
+        <p>You may get a response that appears to be from a bot. The bot does some work for us, but only when we tell it to. We “do our own stunts” at GitHub Security. An application security engineer at GitHub triages each submission. In most cases, we use the bot to automate messaging and other tasks for us. Rest assured, a human did look at your submission.</p>
+
+        
+      </dd>
+
+      
+      <a class="faq-link" id="faq-3">&nbsp;</a>
+      <dt>Can I submit my report via a third-party or vulnerability broker?</dt>
+      <dd>
+        <p>GitHub’s Bug Bounty program is designed to both reward individual researchers and increase the security of all GitHub users. We don’t believe that disclosing GitHub vulnerabilities to third parties achieves either of those goals. As a result, any vulnerabilities that are disclosed to third-party before being submitted to our program are ineligible for rewards.</p>
+
+        
+      </dd>
+
+      
+      <a class="faq-link" id="faq-4">&nbsp;</a>
+      <dt>Why does severity on HackerOne not match the reward I was given?</dt>
+      <dd>
+        <p>We do not always update HackerOne with the assessed severity because we track that information internally. Our payout guidelines and the value of the reward dictate our assessment of severity, not the severity on HackerOne.</p>
+
+        
+      </dd>
+
+      
+      <a class="faq-link" id="faq-5">&nbsp;</a>
+      <dt>Where is your PGP key? I want to use it when I submit a vulnerability.</dt>
+      <dd>
+        <p>If you absolutely believe encrypting the message is necessary, please read our <a href="/pgp.html">instructions and caveats for PGP submissions</a>.</p>
+
+        
+      </dd>
+
+      
+      <a class="faq-link" id="faq-6">&nbsp;</a>
+      <dt>What kinds of DoS submissions are valid?</dt>
+      <dd>
+        <p>As noted in the <code class="language-plaintext highlighter-rouge">performing your research</code> section, denial of service research is best done on your own instance of GHES. Causing an availability issue is simply not helpful.  We are only interested in denial of service issues at the application layer (logic bombs, ReDoS, etc.). Volumetric attack submissions are not eligible for rewards and we may suspend your GitHub account or temporarily ban your IP address.</p>
+
+        
+      </dd>
+
+      
+      <a class="faq-link" id="faq-7">&nbsp;</a>
+      <dt>How can I earn an invitation to the GitHub VIP program?</dt>
+      <dd>
+        <p>We’re stoked to hear you’d like to become a Hacktocat! In order to be eligible to receive an invitation, you must earn at least $20,000 in our program and have submitted at least 2 reports over the last 2 years. Please note that meeting this criteria does not guarantee an invitation. We reserve the right to extend invitations at our discretion. We review eligibility and make decisions on candidates on a quarterly basis.</p>
+
+        
+      </dd>
+
+      
+      <a class="faq-link" id="faq-8">&nbsp;</a>
+      <dt>What are the benefits of joining the VIP program?</dt>
+      <dd>
+        <p>Our VIP Hacktocats gain access to a Slack channel with Hubbers, exclusive Hacktocat swag, access to beta features, and more!</p>
+
+        
+      </dd>
+
+      
+    </dl>
+  </div>
+</section>
+
+
+    <footer>
+      <div id="footer" >
+        <div class="container clearfix">
+          <ul id="legal" class="right">
+            <li><a href="/bounty-hunters.html">Historical bounty hunters</a></li>
+          </ul>
+          <a class="left" href="/">
+            <span class="mega-octicon octicon-mark-github"></span>
+          </a>
+          <ul id="legal">
+            <li>&copy; 2026 GitHub, Inc.</li>
+            <li><a href="https://github.com/site/terms">Terms</a></li>
+            <li><a href="https://github.com/site/privacy">Privacy</a></li>
+            <li><a href="https://github.com/security">Security</a></li>
+          </ul>
+          <span class="sha">&#120529;</span>
+        </div>
+      </div>
+    </footer>
+
+    <script type="text/javascript" src="/js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.tipsy.js"></script>
+    <script type="text/javascript" src="/js/site.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,29 @@
+[
+  {
+    "url": "https://stripe.com/",
+    "status_code": 200,
+    "headers": {
+      "server": "nginx",
+      "date": "Sun, 01 Mar 2026 14:03:26 GMT",
+      "content-type": "text/html; charset=utf-8",
+      "transfer-encoding": "chunked",
+      "connection": "keep-alive",
+      "content-security-policy": "base-uri 'none'; child-src 'none'; connect-src https://c.increment.com https://c.stripe.dev https://c.stripe.global https://c.stripe.partners blob: https://b.stripecdn.com https://errors.stripe.com https://ext.stripe.com https://r.stripe.com https://stripe-images.s3.us-west-1.amazonaws.com https://stripe.com 'self'; default-src 'none'; font-src https://b.stripecdn.com 'self'; form-action https://stripe.com 'self'; frame-ancestors https://app.contentful.com 'self'; frame-src https://b.stripecdn.com https://js.stripe.com https://support-conversations.stripe.com 'self'; img-src data: https://assets.ctfassets.net https://assets.stripeassets.com https://b.stripecdn.com https://images.ctfassets.net https://images.stripeassets.com https://q.stripe.com 'self'; manifest-src 'none'; media-src https://assets.ctfassets.net https://assets.stripeassets.com https://b.stripecdn.com https://videos.ctfassets.net https://videos.stripeassets.com 'self'; object-src 'none'; script-src https://b.stripecdn.com https://js.stripe.com 'self' 'sha256-3aWvb9tRBjmz1OjR3n7mwiTm94+s4iki4mMZF82asmc=' 'sha256-5LtzXhT7UFn+GqP5pKEMGL08UNZsrzANHFEBW/mQHGw=' 'sha256-beLzNcen8LrazzSCRjAapoIMTgJI0osPWGNSX7aK6lc=' 'sha256-cCM0Z4lzGkzQnmbdVw+ouz0JRawyaKcZ4yiqzqYS7ek=' 'sha256-vTifGUJH6hJYTvstw4xJ4xfr/vE0ELkOV4GpCumyqfg=' 'sha256-KxhSaxKB5RFTQsqfRwp+zG7iLjvMrTAySqnSvWlqct0=' 'sha256-tMuJ8c00j54yuxogrdIJeGhNVB350dc56i969XRz/Mc=' 'sha256-aEFSvCaVnb2wNwuO3IzA8J44RdTKt6vms9beA7BcCYg=' 'sha256-0SWEc2BfR2o77i2vUiNNIrFKQkjc2Ujsr2hlfZ6oUek=' 'report-sample'; style-src https://b.stripecdn.com 'self' 'unsafe-inline'; worker-src https://b.stripecdn.com 'self'; upgrade-insecure-requests; report-uri https://q.stripe.com/csp-violation?q=RSAh-ryNxn1yYrpVpF-vukJdGvzzc6OAUk2hkreM7BurPG8uUNclYeIiayRQvSs%3D",
+      "cross-origin-opener-policy": "same-origin-allow-popups; report-to=\"wsp_coop\"",
+      "cross-origin-opener-policy-report-only": "same-origin-allow-popups; report-to=\"wsp_coop\"",
+      "referrer-policy": "no-referrer-when-downgrade",
+      "report-to": "{\"group\":\"wsp_coop\",\"max_age\":8640,\"endpoints\":[{\"url\":\"https://q.stripe.com/coop-report?s=RSAh-ryNxn1yYrpVpF-vukJdGvzzc6OAUk2hkreM7BurPG8uUNclYeIiayRQvSs=\"}],\"include_subdomains\":true},{\"group\":\"wsp_coep\",\"max_age\":8640,\"endpoints\":[{\"url\":\"https://q.stripe.com/coep-report?s=RSAh-ryNxn1yYrpVpF-vukJdGvzzc6OAUk2hkreM7BurPG8uUNclYeIiayRQvSs=\"}],\"include_subdomains\":true}",
+      "reporting-endpoints": "coop=\"https://q.stripe.com/coop-report\", wsp_coop=\"https://q.stripe.com/coop-report?s=RSAh-ryNxn1yYrpVpF-vukJdGvzzc6OAUk2hkreM7BurPG8uUNclYeIiayRQvSs=\",wsp_coep=\"https://q.stripe.com/coep-report?s=RSAh-ryNxn1yYrpVpF-vukJdGvzzc6OAUk2hkreM7BurPG8uUNclYeIiayRQvSs=\"",
+      "set-cookie": "cid=ac753866-5daf-aec9-e20f-564295dfa162; Path=/; Domain=stripe.com; Max-Age=7776000; Secure; SameSite=Lax",
+      "x-content-type-options": "nosniff",
+      "x-frame-options": "SAMEORIGIN",
+      "x-mkt-cache": "HIT",
+      "x-stripe-proxy-response": "upstream",
+      "x-stripe-server-rpc-duration-micros": "93397",
+      "x-wc": "ABCDEFGHIJ",
+      "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+      "content-encoding": "gzip"
+    },
+    "timestamp": "2026-03-01T17:04:01.716567"
+  }
+]

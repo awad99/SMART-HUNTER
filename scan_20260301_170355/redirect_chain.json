@@ -1,0 +1,16 @@
+[
+  {
+    "url": "https://stripe.com/",
+    "type": "ORIGINAL"
+  },
+  {
+    "url": "https://stripe.com/",
+    "status_code": 200,
+    "location": ""
+  },
+  {
+    "url": "https://stripe.com/",
+    "type": "FINAL",
+    "status": 200
+  }
+]

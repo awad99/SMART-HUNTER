@@ -1,0 +1,14 @@
+REDIRECT CHAIN ANALYSIS
+==================================================
+Original : https://www.chia.net/
+Final    : https://www.chia.net/
+Hops     : 1
+
+CHAIN:
+  1. ORIGINAL: https://www.chia.net/
+  2. 200: https://www.chia.net/ → 
+  3. FINAL: https://www.chia.net/ (200)
+
+SECURITY:
+  Domains     : 1 (www.chia.net)
+  HTTP→HTTPS  : No

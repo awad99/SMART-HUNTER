@@ -216,6 +216,45 @@ class ReconWebSite:
             def _has(tag):  return int(f'<{tag}' in c)
             def _cnt(tag):  return self._count(rf'<{tag}[^>]*>', c)
 
+            # WAF detection
+            waf_headers = {k.lower(): v.lower() for k, v in h.items()}
+            waf_found = [vendor for vendor, sigs in _WAF_SIGS.items()
+                         if any(s in waf_headers or s in waf_headers.get("set-cookie","") or s in c[:4000] for s in sigs)]
+
+            # Input types
+            password_count = self._count(r'<input[^>]*type=[\'"]password[\'"]', c)
+            hidden_count = self._count(r'<input[^>]*type=[\'"]hidden[\'"]', c)
+            file_upload_count = self._count(r'<input[^>]*type=[\'"]file[\'"]', c)
+            search_count = self._count(r'<input[^>]*type=[\'"]search[\'"]', c) + self._count(r'<input[^>]*name=[\'"](?:search|q|query)[\'"]', c)
+
+            # Internal vs External scripts/links
+            scripts = re.findall(r'<script[^>]*src=[\'"]([^\'"]+)[\'"]', c)
+            internal_scripts = sum(1 for src in scripts if not src.startswith('http') or p.netloc in src)
+            external_scripts = len(scripts) - internal_scripts
+
+            links = re.findall(r'<a[^>]*href=[\'"]([^\'"]+)[\'"]', c)
+            internal_links = sum(1 for href in links if not href.startswith('http') or p.netloc in href)
+            external_links = len(links) - internal_links
+
+            # Cookies Security
+            cookie_headers = getattr(h, 'get_list', lambda x: [h.get(x)] if h.get(x) else [])('set-cookie')
+            num_set_cookies = len(cookie_headers)
+            secure_cookies = sum(1 for ch in cookie_headers if 'secure' in ch.lower())
+            httponly_cookies = sum(1 for ch in cookie_headers if 'httponly' in ch.lower())
+            samesite_cookies = sum(1 for ch in cookie_headers if 'samesite=strict' in ch.lower() or 'samesite=lax' in ch.lower())
+
+            secure_cookie_ratio = secure_cookies / num_set_cookies if num_set_cookies else 0.0
+            httponly_cookie_ratio = httponly_cookies / num_set_cookies if num_set_cookies else 0.0
+            samesite_cookie_ratio = samesite_cookies / num_set_cookies if num_set_cookies else 0.0
+
+            # JWT / Secrets
+            jwt_count = len(re.findall(r'eyJ[a-zA-Z0-9_-]+\.eyJ[a-zA-Z0-9_-]+\.[a-zA-Z0-9_-]+', response.text or ""))
+            api_key_count = len(re.findall(r'(?i)(?:api_key|apikey|access_token|secret_key)[\'"]?\s*[:=]\s*[\'"]?([a-zA-Z0-9_\-]{16,})[\'"]?', c))
+
+            # Reflected Params
+            query_params = parse_qs(p.query)
+            reflected_params = sum(1 for param_vals in query_params.values() for v in param_vals if len(v) > 2 and v.lower() in c)
+
             features = {
                 # URL
                 'url_length':        len(url),
@@ -256,11 +295,17 @@ class ReconWebSite:
                 # HTML elements
                 'has_forms':    _has('form'), 'form_count':     _cnt('form'),
                 'has_inputs':   _has('input'),'input_count':    _cnt('input'),
+                'has_password_input': int(password_count > 0), 'password_count': password_count,
+                'has_hidden_input':   int(hidden_count > 0),   'hidden_count': hidden_count,
+                'has_file_upload':    int(file_upload_count > 0), 'file_upload_count': file_upload_count,
+                'has_search_input':   int(search_count > 0),   'search_count': search_count,
                 'has_buttons':  _has('button'),'button_count':  _cnt('button'),
                 'has_textarea': _has('textarea'),'textarea_count':_cnt('textarea'),
                 'has_select':   _has('select'),'select_count':  _cnt('select'),
                 'has_scripts':  _has('script'),'script_count':  _cnt('script'),
+                'internal_script_count': internal_scripts, 'external_script_count': external_scripts,
                 'has_links':    int('<a href' in c),'link_count': self._count(r'<a [^>]*href[^>]*>', c),
+                'internal_link_count': internal_links, 'external_link_count': external_links,
                 'has_images':   _has('img'),  'image_count':   _cnt('img'),
                 'has_meta_tags':_has('meta'), 'meta_count':    _cnt('meta'),
                 'has_stylesheets': int('stylesheet' in c),
@@ -278,14 +323,25 @@ class ReconWebSite:
                 'tech_wordpress':   int('wp-content' in c or 'wordpress' in c),
                 'tech_drupal':      int('drupal' in c),
                 'tech_joomla':      int('joomla' in c),
-                # Security indicators
+                # Security indicators & WAF
                 'has_debug_info':   int(any(w in c for w in ['debug','console.log','var_dump','print_r'])),
                 'has_error_messages':int(any(w in c for w in ['error','exception','warning','stack trace'])),
                 'has_sql_errors':   int(any(w in c for w in ['sql','database','mysql','postgresql','oracle'])),
                 'has_file_paths':   int(any(w in c for w in ['/etc/','c:\\','/var/www/','/home/'])),
+                'has_waf':          int(bool(waf_found)),
+                'waf_cloudflare':   int('Cloudflare' in waf_found),
+                'waf_aws':          int('AWS WAF' in waf_found),
+                'waf_imperva':      int('Imperva' in waf_found),
+                # Reflected & Secrets
+                'reflection_detected': int(reflected_params > 0),
+                'has_jwt':          int(jwt_count > 0),
+                'has_api_keys':     int(api_key_count > 0),
                 # Cookies
                 'cookie_count':    len(self.cookies),
                 'session_cookies': sum(1 for k in self.cookies if 'session' in k.get('name','').lower()),
+                'secure_cookie_ratio': secure_cookie_ratio,
+                'httponly_cookie_ratio': httponly_cookie_ratio,
+                'samesite_cookie_ratio': samesite_cookie_ratio,
                 # Redirect
                 'redirect_count':      max(0, len(self.redirect_chain)-1),
                 'has_redirect_chain':  int(len(self.redirect_chain) > 1),
@@ -296,6 +352,7 @@ class ReconWebSite:
                 'security_score':      0,
                 'interactivity_score': 0,
                 # Meta
+                'is_vulnerable':      0, # Default Target Label
                 'scan_id':    self.scan_id,
                 'timestamp':  datetime.now().isoformat(),
                 'target_url': url,
@@ -476,7 +533,9 @@ class ReconWebSite:
         if not os.path.exists("script/fuzzing_command_Tools.sh"):
             print("[-] fuzzing_command_Tools.sh not found"); return None
         open("fuzzing_Target.txt", "w").write(base_url)
-        result = subprocess.run(['bash', "fuzzing_command_Tools.sh", base_url], capture_output=True, text=True)
+        result = subprocess.run(['bash', "script/fuzzing_command_Tools.sh", base_url], capture_output=True, text=True)
+        if result.returncode != 0:
+            print(f"[-] Fuzz script failed (rc={result.returncode}):\n{result.stderr}")
         print(f"[*] Fuzz done (rc={result.returncode})")
         fuzzing = self.parse_ffuf_results(base_url)
         if fuzzing and fuzzing.get('found_paths'):

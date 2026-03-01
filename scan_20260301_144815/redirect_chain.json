@@ -1,0 +1,16 @@
+[
+  {
+    "url": "https://www.starbucks.com/",
+    "type": "ORIGINAL"
+  },
+  {
+    "url": "https://www.starbucks.com/",
+    "status_code": 200,
+    "location": ""
+  },
+  {
+    "url": "https://www.starbucks.com/",
+    "type": "FINAL",
+    "status": 200
+  }
+]

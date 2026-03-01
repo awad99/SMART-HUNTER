@@ -1,0 +1,14 @@
+REDIRECT CHAIN ANALYSIS
+==================================================
+Original : https://www.flipkart.com/
+Final    : https://www.flipkart.com/
+Hops     : 1
+
+CHAIN:
+  1. ORIGINAL: https://www.flipkart.com/
+  2. 403: https://www.flipkart.com/ → 
+  3. FINAL: https://www.flipkart.com/ (403)
+
+SECURITY:
+  Domains     : 1 (www.flipkart.com)
+  HTTP→HTTPS  : No

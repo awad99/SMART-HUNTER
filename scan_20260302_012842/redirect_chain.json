@@ -1,0 +1,16 @@
+[
+  {
+    "url": "https://www.canva.com/",
+    "type": "ORIGINAL"
+  },
+  {
+    "url": "https://www.canva.com/",
+    "status_code": 200,
+    "location": ""
+  },
+  {
+    "url": "https://www.canva.com/",
+    "type": "FINAL",
+    "status": 200
+  }
+]

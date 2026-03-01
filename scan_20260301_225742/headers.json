@@ -1,0 +1,34 @@
+[
+  {
+    "url": "https://www.epicgames.com/",
+    "status_code": 403,
+    "headers": {
+      "date": "Sun, 01 Mar 2026 19:57:12 GMT",
+      "content-type": "text/html; charset=UTF-8",
+      "transfer-encoding": "chunked",
+      "connection": "close",
+      "accept-ch": "Sec-CH-UA-Bitness, Sec-CH-UA-Arch, Sec-CH-UA-Full-Version, Sec-CH-UA-Mobile, Sec-CH-UA-Model, Sec-CH-UA-Platform-Version, Sec-CH-UA-Full-Version-List, Sec-CH-UA-Platform, Sec-CH-UA, UA-Bitness, UA-Arch, UA-Full-Version, UA-Mobile, UA-Model, UA-Platform-Version, UA-Platform, UA",
+      "cf-mitigated": "challenge",
+      "critical-ch": "Sec-CH-UA-Bitness, Sec-CH-UA-Arch, Sec-CH-UA-Full-Version, Sec-CH-UA-Mobile, Sec-CH-UA-Model, Sec-CH-UA-Platform-Version, Sec-CH-UA-Full-Version-List, Sec-CH-UA-Platform, Sec-CH-UA, UA-Bitness, UA-Arch, UA-Full-Version, UA-Mobile, UA-Model, UA-Platform-Version, UA-Platform, UA",
+      "cross-origin-embedder-policy": "require-corp",
+      "cross-origin-opener-policy": "same-origin",
+      "cross-origin-resource-policy": "same-origin",
+      "origin-agent-cluster": "?1",
+      "permissions-policy": "accelerometer=(),browsing-topics=(),camera=(),clipboard-read=(),clipboard-write=(),geolocation=(),gyroscope=(),hid=(),interest-cohort=(),magnetometer=(),microphone=(),payment=(),publickey-credentials-get=(),screen-wake-lock=(),serial=(),sync-xhr=(),usb=()",
+      "referrer-policy": "same-origin",
+      "server-timing": "chlray;desc=\"9d5ababaee89ef9a\"",
+      "x-content-type-options": "nosniff",
+      "x-frame-options": "SAMEORIGIN",
+      "cache-control": "private, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0",
+      "expires": "Thu, 01 Jan 1970 00:00:01 GMT",
+      "set-cookie": "__cf_bm=Zh1tAou6j.4VM_2lghjjcYtVU0pcFV9wHIvR9VPxIhM-1772395032-1.0.1.1-bbDQYvxgDqPvhhVIhatrIFwC_zADhojCiej9sAtga5QNme9i4YE6VQcTh46JngGYPxyPjICQ9rmR2lzHWeVfzgE7UCqpEp2OXLsSFMfl_pQ; path=/; expires=Sun, 01-Mar-26 20:27:12 GMT; domain=.www.epicgames.com; HttpOnly; Secure; SameSite=None",
+      "vary": "Accept-Encoding",
+      "strict-transport-security": "max-age=15552000; includeSubDomains; preload",
+      "server": "cloudflare",
+      "cf-ray": "9d5ababaee89ef9a-MRS",
+      "content-encoding": "gzip",
+      "alt-svc": "h3=\":443\"; ma=86400"
+    },
+    "timestamp": "2026-03-01T22:57:43.167951"
+  }
+]

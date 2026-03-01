@@ -1,0 +1,4 @@
+# Target: https://www.epicgames.com/
+GET: []
+POST: []
+ENDPOINTS:

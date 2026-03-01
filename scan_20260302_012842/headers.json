@@ -1,0 +1,34 @@
+[
+  {
+    "url": "https://www.canva.com/",
+    "status_code": 200,
+    "headers": {
+      "date": "Sun, 01 Mar 2026 22:28:14 GMT",
+      "content-type": "text/html;charset=utf-8",
+      "transfer-encoding": "chunked",
+      "connection": "keep-alive",
+      "cf-ray": "9d5b97f10a181491-MRS",
+      "cf-cache-status": "DYNAMIC",
+      "cache-control": "no-cache, no-store",
+      "expires": "Thu, 1 Jan 1970 00:00:00 GMT",
+      "set-cookie": "CDI=6aab1b1e-933f-4460-bcbd-1ef8804056f2; Max-Age=31536000; Expires=Mon, 01 Mar 2027 22:28:14 GMT; Path=/; Secure; HTTPOnly; SameSite=None, CL=en; Max-Age=2592000; Expires=Tue, 31 Mar 2026 22:28:14 GMT; Path=/; Secure; SameSite=None, CPA=cnvanKjOepQXFlGn4IM501m9B6lDKLeQj5MoEyzJRls9Z7ySxf0uNU0oyLwRd7KNwaMU2MJcGEyrMmin5_7WiNp3y1ANKitBnxls2q433o22RiXW0pQtB7lJgJMVODOvFp4d6ADWfA-JqHDT3VLRhFq_nGGZjDqcCN1BsoQGzS2VU8vGy5oCSWnzQJOp4F4S2GVtWUVMivaARCQbY9BkIjuIijgr6pkcR1W9S8dx7Fyw9C54ikDs0RhWiEO9otYkgLpzDpKjCCJ2a_oJp9U0okAzvqJpZ-EIlxqsWyGFnsucUS1cqSk4v7JeIZHmvc05angb1EnNBL5_G8n4T8gz6LJwfwdv7iyOqVmfgsJ-zYVsRjEqAfQwXaa5-zNGq-Lu0GGwlyXGcvNCr1s269mev5HDm31yIUCOnUI-3OzQ_rslXKk_aQCnu724RdM37uL-QlgHS2x7dAlKEkimN3UrmtMGT79Vh5hUc0iRmZzyZ5wuNOKUR_EG6xUDpkt8vkLAeOeA6KNO47FgCVW5RK5D-sFda8qzp-hpveopy_mbighVCco5TW0Mbv_Zj2bbcwqbbolJfF9XjgZO-RtWEyMIYJj2fMdhPjob-u-f3gONNRfB2kYrDQsE5Qlh8QGQHfM93nmykH1rYb74lvVXGcJN15VMAKRQ-jF6yEyC_7aLE_RwXgPLdFzXCIIjfIKHrm_L4xCKuipLmrYBhGTrjinM2sY84j_h1fHQOcUFjNQYR9I2pX1fABdSbeca19357; Max-Age=10800; Expires=Mon, 02 Mar 2026 01:28:14 GMT; Path=/; Secure; HTTPOnly; SameSite=None, __cf_bm=PHEHeH8XZbGDoZTTLBnrMhKMTLA3jR9a8senWT8KDPg-1772404094-1.0.1.1-CN0q4vELQVMdYA4Mf7DLbE.sO8Qt2ANksZU6bxDReAtDRqbPmBFm.t99.wHMHyUI2OXKW.LKXoBGYnn7ZSsXyQoj41YOZbhBKtS2WbUNbeQ; path=/; expires=Sun, 01-Mar-26 22:58:14 GMT; domain=.canva.com; HttpOnly; Secure; SameSite=None, _cfuvid=T4veOcPWg8d8RSa_pAiyTOIoj092tb5h51iXUbm1A1Y-1772404094064-0.0.1.1-604800000; path=/; domain=.canva.com; HttpOnly; Secure; SameSite=None",
+      "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+      "vary": "accept-encoding",
+      "pragma": "No-cache",
+      "accept-ch": "Sec-CH-UA-Platform-Version",
+      "content-security-policy": "script-src 'report-sample' 'strict-dynamic' 'unsafe-eval' 'nonce-rYJEvrL4DbFBAPHD9z8aZQ'; base-uri 'self'; object-src 'none'; frame-ancestors https://canvateam.zendesk.com https://phoenix.canva.com https://www.canva-iris.com https://enterprise.canva.com https://www.affinity.studio; report-uri https://csp.canva.com/_cspreport?source=web2&requestId=9d5b97f10a181491&app=anon_home&policyHash=3ed26448",
+      "document-policy": "include-js-call-stacks-in-crash-reports",
+      "referrer-policy": "strict-origin-when-cross-origin",
+      "reporting-endpoints": "default=\"https://www.canva.com/_spi/browserreporting/default?page_load_id=07601448-a52f-4613-a3c5-96a2209cccb7\", cross_origin=\"https://www.canva.com/_spi/browserreporting/cross_origin\"",
+      "x-content-type-options": "nosniff",
+      "x-frame-options": "deny",
+      "x-request-id": "9d5b97f10a181491",
+      "x-xss-protection": "1; mode=block",
+      "report-to": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=3ftsOabY0F4SFngQ%2FqR6KF2A8IrwGTIsrs%2B8dnyAXtda6ilMu3nex1sF%2F%2Fo2K5pwJq7JJJxYne5i2Lzpmn7BeMubb6Uhu39Z7Ui16Yetld5qWdHui%2BffSMtLhsYCxPw%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+      "nel": "{\"success_fraction\":0.01,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+      "server": "cloudflare",
+      "content-encoding": "gzip"
+    },
+    "timestamp": "2026-03-02T01:28:44.151611"
+  }
+]

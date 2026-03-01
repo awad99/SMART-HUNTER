@@ -1,0 +1,11 @@
+https://bounty.github.com/?id=FUZZ
+https://bounty.github.com/?search=FUZZ
+https://bounty.github.com/?q=FUZZ
+https://bounty.github.com/?query=FUZZ
+https://bounty.github.com/?page=FUZZ
+https://bounty.github.com/?user=FUZZ
+https://bounty.github.com/?name=FUZZ
+https://bounty.github.com/?cat=FUZZ
+https://bounty.github.com/?file=FUZZ
+https://bounty.github.com/?cmd=FUZZ
+https://bounty.github.com/?action=FUZZ

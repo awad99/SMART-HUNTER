@@ -1,0 +1,34 @@
+[
+  {
+    "url": "https://www.chia.net/",
+    "status_code": 200,
+    "headers": {
+      "date": "Sun, 01 Mar 2026 19:41:21 GMT",
+      "content-type": "text/html; charset=UTF-8",
+      "transfer-encoding": "chunked",
+      "connection": "keep-alive",
+      "content-encoding": "gzip",
+      "vary": "Accept-Encoding, Accept-Encoding, Accept-Encoding, Accept-Encoding,Cookie",
+      "accept-ch": "Sec-CH-UA-Mobile",
+      "last-modified": "Fri, 27 Feb 2026 21:44:19 GMT",
+      "link": "<https://cdn-ilcmnif.nitrocdn.com>; rel=preconnect, <https://www.chia.net/wp-json/>; rel=\"https://api.w.org/\", <https://www.chia.net/wp-json/wp/v2/pages/40>; rel=\"alternate\"; title=\"JSON\"; type=\"application/json\", <https://www.chia.net/>; rel=shortlink",
+      "permissions-policy": "private-state-token-redemption=(self \"https://www.google.com\" \"https://www.gstatic.com\" \"https://recaptcha.net\" \"https://challenges.cloudflare.com\" \"https://hcaptcha.com\"), private-state-token-issuance=(self \"https://www.google.com\" \"https://www.gstatic.com\" \"https://recaptcha.net\" \"https://challenges.cloudflare.com\" \"https://hcaptcha.com\")",
+      "set-cookie": "np_cache_variation=d41d8cd98f00b204e9800998ecf8427e; path=/, __cf_bm=hUwarbBVRudj9rdQ4oqezWfExekx59_ZI1ETJiMHKRU-1772394081-1.0.1.1-3hI4IzBWx066dh1mGfD41YZCY48PMurA.JxPZ0mxmV04XA1X6WzCcERRFrsqIVDAJk1QaJ3xTnx5Bjfmrc4NwE3VfcqwqLp007KfGFPMX9M; path=/; expires=Sun, 01-Mar-26 20:11:21 GMT; domain=.www.chia.net; HttpOnly; Secure; SameSite=None",
+      "x-cache-ctime": "1772228659",
+      "x-nitro-cache": "HIT",
+      "x-nitro-cache-from": "drop-in",
+      "x-nitro-rev": "791a503",
+      "x-powered-by": "WP Engine",
+      "x-cacheable": "SHORT",
+      "cache-control": "max-age=600, must-revalidate",
+      "x-cache": "HIT: 85",
+      "x-cache-group": "normal",
+      "x-orig-cache-control": "no-cache",
+      "cf-cache-status": "DYNAMIC",
+      "server": "cloudflare",
+      "cf-ray": "9d5aa37efef9e175-MRS",
+      "alt-svc": "h3=\":443\"; ma=86400"
+    },
+    "timestamp": "2026-03-01T22:41:51.739396"
+  }
+]

@@ -1,0 +1,24 @@
+[
+  {
+    "url": "https://www.starbucks.com/",
+    "status_code": 200,
+    "headers": {
+      "content-type": "text/html; charset=utf-8",
+      "cache-control": "s-maxage=600, stale-while-revalidate=31535400",
+      "content-encoding": "gzip",
+      "etag": "\"15rzq1b5bgu27ac\"",
+      "vary": "Accept-Encoding",
+      "request-context": "appId=cid-v1:",
+      "content-security-policy": "default-src 'self' *.starbucks.com *.starbucks.ca; child-src 'self' *.starbucks.com *.starbucks.ca *.doubleclick.net *.optimizely.com *.trustarc.com; connect-src 'self' *.starbucks.com *.starbucks.ca https://fonts.gstatic.com *.akamaihd.net *.akstat.io *.doubleclick.net *.go-mpulse.net *.google.com *.google-analytics.com *.googletagmanager.com *.googlevideo.com *.mparticle.com *.nr-data.net *.optimizely.com *.pinterest.com *.trustarc.com *.xg4ken.com; font-src 'self' *.starbucks.com *.starbucks.ca https://fonts.googleapis.com https://fonts.gstatic.com *.trustarc.com; img-src 'self' data: *.starbucks.com *.starbucks.ca https://*.gstatic.com *.adsrvr.org *.agkn.com *.akamaihd.net *.appcast.io *.bing.com *.doubleclick.net *.facebook.com *.ggpht.com *.google.com *.google-analytics.com *.googletagmanager.com *.mparticle.com *.nr-data.net *.pinterest.com *.snapchat.com *.trustarc.com *.truste.com *.videoamp.com *.xg4ken.com *.ytimg.com; manifest-src 'self' *.starbucks.com *.starbucks.ca; media-src 'self' blob: *.starbucks.com *.starbucks.ca *.youtube.com; frame-src 'self' *.googletagmanager.com *.optimizely.com *.trustarc.com *.youtube.com; frame-ancestors 'none'; script-src 'self' 'unsafe-eval' 'unsafe-inline' *.starbucks.com *.starbucks.ca cdnjs.com *.appcast.io *.bing.com *.doubleclick.net *.facebook.net *.go-mpulse.net *.google.com *.google-analytics.com *.googletagmanager.com *.gstatic.com *.mparticle.com *.newrelic.com *.nr-data.net *.optimizely.com *.pinimg.com *.sc-static.net *.snapchat.com *.trustarc.com *.xg4ken.com; style-src 'self' 'unsafe-inline' *.starbucks.com *.starbucks.ca https://fonts.googleapis.com;",
+      "x-powered-by": "cwa00",
+      "x-nextjs-cache": "HIT",
+      "x-azure-ref": "20260301T114747Z-16c8fcdb9fbzf92qhC1FRAduv00000001hfg000000005uvm",
+      "x-content-type-options": "nosniff",
+      "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+      "date": "Sun, 01 Mar 2026 11:47:47 GMT",
+      "content-length": "28225",
+      "connection": "keep-alive"
+    },
+    "timestamp": "2026-03-01T14:48:18.184111"
+  }
+]

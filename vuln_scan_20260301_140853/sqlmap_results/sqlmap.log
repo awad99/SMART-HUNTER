@@ -1,0 +1,186 @@
+        ___
+       __H__
+ ___ ___[.]_____ ___ ___  {1.9.11#stable}
+|_ -| . [)]     | .'| . |
+|___|_  [(]_|_|_|__,|  _|
+      |_|V...       |_|   https://sqlmap.org
+
+[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program
+
+[*] starting @ 14:12:24 /2026-03-01/
+
+[14:12:24] [INFO] fetched random HTTP User-Agent header value 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36' from file '/usr/share/sqlmap/data/txt/user-agents.txt'
+[14:12:24] [INFO] parsing multiple targets list from 'sqli_parameters.txt'
+[14:12:24] [INFO] starting crawler for target URL 'https://bounty.github.com/?id=FUZZ' (1/11)
+do you want to check for the existence of site's sitemap(.xml) [y/N] N
+[14:12:24] [INFO] starting 2 threads
+do you want to normalize crawling results [Y/n] Y
+do you want to store crawling results to a temporary file for eventual further processing with other tools [y/N] N
+[1/1] URL:
+GET https://bounty.github.com/?id=FUZZ
+do you want to test this URL? [Y/n/q]
+> Y
+[14:12:26] [INFO] testing URL 'https://bounty.github.com/?id=FUZZ'
+[14:12:26] [INFO] using '/home/awad/.local/share/sqlmap/output/results-03012026_0212pm.csv' as the CSV results file in multiple targets mode
+[14:12:26] [INFO] checking if the target is protected by some kind of WAF/IPS
+[14:12:27] [INFO] testing if the target URL content is stable
+[14:12:27] [INFO] target URL content is stable
+[14:12:27] [INFO] testing if GET parameter 'id' is dynamic
+[14:12:28] [WARNING] GET parameter 'id' does not appear to be dynamic
+[14:12:29] [WARNING] heuristic (basic) test shows that GET parameter 'id' might not be injectable
+[14:12:29] [INFO] skipping GET parameter 'id'
+[14:12:29] [ERROR] all tested parameters do not appear to be injectable. Try to increase values for '--level'/'--risk' options if you wish to perform more tests. If you suspect that there is some kind of protection mechanism involved (e.g. WAF) maybe you could try to use option '--tamper' (e.g. '--tamper=space2comment'), skipping to the next target
+[14:12:29] [INFO] you can find results of scanning in multiple targets mode inside the CSV file '/home/awad/.local/share/sqlmap/output/results-03012026_0212pm.csv'
+[14:12:29] [INFO] starting crawler for target URL 'https://bounty.github.com/?search=FUZZ' (2/11)
+[14:12:29] [INFO] starting 2 threads
+[1/1] URL:
+GET https://bounty.github.com/?search=FUZZ
+do you want to test this URL? [Y/n/q]
+> Y
+[14:12:30] [INFO] testing URL 'https://bounty.github.com/?search=FUZZ'
+[14:12:31] [INFO] testing if the target URL content is stable
+[14:12:31] [INFO] target URL content is stable
+[14:12:31] [INFO] testing if GET parameter 'search' is dynamic
+[14:12:32] [WARNING] GET parameter 'search' does not appear to be dynamic
+[14:12:33] [WARNING] heuristic (basic) test shows that GET parameter 'search' might not be injectable
+[14:12:33] [INFO] skipping GET parameter 'search'
+[14:12:33] [ERROR] all tested parameters do not appear to be injectable. Try to increase values for '--level'/'--risk' options if you wish to perform more tests. If you suspect that there is some kind of protection mechanism involved (e.g. WAF) maybe you could try to use option '--tamper' (e.g. '--tamper=space2comment'), skipping to the next target
+[14:12:33] [INFO] you can find results of scanning in multiple targets mode inside the CSV file '/home/awad/.local/share/sqlmap/output/results-03012026_0212pm.csv'
+[14:12:33] [INFO] starting crawler for target URL 'https://bounty.github.com/?q=FUZZ' (3/11)
+[14:12:33] [INFO] starting 2 threads
+[1/1] URL:
+GET https://bounty.github.com/?q=FUZZ
+do you want to test this URL? [Y/n/q]
+> Y
+[14:12:34] [INFO] testing URL 'https://bounty.github.com/?q=FUZZ'
+[14:12:35] [INFO] testing if the target URL content is stable
+[14:12:36] [INFO] target URL content is stable
+[14:12:36] [INFO] testing if GET parameter 'q' is dynamic
+[14:12:37] [WARNING] GET parameter 'q' does not appear to be dynamic
+[14:12:37] [WARNING] heuristic (basic) test shows that GET parameter 'q' might not be injectable
+[14:12:38] [INFO] skipping GET parameter 'q'
+[14:12:38] [ERROR] all tested parameters do not appear to be injectable. Try to increase values for '--level'/'--risk' options if you wish to perform more tests. If you suspect that there is some kind of protection mechanism involved (e.g. WAF) maybe you could try to use option '--tamper' (e.g. '--tamper=space2comment'), skipping to the next target
+[14:12:38] [INFO] you can find results of scanning in multiple targets mode inside the CSV file '/home/awad/.local/share/sqlmap/output/results-03012026_0212pm.csv'
+[14:12:38] [INFO] starting crawler for target URL 'https://bounty.github.com/?query=FUZZ' (4/11)
+[14:12:38] [INFO] starting 2 threads
+[1/1] URL:
+GET https://bounty.github.com/?query=FUZZ
+do you want to test this URL? [Y/n/q]
+> Y
+[14:12:39] [INFO] testing URL 'https://bounty.github.com/?query=FUZZ'
+[14:12:39] [INFO] testing if the target URL content is stable
+[14:12:40] [INFO] target URL content is stable
+[14:12:40] [INFO] testing if GET parameter 'query' is dynamic
+[14:12:41] [WARNING] GET parameter 'query' does not appear to be dynamic
+[14:12:41] [WARNING] heuristic (basic) test shows that GET parameter 'query' might not be injectable
+[14:12:42] [INFO] skipping GET parameter 'query'
+[14:12:42] [ERROR] all tested parameters do not appear to be injectable. Try to increase values for '--level'/'--risk' options if you wish to perform more tests. If you suspect that there is some kind of protection mechanism involved (e.g. WAF) maybe you could try to use option '--tamper' (e.g. '--tamper=space2comment'), skipping to the next target
+[14:12:42] [INFO] you can find results of scanning in multiple targets mode inside the CSV file '/home/awad/.local/share/sqlmap/output/results-03012026_0212pm.csv'
+[14:12:42] [INFO] starting crawler for target URL 'https://bounty.github.com/?page=FUZZ' (5/11)
+[14:12:42] [INFO] starting 2 threads
+[1/1] URL:
+GET https://bounty.github.com/?page=FUZZ
+do you want to test this URL? [Y/n/q]
+> Y
+[14:12:43] [INFO] testing URL 'https://bounty.github.com/?page=FUZZ'
+[14:12:44] [INFO] testing if the target URL content is stable
+[14:12:44] [INFO] target URL content is stable
+[14:12:44] [INFO] testing if GET parameter 'page' is dynamic
+[14:12:45] [WARNING] GET parameter 'page' does not appear to be dynamic
+[14:12:46] [WARNING] heuristic (basic) test shows that GET parameter 'page' might not be injectable
+[14:12:46] [INFO] skipping GET parameter 'page'
+[14:12:46] [ERROR] all tested parameters do not appear to be injectable. Try to increase values for '--level'/'--risk' options if you wish to perform more tests. If you suspect that there is some kind of protection mechanism involved (e.g. WAF) maybe you could try to use option '--tamper' (e.g. '--tamper=space2comment'), skipping to the next target
+[14:12:46] [INFO] you can find results of scanning in multiple targets mode inside the CSV file '/home/awad/.local/share/sqlmap/output/results-03012026_0212pm.csv'
+[14:12:46] [INFO] starting crawler for target URL 'https://bounty.github.com/?user=FUZZ' (6/11)
+[14:12:46] [INFO] starting 2 threads
+[1/1] URL:
+GET https://bounty.github.com/?user=FUZZ
+do you want to test this URL? [Y/n/q]
+> Y
+[14:12:47] [INFO] testing URL 'https://bounty.github.com/?user=FUZZ'
+[14:12:48] [INFO] testing if the target URL content is stable
+[14:12:48] [INFO] target URL content is stable
+[14:12:48] [INFO] testing if GET parameter 'user' is dynamic
+[14:12:49] [WARNING] GET parameter 'user' does not appear to be dynamic
+[14:12:50] [WARNING] heuristic (basic) test shows that GET parameter 'user' might not be injectable
+[14:12:50] [INFO] skipping GET parameter 'user'
+[14:12:50] [ERROR] all tested parameters do not appear to be injectable. Try to increase values for '--level'/'--risk' options if you wish to perform more tests. If you suspect that there is some kind of protection mechanism involved (e.g. WAF) maybe you could try to use option '--tamper' (e.g. '--tamper=space2comment'), skipping to the next target
+[14:12:50] [INFO] you can find results of scanning in multiple targets mode inside the CSV file '/home/awad/.local/share/sqlmap/output/results-03012026_0212pm.csv'
+[14:12:50] [INFO] starting crawler for target URL 'https://bounty.github.com/?name=FUZZ' (7/11)
+[14:12:50] [INFO] starting 2 threads
+[1/1] URL:
+GET https://bounty.github.com/?name=FUZZ
+do you want to test this URL? [Y/n/q]
+> Y
+[14:12:51] [INFO] testing URL 'https://bounty.github.com/?name=FUZZ'
+[14:12:52] [INFO] testing if the target URL content is stable
+[14:12:52] [INFO] target URL content is stable
+[14:12:52] [INFO] testing if GET parameter 'name' is dynamic
+[14:12:53] [WARNING] GET parameter 'name' does not appear to be dynamic
+[14:12:54] [WARNING] heuristic (basic) test shows that GET parameter 'name' might not be injectable
+[14:12:54] [INFO] skipping GET parameter 'name'
+[14:12:54] [ERROR] all tested parameters do not appear to be injectable. Try to increase values for '--level'/'--risk' options if you wish to perform more tests. If you suspect that there is some kind of protection mechanism involved (e.g. WAF) maybe you could try to use option '--tamper' (e.g. '--tamper=space2comment'), skipping to the next target
+[14:12:54] [INFO] you can find results of scanning in multiple targets mode inside the CSV file '/home/awad/.local/share/sqlmap/output/results-03012026_0212pm.csv'
+[14:12:54] [INFO] starting crawler for target URL 'https://bounty.github.com/?cat=FUZZ' (8/11)
+[14:12:54] [INFO] starting 2 threads
+[1/1] URL:
+GET https://bounty.github.com/?cat=FUZZ
+do you want to test this URL? [Y/n/q]
+> Y
+[14:12:55] [INFO] testing URL 'https://bounty.github.com/?cat=FUZZ'
+[14:12:56] [INFO] testing if the target URL content is stable
+[14:12:57] [INFO] target URL content is stable
+[14:12:57] [INFO] testing if GET parameter 'cat' is dynamic
+[14:12:57] [WARNING] GET parameter 'cat' does not appear to be dynamic
+[14:12:58] [WARNING] heuristic (basic) test shows that GET parameter 'cat' might not be injectable
+[14:12:58] [INFO] skipping GET parameter 'cat'
+[14:12:58] [ERROR] all tested parameters do not appear to be injectable. Try to increase values for '--level'/'--risk' options if you wish to perform more tests. If you suspect that there is some kind of protection mechanism involved (e.g. WAF) maybe you could try to use option '--tamper' (e.g. '--tamper=space2comment'), skipping to the next target
+[14:12:58] [INFO] you can find results of scanning in multiple targets mode inside the CSV file '/home/awad/.local/share/sqlmap/output/results-03012026_0212pm.csv'
+[14:12:58] [INFO] starting crawler for target URL 'https://bounty.github.com/?file=FUZZ' (9/11)
+[14:12:58] [INFO] starting 2 threads
+[1/1] URL:
+GET https://bounty.github.com/?file=FUZZ
+do you want to test this URL? [Y/n/q]
+> Y
+[14:12:59] [INFO] testing URL 'https://bounty.github.com/?file=FUZZ'
+[14:13:00] [INFO] testing if the target URL content is stable
+[14:13:00] [INFO] target URL content is stable
+[14:13:00] [INFO] testing if GET parameter 'file' is dynamic
+[14:13:01] [WARNING] GET parameter 'file' does not appear to be dynamic
+[14:13:01] [WARNING] heuristic (basic) test shows that GET parameter 'file' might not be injectable
+[14:13:02] [INFO] skipping GET parameter 'file'
+[14:13:02] [ERROR] all tested parameters do not appear to be injectable. Try to increase values for '--level'/'--risk' options if you wish to perform more tests. If you suspect that there is some kind of protection mechanism involved (e.g. WAF) maybe you could try to use option '--tamper' (e.g. '--tamper=space2comment'), skipping to the next target
+[14:13:02] [INFO] you can find results of scanning in multiple targets mode inside the CSV file '/home/awad/.local/share/sqlmap/output/results-03012026_0212pm.csv'
+[14:13:02] [INFO] starting crawler for target URL 'https://bounty.github.com/?cmd=FUZZ' (10/11)
+[14:13:02] [INFO] starting 2 threads
+[1/1] URL:
+GET https://bounty.github.com/?cmd=FUZZ
+do you want to test this URL? [Y/n/q]
+> Y
+[14:13:03] [INFO] testing URL 'https://bounty.github.com/?cmd=FUZZ'
+[14:13:04] [INFO] testing if the target URL content is stable
+[14:13:04] [INFO] target URL content is stable
+[14:13:04] [INFO] testing if GET parameter 'cmd' is dynamic
+[14:13:05] [WARNING] GET parameter 'cmd' does not appear to be dynamic
+[14:13:06] [WARNING] heuristic (basic) test shows that GET parameter 'cmd' might not be injectable
+[14:13:06] [INFO] skipping GET parameter 'cmd'
+[14:13:06] [ERROR] all tested parameters do not appear to be injectable. Try to increase values for '--level'/'--risk' options if you wish to perform more tests. If you suspect that there is some kind of protection mechanism involved (e.g. WAF) maybe you could try to use option '--tamper' (e.g. '--tamper=space2comment'), skipping to the next target
+[14:13:06] [INFO] you can find results of scanning in multiple targets mode inside the CSV file '/home/awad/.local/share/sqlmap/output/results-03012026_0212pm.csv'
+[14:13:06] [INFO] starting crawler for target URL 'https://bounty.github.com/?action=FUZZ' (11/11)
+[14:13:06] [INFO] starting 2 threads
+[1/1] URL:
+GET https://bounty.github.com/?action=FUZZ
+do you want to test this URL? [Y/n/q]
+> Y
+[14:13:07] [INFO] testing URL 'https://bounty.github.com/?action=FUZZ'
+[14:13:08] [INFO] testing if the target URL content is stable
+[14:13:09] [INFO] target URL content is stable
+[14:13:09] [INFO] testing if GET parameter 'action' is dynamic
+[14:13:09] [WARNING] GET parameter 'action' does not appear to be dynamic
+[14:13:10] [WARNING] heuristic (basic) test shows that GET parameter 'action' might not be injectable
+[14:13:10] [INFO] skipping GET parameter 'action'
+[14:13:10] [ERROR] all tested parameters do not appear to be injectable. Try to increase values for '--level'/'--risk' options if you wish to perform more tests. If you suspect that there is some kind of protection mechanism involved (e.g. WAF) maybe you could try to use option '--tamper' (e.g. '--tamper=space2comment'), skipping to the next target
+[14:13:10] [INFO] you can find results of scanning in multiple targets mode inside the CSV file '/home/awad/.local/share/sqlmap/output/results-03012026_0212pm.csv'
+
+[*] ending @ 14:13:10 /2026-03-01/
+

@@ -1,0 +1,11 @@
+https://sa.trip.com/?id=FUZZ
+https://sa.trip.com/?search=FUZZ
+https://sa.trip.com/?q=FUZZ
+https://sa.trip.com/?query=FUZZ
+https://sa.trip.com/?page=FUZZ
+https://sa.trip.com/?user=FUZZ
+https://sa.trip.com/?name=FUZZ
+https://sa.trip.com/?cat=FUZZ
+https://sa.trip.com/?file=FUZZ
+https://sa.trip.com/?cmd=FUZZ
+https://sa.trip.com/?action=FUZZ

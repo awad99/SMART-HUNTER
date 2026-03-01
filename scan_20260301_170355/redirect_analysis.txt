@@ -1,0 +1,14 @@
+REDIRECT CHAIN ANALYSIS
+==================================================
+Original : https://stripe.com/
+Final    : https://stripe.com/
+Hops     : 1
+
+CHAIN:
+  1. ORIGINAL: https://stripe.com/
+  2. 200: https://stripe.com/ → 
+  3. FINAL: https://stripe.com/ (200)
+
+SECURITY:
+  Domains     : 1 (stripe.com)
+  HTTP→HTTPS  : No

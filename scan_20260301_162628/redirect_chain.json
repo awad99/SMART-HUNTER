@@ -1,0 +1,16 @@
+[
+  {
+    "url": "https://www.flipkart.com/",
+    "type": "ORIGINAL"
+  },
+  {
+    "url": "https://www.flipkart.com/",
+    "status_code": 403,
+    "location": ""
+  },
+  {
+    "url": "https://www.flipkart.com/",
+    "type": "FINAL",
+    "status": 403
+  }
+]

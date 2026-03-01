@@ -1,0 +1,56 @@
+TARGET: https://chain.link/
+==================================================
+
+Form [GET] : ['Consent Checkbox', 'Email']
+
+Form [GET] : ['Consent Checkbox', 'Email']
+Link: https://cdn.prod.website-files.com/5f6b7190899f41fb70882d08/css/clstaging.shared.79e140c24.min.css
+Link: https://cdn.prod.website-files.com/5f6b7190899f41fb70882d08/css/clstaging.692c87b1908eb284c4c48f12-9d68c7bca.min.css
+Link: https://cdn.prod.website-files.com/5f6b7190899f41fb70882d08/6657084f0e022fd363426fc4_favicon.png
+Link: https://cdn.prod.website-files.com/5f6b7190899f41fb70882d08/66570856a4d306e3381b870f_webclip.png
+Link: https://chain.link
+Link: https://cdn.intellimize.co/snippet/117456865.js
+Link: https://api.intellimize.co
+Link: https://log.intellimize.co
+Link: https://117456865.intellimizeio.com
+Link: https://cdn.prod.website-files.com
+Link: https://cdn.prod.website-files.com
+Link: https://cdn.plyr.io/3.7.8/plyr.css
+Link: https://dv9hf6.csb.app/video.css
+Link: https://chain.link/
+Link: https://chain.link/platform
+Link: https://chain.link/cre
+Link: https://chain.link/cross-chain
+Link: https://chain.link/privacy
+Link: https://chain.link/digital-transfer-agent-technical-standard
+Link: https://chain.link/automated-compliance-engine
+Link: https://chain.link/data-streams
+Link: https://chain.link/data-feeds
+Link: https://chain.link/datalink
+Link: https://chain.link/proof-of-reserve
+Link: https://chain.link/smartdata
+Link: https://chain.link/functions
+Link: https://chain.link/automation
+Link: https://chain.link/vrf
+Link: https://chain.link/use-cases/tokenized-assets
+Link: https://chain.link/use-cases/stablecoins
+Link: https://chain.link/use-cases/payments
+Link: https://chain.link/use-cases/defi
+Link: https://chain.link/use-cases/blockchain-ecosystem
+Link: https://www.youtube.com/watch?v=x_D1MM_0EGQ
+Link: https://www.youtube.com/watch?v=gFx_HzoTgHk
+Link: https://x.com/chainlink/status/1935065872651141147
+Link: https://docs.chain.link/docs
+Link: https://dev.chain.link/
+Link: https://chain.link/faucets
+Link: https://chain.link/bootcamps
+Link: https://chain.link/tutorials
+Link: https://chain.link/economics/build-program
+Link: https://updraft.cyfrin.io/courses/chainlink-fundamentals
+Link: https://chain.link/advocates
+Link: https://dev.chain.link/resources
+Link: https://go.chain.link/bootcamps/intro-to-chainlink-and-solidity
+Link: https://chain.link/hackathon
+Link: https://docs.chain.link/data-feeds
+Link: https://docs.chain.link/resources/link-token-contracts
+Link: https://youtu.be/6NBWcITo7l4?si=BcZVIoAl1CUSUdHR

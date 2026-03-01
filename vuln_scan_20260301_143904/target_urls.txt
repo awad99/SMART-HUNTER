@@ -1,0 +1,11 @@
+https://sa-en.ring.com/?id=FUZZ
+https://sa-en.ring.com/?search=FUZZ
+https://sa-en.ring.com/?q=FUZZ
+https://sa-en.ring.com/?query=FUZZ
+https://sa-en.ring.com/?page=FUZZ
+https://sa-en.ring.com/?user=FUZZ
+https://sa-en.ring.com/?name=FUZZ
+https://sa-en.ring.com/?cat=FUZZ
+https://sa-en.ring.com/?file=FUZZ
+https://sa-en.ring.com/?cmd=FUZZ
+https://sa-en.ring.com/?action=FUZZ

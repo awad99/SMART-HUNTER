@@ -1,0 +1,37 @@
+[
+  {
+    "url": "https://sa.trip.com/",
+    "status_code": 200,
+    "headers": {
+      "content-type": "text/html",
+      "vary": "Accept-Encoding, User-Agent",
+      "reporting-endpoints": "default=\"https://crash.trip.com/mcd_crash_server/spring/web/collect?cid=unknown&vid=unknown&page=unknown&appid=100014416&env=pro&version=2.0.94\"",
+      "rootmessageid": "100014416-0a9aaf73-492332-389479",
+      "cache-control": "public, max-age=5",
+      "expires": "Sun, 01 Mar 2026 20:34:22 GMT",
+      "x-ctx-user-recognize": "NON_EU",
+      "x-accel-buffering": "no",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "1; mode=block",
+      "x-content-type-options": "nosniff",
+      "x-download-options": "noopen",
+      "x-readtime": "82",
+      "x-trip-app-name": "online-home",
+      "x-trip-app-version": "13.223.0",
+      "x-trip-app-idc": "SGP-ALI",
+      "x-backend-latency": "0.083",
+      "content-encoding": "gzip",
+      "date": "Sun, 01 Mar 2026 20:34:17 GMT",
+      "transfer-encoding": "chunked",
+      "connection": "keep-alive, Transfer-Encoding",
+      "set-cookie": "GUID=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT; httponly, GUID.sig=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT; httponly, GUID=09034116114393695618; path=/; expires=Wed, 28 Feb 2029 20:34:17 GMT; domain=.trip.com, GUID.sig=U0hbj5-re_xdLRuz3BJVc-b--UFagyRSmIirisyCStM; path=/; expires=Wed, 28 Feb 2029 20:34:17 GMT; domain=.trip.com, UBT_VID=1772397257393.f11aMsYBzG76;domain=.trip.com;path=/;expires=Mon, 05 Apr 2027 20:34:17 GMT, ibu_online_jump_site_result={\"isShowSuggestion\":false}; Domain=trip.com; Expires=Mon, 01 Mar 2027 20:34:17 GMT, ibusite=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT, ibugroup=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT, ibulanguage=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT, ibulocale=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT, cookiePricesDisplayed=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT, ibusite=SA; Max-Age=2592000; Path=/, ibugroup=trip; Max-Age=2592000; Path=/, ibulanguage=AR; Max-Age=2592000; Domain=trip.com; Path=/, ibulocale=ar_sa; Max-Age=2592000; Domain=trip.com; Path=/, cookiePricesDisplayed=SAR; Max-Age=2592000; Domain=trip.com; Path=/, ibu_country=SA; Max-Age=2592000; Path=/, ibu_cookie_strict=0; Max-Age=2592000; Path=/",
+      "alt-svc": "h3=\":443\"; ma=93600",
+      "server-timing": "cdn-cache; desc=MISS, edge; dur=0, origin; dur=337",
+      "x-cdn-pop": "SA",
+      "c-via": "akamai",
+      "x-cdn-cache": "MISS",
+      "unique-request-id": "390138c3"
+    },
+    "timestamp": "2026-03-01T23:34:48.044454"
+  }
+]

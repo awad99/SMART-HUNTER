@@ -1,0 +1,14 @@
+REDIRECT CHAIN ANALYSIS
+==================================================
+Original : https://www.zerobounce.net/
+Final    : https://www.zerobounce.net/
+Hops     : 1
+
+CHAIN:
+  1. ORIGINAL: https://www.zerobounce.net/
+  2. 200: https://www.zerobounce.net/ → 
+  3. FINAL: https://www.zerobounce.net/ (200)
+
+SECURITY:
+  Domains     : 1 (www.zerobounce.net)
+  HTTP→HTTPS  : No

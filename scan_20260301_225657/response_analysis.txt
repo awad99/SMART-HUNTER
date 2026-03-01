@@ -1,0 +1,23 @@
+TARGET: https://www.rockstargames.com/
+==================================================
+Link: 
+Link: https://www.rockstargames.com
+Link: https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/meta-icons/rockstar/favicon-180x180.png
+Link: https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/meta-icons/rockstar/favicon-32x32.png
+Link: https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/meta-icons/rockstar/favicon-16x16.png
+Link: https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/meta-icons/rockstar/favicon.svg
+Link: https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/meta-icons/rockstar/favicon.ico
+Link: https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/meta-icons/rockstar/favicon.ico
+Link: https://www.rockstargames.com
+Link: https://www.rockstargames.com/de
+Link: https://www.rockstargames.com/fr
+Link: https://www.rockstargames.com/it
+Link: https://www.rockstargames.com/jp
+Link: https://www.rockstargames.com/ru
+Link: https://www.rockstargames.com/es
+Link: https://www.rockstargames.com/mx
+Link: https://www.rockstargames.com/br
+Link: https://www.rockstargames.com/kr
+Link: https://www.rockstargames.com/zh
+Link: https://www.rockstargames.com/tw
+Link: https://www.rockstargames.com/pl

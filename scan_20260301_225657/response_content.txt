@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en_us">
+<head>
+<base href="">
+<meta charset="utf-8">
+<title>Rockstar Games</title>
+<link href="https://www.rockstargames.com" rel="canonical">
+<link rel="apple-touch-icon" sizes="180x180" href="https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/meta-icons/rockstar/favicon-180x180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/meta-icons/rockstar/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/meta-icons/rockstar/favicon-16x16.png">
+<link rel="mask-icon" color="#666666" href="https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/meta-icons/rockstar/favicon.svg">
+<link href="https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/meta-icons/rockstar/favicon.ico" type="image/x-icon" rel="icon">
+<link href="https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/meta-icons/rockstar/favicon.ico" type="image/x-icon" rel="shortcut icon">
+<meta name="author" content="Rockstar Games">
+<meta name="copyright" content="Rockstar Games 2026. All Rights Reserved.">
+<meta name="theme-color" content="#000000">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="twitter:card" content="summary">
+<meta property="twitter:creator" content="@rockstargames">
+<meta property="twitter:creator:id" content="29758446">
+<meta property="twitter:site" content="@rockstargames">
+<meta property="twitter:title" content="Rockstar Games">
+<meta property="twitter:description" content="The official home of Rockstar Games">
+<meta property="twitter:image" content="https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/meta-icons/rockstar/favicon-180x180.png">
+<meta property="og:site_name" content="Rockstar Games">
+<meta property="og:title" content="Rockstar Games">
+<meta property="og:description" content="The official home of Rockstar Games">
+<meta property="og:image" content="https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/meta-icons/rockstar/favicon-180x180.png">
+<meta property="og:locale" content="en_us">
+<meta name="title" content="Rockstar Games">
+<meta name="description" content="The official home of Rockstar Games">
+<meta name="keywords" content="Rockstar Games, Rockstar, Video Games, Games, Gaming, Grand Theft Auto, GTA, GTAV, GTA 5, GTA Online, GTA+, GTA Plus, Red Dead Redemption, RDR, Red Dead Online, PS5, PlayStation, Xbox Series X, Xbox Series S, Xbox, PC Games, Computer Games, Home Entertainment, Home Gaming, New Video Games, Videogames, LA Noire, L.A. Noire, Max Payne 3, Max Payne, Vice City, San Andreas, Liberty City, Los Santos, Vinewood">
+<meta name="image" content="https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/meta-icons/rockstar/favicon-180x180.png">
+<link rel="alternate" hreflang="en-US" href="https://www.rockstargames.com">
+<link rel="alternate" hreflang="de-DE" href="https://www.rockstargames.com/de">
+<link rel="alternate" hreflang="fr-FR" href="https://www.rockstargames.com/fr">
+<link rel="alternate" hreflang="it-IT" href="https://www.rockstargames.com/it">
+<link rel="alternate" hreflang="ja-JP" href="https://www.rockstargames.com/jp">
+<link rel="alternate" hreflang="ru-RU" href="https://www.rockstargames.com/ru">
+<link rel="alternate" hreflang="es-ES" href="https://www.rockstargames.com/es">
+<link rel="alternate" hreflang="es-MX" href="https://www.rockstargames.com/mx">
+<link rel="alternate" hreflang="pt-BR" href="https://www.rockstargames.com/br">
+<link rel="alternate" hreflang="ko-KR" href="https://www.rockstargames.com/kr">
+<link rel="alternate" hreflang="zh-Hans" href="https://www.rockstargames.com/zh">
+<link rel="alternate" hreflang="zh-TW" href="https://www.rockstargames.com/tw">
+<link rel="alternate" hreflang="pl-PL" href="https://www.rockstargames.com/pl">
+<style>body { background:#0b0b0b; }</style>
+<script src="https://media-rockstargames-com.akamaized.net/mfe6/importmaps/e86455/prod.json" type="rs-importmap"></script><script src="https://media-rockstargames-com.akamaized.net/mfe6/importmaps/92ea64/prod.json" type="rs-importmap"></script><script src="https://media-rockstargames-com.akamaized.net/mfe6/prod/@rockstargames/mfe/6.1.0/2ae0809232c676125d69dec9da385f60c51137a8d9d6c41b92713abd418a5edb/systemjs-module-federation.js" data-config='{"container":"@rockstargames\/sites-rockstargames","method":".\/bootstrap","type":"rs-importmap"}'></script><script>window.env = JSON.parse('{"responseStatusCode":200,"gtmId":"GTM-NSXXFR","oneTrustId":"cc81fc10-5468-4b73-b37f-93a4686af46f"}');</script>
+</head>
+<body></body>
+</html>

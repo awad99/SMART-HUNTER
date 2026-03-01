@@ -1,8 +1,0 @@
-TARGET: https://www.coinhako.com/
-==================================================
-Link: /
-Link: favicon.ico
-Link: https://fonts.gstatic.com
-Link: https://www-cdn.coinesto.com
-Link: https://www.coinhako.com/
-Link: styles.1be9c44a9b7c228a.css

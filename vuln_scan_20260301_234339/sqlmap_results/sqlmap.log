@@ -1,0 +1,277 @@
+        ___
+       __H__
+ ___ ___[,]_____ ___ ___  {1.9.11#stable}
+|_ -| . ["]     | .'| . |
+|___|_  [)]_|_|_|__,|  _|
+      |_|V...       |_|   https://sqlmap.org
+
+[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program
+
+[*] starting @ 23:49:01 /2026-03-01/
+
+[23:49:01] [INFO] fetched random HTTP User-Agent header value 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.7 Safari/605.1.15' from file '/usr/share/sqlmap/data/txt/user-agents.txt'
+[23:49:01] [INFO] parsing multiple targets list from 'sqli_parameters.txt'
+[23:49:01] [INFO] starting crawler for target URL 'https://sa.trip.com/?id=FUZZ' (1/11)
+do you want to check for the existence of site's sitemap(.xml) [y/N] N
+[23:49:01] [INFO] starting 2 threads
+[23:49:02] [CRITICAL] WAF/IPS identified as 'Kona Site Defender (Akamai Technologies)'
+do you want to normalize crawling results [Y/n] Y
+do you want to store crawling results to a temporary file for eventual further processing with other tools [y/N] N
+[1/1] URL:
+GET https://sa.trip.com/?id=FUZZ
+do you want to test this URL? [Y/n/q]
+> Y
+[23:49:03] [INFO] testing URL 'https://sa.trip.com/?id=FUZZ'
+[23:49:03] [INFO] using '/home/awad/.local/share/sqlmap/output/results-03012026_1149pm.csv' as the CSV results file in multiple targets mode
+[23:49:04] [CRITICAL] WAF/IPS identified as 'Kona Site Defender (Akamai Technologies)'
+[23:49:04] [WARNING] potential permission problems detected ('Access Denied')
+[23:49:04] [WARNING] the web server responded with an HTTP error code (403) which could interfere with the results of the tests
+[23:49:04] [INFO] checking if the target is protected by some kind of WAF/IPS
+[23:49:07] [INFO] testing if the target URL content is stable
+[23:49:07] [WARNING] target URL content is not stable (i.e. content differs). sqlmap will base the page comparison on a sequence matcher. If no dynamic nor injectable parameters are detected, or in case of junk results, refer to user's manual paragraph 'Page comparison'
+how do you want to proceed? [(C)ontinue/(s)tring/(r)egex/(q)uit] C
+[23:49:07] [INFO] searching for dynamic content
+[23:49:07] [INFO] dynamic content marked for removal (1 region)
+[23:49:11] [INFO] testing if GET parameter 'id' is dynamic
+[23:49:12] [WARNING] GET parameter 'id' does not appear to be dynamic
+[23:49:12] [WARNING] heuristic (basic) test shows that GET parameter 'id' might not be injectable
+[23:49:13] [INFO] skipping GET parameter 'id'
+[23:49:13] [ERROR] all tested parameters do not appear to be injectable. Try to increase values for '--level'/'--risk' options if you wish to perform more tests. You can give it a go with the switch '--text-only' if the target page has a low percentage of textual content (~72.03% of page content is text). If you suspect that there is some kind of protection mechanism involved (e.g. WAF) maybe you could try to use option '--tamper' (e.g. '--tamper=space2comment'), skipping to the next target
+[23:49:13] [WARNING] HTTP error codes detected during run:
+403 (Forbidden) - 7 times
+[23:49:13] [INFO] you can find results of scanning in multiple targets mode inside the CSV file '/home/awad/.local/share/sqlmap/output/results-03012026_1149pm.csv'
+[23:49:13] [INFO] starting crawler for target URL 'https://sa.trip.com/?search=FUZZ' (2/11)
+[23:49:13] [INFO] starting 2 threads
+[1/1] URL:
+GET https://sa.trip.com/?search=FUZZ
+do you want to test this URL? [Y/n/q]
+> Y
+[23:49:13] [INFO] testing URL 'https://sa.trip.com/?search=FUZZ'
+[23:49:15] [CRITICAL] WAF/IPS identified as 'Kona Site Defender (Akamai Technologies)'
+[23:49:15] [WARNING] potential permission problems detected ('Access Denied')
+[23:49:15] [WARNING] the web server responded with an HTTP error code (403) which could interfere with the results of the tests
+[23:49:15] [INFO] testing if the target URL content is stable
+[23:49:16] [WARNING] target URL content is not stable (i.e. content differs). sqlmap will base the page comparison on a sequence matcher. If no dynamic nor injectable parameters are detected, or in case of junk results, refer to user's manual paragraph 'Page comparison'
+how do you want to proceed? [(C)ontinue/(s)tring/(r)egex/(q)uit] C
+[23:49:16] [INFO] searching for dynamic content
+[23:49:16] [INFO] dynamic content marked for removal (1 region)
+[23:49:17] [INFO] testing if GET parameter 'search' is dynamic
+[23:49:18] [WARNING] GET parameter 'search' does not appear to be dynamic
+[23:49:22] [WARNING] heuristic (basic) test shows that GET parameter 'search' might not be injectable
+[23:49:23] [INFO] skipping GET parameter 'search'
+[23:49:23] [ERROR] all tested parameters do not appear to be injectable. Try to increase values for '--level'/'--risk' options if you wish to perform more tests. You can give it a go with the switch '--text-only' if the target page has a low percentage of textual content (~72.03% of page content is text). If you suspect that there is some kind of protection mechanism involved (e.g. WAF) maybe you could try to use option '--tamper' (e.g. '--tamper=space2comment'), skipping to the next target
+[23:49:23] [WARNING] HTTP error codes detected during run:
+403 (Forbidden) - 6 times
+[23:49:23] [INFO] you can find results of scanning in multiple targets mode inside the CSV file '/home/awad/.local/share/sqlmap/output/results-03012026_1149pm.csv'
+[23:49:23] [INFO] starting crawler for target URL 'https://sa.trip.com/?q=FUZZ' (3/11)
+[23:49:23] [INFO] starting 2 threads
+[1/1] URL:
+GET https://sa.trip.com/?q=FUZZ
+do you want to test this URL? [Y/n/q]
+> Y
+[23:49:25] [INFO] testing URL 'https://sa.trip.com/?q=FUZZ'
+[23:49:26] [CRITICAL] WAF/IPS identified as 'Kona Site Defender (Akamai Technologies)'
+[23:49:26] [WARNING] potential permission problems detected ('Access Denied')
+[23:49:26] [WARNING] the web server responded with an HTTP error code (403) which could interfere with the results of the tests
+[23:49:26] [INFO] testing if the target URL content is stable
+[23:49:27] [WARNING] target URL content is not stable (i.e. content differs). sqlmap will base the page comparison on a sequence matcher. If no dynamic nor injectable parameters are detected, or in case of junk results, refer to user's manual paragraph 'Page comparison'
+how do you want to proceed? [(C)ontinue/(s)tring/(r)egex/(q)uit] C
+[23:49:27] [INFO] searching for dynamic content
+[23:49:27] [INFO] dynamic content marked for removal (2 regions)
+[23:49:28] [INFO] testing if GET parameter 'q' is dynamic
+[23:49:28] [WARNING] GET parameter 'q' does not appear to be dynamic
+[23:49:28] [WARNING] heuristic (basic) test shows that GET parameter 'q' might not be injectable
+[23:49:29] [INFO] skipping GET parameter 'q'
+[23:49:29] [ERROR] all tested parameters do not appear to be injectable. Try to increase values for '--level'/'--risk' options if you wish to perform more tests. You can give it a go with the switch '--text-only' if the target page has a low percentage of textual content (~72.03% of page content is text). If you suspect that there is some kind of protection mechanism involved (e.g. WAF) maybe you could try to use option '--tamper' (e.g. '--tamper=space2comment'), skipping to the next target
+[23:49:29] [WARNING] HTTP error codes detected during run:
+403 (Forbidden) - 6 times
+[23:49:29] [INFO] you can find results of scanning in multiple targets mode inside the CSV file '/home/awad/.local/share/sqlmap/output/results-03012026_1149pm.csv'
+[23:49:29] [INFO] starting crawler for target URL 'https://sa.trip.com/?query=FUZZ' (4/11)
+[23:49:29] [INFO] starting 2 threads
+[1/1] URL:
+GET https://sa.trip.com/?query=FUZZ
+do you want to test this URL? [Y/n/q]
+> Y
+[23:49:30] [INFO] testing URL 'https://sa.trip.com/?query=FUZZ'
+[23:49:36] [CRITICAL] WAF/IPS identified as 'Kona Site Defender (Akamai Technologies)'
+[23:49:36] [WARNING] potential permission problems detected ('Access Denied')
+[23:49:36] [WARNING] the web server responded with an HTTP error code (403) which could interfere with the results of the tests
+[23:49:36] [INFO] testing if the target URL content is stable
+[23:49:40] [WARNING] target URL content is not stable (i.e. content differs). sqlmap will base the page comparison on a sequence matcher. If no dynamic nor injectable parameters are detected, or in case of junk results, refer to user's manual paragraph 'Page comparison'
+how do you want to proceed? [(C)ontinue/(s)tring/(r)egex/(q)uit] C
+[23:49:40] [INFO] searching for dynamic content
+[23:49:40] [INFO] dynamic content marked for removal (1 region)
+[23:49:44] [INFO] testing if GET parameter 'query' is dynamic
+[23:49:47] [WARNING] GET parameter 'query' does not appear to be dynamic
+[23:49:49] [WARNING] heuristic (basic) test shows that GET parameter 'query' might not be injectable
+[23:49:54] [INFO] skipping GET parameter 'query'
+[23:49:54] [ERROR] all tested parameters do not appear to be injectable. Try to increase values for '--level'/'--risk' options if you wish to perform more tests. You can give it a go with the switch '--text-only' if the target page has a low percentage of textual content (~72.03% of page content is text). If you suspect that there is some kind of protection mechanism involved (e.g. WAF) maybe you could try to use option '--tamper' (e.g. '--tamper=space2comment'), skipping to the next target
+[23:49:54] [WARNING] HTTP error codes detected during run:
+403 (Forbidden) - 6 times
+[23:49:54] [INFO] you can find results of scanning in multiple targets mode inside the CSV file '/home/awad/.local/share/sqlmap/output/results-03012026_1149pm.csv'
+[23:49:54] [INFO] starting crawler for target URL 'https://sa.trip.com/?page=FUZZ' (5/11)
+[23:49:54] [INFO] starting 2 threads
+[1/1] URL:
+GET https://sa.trip.com/?page=FUZZ
+do you want to test this URL? [Y/n/q]
+> Y
+[23:49:56] [INFO] testing URL 'https://sa.trip.com/?page=FUZZ'
+[23:49:58] [CRITICAL] WAF/IPS identified as 'Kona Site Defender (Akamai Technologies)'
+[23:49:58] [WARNING] potential permission problems detected ('Access Denied')
+[23:49:58] [WARNING] the web server responded with an HTTP error code (403) which could interfere with the results of the tests
+[23:49:58] [INFO] testing if the target URL content is stable
+[23:50:00] [WARNING] target URL content is not stable (i.e. content differs). sqlmap will base the page comparison on a sequence matcher. If no dynamic nor injectable parameters are detected, or in case of junk results, refer to user's manual paragraph 'Page comparison'
+how do you want to proceed? [(C)ontinue/(s)tring/(r)egex/(q)uit] C
+[23:50:00] [INFO] searching for dynamic content
+[23:50:00] [INFO] dynamic content marked for removal (2 regions)
+[23:50:00] [CRITICAL] target URL content appears to be heavily dynamic. sqlmap is going to retry the request(s)
+[23:50:01] [INFO] dynamic content marked for removal (1 region)
+[23:50:01] [INFO] testing if GET parameter 'page' is dynamic
+[23:50:02] [WARNING] GET parameter 'page' does not appear to be dynamic
+[23:50:02] [INFO] skipping GET parameter 'page'
+[23:50:02] [ERROR] all tested parameters do not appear to be injectable. Try to increase values for '--level'/'--risk' options if you wish to perform more tests. You can give it a go with the switch '--text-only' if the target page has a low percentage of textual content (~72.03% of page content is text). If you suspect that there is some kind of protection mechanism involved (e.g. WAF) maybe you could try to use option '--tamper' (e.g. '--tamper=space2comment'), skipping to the next target
+[23:50:02] [WARNING] HTTP error codes detected during run:
+403 (Forbidden) - 7 times
+[23:50:02] [INFO] you can find results of scanning in multiple targets mode inside the CSV file '/home/awad/.local/share/sqlmap/output/results-03012026_1149pm.csv'
+[23:50:02] [INFO] starting crawler for target URL 'https://sa.trip.com/?user=FUZZ' (6/11)
+[23:50:02] [INFO] starting 2 threads
+[1/1] URL:
+GET https://sa.trip.com/?user=FUZZ
+do you want to test this URL? [Y/n/q]
+> Y
+[23:50:03] [INFO] testing URL 'https://sa.trip.com/?user=FUZZ'
+[23:50:03] [CRITICAL] WAF/IPS identified as 'Kona Site Defender (Akamai Technologies)'
+[23:50:03] [WARNING] potential permission problems detected ('Access Denied')
+[23:50:03] [WARNING] the web server responded with an HTTP error code (403) which could interfere with the results of the tests
+[23:50:03] [INFO] testing if the target URL content is stable
+[23:50:04] [WARNING] target URL content is not stable (i.e. content differs). sqlmap will base the page comparison on a sequence matcher. If no dynamic nor injectable parameters are detected, or in case of junk results, refer to user's manual paragraph 'Page comparison'
+how do you want to proceed? [(C)ontinue/(s)tring/(r)egex/(q)uit] C
+[23:50:04] [INFO] searching for dynamic content
+[23:50:04] [INFO] dynamic content marked for removal (1 region)
+[23:50:05] [CRITICAL] target URL content appears to be heavily dynamic. sqlmap is going to retry the request(s)
+[23:50:06] [WARNING] target URL content appears to be too dynamic. Switching to '--text-only' 
+[23:50:06] [INFO] testing if GET parameter 'user' is dynamic
+[23:50:06] [INFO] GET parameter 'user' appears to be dynamic
+[23:50:08] [INFO] skipping GET parameter 'user'
+[23:50:08] [ERROR] all tested parameters do not appear to be injectable. Try to increase values for '--level'/'--risk' options if you wish to perform more tests. If you suspect that there is some kind of protection mechanism involved (e.g. WAF) maybe you could try to use option '--tamper' (e.g. '--tamper=space2comment'), skipping to the next target
+[23:50:08] [WARNING] HTTP error codes detected during run:
+403 (Forbidden) - 7 times
+[23:50:08] [INFO] you can find results of scanning in multiple targets mode inside the CSV file '/home/awad/.local/share/sqlmap/output/results-03012026_1149pm.csv'
+[23:50:08] [INFO] starting crawler for target URL 'https://sa.trip.com/?name=FUZZ' (7/11)
+[23:50:08] [INFO] starting 2 threads
+[1/1] URL:
+GET https://sa.trip.com/?name=FUZZ
+do you want to test this URL? [Y/n/q]
+> Y
+[23:50:10] [INFO] testing URL 'https://sa.trip.com/?name=FUZZ'
+[23:50:11] [CRITICAL] WAF/IPS identified as 'Kona Site Defender (Akamai Technologies)'
+[23:50:11] [WARNING] potential permission problems detected ('Access Denied')
+[23:50:11] [WARNING] the web server responded with an HTTP error code (403) which could interfere with the results of the tests
+[23:50:11] [INFO] testing if the target URL content is stable
+[23:50:11] [WARNING] target URL content is not stable (i.e. content differs). sqlmap will base the page comparison on a sequence matcher. If no dynamic nor injectable parameters are detected, or in case of junk results, refer to user's manual paragraph 'Page comparison'
+how do you want to proceed? [(C)ontinue/(s)tring/(r)egex/(q)uit] C
+[23:50:11] [INFO] searching for dynamic content
+[23:50:11] [INFO] dynamic content marked for removal (1 region)
+[23:50:12] [INFO] testing if GET parameter 'name' is dynamic
+[23:50:13] [WARNING] GET parameter 'name' does not appear to be dynamic
+[23:50:13] [WARNING] heuristic (basic) test shows that GET parameter 'name' might not be injectable
+[23:50:14] [INFO] skipping GET parameter 'name'
+[23:50:14] [ERROR] all tested parameters do not appear to be injectable. Try to increase values for '--level'/'--risk' options if you wish to perform more tests. You can give it a go with the switch '--text-only' if the target page has a low percentage of textual content (~72.03% of page content is text). If you suspect that there is some kind of protection mechanism involved (e.g. WAF) maybe you could try to use option '--tamper' (e.g. '--tamper=space2comment'), skipping to the next target
+[23:50:14] [WARNING] HTTP error codes detected during run:
+403 (Forbidden) - 6 times
+[23:50:14] [INFO] you can find results of scanning in multiple targets mode inside the CSV file '/home/awad/.local/share/sqlmap/output/results-03012026_1149pm.csv'
+[23:50:14] [INFO] starting crawler for target URL 'https://sa.trip.com/?cat=FUZZ' (8/11)
+[23:50:14] [INFO] starting 2 threads
+[1/1] URL:
+GET https://sa.trip.com/?cat=FUZZ
+do you want to test this URL? [Y/n/q]
+> Y
+[23:50:15] [INFO] testing URL 'https://sa.trip.com/?cat=FUZZ'
+[23:50:15] [CRITICAL] WAF/IPS identified as 'Kona Site Defender (Akamai Technologies)'
+[23:50:15] [WARNING] potential permission problems detected ('Access Denied')
+[23:50:15] [WARNING] the web server responded with an HTTP error code (403) which could interfere with the results of the tests
+[23:50:15] [INFO] testing if the target URL content is stable
+[23:50:16] [WARNING] target URL content is not stable (i.e. content differs). sqlmap will base the page comparison on a sequence matcher. If no dynamic nor injectable parameters are detected, or in case of junk results, refer to user's manual paragraph 'Page comparison'
+how do you want to proceed? [(C)ontinue/(s)tring/(r)egex/(q)uit] C
+[23:50:16] [INFO] searching for dynamic content
+[23:50:16] [INFO] dynamic content marked for removal (1 region)
+[23:50:17] [INFO] testing if GET parameter 'cat' is dynamic
+[23:50:17] [WARNING] GET parameter 'cat' does not appear to be dynamic
+[23:50:18] [WARNING] heuristic (basic) test shows that GET parameter 'cat' might not be injectable
+[23:50:18] [INFO] skipping GET parameter 'cat'
+[23:50:18] [ERROR] all tested parameters do not appear to be injectable. Try to increase values for '--level'/'--risk' options if you wish to perform more tests. You can give it a go with the switch '--text-only' if the target page has a low percentage of textual content (~72.03% of page content is text). If you suspect that there is some kind of protection mechanism involved (e.g. WAF) maybe you could try to use option '--tamper' (e.g. '--tamper=space2comment'), skipping to the next target
+[23:50:18] [WARNING] HTTP error codes detected during run:
+403 (Forbidden) - 6 times
+[23:50:18] [INFO] you can find results of scanning in multiple targets mode inside the CSV file '/home/awad/.local/share/sqlmap/output/results-03012026_1149pm.csv'
+[23:50:18] [INFO] starting crawler for target URL 'https://sa.trip.com/?file=FUZZ' (9/11)
+[23:50:18] [INFO] starting 2 threads
+[1/1] URL:
+GET https://sa.trip.com/?file=FUZZ
+do you want to test this URL? [Y/n/q]
+> Y
+[23:50:19] [INFO] testing URL 'https://sa.trip.com/?file=FUZZ'
+[23:50:21] [CRITICAL] WAF/IPS identified as 'Kona Site Defender (Akamai Technologies)'
+[23:50:21] [WARNING] potential permission problems detected ('Access Denied')
+[23:50:21] [WARNING] the web server responded with an HTTP error code (403) which could interfere with the results of the tests
+[23:50:21] [INFO] testing if the target URL content is stable
+[23:50:22] [WARNING] target URL content is not stable (i.e. content differs). sqlmap will base the page comparison on a sequence matcher. If no dynamic nor injectable parameters are detected, or in case of junk results, refer to user's manual paragraph 'Page comparison'
+how do you want to proceed? [(C)ontinue/(s)tring/(r)egex/(q)uit] C
+[23:50:22] [INFO] searching for dynamic content
+[23:50:22] [INFO] dynamic content marked for removal (1 region)
+[23:50:22] [INFO] testing if GET parameter 'file' is dynamic
+[23:50:23] [INFO] GET parameter 'file' appears to be dynamic
+[23:50:23] [WARNING] heuristic (basic) test shows that GET parameter 'file' might not be injectable
+[23:50:34] [INFO] skipping GET parameter 'file'
+[23:50:34] [ERROR] all tested parameters do not appear to be injectable. Try to increase values for '--level'/'--risk' options if you wish to perform more tests. You can give it a go with the switch '--text-only' if the target page has a low percentage of textual content (~72.03% of page content is text). If you suspect that there is some kind of protection mechanism involved (e.g. WAF) maybe you could try to use option '--tamper' (e.g. '--tamper=space2comment'), skipping to the next target
+[23:50:34] [WARNING] HTTP error codes detected during run:
+403 (Forbidden) - 6 times
+[23:50:34] [INFO] you can find results of scanning in multiple targets mode inside the CSV file '/home/awad/.local/share/sqlmap/output/results-03012026_1149pm.csv'
+[23:50:34] [INFO] starting crawler for target URL 'https://sa.trip.com/?cmd=FUZZ' (10/11)
+[23:50:34] [INFO] starting 2 threads
+[1/1] URL:
+GET https://sa.trip.com/?cmd=FUZZ
+do you want to test this URL? [Y/n/q]
+> Y
+[23:50:35] [INFO] testing URL 'https://sa.trip.com/?cmd=FUZZ'
+[23:50:37] [CRITICAL] WAF/IPS identified as 'Kona Site Defender (Akamai Technologies)'
+[23:50:37] [WARNING] potential permission problems detected ('Access Denied')
+[23:50:37] [WARNING] the web server responded with an HTTP error code (403) which could interfere with the results of the tests
+[23:50:37] [INFO] testing if the target URL content is stable
+[23:50:37] [WARNING] target URL content is not stable (i.e. content differs). sqlmap will base the page comparison on a sequence matcher. If no dynamic nor injectable parameters are detected, or in case of junk results, refer to user's manual paragraph 'Page comparison'
+how do you want to proceed? [(C)ontinue/(s)tring/(r)egex/(q)uit] C
+[23:50:37] [INFO] searching for dynamic content
+[23:50:37] [INFO] dynamic content marked for removal (1 region)
+[23:50:38] [INFO] testing if GET parameter 'cmd' is dynamic
+[23:50:39] [WARNING] GET parameter 'cmd' does not appear to be dynamic
+[23:50:40] [WARNING] heuristic (basic) test shows that GET parameter 'cmd' might not be injectable
+[23:50:41] [INFO] skipping GET parameter 'cmd'
+[23:50:41] [ERROR] all tested parameters do not appear to be injectable. Try to increase values for '--level'/'--risk' options if you wish to perform more tests. You can give it a go with the switch '--text-only' if the target page has a low percentage of textual content (~72.03% of page content is text). If you suspect that there is some kind of protection mechanism involved (e.g. WAF) maybe you could try to use option '--tamper' (e.g. '--tamper=space2comment'), skipping to the next target
+[23:50:41] [WARNING] HTTP error codes detected during run:
+403 (Forbidden) - 6 times
+[23:50:41] [INFO] you can find results of scanning in multiple targets mode inside the CSV file '/home/awad/.local/share/sqlmap/output/results-03012026_1149pm.csv'
+[23:50:41] [INFO] starting crawler for target URL 'https://sa.trip.com/?action=FUZZ' (11/11)
+[23:50:41] [INFO] starting 2 threads
+[1/1] URL:
+GET https://sa.trip.com/?action=FUZZ
+do you want to test this URL? [Y/n/q]
+> Y
+[23:50:42] [INFO] testing URL 'https://sa.trip.com/?action=FUZZ'
+[23:50:43] [CRITICAL] WAF/IPS identified as 'Kona Site Defender (Akamai Technologies)'
+[23:50:43] [WARNING] potential permission problems detected ('Access Denied')
+[23:50:43] [WARNING] the web server responded with an HTTP error code (403) which could interfere with the results of the tests
+[23:50:43] [INFO] testing if the target URL content is stable
+[23:50:44] [WARNING] target URL content is not stable (i.e. content differs). sqlmap will base the page comparison on a sequence matcher. If no dynamic nor injectable parameters are detected, or in case of junk results, refer to user's manual paragraph 'Page comparison'
+how do you want to proceed? [(C)ontinue/(s)tring/(r)egex/(q)uit] C
+[23:50:44] [INFO] searching for dynamic content
+[23:50:44] [INFO] dynamic content marked for removal (1 region)
+[23:50:45] [INFO] testing if GET parameter 'action' is dynamic
+[23:50:45] [INFO] GET parameter 'action' appears to be dynamic
+[23:50:46] [WARNING] heuristic (basic) test shows that GET parameter 'action' might not be injectable
+[23:50:47] [INFO] skipping GET parameter 'action'
+[23:50:47] [ERROR] all tested parameters do not appear to be injectable. Try to increase values for '--level'/'--risk' options if you wish to perform more tests. You can give it a go with the switch '--text-only' if the target page has a low percentage of textual content (~72.03% of page content is text). If you suspect that there is some kind of protection mechanism involved (e.g. WAF) maybe you could try to use option '--tamper' (e.g. '--tamper=space2comment'), skipping to the next target
+[23:50:47] [WARNING] HTTP error codes detected during run:
+403 (Forbidden) - 6 times
+[23:50:47] [INFO] you can find results of scanning in multiple targets mode inside the CSV file '/home/awad/.local/share/sqlmap/output/results-03012026_1149pm.csv'
+
+[*] ending @ 23:50:47 /2026-03-01/
+

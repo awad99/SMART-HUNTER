@@ -1,0 +1,38 @@
+[
+  {
+    "url": "https://vercel.com/",
+    "status_code": 200,
+    "headers": {
+      "accept-ch": "Sec-CH-Prefers-Color-Scheme",
+      "age": "73",
+      "cache-control": "public, max-age=0, must-revalidate",
+      "content-encoding": "gzip",
+      "content-security-policy": "default-src 'self' vercel.com *.vercel.com assets.vercel.com *.vercel.sh vercel.live wss://*.vercel.com *.codesandbox.io localhost:* chrome-extension://* https://www.youtube-nocookie.com *.chilipiper.com https://risk.clearbit.com https://react-tweet.vercel.app/*;script-src 'self' 'unsafe-eval' 'unsafe-inline' 'inline-speculation-rules' https://snap.licdn.com https://www.youtube.com cdn.vercel-insights.com va.vercel-scripts.com vercel.com *.vercel.com assets.vercel.com *.vercel.sh vercel.live wss://*.vercel.com *.codesandbox.io localhost:* chrome-extension://* https://www.youtube-nocookie.com *.chilipiper.com https://risk.clearbit.com https://react-tweet.vercel.app/* cdp.vercel.com;style-src 'self' 'unsafe-inline' vercel.com *.vercel.com assets.vercel.com *.vercel.sh vercel.live wss://*.vercel.com *.codesandbox.io localhost:* chrome-extension://* https://www.youtube-nocookie.com *.chilipiper.com https://risk.clearbit.com https://react-tweet.vercel.app/*;img-src 'self' blob: data: *.github.io avatars.githubusercontent.com user-images.githubusercontent.com vercel.com vercel.live *.vercel.sh assets.vercel.com cdn.raster.app https://images.ctfassets.net https://www.google.com https://i.ytimg.com https://s3.amazonaws.com pbs.twimg.com https://www.gravatar.com https://lishhsx6kmthaacj.public.blob.vercel-storage.com;media-src 'self' blob: data: vercel.com *.vercel.com assets.vercel.com *.vercel.sh vercel.live wss://*.vercel.com *.codesandbox.io localhost:* chrome-extension://* https://www.youtube-nocookie.com *.chilipiper.com https://risk.clearbit.com https://react-tweet.vercel.app/*;connect-src 'self' data: *.chilipiper.com *.ingest.sentry.io *.ingest.us.sentry.io wss://ws-us3.pusher.com sockjs-use3.pusher.com react-tweet.vercel.app https://*.contentful.com vercel.com *.vercel.com assets.vercel.com *.vercel.sh vercel.live wss://*.vercel.com *.codesandbox.io localhost:* chrome-extension://* https://www.youtube-nocookie.com *.chilipiper.com https://risk.clearbit.com https://react-tweet.vercel.app/* cdp.vercel.com;font-src 'self' vercel.com assets.vercel.com vercel.live fonts.gstatic.com *.vercel.sh;frame-ancestors  'self'  https://messaging.haus  https://vercel.com  https://app.contentful.com  https://*.contentful.com  https://*.vercel.sh  https://*.vercel.com",
+      "content-type": "text/html; charset=utf-8",
+      "critical-ch": "Sec-CH-Prefers-Color-Scheme",
+      "date": "Sun, 01 Mar 2026 19:38:35 GMT",
+      "etag": "W/\"fjp0evwhhphbbq\"",
+      "feature-policy": "fullscreen 'self'; camera 'none'",
+      "referrer-policy": "origin-when-cross-origin",
+      "server": "Vercel",
+      "set-cookie": "_v-consent=%7B%22essential%22%3Atrue%2C%22analytics%22%3Atrue%2C%22marketing%22%3Atrue%2C%22functional%22%3Atrue%2C%22version%22%3A1%7D; Path=/; Max-Age=31536000; SameSite=Lax; Secure; Domain=.vercel.com, _v-anonymous-id=dpSheEfBYUBwvni2zzzmR; Path=/; Max-Age=7776000; SameSite=Lax; Secure; Domain=.vercel.com, _v-anonymous-id-renewed=1; Path=/; Max-Age=86400; SameSite=Lax; Secure; Domain=.vercel.com",
+      "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+      "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+      "x-content-type-options": "nosniff",
+      "x-dns-prefetch-control": "on",
+      "x-download-options": "noopen",
+      "x-frame-options": "DENY",
+      "x-matched-path": "/home/eyJhbGciOiJIUzI1NiJ9.AA.ejh1H92kZhsc2C1cBMPqfrm8yJOMuKUfQWSMVcHiLQ8/regular",
+      "x-nextjs-prerender": "1",
+      "x-nextjs-stale-time": "300",
+      "x-powered-by": "Next.js, Payload",
+      "x-vercel-cache": "HIT",
+      "x-vercel-debug": "pod_id=7ccd56fd7c-pzfb8,retried=false,invoked=false,start_type=hot,dispatcher=n1.lambda",
+      "x-vercel-id": "dxb1::iad1::gtvd8-1772393989195-1fc906a4c16c",
+      "x-vercel-lambda-service": "serverless-function-router",
+      "x-xss-protection": "0",
+      "transfer-encoding": "chunked"
+    },
+    "timestamp": "2026-03-01T22:40:19.654208"
+  }
+]

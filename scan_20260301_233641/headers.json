@@ -1,0 +1,28 @@
+[
+  {
+    "url": "https://chain.link/",
+    "status_code": 200,
+    "headers": {
+      "date": "Sun, 01 Mar 2026 20:36:11 GMT",
+      "content-type": "text/html; charset=utf-8",
+      "transfer-encoding": "chunked",
+      "connection": "keep-alive",
+      "server": "cloudflare",
+      "cf-ray": "9d5af3d2bf6ba39c-MRS",
+      "cf-cache-status": "HIT",
+      "age": "360896",
+      "content-encoding": "gzip",
+      "last-modified": "Wed, 25 Feb 2026 16:19:27 GMT",
+      "strict-transport-security": "max-age=31536000; preload",
+      "content-security-policy": "frame-ancestors 'self'",
+      "surrogate-control": "max-age=432000",
+      "surrogate-key": "chain.link 5f6b7190899f41fb70882d08 pageId:692c87b1908eb284c4c48f12 651576d2782ca3f0cf06eb1e 63c0211098e0453a981e69f1 5f75fe1d26fdc2196ee05e75",
+      "x-frame-options": "SAMEORIGIN",
+      "x-lambda-id": "d3363962-b5df-4d4a-a675-6ec55e75ba37",
+      "vary": "Accept-Encoding",
+      "set-cookie": "_cfuvid=QRq0aodMiSUq_Nd8grE8wmoWnlIbS1XPQV_U1CcTnb4-1772397371372-0.0.1.1-604800000; path=/; domain=.chain.link; HttpOnly; Secure; SameSite=None",
+      "alt-svc": "h3=\":443\"; ma=86400"
+    },
+    "timestamp": "2026-03-01T23:36:41.876586"
+  }
+]

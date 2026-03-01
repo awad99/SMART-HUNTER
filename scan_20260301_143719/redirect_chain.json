@@ -1,0 +1,16 @@
+[
+  {
+    "url": "https://sa-en.ring.com/",
+    "type": "ORIGINAL"
+  },
+  {
+    "url": "https://sa-en.ring.com/",
+    "status_code": 429,
+    "location": ""
+  },
+  {
+    "url": "https://sa-en.ring.com/",
+    "type": "FINAL",
+    "status": 429
+  }
+]

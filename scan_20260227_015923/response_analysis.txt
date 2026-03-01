@@ -1,3 +1,0 @@
-TARGET: https://ipsar.chi.gov.sa/
-==================================================
-Link: /_next/static/chunks/webpack-c3df9b82ebdbc893.js

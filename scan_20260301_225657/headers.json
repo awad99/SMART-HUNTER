@@ -1,0 +1,24 @@
+[
+  {
+    "url": "https://www.rockstargames.com/",
+    "status_code": 200,
+    "headers": {
+      "server": "Apache/2.4.37 (Oracle Linux) OpenSSL/1.1.1k",
+      "strict-transport-security": "max-age=63072000; preload;",
+      "last-modified": "Fri, 24 Feb 2045 12:35:16 GMT",
+      "referrer-policy": "strict-origin-when-cross-origin",
+      "rsgoriginserver": "ewrdmzwww1.rockstargames.online",
+      "content-type": "text/html; charset=UTF-8",
+      "content-encoding": "gzip",
+      "content-length": "1261",
+      "expires": "Sun, 01 Mar 2026 19:56:28 GMT",
+      "cache-control": "max-age=0, no-cache",
+      "pragma": "no-cache",
+      "date": "Sun, 01 Mar 2026 19:56:28 GMT",
+      "connection": "keep-alive",
+      "vary": "Accept-Encoding",
+      "akamai-grn": "0.57173317.1772394988.2d25c41c"
+    },
+    "timestamp": "2026-03-01T22:56:58.570489"
+  }
+]

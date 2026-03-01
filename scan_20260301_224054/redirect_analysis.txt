@@ -1,0 +1,14 @@
+REDIRECT CHAIN ANALYSIS
+==================================================
+Original : https://www.helium.com/
+Final    : https://www.helium.com/
+Hops     : 1
+
+CHAIN:
+  1. ORIGINAL: https://www.helium.com/
+  2. 200: https://www.helium.com/ → 
+  3. FINAL: https://www.helium.com/ (200)
+
+SECURITY:
+  Domains     : 1 (www.helium.com)
+  HTTP→HTTPS  : No

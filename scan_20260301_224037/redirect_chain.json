@@ -1,0 +1,16 @@
+[
+  {
+    "url": "https://eero.com/",
+    "type": "ORIGINAL"
+  },
+  {
+    "url": "https://eero.com/",
+    "status_code": 200,
+    "location": ""
+  },
+  {
+    "url": "https://eero.com/",
+    "type": "FINAL",
+    "status": 200
+  }
+]

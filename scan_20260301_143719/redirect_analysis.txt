@@ -1,0 +1,14 @@
+REDIRECT CHAIN ANALYSIS
+==================================================
+Original : https://sa-en.ring.com/
+Final    : https://sa-en.ring.com/
+Hops     : 1
+
+CHAIN:
+  1. ORIGINAL: https://sa-en.ring.com/
+  2. 429: https://sa-en.ring.com/ → 
+  3. FINAL: https://sa-en.ring.com/ (429)
+
+SECURITY:
+  Domains     : 1 (sa-en.ring.com)
+  HTTP→HTTPS  : No

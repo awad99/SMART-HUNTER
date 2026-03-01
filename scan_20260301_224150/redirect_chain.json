@@ -1,0 +1,16 @@
+[
+  {
+    "url": "https://www.chia.net/",
+    "type": "ORIGINAL"
+  },
+  {
+    "url": "https://www.chia.net/",
+    "status_code": 200,
+    "location": ""
+  },
+  {
+    "url": "https://www.chia.net/",
+    "type": "FINAL",
+    "status": 200
+  }
+]

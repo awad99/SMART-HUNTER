@@ -1,0 +1,14 @@
+REDIRECT CHAIN ANALYSIS
+==================================================
+Original : https://www.canva.com/
+Final    : https://www.canva.com/
+Hops     : 1
+
+CHAIN:
+  1. ORIGINAL: https://www.canva.com/
+  2. 200: https://www.canva.com/ → 
+  3. FINAL: https://www.canva.com/ (200)
+
+SECURITY:
+  Domains     : 1 (www.canva.com)
+  HTTP→HTTPS  : No

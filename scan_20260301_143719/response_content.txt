@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Verifying your connection...</title>
+
+    <style type="text/css">
+        *{box-sizing:border-box;margin:0;padding:0}html{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;background:#FFF;font-size:62.5%;color:#303030;min-height:100%}body{padding:0;margin:0;line-height:2.7rem}a{color:#303030;border-bottom:1px solid #303030;text-decoration:none;padding-bottom:1rem;transition:border-color 0.2s ease-in}svg{width:40%}a:hover{border-bottom-color:#A9A9A9}h1{font-weight:400;margin:0 0 1.4rem 0}p{font-size:1.5rem;margin:0}.page{padding:4rem 3.5rem;margin:0;display:flex;min-height:100vh;flex-direction:column}.text-container--main{flex:1;display:flex;align-items:start;margin-bottom:1.6rem;margin:auto}.action{border:1px solid #A9A9A9;padding:1.2rem 2.5rem;border-radius:6px;text-decoration:none;margin-top:1.6rem;display:inline-block;font-size:1.5rem;transition:border-color 0.2s ease-in}.action:hover{border-color:#000}@media all and (min-width:500px){.text-container--main{align-items:start}.page{padding:7.5rem 10.5rem}}
+    </style>
+<meta http-equiv="refresh" content="360">
+</head>
+
+<body>
+  <div class="page">
+    <div class="text-container text-container--main">
+      <div>
+        <h1 data-i18n="content-title">Your connection needs to be verified before you can proceed</h1>
+        <div class="cf-injected-html"><div class="main-wrapper" role="main"><div class="main-content"><noscript><div class="h2"><span id="challenge-error-text">Enable JavaScript and cookies to continue</span></div></noscript></div></div><script>(function(){window._cf_chl_opt = {cvId: '3',cZone: 'sa-en.ring.com',cType: 'managed',cRay: '9d57ddc54fe5e229',cH: 'C1MKM8araB5B3kqimUDG3MubppE2yANgpydeiLH5LRk-1772365010-1.2.1.1-Kd_gVlCTfTN0oV.tXaHFbP_pr5EGgttUq7xZubEBDUQO1u.RBDYTZliAFjO1HlCL',cUPMDTk:"\/?__cf_chl_tk=cKR8CtHg7oe9Zf3Of6E5EkJ8F1VgiBc8ovZvf.VMNZ4-1772365010-1.0.1.1-f2DJYUrpjvUIzd2shR9_awG9quB9Trvds1U_ucHKwvk",cFPWv: 'g',cITimeS: '1772365010',cTplC:1,cTplV:5,cTplB: '0',fa:"\/?__cf_chl_f_tk=cKR8CtHg7oe9Zf3Of6E5EkJ8F1VgiBc8ovZvf.VMNZ4-1772365010-1.0.1.1-f2DJYUrpjvUIzd2shR9_awG9quB9Trvds1U_ucHKwvk",md: '5_yJ_olnSjQfr5KdES_Qq7us5yzhIEXRE7gUyOSrIYY-1772365010-1.2.1.1-BbYOiZ3QF37M8XCIcHyqQnQdlLCwAvW0p4YQVi3xKG7Ey15394lCOscP.x8W59NEIqVLhTqjUIIZe6sXd5vka6_.xlzJzgicikuldHV1fH6h.y7IQcHtzL2RUUPaABT.52dScUQmi74NNAUFgPB3rfsPqR93afN0F1EgFWLMiCVnEeyr1UanbQ7YFlFulHcLbCXe9eWrbce0pA3LV.CA3aoJqeI8AMx8KE_AtWYwktWnWDqGDx0_Ln8t5aCL1ipbugBeeFYMLxKjS6KNB0vFTFut1rt4ffq5.4MLv8wFkHSsVhhFOyzJBqJA3fGXpEp1k924CDcyra5sukkNkTPC6EZiOcpGSFPM_YxSBdbADMjMkyRpETqfm0GJif1CfU2zG51nycsZr6BlJdh665y4jNQ_Zav0kl9PZ2qru0AW9Ng4l3iHbxTXYxSLUpGEHfWUEEL2lDSynslYs4vKbsaHhiWoOju0RmLebec425wWmtPwX3mI594wxkptNZihv2lzKIPpGM6TlFatHPRtfLox9N5GqTAcOdE7lykLU8Iw9sj5rbGndfyE3rcBdJhYMlchvJ0F8ex._Jy7FaDQrfmxjylevnIIxR9hceyxipM4DQjszZJHaUzxhw1mqBnAjznAX_VsXAfaWTxbF_EazEYmgyhlbitZF7dRR3jWJ6gtD2ghLlA5N_fbEHdcEPEme4NppEoCojYwTIdTHYdQ.FsALyACWLI.zhx.wAIGIMsm9M47KBogElruj4zUKgCNmfP_ZVcXWHZ_QneSke6w9942tt.LixPo3YwwpuVZcWEuOlSvCBNLoAaBz.fJA10Cmm5kpilw6khoN6ejDxrcG_VjNfhtQExe__yD1GMz2vG9V8fjvybcB1iOHqKLphzIdquMS798RmGopGxrmcgtKMmsmy_znULnqGCp_AZcpzt.mzq9_0jizr7Ur_kQEQMzrih7rQntr0IoCPyGJ._ueueEsXfuw7eHe8pP_345SLyhmLvfFRMPZzgObxSdEE4b.Yjw9wwpuA5c822V0czyYkfb0qjxbjYXD7Sa1xpr9uiAh5WbfwrFNWndkR9.0wtopSNc7MmjEy7Nk0rbPFQ5UMb5JuiSPPJjJEJdBFCcqjO1Zn9YoDObCYGN3KD.Z2ombDNj',mdrd: 'xuS7lydIjQ7Yo2mxgdEFQg7dQwDRXRKM189GUukrs_g-1772365010-1.2.1.1-kcN3PaMtJS.V8Ir.HjsPNKpSukwE0_uqRr4D9gcGPGFgLSswizlZVpuUjzjXO7_OHpif.0WhxSB9fgHfr22zOy07xjWiUim_Wlu4HN1Lg15.0Ln9CuTOBvoEjVTDK8NUIJsgk4Ov3a7u7S.7etQxk4c8OwHd.mEJYGY9FgOGSguSxSTuUWC0a5gos3MxRzXUMTMnoXgwNdX8NJETSceG97_z9C_o._dEaLt3egoVjMYm6VQSM66v88COlQO87GxWadOXyWeiTalZ1Ahj5db3_KlZ0LpLrDF9YPDRhWzup9P9q27vK5KHX4kW3zazr3kFqtRDkDkTcSznkXd8jhijYXIAMK3PrYqJJo.xIr8PEFCo_Rywn6LrVzGoOQyDdK3azwlpQ2_rExAfDpsnknznL6KP0nI3nvu8MeOgnqFtL19yl.To54LRd9ZW1d2gNNU6RacAq5bpM5VaTYEYnIArjx6eIi2ojCNTdd8m6bl7H0zqEIM6pZjgc_o34aPPjy0HiDrF6ZbAhnE8.cQqrPP0zx_RAa5wzScxmZ00yZzCNAiCPi3xZ1MsFuGUiV6R6wzPSBQma_HI5OTEIZAJ6E9hRBE7cYHBrYnw78cdNXbeLtf1_kbs_0qkA5PV4Nx3Hst3Znr40CZ2ZIyTqL0jizHB0v_x1SPQbDXBamhWhvnHxPnxL.1E2MSlh6XQzCP0DWotBcqtU.AM_D1bv.1230xxULwO0kTiBbIbX_7cKkmjVHpHQvkhnwYKc1nlrzT3_cQdGggMHQ.RzmT4PJIsR4h2yC8cB14g0Jf_T0dYuZWALMF1qE2bLc_Vi5ttnlXx6u0R6qBJyGkaBrTiX9ZZffkzXPsi4_M1KQi33wQyKhbg_UOi2ouvE0GgiGcPJcw9VCj.GJv9t4kvJreq1BnYucVVPENZQqmWgekn9Uyk86d.Z8DxBX4k6zJUHYhRDDiwSP_DygUP6t0on.XqbMP01E68OvTKDcOBZ3Nu_OisK_JbB3rg7GxRtgN3QiigzTogB6JJK_VhvFk9In4CMEXcpIAroNZeCevEOAclaz5x1hqO9ixsGgONJyzdDGeU48j04e6NYxuJzIJH3ZQm1IJ6pfO6u8PjRmCXhvs0wndsXRtYF3lYDe.Cn4OAVysHlFbNeQxn4KVIXl0ymHaOHNsOTz6q4QS9Bm9kLeXaPxuCpuNKWiJHyPL65V1be8qsdb7wMLtWePL2E_Y6XnPn1TXGhlHUPgu919jm3MLhtSPF6UzNBbLB1kPYKuCoCwJNNL1VTKHCqf6e9E5XsdCkeIXm8MX1IU7eryw3kAs5koBT.b6cyUMIo2edflmzsjb7v7sDnFXhmR_GPQnvTfEeXCm8cE6C8V.9Tt8Xh6d1NYwqc4vVozOwXz0T2n9fNyipCWi8sCVqUf16uIrpJmPxcQs2BCWCzJ4VFfGc1mwR2q4yhVaamTyqg_NjS_JYfqQpsr_X2EdrojPIhMUb6PTkxr2nzRTkkWctOg4jgrv7GvePpKop_mS1EGFxr09EHJe5Y9wsz_tjHAy.m.dSs9eTJpDcd1Qp7LZTqbhbh2bpzjmypFJmVV2nz23xg1wjO40FHPo_Y9Rgf.wuvMRZ0px.tI1FQF9X53qRWzWYKsg6OGbeD2kYAj9_bkBR8YQm4ELXiEgkRxXopLollCVu4GbJ8MKqBBaKP3xeKq6pZaugaaErKvpigxU7uQ7TEtSN5N1MUE_Ap_jfmfnvbeNDVKKfD87YhS9_k8zoIZjmrE4mZTl3UYizw3HCCa9K_.eCYiQsNNdFAwKlGF7EZ8GNhSAHQHNC2bnaZd5YUq6hBZamz0qJroET5GWlm8e.psI0qomqN1U_Wlj5OsXPGnHXOIYJde4NrSbpgLCveZ4UpcHO9evz5NijklL7Cl4l78GR2p_Y6P5MK72QDDrGkEb0sP.PgZQjoAs3DxsJxwq1TyCbQuqaQensPztdQZwY0Z8JAQWFS92e3VjwyiwmEGVYCCzMSlXIAouj1m86i65ju6aZoJQ2mmVX5XKByaRKgTo_j_CBkALbQAvqNS285nvRxZIsVmYyB77wdj1uF4Y.T5pP_6F9jzKFl8phr9XiA57nmWtQzV7_13KNGCz9PFnW8jzRrNbrXX.2D0Ak5rj_.U0cvLpVijkudR4lIu9E6wHak1_5Dj9XLapt_8CBcgoIUCdJn4_NQBFKrbAXN97O1LIg_0XtzOAba9IXmRp_fYZOaz1.PX7wLjSjtLFseCKXm4mfNzK4zMUU48PbsGHTifM.nQfoNj7pkPsEi4i1UnZz_RWxeuf55pTko.2nMjhFRzANrtk16HIOC8INf_N4SzNnTbTDhIDjmUfVJAzXtxdL3n38dP9jlcM9eVKVAXGN0fmN8M62JH2AIii3ACVxPc0P7LMAEHQxysRXa2U0oWdpe4bvfAX.TjGLh9c.3RxEy5tcs60zDDx4_gzL0G86vArBhgqjN.NVxfb8fWPzGURPH3DEX7355ArykUmv5ZU3RuxxemgXB8h91.b.9lnn7RH4_IoSqlQAzgQlt0NcASTWPiX.A3WEU5Zl.6kre4zLecj1O6Rzp4_fEQWV9LSg72atE.bdty_EObVq25o_WQbLhHqVwQEB_nxIHbByFs9c900dxfRZE0BJUOG3ilFZiMZroG6aMqp4fxjGhK4og38c.FSV1R1XcmgVHsoM866.9OZtOh7c07vhIz1Xh07S7X8i5yGuEKhgC7DdJOUi_GNDhhaPeki2Gxp1xI3qtJdeE94Cjmy3_slesA9IAs5opl_rqOWq1.Zf8EBLiCvLxISZ_Ik2TE1kYhbDkUDN_W9IMlWc9WikjLN8pnj_Rb8fmNOaxIdib5QZDFC38PjFl.krRRAx2sq1kBXm4YpqeoW3qAb7A4AK8wEeMO9ZqfXCLO72yjpgMMJV.1Hu.HWraSZLW_niBZcTm7gXJopp5pe9iCoRNCbRb4VxzbAHIqNO78xmhTtsf6DiPXI40dSrE5BvZWLyml0TkIxEPtLKmRXKrdIRBRIQALnSOSKD6UV92Pasc6PVIfLTQHbo38VFEY5kpDoSKacsbiOQTyPfKj796fzfmiGIg29l5QAw_O6wbq9txxCIgHIhOY8VgIzgGdz0vVa.kVJopGHIGFhg7ZA9fY0CxFKPtLKvDg1Im8iHOaGZovH0r2mkB3McE5kQH1QXx4U6Ur0nsLiiH8jdyktQTKTg_fTEAMM5XBKA2tNd._uGEbmGLQClQixbe8aG7HXWe20lcf0ymf.8KOW3fJb6z12VvmlrIyK_4.a02.EG__BLlA1EJaFTSapIhvowtfWrKWo5mWWeQa3Z83xKBafbY.c2wINKOwKTj1wL8FQkm96efKY6FOw5nq2mhZi3FUTMGFWH4DHaZHMrhNUDoh_TO4BdmtuwRjJYCEnRrb9MgKyP8vyRdpMlkB9nZJyLfiynZwkdvQdVfBQBeSQjUN4UyK9xRtYRpq7QJlwWVAfNJFgi76EkgO2GOqosHvwYKTmAJoxAaUleenKqoQj86QeJ89ON41mz7vhOusCf58ZbJ6nuT3fcMqJLbaSEq7l1mrE6hn8jfiO_7JzF0O68mokpitHxf7N2UDptRT0Bolvqvv2LezD_PYkFvqIIaPf_3sSw4k5_aireVW2CEl1NRRE4iPu1WCkC29fGV1LrbRecqnzVPkzZbzHJCzZ4EzmI0r3qP7ILxx3nanwtlnXZNkHixNjKsBM0ZQOLV36yuq_dmxatbWdXdASCCE65b0MSkfgNGMr3n5naoeKC0pNScVFWxZCm8lKJCkQHo.8Z.UBJFkz8Eoec0SpbICpGZtFBZ1b33kZAnoebwKzPR8LsWsbhD4pKCkYqOqH7NmdAhHHGd29FrQ.FGGlsl3H5Kw1sFz.AHgOTMh0zoU4upbsYe4WLNb.F0Iw0KdjZ66sDYGiyUeQ8M8IUH1BOAB8dxftOAfLzYihszs_7WeVpAbPL_xabk4ryi4h3c64ndH__lxuBKkWXiD5tqgUsA4lYX7FtgWaiyfoUDDu0wEfUDuk_p70cNYoZsPpvG5tLHFCXF5bAU4lYjaAMUBYLzCyhjNzDuypdmXabiRadYJyJyUDVLZ.prQiRqraKsJD46Iluk67leqjTAUonZqmsnzFDwFXxECZIXcRjSgc3s9TL4J8HsXcJ8OdeDwZJtDixIIKwfLIZgp1tVi3O4A_yHnKPyfV.MlCI67j5dyBqI90DVPlr6YcVXa0Db.4qlty16_fW_JMgD8CGNJxR.0hb_nTBxT9JB_5GHZHABUkvGYbnHvWOEPxKy.IY3Yp74wyQrMI8y.KJRQjSCmGGkCbDJ7nx617CUGKO_EUx5dzUNa9_UwXdfumaBzlsYtlarIyn3QI3kVKsV2MAVR1JXj25j3v15fc6FeI7LYRiv8te0cJGRc2_tb1e0UT9V9xD3ZaIKZBpXDmEY5rtxM7E8EcLtlbVqlzO4nFifxmy1.KR1q7Dblvaspsih53okFiC08xB6J7c9m6jTRk4MmiVSfK7CCY',};var a = document.createElement('script');a.src = '/cdn-cgi/challenge-platform/h/g/orchestrate/chl_page/v1?ray=9d57ddc54fe5e229';window._cf_chl_opt.cOgUHash = location.hash === '' && location.href.indexOf('#') !== -1 ? '#' : location.hash;window._cf_chl_opt.cOgUQuery = location.search === '' && location.href.slice(0, location.href.length - window._cf_chl_opt.cOgUHash.length).indexOf('?') !== -1 ? '?' : location.search;if (window.history && window.history.replaceState) {var ogU = location.pathname + window._cf_chl_opt.cOgUQuery + window._cf_chl_opt.cOgUHash;history.replaceState(null, null,"\/?__cf_chl_rt_tk=cKR8CtHg7oe9Zf3Of6E5EkJ8F1VgiBc8ovZvf.VMNZ4-1772365010-1.0.1.1-f2DJYUrpjvUIzd2shR9_awG9quB9Trvds1U_ucHKwvk"+ window._cf_chl_opt.cOgUHash);a.onload = function() {history.replaceState(null, null, ogU);}}document.getElementsByTagName('head')[0].appendChild(a);}());</script></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var t = {
+  "cs": {
+    "title": "Vaše připojení se ověřuje...",
+    "content-title": "Než budete moct pokračovat, je nutné ověřit vaše připojení"
+  },
+  "da": {
+    "title": "Bekræfter din forbindelse ...",
+    "content-title": "Din forbindelse skal bekræftes, før du kan fortsætte"
+  },
+  "de": {
+    "title": "Deine Verbindung wird verifiziert ...",
+    "content-title": "Deine Verbindung muss verifiziert werden, bevor du fortfahren kannst"
+  },
+  "en": {
+    "title": "Verifying your connection...",
+    "content-title": "Your connection needs to be verified before you can proceed"
+  },
+  "es": {
+    "title": "Verificando la conexión...",
+    "content-title": "Se debe verificar tu conexión antes de poder continuar"
+  },
+  "fi": {
+    "title": "Yhteyttäsi todennetaan...",
+    "content-title": "Yhteytesi on todennettava ennen kuin voit jatkaa"
+  },
+  "fr": {
+    "title": "Connexion en cours de vérification...",
+    "content-title": "Votre connexion doit être vérifiée avant que vous puissiez continuer"
+  },
+  "hi": {
+    "title": "आपका कनेक्शन वेरिफ़ाई हो रहा है...",
+    "content-title": "इससे पहले कि आप आगे बढ़ें आपके कनेक्शन को वेरिफ़ाई करना होगा"
+  },
+  "it": {
+    "title": "Verifica connessione...",
+    "content-title": "È necessario verificare la tua connessione prima di procedere"
+  },
+  "ja": {
+    "title": "接続を確認しています...",
+    "content-title": "続行するには接続の確認が必要です"
+  },
+  "ko": {
+    "title": "연결 확인 중...",
+    "content-title": "계속 진행하려면 연결을 확인해야 합니다."
+  },
+  "ms": {
+    "title": "Mengesahkan sambungan anda...",
+    "content-title": "Sambungan anda perlu disahkan sebelum anda boleh meneruskan"
+  },
+  "nb": {
+    "title": "Bekreft tilkoblingen din …",
+    "content-title": "Tilkoblingen din må bekreftes før du kan fortsette"
+  },
+  "nl": {
+    "title": "Je verbinding verifiëren...",
+    "content-title": "Verifieer eerst je verbinding voordat je doorgaat"
+  },
+  "pl": {
+    "title": "Weryfikowanie połączenia...",
+    "content-title": "Możesz kontynuować, dopiero gdy połączenie zostanie zweryfikowane"
+  },
+  "pt-BR": {
+    "title": "Verificando a conexão...",
+    "content-title": "A conexão precisa ser verificada para você prosseguir"
+  },
+  "pt-PT": {
+    "title": "A verificar a sua ligação...",
+    "content-title": "A sua ligação tem de ser verificada antes de prosseguir"
+  },
+  "sv": {
+    "title": "Verifierar din anslutning ...",
+    "content-title": "Din anslutning måste verifieras innan du kan fortsätta"
+  },
+  "th": {
+    "title": "ตรวจสอบยืนยันการเชื่อมต่อของคุณ...",
+    "content-title": "การเชื่อมต่อของคุณต้องได้รับการตรวจสอบยืนยันก่อนจึงจะดำเนินการต่อได้"
+  },
+  "tr": {
+    "title": "Bağlantınız doğrulanıyor...",
+    "content-title": "Devam etmeden önce bağlantınızın doğrulanması gerekir."
+  },
+  "vi": {
+    "title": "Đang xác minh kết nối...",
+    "content-title": "Bạn cần xác minh kết nối để có thế tiếp tục"
+  },
+  "zh-CN": {
+    "title": "正在验证您的连接...",
+    "content-title": "您的连接需要经过验证然后您才能继续操作"
+  },
+  "zh-TW": {
+    "title": "正在驗證連線...",
+    "content-title": "您必須先驗證連線才能繼續"
+  }
+};
+    var language = navigator.languages && navigator.languages[0] || // Chrome / Firefox
+      navigator.language ||   // All browsers
+      navigator.userLanguage || // IE <= 10
+      "en";
+    language = language.split("-")[0]; // Strip country code
+    translations = t[language] || t["en"];
+    // Replace content on screen
+    for (var id in translations) {
+      target = document.querySelector("[data-i18n=" + id + "]");
+      if (target != undefined) {
+        target.innerHTML = translations[id];
+      }
+    }
+    // Replace title tage
+    document.title = translations["title"];
+    // Replace language tag
+    if (t[language]) { document.getElementsByTagName('html')[0].setAttribute('lang', language); };
+  </script>
+</body>
+</html>

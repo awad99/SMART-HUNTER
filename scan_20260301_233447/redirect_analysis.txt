@@ -1,0 +1,14 @@
+REDIRECT CHAIN ANALYSIS
+==================================================
+Original : https://sa.trip.com/
+Final    : https://sa.trip.com/
+Hops     : 1
+
+CHAIN:
+  1. ORIGINAL: https://sa.trip.com/
+  2. 200: https://sa.trip.com/ → 
+  3. FINAL: https://sa.trip.com/ (200)
+
+SECURITY:
+  Domains     : 1 (sa.trip.com)
+  HTTP→HTTPS  : No

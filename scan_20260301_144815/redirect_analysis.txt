@@ -1,0 +1,14 @@
+REDIRECT CHAIN ANALYSIS
+==================================================
+Original : https://www.starbucks.com/
+Final    : https://www.starbucks.com/
+Hops     : 1
+
+CHAIN:
+  1. ORIGINAL: https://www.starbucks.com/
+  2. 200: https://www.starbucks.com/ → 
+  3. FINAL: https://www.starbucks.com/ (200)
+
+SECURITY:
+  Domains     : 1 (www.starbucks.com)
+  HTTP→HTTPS  : No

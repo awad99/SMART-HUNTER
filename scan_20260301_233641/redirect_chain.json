@@ -1,0 +1,16 @@
+[
+  {
+    "url": "https://chain.link/",
+    "type": "ORIGINAL"
+  },
+  {
+    "url": "https://chain.link/",
+    "status_code": 200,
+    "location": ""
+  },
+  {
+    "url": "https://chain.link/",
+    "type": "FINAL",
+    "status": 200
+  }
+]

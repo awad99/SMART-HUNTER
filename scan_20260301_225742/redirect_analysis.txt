@@ -1,0 +1,14 @@
+REDIRECT CHAIN ANALYSIS
+==================================================
+Original : https://www.epicgames.com/
+Final    : https://www.epicgames.com/
+Hops     : 1
+
+CHAIN:
+  1. ORIGINAL: https://www.epicgames.com/
+  2. 403: https://www.epicgames.com/ → 
+  3. FINAL: https://www.epicgames.com/ (403)
+
+SECURITY:
+  Domains     : 1 (www.epicgames.com)
+  HTTP→HTTPS  : No
