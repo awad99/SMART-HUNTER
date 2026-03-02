@@ -1,4 +1,4 @@
-# SMART-HUNTER (auto_PenTest)
+# SMART-HUNTER 
 
 SMART-HUNTER is an automated, Machine Learning-guided web vulnerability and penetration testing tool. It combines deep site reconnaissance, ML-driven vulnerability prediction, and active exploitation to provide a comprehensive security assessment of web applications and network services.
 
@@ -67,4 +67,5 @@ python mchine.py
 
 ## Disclaimer
 This tool is intended for ethical hacking, security research, and authorized penetration testing only. Do not use this tool against targets without prior mutual consent. The authors and contributors are not responsible for any misuse, damage, or legal consequences caused by this software.
+
 
