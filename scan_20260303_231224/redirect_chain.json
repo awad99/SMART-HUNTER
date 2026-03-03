@@ -1,0 +1,26 @@
+[
+  {
+    "url": "http://inspectorio.com/",
+    "type": "ORIGINAL"
+  },
+  {
+    "url": "http://inspectorio.com/",
+    "status_code": 308,
+    "location": "https://inspectorio.com/"
+  },
+  {
+    "url": "https://inspectorio.com/",
+    "status_code": 308,
+    "location": "https://www.inspectorio.com/"
+  },
+  {
+    "url": "https://www.inspectorio.com/",
+    "status_code": 200,
+    "location": ""
+  },
+  {
+    "url": "https://www.inspectorio.com/",
+    "type": "FINAL",
+    "status": 200
+  }
+]

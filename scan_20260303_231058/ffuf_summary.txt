@@ -1,0 +1,3 @@
+# https://security.oppo.com/en/
+[200] https://security.oppo.com/en/charts
+[200] https://security.oppo.com/en/post

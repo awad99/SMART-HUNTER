@@ -1,0 +1,11 @@
+http://braze.com/?id=FUZZ
+http://braze.com/?search=FUZZ
+http://braze.com/?q=FUZZ
+http://braze.com/?query=FUZZ
+http://braze.com/?page=FUZZ
+http://braze.com/?user=FUZZ
+http://braze.com/?name=FUZZ
+http://braze.com/?cat=FUZZ
+http://braze.com/?file=FUZZ
+http://braze.com/?cmd=FUZZ
+http://braze.com/?action=FUZZ

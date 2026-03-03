@@ -504,28 +504,74 @@ class ReconWebSite:
         print(f"[+] Analysis saved → {self.scan_dir}")
 
     # ── Shell helpers ──────────────────────────────────────────────────────
-    def _run_script(self, script, *args, save_file=None):
+    def _run_script(self, script, *args, save_file=None,
+                    timeout=180, show_keywords=None):
+        """
+        Run a bash script and stream its output live.
+        timeout        – kill the process after this many seconds (0 = no limit)
+        show_keywords  – if set, only print lines containing one of these strings;
+                         None means print every non-blank line
+        """
         if not os.path.exists(script):
-            print(f"[-] Script not found: {script}"); return None
-        result = subprocess.run(['bash', script, *args], capture_output=True, text=True)
-        lines  = [l.strip() for l in result.stdout.split('\n') if l.strip()]
-        print(f"[+] {script}: {len(lines)} lines")
+            print(f"    [-] Script not found: {script}"); return None
+
+        _DEFAULT_SHOW = ('error', '[-]', '[!]', '[+]', '[*]', 'found',
+                         'discovered', 'saved', 'done', 'complete',
+                         'url', 'subdomain', 'param')
+        kw = show_keywords if show_keywords is not None else _DEFAULT_SHOW
+
+        lines = []
+        try:
+            proc = subprocess.Popen(
+                ['bash', script, *[str(a) for a in args]],
+                stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+                text=True
+            )
+            deadline = time.time() + timeout if timeout else None
+            for raw in proc.stdout:
+                line = raw.rstrip()
+                if line:
+                    lines.append(line)
+                    ll = line.lower()
+                    if not kw or any(k in ll for k in kw):
+                        print(f"    {line}")
+                if deadline and time.time() > deadline:
+                    print(f"    [!] Timeout ({timeout}s) — killing script")
+                    proc.terminate()
+                    break
+            try:
+                proc.wait(timeout=10)
+            except subprocess.TimeoutExpired:
+                proc.kill()
+        except Exception as e:
+            print(f"    [-] Script error: {e}")
+            return None
+
         if save_file and lines:
-            with open(save_file, 'w') as f: f.write(result.stdout)
-            print(f"[+] Saved → {save_file}")
+            with open(save_file, 'w', encoding='utf-8') as f:
+                f.write('\n'.join(lines) + '\n')
+            print(f"    [+] Saved → {save_file} ({len(lines)} lines)")
         return lines or None
 
     def _get_subdomain(self, url):
         print(f"\n[*] Subdomain discovery: {url}")
-        return self._run_script("script/get_subdomain.sh", url, save_file="subdomains.txt")
+        out_file = os.path.join(self.scan_dir, "subdomains.txt")
+        return self._run_script("script/get_subdomain.sh", url,
+                                save_file=out_file, timeout=120)
 
     def _get_URLs(self, url):
         print(f"\n[*] URL discovery: {url}")
-        return self._run_script("script/get_URLs.sh", url, save_file="discovered_urls.txt")
+        out_file = os.path.abspath(os.path.join(self.scan_dir, "discovered_urls.txt"))
+        # Pass output file and per-tool timeout to the bash script
+        return self._run_script("script/get_URLs.sh", url, out_file, "120",
+                                save_file=None,   # script writes its own file
+                                timeout=150)       # Python-level kill-switch
 
     def _get_Paramtes_xss(self, url):
         print(f"\n[*] Parameter discovery: {url}")
-        return self._run_script("script/get_parmtras.sh", url)
+        out_file = os.path.join(self.scan_dir, "parameters.txt")
+        return self._run_script("script/get_parmtras.sh", url,
+                                save_file=out_file, timeout=90)
 
     # ── Fuzzing ────────────────────────────────────────────────────────────
     def fuzz_url(self, base_url):
@@ -640,9 +686,24 @@ def MainRecon(url):
             recon.Analyze_Response(recon.final_url)
             recon.Analyze_Request()
             recon.save_cookies_and_headers()
-            recon._get_subdomain(recon.final_url)
-            recon._get_URLs(recon.final_url)
-            recon._get_Paramtes_xss(recon.final_url)
+
+            # ── Run discovery tasks in parallel ──────────────────────────
+            import threading
+            target = recon.final_url
+            tasks = [
+                threading.Thread(target=recon._get_subdomain,    args=(target,), name="subdomain"),
+                threading.Thread(target=recon._get_URLs,         args=(target,), name="urls"),
+                threading.Thread(target=recon._get_Paramtes_xss, args=(target,), name="params"),
+            ]
+            print("\n[*] Starting parallel discovery (subdomains + URLs + params)...")
+            for t in tasks:
+                t.daemon = True
+                t.start()
+            for t in tasks:
+                t.join(timeout=200)   # max 200s total wait
+                if t.is_alive():
+                    print(f"    [!] {t.name} still running after 200s — continuing")
+            print("[*] Parallel discovery done")
 
         try:
             ans = input("\nFuzz with ffuf? (y/n): ").strip().lower()

@@ -1,0 +1,35 @@
+[*] Running findomain for: https://www.lightspark.com/
+internal.lightspark.com
+uma-test.lightspark.com
+eu.lightspark.com
+grid.lightspark.com
+api.lightspark.com
+docs.lightspark.com
+support.lightspark.com
+lightspark.com
+gridapi.lightspark.com
+spark.lightspark.com
+www.lightspark.com
+support2.lightspark.com
+support-test.lightspark.com
+uma.lightspark.com
+app.lightspark.com
+status.lightspark.com
+[*] Running subfinder for: lightspark.com
+support-test.lightspark.com
+support2.lightspark.com
+lrc20.lightspark.com
+internal.lightspark.com
+status.lightspark.com
+uma.lightspark.com
+api.lightspark.com
+app.lightspark.com
+support.lightspark.com
+www.lightspark.com
+uma-test.lightspark.com
+docs.lightspark.com
+eu.lightspark.com
+grid.lightspark.com
+gridapi.lightspark.com
+spark.lightspark.com
+[*] Running assetfinder for: https://www.lightspark.com/

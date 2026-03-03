@@ -1,0 +1,3 @@
+[*] Running findomain for: https://security.oppo.com/en/
+[*] Running subfinder for: security.oppo.com
+[*] Running assetfinder for: https://security.oppo.com/en/

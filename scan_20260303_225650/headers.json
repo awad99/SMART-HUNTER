@@ -1,0 +1,57 @@
+[
+  {
+    "url": "http://neon.tech/",
+    "status_code": 308,
+    "headers": {
+      "date": "Tue, 03 Mar 2026 19:56:15 GMT",
+      "content-type": "text/plain",
+      "transfer-encoding": "chunked",
+      "connection": "keep-alive",
+      "location": "https://neon.tech/",
+      "refresh": "0;url=https://neon.tech/",
+      "server": "cloudflare",
+      "cf-cache-status": "DYNAMIC",
+      "cf-ray": "9d6b34126a20e181-MRS"
+    },
+    "timestamp": "2026-03-03T22:56:51.220198"
+  },
+  {
+    "url": "https://neon.tech/",
+    "status_code": 308,
+    "headers": {
+      "date": "Tue, 03 Mar 2026 19:56:15 GMT",
+      "content-type": "text/plain",
+      "transfer-encoding": "chunked",
+      "connection": "keep-alive",
+      "cache-control": "public, max-age=0, must-revalidate",
+      "location": "https://neon.com/",
+      "refresh": "0;url=https://neon.com/",
+      "server": "cloudflare",
+      "strict-transport-security": "max-age=63072000",
+      "x-vercel-id": "cdg1::zjzhk-1772567775941-b45689e020f1",
+      "cf-cache-status": "DYNAMIC",
+      "cf-ray": "9d6b3417983cd82a-MRS"
+    },
+    "timestamp": "2026-03-03T22:56:52.034759"
+  },
+  {
+    "url": "https://neon.com/",
+    "status_code": 200,
+    "headers": {
+      "age": "290",
+      "cache-control": "max-age=0, s-maxage=31536000",
+      "content-encoding": "gzip",
+      "content-type": "text/html; charset=utf-8",
+      "date": "Tue, 03 Mar 2026 19:51:24 GMT",
+      "etag": "W/\"1mov9sztmak5ch\"",
+      "server": "Vercel",
+      "strict-transport-security": "max-age=63072000",
+      "vary": "RSC, Next-Router-State-Tree, Next-Router-Prefetch",
+      "x-matched-path": "/",
+      "x-vercel-cache": "HIT",
+      "x-vercel-id": "bom1::iad1::glphq-1772567776658-bea90b57d322",
+      "transfer-encoding": "chunked"
+    },
+    "timestamp": "2026-03-03T22:56:52.844145"
+  }
+]

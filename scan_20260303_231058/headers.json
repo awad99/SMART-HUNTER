@@ -1,0 +1,18 @@
+[
+  {
+    "url": "https://security.oppo.com/en/",
+    "status_code": 200,
+    "headers": {
+      "date": "Tue, 03 Mar 2026 20:10:23 GMT",
+      "content-type": "text/html;charset=utf-8",
+      "content-length": "106913",
+      "connection": "keep-alive",
+      "server": "nginx",
+      "vary": "Accept-Encoding",
+      "x-powered-by": "Nuxt",
+      "x-backend-host": "0465:4002",
+      "x-gateway-host": "dce2d50d7c44ac6313400e919586c40d1b2420363a75c8efeae01c53b3a52bd1c2ab755ca38117c7a91df5f9e91c1d4f"
+    },
+    "timestamp": "2026-03-03T23:10:59.767242"
+  }
+]

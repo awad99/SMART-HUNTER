@@ -1,0 +1,16 @@
+REDIRECT CHAIN ANALYSIS
+==================================================
+Original : http://inspectorio.com/
+Final    : https://www.inspectorio.com/
+Hops     : 3
+
+CHAIN:
+  1. ORIGINAL: http://inspectorio.com/
+  2. 308: http://inspectorio.com/ → https://inspectorio.com/
+  3. 308: https://inspectorio.com/ → https://www.inspectorio.com/
+  4. 200: https://www.inspectorio.com/ → 
+  5. FINAL: https://www.inspectorio.com/ (200)
+
+SECURITY:
+  Domains     : 2 (www.inspectorio.com, inspectorio.com)
+  HTTP→HTTPS  : Yes

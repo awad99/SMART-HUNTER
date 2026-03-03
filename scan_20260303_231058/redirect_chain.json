@@ -1,0 +1,16 @@
+[
+  {
+    "url": "https://security.oppo.com/en/",
+    "type": "ORIGINAL"
+  },
+  {
+    "url": "https://security.oppo.com/en/",
+    "status_code": 200,
+    "location": ""
+  },
+  {
+    "url": "https://security.oppo.com/en/",
+    "type": "FINAL",
+    "status": 200
+  }
+]

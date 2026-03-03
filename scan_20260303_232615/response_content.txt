@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="King Salman Park" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+
+    <!-- Stylesheets
+    ============================================= -->
+    <link rel="stylesheet" href="/css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="/css/bootstrap-rtl.css" type="text/css" />
+    <link rel="stylesheet" href="/style.css" type="text/css" />
+    <link rel='stylesheet' id='contact-form-7-css' href='/css/contact-form-7.css' type='text/css' media='all' />
+    <link rel="stylesheet" href="/style-rtl.css" type="text/css" />
+
+    <link rel="stylesheet" href="/css/dark.css" type="text/css" />
+    <link rel="stylesheet" href="/css/dark-rtl.css" type="text/css" />
+    <link rel="stylesheet" href="/css/font-icons.css" type="text/css" />
+    <link rel="stylesheet" href="/css/font-icons-rtl.css" type="text/css" />
+    <link rel="stylesheet" href="/css/animate.css" type="text/css" />
+    <link rel="stylesheet" href="/css/magnific-popup.css" type="text/css" />
+
+    <link rel="stylesheet" href="/css/responsive.css" type="text/css" />
+    <link rel="stylesheet" href="/css/responsive-rtl.css" type="text/css" />
+    <link rel="stylesheet" href="/css/image-map-pro.min.css">
+    <link rel="stylesheet" href="/css/swiper.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha384-FckWOBo7yuyMS7In0aXZ0aoVvnInlnFMwCv77x9sZpFgOonQgnBj1uLwenWVtsEj" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/ksp/ksp-rtl.css" type="text/css" />
+    <link rel="stylesheet" href="/ksp/css/fonts.css" type="text/css" />
+    <link rel="stylesheet" href="/fonts/TatweerAlRiyadh-Bold.css" type="text/css" />
+    <link rel="stylesheet" href="/fonts/TatweerAlRiyadh-Regular.css" type="text/css" />
+    <link rel="stylesheet" href="/ksp/css/colors.css" type="text/css" />
+    <link rel="stylesheet" href="/css/custom-ksp-rtl.css" type="text/css" />
+    <link rel="stylesheet" href="/Content/Site.css" type="text/css" />
+    <link rel="stylesheet" href="/css/Digital-Stamp-Card.css" type="text/css" />
+    <link rel="stylesheet" href="/css/captcha.css" type="text/css" />
+    <link rel="stylesheet" href="/css/contact-form.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+
+    <title>الرياض الخضراء</title>
+</head>
+<body class="stretched no-transition rtl">
+    <div id="wrapper" class="clearfix">
+        <header id="header" class="full-header transparent-headers floating-header" data-sticky-class="not-dark">
+            <div id="header-wrap">
+                <div class="container clearfix">
+                    <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+                    <div id="logo" class="divcenter">
+                        <a href="/" data-dark-logo="~/images/logo/GreenRiyadh.png"><img src="/images/logo/GreenRiyadh.png" alt="الرياض الخضراء"></a>
+                        <a href="https://vision2030.gov.sa/ar" data-dark-logo="~/images/logo/Vision2030.png"><img src="/images/logo/Vision2030.png" alt="2030 رؤية"></a>
+                    </div>
+                    <nav id="primary-menu" class="style-3disable">
+                        <ul class="one-page-menu sf-js-enabled show" data-easing="easeInOutExpo" data-speed="0" data-offset="65" style="touch-action: pan-y;">
+                            <li class=""><a href="#" data-href="#section-overview"><div>لمحة عامة</div></a></li>
+                            <li><a href="#" data-href="#section-vision"><div>رؤيتنا</div></a></li>
+                            <li><a href="#" data-href="#section-component"><div>مشاريع التشجير</div></a></li>
+                            <li><a href="#" data-href="#section-interactivemap"><div>الخريطة التفاعلية</div></a></li>
+                            <li class="hiddens"><a href="#" data-href="#section-video"><div>فيديو</div></a></li>
+                            <li><a href="#" data-href="#section-infoghraphic"><div>انفوجرافيك</div></a></li>
+                            <li><a href="#" data-href="#section-gallery"><div>الوسائط</div></a></li>
+                            <li class=""><a href="https://www.grg.sa/ar/" target="_blank"><div>بوابة التأهيل والتسجيل</div></a></li>
+                            <!--<li><a href="https://dbo.riyadhgreen.sa/views/ExecutiveDashboard/EXECUTIVESUMMARY?:embed=yes&:toolbar=no&:revert=all"><i class="icon-key"></i> خطة سير العمل</a></li>-->
+                            <li><a href="#" data-href="#section-contact"><div>تواصل معنا</div></a></li>
+                            <li><a class="ar-menu" href="/Home/EN"><div class="ar-menu">EN</div></a></li>
+                        </ul>
+
+                        <ul class="mobile-primary-menu one-page-menu sf-js-enabled show" data-easing="easeInOutExpo" data-speed="1250" data-offset="65" style="touch-action: pan-y;marsgin:40px !important;">
+                            <li class=""><a href="#" data-href="#section-overview"><div>لمحة عامة</div></a></li>
+                            <li><a href="#" data-href="#section-vision"><div>رؤيتنا</div></a></li>
+                            <li><a href="#" data-href="#section-component"><div>مشاريع التشجير</div></a></li>
+                            <li><a href="#" data-href="#section-interactivemap"><div>الخريطة التفاعلية</div></a></li>
+                            <li class="hidden"><a href="#" data-href="#section-video"><div>فيديو</div></a></li>
+                            <li><a href="#" data-href="#section-infoghraphic"><div>انفوجرافيك</div></a></li>
+                            <li><a href="#" data-href="#section-gallery"><div>الوسائط</div></a></li>
+                            <li class=""><a href="https://www.grg.sa/ar/" target="_blank"><div>بوابة التأهيل والتسجيل</div></a></li>
+                            <li><a href="https://dbo.riyadhgreen.sa/views/ExecutiveDashboard/EXECUTIVESUMMARY?:embed=yes&:toolbar=no&:revert=all"><i class="icon-key"></i> خطة سير العمل</a></li>
+                            <li><a href="#" data-href="#section-contact"><div>تواصل معنا</div></a></li>
+                            <div class="clear col_padding"></div>
+                            <li>
+                                <div class="widget widget_links clearfix bottommargin-sm">
+                                    <div class="fleft"><a href="/Home/EN">EN</a></div>
+                                    <div class=" fright ">
+                                        <a href="https://twitter.com/Riyadh_Green" class="social-icon si-small si-rounded si-colored si-twitter">
+                                            <i class="icon-twitter"></i>
+                                            <i class="icon-twitter"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <div class="container body-content">
+            <section id="slider" class="force-full-screen full-screen slider-element slider-parallax swiper_wrapper full-screen clearfix">
+    <div class="slider-parallax-inner">
+        <div class="swiper-container swiper-parent swiper-rtl" dir="rtl">
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide mobile1" style="background: #ffffff url('/images/slider/6.jpg') no-repeat scroll center top / cover;">
+                    <div class="container clearfix">
+                        <div class="slider-caption slider-caption-center">
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide mobile2" style="background: #ffffff url('/images/slider/8.jpg') no-repeat scroll center top / cover;">
+                    <div class="container clearfix">
+                        <div class="slider-caption slider-caption-center">
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide mobile3" style="background: #ffffff url('/images/slider/10.jpg') no-repeat scroll center top / cover;">
+                    <div class="container clearfix">
+                        <div class="slider-caption slider-caption-center">
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide mobile4" style="background: #ffffff url('/images/slider/12.jpg') no-repeat scroll center top / cover;">
+                    <div class="container clearfix">
+                        <div class="slider-caption slider-caption-center">
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide mobile" style="background: #ffffff url('/images/slider/4.jpg') no-repeat scroll center top / cover;">
+                    <div class="container clearfix">
+                        <div class="slider-caption slider-caption-center">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide dark" style="background: linear-gradient(to right, rgba(47, 47, 47, 0.2), rgba(19, 19, 19, 0.5)) repeat scroll 0% 0%, rgba(0, 0, 0, 0) url('/images/slider/1.jpg') no-repeat scroll center center / cover;">
+                    <div class="container clearfix">
+                        <div class="slider-caption slider-caption-center">
+                            <h2 data-animate="fadeInUp" class="fadeInUp animated" style="direction: rtl;">مشاريع الرياض الكبرى ...</h2>
+                            <h2 style="color: #71BC48;" class="d-none d-sm-block fadeInUp animated" data-animate="fadeInUp" data-delay="200">لحياة أفضل</h2>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+        <div class="slider-arrow-left" tabindex="0" role="button" aria-label="Previous slide" style="opacity: 1.25102;"><i class="icon-line-arrow-left"></i></div>
+        <div class="slider-arrow-right" tabindex="0" role="button" aria-label="Next slide" style="opacity: 1.25102;"><i class="icon-line-arrow-right"></i></div>
+        <a href="#" data-scrollto="#content" data-offset="100" style="color: #88BE58;" class="dark one-page-arrow"><i class="icon-angle-down infinite animated fadeInDown"></i></a>
+    </div>
+</section>
+
+<section id="content" style="margin-bottom: 0px;">
+    <div class="content-wrap nopadding clearfix">
+        <div class="hidden section notopmargin clearfix" style="padding: 80px 0">
+            <div class="container clearfix">
+                <div class="divcenter" style="max-width: 960px">
+                    <div class="row clearfix">
+                        <div class="col-12 col-md-4 center customers-count">
+                            <div style="color: #54981F;" class="counter center counter-large"><span data-from="0" data-to="13.4" data-decimals="1" data-refresh-interval="100" data-speed="2000" data-comma="true">13,4</span></div>
+                            <p style="color: #54981F;">كلم2</p>
+                        </div>
+                        <div class="col-12 col-md-7 offset-md-1">
+                            <blockquote class="quote nobottommargin">
+                                <p class="bold" style="color: #8191A8;">الرياض الخضراء هي أكبر حدائق المدن في العالم</p>
+                                <footer style="color: #3E96B1;"> وهي تأتي في إطار تحقيق أحد أهداف "رؤية المملكة 2030" برفع تصنيف مدينة الرياض بين نظيراتها من مدن العالم بمشيئة الله</footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="section-overview" class="section nobg nomargin nobottompadding clearfix">
+            <div class="container clearfix">
+                <div class="heading-block centers noborder">
+                    <h3 class="nott ls0 bold" style="color:#71BC48;">لمحة عامة</h3>
+                    <p class="nott text-center">مشروع الرياض الخضراء هو واحد من أكثر مشاريع التشجير طموحاً في العالم.</p>
+                </div>
+            </div>
+            <div id="oc-features" class="owl-carousel owl-carousel-full image-carousel carousel-widget">
+                <div class="oc-item">
+                    <div class="row cleafix">
+                        <div class="col-xl-8">
+                            <img src="/images/overview/1.png" alt="">
+                        </div>
+                        <div class="col-xl-4" style="padding: 20px 20px 0 0;align-self: center;">
+                            <p>يعد مشروع الرياض الخضراء، أحد مشاريع الرياض الأربعة الكبرى التي أطلقها خادم الحرمين الشريفين الملك سلمان بن عبدالعزيز، أيده الله، يوم الثلاثاء 12 رجب 1440هـ (19 مارس 2019) وتقوم عليها "لجنة المشاريع الكبرى" برئاسة صاحب السمو الملكي الأمير محمد بن سلمان بن عبدالعزيز، ولي العهد نائب رئيس مجلس الوزراء وزير الدفاع، وتأتي في إطار تحقيق أحد أهداف "رؤية المملكة 2030" برفع تصنيف مدينة الرياض بين نظيراتها من مدن العالم بمشيئة الله</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="oc-item">
+                    <div class="row cleafix">
+                        <div class="col-xl-8">
+                            <img src="/images/overview/2.png" alt="">
+                        </div>
+                        <div class="col-xl-4" style="padding: 20px 20px 0 0;align-self: center;">
+                            <p>ويشتمل مشروع "الرياض الخضراء"، على زراعة أكثر من 7.5 مليون شجرة، في كافة أنحاء العاصمة، بما يشمل: الحدائق والمتنزهات والمساجد والمدارس والمنشآت الأكاديمية والصحية والعامة، إضافة إلى مطار الملك خالد الدولي، ومعظم الشوارع والطرق ومواقع مواقف السيارات، والأودية وروافدها.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="oc-item">
+                    <div class="row cleafix">
+                        <div class="col-xl-8">
+                            <img src="/images/overview/3.png" alt="">
+                        </div>
+                        <div class="col-xl-4" style="padding: 20px 20px 0 0;align-self: center;">
+                            <p>ولتوفير كميات الري المطلوبة للمشروع، سيتم إنشاء شبكات جديدة للري باستخدام والمياه المعالجة التي كانت تهدر في الأودية، في الوقت الذي سيتم فيه استخدام أنواع مختارة من الأشجار المحلية ذات الظل الكثيف التي تلائم بيئة مدينة الرياض ولا تتطلب استهلاك كميات كبيرة من الري، مع توفير المتطلبات الداعمة والممكنة للمشروع من: إنشاء شبكة مشاتل لتغذية المشروع بالشتلات، وتطوير التشريعات والضوابط العمرانية لتعزيز التشجير في المشاريع العامة والخاصة، وتقديم الحوافز لكافة فئات المجتمع لتشجيعهم على المشاركة في مبادرات تطوعية ضمن المشروع، والاستفادة من أفضل التطبيقات والتجارب العالمية الناجحة في هذا المجال.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="oc-item">
+                    <div class="row cleafix">
+                        <div class="col-xl-8">
+                            <img src="/images/overview/4.png" alt="">
+                        </div>
+                        <div class="col-xl-4" style="padding: 20px 20px 0 0;align-self: center;">
+                            <p>وسيساهم المشروع في رفع نصيب الفرد من المساحة الخضراء في المدينة من 1.7 متر مربع حالياً، إلى 28 متر مربع للفرد، ورفع نسبة المساحات الخضراء الإجمالية في المدينة إلى ٩% بما يعادل 545 كيلومتراً مربعاً، إلى جانب دوره في تحسين جودة الهواء، وخفض درجات الحرارة في المدينة، فضلاً عن الحفاظ على المناطق الطبيعية والتنوع الإحيائي داخل المدينة وفي محيطها.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="section-vision" class="section nobg nomargin nobottompadding clearfix">
+            <div class="container clearfix">
+                <div class="row clearfix">
+                    <div class="col-lg-12">
+                        <div class="divcenter">
+                            <div class="story-box description-left clearfix">
+                                <div class="story-box-image boxright">
+                                    <img src="/images/vision/1.png" alt="story-image">
+                                </div>
+                                <div class="story-box-info boxleft">
+                                    <h3 class="story-title bold" style="color:#71BC48;">رؤية المشروع</h3>
+                                    <div class="story-box-content font-primary">
+                                        <p>أن يسهم مشروع الرياض الخضراء، في رفع نصيب الفرد من المساحة الخضراء في المدينة، وزيادة نسبة المساحات الخضراء الإجمالية فيها من خلال إطلاق نشر وتكثيف التشجير في كافة عناصر المدينة ومختلف أرجائها، مع تحقيق الاستغلال الأمثل للمياه المعالجة في أعمال الري، بما يساهم في تحسين جودة الهواء وخفض درجات الحرارة في المدينة، وتشجيع السكان على ممارسة نمط حياة أكثر نشاطاً وحيوية بما ينسجم مع أهداف توجهات "رؤية المملكة 2030 ".</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="section-seperator" class="section clearfix nopadding nobottommargin noborder">
+            <div style="position: absolute;top: 0; left: 0; width: 100%; z-index: 3; background: url('/images/seperator/seperator-facts.png') no-repeat center bottom; background-size: auto 100%; height: 40px; margin-top: -15px;  -webkit-transform: rotate(180deg);-moz-transform: rotate(180deg);-o-transform: rotate(180deg);-ms-transform: rotate(180deg);transform: rotate(180deg);"></div>
+            <div class="container h-100">
+                <div class="row align-items-center h-100">
+                    <div id="greenfacts" class="divcenter owl-carousel">
+                        <div class="item">
+                            <img src="/images/facts/1.png" alt="">
+                            <div class="title"><span>541</span> كم² <br>المساحات الخضراء</div>
+                        </div>
+                        <div class="item">
+                            <img src="/images/facts/2.png" alt="">
+                            <div class="title"><span>7,5</span> مليون <br>شجرة</div>
+                        </div>
+                        <div class="item">
+                            <img src="/images/facts/3.png" alt="">
+                            <div class="title"><span>1,100</span> كم² <br>الأحزمة الخضراء</div>
+                        </div>
+                        <div class="item">
+                            <img src="/images/facts/4.png" alt="">
+                            <div class="title"><span>16,400</span> كم² <br>طريق وشوارع</div>
+                        </div>
+
+
+
+                    </div>
+
+
+                </div>
+            </div>
+            <div style="position: absolute;bottom: 0; left: 0; width: 100%; z-index: 3; background: url('/images/seperator/seperator-facts.png') no-repeat center bottom; background-size: auto 100%; height: 40px; margin-bottom: -15px;"></div>
+        </div>
+        <div id="section-component" class="section nobg nomargin nopadding clearfix">
+            <div class="container topmargin clearfix">
+                <div class="divcenter">
+                    <div class="heading-block centers noborder">
+                        <h3 class="nott ls0 bold" style="color:#71BC48;">مشاريع التشجير</h3>
+                        <p class="nott text-center">مشروع الرياض الخضراء هو واحد من أكثر مشاريع التشجير طموحاً في العالم.</p>
+                    </div>
+                    <div class="tabs tabs-alt tabs-responsive tabs-justify clearfix" id="tab">
+
+                        <ul class="tab-nav clearfix" style="text-align: right;">
+                            <li>
+                                <a href="#tabs-1">
+                                    <div class="pin" style="background: #6b946a;">
+                                        <svg xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" width="68" height="61" viewBox="0 0 68 61">
+                                            <image id="Objet_dynamique_vectoriel" data-name="Objet dynamique vectoriel" width="68" height="61" xlink:href="data:img/png;base64,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" />
+                                        </svg>
+                                    </div><h1 class="smalltext">التشجير</h1>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#tabs-2">
+                                    <div class="pin" style="background: #a2c680;">
+                                        <svg xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" width="57" height="76" viewBox="0 0 57 76">
+                                            <image id="Objet_dynamique_vectoriel" data-name="Objet dynamique vectoriel" width="57" height="76" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAADkAAABMCAYAAADX9x/3AAAIVklEQVR4nN2bC7BWVRmGH/AsDsjFaycSKHUARUctBBNNjGxCMVAsxxtWZh4VR7OMRJxsKkzzMuDo6KCO5owaYyVEamaJ4gUQzKarM5nNWOIFJUOg8iwQ55t5N7Nms+97/+dweGfOnP/fa++11vuvtb71ft+3dp+uri5aiDbgi8BZwBFAB/Ae8E/gceBO4Hd1mnfO5d7TSpIfB+4DDsq57yfABcC7VRrpSZKfAR4CBhS8/2/AscAbZRsqQrJv2UoLYH/gwRIEDaOBn9qP3oL+NEpyiKbmTcBuFZ7/FPDlBvuzDU2QPBBYAqwD/gJ8vkZdMxvoz3aouyaPBH4DDGqwT2aB3yp6c6vXZH9gYcMEDScB+zRZYR2SU4GPNdiXCHcAa4DfAvs1UWEdkmOb6EAGjgOeBj5Ut6I6JH3dxgtgGDCrbiVtFZ4ZCJwjudYdmKE2tgLvAy9KaPy7aNtlrattD7cDH+kmgmn4L3A1cI1zzshnogzJTuC2FqmkqrjbOffVvGeLdNiUzIXArTsYQcM53vsz8m5KG8kxwPeBycDglnSvOfzJOXdoVm1JJMcDT8jA9BaYT/qCxMkT8XWaRPL38gV7K54FznPOvZhG0tykl3sxwQjmgE9zzi0jwZDs0WPdahZmLBd7723QtiP5Wi8nF2J3YB4JJC/p0W41j2ne+zHhmmwHXt+JpmyEb4cj+cmdkKBhVEhydA92pJXYLSSZH0fonXg9JLlmJyX5XGh4OmR4djQRXgcbgeEhobXAo72PRyaudc6tj8u6wyR0d4bRXA5Mcs51xcn8AfhWD3WqSVjGbIoRJGXETAp9Hdi8gxLYrFhPEiwleJ75wTZNo/Ks8IflNX6g+Gp8e9msYNIvlPsY0ipGCbjbVAzwOcV9zak3zf08sMo5t90PUCTGYwQmACOAXbTVrATeVvl4ZbGGdwPBDcDBwL+iC92Zn9wTWNDiMOX/gOnAr8OL3ZmftBjoqYp6P1OxjucyAtZWdpTCMmco/vS1onmYVmWaP60O5cGiEPcoNvOSBMlU2YN2TUurZ5Wch6Wx0Iw9P9E5l+kH1yVpydbrgH3V2fuDsiXqsAWVpgD/1/qeqSigYTbwo5w22mQxZ2g047jPOTcjq4I603Wy1kenLN29wCFB+TX630dnCJ4U8fBcQG70G7heMd8kgobjvfcne+9TudQhuVA+aAQj8zAwTt9XAI/pc6fCEchCRtirQDsTc8qtjkWaFYmoQnIUsCzodAjbZlYD/wBGAnNUZtP6Un1+J7i/I6OdERr9oinCud77d733T3rvR4UFZUleoOMoeb/ufpJWhwM/07VLtdW8EbsvjpFK5jylYy9F0UfCwJ55wHvfXpXkpBL3flR7px1Y2qLR/K7cuQhjYs/00Y8zR8asKswCr/fez/fe9ytLskqI5G1ZXsNFwNCgrCM27Qfqx2kC7dLgc8uSvKfAPSEWyeX5njZ6k4U/jN0THks7sSGCIc4vS3K+DgKeJgkXTr1QGH9DqfBTdN28g7tUFjdY44LPh1XjkYlBVayrWc8HgJ9r3RyjzX6EpuJeGjFbj2cG2bHrtDbjCLehv7eA5NKyisem1lwZDMsafUensJIwWErFNOYr2jenJ2TMXgrW+gDp1ENS6iwLa/ezZUjaKP05toGbY3p0BlFkMSeK4LEpacE9g/3TNOoV0r/rJfjNf9y1YD87Zcltq1rknNtUhuQsTbkkmIg+QQd28/C89s8QkwN1lIQDFXvqHztJuVFkRsqKz3LO/Tj+fJE1aZU+kkEQ7Z95AiFCkoUen/PMf4BNOnXyqE48W3sfds6ZujHh35FEkBySo6VPV2iU8nCtIgh5WJRQfkTOM0fqFOZMjVinTmvZURdznDdkHXVJI7mrxPZpMeuXhbE6MXl1Tjr+VeCPJUmeDhwgC/6Vgt7LNsRJ7qK98B3N87IYKEm2LOfk8vLY96EZJyMnak82v/PclG2oFMmLJIX6VSAYYojEQBpeSLh+cOz7MEXmHtHozS47ghHiJKdVqSQFJ2eUvZJwLSJpYcabJQyO0nK5t05H4gcIN6TcVwVZCd21CdemKxA2RVuDTftbmjiNGSc5T6NZN4q3VYHnMoi2oCVSSkk/RCXEyTylPW+xjMPqgpWuC8T6Oq2hVRU6dIOmeWMEyYnWDZZXcGugJbfIAoewYNbFWkN7KwabZwEnKbwY4n2lI9LyHImoE1x2kl9PS26Nl0HoUPzmQY2URdIuk4nvr7cAipj4pNhO35yYT2UkkfyCpmrkGVymF1Ne0yh1aTrvo9H7pRzhhRLaRZDm/Tf6FkGEOMmos+Ni1+fpxLKTSDhfqmVBEIwyg/Wlgu3G98QIQ1Ou10Lcup6UcS79IP21SbYdrsjdQP39qkQ6Pu18alKYs3GSp+qc+VUKBLVJnSzVC2ORJl0hx3lWhWTtoAySVd7xykWc5F/1d6NInqu84+Uqj45Cz67xcueEBAsdoSUk06zrFrkxN8uaXig9+wn5dUnasyiy3Lb+9SltjyLKZoG2k8Vyid6qKpSFOm/lVUJR+bZaKmZAxlQrgkOVS9khSRJkdYeVCCrFkZlHbBXKkIy8ir4VX0brp9mQhZa8nlGGZNiBqRXaOqXAG3Qn1pglqSjzQlr4ruSZyh22Z9y/UZa4S7LwygJtHKDg8nwZu5dVTy2EXkg//dLDtDfuK425vwxGK14ILYJ1Cmqv1LmDCBslRCxcuVZRPHP31sQPLBnJs2XWxyoaljU6vQE2eyzq/k3nnAmbRH/SdKj5hTaqlhKwz6YpLThl6zL6H6kT28DLbuLWhol9C1yn1WPlSevTRtMi9RaqMdFiI2nX3lQ03Twjcx6WOuc8wAcso988gzy+xQAAAABJRU5ErkJggg==" />
+                                        </svg>
+                                    </div><h1 class="smalltext">أنواع الأشجار</h1>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#tabs-3">
+                                    <div class="pin" style="background: #9fcfdf;">
+                                        <svg xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" width="71" height="71" viewBox="0 0 71 71">
+                                            <image id="Objet_dynamique_vectoriel" data-name="Objet dynamique vectoriel" width="71" height="71" xlink:href="data:img/png;base64,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" />
+                                        </svg>
+                                    </div><h1 class="smalltext">إعادة استعمال المياه للمعالجة</h1>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="tab-container">
+                            <div class="tab-content clearfix" id="tabs-1">
+                                <div class="col-lg-12">
+                                    <div class="divcenter">
+                                        <div class="story-box description-left clearfix">
+                                            <div class="story-box-image boxright bounceInRight animated">
+                                                <img src="/images/element/1.png" alt="story-image">
+                                            </div>
+                                            <div class="story-box-info boxleft bounceInLeft animated">
+                                                <h3 class="story-title bold" style="color:#71BC48;">التشجير</h3>
+                                                <div class="story-box-content font-primary">
+                                                    <p>
+                                                        <ul class="iconlist">
+                                                            <li><i class="icon-stop1"></i>يشتمل المشروع على زراعة أكثر من 7.5 مليون شجرة في كافة أنحاء مدينة الرياض.</li>
+                                                            <li><i class="icon-stop1"></i>يشمل المشروع على تشجير العناصر التالية:</li>
+                                                            <div id="custom-owl-slider-tree" class="owl-carousel owl-center image-carousel carousel-widget owl-rtl">
+                                                                <div class="oc-item">
+                                                                    <ul class="iconlist">
+                                                                        <li><i class="icon-stop1"></i>330 حديقة حي</li>
+                                                                        <li><i class="icon-stop1"></i>43 متنزه عام</li>
+                                                                        <li><i class="icon-stop1"></i>9000 مسجد</li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="oc-item">
+                                                                    <ul class="iconlist">
+                                                                        <li><i class="icon-stop1"></i>6000 مدرسة</li>
+                                                                        <li><i class="icon-stop1"></i>2000 موقع لمواقف السيارات</li>
+                                                                        <li><i class="icon-stop1"></i>1670 منطقة ومنشأة حكومية</li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="oc-item">
+                                                                    <ul class="iconlist">
+                                                                        <li><i class="icon-stop1"></i>390 منشأة صحية</li>
+                                                                        <li><i class="icon-stop1"></i>64 جامعة وكلية</li>
+                                                                        <li><i class="icon-stop1"></i>16٫400 كم طولي من الطرق والشوارع</li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="oc-item">
+                                                                    <ul class="iconlist">
+                                                                        <li><i class="icon-stop1"></i>1٫100 كم طولي من الأحزمة الخضراء ضمن خطوط المرافق العامة (أبراج نقل الكهرباء، أنابيب البترول)</li>
+                                                                        <li><i class="icon-stop1"></i>272 كم طولي من الأودية وروافدها</li>
+                                                                        <li><i class="icon-stop1"></i>175 ألف قطعة أرض فضاء</li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </ul>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-content clearfix" id="tabs-2">
+                                <div class="col-lg-12">
+                                    <div class="divcenter">
+                                        <div class="story-box description-right clearfix">
+                                            <div class="story-box-image boxright bounceInRight animated">
+                                                <img src="/images/element/2.png" alt="story-image">
+                                            </div>
+                                            <div class="story-box-info boxleft bounceInLeft animated">
+                                                <h3 class="story-title bold" style="color:#71BC48;">أنواع الأشجار</h3>
+                                                <div class="story-box-content font-primary">
+                                                    <p>
+                                                        <ul class="iconlist">
+                                                            <li><i class="icon-stop1"></i>استخدام 72 نوعاً مختاراً من الأشجار المحلية والملائمة لمدينة الرياض.</li>
+                                                        </ul>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-content clearfix" id="tabs-3">
+                                <div class="col-lg-12">
+                                    <div class="divcenter">
+                                        <div class="story-box description-left clearfix">
+                                            <div class="story-box-image boxright bounceInRight animated">
+                                                <img src="/images/element/5.png" alt="story-image">
+                                            </div>
+                                            <div class="story-box-info boxleft bounceInLeft animated">
+                                                <h3 class="story-title bold" style="color:#71BC48;">إعادة استعمال المياه للمعالجة</h3>
+                                                <div class="story-box-content font-primary">
+                                                    <p>
+                                                        <ul class="iconlist">
+                                                            <li><i class="icon-stop1"></i>إنشاء شبكة مشاتل لتغذية المشروع بالشتلات والأشجار.</li>
+                                                            <li><i class="icon-stop1"></i>تطوير التشريعات والضوابط العمرانية لتعزيز التشجير في المشاريع العامة والخاصة.</li>
+                                                            <li><i class="icon-stop1"></i>تحفيز كافة فئات المجتمع للمشاركة في مبادرات تطوعية ضمن المشروع.</li>
+                                                        </ul>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div id="section-interactivemap" class="section nobg nomargin nopadding clearfix">
+            <div class="clearfix">
+                <div class="heading-block topmargin centers noborder">
+                    <h3 class="nott ls0 bold" style="color: #71BC48;">الخريطة التفاعلية</h3>
+                    <p class="nott text-center">مشروع الرياض الخضراء هو واحد من أكثر مشاريع التشجير طموحاً في العالم.</p>
+                </div>
+                <div class="nobottommargin " id="image-map-pro-container"></div>
+            </div>
+        </div>
+        <section id="section-video" class="page-section full-screen section dark nopadding nomargin noborder ohidden">
+            <div class="container-fluid vertical-middle center clearfix" style="position: absolute; top: 50%; width: 100%; padding-top: 0px; padding-bottom: 0px; margin-top: -154.2px;">
+                <div class="slider-caption slider-caption-center">
+                    <h2 data-animate="fadeInUp" class="fadeInUp animated" style="color: #71BC48 !important;">الرياض الخضراء</h2>
+                    <p style="margin-bottom: 30px;" class="d-none d-sm-block fadeInUp animated" data-animate="fadeInUp" data-delay="200">مشروع الرياض الخضراء هو واحد من أكثر مشاريع التشجير طموحاً في العالم.</p>
+                    <a href="https://www.youtube.com/watch?v=sIpLjQSvfEs" data-lightbox="iframe">
+                        <i class="divcenter bottommargin icon-play" style="color: #FFF;"></i>
+                    </a>
+                </div>
+            </div>
+            <div style="position: absolute;bottom: 0; left: 0; width: 100%; z-index: 3; background: url('images/sketch-header.png') no-repeat center bottom; background-size: auto 100%; height: 40px; margin-bottom: -15px;"></div>
+        </section>
+        <div id="section-infoghraphic" class="section nobg nopadding nobottommargin clearfix nobottommargin clearfix">
+            <div class="container clearfix">
+                <div class="heading-block centers noborder">
+                    <h3 class="nott ls0 bold" style="color:#71BC48;">انفوجرافيك</h3>
+                    <p class="nott text-center">مشروع الرياض الخضراء هو واحد من أكثر مشاريع التشجير طموحاً في العالم.</p>
+                </div>
+                <!-- Portfolio Items
+                ============================================= -->
+                <div id="portfolioc" class="portfolio grid-container portfolio-6 clearfix">
+
+                    <article class="portfolio-item pf-media pf-icons">
+                        <div class="portfolio-image">
+                            <a data-lightbox="image" href="/images/infographic/full/1.jpg">
+                                <img src="/images/infographic/small/1.png">
+                            </a>
+                        </div>
+                    </article>						<article class="portfolio-item pf-media pf-icons">
+                        <div class="portfolio-image">
+                            <a data-lightbox="image" href="/images/infographic/full/2.jpg">
+                                <img src="/images/infographic/small/2.png">
+                            </a>
+                        </div>
+                    </article>						<article class="portfolio-item pf-media pf-icons">
+                        <div class="portfolio-image">
+                            <a data-lightbox="image" href="/images/infographic/full/3.jpg">
+                                <img src="/images/infographic/small/3.png">
+                            </a>
+                        </div>
+                    </article>						<article class="portfolio-item pf-media pf-icons">
+                        <div class="portfolio-image">
+                            <a data-lightbox="image" href="/images/infographic/full/4.jpg">
+                                <img src="/images/infographic/small/4.png">
+                            </a>
+                        </div>
+                    </article>						<article class="portfolio-item pf-media pf-icons">
+                        <div class="portfolio-image">
+                            <a data-lightbox="image" href="/images/infographic/full/5.jpg">
+                                <img src="/images/infographic/small/5.png">
+                            </a>
+                        </div>
+                    </article>						<article class="portfolio-item pf-media pf-icons">
+                        <div class="portfolio-image">
+                            <a data-lightbox="image" href="/images/infographic/full/6.jpg">
+                                <img src="/images/infographic/small/6.png">
+                            </a>
+                        </div>
+                    </article>
+                </div><!-- #portfolio end -->
+
+            </div>
+        </div>
+        <div id="section-gallery" class="section nobg nopadding nobottommargin clearfix">
+            <div class="container clearfix">
+                <div class="heading-block centers noborder">
+                    <h3 class="nott ls0 bold" style="color:#71BC48;">الوسائط</h3>
+                    <p class="nott text-center">مشروع الرياض الخضراء هو واحد من أكثر مشاريع التشجير طموحاً في العالم.</p>
+                </div>
+                <ul class="hidden portfolio-filter style-4 d-xl-flex justify-content-xl-center d-lg-flex justify-content-lg-center d-md-flex justify-content-md-center fnone  centers clearfix" data-container="#portfolio">
+                    <li class="activeFilter"><a href="#" data-filter="*">الكل</a></li>
+                    <li><a href="#" data-filter=".pf-1">الطرق والميادين العامة</a></li>
+                    <li><a href="#" data-filter=".pf-2">الساحات والأماكن العامة</a></li>
+                    <li><a href="#" data-filter=".pf-3">الحدائق</a></li>
+                    <li><a href="#" data-filter=".pf-4">المنشأت</a></li>
+                    <li><a href="#" data-filter=".pf-5">المناطق السكنية</a></li>
+                    <li><a href="#" data-filter=".pf-6">الأودية وروافدها</a></li>
+                </ul>
+            </div>
+
+            <div id="portfolio" class="masonry-thumbs grid-5" data-lightbox="gallery">
+                <a class="pf-5" href="/images/gallery/full/1.jpg" data-lightbox="gallery-item"><img class="image_fade" src="/images/gallery/small/1.jpg" alt="Gallery Thumb 1"></a>
+                <a class="pf-5" href="/images/gallery/full/2.jpg" data-lightbox="gallery-item"><img class="image_fade" src="/images/gallery/small/2.jpg" alt="Gallery Thumb 2"></a>
+                <a class="pf-3" href="/images/gallery/full/3.jpg" data-lightbox="gallery-item"><img class="image_fade" src="/images/gallery/small/3.jpg" alt="Gallery Thumb 3"></a>
+                <a class="pf-3" href="/images/gallery/full/4.jpg" data-lightbox="gallery-item"><img class="image_fade" src="/images/gallery/small/4.jpg" alt="Gallery Thumb 4"></a>
+                <a class="pf-1" href="/images/gallery/full/5.jpg" data-lightbox="gallery-item"><img class="image_fade" src="/images/gallery/small/5.jpg" alt="Gallery Thumb 5"></a>
+                <a class="pf-6" href="/images/gallery/full/6.jpg" data-lightbox="gallery-item"><img class="image_fade" src="/images/gallery/small/6.jpg" alt="Gallery Thumb 6"></a>
+                <a class="pf-3" href="/images/gallery/full/7.jpg" data-lightbox="gallery-item"><img class="image_fade" src="/images/gallery/small/7.jpg" alt="Gallery Thumb 7"></a>
+                <a class="pf-4" href="/images/gallery/full/8.jpg" data-lightbox="gallery-item"><img class="image_fade" src="/images/gallery/small/8.jpg" alt="Gallery Thumb 9"></a>
+                <a class="pf-5" href="/images/gallery/full/9.jpg" data-lightbox="gallery-item"><img class="image_fade" src="/images/gallery/small/9.jpg" alt="Gallery Thumb 10"></a>
+                <a class="pf-4" href="/images/gallery/full/10.jpg" data-lightbox="gallery-item"><img class="image_fade" src="/images/gallery/small/10.jpg" alt="Gallery Thumb 14"></a>
+                <a class="pf-3" href="/images/gallery/full/11.jpg" data-lightbox="gallery-item"><img class="image_fade" src="/images/gallery/small/11.jpg" alt="Gallery Thumb 12"></a>
+                <a class="pf-3" href="/images/gallery/full/12.jpg" data-lightbox="gallery-item"><img class="image_fade" src="/images/gallery/small/12.jpg" alt="Gallery Thumb 13"></a>
+                <a class="pf-1" href="/images/gallery/full/13.jpg" data-lightbox="gallery-item"><img class="image_fade" src="/images/gallery/small/13.jpg" alt="Gallery Thumb 15"></a>
+                <a class="pf-1" href="/images/gallery/full/14.jpg" data-lightbox="gallery-item"><img class="image_fade" src="/images/gallery/small/14.jpg" alt="Gallery Thumb 16"></a>
+                <a class="pf-2" href="/images/gallery/full/15.jpg" data-lightbox="gallery-item"><img class="image_fade" src="/images/gallery/small/15.jpg" alt="Gallery Thumb 12-1"></a>
+                <a class="pf-1" href="/images/gallery/full/16.jpg" data-lightbox="gallery-item"><img class="image_fade" src="/images/gallery/small/16.jpg" alt="Gallery Thumb 13"></a>
+                <a class="pf-6" href="/images/gallery/full/17.jpg" data-lightbox="gallery-item"><img class="image_fade" src="/images/gallery/small/17.jpg" alt="Gallery Thumb 13"></a>
+                <a class="pf-4" href="/images/gallery/full/18.jpg" data-lightbox="gallery-item"><img class="image_fade" src="/images/gallery/small/18.jpg" alt="Gallery Thumb 13"></a>
+                <a class="pf-2" href="/images/gallery/full/19.jpg" data-lightbox="gallery-item"><img class="image_fade" src="/images/gallery/small/19.jpg" alt="Gallery Thumb 13"></a>
+                <a class="pf-1" href="/images/gallery/full/20.jpg" data-lightbox="gallery-item"><img class="image_fade" src="/images/gallery/small/20.jpg" alt="Gallery Thumb 12-1"></a>
+
+
+            </div>
+
+            <div class="clear"></div>
+        </div>
+        <div id="section-contact" class="section nobg noppadding clearfix nomargin clearfix">
+            <div class="decor-left move-left">
+                <img src="/images/about-decor-1.svg" alt="KingSalmanPark">
+            </div>
+            <div class="decor-right move-right">
+                <img src="/images/about-decor-2.svg" alt="KingSalmanPark">
+            </div>
+
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-sm-9 col-lg-7 col-xl-5" style="margin-top: 60px;">
+                        <div class="animate-box text-center">
+                            <div class="heading-block centers noborder">
+                                <h3 class="nott ls0 bold" style="color:#71BC48;">تواصل معنا</h3>
+                                <p class="nott text-center">مشروع الرياض الخضراء هو واحد من أكثر مشاريع التشجير طموحاً في العالم.</p>
+                            </div>
+                            <div class="text text-center"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                </div>
+                <div role="form" class="wpcf7" id="wpcf7-f82-o1" dir="rtl" lang="ar">
+                    <div class="screen-reader-response"></div>
+<form action="/Home/SendForm" data-contact-form="true" method="post">                        <input type="hidden" id="lang" name="lang" value="ar" />
+                        <div class="container wpcf7-form contact-form-container">
+                            <div class="wpcf7-response-output wpcf7-display-none" style="margin-bottom: 30px;"></div>
+                            <div class="row">
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                                    <span class="wpcf7-form-control-wrap your-email"><input type="email" name="Email" required value="" size="40" class="wpcf7-form-control form-control-modern" aria-required="true" aria-invalid="false" placeholder="البريد الإلكتروني*"></span>
+                                </div>
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                                    <span class="wpcf7-form-control-wrap your-name"><input type="text" name="Name" required value="" size="40" class="wpcf7-form-control form-control-modern" aria-required="true" aria-invalid="false" placeholder="الأسم*"></span>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <span class="wpcf7-form-control-wrap your-subject"><input type="text" name="Subject" required value="" size="40" class="wpcf7-form-control form-control-modern" aria-required="true" aria-invalid="false" placeholder="العنوان*"></span>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <span class="wpcf7-form-control-wrap your-message">
+                                        <textarea name="Message" cols="400" rows="10" required class="wpcf7-form-control form-control-modern textarea" aria-required="true" aria-invalid="false" placeholder="الرسالة*"></textarea>
+                                    </span>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="captcha-container">
+                                        <div class="captcha-image-container">
+                                            <img class="captcha-image" src="" alt="Captcha" />
+                                            <button type="button" class="captcha-refresh" aria-label="Refresh Captcha"><i class="fa fa-refresh"></i></button>
+                                        </div>
+                                        <div class="captcha-input-group">
+                                            <input type="text" name="CaptchaInput" class="captcha-input" autocomplete="off" required placeholder="ادخل الرمز" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                                    <input type="submit" value="إرسال" class="wpcf7-form-control wpcf7-submit submit-btn"><span class="ajax-loader"></span>
+                                </div>
+                                <p></p>
+                            </div>
+                        </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8KGvccBxkMVPs6_I0Fbu22hXIlpYK4jEMEUywltPrlObFyVUBYDUnwON3Vw_TJyUL8xXAXedP2ltl9XfwUaRRJ-X-1Rvy-vYSuzIVCTdtNfkEr1_mkENWmHXTqk-dTsiu8v7wteaArtsIRg3Dnce9UA" /></form>                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+</section>
+        </div>
+
+        <footer id="footer" class="factsbgcolor noborder footer-classic main-footer bg-default text-center text-sm-lefts">
+            <div class="section-sm nopadding" style="background-color: #33373e;">
+                <div class="section-sm" style="background-color: #f8f8f8;">
+                    <div class="container">
+                        <div class="row row-10">
+                            <div id="grandproject" class="owl-carousel" data-items="4" data-margin="40" data-arrow="false" data-dots="false" data-items-xl="4" data-items-lg="4" data-items-md="4" data-items-sm="2" data-items-xs="2">
+                                <div class="item"><a href="http://www.riyadhalmasar.sa" target="_blank"><img src="images/icons/sportsboulevard.png" alt=""></a></div>
+                                <div class="item"><a href="http://www.riyadhart.sa" target="_blank"><img src="images/icons/riyadhart.png" alt=""></a></div>
+                                <div class="item"><a href="http://www.riyadhksp.sa" target="_blank"><img src="images/icons/kingsalmanpark.png" alt=""></a></div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="footer-nav">
+                        <div class="container">
+                            <ul class="one-page-menu sf-js-enabled show nomargin">
+                                <li>
+                                    <a href="#" data-href="#section-overview">لمحة عامة</a>
+                                </li>
+                                <li>
+                                    <a href="#" data-href="#section-vision">رؤيتنا</a>
+                                </li>
+                                <li>
+                                    <a href="#" data-href="#section-component">مشاريع التشجير</a>
+                                </li>
+                                <li>
+                                    <a href="#" data-href="#section-interactivemap">الخريطة التفاعلية</a>
+                                </li>
+                                <li>
+                                    <a href="#" data-href="#section-video">فيديو</a>
+                                </li>
+                                <li>
+                                    <a href="#" data-href="#section-infoghraphic">انفوجرافيك</a>
+                                </li>
+                                <li>
+                                    <a href="#" data-href="#section-gallery">وسائط</a>
+                                </li>
+                                <li><a href="https://dbo.riyadhgreen.sa">خطة سير العمل</a></li>
+                                <li>
+                                    <a href="#" data-href="#section-contact">تواصل معنا</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom boxed-container">
+                    <div class="footer-bottom-inner container">
+                        <div class="row container">
+                            <div class="col-md-12" style="position: relative;display: block;font-size: 16px;line-height: 24px;color: #6b6c80;font-weight: 400;border-top: 1px solid rgba(255,255,255,.20);padding: 30px 0px;">
+                                <div class="nav-item-inner">جميع الحقوق محفوظة © <span id="year">2021</span> الرياض الخضراء .</div>
+                                <div class="digital-stamp-card"><div class="digital-stamp-header open"><svg width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="14" fill="#006923"></rect><path fill-rule="evenodd" clip-rule="evenodd" d="M8.13775 3C8.12247 3 8.09956 3.00764 8.07029 3.02546C8.00155 3.07128 7.86664 3.21256 7.86154 3.37548C7.85773 3.4684 7.83991 3.4684 7.89973 3.52822C7.94301 3.58932 7.98883 3.58423 8.07538 3.53713C8.12629 3.49895 8.14284 3.47731 8.16066 3.41494C8.18102 3.31311 8.04992 3.46585 8.03338 3.34875C8.0041 3.24184 8.08811 3.19601 8.16702 3.09419C8.16957 3.04328 8.16957 3.00509 8.13775 3.00255V3ZM9.41439 3.00636C9.38893 3.01146 9.35966 3.04455 9.31765 3.11837C9.28838 3.19729 9.15982 3.31693 9.25401 3.56386C9.32784 3.72042 9.35966 3.97371 9.32529 4.25755C9.27183 4.33774 9.26165 4.36574 9.19164 4.44593C9.09491 4.55157 8.98799 4.52484 8.90908 4.48411C8.83271 4.4332 8.77416 4.40774 8.73979 4.24737C8.74616 3.9928 8.76143 3.57022 8.71433 3.48113C8.6456 3.34366 8.53105 3.39203 8.48268 3.43403C8.24976 3.65041 8.13393 4.01062 8.06265 4.29955C7.99901 4.50829 7.929 4.4472 7.88064 4.36319C7.76226 4.25118 7.75335 3.38312 7.6108 3.52695C7.38169 4.18118 7.7419 4.89778 7.99265 4.82777C8.17084 4.90414 8.28539 4.56048 8.35922 4.185C8.41013 4.07935 8.44832 4.06662 8.47377 4.12136C8.46741 4.6203 8.51196 4.73231 8.63924 4.8825C8.92435 5.10397 9.1611 4.91051 9.18019 4.89269L9.40293 4.67121C9.45384 4.6203 9.51749 4.61521 9.58749 4.66103C9.65622 4.72467 9.64731 4.83032 9.79114 4.90287C9.91588 4.95378 10.1768 4.9156 10.2366 4.80995C10.3194 4.66994 10.3385 4.62157 10.3766 4.56812C10.4352 4.49175 10.5357 4.52611 10.5357 4.5503C10.5268 4.59485 10.4683 4.63939 10.5077 4.71576C10.5777 4.76668 10.5943 4.73358 10.635 4.72213C10.7801 4.6534 10.8896 4.33774 10.8896 4.33774C10.896 4.22064 10.8298 4.22955 10.7878 4.25373C10.7305 4.2881 10.7279 4.29955 10.6732 4.33392C10.6007 4.3441 10.4632 4.39119 10.3957 4.28555C10.3257 4.15827 10.3257 3.98262 10.2723 3.85279C10.2723 3.84515 10.1794 3.65296 10.2646 3.6415C10.3066 3.64914 10.4008 3.67332 10.4148 3.59568C10.4606 3.51931 10.3168 3.30293 10.2188 3.19601C10.1348 3.1031 10.0177 3.09164 9.90442 3.18583C9.82424 3.25966 9.83696 3.34112 9.82042 3.41876C9.80132 3.50786 9.80514 3.61859 9.89679 3.73696C9.9757 3.89225 10.1195 4.09335 10.0712 4.37592C10.0712 4.37592 9.98843 4.51084 9.84206 4.49302C9.77841 4.48029 9.67913 4.45484 9.62568 4.06026C9.58749 3.76369 9.63586 3.34748 9.51112 3.15274C9.48185 3.08019 9.45766 3.00891 9.41693 3.01273L9.41474 6.59572C9.41474 6.59572 9.68713 6.67209 9.69985 5.93004C9.71258 5.49346 9.61076 5.12816 9.67058 5.04288C9.67313 4.95887 9.78004 4.95378 9.85387 4.99578C9.97224 5.07852 10.02442 5.18034 10.20771 5.13961C10.48773 5.06324 10.6532 4.92832 10.65702 4.71449C10.64429 4.51084 10.61883 4.30719 10.52974 4.10354C10.54246 4.0679 10.47882 3.97244 10.49155 3.93552C10.53992 4.01189 10.61629 4.0068 10.63156 3.93552C10.58574 3.77897 10.51192 3.63005 10.39227 3.56641C10.29426 3.47731 10.15043 3.4964 10.09698 3.67714C10.07152 3.88588 10.17334 4.13281 10.32608 4.33519C10.35663 4.4141 10.40245 4.54521 10.38209 4.66358C10.3019 4.7094 10.22171 4.68903 10.15298 4.61903C10.15298 4.61903 9.93278 4.45356 9.93278 4.41538C9.9926 4.0399 9.94551 3.99535 9.91369 3.89352C9.89078 3.74842 9.82205 3.7026 9.76731 3.60332C9.71131 3.5435 9.63621 3.5435 9.60185 3.60332C9.50257 3.7726 9.54839 4.1379 9.61967 4.29955C9.67058 4.44974 9.7495 4.54393 9.71258 4.54393C9.68204 4.62667 9.61839 4.60757 9.57257 4.50957C9.50893 4.30592 9.49366 4.00553 9.49366 3.86934C9.47457 3.70133 9.45293 3.34112 9.34092 3.24947C9.31164 3.20874 9.27728 3.19474 9.24291 3.19856L9.24164 3.20238ZM5.82248 3.20238C5.80085 3.20747 5.77539 3.2202 5.74611 3.22784C5.65065 3.25711 5.56156 3.33984 5.58956 3.50022C5.70411 4.18754 5.77666 4.71322 5.88994 5.40054C5.90649 5.482 5.83903 5.58765 5.75248 5.57874C5.60483 5.47691 5.56792 5.27326 5.3159 5.28344C5.13261 5.28344 4.92387 5.48455 4.89842 5.67547C4.86787 5.82821 4.85769 5.99368 4.89842 6.12605C5.0257 6.27879 5.18098 6.26351 5.3159 6.22788C5.42664 6.18333 5.51955 6.07514 5.55774 6.10059C5.58319 6.1426 5.55519 6.50026 5.03588 6.77519C4.71513 6.92029 4.46056 6.95338 4.3231 6.69373C4.23909 6.53081 4.33074 5.90967 4.12199 6.05223C3.5034 7.6458 5.56919 7.86727 5.79957 6.11841C5.81485 6.0675 5.8594 6.01913 5.89249 6.03186C5.90522 6.03823 5.91795 6.05732 5.92304 6.09296C5.87467 7.67635 4.32437 7.78581 4.06217 7.28686C3.99598 7.16976 3.97689 6.90756 3.97053 6.75228C3.9578 6.65682 3.93489 6.60209 3.90689 6.58045C3.84325 6.53335 3.75924 6.65682 3.74142 6.86938C3.71596 7.04121 3.72233 7.0883 3.72233 7.25377C3.80633 8.50495 5.80085 7.96655 6.12542 6.93556C6.28579 6.40098 6.1216 5.9975 6.17633 5.94786L6.18015 5.94531H6.18397L6.19033 5.94276C6.38889 6.1566 6.66637 5.96822 6.72746 5.89567C6.75292 5.85749 6.8191 5.83203 6.86493 5.88294C7.01766 5.9924 7.29005 5.94022 7.34605 5.74293C7.37914 5.55201 7.40715 5.35599 7.41351 5.15107C7.31169 5.18289 7.23023 5.2058 7.19713 5.24017C7.1895 5.24908 7.1844 5.25926 7.18186 5.26944L7.1564 5.43873C7.1564 5.44509 7.15386 5.44891 7.15131 5.45145C7.14749 5.46036 7.13858 5.46673 7.13349 5.47055C7.09785 5.48964 7.03548 5.47946 7.03166 5.42727C6.98457 5.21089 6.78728 5.18289 6.66764 5.52019C6.58745 5.58383 6.43853 5.59656 6.4258 5.49982C6.44489 5.27326 6.35325 5.24271 6.17124 5.34963L5.99559 4.02589C6.07196 4.02208 6.14069 4.07681 6.21197 3.99026C6.1356 3.75606 5.9765 3.28002 5.88613 3.2342H5.88358L5.87085 3.22147C5.87085 3.21893 5.86703 3.21765 5.86449 3.21638L5.8594 3.20874C5.8543 3.20874 5.84921 3.2062 5.84667 3.20492C5.83776 3.20238 5.83139 3.20238 5.82248 3.20238ZM11.9855 3.20747C11.9066 3.20492 11.82 3.25456 11.8531 3.35384C11.8327 3.40858 12.0224 3.59186 12.0529 3.69114C12.1077 3.84388 12.0109 3.9928 12.0682 4.01444C12.1217 4.03735 12.1955 3.85534 12.221 3.68605C12.2541 3.54859 12.1573 3.26857 12.0173 3.21129L11.9855 3.20874V3.20747ZM7.18313 3.37421C7.21877 3.37166 7.26205 3.40476 7.28496 3.45058C7.30659 3.50149 7.29514 3.54859 7.2595 3.5575C7.22132 3.56641 7.17295 3.53458 7.15004 3.48367C7.12713 3.43276 7.13731 3.38567 7.17549 3.37676H7.18313V3.37421ZM16.0891 3.60586C16.0165 3.60332 15.9363 3.65678 15.9694 3.76497C15.9516 3.82352 16.1222 4.02208 16.1514 4.13154C16.1769 4.20791 16.1132 4.45738 16.1642 4.48029C16.2125 4.50575 16.2787 4.30719 16.3042 4.1239C16.3194 4.02208 16.2456 3.67205 16.1196 3.60968C16.1107 3.60714 16.1005 3.60459 16.0903 3.60459L16.0891 3.60586ZM11.1632 3.72805C11.1722 3.75733 11.1785 3.7866 11.1823 3.81715C11.1976 3.88079 11.2103 3.94443 11.2231 4.01062C11.1671 3.93171 11.1212 3.86806 11.0996 3.84515C10.9723 3.69242 11.1021 3.74587 11.1632 3.72805ZM12.2999 4.28555C12.2719 4.29064 12.2451 4.31482 12.2362 4.35301C12.2286 4.37592 12.2464 4.41665 12.2235 4.42938C12.2108 4.44211 12.1599 4.43447 12.1637 4.36574C12.1637 4.34283 12.1471 4.31864 12.1382 4.30592C12.128 4.29955 12.1217 4.29701 12.1039 4.29701C12.0822 4.29701 12.0822 4.30337 12.0708 4.32246C12.0657 4.34028 12.058 4.3581 12.058 4.37974C12.058 4.40519 12.0479 4.41283 12.03 4.41792C12.0097 4.41792 12.0135 4.41792 11.9969 4.40901C11.9868 4.39629 11.9753 4.39374 11.9753 4.37592C11.9753 4.35683 11.9715 4.32755 11.9651 4.31483C11.9562 4.3021 11.9435 4.29828 11.9269 4.29319C11.8442 4.29319 11.8378 4.38992 11.8429 4.42556C11.8378 4.4332 11.834 4.6063 11.9486 4.65467C12.1039 4.72722 12.3941 4.69285 12.3813 4.44593C12.3813 4.42429 12.375 4.35046 12.3737 4.33137C12.3572 4.29319 12.3279 4.28046 12.3011 4.28428L12.2999 4.28555ZM7.11949 4.33646C7.10167 4.33646 7.07621 4.34155 7.04694 4.35937C6.91075 4.4332 6.85856 4.65212 6.94511 4.7794C7.02148 4.89396 7.14876 4.85196 7.16531 4.85196C7.29896 4.86978 7.37787 4.60248 7.37787 4.60248C7.37787 4.60248 7.38169 4.52611 7.22513 4.66867C7.1564 4.6814 7.14876 4.65594 7.13095 4.61776C7.11567 4.5503 7.11822 4.47775 7.15004 4.41029C7.16531 4.36828 7.15004 4.34155 7.11949 4.33901V4.33646ZM14.442 4.37083C14.3657 4.36701 14.2855 4.41665 14.2638 4.51975C14.2638 4.58084 14.2918 4.61394 14.2867 4.66994C14.2804 4.70176 14.2486 4.72085 14.1696 4.68522C14.1824 4.67249 14.1187 4.58594 14.1187 4.58594C14.0589 4.54775 13.9787 4.58594 13.9253 4.62157C13.896 4.67503 13.8744 4.7654 13.9074 4.85705C13.994 5.0187 14.2931 5.29362 14.4357 5.29617C14.4382 5.15107 14.4522 4.9576 14.4611 4.83795C14.4637 4.79213 14.4739 4.74249 14.5184 4.73104C14.5617 4.71831 14.6368 4.77431 14.6368 4.72722C14.6291 4.63558 14.6113 4.49811 14.5604 4.43447C14.5324 4.39629 14.4879 4.37337 14.4433 4.37083H14.442ZM8.37958 4.87614L8.37576 4.87996C8.37576 4.87996 8.37322 4.87996 8.37195 4.8825C8.35667 4.89523 8.33885 4.92069 8.2994 4.94614C8.23194 5.02251 8.22048 5.07724 8.22303 5.22998C8.22812 5.24653 8.35031 5.59019 8.45595 5.83076C8.52723 6.0815 8.59214 6.36916 8.54505 6.64027C8.37958 6.99921 8.04865 7.32123 7.72662 7.49688C7.56116 7.54779 7.42115 7.52997 7.38296 7.49433C7.28877 7.43069 7.2875 7.31614 7.29387 7.29832V7.2945C7.5637 7.10612 7.873 6.95338 8.11484 6.44553C8.18611 6.25079 8.20902 6.13369 8.13775 5.83457C8.10974 5.72002 8.07411 5.63092 7.99774 5.54946H8.00028C8.0461 5.52782 8.16575 5.61565 8.18484 5.56219C8.15557 5.41709 8.05756 5.22489 7.94937 5.12561C7.85263 5.03651 7.74572 5.0276 7.65917 5.10779C7.55989 5.1638 7.53952 5.36236 7.58662 5.53546C7.64007 5.66529 7.7839 5.6882 7.88573 5.95167C7.88827 5.96949 7.92009 6.14896 7.86918 6.22278C7.82591 6.35261 7.29005 6.77519 7.25186 6.80065L7.24804 6.80319L7.2455 6.80574H7.24295H7.24041V6.80192C7.23786 6.79174 7.24041 6.76373 7.24041 6.72173C7.23659 6.64282 7.26968 6.46335 7.26586 6.43153V6.42898C7.08767 6.54354 7.02785 6.89356 6.99603 6.99793C6.54672 7.30723 6.03759 7.53761 5.74357 7.85072C5.59083 8.09256 6.79747 7.57834 6.93748 7.51597L6.94129 7.51979C6.9693 7.54906 6.97057 7.65089 7.05076 7.74381C7.17804 7.91309 7.44279 8.01746 7.70244 7.95255C8.13775 7.79599 8.38977 7.49942 8.64433 7.16976C8.67997 7.11885 8.73725 7.07557 8.7907 7.11631C8.96508 7.50833 9.47166 7.78836 10.1246 7.81636C10.2774 7.63307 10.2048 7.5427 10.1437 7.50452C10.1246 7.49179 9.81914 7.37214 9.77078 7.25377C9.7415 7.14431 9.81405 7.0463 9.95916 6.97375C10.3792 6.92284 10.7916 6.86556 11.1912 6.737C11.1951 6.60209 11.274 6.40225 11.3274 6.31443C11.3656 6.25461 11.3873 6.24824 11.3962 6.2406V6.23806H11.3987V6.23424V6.22151L11.33 6.18078L9.9897 6.17569C9.97316 6.16933 9.9617 6.16296 9.95406 6.1566L9.95152 6.15278C9.95152 6.15278 9.94897 6.15278 9.94897 6.15023C9.94897 6.14769 9.94643 6.14769 9.94643 6.14769V6.14641V6.14387V6.14132L9.94897 6.13751C9.95534 6.12987 9.97188 6.12096 9.99098 6.11205C10.3117 6.07005 10.8794 5.97713 10.9176 5.43109C10.9112 5.14598 10.7954 4.96015 10.4466 4.90923C10.1895 4.92833 10.0062 5.17653 10.0355 5.44891C10.0228 5.52146 10.061 5.66529 9.98461 5.68184C9.4933 5.72766 8.95617 6.03568 8.93835 6.25715H8.93581H8.93326H8.93071C8.93071 6.2597 8.9269 6.2597 8.9269 6.2597H8.9218H8.91926H8.91417C8.88235 6.24951 8.84162 6.19606 8.84798 6.1235C8.82889 5.74166 8.70415 5.3089 8.51068 4.97796C8.44068 4.90796 8.40886 4.87996 8.39104 4.87614H8.38722H8.3834H8.37958ZM9.66259 5.07725C9.63713 5.08234 9.60786 5.10525 9.59895 5.14343C9.59258 5.16889 9.61167 5.20962 9.58876 5.22235C9.57604 5.23507 9.52512 5.22744 9.52767 5.15871C9.52767 5.13707 9.51112 5.11288 9.50221 5.09888C9.49203 5.09252 9.48567 5.09125 9.46912 5.09125C9.44748 5.09125 9.44621 5.09634 9.43475 5.11416C9.42839 5.13198 9.42202 5.15234 9.42202 5.17143C9.41948 5.19689 9.4093 5.20453 9.39275 5.20707C9.37238 5.20707 9.37748 5.21089 9.36093 5.20071C9.35075 5.19053 9.33802 5.18544 9.33802 5.16762C9.33802 5.14852 9.3342 5.1167 9.32911 5.10397C9.3202 5.09506 9.3062 5.09125 9.29092 5.08615C9.20564 5.08615 9.20183 5.18162 9.20564 5.21853C9.19928 5.22489 9.19546 5.39672 9.31002 5.44509C9.46275 5.51891 9.83187 5.47564 9.74278 5.23762C9.74278 5.21598 9.73641 5.14216 9.73514 5.12307C9.71859 5.08488 9.68932 5.07215 9.66131 5.07597L9.66259 5.07725ZM14.8366 5.28981H14.8239C14.8239 5.28981 14.1086 5.79893 14.092 5.81675C14.0207 5.8804 14.0564 6.10059 14.092 6.07514C14.1429 6.09423 14.8621 5.60674 14.8481 5.54946C14.8799 5.55201 14.8952 5.29872 14.8353 5.28853L14.8366 5.28981ZM10.3385 5.36618C10.3665 5.36236 10.4046 5.37254 10.4403 5.39163C10.495 5.42473 10.5294 5.47055 10.523 5.50619V5.51128C10.5205 5.51128 10.5205 5.51128 10.5205 5.51382V5.51637C10.5205 5.51637 10.5179 5.51637 10.5179 5.51891C10.5179 5.52146 10.5141 5.52401 10.5116 5.52655C10.4861 5.55201 10.4276 5.54692 10.3715 5.51382C10.3181 5.48455 10.2863 5.43745 10.2888 5.40436V5.40054L10.2952 5.38781C10.2952 5.38781 10.2952 5.38527 10.2977 5.38399L10.3041 5.37636C10.313 5.36999 10.3245 5.36363 10.3385 5.36363V5.36618ZM4.07872 5.49346C3.7096 5.50109 3.16611 5.97968 3.1521 6.24442L4.3231 5.68438C4.25946 5.58765 4.31928 5.50109 4.07872 5.49346ZM5.27899 5.65892C5.31463 5.66147 5.35281 5.67929 5.37318 5.7302C5.391 5.7773 5.37318 5.82566 5.35154 5.84985V5.85367C5.33372 5.87403 5.28026 5.86639 5.2408 5.86639C5.19371 5.86385 5.1708 5.85621 5.1428 5.81803C5.12752 5.77348 5.16825 5.73148 5.18735 5.70093L5.19626 5.6882C5.20898 5.67547 5.23444 5.66529 5.2599 5.66274L5.27644 5.6602L5.27899 5.65892ZM14.6979 5.80784C14.6304 5.81548 14.568 5.87785 14.596 5.97713C14.5782 6.03568 14.6851 6.2406 14.7144 6.34879C14.7399 6.42516 14.6813 6.64536 14.7335 6.667C14.7819 6.69246 14.9079 6.53972 14.9041 6.3437C14.9168 6.24188 14.8684 5.87276 14.7424 5.81166C14.7271 5.80784 14.7131 5.80657 14.6979 5.80784ZM6.69946 6.16933C6.64091 6.17314 6.58872 6.20369 6.61291 6.28643C6.60909 6.34498 6.77837 6.41753 6.78728 6.55372C6.81019 6.61227 6.7491 6.79555 6.80001 6.81083C6.84583 6.82992 6.90947 6.68355 6.93366 6.55117C6.94639 6.47735 6.87511 6.22024 6.75546 6.17314C6.73637 6.16805 6.71728 6.16678 6.69819 6.16805L6.69946 6.16933ZM9.09236 6.49517H9.10764C9.25783 6.5359 9.47676 6.54099 9.66768 6.55881C9.82424 6.57154 9.9006 6.69118 9.75678 6.74337C9.61167 6.79174 9.47294 6.83247 9.47294 7.03866C9.49076 7.14049 9.48567 7.19395 9.47039 7.21686C9.47039 7.22068 9.4653 7.22449 9.4653 7.22449C9.4653 7.22449 9.4653 7.22704 9.46275 7.22704V7.22959H9.45894L9.45003 7.2334H9.44366C9.4093 7.23977 9.35966 7.20795 9.32274 7.18758C9.23365 7.12394 8.98545 6.9712 8.94981 6.64027C8.94472 6.5639 9.00072 6.50026 9.08982 6.4939L9.09236 6.49517ZM3.24502 6.74973C3.23611 6.74973 3.21956 6.77773 3.19411 6.80956C2.97264 7.15958 2.95227 7.68271 3.07446 7.84054C3.1381 7.91309 3.24502 7.94619 3.32393 7.92327C3.46395 7.86345 3.52377 7.58216 3.4894 7.48033C3.44485 7.40778 3.40794 7.39633 3.36212 7.45742C3.26411 7.65471 3.22211 7.51852 3.21574 7.40651C3.20047 7.19904 3.22084 7.00557 3.24375 6.85283C3.25648 6.77646 3.25648 6.74719 3.24375 6.74719L3.24502 6.74973ZM10.7509 7.21049C10.7343 7.21049 10.7178 7.21304 10.6999 7.22322C10.6961 7.22322 10.5421 7.32505 10.4925 7.39887C10.4619 7.42178 10.467 7.44088 10.4746 7.48161C10.4976 7.53634 10.5383 7.51979 10.5867 7.49433C10.6503 7.48415 10.6796 7.52615 10.6758 7.60125C10.6465 7.69671 10.6885 7.73108 10.6885 7.73744C10.6885 7.74253 10.7483 7.79472 10.8196 7.75399C10.9685 7.69671 11.0614 7.63943 11.2714 7.59489C11.3262 7.59489 11.3223 7.44724 11.2358 7.44215C11.1212 7.44724 11.0194 7.45488 10.9049 7.54397C10.8349 7.55925 10.8234 7.51597 10.8069 7.47779C10.789 7.3836 10.8476 7.31741 10.8349 7.24613C10.8374 7.24995 10.7992 7.21559 10.7496 7.21304L10.7509 7.21049ZM15.557 7.38869L15.4552 7.39887C15.4094 7.40778 15.3941 7.42815 15.3852 7.48415C15.389 7.56688 15.4399 7.56307 15.4934 7.59616C15.5239 7.63434 15.5443 7.66998 15.4908 7.73617C15.4399 7.78072 15.4056 7.80617 15.3546 7.85072C15.333 7.89145 15.3165 7.95255 15.3903 7.97291C15.5239 8.0111 15.8332 7.80999 15.8332 7.80745C15.8841 7.76926 15.8663 7.69671 15.8625 7.69671C15.832 7.66362 15.7658 7.68398 15.7225 7.67762C15.7009 7.67762 15.6334 7.66744 15.6639 7.60634C15.6919 7.56816 15.7021 7.54652 15.7212 7.49942C15.7403 7.4536 15.7212 7.42306 15.6474 7.3976C15.6092 7.38996 15.5838 7.38742 15.5545 7.38869H15.557Z" fill="white"></path><path d="M15.5155 9.87303H15.3286L14.2068 9.87303V9.61983C14.2068 9.47992 14.1231 9.36664 14.0198 9.36664C13.9166 9.36664 13.8328 9.47985 13.8328 9.61983V9.87303L3.92358 9.87303C4.29749 10.3793 5.04535 10.6326 5.60629 10.6326C6.00856 10.6326 11.0265 10.6326 13.8328 10.6326V11.1389C13.8328 11.2788 13.9166 11.3921 14.0198 11.3921H15.5155C15.8249 11.3921 16.0765 11.0514 16.0765 10.6325C16.0765 10.2137 15.8249 9.87303 15.5155 9.87303ZM15.5155 10.8857L14.2067 10.8857V10.6325C15.1078 10.6325 15.7025 10.6325 15.7025 10.6325L15.6689 10.4963C15.6883 10.5361 15.7025 10.5812 15.7025 10.6325C15.7025 10.7723 15.6186 10.8857 15.5155 10.8857Z" fill="white"></path></svg><h6 class="ng-binding">موقع حكومي تابع لحكومة المملكة العربية السعودية</h6><div class="btn-digital-stamp-card"><span class="ng-binding">كيف تتحقق</span><svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="elements"></g><path id="Icon" d="M1.40248 0.703524C1.48374 0.811106 1.72634 1.13227 1.87083 1.31741C2.16021 1.68822 2.55561 2.18094 2.98215 2.67221C3.41085 3.16595 3.86119 3.64681 4.26126 4.00031C4.46187 4.17756 4.63809 4.31225 4.78351 4.39992C4.92028 4.48237 5.00107 4.49951 5.00107 4.49951C5.00107 4.49951 5.07949 4.48236 5.21625 4.39992C5.36167 4.31225 5.53789 4.17757 5.7385 4.00031C6.13858 3.64682 6.58892 3.16595 7.01761 2.6722C7.44415 2.18093 7.83955 1.6882 8.12894 1.31739C8.27342 1.13224 8.51569 0.811535 8.59695 0.703952C8.7607 0.481603 9.07404 0.433646 9.29639 0.597401C9.51874 0.761156 9.56623 1.07415 9.40248 1.2965L9.4013 1.29806C9.31618 1.41077 9.06477 1.74363 8.91729 1.93261C8.62137 2.3118 8.21441 2.81907 7.77271 3.32781C7.33316 3.83406 6.84938 4.35319 6.40064 4.74969C6.17684 4.94744 5.94998 5.12525 5.73253 5.25634C5.52882 5.37915 5.27089 5.5 4.99988 5.5C4.72887 5.5 4.47095 5.37914 4.26723 5.25633C4.04979 5.12525 3.82293 4.94744 3.59913 4.74969C3.15038 4.35319 2.6666 3.83406 2.22705 3.32782C1.78535 2.81909 1.3784 2.31182 1.08248 1.93264C0.934942 1.74359 0.683627 1.41086 0.598597 1.29828L0.59752 1.29686C0.433763 1.07451 0.481027 0.761191 0.703374 0.597435C0.925715 0.433684 1.23872 0.481194 1.40248 0.703524Z" fill="#1B8354">                   </path></svg></div></div><div class="digital-stamp-body" style="display: block;"><div class="digital-stamp-container"><div class="box"><div class="img-border-rounded"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M19.4675 4.59755C17.7411 2.80082 14.9292 2.80082 13.2028 4.59755L12.4893 5.34015C12.2023 5.63883 12.2118 6.11361 12.5105 6.4006C12.8092 6.68758 13.284 6.6781 13.5709 6.37942L14.2845 5.63682C15.4206 4.45439 17.2497 4.45439 18.3859 5.63682C19.5382 6.83611 19.5382 8.79249 18.3859 9.99178L15.1465 13.3632C14.9668 13.5502 14.7711 13.7065 14.565 13.8332C13.4569 14.5143 12.0056 14.3629 11.0451 13.3632C10.8888 13.2006 10.7539 13.0244 10.6402 12.8381C10.4243 12.4846 9.96276 12.373 9.60925 12.5889C9.25573 12.8047 9.14414 13.2663 9.36001 13.6198C9.52954 13.8975 9.73075 14.1603 9.96346 14.4025C11.418 15.9162 13.6477 16.1577 15.3504 15.1111C15.6651 14.9177 15.9603 14.6811 16.2281 14.4025L19.4675 11.0311C21.1777 9.25119 21.1776 6.37741 19.4675 4.59755Z" fill="#067647"></path><path d="M14.0368 9.59754C12.3104 7.80082 9.49845 7.80082 7.77206 9.59754L4.53264 12.9689C2.82245 14.7488 2.82245 17.6226 4.53264 19.4025C6.25903 21.1992 9.07094 21.1992 10.7973 19.4025L11.5111 18.6596C11.7981 18.3609 11.7886 17.8861 11.4899 17.5991C11.1913 17.3122 10.7165 17.3216 10.4295 17.6203L9.71571 18.3632C8.57957 19.5456 6.7504 19.5456 5.61426 18.3632C4.46191 17.1639 4.46191 15.2075 5.61426 14.0082L8.85368 10.6368C9.98982 9.45439 11.819 9.45439 12.9551 10.6368C13.1113 10.7994 13.2462 10.9756 13.3599 11.1617C13.5758 11.5152 14.0374 11.6268 14.3909 11.4109C14.7444 11.195 14.856 10.7334 14.6401 10.3799C14.4706 10.1024 14.2694 9.83967 14.0368 9.59754Z" fill="#067647"></path></svg></div><div><h6 class="ng-binding">روابط المواقع الإلكترونية الرسمية السعودية تنتهي بـ  <span class="green-text">sa</span>                                                </h6><p class="ng-binding">جميع روابط المواقع الرسمية للأنشطة والمبادرات في المملكة العربية السعودية تنتهي بـ sa. </p></div></div><div class="box"><div class="img-border-rounded"><svg width="18" height="22" viewBox="0 0 18 22" fill="none"><g id="elements"></g><g id="Icon"></g><path d="M5.5 14.5C5.5 13.9477 5.94772 13.5 6.5 13.5H6.50897C7.06125 13.5 7.50897 13.9477 7.50897 14.5C7.50897 15.0523 7.06125 15.5 6.50897 15.5H6.5C5.94772 15.5 5.5 15.0523 5.5 14.5Z" fill="#067647"></path><path d="M10.491 14.5C10.491 13.9477 10.9387 13.5 11.491 13.5H11.5C12.0523 13.5 12.5 13.9477 12.5 14.5C12.5 15.0523 12.0523 15.5 11.5 15.5H11.491C10.9387 15.5 10.491 15.0523 10.491 14.5Z" fill="#067647"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M3.75 7.45909L3.75 5.5C3.75 2.6005 6.1005 0.25 9 0.25C11.8995 0.25 14.25 2.6005 14.25 5.5V7.45909C15.9408 7.86285 17.239 9.29844 17.4755 11.0552C17.6236 12.1556 17.75 13.3118 17.75 14.5C17.75 15.6882 17.6236 16.8444 17.4755 17.9448C17.2039 19.9618 15.5328 21.5555 13.4748 21.6501C12.0464 21.7158 10.5958 21.75 9 21.75C7.40416 21.75 5.95364 21.7158 4.52522 21.6501C2.46716 21.5555 0.796088 19.9618 0.524518 17.9448C0.376363 16.8444 0.25 15.6882 0.25 14.5C0.25 13.3118 0.376363 12.1556 0.524518 11.0552C0.761044 9.29844 2.05919 7.86285 3.75 7.45909ZM5.25 5.5C5.25 3.42893 6.92893 1.75 9 1.75C11.0711 1.75 12.75 3.42893 12.75 5.5V7.31937C11.5532 7.27365 10.3269 7.25 9 7.25C7.67315 7.25 6.44676 7.27365 5.25 7.31937L5.25 5.5ZM9 8.75C7.42645 8.75 5.9989 8.78372 4.5941 8.8483C3.2851 8.90848 2.18929 9.93188 2.0111 11.2553C1.86573 12.3351 1.75 13.4129 1.75 14.5C1.75 15.5871 1.86573 16.6649 2.0111 17.7447C2.18929 19.0681 3.2851 20.0915 4.5941 20.1517C5.9989 20.2163 7.42645 20.25 9 20.25C10.5736 20.25 12.0011 20.2163 13.4059 20.1517C14.7149 20.0915 15.8107 19.0681 15.9889 17.7447C16.1343 16.6649 16.25 15.5871 16.25 14.5C16.25 13.4129 16.1343 12.3351 15.9889 11.2553C15.8107 9.93188 14.7149 8.90848 13.4059 8.8483C12.0011 8.78372 10.5736 8.75 9 8.75Z" fill="#067647"></path></svg></div><div><h6 class="ng-binding"> المواقع الإلكترونية الحكومية تستخدم بروتوكول <span class="green-text ng-binding">HTTPS</span> للتشفير والأمان.                                                </h6><p class="ng-binding">المواقع الإلكترونية الآمنة في المملكة العربية السعودية تستخدم بروتوكول HTTPS للتشفير.                                            </p></div></div></div><div class="stamp-link-box"><svg width="21" height="31" viewBox="0 0 21 31" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="DGA logo"></g><path id="Vector" d="M11.3686 15.0182C11.213 15.1314 11.114 15.3152 11.114 15.5132V20.5334C11.114 20.8728 11.3827 21.1415 11.7221 21.1415C12.0615 21.1415 12.3302 20.8728 12.3302 20.5334V15.8243L17.6615 12.091C17.8454 12.1899 18.0433 12.2324 18.2696 12.2324C18.9908 12.2324 19.5848 11.6526 19.5848 10.9172C19.5848 10.196 19.005 9.60205 18.2696 9.60205C17.5484 9.60205 16.9544 10.1819 16.9544 10.9172C16.9544 10.9738 16.9544 11.0303 16.9686 11.0728L11.3686 15.0182Z" fill="url(#paint0_linear_51_98)"></path><path id="Vector_2" d="M7.59282 13.6889V18.695C7.16857 18.9213 6.88574 19.3455 6.88574 19.8546C6.88574 20.5758 7.46554 21.1697 8.2009 21.1697C8.92211 21.1697 9.51605 20.5899 9.51605 19.8546C9.51605 19.3455 9.23322 18.9071 8.80898 18.695V14.0142L16.6999 8.49898C16.8555 8.38585 16.9545 8.20201 16.9545 8.00403V4.27068C16.9545 3.93129 16.6858 3.6626 16.3464 3.6626C16.007 3.6626 15.7383 3.93129 15.7383 4.27068V7.67878L7.84736 13.194C7.67766 13.2929 7.57867 13.4768 7.59282 13.6889Z" fill="url(#paint1_linear_51_98)"></path><path id="Vector_3" d="M17.0393 15.3576L15.0312 16.7718C14.7484 16.9697 14.6918 17.3374 14.8898 17.6203C15.0029 17.79 15.2009 17.8748 15.3847 17.8748C15.512 17.8748 15.6251 17.8465 15.7383 17.7617L17.7464 16.3475C18.0292 16.1495 18.0858 15.7819 17.8878 15.499C17.7039 15.2303 17.3221 15.1596 17.0393 15.3576Z" fill="url(#paint2_linear_51_98)"></path><path id="Vector_4" d="M20.8858 18.9071C20.6878 18.6243 20.306 18.5536 20.0231 18.7516L10.5059 25.4122L0.988723 18.7516C0.705894 18.5536 0.324069 18.6243 0.126088 18.9071C-0.0718928 19.19 -0.00118027 19.5718 0.281649 19.7698L9.43119 26.1759L6.75844 28.0567C6.5746 27.9577 6.36248 27.9153 6.15036 27.9153C5.41501 27.9153 4.82106 28.5092 4.82106 29.2446C4.82106 29.9799 5.41501 30.5738 6.15036 30.5738C6.88572 30.5738 7.47966 29.9799 7.47966 29.2446C7.47966 29.188 7.47966 29.1314 7.46552 29.0749L10.5201 26.9395L13.5746 29.0749C13.5746 29.1314 13.5605 29.188 13.5605 29.2446C13.5605 29.9799 14.1544 30.5738 14.8898 30.5738C15.6251 30.5738 16.2191 29.9799 16.2191 29.2446C16.2191 28.5092 15.6251 27.9153 14.8898 27.9153C14.6635 27.9153 14.4655 27.9718 14.2817 28.0567L11.609 26.1759L20.7585 19.7698C21.0131 19.5718 21.0838 19.19 20.8858 18.9071Z" fill="url(#paint3_linear_51_98)"></path><path id="Vector_5" d="M3.97253 4.46872L5.98062 3.05457C6.26345 2.85659 6.32002 2.48891 6.12204 2.20608C6.00891 2.03639 5.81093 1.95154 5.62709 1.95154C5.49981 1.95154 5.38668 1.97982 5.27355 2.06467L3.26546 3.47882C2.98263 3.6768 2.92606 4.04447 3.12404 4.3273C3.30788 4.59599 3.6897 4.6667 3.97253 4.46872Z" fill="url(#paint4_linear_51_98)"></path><path id="Vector_6" d="M12.2029 2.47476V5.82629L4.31192 11.3415C4.15636 11.4546 4.05737 11.6384 4.05737 11.8364V15.5698C4.05737 15.9092 4.32606 16.1778 4.66545 16.1778C5.00485 16.1778 5.27354 15.9092 5.27354 15.5698V12.1617L13.1645 6.64649C13.32 6.53336 13.419 6.34952 13.419 6.15154V2.47476C13.8433 2.24849 14.1261 1.82425 14.1261 1.31516C14.1261 0.593945 13.5463 0 12.8109 0C12.0897 0 11.4958 0.579803 11.4958 1.31516C11.5099 1.81011 11.7928 2.24849 12.2029 2.47476Z" fill="url(#paint5_linear_51_98)"></path><path id="Vector_7" d="M2.72812 10.196C3.44933 10.196 4.04327 9.61623 4.04327 8.88087C4.04327 8.8243 4.04328 8.76774 4.02914 8.72531L9.62916 4.80812C9.78471 4.69499 9.8837 4.51115 9.8837 4.31317V0.622242C9.8837 0.282846 9.61502 0.0141602 9.27562 0.0141602C8.93623 0.0141602 8.66754 0.282846 8.66754 0.622242V4.00206L3.3362 7.72127C3.15236 7.62228 2.95438 7.57985 2.72812 7.57985C2.0069 7.57985 1.41296 8.15965 1.41296 8.89501C1.42711 9.61622 2.0069 10.196 2.72812 10.196Z" fill="url(#paint6_linear_51_98)"></path><defs></defs><linearGradient id="paint0_linear_51_98" x1="15.3524" y1="3.95793" x2="15.3524" y2="27.7715" gradientUnits="userSpaceOnUse"><stop stop-color="#00ABAF"></stop><stop offset="0.24" stop-color="#0093B4"></stop><stop offset="0.48" stop-color="#0080BA"></stop><stop offset="1" stop-color="#774896"></stop></linearGradient><linearGradient id="paint1_linear_51_98" x1="11.9192" y1="3.9579" x2="11.9192" y2="27.7715" gradientUnits="userSpaceOnUse"><stop stop-color="#00ABAF"></stop><stop offset="0.24" stop-color="#0093B4"></stop><stop offset="0.48" stop-color="#0080BA"></stop><stop offset="1" stop-color="#774896"></stop></linearGradient><linearGradient id="paint2_linear_51_98" x1="16.387" y1="3.95793" x2="16.387" y2="27.7715" gradientUnits="userSpaceOnUse"><stop stop-color="#00ABAF"></stop><stop offset="0.24" stop-color="#0093B4"></stop><stop offset="0.48" stop-color="#0080BA"></stop><stop offset="1" stop-color="#774896"></stop></linearGradient><linearGradient id="paint3_linear_51_98" x1="10.5052" y1="3.95793" x2="10.5052" y2="27.7715" gradientUnits="userSpaceOnUse"><stop stop-color="#29B2B2"></stop><stop offset="0.27" stop-color="#1091B3"></stop><stop offset="0.48" stop-color="#017EB5"></stop><stop offset="1" stop-color="#704B98"></stop></linearGradient><linearGradient id="paint4_linear_51_98" x1="4.62328" y1="3.95796" x2="4.62328" y2="27.7715" gradientUnits="userSpaceOnUse"><stop stop-color="#00ABAF"></stop><stop offset="0.24" stop-color="#0093B4"></stop><stop offset="0.48" stop-color="#0080BA"></stop><stop offset="1" stop-color="#774896"></stop></linearGradient><linearGradient id="paint5_linear_51_98" x1="9.09284" y1="3.95794" x2="9.09284" y2="27.7715" gradientUnits="userSpaceOnUse"><stop stop-color="#00ABAF"></stop><stop offset="0.24" stop-color="#0093B4"></stop><stop offset="0.48" stop-color="#0080BA"></stop><stop offset="1" stop-color="#774896"></stop></linearGradient><linearGradient id="paint6_linear_51_98" x1="5.65795" y1="3.95796" x2="5.65795" y2="27.7715" gradientUnits="userSpaceOnUse"><stop stop-color="#00ABAF"></stop><stop offset="0.24" stop-color="#0093B4"></stop><stop offset="0.48" stop-color="#0080BA"></stop><stop offset="1" stop-color="#774896"></stop></linearGradient></svg><p class="ng-binding">مسجل لدى هيئة الحكومة الرقمية تحت :<a href="https://raqmi.dga.gov.sa/platforms/platforms/ce4a1512-9794-4830-a76a-08ddda95e089/platform-license">20250818237                                </a></p></div></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <div id="gotoTop" class="icon-angle-up"></div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha384-1H217gwSVyLSIfaLxHbE7dRb3v4mYCKbpQvzx0cegeju1MVsGrX5xXxAvs/HgeFs" crossorigin="anonymous"></script>
+    <script src="/Scripts/bootstrap.js"></script>
+
+    <script src="/js/plugins.js"></script>
+    <script src="/js/functions.js"></script>
+    <script src="/js/image-map-pro.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="/js/language-preference.js"></script>
+    <script src="/js/contact-captcha.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Display TempData messages using toastr
+
+            // debugger
+            $('.btn-digital-stamp-card').on('click', function () {
+                $(this).parent().toggleClass("open");
+                $(this).parent().next('.digital-stamp-body').slideToggle("fast");
+            });
+        });
+
+        // Owl Carousel Scripts
+        $('#custom-owl-slider-facts').owlCarousel({
+            loop: true,
+            autoplay: true,
+            nav: true,
+            navText: ['<i class="icon-line-arrow-left"></i>', '<i class="icon-line-arrow-right"></i>'],
+            dots: false,
+            rtl: true,
+            responsiveClass: true,
+            responsive: {
+                0: { dots: false, margin: 10, items: 1, slideBy: 1, rtl: true },
+                400: { dots: false, margin: 10, items: 1, slideBy: 1, rtl: true },
+                600: { dots: false, margin: 10, items: 3, slideBy: 3, rtl: true },
+                800: { dots: false, margin: 10, items: 4, slideBy: 4, rtl: true },
+                1200: { dots: false, margin: 10, items: 5, slideBy: 5, rtl: true }
+            }
+        });
+        $('#grandproject').owlCarousel({
+            items: 3,
+            rtl: true,
+            nav: false,
+            dots: false,
+            autoplay: true,
+            loop: true
+        });
+
+        $('#greenfacts').owlCarousel({
+            items: 4,
+            rtl: true,
+            nav: false,
+            dots: false,
+            autoplay: true,
+            loop: false
+            //margin:40
+        });
+        $('#custom-owl-slider').owlCarousel({
+            autoplay: false,
+            center: true,
+            loop: true,
+            nav: true,
+
+            dots: true,
+
+
+            nav: true,
+            navText: ['<i class="icon-line-arrow-left"></i>', '<i class="icon-line-arrow-right"></i>'],
+            dots: true,
+            rtl: true,
+
+            responsive: {
+                0: { items: 1, dots: false, slideBy: 1, stagePadding: 0, margin: 5 },
+                400: { items: 1, dots: false, slideBy: 1, stagePadding: 0, margin: 5 },
+                600: { items: 2, dots: false, slideBy: 2, stagePadding: 0, margin: 5 },
+                800: { items: 4, dots: false, slideBy: 4, stagePadding: 0, margin: 5 },
+                1200: { items: 5, dotsEach: 5, slideBy: 5, stagePadding: 150, margin: 40 }
+            }
+        });
+
+
+        $('#oc-images-contact').owlCarousel({
+            items: 1,
+            rtl: true,
+            nav: false,
+            dots: false,
+            autoplay: true,
+            loop: true
+        });
+
+        $('#custom-owl-slider-vision').owlCarousel({
+            items: 1,
+            rtl: true,
+            nav: false,
+            dots: false,
+            autoplay: true,
+            loop: true,
+            stageClass: "owl-stage nopadding",
+        });
+        $('#oc-location').owlCarousel({
+            items: 1,
+            rtl: true,
+            nav: false,
+            dots: true,
+            autoplay: true,
+            loop: true
+        });
+        $('#custom-owl-slider-tree').owlCarousel({
+            items: 1,
+            rtl: true,
+            nav: true,
+            dots: false,
+            autoplay: true,
+            stagePadding: 5,
+            navText: ['<i class="icon-line-arrow-left"></i>', '<i class="icon-line-arrow-right"></i>'],
+            margin: 60,
+            loop: true
+        });
+        $('#oc-benefits').owlCarousel({
+            items: 1,
+            rtl: true,
+            nav: false,
+            dots: false,
+            autoplay: true,
+            loop: true
+        });
+
+        $('#oc-information').owlCarousel({
+            items: 1,
+            rtl: true,
+            nav: false,
+            dots: false,
+            autoplay: true,
+            loop: true
+        });
+        $('#oc-features').owlCarousel({
+            items: 1,
+            rtl: true,
+            margin: 60,
+            nav: true,
+            navText: ['<i class="icon-line-arrow-right"></i>', '<i class="icon-line-arrow-left"></i>'],
+            dots: false,
+            stagePadding: 30,
+            responsive: {
+                768: { items: 2 },
+                1200: { stagePadding: 200 }
+            }
+        });
+    </script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            pagination: {
+                el: '.swiper-pagination',
+                paginationClickable: true
+            }
+        });
+
+        $('.boxright').removeClass('bounceInRight animated').delay(50).queue(
+            function (next) {
+                $(this).addClass('bounceInRight animated');
+                next();
+            }
+        );
+
+        $('.boxleft').removeClass('bounceInLeft animated').delay(50).queue(
+            function (next) {
+                $(this).addClass('bounceInLeft animated');
+                next();
+            }
+        );
+
+
+
+        $('.boxrights').each(function () {
+            var classToAdd = 'visible-o animated slow ' + ($(this).data('vp-animate') ? $(this).data('vp-animate') : 'bounceInRight');
+
+            $(this).addClass('hidden-o').viewportChecker({
+                classToAdd: classToAdd,
+                offset: 10,
+                repeat: true
+            });
+        });
+
+        $('#section-component .fbox-icon').each(function () {
+            var classToAdd = 'visible-o animated slower ' + ($(this).data('vp-animate') ? $(this).data('vp-animate') : 'bounceInRight');
+
+            $(this).addClass('hidden-o').viewportChecker({
+                classToAdd: classToAdd,
+                offset: 100,
+                repeat: true
+            });
+        });
+
+
+    </script>
+
+    <script type="text/javascript">
+        ; (function ($, window, document, undefined) {
+            $(document).ready(function () {
+                $('#image-map-pro-container').imageMapPro({ "id": 3397, "general": { "name": "ss", "shortcode": "green", "width": 3997, "height": 2087, "naturalWidth": 2500, "naturalHeight": 1299 }, "image": { "url": "images/map/1.jpg" }, "layers": { "enable_layers": 1, "layers_list": [{ "id": 0, "title": "تشجير الأودية وروافدها", "image_url": "images/map/1.jpg", "image_width": 2500, "image_height": 1299 }, { "id": 1, "title": "تشجير المتنزهات العامة وحدائق الأحياء", "image_url": "images/map/2.jpg", "image_width": 2500, "image_height": 1299 }, { "id": 2, "title": "تشجير الطرق والشوارع", "image_url": "images/map/3.jpg", "image_width": 2500, "image_height": 1299 }, { "id": 3, "title": "تشجير المساجد", "image_url": "images/map/4.jpg", "image_width": 2500, "image_height": 1299 }, { "id": 4, "title": "تشجير المنشآت الحكومية", "image_url": "images/map/5.jpg", "image_width": 2500, "image_height": 1299 }, { "id": 5, "title": "تشجير المنشآت التعليمية", "image_url": "images/map/6.jpg", "image_width": 2500, "image_height": 1299 }, { "id": 6, "title": "تشجير المنشآت الصحية", "image_url": "images/map/7.jpg", "image_width": 2500, "image_height": 1299 }, { "id": 7, "title": "تشجير الأحزمة الخضراء", "image_url": "images/map/8.jpg", "image_width": 2500, "image_height": 1299 }] }, "spots": [] });
+
+            });
+        })(jQuery, window, document);
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+       <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-136820676-2');
+    </script>
+
+</body>
+</html>

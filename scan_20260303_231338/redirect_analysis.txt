@@ -1,0 +1,16 @@
+REDIRECT CHAIN ANALYSIS
+==================================================
+Original : http://lightspark.com/
+Final    : https://www.lightspark.com/
+Hops     : 3
+
+CHAIN:
+  1. ORIGINAL: http://lightspark.com/
+  2. 308: http://lightspark.com/ → https://lightspark.com/
+  3. 301: https://lightspark.com/ → https://www.lightspark.com/
+  4. 200: https://www.lightspark.com/ → 
+  5. FINAL: https://www.lightspark.com/ (200)
+
+SECURITY:
+  Domains     : 2 (www.lightspark.com, lightspark.com)
+  HTTP→HTTPS  : Yes

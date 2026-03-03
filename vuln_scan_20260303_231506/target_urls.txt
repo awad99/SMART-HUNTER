@@ -1,0 +1,11 @@
+https://security.oppo.com/en/?id=FUZZ
+https://security.oppo.com/en/?search=FUZZ
+https://security.oppo.com/en/?q=FUZZ
+https://security.oppo.com/en/?query=FUZZ
+https://security.oppo.com/en/?page=FUZZ
+https://security.oppo.com/en/?user=FUZZ
+https://security.oppo.com/en/?name=FUZZ
+https://security.oppo.com/en/?cat=FUZZ
+https://security.oppo.com/en/?file=FUZZ
+https://security.oppo.com/en/?cmd=FUZZ
+https://security.oppo.com/en/?action=FUZZ

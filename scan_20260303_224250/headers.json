@@ -1,0 +1,60 @@
+[
+  {
+    "url": "http://braze.com/",
+    "status_code": 308,
+    "headers": {
+      "date": "Tue, 03 Mar 2026 19:42:14 GMT",
+      "content-type": "text/plain",
+      "transfer-encoding": "chunked",
+      "connection": "keep-alive",
+      "location": "https://apex-origin.braze.com/",
+      "refresh": "0;url=https://apex-origin.braze.com/",
+      "cf-cache-status": "DYNAMIC",
+      "set-cookie": "__cf_bm=P5HMB54j51AmIdayKgoVArbVPCEBXWfANjUIAeOkuGI-1772566934-1.0.1.1-YrTPiV7AGStM99Bp4gqLi39TjlodDDaoBIM4Yzr5mn_1CzQJH8y6U.Fzfg7hY_9CnNlevQHjWZ5rno3OZnxqXJ6X7DALSjWzWdM3CqJ.Pdo; path=/; expires=Tue, 03-Mar-26 20:12:14 GMT; domain=.braze.com; HttpOnly",
+      "server": "cloudflare",
+      "cf-ray": "9d6b1f8b4bf4e1c4-MRS"
+    },
+    "timestamp": "2026-03-03T22:42:50.442219"
+  },
+  {
+    "url": "https://apex-origin.braze.com/",
+    "status_code": 307,
+    "headers": {
+      "cache-control": "public, max-age=0, must-revalidate",
+      "content-type": "text/plain",
+      "date": "Tue, 03 Mar 2026 19:42:15 GMT",
+      "location": "https://www.braze.com/",
+      "server": "Vercel",
+      "strict-transport-security": "max-age=63072000",
+      "x-vercel-id": "bom1::tlk4j-1772566935104-92908adb03c6",
+      "transfer-encoding": "chunked"
+    },
+    "timestamp": "2026-03-03T22:42:51.253709"
+  },
+  {
+    "url": "https://www.braze.com/",
+    "status_code": 200,
+    "headers": {
+      "date": "Tue, 03 Mar 2026 19:42:16 GMT",
+      "content-type": "text/html; charset=utf-8",
+      "transfer-encoding": "chunked",
+      "connection": "keep-alive",
+      "age": "0",
+      "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+      "link": "</_next/static/media/2a8eef3e7605f77a-s.p.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff2\", </_next/static/media/54088f7615d464cb-s.p.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff2\", </_next/static/media/cb582783ce2d3356-s.p.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff2\", </_next/static/media/eb552532c19dec2b-s.p.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff2\", </_next/static/media/f91e284bb8ff37e3-s.p.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff2\"",
+      "set-cookie": "NEXT_LOCALE=en-us; Path=/; SameSite=lax, NEXT_LOCALE=en-us; Path=/; SameSite=lax, __cf_bm=H1_V4QQClw4ctZ_TWQ3JJjjPvqkQRWwpkd0XNgAR95Q-1772566936-1.0.1.1-bxWg5JTenRoRnsL6oAIN_veX88AvpXqfl_4oqoVgxRFw7pOT.YoWVkmMVptDx_8uO87duuX.VNqDv2g6oy6yqeE0bmFD80_XPqzYX8HEp7A; path=/; expires=Tue, 03-Mar-26 20:12:16 GMT; domain=.braze.com; HttpOnly; Secure; SameSite=None",
+      "strict-transport-security": "max-age=63072000",
+      "vary": "RSC, Next-Router-State-Tree, Next-Router-Prefetch, accept-encoding",
+      "x-current-path": "/",
+      "x-matched-path": "/[locale]/[[...slug]]",
+      "x-powered-by": "Next.js",
+      "x-vercel-cache": "MISS",
+      "x-vercel-id": "cdg1::iad1::rwplc-1772566935920-36daaf47c664",
+      "cf-cache-status": "DYNAMIC",
+      "server": "cloudflare",
+      "cf-ray": "9d6b1f955e4ae1ae-MRS",
+      "content-encoding": "gzip"
+    },
+    "timestamp": "2026-03-03T22:42:53.102550"
+  }
+]

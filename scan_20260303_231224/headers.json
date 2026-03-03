@@ -1,0 +1,50 @@
+[
+  {
+    "url": "http://inspectorio.com/",
+    "status_code": 308,
+    "headers": {
+      "content-type": "text/plain",
+      "location": "https://inspectorio.com/",
+      "refresh": "0;url=https://inspectorio.com/",
+      "server": "Vercel"
+    },
+    "timestamp": "2026-03-03T23:12:25.212419"
+  },
+  {
+    "url": "https://inspectorio.com/",
+    "status_code": 308,
+    "headers": {
+      "cache-control": "public, max-age=0, must-revalidate",
+      "content-type": "text/plain",
+      "date": "Tue, 03 Mar 2026 20:11:50 GMT",
+      "location": "https://www.inspectorio.com/",
+      "refresh": "0;url=https://www.inspectorio.com/",
+      "server": "Vercel",
+      "strict-transport-security": "max-age=63072000",
+      "x-vercel-id": "bom1::xfhdl-1772568710007-bf793bf719bf",
+      "transfer-encoding": "chunked"
+    },
+    "timestamp": "2026-03-03T23:12:26.065931"
+  },
+  {
+    "url": "https://www.inspectorio.com/",
+    "status_code": 200,
+    "headers": {
+      "age": "107153",
+      "cache-control": "public, max-age=0, must-revalidate",
+      "content-encoding": "gzip",
+      "content-type": "text/html; charset=utf-8",
+      "date": "Mon, 02 Mar 2026 14:25:57 GMT",
+      "etag": "W/\"m57nudav1e3ohf\"",
+      "link": "<https://www.inspectorio.com/>; rel=\"alternate\"; hreflang=\"en\", <https://www.inspectorio.com/zh>; rel=\"alternate\"; hreflang=\"zh\", <https://www.inspectorio.com/es>; rel=\"alternate\"; hreflang=\"es\", <https://www.inspectorio.com/fr>; rel=\"alternate\"; hreflang=\"fr\", <https://www.inspectorio.com/vi>; rel=\"alternate\"; hreflang=\"vi\", <https://www.inspectorio.com/>; rel=\"alternate\"; hreflang=\"x-default\"",
+      "server": "Vercel",
+      "strict-transport-security": "max-age=63072000",
+      "vary": "RSC, Next-Router-State-Tree, Next-Router-Prefetch, Next-Url",
+      "x-matched-path": "/en",
+      "x-vercel-cache": "HIT",
+      "x-vercel-id": "bom1::iad1::sjjhn-1772568710857-303b0c5c941e",
+      "transfer-encoding": "chunked"
+    },
+    "timestamp": "2026-03-03T23:12:26.955489"
+  }
+]

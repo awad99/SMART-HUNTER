@@ -1,0 +1,51 @@
+[
+  {
+    "url": "http://lightspark.com/",
+    "status_code": 308,
+    "headers": {
+      "content-type": "text/plain",
+      "location": "https://lightspark.com/",
+      "refresh": "0;url=https://lightspark.com/",
+      "server": "Vercel"
+    },
+    "timestamp": "2026-03-03T23:13:39.209842"
+  },
+  {
+    "url": "https://lightspark.com/",
+    "status_code": 301,
+    "headers": {
+      "cache-control": "public, max-age=0, must-revalidate",
+      "content-type": "text/plain",
+      "date": "Tue, 03 Mar 2026 20:13:04 GMT",
+      "location": "https://www.lightspark.com/",
+      "server": "Vercel",
+      "strict-transport-security": "max-age=63072000",
+      "x-vercel-id": "bom1::vsqw2-1772568784504-abc2d71c2cd7",
+      "transfer-encoding": "chunked"
+    },
+    "timestamp": "2026-03-03T23:13:40.679360"
+  },
+  {
+    "url": "https://www.lightspark.com/",
+    "status_code": 200,
+    "headers": {
+      "age": "76",
+      "cache-control": "public, max-age=0, must-revalidate",
+      "content-encoding": "gzip",
+      "content-security-policy": "connect-src 'self' *.analytics.google.com *.g.doubleclick.net *.google-analytics.com *.google.com *.googletagmanager.com api.hsforms.com api.hubapi.com cdn.jsdelivr.net consent.api.osano.com forms.hscollectedforms.net google.com pagead2.googlesyndication.com px.ads.linkedin.com tattle.api.osano.com unpkg.com www.facebook.com *.visualwebsiteoptimizer.com js.hsadspixel.net *.getwarmly.com *.hubspot.com internal.prismic.io *.ip-api.com *.vector.co *.usbrowserspeed.com *.liadm.com www.googleadservices.com *.userledclient.io *.userled.io *.calendly.com *.segment.com *.segment.io *.amplitude.com *.hsappstatic.net; default-src 'self'; font-src 'self' data: fonts.gstatic.com *.website-files.com *.prod.website-files.com; form-action 'self' www.facebook.com *.visualwebsiteoptimizer.com; frame-ancestors 'self'; frame-src 'self' cmp.osano.com jobs.ashbyhq.com td.doubleclick.net www.facebook.com www.google.com www.googletagmanager.com/ www.youtube.com *.calendly.com calendly.com *.visualwebsiteoptimizer.com platform.twitter.com *.twitter.com; img-src 'self' blob: data: *; media-src 'self' *; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' blob: *.googletagmanager.com *.visualwebsiteoptimizer.com cmp.osano.com connect.facebook.net googleads.g.doubleclick.net i.simpli.fi jobs.ashbyhq.com js.hs-analytics.net js.hs-banner.com js.hs-scripts.com js.hscollectedforms.net snap.licdn.com tag.simpli.fi www.google.com www.googleadservices.com js.hsadspixel.net js.hubspot.com *.gstatic.com pagead2.googlesyndication.com www.youtube.com internal.prismic.io *.vector.co *.ip-api.com *.usbrowserspeed.com *.liadm.com *.userledclient.io *.userled.io *.calendly.com *.segment.com *.segment.io *.jsdelivr.net *.cloudfront.net *.prod.website-files.com *.website-files.com *.amplitude.com platform.twitter.com *.twitter.com; style-src 'self' 'unsafe-inline' fonts.googleapis.com *.website-files.com *.prod.website-files.com",
+      "content-type": "text/html; charset=utf-8",
+      "date": "Fri, 20 Feb 2026 00:41:21 GMT",
+      "etag": "W/\"eechp99ihd1mcq\"",
+      "server": "Vercel",
+      "strict-transport-security": "max-age=63072000",
+      "x-content-type-options": "nosniff",
+      "x-frame-options": "DENY",
+      "x-matched-path": "/en",
+      "x-powered-by": "Next.js",
+      "x-vercel-cache": "HIT",
+      "x-vercel-id": "bom1::iad1::cr9kn-1772568785783-28005c4eee99",
+      "transfer-encoding": "chunked"
+    },
+    "timestamp": "2026-03-03T23:13:41.850630"
+  }
+]

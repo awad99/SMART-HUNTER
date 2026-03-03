@@ -1,4 +1,0 @@
-# Target: https://sa-en.ring.com/
-GET: []
-POST: []
-ENDPOINTS:

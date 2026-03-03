@@ -1,0 +1,29 @@
+[*] Running findomain for: https://riyadhgreen.sa/
+www.riyadhgreen.sa
+grg.riyadhgreen.sa
+ce.riyadhgreen.sa
+www.grg.riyadhgreen.sa
+nh.riyadhgreen.sa
+gis.riyadhgreen.sa
+riyadhgreen.sa
+dbo.riyadhgreen.sa
+gallery.riyadhgreen.sa
+db.riyadhgreen.sa
+pm.riyadhgreen.sa
+[*] Running subfinder for: riyadhgreen.sa
+ce.riyadhgreen.sa
+grg.riyadhgreen.sa
+gallery.riyadhgreen.sa
+www.db.riyadhgreen.sa
+www.ce.riyadhgreen.sa
+nh.riyadhgreen.sa
+www.grg.riyadhgreen.sa
+mail.db.riyadhgreen.sa
+db.riyadhgreen.sa
+mail.riyadhgreen.sa
+pm.riyadhgreen.sa
+dbo.riyadhgreen.sa
+gis.riyadhgreen.sa
+www.riyadhgreen.sa
+mail.ce.riyadhgreen.sa
+[*] Running assetfinder for: https://riyadhgreen.sa/

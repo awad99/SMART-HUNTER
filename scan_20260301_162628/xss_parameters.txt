@@ -1,4 +1,0 @@
-# Target: https://www.flipkart.com/
-GET: []
-POST: []
-ENDPOINTS:
