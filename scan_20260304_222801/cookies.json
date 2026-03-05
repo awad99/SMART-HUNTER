@@ -1,0 +1,37 @@
+[
+  {
+    "name": "_ua",
+    "value": "{\"session_id\":\"d3b4acc8-ccea-4747-be75-e53da718d2d2\",\"session_time_ms\":1772652444922}",
+    "domain": "www.uber.com",
+    "url": "https://www.uber.com/",
+    "timestamp": "2026-03-04T22:28:03.279475"
+  },
+  {
+    "name": "user_city_ids",
+    "value": "599",
+    "domain": "www.uber.com",
+    "url": "https://www.uber.com/",
+    "timestamp": "2026-03-04T22:28:03.279532"
+  },
+  {
+    "name": "jwt-session",
+    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InNsYXRlLWV4cGlyZXMtYXQiOjE3NzI2NTQyNDQ5MzN9LCJpYXQiOjE3NzI2NTI0NDQsImV4cCI6MTc3MjczODg0NH0.FmwyaqXzFNTPzbQpw5kIBTw2N1Yme16nLCLxrsJ7EbA",
+    "domain": "www.uber.com",
+    "url": "https://www.uber.com/",
+    "timestamp": "2026-03-04T22:28:03.279550"
+  },
+  {
+    "name": "marketing_vistor_id",
+    "value": "af799362-9fc5-468c-ac86-14f56ac256af",
+    "domain": "www.uber.com",
+    "url": "https://www.uber.com/",
+    "timestamp": "2026-03-04T22:28:03.279595"
+  },
+  {
+    "name": "__cf_bm",
+    "value": "PM6tNzDT5hbnL_5pGoYKmvGFM45rUnnyoL_CN0ASZQ4-1772652445-1.0.1.1-a82cqTV6OI7Ir9qRstmm9z7.CWKRyZvNlhpimGGLuopJGKvL_ZIwpOKzaB.SLtAumcYCtorrtQFUoXlNJbQu0Kxsuxn_leBIaUZPaZciSnI",
+    "domain": "www.uber.com",
+    "url": "https://www.uber.com/",
+    "timestamp": "2026-03-04T22:28:03.279636"
+  }
+]

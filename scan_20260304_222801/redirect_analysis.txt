@@ -1,0 +1,14 @@
+REDIRECT CHAIN ANALYSIS
+==================================================
+Original : https://www.uber.com/
+Final    : https://www.uber.com/
+Hops     : 1
+
+CHAIN:
+  1. ORIGINAL: https://www.uber.com/
+  2. 406: https://www.uber.com/ → 
+  3. FINAL: https://www.uber.com/ (406)
+
+SECURITY:
+  Domains     : 1 (www.uber.com)
+  HTTP→HTTPS  : No

@@ -1,0 +1,16 @@
+[
+  {
+    "url": "https://www.uber.com/",
+    "type": "ORIGINAL"
+  },
+  {
+    "url": "https://www.uber.com/",
+    "status_code": 406,
+    "location": ""
+  },
+  {
+    "url": "https://www.uber.com/",
+    "type": "FINAL",
+    "status": 406
+  }
+]

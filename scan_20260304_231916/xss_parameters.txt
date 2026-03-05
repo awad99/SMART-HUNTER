@@ -1,0 +1,29 @@
+# Target: https://www.netflix.com/sa-en/
+GET: []
+POST: []
+ENDPOINTS:
+https://policies.google.com/privacy
+https://assets.nflxext.com/ffe/siteui/common/icons/nficon2016.png
+https://www.netflix.com/sa-en/browse/genre/839338
+https://fast.com
+tel:800 850 1076
+https://help.netflix.com/legal/termsofuse
+/redeem
+https://help.netflix.com/support/412
+https://logs.netflix.com/log/wwwhead/cl/2?fetchType=css&amp;eventType=WebsiteDetect&amp;modalView=nonmemberHomepage
+/gift-cards
+/watch
+https://jobs.netflix.com/jobs
+https://help.netflix.com/legal/corpinfo
+https://media.netflix.com/
+#
+http://ir.netflix.com/
+https://help.netflix.com/legal/notices
+https://assets.nflxext.com/ffe/siteui/common/icons/nficon2023.ico
+/sa-en/login
+https://help.netflix.com
+https://help.netflix.com/legal/privacy
+https://policies.google.com/terms
+/youraccount
+https://occ.a.nflxso.net/genc/hawkins/5.13.0/font/netflix-sans-core-variable-full.woff2
+https://help.netflix.com/contactus

@@ -771,9 +771,9 @@ def get_parameters(url):
 
 def show_phase_prediction(scanner, phase: int, url: str, confirmed_vulns=None):
     PHASE_LABELS = {
-        1:  "⚡ PHASE 1 — EARLY PREDICTION  (URL structure only, before recon)",
-        21: "🔬 PHASE 2A — RECON PREDICTION  (live features, after page fetch)",
-        22: "🎯 PHASE 2B — FINAL PREDICTION  (post-scan, confirmed results)",
+        1:  " PHASE 1 — EARLY PREDICTION  (URL structure only, before recon)",
+        21: " PHASE 2A — RECON PREDICTION  (live features, after page fetch)",
+        22: " PHASE 2B — FINAL PREDICTION  (post-scan, confirmed results)",
     }
     WIDTH = 64
 
@@ -854,7 +854,7 @@ def show_phase_prediction(scanner, phase: int, url: str, confirmed_vulns=None):
         # Final recommended paths based on confirmed results
         print(f"\n  ── FINAL EXPLOIT PATHS (based on confirmed results) {'─'*11}")
         for vuln_name, count in confirmed_types.items():
-            print(f"  🎯 [{vuln_name.upper()}] — {count} confirmed vector(s):")
+            print(f"  [{vuln_name.upper()}] — {count} confirmed vector(s):")
             for step in ATTACK_PATH_MAP.get(vuln_name, []):
                 print(f"      → {step}")
 

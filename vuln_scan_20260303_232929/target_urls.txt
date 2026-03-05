@@ -1,7 +1,0 @@
-https://riyadhgreen.sa/Home/SendForm?Email=FUZZ
-https://riyadhgreen.sa/Home/SendForm?__RequestVerificationToken=FUZZ
-https://riyadhgreen.sa/Home/SendForm?CaptchaInput=FUZZ
-https://riyadhgreen.sa/Home/SendForm?Name=FUZZ
-https://riyadhgreen.sa/Home/SendForm?lang=FUZZ
-https://riyadhgreen.sa/Home/SendForm?Subject=FUZZ
-https://riyadhgreen.sa/Home/SendForm?Message=FUZZ

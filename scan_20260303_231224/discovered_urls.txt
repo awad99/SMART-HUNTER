@@ -1,7 +1,0 @@
-https://play.google.com/store/apps/details?id=saas.ins.inspectorio.store&amp;hl=en&amp;gl=US
-https://twitter.com/inspectorio?lang=en
-https://www.googletagmanager.com/gtag/js?id=AW-527281292
-https://www.googletagmanager.com/gtm.js?id=GTM-WB8D7SF
-https://www.inspectorio.com/
-https://www.inspectorio.com/private/
-https://zendesk-sso.inspectorio.com/sso/index.html?brand_id=114094427334&amp;locale_id=1&amp;return_to=https%3A%2F%2Fsupport.inspectorio.com%2Fhc%2Fen-us%2Farticles%2F9517933132567-Contact-Inspectorio-Customer-Support&amp;timestamp=1706073574

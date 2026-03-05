@@ -1,0 +1,86 @@
+[
+  {
+    "name": "nfvdid",
+    "value": "BQFmAAEBEJdMSA1RhooPhmS4kPa6Z61AMM6RxYnrMtNhp2cqHvMnBMiY-q42l6l9Gf8v4cjNt6gOr67uhfctZXtCmdClK1hMBJequnQW1F0OrlsI9OCkmQ%3D%3D",
+    "domain": "netflix.com",
+    "url": "https://netflix.com/",
+    "timestamp": "2026-03-04T23:19:18.338812"
+  },
+  {
+    "name": "SecureNetflixId",
+    "value": "v%3D3%26mac%3DAQEAEQABABQ3SxeKzkYnLKc1a3SI5NS2HT-VCB7938Q.%26dt%3D1772655520115",
+    "domain": "netflix.com",
+    "url": "https://netflix.com/",
+    "timestamp": "2026-03-04T23:19:18.338865"
+  },
+  {
+    "name": "NetflixId",
+    "value": "v%3D3%26ct%3DBgjHlOvcAxLAAabZEc7M4FdFQHtStbZa3_Grdya0uFqXK1gyjzEW87HBFp5Ooww15vzTV_SfE6h8h_pgA3h1tqJUp9c1dmtr34O39YN49UiCyDYdTYhlIPVxA9xOtndOZpUl2EXKavqcdDKG5flmbudZeCCec5ZASGCCBvfUKN0YIi2QGjvPJOVTd4uDY-_6QcBVDxYmI2NIhyVEDIBpADxxAZYRu6Y3aYhT6cdiRrabaBO9icUmbzu0GzfdPRs5uFXlnSvgeU706xgGIg4KDE29alyOau01uR7mOg..",
+    "domain": "netflix.com",
+    "url": "https://netflix.com/",
+    "timestamp": "2026-03-04T23:19:18.338883"
+  },
+  {
+    "name": "flwssn",
+    "value": "4d10f382-37c7-40f5-b8e0-dc2edc7bb690",
+    "domain": "www.netflix.com",
+    "url": "https://www.netflix.com/",
+    "timestamp": "2026-03-04T23:19:19.457742"
+  },
+  {
+    "name": "nfvdid",
+    "value": "BQFmAAEBEBqwCNnSK1SlWQFAcMBYc6NALW8skEp-46lKEEFse88ltC4IvdSmbKHRYHDG_ibEEU_Z-QaLFPJDQK0Y9sMcOOJXl9prEZfo9B4J9fHxNjhFgA%3D%3D",
+    "domain": "www.netflix.com",
+    "url": "https://www.netflix.com/",
+    "timestamp": "2026-03-04T23:19:19.457810"
+  },
+  {
+    "name": "SecureNetflixId",
+    "value": "v%3D3%26mac%3DAQEAEQABABTVqaFM1b_4r17unINCJ36A5SgFWN5DeAo.%26dt%3D1772655521285",
+    "domain": "www.netflix.com",
+    "url": "https://www.netflix.com/",
+    "timestamp": "2026-03-04T23:19:19.457856"
+  },
+  {
+    "name": "NetflixId",
+    "value": "v%3D3%26ct%3DBgjHlOvcAxLAAbNDeXHKbSuL3atAn_EYGNjxv7eh7c1GiaTkUJ7uTe1LOuKdeeVs9w2bGQjnqUm6_GNsue4ZkP-broyxwpa9zRszM-a9rxcoZKRZrQ63BmdEtPA9b6BItf5DjtYQAWKXSguYJ_MntTrv8em3GAfyv0_xsvxoPfwuf8bUPwq-DTWGhBhgsRDOlNDGHo0qccu3XTrP4jGZvzMD63Dhix6JeE4N0hgQsaDOUn4hwTYnJlkH-Mex4COFp2LqSt81c-jF4RgGIg4KDHkyeeYpRM35pt4VFA..",
+    "domain": "www.netflix.com",
+    "url": "https://www.netflix.com/",
+    "timestamp": "2026-03-04T23:19:19.457896"
+  },
+  {
+    "name": "flwssn",
+    "value": "d0a2d3d4-c1b9-4daf-b962-1c6a679296f4",
+    "domain": "www.netflix.com",
+    "url": "https://www.netflix.com/sa-en/",
+    "timestamp": "2026-03-04T23:19:21.117753"
+  },
+  {
+    "name": "nfvdid",
+    "value": "BQFmAAEBEKZb3E8hnfx475ZvibgzaaBAz2FlVxATYpugbI3BmCGX1mLXrSkibZdB_ochpkUXQtG97ydIbwoavMhZdnk77gCRpmMAXlZ0rGiWaiUE8EAznA%3D%3D",
+    "domain": "www.netflix.com",
+    "url": "https://www.netflix.com/sa-en/",
+    "timestamp": "2026-03-04T23:19:21.117836"
+  },
+  {
+    "name": "SecureNetflixId",
+    "value": "v%3D3%26mac%3DAQEAEQABABQpbjPUnpq1_rXfxCmT5osag0dQTOJG6Cc.%26dt%3D1772655522609",
+    "domain": "www.netflix.com",
+    "url": "https://www.netflix.com/sa-en/",
+    "timestamp": "2026-03-04T23:19:21.117853"
+  },
+  {
+    "name": "NetflixId",
+    "value": "v%3D3%26ct%3DBgjHlOvcAxLAAUT1OpS4OJSDz1OfDiKTxx1rGatIB8lCXC3NX2LTcD1C4XX85Qjuz7ayM21U_BmQBs9_UT2557t1IgSnppqn3-8HsQK6SbnBc_Z3xn7Glwz1tNmdmM5sikPKAxd9y7gIYAPeR5NRkcRyhyGeDq90pdU7ACvahFJB92XR-0jaZRH94sBBTG1H0ZXiKRoCj6AqmASDqQjr7AIMttJ82ZLex1QXA3NVtKtKkVQkA-F7M9TDriWqW9PUWZggzhC4nT-xmxgGIg4KDA_7PgDEdicqvLT-sQ..",
+    "domain": "www.netflix.com",
+    "url": "https://www.netflix.com/sa-en/",
+    "timestamp": "2026-03-04T23:19:21.117865"
+  },
+  {
+    "name": "gsid",
+    "value": "ff8b43a1-fb4e-463d-937d-7c87766fc369",
+    "domain": "www.netflix.com",
+    "url": "https://www.netflix.com/sa-en/",
+    "timestamp": "2026-03-04T23:19:21.117904"
+  }
+]

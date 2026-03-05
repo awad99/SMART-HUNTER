@@ -1,0 +1,11 @@
+https://www.uber.com/?id=FUZZ
+https://www.uber.com/?search=FUZZ
+https://www.uber.com/?q=FUZZ
+https://www.uber.com/?query=FUZZ
+https://www.uber.com/?page=FUZZ
+https://www.uber.com/?user=FUZZ
+https://www.uber.com/?name=FUZZ
+https://www.uber.com/?cat=FUZZ
+https://www.uber.com/?file=FUZZ
+https://www.uber.com/?cmd=FUZZ
+https://www.uber.com/?action=FUZZ
