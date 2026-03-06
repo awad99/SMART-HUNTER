@@ -21,8 +21,14 @@ mkdir -p "$OUTPUT_DIR"
 
 echo "Testing: ${TARGET_URL:0:60}..."
     
+if [ -n "$COOKIE" ]; then
+    COOKIE_ARG="--cookie=\"$COOKIE\""
+else
+    COOKIE_ARG=""
+fi
+
 # Run Commix with improved parameters for better speed and detection
-commix --url "$TARGET_URL" \
+eval commix --url \"$TARGET_URL\" $COOKIE_ARG \
     --batch \
     --random-agent \
     --smart \

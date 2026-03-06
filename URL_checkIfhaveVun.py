@@ -121,7 +121,8 @@ _REQUIRED_HEADERS = {
 class URLVulnerabilityChecker:
 # ═══════════════════════════════════════════════════════════════════════════
 
-    def __init__(self):
+    def __init__(self, cookie=None):
+        self.cookie = cookie
         self.vulnerabilities_found = []
         self.scan_id  = datetime.now().strftime('%Y%m%d_%H%M%S')
         self.scan_dir = os.path.join(DATASET_DIR, f"vuln_scan_{self.scan_id}")
@@ -153,8 +154,11 @@ class URLVulnerabilityChecker:
             os.makedirs(out_dir, exist_ok=True)
             
             target_list = "sqli_parameters.txt"
+            env = os.environ.copy()
+            if self.cookie: env['COOKIE'] = self.cookie
+            
             proc = subprocess.Popen(['bash', script, target_list, out_dir],
-                                    stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
+                                    stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, env=env)
             for line in proc.stdout:
                 line_str = line.strip()
                 if any(k in line_str.lower() for k in ['vulnerable','injection point','confirmed','payload:','parameter:','type:','backend dbms','testing connection','testing if']):
@@ -351,6 +355,9 @@ class URLVulnerabilityChecker:
         print(f"    [*] Command: {' '.join(cmd)}")
         print("    " + "-" * 50)
 
+        env = os.environ.copy()
+        if self.cookie: env['COOKIE'] = self.cookie
+
         # ── Stream output live (no silent waiting) ──
         t0 = time.time()
         poc_live = 0
@@ -360,7 +367,8 @@ class URLVulnerabilityChecker:
                 stdout=subprocess.PIPE,
                 stderr=subprocess.STDOUT,
                 text=True,
-                cwd=os.path.dirname(script)
+                cwd=os.path.dirname(script),
+                env=env
             )
             _SHOW_KEYWORDS = (
                 'vulnerable', 'poc', 'xss', '[!]', 'found',
@@ -488,8 +496,11 @@ class URLVulnerabilityChecker:
                 uhash  = hashlib.md5(url.encode()).hexdigest()[:8]
                 url_dir = os.path.join(subdir, f"scan_{uhash}")
                 os.makedirs(url_dir, exist_ok=True)
+                env = os.environ.copy()
+                if self.cookie: env['COOKIE'] = self.cookie
+
                 proc = subprocess.Popen(['bash', script, url, url_dir],
-                                        stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
+                                        stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, env=env)
                 t0 = last_act = time.time()
                 vuln_det, lines = False, []
                 while True:
@@ -557,16 +568,23 @@ class URLVulnerabilityChecker:
     def detect_sql_errors(self, text):
         return any(re.search(p, text, re.I) for p in _SQL_ERROR_PATTERNS)
 
-    # ── Smart parameter discovery ──────────────────────────────────────────
+    # ── Simple parameter extraction (no crawling — crawling now in path_Analyze) ──
     def discover_parameters(self, url):
-        """Crawl page to find real form params, link params, and endpoints."""
-        print(f"\n[+] DISCOVERING PARAMETERS: {url}")
+        """Extract params from current page only (forms + link params). No recursive crawl."""
+        print(f"\n[+] EXTRACTING PARAMETERS: {url}")
         targets = {'get': [], 'post': []}
         try:
             r = requests.get(url, timeout=10, verify=False, allow_redirects=True,
                              headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'})
             soup = BeautifulSoup(r.text, 'html.parser')
-            # ── Extract forms ──
+
+            # URL query params
+            parsed = urllib.parse.urlparse(url)
+            if parsed.query:
+                for pname in urllib.parse.parse_qs(parsed.query):
+                    targets['get'].append({'url': url.split('?')[0], 'params': [pname]})
+
+            # Form params
             for form in soup.find_all('form'):
                 act = form.get('action', '')
                 method = form.get('method', 'get').lower()
@@ -574,45 +592,26 @@ class URLVulnerabilityChecker:
                 params = []
                 for inp in form.find_all(['input', 'textarea', 'select']):
                     name = inp.get('name')
-                    if name and inp.get('type', '').lower() not in ('submit', 'button', 'reset', 'image', 'hidden'):
+                    if name:
                         params.append(name)
-                # Also get hidden fields (often vulnerable)
-                for inp in form.find_all('input', {'type': 'hidden'}):
-                    name = inp.get('name')
-                    if name: params.append(name)
                 if params:
                     targets[method].append({'url': act_url, 'params': list(set(params))})
-                    print(f"    [+] Form ({method.upper()}) → {act_url} params: {params}")
-            # ── Extract link parameters ──
-            seen_params = set()
+
+            # Link params
             for a in soup.find_all('a', href=True):
                 href = urllib.parse.urljoin(url, a['href'])
-                parsed = urllib.parse.urlparse(href)
-                if parsed.query and parsed.netloc == urllib.parse.urlparse(url).netloc:
-                    for pname in urllib.parse.parse_qs(parsed.query):
-                        if pname not in seen_params:
-                            seen_params.add(pname)
-                            targets['get'].append({'url': href.split('?')[0], 'params': [pname]})
-            if seen_params:
-                print(f"    [+] Link params: {list(seen_params)}")
-            # ── Extract JS endpoints ──
-            for script in soup.find_all('script'):
-                if script.string:
-                    for m in re.finditer(r'(?:fetch|axios|ajax|XMLHttpRequest)[^"\']*["\']([^"\']+\?[^"\']*)["\']', script.string):
-                        ep = urllib.parse.urljoin(url, m.group(1))
-                        p = urllib.parse.urlparse(ep)
-                        if p.query:
-                            targets['get'].append({'url': ep.split('?')[0],
-                                                   'params': list(urllib.parse.parse_qs(p.query).keys())})
-                            print(f"    [+] JS endpoint: {ep}")
+                p = urllib.parse.urlparse(href)
+                if p.query and p.netloc == parsed.netloc:
+                    for pname in urllib.parse.parse_qs(p.query):
+                        targets['get'].append({'url': href.split('?')[0], 'params': [pname]})
+
             total = len(targets['get']) + len(targets['post'])
-            print(f"    [*] Discovered: {total} targets ({len(targets['get'])} GET, {len(targets['post'])} POST)")
+            print(f"    [*] Found: {total} targets ({len(targets['get'])} GET, {len(targets['post'])} POST)")
             if total == 0:
-                print("    [*] No params found, using common param names as fallback")
-                for p in ['id', 'search', 'q', 'query', 'page', 'user', 'name', 'cat', 'file', 'cmd', 'action']:
+                for p in ['id', 'search', 'q', 'page', 'file', 'cmd']:
                     targets['get'].append({'url': url, 'params': [p]})
         except Exception as e:
-            print(f"    [-] Discovery error: {e}")
+            print(f"    [-] Extraction error: {e}")
             for p in ['id', 'search', 'q', 'page']:
                 targets['get'].append({'url': url, 'params': [p]})
         return targets
@@ -622,6 +621,8 @@ class URLVulnerabilityChecker:
         try:
             kw = {'timeout': 5, 'verify': False, 'allow_redirects': True,
                   'headers': {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}}
+            if self.cookie:
+                kw['headers']['Cookie'] = self.cookie
             if method == 'post':
                 return requests.post(url, data=data, **kw)
             else:
@@ -1163,23 +1164,30 @@ class URLVulnerabilityChecker:
         except Exception as e:
             print(f"[-] Connection failed: {e}\n[*] Continuing anyway...")
 
-        # ── Phase 1: Smart parameter discovery ──
-        print(f"\n{'='*60}\n  PHASE 1: PARAMETER DISCOVERY\n{'='*60}")
+        # ── Phase 1: Quick parameter extraction for external tools ──
+        print(f"\n{'='*60}\n  PHASE 1: PARAMETER EXTRACTION\n{'='*60}")
         targets = self.discover_parameters(url)
 
-        # Write discovered params to parameter files for external tools
+        # Append additional params to files (path_Analyze may have already written)
         param_urls = []
         for method_targets in [targets.get('get', []), targets.get('post', [])]:
             for t in method_targets:
                 for p in t['params']:
                     param_urls.append(f"{t['url']}?{p}=FUZZ")
-        if not param_urls:
-            param_urls = [f"{url}?id=FUZZ", f"{url}?search=FUZZ"]
-        for fn in ['xss_parameters.txt', 'sqli_parameters.txt', 'rce_parameters.txt']:
-            open(fn, 'w').write('\n'.join(param_urls))
-            print(f"[+] {fn}: {len(param_urls)} URLs")
+        if param_urls:
+            for fn in ['xss_parameters.txt', 'sqli_parameters.txt', 'rce_parameters.txt']:
+                # Read existing to avoid duplicates
+                existing = set()
+                if os.path.exists(fn):
+                    existing = set(open(fn).read().strip().split('\n'))
+                new_urls = [u for u in param_urls if u not in existing]
+                if new_urls:
+                    with open(fn, 'a') as f:
+                        f.write('\n'.join(new_urls) + '\n')
+                total = len(existing) + len(new_urls)
+                print(f"[+] {fn}: {total} URLs (added {len(new_urls)} new)")
 
-        # ── Phase 2: Built-in vulnerability checks (always run) ──
+        # ── Phase 2: Built-in vulnerability checks ──
         print(f"\n{'='*60}\n  PHASE 2: BUILT-IN VULNERABILITY CHECKS\n{'='*60}")
         builtin_vulns = []
 
@@ -1221,9 +1229,9 @@ class URLVulnerabilityChecker:
 
 
 # ═══════════════════════════════════════════════════════════════════════════
-def MainestVuln(url):
+def MainestVuln(url, cookie=None):
     print(f"[*] Dataset dir: {DATASET_DIR or '(current)'}\n[*] Vuln dataset: {VULN_ML_DATASET_FILE}")
-    URLVulnerabilityChecker().check_vulnerabilities(url)
+    URLVulnerabilityChecker(cookie=cookie).check_vulnerabilities(url)
 
 if __name__ == "__main__":
     MainestVuln(input("Enter The URL: "))

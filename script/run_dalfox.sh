@@ -71,13 +71,18 @@ scan_url() {
 
     echo "[${idx}/${total}] Scanning: $url"
 
+    local cookie_arg=""
+    if [ -n "$COOKIE" ]; then
+        cookie_arg="-C \"$COOKIE\""
+    fi
+
     # --silence    = suppress info/debug lines, only show findings
     # --no-color   = clean plain-text output
     # --skip-headless = skip Chrome/headless (much faster, still catches reflected XSS)
     # --worker     = internal goroutine count
     # --timeout    = per-request HTTP timeout (seconds)
     # --follow-redirects = follow 302s automatically
-    timeout "$URL_TIMEOUT" dalfox url "$url" \
+    eval timeout "$URL_TIMEOUT" dalfox url \"$url\" $cookie_arg \
         --worker "$DALFOX_WORKERS" \
         --timeout 10 \
         --silence \
@@ -163,7 +168,7 @@ if [ -d "$XSSTRIKE_DIR" ]; then
     cd "$XSSTRIKE_DIR"
     grep -v '^$' "$URLS_FILE" | \
         xargs -P "$PARALLEL_JOBS" -I {} \
-        timeout 90 python3 xsstrike.py -u "{}" --crawl -l 2 \
+        timeout 90 python3 xsstrike.py -u "{}" --crawl -l 2 ${COOKIE:+--headers "Cookie: $COOKIE"} \
         >> "$OUTPUT_FILE" 2>&1 || true
     cd - > /dev/null
     echo "[*] XSStrike done"

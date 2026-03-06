@@ -22,8 +22,14 @@ else
     TARGET_ARG="-u \"$TARGET_URL\""
 fi
 
+if [ -n "$COOKIE" ]; then
+    COOKIE_ARG="--cookie=\"$COOKIE\""
+else
+    COOKIE_ARG=""
+fi
+
 # Run SQLMap — all output goes to a single log file (no --output-dir to avoid per-target subfolders)
-eval sqlmap $TARGET_ARG \
+eval sqlmap $TARGET_ARG $COOKIE_ARG \
     --batch \
     --forms \
     --crawl=1 \

@@ -41,8 +41,9 @@ _SEC_HEADERS = [
 class ReconWebSite:
 # ═══════════════════════════════════════════════════════════════════════════
 
-    def __init__(self, url):
+    def __init__(self, url, cookie=None):
         self.original_url = self.url = self.final_url = url
+        self.cookie       = cookie
         self.final_url    = None
         self.Get_Response = self.Get_Request = None
         self.scan_id      = datetime.now().strftime('%Y%m%d_%H%M%S')
@@ -108,8 +109,9 @@ class ReconWebSite:
             if count:
                 time.sleep(REQUEST_DELAY)
             try:
+                hdr = {**UA, **({'Cookie': self.cookie} if self.cookie else {})}
                 with httpx.Client(**params) as c:
-                    resp = c.get(current, headers=UA)
+                    resp = c.get(current, headers=hdr)
             except httpx.TimeoutException:
                 print(f"    [-] Timeout: {current}"); break
             except Exception as e:
@@ -619,8 +621,9 @@ class ReconWebSite:
         def _verify(args):
             i, url = args
             try:
+                hdr = {**UA, **({'Cookie': self.cookie} if getattr(self, 'cookie', None) else {})}
                 with httpx.Client(timeout=8.0, verify=False, follow_redirects=True) as c:
-                    r = c.get(url, headers=UA)
+                    r = c.get(url, headers=hdr)
                 print(f"  [{i}/{len(paths)}] {r.status_code} | {len(r.text):>8} B | {url}")
             except Exception as ex:
                 print(f"  [{i}/{len(paths)}] ERROR: {ex}")
@@ -654,9 +657,9 @@ class ReconWebSite:
 # Module-level helpers
 # ═══════════════════════════════════════════════════════════════════════════
 
-def test_connection(url):
+def test_connection(url, cookie=None):
     try:
-        recon = ReconWebSite(url)
+        recon = ReconWebSite(url, cookie=cookie)
         response = recon.track_redirects(url)
         if response:
             print(f"[+] Reached: {recon.final_url}")
@@ -669,11 +672,11 @@ def test_connection(url):
     return None, None
 
 
-def MainRecon(url):
+def MainRecon(url, cookie=None):
     try:
         print(f"[*] Saving to: {DATASET_DIR or '(current dir)'}\n[*] ML file : {ML_DATASET_FILE}")
-        recon = ReconWebSite(url)
-        response, recon_obj = test_connection(url)
+        recon = ReconWebSite(url, cookie=cookie)
+        response, recon_obj = test_connection(url, cookie=cookie)
 
         if response and recon_obj:
             recon = recon_obj

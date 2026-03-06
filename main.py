@@ -5,7 +5,7 @@ from sklearn.multiclass import OneVsRestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report, accuracy_score
 from sklearn.preprocessing import StandardScaler
-import URL_checkIfhaveVun, url_connection, mchine
+import URL_checkIfhaveVun, url_connection, mchine, path_Analyze
 
 msg = r"""
       ___           _              _   _               _   _                     
@@ -52,17 +52,18 @@ FEATURE_COLS = [
     'input_to_form_ratio', 'script_to_content_ratio', 'security_score', 'interactivity_score',
 ]
 
-LABEL_COLS = ['has_sql_injection', 'has_xss', 'has_command_injection']
+LABEL_COLS = ['has_sql_injection', 'has_xss', 'has_command_injection', 'has_path_traversal']
 
-VULN_NAMES = {0: 'sql_injection', 1: 'xss', 2: 'command_injection'}
+VULN_NAMES = {0: 'sql_injection', 1: 'xss', 2: 'command_injection', 3: 'path_traversal'}
 
 
 # ═══════════════════════════════════════════════════════════════════════════
 class VulnerabilityCheckerTraining:
 # ═══════════════════════════════════════════════════════════════════════════
 
-    def __init__(self, url=""):
-        self.url   = url
+    def __init__(self, target_url="", cookie=None):
+        self.url = target_url
+        self.cookie = cookie
         self.model = None
         self.scaler = StandardScaler()
         self.trained_feature_columns = []
@@ -117,7 +118,7 @@ class VulnerabilityCheckerTraining:
         np.random.seed(42)
         rows = []
         for _ in range(n):
-            profile = np.random.choice(['vuln_sqli', 'vuln_xss', 'vuln_cmdi', 'secure', 'normal'])
+            profile = np.random.choice(['vuln_sqli', 'vuln_xss', 'vuln_cmdi', 'vuln_pt', 'secure', 'normal'])
             r = {c: 0 for c in FEATURE_COLS}
             # Base features
             r['url_length']       = np.random.randint(15, 120)
@@ -165,6 +166,18 @@ class VulnerabilityCheckerTraining:
                 r['security_headers_count'] = np.random.randint(0, 2)
                 for lbl in LABEL_COLS: r[lbl] = 0
                 r['has_command_injection'] = 1
+
+            elif profile == 'vuln_pt':
+                r['has_query_params'] = 1; r['num_query_params'] = np.random.randint(1, 4)
+                r['has_forms'] = np.random.choice([0,1])
+                r['has_inputs'] = 1; r['input_count'] = np.random.randint(1, 5)
+                r['has_file_paths'] = np.random.choice([0,1], p=[.3,.7])
+                r['has_error_messages'] = np.random.choice([0,1], p=[.4,.6])
+                r['tech_php'] = np.random.choice([0,1], p=[.3,.7])
+                r['security_headers_count'] = np.random.randint(0, 3)
+                r['path_depth'] = np.random.randint(2, 6)
+                for lbl in LABEL_COLS: r[lbl] = 0
+                r['has_path_traversal'] = 1
 
             elif profile == 'secure':
                 r['has_https'] = 1; r['final_https'] = 1
@@ -332,17 +345,19 @@ class VulnerabilityCheckerTraining:
 class SmartVulnerabilityScanner(VulnerabilityCheckerTraining):
 # ═══════════════════════════════════════════════════════════════════════════
 
-    def __init__(self, url):
-        super().__init__(url)
+    def __init__(self, url, cookie=None):
+        super().__init__(url, cookie)
         self.prediction = None
 
     def extract_recon_features(self):
         """Extract real recon features by fetching the URL live."""
         print(f"[*] Extracting live recon features: {self.url}")
         try:
-            recon = url_connection.ReconWebSite(self.url)
+            import url_connection
+            recon = url_connection.ReconWebSite(self.url, cookie=self.cookie)
+            hdr = {'Cookie': self.cookie} if self.cookie else None
             with httpx.Client(timeout=10.0, verify=False, follow_redirects=True) as c:
-                resp = c.get(self.url, headers=url_connection.UA)
+                resp = c.get(self.url, headers={**url_connection.UA, **(hdr if hdr else {})})
             features = recon.extract_recon_features(resp, self.url)
             # Keep only numeric feature columns
             out = {}
@@ -407,6 +422,12 @@ class SmartVulnerabilityScanner(VulnerabilityCheckerTraining):
             if preds.get('command_injection', 0) > 0.15:
                 print("[*] ML suggests CmdInj risk → testing...")
                 vulns.extend(self._test_command_injection())
+            if preds.get('path_traversal', 0) > 0.15:
+                print("[*] ML suggests Path Traversal risk → running path_Analyze...")
+                import path_Analyze
+                pt_res = path_Analyze.crawl_and_scan(self.url, max_depth=2, cookie=self.cookie)
+                if pt_res and pt_res.get('vulns'):
+                    vulns.extend(pt_res['vulns'])
             if not vulns and all(v < 0.15 for v in preds.values()):
                 print("[*] Low risk predicted, running basic checks anyway...")
                 vulns.extend(self._test_sql_injection())
@@ -423,34 +444,12 @@ class SmartVulnerabilityScanner(VulnerabilityCheckerTraining):
     def _test_sql_injection(self):
         vulns = []
         p = urllib.parse.urlparse(self.url)
-        params_to_test = {}
-        forms_to_test = []
+        params_to_test = urllib.parse.parse_qs(p.query) if p.query else {}
 
-        if p.query:
-            params_to_test = urllib.parse.parse_qs(p.query)
-
-        # Crawl page for forms (works even without query params)
-        try:
-            from bs4 import BeautifulSoup
-            r = requests.get(self.url, timeout=8, verify=False,
-                             headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'})
-            soup = BeautifulSoup(r.text, 'html.parser')
-            for form in soup.find_all('form'):
-                act = form.get('action', '')
-                method = form.get('method', 'get').lower()
-                act_url = urllib.parse.urljoin(self.url, act) if act else self.url
-                form_params = [inp.get('name') for inp in form.find_all(['input', 'textarea', 'select'])
-                               if inp.get('name') and inp.get('type', '').lower() not in ('submit', 'button', 'reset', 'image')]
-                if form_params:
-                    forms_to_test.append({'url': act_url, 'method': method, 'params': form_params})
-        except Exception:
-            pass
-
-        # If we still have nothing, use common param names
-        if not params_to_test and not forms_to_test:
+        # Fallback: use common param names if no query params
+        if not params_to_test:
             params_to_test = {p: ['test'] for p in ['id', 'search', 'q', 'page']}
 
-        # SQL error patterns
         sql_errors = [
             'sql syntax', 'mysql', 'postgresql', 'oracle', 'sqlite',
             'odbc', 'unterminated', 'unclosed quotation', 'syntax error',
@@ -470,33 +469,23 @@ class SmartVulnerabilityScanner(VulnerabilityCheckerTraining):
             ("1; WAITFOR DELAY '0:0:3'-- ", "time-based MSSQL"),
         ]
 
-        # Get baseline
+        hdr = {'Cookie': self.cookie} if self.cookie else None
         try:
-            base_r = requests.get(self.url, timeout=5, verify=False)
+            base_r = requests.get(self.url, timeout=5, verify=False, headers=hdr)
             base_time = base_r.elapsed.total_seconds()
-            base_len = len(base_r.text)
         except:
-            base_time, base_len = 1.0, 0
+            base_time = 1.0
 
         import concurrent.futures
 
         def _worker_sqli(task):
-            kind, param, payload, ptype, form = task
-            test_url = self._inject(self.url, param, payload) if kind == 'url' else form['url']
+            param, payload, ptype = task
+            test_url = self._inject(self.url, param, payload)
             try:
-                if kind == 'url':
-                    r = requests.get(test_url, timeout=5, verify=False)
-                elif form['method'] == 'post':
-                    r = requests.post(test_url, data={param: payload}, timeout=5, verify=False)
-                else:
-                    r = requests.get(test_url, params={param: payload}, timeout=5, verify=False)
-                    
+                r = requests.get(test_url, timeout=5, verify=False, headers=hdr)
                 if any(re.search(e, r.text, re.I) for e in sql_errors):
-                    res = {'type': f'SQL Injection ({ptype})', 'parameter': param, 'payload': payload, 'confidence': 'high', 'tool': 'quick_scan'}
-                    if kind == 'form': res['method'] = form['method']
-                    tag = f" [{form['method'].upper()}]" if kind == 'form' else ""
-                    print(f"    [!] SQLi: {param} ({ptype}){tag}")
-                    return res
+                    print(f"    [!] SQLi: {param} ({ptype})")
+                    return {'type': f'SQL Injection ({ptype})', 'parameter': param, 'payload': payload, 'confidence': 'high', 'tool': 'quick_scan'}
             except: pass
             return None
 
@@ -505,7 +494,7 @@ class SmartVulnerabilityScanner(VulnerabilityCheckerTraining):
             test_url = self._inject(self.url, param, payload)
             try:
                 t0 = time.time()
-                requests.get(test_url, timeout=10, verify=False)
+                requests.get(test_url, timeout=10, verify=False, headers=hdr)
                 elapsed = time.time() - t0
                 if elapsed > base_time + 2.5:
                     print(f"    [!] SQLi: {param} ({ptype}) delay={elapsed:.1f}s")
@@ -516,24 +505,20 @@ class SmartVulnerabilityScanner(VulnerabilityCheckerTraining):
         tasks = []
         for param in list(params_to_test.keys())[:5]:
             for payload, ptype in payloads:
-                tasks.append(('url', param, payload, ptype, None))
-        for form in forms_to_test[:5]:
-            for param in form['params'][:4]:
-                for payload, ptype in payloads:
-                    tasks.append(('form', param, payload, ptype, form))
+                tasks.append((param, payload, ptype))
 
         with concurrent.futures.ThreadPoolExecutor(max_workers=50) as executor:
             for res in executor.map(_worker_sqli, tasks):
                 if res and res['parameter'] not in [v['parameter'] for v in vulns]:
                     vulns.append(res)
-        
+
         found_params = {v['parameter'] for v in vulns}
         time_tasks = []
         for param in list(params_to_test.keys())[:5]:
             if param not in found_params:
                 for payload, ptype in time_payloads:
                     time_tasks.append((param, payload, ptype))
-                    
+
         with concurrent.futures.ThreadPoolExecutor(max_workers=50) as executor:
             for res in executor.map(_time_worker_sqli, time_tasks):
                 if res and res['parameter'] not in [v['parameter'] for v in vulns]:
@@ -544,26 +529,8 @@ class SmartVulnerabilityScanner(VulnerabilityCheckerTraining):
         vulns = []
         p = urllib.parse.urlparse(self.url)
         params_to_test = urllib.parse.parse_qs(p.query) if p.query else {}
-        forms_to_test = []
 
-        # Crawl forms
-        try:
-            from bs4 import BeautifulSoup
-            r = requests.get(self.url, timeout=8, verify=False,
-                             headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'})
-            soup = BeautifulSoup(r.text, 'html.parser')
-            for form in soup.find_all('form'):
-                act = form.get('action', '')
-                method = form.get('method', 'get').lower()
-                act_url = urllib.parse.urljoin(self.url, act) if act else self.url
-                form_params = [inp.get('name') for inp in form.find_all(['input', 'textarea', 'select'])
-                               if inp.get('name') and inp.get('type', '').lower() not in ('submit', 'button', 'reset', 'image')]
-                if form_params:
-                    forms_to_test.append({'url': act_url, 'method': method, 'params': form_params})
-        except Exception:
-            pass
-
-        if not params_to_test and not forms_to_test:
+        if not params_to_test:
             params_to_test = {p: ['test'] for p in ['search', 'q', 'query', 'name']}
 
         import random, string
@@ -578,35 +545,24 @@ class SmartVulnerabilityScanner(VulnerabilityCheckerTraining):
 
         import concurrent.futures
 
+        hdr = {'Cookie': self.cookie} if self.cookie else None
+
         def _worker_xss(task):
-            kind, param, payload, ptype, form = task
-            test_url = self._inject(self.url, param, payload) if kind == 'url' else form['url']
+            param, payload, ptype = task
+            test_url = self._inject(self.url, param, payload)
             try:
-                if kind == 'url':
-                    r = requests.get(test_url, timeout=5, verify=False)
-                elif form['method'] == 'post':
-                    r = requests.post(test_url, data={param: payload}, timeout=5, verify=False)
-                else:
-                    r = requests.get(test_url, params={param: payload}, timeout=5, verify=False)
-                    
+                r = requests.get(test_url, timeout=5, verify=False, headers=hdr)
                 if canary in r.text:
                     conf = 'high' if payload in r.text and ptype != 'reflection' else 'medium'
-                    res = {'type': f'XSS ({ptype})', 'parameter': param, 'payload': payload, 'confidence': conf, 'tool': 'quick_scan'}
-                    if kind == 'form': res['method'] = form['method']
-                    tag = f" [{form['method'].upper()}]" if kind == 'form' else f" conf:{conf}"
-                    print(f"    [!] XSS: {param} ({ptype}){tag}")
-                    return res
+                    print(f"    [!] XSS: {param} ({ptype}) conf:{conf}")
+                    return {'type': f'XSS ({ptype})', 'parameter': param, 'payload': payload, 'confidence': conf, 'tool': 'quick_scan'}
             except: pass
             return None
 
         tasks = []
         for param in list(params_to_test.keys())[:5]:
             for payload, ptype in payloads:
-                tasks.append(('url', param, payload, ptype, None))
-        for form in forms_to_test[:5]:
-            for param in form['params'][:4]:
-                for payload, ptype in payloads:
-                    tasks.append(('form', param, payload, ptype, form))
+                tasks.append((param, payload, ptype))
 
         with concurrent.futures.ThreadPoolExecutor(max_workers=50) as executor:
             for res in executor.map(_worker_xss, tasks):
@@ -618,26 +574,8 @@ class SmartVulnerabilityScanner(VulnerabilityCheckerTraining):
         vulns = []
         p = urllib.parse.urlparse(self.url)
         params_to_test = urllib.parse.parse_qs(p.query) if p.query else {}
-        forms_to_test = []
 
-        # Crawl forms
-        try:
-            from bs4 import BeautifulSoup
-            r = requests.get(self.url, timeout=8, verify=False,
-                             headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'})
-            soup = BeautifulSoup(r.text, 'html.parser')
-            for form in soup.find_all('form'):
-                act = form.get('action', '')
-                method = form.get('method', 'get').lower()
-                act_url = urllib.parse.urljoin(self.url, act) if act else self.url
-                form_params = [inp.get('name') for inp in form.find_all(['input', 'textarea', 'select'])
-                               if inp.get('name') and inp.get('type', '').lower() not in ('submit', 'button', 'reset', 'image')]
-                if form_params:
-                    forms_to_test.append({'url': act_url, 'method': method, 'params': form_params})
-        except Exception:
-            pass
-
-        if not params_to_test and not forms_to_test:
+        if not params_to_test:
             params_to_test = {p: ['test'] for p in ['cmd', 'exec', 'command', 'file']}
 
         response_indicators = ['uid=', 'root:', '/bin/', 'www-data', 'daemon:', 'nobody:']
@@ -645,7 +583,8 @@ class SmartVulnerabilityScanner(VulnerabilityCheckerTraining):
         time_payloads = [(";sleep 3", "time-based"), ("| sleep 3", "time-based")]
 
         try:
-            base_r = requests.get(self.url, timeout=5, verify=False)
+            hdr = {'Cookie': self.cookie} if self.cookie else None
+            base_r = requests.get(self.url, timeout=5, verify=False, headers=hdr)
             base_time = base_r.elapsed.total_seconds()
         except:
             base_time = 1.0
@@ -653,22 +592,13 @@ class SmartVulnerabilityScanner(VulnerabilityCheckerTraining):
         import concurrent.futures
 
         def _worker_cmd(task):
-            kind, param, payload, form = task
-            test_url = self._inject(self.url, param, payload) if kind == 'url' else form['url']
+            param, payload = task
+            test_url = self._inject(self.url, param, payload)
             try:
-                if kind == 'url':
-                    r = requests.get(test_url, timeout=5, verify=False)
-                elif form['method'] == 'post':
-                    r = requests.post(test_url, data={param: payload}, timeout=5, verify=False)
-                else:
-                    r = requests.get(test_url, params={param: payload}, timeout=5, verify=False)
-                    
+                r = requests.get(test_url, timeout=5, verify=False, headers=hdr)
                 if any(ind in r.text.lower() for ind in response_indicators):
-                    res = {'type': 'Command Injection', 'parameter': param, 'payload': payload, 'confidence': 'high', 'tool': 'quick_scan'}
-                    if kind == 'form': res['method'] = form['method']
-                    tag = f" [{form['method'].upper()}]" if kind == 'form' else f" ({payload})"
-                    print(f"    [!] CmdInj: {param}{tag}")
-                    return res
+                    print(f"    [!] CmdInj: {param} ({payload})")
+                    return {'type': 'Command Injection', 'parameter': param, 'payload': payload, 'confidence': 'high', 'tool': 'quick_scan'}
             except: pass
             return None
 
@@ -688,24 +618,20 @@ class SmartVulnerabilityScanner(VulnerabilityCheckerTraining):
         tasks = []
         for param in list(params_to_test.keys())[:4]:
             for payload in payloads:
-                tasks.append(('url', param, payload, None))
-        for form in forms_to_test[:4]:
-            for param in form['params'][:3]:
-                for payload in payloads:
-                    tasks.append(('form', param, payload, form))
+                tasks.append((param, payload))
 
         with concurrent.futures.ThreadPoolExecutor(max_workers=50) as executor:
             for res in executor.map(_worker_cmd, tasks):
                 if res and res['parameter'] not in [v['parameter'] for v in vulns]:
                     vulns.append(res)
-                    
+
         found_params = {v['parameter'] for v in vulns}
         time_tasks = []
         for param in list(params_to_test.keys())[:4]:
             if param not in found_params:
                 for payload, ptype in time_payloads:
                     time_tasks.append((param, payload, ptype))
-                    
+
         with concurrent.futures.ThreadPoolExecutor(max_workers=50) as executor:
             for res in executor.map(_time_worker_cmd, time_tasks):
                 if res and res['parameter'] not in [v['parameter'] for v in vulns]:
@@ -806,6 +732,7 @@ def show_phase_prediction(scanner, phase: int, url: str, confirmed_vulns=None):
         'sql_injection':     ['Enumerate DB tables', 'Dump credentials', 'Bypass auth'],
         'xss':               ['Steal session cookies', 'Phishing / redirect', 'DOM manipulation'],
         'command_injection': ['RCE via OS commands', 'Reverse shell', 'File exfiltration'],
+        'path_traversal':    ['Read /etc/passwd', 'Access config files', 'Source code disclosure'],
     }
 
     print(f"\n  {'VULNERABILITY':<28} {'CONFIDENCE':>10}   RISK")
@@ -840,6 +767,7 @@ def show_phase_prediction(scanner, phase: int, url: str, confirmed_vulns=None):
             if 'sql' in t.lower():     confirmed_types['sql_injection'] = confirmed_types.get('sql_injection', 0) + 1
             elif 'xss' in t.lower():   confirmed_types['xss'] = confirmed_types.get('xss', 0) + 1
             elif 'cmd' in t.lower() or 'command' in t.lower(): confirmed_types['command_injection'] = confirmed_types.get('command_injection', 0) + 1
+            elif 'path' in t.lower() or 'traversal' in t.lower() or 'inclusion' in t.lower(): confirmed_types['path_traversal'] = confirmed_types.get('path_traversal', 0) + 1
 
         for vuln_name, count in confirmed_types.items():
             predicted_p = preds.get(vuln_name, 0)
@@ -875,14 +803,36 @@ def main():
     Target = input("\nEnter URL or IP Target: ").strip()
     if not Target:
         print("[-] No target"); return
-
+        
+    Cookie = input("Enter Session Cookie (or leave blank to auto-detect): ").strip()
+    
     # 3) URL target
     if Target.startswith(("http://", "https://")):
+        if not Cookie:
+            print(f"\n[*] Attempting to extract session cookie automatically from {Target}...")
+            try:
+                import requests
+                resp = requests.get(Target, verify=False, timeout=8)
+                cookies_list = [f"{n}={v}" for n, v in resp.cookies.items()]
+                if cookies_list:
+                    Cookie = "; ".join(cookies_list)
+                    print(f"[+] Automatically extracted cookie: {Cookie}")
+                else:
+                    Cookie = None
+                    print("[-] No cookies found automatically.")
+            except requests.exceptions.Timeout:
+                Cookie = None
+                print("[-] Failed to automatically extract cookie: Connection timed out.")
+            except requests.exceptions.RequestException as e:
+                Cookie = None
+                print(f"[-] Failed to automatically extract cookie: {e.__class__.__name__}")
+        
         get_parameters(Target)
         print(f"\n[*] Target URL: {Target}")
+        if Cookie: print(f"[*] Using Cookie: {Cookie}")
 
         # ── Build scanner & load/train model ───────────────────────────
-        scanner = SmartVulnerabilityScanner(Target)
+        scanner = SmartVulnerabilityScanner(Target, cookie=Cookie)
         if not scanner.load_model(MODEL_FILE):
             print("[*] No saved model — training fresh...")
             scanner.train_model()
@@ -895,14 +845,21 @@ def main():
         print("*"*64)
         phase1_pred = show_phase_prediction(scanner, phase=1, url=Target)
 
-        if url_connection.MainRecon(Target):
-            print("\n[+] Recon complete, running full vulnerability scan...")
+        if url_connection.MainRecon(Target, cookie=Cookie):
+            print("\n[+] Recon complete")
 
-     
+        # ── Path Traversal Crawl & Scan ──────────────────────────
+        print("\n[*] Running path traversal crawler & scanner...")
+        pt_results = path_Analyze.crawl_and_scan(Target, max_depth=3, cookie=Cookie)
+        pt_vulns = pt_results.get('vulns', []) if pt_results else []
+
         print("\n[*] Running ML-guided active vulnerability tests...")
         quick_vulns = scanner.smart_vulnerability_scan(MODEL_FILE)
 
-        URL_checkIfhaveVun.MainestVuln(Target)
+        # Merge path traversal vulns into quick_vulns
+        quick_vulns.extend(pt_vulns)
+
+        URL_checkIfhaveVun.MainestVuln(Target, cookie=Cookie)
 
    
         print("\n" + "*"*64)
