@@ -6,7 +6,9 @@ import socket
 import os
 
 # Create results directory
-results_dir = f"autopentest_results_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
+results_base = os.path.join("Data", "Logs")
+os.makedirs(results_base, exist_ok=True)
+results_dir = os.path.join(results_base, f"autopentest_results_{datetime.now().strftime('%Y%m%d_%H%M%S')}")
 os.makedirs(results_dir, exist_ok=True)
 
 # Setup logging to file

@@ -1,51 +1,44 @@
 #!/bin/bash
 
+# Usage: run_commix.sh <targets_file> <output_dir>
+
 if [ $# -lt 2 ]; then
-    echo "Usage: $0 <url> <output_dir>"
+    echo "Usage: $0 <targets_file> <output_dir>"
     exit 1
 fi
 
-TARGET_URL="$1"
-OUTPUT_DIR="$2"
+TARGETS_FILE="$1"
+OUT_DIR="$2"
 
-echo "[*] Starting Commix scan"
-echo "[*] Target URL: $TARGET_URL"
-echo "[*] Output directory: $OUTPUT_DIR"
-
-if [ -d "$OUTPUT_DIR" ]; then
-    echo "[!] Removing existing directory/file: $OUTPUT_DIR"
-    rm -rf "$OUTPUT_DIR"
+if [ ! -f "$TARGETS_FILE" ]; then
+    echo "[-] Targets file not found: $TARGETS_FILE"
+    exit 1
 fi
 
-mkdir -p "$OUTPUT_DIR"
+echo "[*] Starting Commix bulk scan"
 
-echo "Testing: ${TARGET_URL:0:60}..."
-    
+# Prepare cookie arg
+COOKIE_ARG=""
 if [ -n "$COOKIE" ]; then
     COOKIE_ARG="--cookie=\"$COOKIE\""
-else
-    COOKIE_ARG=""
 fi
 
-# Run Commix with improved parameters for better speed and detection
-eval commix --url \"$TARGET_URL\" $COOKIE_ARG \
-    --batch \
-    --random-agent \
-    --smart \
-    --timeout=5 \
-    --output-dir="$OUTPUT_DIR" \
-    2>&1 | grep -i "vulnerable\|injection\|exploit\|error\|critical" || echo "    [-] No issues detected"
+# Read targets and run commix
+while IFS='|' read -r method url data || [ -n "$method" ]; do
+    [ -z "$method" ] && continue
     
-# Check results
-VULN_FOUND=0
-if [ -f "$OUTPUT_DIR/target.txt" ] && [ -s "$OUTPUT_DIR/target.txt" ] || [ -d "$OUTPUT_DIR/host" ]; then
-    echo "    [!] VULNERABLE - Results in: $OUTPUT_DIR/"
-    VULN_FOUND=1
-else
-    rmdir "$OUTPUT_DIR" 2>/dev/null
-fi
+    echo "Scanning ($method): $url"
     
-echo ""
+    # Prepare arguments
+    ARGS=("--url" "$url" "--batch" "--random-agent" "--smart" "--timeout=5")
+    [ -n "$COOKIE" ] && ARGS+=("--cookie=$COOKIE")
+    
+    if [ "$method" == "POST" ]; then
+        ARGS+=("--data=$data")
+    fi
+
+    # Run and log
+    commix "${ARGS[@]}" >> "$OUT_DIR/commix_all.log" 2>&1
+done < "$TARGETS_FILE"
+
 echo "[*] Commix scan complete"
-
-[ $VULN_FOUND -gt 0 ] && exit 0 || exit 1

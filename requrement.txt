@@ -1,0 +1,17 @@
+beautifulsoup4
+colorama
+fuzzywuzzy
+httpx
+joblib
+lxml
+mitmproxy
+numpy
+pandas
+psutil
+pymetasploit3
+python-levenshtein
+python-nmap
+requests
+scikit-learn
+tld
+validators
