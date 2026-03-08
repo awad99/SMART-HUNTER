@@ -1,3 +1,0 @@
-https://0acb0054042f0d838119cf1700ea005f.web-security-academy.net/post/comment (POST)  # /usr/bin/sqlmap -u https://0acb0054042f0d838119cf1700ea005f.web-security-academy.net/post/comment --batch --random-agent --level=1 --risk=1 --output-dir=/mnt/c/Users/awad/Downloads/pyarmor/auto_PenTest/Data/vuln_scan_20260308_150339/sqlmap_results --cookie=session=62UiaQ710tVOy7YMp7Sv1FChYTeuWzNQ --data=website=FUZZ
-
-website=FUZZ

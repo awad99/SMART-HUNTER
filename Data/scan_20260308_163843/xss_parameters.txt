@@ -1,5 +1,0 @@
-# Target: http://10.48.165.3/
-GET: []
-POST: []
-ENDPOINTS:
-https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css

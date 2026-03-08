@@ -1,7 +1,0 @@
-GET / HTTP/1.1
-Host: 0abb00b00379d3bb85b43797004d00d0.web-security-academy.net
-accept: */*
-accept-encoding: gzip, deflate
-connection: keep-alive
-user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/141.0.0.0 Safari/537.36
-cookie: session=B2AiAGGL66ItLMTKTl6ZZjlphtFBFrQu
