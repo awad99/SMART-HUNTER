@@ -472,9 +472,11 @@ class ReconWebSite:
         return params
 
     def _parse_form(self, html):
+        action_match = re.search(r'action\s*=\s*[\'"]([^\'"]*)[\'"]', html, re.I)
+        method_match = re.search(r'method\s*=\s*[\'"]\s*(\w+)\s*[\'"]', html, re.I)
         return {
-            'action': (re.search(r'action\s*=\s*[\'"]([^\'"]*)[\'"]', html, re.I) or [None,'']).group(1) if re.search(r'action', html, re.I) else '',
-            'method': ((re.search(r'method\s*=\s*[\'"]\s*(\w+)\s*[\'"]', html, re.I) or type('',(),{'group':lambda s,i:'GET'})()).group(1) or 'GET').upper(),
+            'action': action_match.group(1) if action_match else '',
+            'method': (method_match.group(1) if method_match else 'GET').upper(),
             'inputs': list(set(re.findall(r'<(?:input|textarea|select)[^>]*name\s*=\s*[\'"]([^\'"]+)[\'"]', html, re.I))),
         }
 

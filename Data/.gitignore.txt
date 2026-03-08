@@ -1,0 +1,17 @@
+# تجاهل ملفات النتائج والـ logs
+results/
+output/
+*.txt
+*.csv
+*.log
+*.json
+*.db
+*.xml
+
+# تجاهل ملفات البيئة
+.env
+
+# تجاهل ملفات PyCharm أو VSCode
+.vscode/
+__pycache__/
+*.pyc

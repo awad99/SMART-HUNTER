@@ -1,4 +1,4 @@
-import os, sys, urllib.parse, requests, ipaddress, warnings
+import os, sys, urllib.parse, requests, httpx, ipaddress, warnings
 import Recon.url_connection as url_connection
 import vulnerability_scan.URL_checkIfhaveVun as URL_checkIfhaveVun
 import vulnerability_scan.path_Analyze as path_Analyze
@@ -55,38 +55,52 @@ def main():
     if Target.startswith(("http://", "https://")):
         if not Cookie:
             print(f"\n[*] Attempting to extract session cookie automatically from {Target}...")
+            # 1) Try with httpx (modern, usually preferred)
             try:
-                # Use a session and a standard browser User-Agent to encourage cookie setting
-                session = requests.Session()
-                session.headers.update({
-                    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-                    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
-                    "Accept-Language": "en-US,en;q=0.5",
-                })
-                
-                # Try the Target URL first
-                session.get(Target, verify=False, timeout=10, allow_redirects=True)
-                
-                # Also try the root domain if different
-                parsed = urllib.parse.urlparse(Target)
-                root_url = f"{parsed.scheme}://{parsed.netloc}/"
-                if root_url != Target:
-                    session.get(root_url, verify=False, timeout=10, allow_redirects=True)
-                
-                # Collect all cookies from the session
-                cookies_dict = session.cookies.get_dict()
-                if cookies_dict:
-                    Cookie = "; ".join([f"{n}={v}" for n, v in cookies_dict.items()])
-                    print(f"[+] Automatically extracted cookie: {Cookie}")
-                else:
-                    Cookie = None
-                    print("[-] No cookies found automatically. Continuing without sessions.")
-            except requests.exceptions.Timeout:
-                Cookie = None
-                print("[-] Failed to automatically extract cookie: Connection timed out.")
-            except requests.exceptions.RequestException as e:
-                Cookie = None
-                print(f"[-] Failed to automatically extract cookie: {e.__class__.__name__}")
+                with httpx.Client(verify=False, timeout=30.0, follow_redirects=True) as client:
+                    client.headers.update({
+                        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+                        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+                    })
+                    print("[*] Request 1 (httpx)...")
+                    client.get(Target)
+                    
+                    parsed = urllib.parse.urlparse(Target)
+                    root_url = f"{parsed.scheme}://{parsed.netloc}/"
+                    if root_url != Target:
+                        client.get(root_url)
+                    
+                    if client.cookies:
+                        Cookie = "; ".join([f"{n}={v}" for n, v in client.cookies.items()])
+                        print(f"[+] Extracted via httpx: {Cookie}")
+            except httpx.ConnectError as e:
+                print(f"[-] httpx Connection Error: {e}")
+            except httpx.TimeoutException:
+                print("[-] httpx Timeout: The server took too long to respond.")
+            except Exception as e:
+                print(f"[-] httpx error: {e.__class__.__name__} - {e}")
+            
+            # 2) Fallback to requests if httpx didn't get cookies
+            if not Cookie:
+                print("[*] httpx got no cookies, trying fallback (requests)...")
+                try:
+                    session = requests.Session()
+                    session.headers.update({"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"})
+                    session.get(Target, verify=False, timeout=20)
+                    cookies_dict = session.cookies.get_dict()
+                    if cookies_dict:
+                        Cookie = "; ".join([f"{n}={v}" for n, v in cookies_dict.items()])
+                        print(f"[+] Extracted via requests: {Cookie}")
+                except requests.exceptions.ConnectionError as e:
+                    print(f"[-] requests Connection Error: {e}")
+                    print("[!] Suggestion: Check if the lab has expired, or if you need a VPN/Proxy.")
+                except requests.exceptions.Timeout:
+                    print("[-] requests Timeout: The lab may be sleeping or has expired.")
+                except Exception as e:
+                    print(f"[-] requests error: {e.__class__.__name__} - {e}")
+
+            if not Cookie:
+                print("[-] Automated extraction reached the site but found no cookies, or the site is unresponsive.")
         
         get_parameters(Target)
         print(f"\n[*] Target URL: {Target}")

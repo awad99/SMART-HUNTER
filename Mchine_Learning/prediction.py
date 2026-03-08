@@ -15,10 +15,8 @@ ATTACK_PATH_MAP = {
     'path_traversal':    ['Read /etc/passwd', 'Access config files', 'Source code disclosure'],
 }
 
-# =============================================================================
-class SmartVulnerabilityScanner(VulnerabilityCheckerTraining):
-# =============================================================================
 
+class SmartVulnerabilityScanner(VulnerabilityCheckerTraining):
     def __init__(self, url, cookie=None):
         super().__init__(url, cookie)
         self.prediction = None

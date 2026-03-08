@@ -226,24 +226,36 @@ class VulnerabilityCheckerTraining:
         Y = combined[LABEL_COLS].apply(pd.to_numeric, errors='coerce').fillna(0).astype(int)
 
         self.trained_feature_columns = FEATURE_COLS
-        print(f"[+] Training set: {len(X)} samples x {len(FEATURE_COLS)} features -> {len(LABEL_COLS)} labels")
+        print(f"[+] Total dataset: {len(X)} samples x {len(FEATURE_COLS)} features -> {len(LABEL_COLS)} labels")
+
+        # Train/Test Split
+        X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2, random_state=42)
+        print(f"[+] Split: {len(X_train)} train | {len(X_test)} test")
 
         for i, col in enumerate(LABEL_COLS):
-            pos = Y[col].sum()
-            print(f"    {col}: {pos} positive ({pos/len(Y):.1%})")
+            pos = Y_train[col].sum()
+            print(f"    {col} (train): {pos} positive ({pos/len(Y_train):.1%})")
 
-        X_scaled = self.scaler.fit_transform(X)
+        # Fit scaler on training data ONLY
+        X_train_scaled = self.scaler.fit_transform(X_train)
+        X_test_scaled = self.scaler.transform(X_test)
+        
+        # Train model
         self.model = OneVsRestClassifier(
             RandomForestClassifier(n_estimators=150, max_depth=12, random_state=42,
-                                   class_weight='balanced', min_samples_leaf=2)
+                                   class_weight='balanced', min_samples_leaf=2, n_jobs=-1)
         )
-        self.model.fit(X_scaled, Y)
+        self.model.fit(X_train_scaled, Y_train)
 
-        Y_pred = self.model.predict(X_scaled)
-        print(f"\n[+] Training Accuracy (per-label):")
+        # Predict & Evaluate
+        Y_train_pred = self.model.predict(X_train_scaled)
+        Y_test_pred = self.model.predict(X_test_scaled)
+        
+        print(f"\n[+] Accuracy Report (per-label):")
         for i, col in enumerate(LABEL_COLS):
-            acc = accuracy_score(Y.iloc[:, i], Y_pred[:, i])
-            print(f"    {col}: {acc:.2%}")
+            acc_train = accuracy_score(Y_train.iloc[:, i], Y_train_pred[:, i])
+            acc_test = accuracy_score(Y_test.iloc[:, i], Y_test_pred[:, i])
+            print(f"    {col:<22} Train: {acc_train:>7.2%} | Test: {acc_test:>7.2%}")
 
         fi = [est.feature_importances_ for est in self.model.estimators_ if hasattr(est, 'feature_importances_')]
         if fi:
