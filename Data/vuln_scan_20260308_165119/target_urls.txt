@@ -1,0 +1,4 @@
+POST|http://10.48.159.15/|action=comment&comment=FUZZ
+POST|http://10.48.159.15/|action=FUZZ&comment=test
+POST|http://10.48.159.15/|action=FUZZ&search=test
+POST|http://10.48.159.15/|action=search&search=FUZZ

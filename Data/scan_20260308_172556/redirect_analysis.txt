@@ -1,0 +1,14 @@
+REDIRECT CHAIN ANALYSIS
+==================================================
+Original : https://0abb00b00379d3bb85b43797004d00d0.web-security-academy.net/
+Final    : https://0abb00b00379d3bb85b43797004d00d0.web-security-academy.net/
+Hops     : 1
+
+CHAIN:
+  1. ORIGINAL: https://0abb00b00379d3bb85b43797004d00d0.web-security-academy.net/
+  2. 200: https://0abb00b00379d3bb85b43797004d00d0.web-security-academy.net/ → 
+  3. FINAL: https://0abb00b00379d3bb85b43797004d00d0.web-security-academy.net/ (200)
+
+SECURITY:
+  Domains     : 1 (0abb00b00379d3bb85b43797004d00d0.web-security-academy.net)
+  HTTP→HTTPS  : No

@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Write to McSkidy - Santa's Workshop</title>
+	<style>
+		@import url('local-fonts.css');
+		
+		* { margin: 0; padding: 0; box-sizing: border-box; }
+		
+		body { 
+			font-family: 'Inter', sans-serif; 
+			background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #dee2e6 100%);
+			color: #333;
+			min-height: 100vh;
+			position: relative;
+		}
+		
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 2rem;
+		}
+		
+		.header {
+			text-align: center;
+			margin-bottom: 3rem;
+			padding: 2rem;
+			background: white;
+			border-radius: 15px;
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+			border: 2px solid #dc3545;
+		}
+		
+		.logo {
+			font-family: 'Mountains of Christmas', cursive;
+			font-size: 2.5rem;
+			color: #dc3545;
+			margin-bottom: 0.5rem;
+		}
+		
+		.subtitle {
+			color: #6c757d;
+			font-size: 1.1rem;
+		}
+		
+		.main-content {
+			background: white;
+			border-radius: 15px;
+			padding: 2rem;
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+			margin-bottom: 2rem;
+		}
+		
+		.welcome-text {
+			margin-bottom: 2rem;
+			line-height: 1.6;
+			color: #495057;
+		}
+		
+		.form-section {
+			margin-bottom: 2rem;
+		}
+		
+		.form-section h3 {
+			color: #dc3545;
+			margin-bottom: 1rem;
+			font-size: 1.3rem;
+		}
+		
+		.form-group {
+			margin-bottom: 1.5rem;
+		}
+		
+		.form-group label {
+			display: block;
+			margin-bottom: 0.5rem;
+			color: #495057;
+			font-weight: 500;
+		}
+		
+		.form-group input,
+		.form-group textarea {
+			width: 100%;
+			padding: 1rem;
+			border: 2px solid #dee2e6;
+			border-radius: 8px;
+			font-size: 1rem;
+			transition: border-color 0.3s ease;
+			font-family: inherit;
+		}
+		
+		.form-group input:focus,
+		.form-group textarea:focus {
+			outline: none;
+			border-color: #dc3545;
+		}
+		
+		.form-group textarea {
+			height: 120px;
+			resize: vertical;
+		}
+		
+		.btn {
+			background: #dc3545;
+			color: white;
+			padding: 1rem 2rem;
+			border: none;
+			border-radius: 8px;
+			font-size: 1rem;
+			font-weight: 500;
+			cursor: pointer;
+			transition: background-color 0.3s ease;
+		}
+		
+		.btn:hover {
+			background: #c82333;
+		}
+		
+		.search-results {
+			background: #f8f9fa;
+			border-radius: 8px;
+			padding: 1.5rem;
+			margin-top: 1rem;
+			border-left: 4px solid #dc3545;
+		}
+		
+		.search-results h4 {
+			color: #dc3545;
+			margin-bottom: 1rem;
+		}
+		
+		.search-content {
+			background: white;
+			padding: 1rem;
+			border-radius: 4px;
+			border: 1px solid #dee2e6;
+			font-family: 'Courier New', monospace;
+			word-break: break-all;
+		}
+		
+		.messages-section {
+			background: white;
+			border-radius: 15px;
+			padding: 2rem;
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+		}
+		
+		.messages-title {
+			color: #dc3545;
+			font-size: 1.5rem;
+			margin-bottom: 1.5rem;
+		}
+		
+		.message {
+			background: #f8f9fa;
+			border-radius: 8px;
+			padding: 1.5rem;
+			margin-bottom: 1rem;
+			border-left: 4px solid #dc3545;
+		}
+		
+		.message-meta {
+			color: #6c757d;
+			font-size: 0.9rem;
+			margin-bottom: 0.5rem;
+		}
+		
+		.message-content {
+			line-height: 1.6;
+			word-break: break-word;
+		}
+		
+		.success-message {
+			background: #d4edda;
+			border: 1px solid #c3e6cb;
+			color: #155724;
+			padding: 1rem;
+			border-radius: 8px;
+			margin-bottom: 2rem;
+		}
+		
+		.hidden-flag {
+			position: absolute;
+			top: -9999px;
+			left: -9999px;
+			opacity: 0;
+			pointer-events: none;
+		}
+		
+		.flag-reveal {
+			background: #d4edda;
+			border: 1px solid #c3e6cb;
+			border-radius: 8px;
+			padding: 1rem;
+			margin-top: 1rem;
+			display: none;
+		}
+		
+		.flag-reveal.show {
+			display: block;
+			animation: slideIn 0.5s ease;
+		}
+		
+		@keyframes slideIn {
+			from { opacity: 0; transform: translateY(-10px); }
+			to { opacity: 1; transform: translateY(0); }
+		}
+		
+		.flag-text {
+			color: #155724;
+			font-family: 'Courier New', monospace;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<!-- Hidden flags for source code inspection -->
+	<div class="hidden-flag">THM{Evil_Bunny}</div>
+	<div class="hidden-flag">THM{Evil_Stored_Egg}</div>
+	
+	<div class="container">
+		<div class="header">
+			<div class="logo">🎄 Write to McSkidy</div>
+			<p class="subtitle">Send your Christmas wishes and questions to Santa's Chief Security Elf</p>
+		</div>
+		
+		<div class="main-content">
+			<div class="welcome-text">
+				<p>Welcome to Santa's Workshop communication portal! Here you can send messages to McSkidy, our Chief Security Elf, who handles all cyber security matters at The Best Festival Company.</p>
+				<p>Whether you have questions about Christmas security, want to report suspicious activity, or just want to say hello, McSkidy is here to help!</p>
+			</div>
+			
+						
+			<div class="form-section">
+				<h3>🔍 Search Previous Messages</h3>
+				<p>Look up previous messages and communications:</p>
+				
+				<form method="post" action="">
+					<input type="hidden" name="action" value="search">
+					<div class="form-group">
+						<label for="search">Search for messages:</label>
+						<input type="text" name="search" id="search" placeholder="Enter search terms..." value="">
+					</div>
+					<button type="submit" class="btn">🔍 Search Messages</button>
+				</form>
+				
+							</div>
+			
+			<div class="form-section">
+				<h3>📝 Send a Message to McSkidy</h3>
+				<p>Write your message below and McSkidy will get back to you as soon as possible:</p>
+				
+				<form method="post" action="">
+					<input type="hidden" name="action" value="comment">
+					<div class="form-group">
+						<label for="comment">Your message:</label>
+						<textarea name="comment" id="comment" placeholder="Dear McSkidy, I would like to report..."></textarea>
+					</div>
+					<button type="submit" class="btn">📤 Send Message</button>
+				</form>
+			</div>
+		</div>
+		
+					<div class="messages-section">
+				<h2 class="messages-title">📋 Recent Messages</h2>
+				
+									<div class="message">
+						<div class="message-meta">
+							Message #375 • 2026-03-08 13:55:36						</div>
+						<div class="message-content">
+							<!-- Intentionally unescaped to demonstrate stored XSS -->
+							FUZZ ORDER BY 7841-- EUjW						</div>
+					</div>
+									<div class="message">
+						<div class="message-meta">
+							Message #374 • 2026-03-08 13:55:36						</div>
+						<div class="message-content">
+							<!-- Intentionally unescaped to demonstrate stored XSS -->
+							FUZZ ORDER BY 7841-- EUjW						</div>
+					</div>
+									<div class="message">
+						<div class="message-meta">
+							Message #373 • 2026-03-08 13:55:36						</div>
+						<div class="message-content">
+							<!-- Intentionally unescaped to demonstrate stored XSS -->
+							FUZZ ORDER BY 7841-- EUjW						</div>
+					</div>
+									<div class="message">
+						<div class="message-meta">
+							Message #372 • 2026-03-08 13:55:35						</div>
+						<div class="message-content">
+							<!-- Intentionally unescaped to demonstrate stored XSS -->
+							FUZZ ORDER BY 7841-- EUjW						</div>
+					</div>
+									<div class="message">
+						<div class="message-meta">
+							Message #371 • 2026-03-08 13:55:35						</div>
+						<div class="message-content">
+							<!-- Intentionally unescaped to demonstrate stored XSS -->
+							FUZZ ORDER BY 7841-- EUjW						</div>
+					</div>
+									<div class="message">
+						<div class="message-meta">
+							Message #370 • 2026-03-08 13:55:35						</div>
+						<div class="message-content">
+							<!-- Intentionally unescaped to demonstrate stored XSS -->
+							FUZZ ORDER BY 1-- WBZK						</div>
+					</div>
+									<div class="message">
+						<div class="message-meta">
+							Message #369 • 2026-03-08 13:55:35						</div>
+						<div class="message-content">
+							<!-- Intentionally unescaped to demonstrate stored XSS -->
+							FUZZ ORDER BY 1-- WBZK						</div>
+					</div>
+									<div class="message">
+						<div class="message-meta">
+							Message #368 • 2026-03-08 13:55:35						</div>
+						<div class="message-content">
+							<!-- Intentionally unescaped to demonstrate stored XSS -->
+							FUZZ ORDER BY 1-- WBZK						</div>
+					</div>
+									<div class="message">
+						<div class="message-meta">
+							Message #367 • 2026-03-08 13:55:35						</div>
+						<div class="message-content">
+							<!-- Intentionally unescaped to demonstrate stored XSS -->
+							FUZZ ORDER BY 1-- WBZK						</div>
+					</div>
+									<div class="message">
+						<div class="message-meta">
+							Message #366 • 2026-03-08 13:55:35						</div>
+						<div class="message-content">
+							<!-- Intentionally unescaped to demonstrate stored XSS -->
+							FUZZ ORDER BY 1-- WBZK						</div>
+					</div>
+								
+								
+							</div>
+				
+		<div class="messages-section">
+			<h2 class="messages-title">📊 System Logs</h2>
+			<p>View recent system activity and security events:</p>
+			
+						
+							<div style="background: #f8f9fa; border-radius: 8px; padding: 1rem; font-family: 'Courier New', monospace; font-size: 0.9rem; max-height: 300px; overflow-y: auto;">
+											<div style="margin-bottom: 0.5rem; word-break: break-all;">
+							[2026-03-08 14:12:31] [ACCESS] IP: 127.0.0.1 | Page accessed: / | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/141.0.0.0 Safari/537.36						</div>
+											<div style="margin-bottom: 0.5rem; word-break: break-all;">
+							[2026-03-08 14:12:30] [ACCESS] IP: 127.0.0.1 | Page accessed: / | User-Agent: curl/8.17.0						</div>
+											<div style="margin-bottom: 0.5rem; word-break: break-all;">
+							[2026-03-08 14:12:30] [ACCESS] IP: 127.0.0.1 | Page accessed: / | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36						</div>
+											<div style="margin-bottom: 0.5rem; word-break: break-all;">
+							[2026-03-08 14:08:34] [ACCESS] IP: 127.0.0.1 | Page accessed: /?search=sss | User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36						</div>
+											<div style="margin-bottom: 0.5rem; word-break: break-all;">
+							<span style="color: #28a745;">[2026-03-08 13:55:36] [MESSAGE] IP: 127.0.0.1 | Message posted: FUZZ ORDER BY 7841-- EUjW | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36</span>						</div>
+											<div style="margin-bottom: 0.5rem; word-break: break-all;">
+							[2026-03-08 13:55:36] [ACCESS] IP: 127.0.0.1 | Page accessed: /?comment_success=1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36						</div>
+											<div style="margin-bottom: 0.5rem; word-break: break-all;">
+							<span style="color: #28a745;">[2026-03-08 13:55:36] [MESSAGE] IP: 127.0.0.1 | Message posted: FUZZ ORDER BY 7841-- EUjW | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36</span>						</div>
+											<div style="margin-bottom: 0.5rem; word-break: break-all;">
+							[2026-03-08 13:55:36] [ACCESS] IP: 127.0.0.1 | Page accessed: /?comment_success=1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36						</div>
+											<div style="margin-bottom: 0.5rem; word-break: break-all;">
+							<span style="color: #28a745;">[2026-03-08 13:55:36] [MESSAGE] IP: 127.0.0.1 | Message posted: FUZZ ORDER BY 7841-- EUjW | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36</span>						</div>
+											<div style="margin-bottom: 0.5rem; word-break: break-all;">
+							[2026-03-08 13:55:36] [ACCESS] IP: 127.0.0.1 | Page accessed: /?comment_success=1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36						</div>
+											<div style="margin-bottom: 0.5rem; word-break: break-all;">
+							<span style="color: #28a745;">[2026-03-08 13:55:35] [MESSAGE] IP: 127.0.0.1 | Message posted: FUZZ ORDER BY 7841-- EUjW | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36</span>						</div>
+											<div style="margin-bottom: 0.5rem; word-break: break-all;">
+							[2026-03-08 13:55:35] [ACCESS] IP: 127.0.0.1 | Page accessed: /?comment_success=1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36						</div>
+											<div style="margin-bottom: 0.5rem; word-break: break-all;">
+							<span style="color: #28a745;">[2026-03-08 13:55:35] [MESSAGE] IP: 127.0.0.1 | Message posted: FUZZ ORDER BY 7841-- EUjW | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36</span>						</div>
+											<div style="margin-bottom: 0.5rem; word-break: break-all;">
+							[2026-03-08 13:55:35] [ACCESS] IP: 127.0.0.1 | Page accessed: / | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36						</div>
+											<div style="margin-bottom: 0.5rem; word-break: break-all;">
+							<span style="color: #28a745;">[2026-03-08 13:55:35] [MESSAGE] IP: 127.0.0.1 | Message posted: FUZZ ORDER BY 1-- WBZK | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36</span>						</div>
+											<div style="margin-bottom: 0.5rem; word-break: break-all;">
+							[2026-03-08 13:55:35] [ACCESS] IP: 127.0.0.1 | Page accessed: /?comment_success=1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36						</div>
+											<div style="margin-bottom: 0.5rem; word-break: break-all;">
+							<span style="color: #28a745;">[2026-03-08 13:55:35] [MESSAGE] IP: 127.0.0.1 | Message posted: FUZZ ORDER BY 1-- WBZK | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36</span>						</div>
+											<div style="margin-bottom: 0.5rem; word-break: break-all;">
+							[2026-03-08 13:55:35] [ACCESS] IP: 127.0.0.1 | Page accessed: /?comment_success=1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36						</div>
+											<div style="margin-bottom: 0.5rem; word-break: break-all;">
+							<span style="color: #28a745;">[2026-03-08 13:55:35] [MESSAGE] IP: 127.0.0.1 | Message posted: FUZZ ORDER BY 1-- WBZK | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36</span>						</div>
+											<div style="margin-bottom: 0.5rem; word-break: break-all;">
+							[2026-03-08 13:55:35] [ACCESS] IP: 127.0.0.1 | Page accessed: /?comment_success=1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36						</div>
+									</div>
+					</div>
+	</div>
+	
+	<script>
+		// Add character counter for textarea
+		document.addEventListener('DOMContentLoaded', function() {
+			const textarea = document.getElementById('comment');
+			if (textarea) {
+				textarea.addEventListener('input', function() {
+					const length = this.value.length;
+					let counter = document.getElementById('char-counter');
+					if (!counter) {
+						counter = document.createElement('div');
+						counter.id = 'char-counter';
+						counter.style.cssText = 'text-align: right; color: #6c757d; font-size: 0.9rem; margin-top: 0.5rem;';
+						this.parentNode.appendChild(counter);
+					}
+					counter.textContent = `${length} characters`;
+				});
+			}
+		});
+	</script>
+</body>
+</html>

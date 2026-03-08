@@ -1,0 +1,15 @@
+# Target: https://0a6e007f04f01eab80af03f800b600e2.web-security-academy.net/
+GET: []
+POST: []
+ENDPOINTS:
+/post?postId=7
+/post?postId=9
+/post?postId=1
+/post?postId=3
+/post?postId=6
+/post?postId=4
+/post?postId=10
+https://portswigger.net/web-security/cross-site-scripting/contexts/lab-href-attribute-double-quotes-html-encoded
+/post?postId=5
+/post?postId=8
+/post?postId=2

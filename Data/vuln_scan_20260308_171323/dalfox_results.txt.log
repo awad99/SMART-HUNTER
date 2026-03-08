@@ -1,0 +1,4 @@
+Running: dalfox url "http://10.48.159.15/" --batch --random-agent --silence --timeout 60 -d action=FUZZ&comment=test
+Running: dalfox url "http://10.48.159.15/" --batch --random-agent --silence --timeout 60 -d action=FUZZ&search=test
+Running: dalfox url "http://10.48.159.15/" --batch --random-agent --silence --timeout 60 -d action=comment&comment=FUZZ
+Running: dalfox url "http://10.48.159.15/" --batch --random-agent --silence --timeout 60 -d action=search&search=FUZZ

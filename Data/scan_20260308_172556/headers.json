@@ -1,0 +1,14 @@
+[
+  {
+    "url": "https://0abb00b00379d3bb85b43797004d00d0.web-security-academy.net/",
+    "status_code": 200,
+    "headers": {
+      "content-type": "text/html; charset=utf-8",
+      "x-frame-options": "SAMEORIGIN",
+      "content-encoding": "gzip",
+      "connection": "close",
+      "content-length": "2294"
+    },
+    "timestamp": "2026-03-08T17:25:57.200114"
+  }
+]

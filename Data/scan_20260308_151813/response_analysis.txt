@@ -1,0 +1,23 @@
+TARGET: https://0acb0054042f0d838119cf1700ea005f.web-security-academy.net/
+==================================================
+Link: https://portswigger.net/web-security/cross-site-scripting/stored/lab-html-context-nothing-encoded
+Link: /post?postId=2
+Link: /post?postId=2
+Link: /post?postId=7
+Link: /post?postId=7
+Link: /post?postId=10
+Link: /post?postId=10
+Link: /post?postId=6
+Link: /post?postId=6
+Link: /post?postId=5
+Link: /post?postId=5
+Link: /post?postId=9
+Link: /post?postId=9
+Link: /post?postId=8
+Link: /post?postId=8
+Link: /post?postId=1
+Link: /post?postId=1
+Link: /post?postId=3
+Link: /post?postId=3
+Link: /post?postId=4
+Link: /post?postId=4

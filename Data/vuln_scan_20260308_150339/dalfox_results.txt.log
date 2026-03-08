@@ -1,0 +1,7 @@
+Running: dalfox url "https://0acb0054042f0d838119cf1700ea005f.web-security-academy.net/post/comment" --batch --random-agent --silence --timeout 60 --cookie session=62UiaQ710tVOy7YMp7Sv1FChYTeuWzNQ -d csrf=FUZZ
+Running: dalfox url "https://0acb0054042f0d838119cf1700ea005f.web-security-academy.net/post/comment" --batch --random-agent --silence --timeout 60 --cookie session=62UiaQ710tVOy7YMp7Sv1FChYTeuWzNQ -d email=FUZZ
+Running: dalfox url "https://0acb0054042f0d838119cf1700ea005f.web-security-academy.net/post?postId=FUZZ" --batch --random-agent --silence --timeout 60 --cookie session=62UiaQ710tVOy7YMp7Sv1FChYTeuWzNQ
+Running: dalfox url "https://0acb0054042f0d838119cf1700ea005f.web-security-academy.net/post/comment" --batch --random-agent --silence --timeout 60 --cookie session=62UiaQ710tVOy7YMp7Sv1FChYTeuWzNQ -d postId=FUZZ
+Running: dalfox url "https://0acb0054042f0d838119cf1700ea005f.web-security-academy.net/post/comment" --batch --random-agent --silence --timeout 60 --cookie session=62UiaQ710tVOy7YMp7Sv1FChYTeuWzNQ -d name=FUZZ
+Running: dalfox url "https://0acb0054042f0d838119cf1700ea005f.web-security-academy.net/post/comment" --batch --random-agent --silence --timeout 60 --cookie session=62UiaQ710tVOy7YMp7Sv1FChYTeuWzNQ -d comment=FUZZ
+Running: dalfox url "https://0acb0054042f0d838119cf1700ea005f.web-security-academy.net/post/comment" --batch --random-agent --silence --timeout 60 --cookie session=62UiaQ710tVOy7YMp7Sv1FChYTeuWzNQ -d website=FUZZ

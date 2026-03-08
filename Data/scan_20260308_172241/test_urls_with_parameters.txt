@@ -1,0 +1,11 @@
+https://0a6e007f04f01eab80af03f800b600e2.web-security-academy.net/post?postId=7
+https://0a6e007f04f01eab80af03f800b600e2.web-security-academy.net/post?postId=9
+https://0a6e007f04f01eab80af03f800b600e2.web-security-academy.net/post?postId=1
+https://0a6e007f04f01eab80af03f800b600e2.web-security-academy.net/post?postId=3
+https://0a6e007f04f01eab80af03f800b600e2.web-security-academy.net/post?postId=6
+https://0a6e007f04f01eab80af03f800b600e2.web-security-academy.net/post?postId=4
+https://0a6e007f04f01eab80af03f800b600e2.web-security-academy.net/post?postId=10
+https://portswigger.net/web-security/cross-site-scripting/contexts/lab-href-attribute-double-quotes-html-encoded
+https://0a6e007f04f01eab80af03f800b600e2.web-security-academy.net/post?postId=5
+https://0a6e007f04f01eab80af03f800b600e2.web-security-academy.net/post?postId=8
+https://0a6e007f04f01eab80af03f800b600e2.web-security-academy.net/post?postId=2

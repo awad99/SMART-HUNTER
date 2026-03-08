@@ -1,0 +1,16 @@
+[
+  {
+    "url": "http://10.48.159.15/",
+    "type": "ORIGINAL"
+  },
+  {
+    "url": "http://10.48.159.15/",
+    "status_code": 200,
+    "location": ""
+  },
+  {
+    "url": "http://10.48.159.15/",
+    "type": "FINAL",
+    "status": 200
+  }
+]

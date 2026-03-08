@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<!--LAB_HEAD_START-->
+    <head>
+        <link href=/resources/labheader/css/academyLabHeader.css rel=stylesheet>
+        <link href=/resources/css/labsBlog.css rel=stylesheet>
+        <title>Stored XSS into anchor href attribute with double quotes HTML-encoded</title>
+    </head>
+<!--LAB_HEAD_END-->
+    <body>
+        <script src="/resources/labheader/js/labHeader.js"></script>
+        <!--LAB_HEADER_START-->
+        <div id="academyLabHeader">
+            <section class='academyLabBanner'>
+                <div class=container>
+                    <div class=logo></div>
+                        <div class=title-container>
+                            <h2>Stored XSS into anchor <code>href</code> attribute with double quotes HTML-encoded</h2>
+                            <a class=link-back href='https://portswigger.net/web-security/cross-site-scripting/contexts/lab-href-attribute-double-quotes-html-encoded'>
+                                Back&nbsp;to&nbsp;lab&nbsp;description&nbsp;
+                                <svg version=1.1 id=Layer_1 xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x=0px y=0px viewBox='0 0 28 30' enable-background='new 0 0 28 30' xml:space=preserve title=back-arrow>
+                                    <g>
+                                        <polygon points='1.4,0 0,1.2 12.6,15 0,28.8 1.4,30 15.1,15'></polygon>
+                                        <polygon points='14.3,0 12.9,1.2 25.6,15 12.9,28.8 14.3,30 28,15'></polygon>
+                                    </g>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class='widgetcontainer-lab-status is-notsolved'>
+                            <span>LAB</span>
+                            <p>Not solved</p>
+                            <span class=lab-status-icon></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!--LAB_HEADER_END-->
+        <div theme="blog">
+            <section class="maincontainer">
+                <div class="container is-page">
+                    <header class="navigation-header">
+                        <section class="top-links">
+                            <a href=/>Home</a><p>|</p>
+                        </section>
+                    </header>
+                    <header class="notification-header">
+                    </header>
+                    <section class="blog-header">
+                        <img src="/resources/images/blog.svg">
+                    </section>
+                    <section class="blog-list">
+                        <div class="blog-post">
+                        <a href="/post?postId=1"><img src="/image/blog/posts/33.jpg"></a>
+                        <h2>Wellness</h2>
+                        <p>Of all the tough and laborious tasks in life, looking after ourselves is possibly one of the most tedious. Wherever you are in the world right now, it seems there is an ever-growing trend of people aiming to take better...</p>
+                        <a class="button is-small" href="/post?postId=1">View post</a>
+                        </div>
+                        <div class="blog-post">
+                        <a href="/post?postId=7"><img src="/image/blog/posts/7.jpg"></a>
+                        <h2>Faking It! - InstaCam</h2>
+                        <p>People are going to extreme lengths to pull the wool over their friends' eyes on Social Media. If you've ever clicked your way through family photos and the perfect summer and winter getaway pics of your friends on Instagram then...</p>
+                        <a class="button is-small" href="/post?postId=7">View post</a>
+                        </div>
+                        <div class="blog-post">
+                        <a href="/post?postId=6"><img src="/image/blog/posts/34.jpg"></a>
+                        <h2>Scams</h2>
+                        <p>Where there is good there is evil and when it comes to the internet there is surely a scam not lurking too far away. Whether it's being promised thousands from an African prince or being blackmailed by someone claiming to...</p>
+                        <a class="button is-small" href="/post?postId=6">View post</a>
+                        </div>
+                        <div class="blog-post">
+                        <a href="/post?postId=4"><img src="/image/blog/posts/54.jpg"></a>
+                        <h2>The First Ever Truly Eco Car Has Made It To Market</h2>
+                        <p>Forget electricity, we know that's still a drain on the National Grid. Some clever little inventors in Ohio have come up with a way of getting your car moving with nothing but air. And better still, air from your own...</p>
+                        <a class="button is-small" href="/post?postId=4">View post</a>
+                        </div>
+                        <div class="blog-post">
+                        <a href="/post?postId=3"><img src="/image/blog/posts/14.jpg"></a>
+                        <h2>Making The Holidays Special Again</h2>
+                        <p>This time of year I tend to mourn the loss of my little ones, all grown up with no surprises left to give them. Last year I found a way to combat this melancholy, and I thought I'd share what...</p>
+                        <a class="button is-small" href="/post?postId=3">View post</a>
+                        </div>
+                        <div class="blog-post">
+                        <a href="/post?postId=5"><img src="/image/blog/posts/45.jpg"></a>
+                        <h2>Perseverance</h2>
+                        <p>To coin a famous phrase - life is suffering. Not a cheerful start, but true none the less. However, ambition, joy and passion couldn't exist without a bit of suffering and like it or not they are all parts of...</p>
+                        <a class="button is-small" href="/post?postId=5">View post</a>
+                        </div>
+                        <div class="blog-post">
+                        <a href="/post?postId=10"><img src="/image/blog/posts/32.jpg"></a>
+                        <h2>A Guide to Online Dating</h2>
+                        <p>Let's face it, it's a minefield out there. That's not even just a reference to dating, the planet right now is more or less a minefield. In a world where cats have their own YouTube channels and a celebrity can...</p>
+                        <a class="button is-small" href="/post?postId=10">View post</a>
+                        </div>
+                        <div class="blog-post">
+                        <a href="/post?postId=8"><img src="/image/blog/posts/48.jpg"></a>
+                        <h2>Look No Hands - The Game Plays Itself</h2>
+                        <p>I was so fed up with my husband always sitting in front of the television playing his silly games, I did something about it. I came up with an idea that would revolutionize game playing in the future. I wrote...</p>
+                        <a class="button is-small" href="/post?postId=8">View post</a>
+                        </div>
+                        <div class="blog-post">
+                        <a href="/post?postId=2"><img src="/image/blog/posts/63.jpg"></a>
+                        <h2>Shopping Woes</h2>
+                        <p>I'm one of those really annoying people you don't want to get stuck behind in the grocery store. I love to chat, and boy can I chat, to the cashier. My money is always at the bottom of my rucksack,...</p>
+                        <a class="button is-small" href="/post?postId=2">View post</a>
+                        </div>
+                        <div class="blog-post">
+                        <a href="/post?postId=9"><img src="/image/blog/posts/26.jpg"></a>
+                        <h2>Trying To Save The World</h2>
+                        <p>But I Can't ...</p>
+                        <a class="button is-small" href="/post?postId=9">View post</a>
+                        </div>
+                    </section>
+                </div>
+            </section>
+            <div class="footer-wrapper">
+            </div>
+        </div>
+    </body>
+</html>
