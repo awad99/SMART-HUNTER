@@ -8,7 +8,7 @@ warnings.filterwarnings('ignore')
 # -- Constants --------------------------------------------------------------
 UA = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/141.0.0.0 Safari/537.36'}
 DATASET_DIR      = "Data"
-ML_DATASET_FILE  = os.path.join(DATASET_DIR, "web_recon_ml_dataset.csv")
+ML_DATASET_FILE  = os.path.join(DATASET_DIR, "Datasets", "web_recon_ml_dataset.csv")
 REQUEST_DELAY    = 0.4   # seconds between redirect hops
 MAX_REDIRECTS    = 10
 
@@ -510,9 +510,15 @@ class ReconWebSite:
                 f.write(f"Link: {link}\n")
 
         pf = os.path.join(self.scan_dir, "xss_parameters.txt")
+        content = f"# Target: {url}\nGET: {params['get_params']}\nPOST: {params['post_params']}\n" + "ENDPOINTS:\n" + "\n".join(params['endpoints'])
         with open(pf, "w", encoding='utf-8') as f:
-            f.write(f"# Target: {url}\nGET: {params['get_params']}\nPOST: {params['post_params']}\n")
-            f.write("ENDPOINTS:\n" + "\n".join(params['endpoints']))
+            f.write(content)
+        
+        # Centralized saving
+        central_pf = os.path.join(DATASET_DIR, "Parameters", "xss_parameters.txt")
+        if not os.path.exists(os.path.dirname(central_pf)): os.makedirs(os.path.dirname(central_pf), exist_ok=True)
+        with open(central_pf, "w", encoding='utf-8') as f:
+            f.write(content)
 
         uf = os.path.join(self.scan_dir, "test_urls_with_parameters.txt")
         with open(uf, "w", encoding='utf-8') as f:
@@ -575,13 +581,15 @@ class ReconWebSite:
 
     def _get_subdomain(self, url):
         print(f"\n[*] Subdomain discovery: {url}")
-        out_file = os.path.join(self.scan_dir, "subdomains.txt")
+        out_file = os.path.join(self.scan_dir, "domains", "subdomains.txt")
+        if not os.path.exists(os.path.dirname(out_file)): os.makedirs(os.path.dirname(out_file), exist_ok=True)
         return self._run_script("script/get_subdomain.sh", url,
                                 save_file=out_file, timeout=120)
 
     def _get_URLs(self, url):
         print(f"\n[*] URL discovery: {url}")
-        out_file = os.path.abspath(os.path.join(self.scan_dir, "discovered_urls.txt"))
+        out_file = os.path.abspath(os.path.join(self.scan_dir, "domains", "discovered_urls.txt"))
+        if not os.path.exists(os.path.dirname(out_file)): os.makedirs(os.path.dirname(out_file), exist_ok=True)
         # Pass output file and per-tool timeout to the bash script
         return self._run_script("script/get_URLs.sh", url, out_file, "120",
                                 save_file=None,   # script writes its own file
@@ -598,7 +606,8 @@ class ReconWebSite:
         print(f"\n[*] Fuzzing: {base_url}")
         if not os.path.exists("script/fuzzing_command_Tools.sh"):
             print("[-] fuzzing_command_Tools.sh not found"); return None
-        open("fuzzing_Target.txt", "w").write(base_url)
+        fpath = os.path.join(DATASET_DIR, "Parameters", "fuzzing_Target.txt")
+        open(fpath, "w").write(base_url)
         result = subprocess.run(['bash', "script/fuzzing_command_Tools.sh", base_url], capture_output=True, text=True)
         if result.returncode != 0:
             print(f"[-] Fuzz script failed (rc={result.returncode}):\n{result.stderr}")

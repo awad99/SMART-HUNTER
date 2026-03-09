@@ -1,7 +1,0 @@
-POST|https://0abb009c04f1b619808a03e6006000ef.web-security-academy.net/post/comment|comment=FUZZ
-POST|https://0abb009c04f1b619808a03e6006000ef.web-security-academy.net/post/comment|name=FUZZ
-POST|https://0abb009c04f1b619808a03e6006000ef.web-security-academy.net/post/comment|csrf=FUZZ
-POST|https://0abb009c04f1b619808a03e6006000ef.web-security-academy.net/post/comment|website=FUZZ
-GET|https://0abb009c04f1b619808a03e6006000ef.web-security-academy.net/post?postId=FUZZ|
-POST|https://0abb009c04f1b619808a03e6006000ef.web-security-academy.net/post/comment|email=FUZZ
-POST|https://0abb009c04f1b619808a03e6006000ef.web-security-academy.net/post/comment|postId=FUZZ

@@ -6,8 +6,8 @@ from sklearn.metrics import accuracy_score
 from sklearn.preprocessing import StandardScaler
 
 # -- Constants --------------------------------------------------------------
-RECON_FILE = "Data/web_recon_ml_dataset.csv"
-VULN_FILE  = "Data/vulnerability_ml_dataset.csv"
+RECON_FILE = "Data/Datasets/web_recon_ml_dataset.csv"
+VULN_FILE  = "Data/Datasets/vulnerability_ml_dataset.csv"
 MODEL_FILE = "Data/vulnerability_model.pkl"
 
 # Features used for training

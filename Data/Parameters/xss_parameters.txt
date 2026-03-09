@@ -1,0 +1,10 @@
+# Target: https://careers.moenergy.gov.sa/
+GET: []
+POST: []
+ENDPOINTS:
+GET|https://careers.moenergy.gov.sa/?id=FUZZ|
+GET|https://careers.moenergy.gov.sa/?search=FUZZ|
+GET|https://careers.moenergy.gov.sa/?q=FUZZ|
+GET|https://careers.moenergy.gov.sa/?page=FUZZ|
+GET|https://careers.moenergy.gov.sa/?file=FUZZ|
+GET|https://careers.moenergy.gov.sa/?cmd=FUZZ|
