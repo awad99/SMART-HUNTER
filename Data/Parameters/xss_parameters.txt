@@ -1,10 +1,11 @@
-# Target: https://careers.moenergy.gov.sa/
+# Target: https://0a1900bd03332b18819b589c0030001a.web-security-academy.net/
 GET: []
 POST: []
 ENDPOINTS:
-GET|https://careers.moenergy.gov.sa/?id=FUZZ|
-GET|https://careers.moenergy.gov.sa/?search=FUZZ|
-GET|https://careers.moenergy.gov.sa/?q=FUZZ|
-GET|https://careers.moenergy.gov.sa/?page=FUZZ|
-GET|https://careers.moenergy.gov.sa/?file=FUZZ|
-GET|https://careers.moenergy.gov.sa/?cmd=FUZZ|
+/feedback?returnPath=/
+https://portswigger.net/web-security/cross-site-scripting/dom-based/lab-jquery-href-attribute-sink
+/post?postId=5
+/post?postId=1
+/post?postId=2
+/post?postId=3
+/post?postId=4

