@@ -17,24 +17,37 @@ fi
 
 echo "[*] Starting Commix bulk scan"
 
-# Prepare cookie arg
-COOKIE_ARG=""
-if [ -n "$COOKIE" ]; then
-    COOKIE_ARG="--cookie=\"$COOKIE\""
-fi
-
 # Read targets and run commix
 while IFS='|' read -r method url data || [ -n "$method" ]; do
     [ -z "$method" ] && continue
-    
+
     echo "Scanning ($method): $url"
-    
-    # Prepare arguments
-    ARGS=("--url" "$url" "--batch" "--random-agent" "--smart" "--timeout=5")
+
+    # Prepare arguments — no --smart (it skips valid targets), higher timeout
+    ARGS=("--url" "$url" "--batch" "--random-agent" "--timeout=30")
     [ -n "$COOKIE" ] && ARGS+=("--cookie=$COOKIE")
-    
+
     if [ "$method" == "POST" ]; then
-        ARGS+=("--data=$data")
+        # Find which parameter has FUZZ and target it specifically
+        FUZZ_PARAM=""
+        CLEAN_DATA=""
+        IFS='&' read -ra PAIRS <<< "$data"
+        for pair in "${PAIRS[@]}"; do
+            pname="${pair%%=*}"
+            pval="${pair#*=}"
+            if [ "$pval" == "FUZZ" ]; then
+                FUZZ_PARAM="$pname"
+                # Replace FUZZ with a valid default value so commix can inject
+                CLEAN_DATA="${CLEAN_DATA:+${CLEAN_DATA}&}${pname}=1"
+            else
+                CLEAN_DATA="${CLEAN_DATA:+${CLEAN_DATA}&}${pair}"
+            fi
+        done
+        ARGS+=("--data=$CLEAN_DATA")
+        # Tell commix exactly which parameter to test
+        if [ -n "$FUZZ_PARAM" ]; then
+            ARGS+=("-p" "$FUZZ_PARAM")
+        fi
     fi
 
     # Run and log

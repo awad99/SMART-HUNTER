@@ -1,0 +1,1 @@
+https://profile.moenergy.gov.sa/?page=FUZZ (GET)  # /usr/bin/sqlmap -u https://profile.moenergy.gov.sa/?page=FUZZ --batch --random-agent --level=1 --risk=1 --output-dir=/mnt/c/Users/awad/Downloads/pyarmor/auto_PenTest/Data/vuln_scan_20260310_000753/sqlmap_results

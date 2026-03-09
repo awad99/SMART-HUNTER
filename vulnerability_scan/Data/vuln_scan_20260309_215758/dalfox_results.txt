@@ -1,0 +1,249 @@
+Error: unknown flag: --batch
+Use single target mode
+
+Usage:
+  dalfox url [target] [flags]
+
+Input:
+      --config string                     Load configuration from a file. Example: --config 'config.json'
+      --custom-blind-xss-payload string   Load custom blind XSS payloads from a file. Example: --custom-blind-xss-payload 'payloads.txt'
+      --custom-payload string             Load custom payloads from a file. Example: --custom-payload 'payloads.txt'
+  -d, --data string                       Send body data with the request (supports all HTTP methods). Body can be form (key=value&...) or JSON. Example: -d 'username=admin&password=admin' or -d '{"username":"admin","password":"admin"}'
+      --grep string                       Use a custom grepping file. Example: --grep './samples/sample_grep.json'
+      --har-file-path string              Specify the path to save HAR files of scan requests. Example: --har-file-path 'scan.har'
+      --remote-payloads string            Use remote payloads for XSS testing. Supported: portswigger, payloadbox. Example: --remote-payloads 'portswigger,payloadbox'
+      --remote-wordlists string           Use remote wordlists for parameter mining. Supported: burp, assetnote. Example: --remote-wordlists 'burp'
+
+Request:
+  -C, --cookie string            Add custom cookies to the request. Example: -C 'sessionid=abc123'
+      --cookie-from-raw string   Load cookies from a raw HTTP request file. Example: --cookie-from-raw 'request.txt'
+  -H, --header strings           Add custom headers to the request. Example: -H 'Authorization: Bearer <token>'
+  -X, --method string            Override the HTTP method. Example: -X 'PUT' (default "GET")
+      --user-agent string        Set a custom User-Agent header. Example: --user-agent 'Mozilla/5.0'
+
+Scanning:
+  -b, --blind string                  Specify a blind XSS callback URL. Example: -b 'https://your-callback-url.com'
+      --context-aware                 Enable context-aware payload selection for better XSS detection. Example: --context-aware
+      --deep-domxss                   Enable deep DOM XSS testing with more payloads (slow). Example: --deep-domxss
+      --delay int                     Set the delay between requests to the same host in milliseconds. Example: --delay 1000
+      --detailed-analysis             Enable detailed parameter analysis for better XSS detection. Example: --detailed-analysis
+      --fast-scan                     Enable fast scanning mode for URL lists. Example: --fast-scan
+      --force-headless-verification   Force headless browser-based verification, useful when automatic detection fails or to override default behavior. Example: --force-headless-verification
+      --ignore-param strings          Ignore specific parameters during scanning. Example: --ignore-param 'api_token' --ignore-param 'csrf_token'
+      --magic-char-test               Enable magic character testing for manual XSS analysis. Example: --magic-char-test
+      --only-custom-payload           Only test custom payloads. Example: --only-custom-payload
+  -p, --param strings                 Specify parameters to test. Example: -p 'username' -p 'password'
+      --skip-bav                      Skip Basic Another Vulnerability (BAV) analysis. Example: --skip-bav
+      --skip-discovery                Skip the entire discovery phase, proceeding directly to XSS scanning. Requires -p flag to specify parameters. Example: --skip-discovery -p 'username'
+      --skip-grepping                 Skip built-in grepping. Example: --skip-grepping
+      --skip-headless                 Skip headless browser-based scanning (DOM XSS and inJS verification). Example: --skip-headless
+      --skip-mining-all               Skip all parameter mining. Example: --skip-mining-all
+      --skip-mining-dict              Skip dictionary-based parameter mining. Example: --skip-mining-dict
+      --skip-mining-dom               Skip DOM-based parameter mining. Example: --skip-mining-dom
+      --skip-xss-scanning             Skip XSS scanning. Example: --skip-xss-scanning
+      --timeout int                   Set the request timeout in seconds. Example: --timeout 10 (default 10)
+      --use-bav                       Enable Basic Another Vulnerability (BAV) analysis. Example: --use-bav
+      --waf-evasion                   Enable WAF evasion by adjusting speed when detecting WAF (worker=1, delay=3s). Example: --waf-evasion
+  -w, --worker int                    Set the number of concurrent workers. Example: -w 100 (default 100)
+
+Mining:
+      --mining-dict               Enable dictionary-based parameter mining. Example: --mining-dict (default true)
+  -W, --mining-dict-word string   Specify a custom wordlist file for parameter mining. Example: -W 'wordlist.txt'
+      --mining-dom                Enable DOM-based parameter mining. Example: --mining-dom (default true)
+
+Output:
+      --format string          Set the output format. Supported: plain, json, jsonl. Example: --format 'json' (default "plain")
+      --no-color               Disable colorized output. Example: --no-color
+      --no-spinner             Disable spinner animation. Example: --no-spinner
+      --only-poc string        Show only the PoC code for the specified pattern. Supported: g (grep), r (reflected), v (verified). Example: --only-poc 'g,v'
+  -o, --output string          Write output to a file. Example: -o 'output.txt'
+      --output-all             Enable all log write mode (output to file or stdout). Example: --output-all
+      --output-request         Include raw HTTP requests in the results. Example: --output-request
+      --output-response        Include raw HTTP responses in the results. Example: --output-response
+      --poc-type string        Select the PoC type. Supported: plain, curl, httpie, http-request. Example: --poc-type 'curl' (default "plain")
+      --report                 Show detailed report. Example: --report
+      --report-format string   Set the format of the report. Supported: plain, json, markdown, md. Example: --report-format 'json' (default "plain")
+  -S, --silence                Only print PoC code and progress. Example: -S
+
+Advanced:
+      --custom-alert-type string    Set a custom alert type. Example: --custom-alert-type 'str,none' (default "none")
+      --custom-alert-value string   Set a custom alert value. Example: --custom-alert-value 'document.cookie' (default "1")
+      --debug                       Enable debug mode and save all logs. Example: --debug
+  -F, --follow-redirects            Follow HTTP redirects. Example: -F
+      --found-action string         Execute a command when a vulnerability is found. Example: --found-action './notify.sh'
+      --found-action-shell string   Specify the shell to use for the found action. Example: --found-action-shell 'bash' (default "bash")
+      --ignore-return string        Ignore specific HTTP return codes. Example: --ignore-return '302,403,404'
+      --max-cpu int                 Set the maximum number of CPUs to use. Example: --max-cpu 1 (default 1)
+      --only-discovery              Only perform parameter analysis, skip XSS scanning. Example: --only-discovery
+      --proxy string                Send all requests through a proxy server. Example: --proxy 'http://127.0.0.1:8080'
+
+
+Local Flags:
+  -h, --help   help for url
+unknown flag: --batch
+Error: unknown flag: --batch
+Use single target mode
+
+Usage:
+  dalfox url [target] [flags]
+
+Input:
+      --config string                     Load configuration from a file. Example: --config 'config.json'
+      --custom-blind-xss-payload string   Load custom blind XSS payloads from a file. Example: --custom-blind-xss-payload 'payloads.txt'
+      --custom-payload string             Load custom payloads from a file. Example: --custom-payload 'payloads.txt'
+  -d, --data string                       Send body data with the request (supports all HTTP methods). Body can be form (key=value&...) or JSON. Example: -d 'username=admin&password=admin' or -d '{"username":"admin","password":"admin"}'
+      --grep string                       Use a custom grepping file. Example: --grep './samples/sample_grep.json'
+      --har-file-path string              Specify the path to save HAR files of scan requests. Example: --har-file-path 'scan.har'
+      --remote-payloads string            Use remote payloads for XSS testing. Supported: portswigger, payloadbox. Example: --remote-payloads 'portswigger,payloadbox'
+      --remote-wordlists string           Use remote wordlists for parameter mining. Supported: burp, assetnote. Example: --remote-wordlists 'burp'
+
+Request:
+  -C, --cookie string            Add custom cookies to the request. Example: -C 'sessionid=abc123'
+      --cookie-from-raw string   Load cookies from a raw HTTP request file. Example: --cookie-from-raw 'request.txt'
+  -H, --header strings           Add custom headers to the request. Example: -H 'Authorization: Bearer <token>'
+  -X, --method string            Override the HTTP method. Example: -X 'PUT' (default "GET")
+      --user-agent string        Set a custom User-Agent header. Example: --user-agent 'Mozilla/5.0'
+
+Scanning:
+  -b, --blind string                  Specify a blind XSS callback URL. Example: -b 'https://your-callback-url.com'
+      --context-aware                 Enable context-aware payload selection for better XSS detection. Example: --context-aware
+      --deep-domxss                   Enable deep DOM XSS testing with more payloads (slow). Example: --deep-domxss
+      --delay int                     Set the delay between requests to the same host in milliseconds. Example: --delay 1000
+      --detailed-analysis             Enable detailed parameter analysis for better XSS detection. Example: --detailed-analysis
+      --fast-scan                     Enable fast scanning mode for URL lists. Example: --fast-scan
+      --force-headless-verification   Force headless browser-based verification, useful when automatic detection fails or to override default behavior. Example: --force-headless-verification
+      --ignore-param strings          Ignore specific parameters during scanning. Example: --ignore-param 'api_token' --ignore-param 'csrf_token'
+      --magic-char-test               Enable magic character testing for manual XSS analysis. Example: --magic-char-test
+      --only-custom-payload           Only test custom payloads. Example: --only-custom-payload
+  -p, --param strings                 Specify parameters to test. Example: -p 'username' -p 'password'
+      --skip-bav                      Skip Basic Another Vulnerability (BAV) analysis. Example: --skip-bav
+      --skip-discovery                Skip the entire discovery phase, proceeding directly to XSS scanning. Requires -p flag to specify parameters. Example: --skip-discovery -p 'username'
+      --skip-grepping                 Skip built-in grepping. Example: --skip-grepping
+      --skip-headless                 Skip headless browser-based scanning (DOM XSS and inJS verification). Example: --skip-headless
+      --skip-mining-all               Skip all parameter mining. Example: --skip-mining-all
+      --skip-mining-dict              Skip dictionary-based parameter mining. Example: --skip-mining-dict
+      --skip-mining-dom               Skip DOM-based parameter mining. Example: --skip-mining-dom
+      --skip-xss-scanning             Skip XSS scanning. Example: --skip-xss-scanning
+      --timeout int                   Set the request timeout in seconds. Example: --timeout 10 (default 10)
+      --use-bav                       Enable Basic Another Vulnerability (BAV) analysis. Example: --use-bav
+      --waf-evasion                   Enable WAF evasion by adjusting speed when detecting WAF (worker=1, delay=3s). Example: --waf-evasion
+  -w, --worker int                    Set the number of concurrent workers. Example: -w 100 (default 100)
+
+Mining:
+      --mining-dict               Enable dictionary-based parameter mining. Example: --mining-dict (default true)
+  -W, --mining-dict-word string   Specify a custom wordlist file for parameter mining. Example: -W 'wordlist.txt'
+      --mining-dom                Enable DOM-based parameter mining. Example: --mining-dom (default true)
+
+Output:
+      --format string          Set the output format. Supported: plain, json, jsonl. Example: --format 'json' (default "plain")
+      --no-color               Disable colorized output. Example: --no-color
+      --no-spinner             Disable spinner animation. Example: --no-spinner
+      --only-poc string        Show only the PoC code for the specified pattern. Supported: g (grep), r (reflected), v (verified). Example: --only-poc 'g,v'
+  -o, --output string          Write output to a file. Example: -o 'output.txt'
+      --output-all             Enable all log write mode (output to file or stdout). Example: --output-all
+      --output-request         Include raw HTTP requests in the results. Example: --output-request
+      --output-response        Include raw HTTP responses in the results. Example: --output-response
+      --poc-type string        Select the PoC type. Supported: plain, curl, httpie, http-request. Example: --poc-type 'curl' (default "plain")
+      --report                 Show detailed report. Example: --report
+      --report-format string   Set the format of the report. Supported: plain, json, markdown, md. Example: --report-format 'json' (default "plain")
+  -S, --silence                Only print PoC code and progress. Example: -S
+
+Advanced:
+      --custom-alert-type string    Set a custom alert type. Example: --custom-alert-type 'str,none' (default "none")
+      --custom-alert-value string   Set a custom alert value. Example: --custom-alert-value 'document.cookie' (default "1")
+      --debug                       Enable debug mode and save all logs. Example: --debug
+  -F, --follow-redirects            Follow HTTP redirects. Example: -F
+      --found-action string         Execute a command when a vulnerability is found. Example: --found-action './notify.sh'
+      --found-action-shell string   Specify the shell to use for the found action. Example: --found-action-shell 'bash' (default "bash")
+      --ignore-return string        Ignore specific HTTP return codes. Example: --ignore-return '302,403,404'
+      --max-cpu int                 Set the maximum number of CPUs to use. Example: --max-cpu 1 (default 1)
+      --only-discovery              Only perform parameter analysis, skip XSS scanning. Example: --only-discovery
+      --proxy string                Send all requests through a proxy server. Example: --proxy 'http://127.0.0.1:8080'
+
+
+Local Flags:
+  -h, --help   help for url
+unknown flag: --batch
+Error: unknown flag: --batch
+Use single target mode
+
+Usage:
+  dalfox url [target] [flags]
+
+Input:
+      --config string                     Load configuration from a file. Example: --config 'config.json'
+      --custom-blind-xss-payload string   Load custom blind XSS payloads from a file. Example: --custom-blind-xss-payload 'payloads.txt'
+      --custom-payload string             Load custom payloads from a file. Example: --custom-payload 'payloads.txt'
+  -d, --data string                       Send body data with the request (supports all HTTP methods). Body can be form (key=value&...) or JSON. Example: -d 'username=admin&password=admin' or -d '{"username":"admin","password":"admin"}'
+      --grep string                       Use a custom grepping file. Example: --grep './samples/sample_grep.json'
+      --har-file-path string              Specify the path to save HAR files of scan requests. Example: --har-file-path 'scan.har'
+      --remote-payloads string            Use remote payloads for XSS testing. Supported: portswigger, payloadbox. Example: --remote-payloads 'portswigger,payloadbox'
+      --remote-wordlists string           Use remote wordlists for parameter mining. Supported: burp, assetnote. Example: --remote-wordlists 'burp'
+
+Request:
+  -C, --cookie string            Add custom cookies to the request. Example: -C 'sessionid=abc123'
+      --cookie-from-raw string   Load cookies from a raw HTTP request file. Example: --cookie-from-raw 'request.txt'
+  -H, --header strings           Add custom headers to the request. Example: -H 'Authorization: Bearer <token>'
+  -X, --method string            Override the HTTP method. Example: -X 'PUT' (default "GET")
+      --user-agent string        Set a custom User-Agent header. Example: --user-agent 'Mozilla/5.0'
+
+Scanning:
+  -b, --blind string                  Specify a blind XSS callback URL. Example: -b 'https://your-callback-url.com'
+      --context-aware                 Enable context-aware payload selection for better XSS detection. Example: --context-aware
+      --deep-domxss                   Enable deep DOM XSS testing with more payloads (slow). Example: --deep-domxss
+      --delay int                     Set the delay between requests to the same host in milliseconds. Example: --delay 1000
+      --detailed-analysis             Enable detailed parameter analysis for better XSS detection. Example: --detailed-analysis
+      --fast-scan                     Enable fast scanning mode for URL lists. Example: --fast-scan
+      --force-headless-verification   Force headless browser-based verification, useful when automatic detection fails or to override default behavior. Example: --force-headless-verification
+      --ignore-param strings          Ignore specific parameters during scanning. Example: --ignore-param 'api_token' --ignore-param 'csrf_token'
+      --magic-char-test               Enable magic character testing for manual XSS analysis. Example: --magic-char-test
+      --only-custom-payload           Only test custom payloads. Example: --only-custom-payload
+  -p, --param strings                 Specify parameters to test. Example: -p 'username' -p 'password'
+      --skip-bav                      Skip Basic Another Vulnerability (BAV) analysis. Example: --skip-bav
+      --skip-discovery                Skip the entire discovery phase, proceeding directly to XSS scanning. Requires -p flag to specify parameters. Example: --skip-discovery -p 'username'
+      --skip-grepping                 Skip built-in grepping. Example: --skip-grepping
+      --skip-headless                 Skip headless browser-based scanning (DOM XSS and inJS verification). Example: --skip-headless
+      --skip-mining-all               Skip all parameter mining. Example: --skip-mining-all
+      --skip-mining-dict              Skip dictionary-based parameter mining. Example: --skip-mining-dict
+      --skip-mining-dom               Skip DOM-based parameter mining. Example: --skip-mining-dom
+      --skip-xss-scanning             Skip XSS scanning. Example: --skip-xss-scanning
+      --timeout int                   Set the request timeout in seconds. Example: --timeout 10 (default 10)
+      --use-bav                       Enable Basic Another Vulnerability (BAV) analysis. Example: --use-bav
+      --waf-evasion                   Enable WAF evasion by adjusting speed when detecting WAF (worker=1, delay=3s). Example: --waf-evasion
+  -w, --worker int                    Set the number of concurrent workers. Example: -w 100 (default 100)
+
+Mining:
+      --mining-dict               Enable dictionary-based parameter mining. Example: --mining-dict (default true)
+  -W, --mining-dict-word string   Specify a custom wordlist file for parameter mining. Example: -W 'wordlist.txt'
+      --mining-dom                Enable DOM-based parameter mining. Example: --mining-dom (default true)
+
+Output:
+      --format string          Set the output format. Supported: plain, json, jsonl. Example: --format 'json' (default "plain")
+      --no-color               Disable colorized output. Example: --no-color
+      --no-spinner             Disable spinner animation. Example: --no-spinner
+      --only-poc string        Show only the PoC code for the specified pattern. Supported: g (grep), r (reflected), v (verified). Example: --only-poc 'g,v'
+  -o, --output string          Write output to a file. Example: -o 'output.txt'
+      --output-all             Enable all log write mode (output to file or stdout). Example: --output-all
+      --output-request         Include raw HTTP requests in the results. Example: --output-request
+      --output-response        Include raw HTTP responses in the results. Example: --output-response
+      --poc-type string        Select the PoC type. Supported: plain, curl, httpie, http-request. Example: --poc-type 'curl' (default "plain")
+      --report                 Show detailed report. Example: --report
+      --report-format string   Set the format of the report. Supported: plain, json, markdown, md. Example: --report-format 'json' (default "plain")
+  -S, --silence                Only print PoC code and progress. Example: -S
+
+Advanced:
+      --custom-alert-type string    Set a custom alert type. Example: --custom-alert-type 'str,none' (default "none")
+      --custom-alert-value string   Set a custom alert value. Example: --custom-alert-value 'document.cookie' (default "1")
+      --debug                       Enable debug mode and save all logs. Example: --debug
+  -F, --follow-redirects            Follow HTTP redirects. Example: -F
+      --found-action string         Execute a command when a vulnerability is found. Example: --found-action './notify.sh'
+      --found-action-shell string   Specify the shell to use for the found action. Example: --found-action-shell 'bash' (default "bash")
+      --ignore-return string        Ignore specific HTTP return codes. Example: --ignore-return '302,403,404'
+      --max-cpu int                 Set the maximum number of CPUs to use. Example: --max-cpu 1 (default 1)
+      --only-discovery              Only perform parameter analysis, skip XSS scanning. Example: --only-discovery
+      --proxy string                Send all requests through a proxy server. Example: --proxy 'http://127.0.0.1:8080'
+
+
+Local Flags:
+  -h, --help   help for url
+unknown flag: --batch

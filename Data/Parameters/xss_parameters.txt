@@ -1,11 +1,17 @@
-# Target: https://0a1900bd03332b18819b589c0030001a.web-security-academy.net/
+# Target: https://profile.moenergy.gov.sa/
 GET: []
 POST: []
 ENDPOINTS:
-/feedback?returnPath=/
-https://portswigger.net/web-security/cross-site-scripting/dom-based/lab-jquery-href-attribute-sink
-/post?postId=5
-/post?postId=1
-/post?postId=2
-/post?postId=3
-/post?postId=4
+ngx-datatable-material.b7ed9ad5826347be.css
+styles.762c79336e6c4450.css
+fontawesome-all.min.8e2e07be53e027c6.css
+ngx-datatable-index.d0d07548685a5a69.css
+/
+favicon.ico
+ngx-datatable-icons.36aa12023c4951ea.css
+fontawesome-v4-shims.min.0050c1d8d2323282.cssGET|https://profile.moenergy.gov.sa/?id=FUZZ|
+GET|https://profile.moenergy.gov.sa/?search=FUZZ|
+GET|https://profile.moenergy.gov.sa/?q=FUZZ|
+GET|https://profile.moenergy.gov.sa/?page=FUZZ|
+GET|https://profile.moenergy.gov.sa/?file=FUZZ|
+GET|https://profile.moenergy.gov.sa/?cmd=FUZZ|
