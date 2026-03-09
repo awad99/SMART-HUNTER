@@ -24,25 +24,9 @@ def typewriter(msg):
 
 warnings.filterwarnings('ignore')
 
-def get_parameters(url):
-    try:
-        import subprocess
-        r = subprocess.run(['curl', '-s', '-L', url], capture_output=True, text=True, timeout=10)
-        if r.returncode == 0:
-            import re
-            print(f"[+] Fetched: {url}")
-            names = list(set(re.findall(r'<input[^>]*name\s*=\s*["\']([^"\']*)["\']', r.stdout, re.I)))
-            if names: print(f"[+] Parameters: {', '.join(names)}")
-    except: pass
-
 def main():
-    # 1) Train / load model
-    trainer = VulnerabilityCheckerTraining()
-    if os.path.exists(MODEL_FILE):
-        trainer.load_model(MODEL_FILE)
-        print("[*] Retraining with latest data...")
-    trainer.train_model()
-    trainer.save_model()
+    # 1) Get target
+
 
     # 2) Get target
     Target = input("\nEnter URL or IP Target: ").strip()
@@ -102,16 +86,16 @@ def main():
             if not Cookie:
                 print("[-] Automated extraction reached the site but found no cookies, or the site is unresponsive.")
         
-        get_parameters(Target)
         print(f"\n[*] Target URL: {Target}")
         if Cookie: print(f"[*] Using Cookie: {Cookie}")
 
         # -- Build scanner & load/train model ---------------------------
         scanner = SmartVulnerabilityScanner(Target, cookie=Cookie)
         if not scanner.load_model(MODEL_FILE):
-            print("[*] No saved model fresh training...")
+            print("[*] No saved model found, training from scratch...")
             scanner.train_model()
             scanner.save_model(MODEL_FILE)
+
 
         print("\n" + "*"*64)
         print("*  VULNERABILITY PREDICTION PHASE 1: PRE-RECON START")

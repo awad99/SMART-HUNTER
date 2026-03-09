@@ -645,18 +645,23 @@ class ReconWebSite:
         print(f"\n[*] Verifying {len(paths)} paths...")
         import concurrent.futures
         
+        hdr = {**UA, **({'Cookie': self.cookie} if getattr(self, 'cookie', None) else {})}
+        
+        # Share a single client across all threads for HTTP/2 connection pooling
+        client = httpx.Client(timeout=8.0, verify=False, follow_redirects=True, headers=hdr)
+        
         def _verify(args):
             i, url = args
             try:
-                hdr = {**UA, **({'Cookie': self.cookie} if getattr(self, 'cookie', None) else {})}
-                with httpx.Client(timeout=8.0, verify=False, follow_redirects=True) as c:
-                    r = c.get(url, headers=hdr)
+                r = client.get(url)
                 print(f"  [{i}/{len(paths)}] {r.status_code} | {len(r.text):>8} B | {url}")
             except Exception as ex:
                 print(f"  [{i}/{len(paths)}] ERROR: {ex}")
 
-        with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+        with concurrent.futures.ThreadPoolExecutor(max_workers=50) as executor:
             list(executor.map(_verify, enumerate(paths, 1)))
+            
+        client.close()
 
     # ── Cookie / header persistence ────────────────────────────────────────
     def save_cookies_and_headers(self):

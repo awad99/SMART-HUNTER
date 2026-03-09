@@ -1,17 +1,21 @@
-# Target: https://profile.moenergy.gov.sa/
-GET: []
-POST: []
-ENDPOINTS:
-ngx-datatable-material.b7ed9ad5826347be.css
-styles.762c79336e6c4450.css
-fontawesome-all.min.8e2e07be53e027c6.css
-ngx-datatable-index.d0d07548685a5a69.css
-/
-favicon.ico
-ngx-datatable-icons.36aa12023c4951ea.css
-fontawesome-v4-shims.min.0050c1d8d2323282.cssGET|https://profile.moenergy.gov.sa/?id=FUZZ|
-GET|https://profile.moenergy.gov.sa/?search=FUZZ|
-GET|https://profile.moenergy.gov.sa/?q=FUZZ|
-GET|https://profile.moenergy.gov.sa/?page=FUZZ|
-GET|https://profile.moenergy.gov.sa/?file=FUZZ|
-GET|https://profile.moenergy.gov.sa/?cmd=FUZZ|
+POST|https://riyadhgreen.sa/Home/SendForm|lang=ar&Email=test&Name=FUZZ&Subject=test&Message=test&CaptchaInput=test&__RequestVerificationToken=CfDJ8KGvccBxkMVPs6_I0Fbu22jffTumto41hSwmtfYNBrLFA0N3TKVS5JjM0Ap8m3F5kOknvSaSViSEpHhlf8_paJhSuY6Nwvrg-AIo_aodnihCXiqLz57QQ73F6dmpdfUdfQssyi-8-bVPlxZtmC8jSMA
+POST|https://riyadhgreen.sa/Home/SendForm|lang=en&Name=test&Email=FUZZ&Subject=test&Message=test&CaptchaInput=test&__RequestVerificationToken=CfDJ8KGvccBxkMVPs6_I0Fbu22g8L-pOJmb6zFF8SR9Rj3gKUladCmXEx2X7CcY7xUQbIICoKFDGVG0GGYzaQzIJ2IGekXC04nL_McMYAUVropHec5AW_1AjeOddUahahsUaySK48Es69-3CQ_tFQFrwd3k
+POST|https://riyadhgreen.sa/Home/SendForm|lang=ar&Email=test&Name=test&Subject=test&Message=test&CaptchaInput=FUZZ&__RequestVerificationToken=CfDJ8KGvccBxkMVPs6_I0Fbu22jffTumto41hSwmtfYNBrLFA0N3TKVS5JjM0Ap8m3F5kOknvSaSViSEpHhlf8_paJhSuY6Nwvrg-AIo_aodnihCXiqLz57QQ73F6dmpdfUdfQssyi-8-bVPlxZtmC8jSMA
+POST|https://riyadhgreen.sa/Home/SendForm|lang=ar&Email=test&Name=test&Subject=test&Message=test&CaptchaInput=test&__RequestVerificationToken=FUZZ
+POST|https://riyadhgreen.sa/Home/SendForm|lang=en&Name=test&Email=test&Subject=test&Message=test&CaptchaInput=test&__RequestVerificationToken=FUZZ
+POST|https://riyadhgreen.sa/Home/SendForm|lang=en&Name=test&Email=test&Subject=test&Message=FUZZ&CaptchaInput=test&__RequestVerificationToken=CfDJ8KGvccBxkMVPs6_I0Fbu22g8L-pOJmb6zFF8SR9Rj3gKUladCmXEx2X7CcY7xUQbIICoKFDGVG0GGYzaQzIJ2IGekXC04nL_McMYAUVropHec5AW_1AjeOddUahahsUaySK48Es69-3CQ_tFQFrwd3k
+POST|https://riyadhgreen.sa/Home/SendForm|lang=ar&Email=test&Name=test&Subject=test&Message=FUZZ&CaptchaInput=test&__RequestVerificationToken=CfDJ8KGvccBxkMVPs6_I0Fbu22jffTumto41hSwmtfYNBrLFA0N3TKVS5JjM0Ap8m3F5kOknvSaSViSEpHhlf8_paJhSuY6Nwvrg-AIo_aodnihCXiqLz57QQ73F6dmpdfUdfQssyi-8-bVPlxZtmC8jSMA
+POST|https://riyadhgreen.sa/Home/SendForm|lang=FUZZ&Email=test&Name=test&Subject=test&Message=test&CaptchaInput=test&__RequestVerificationToken=CfDJ8KGvccBxkMVPs6_I0Fbu22jffTumto41hSwmtfYNBrLFA0N3TKVS5JjM0Ap8m3F5kOknvSaSViSEpHhlf8_paJhSuY6Nwvrg-AIo_aodnihCXiqLz57QQ73F6dmpdfUdfQssyi-8-bVPlxZtmC8jSMA
+POST|https://riyadhgreen.sa/Home/SendForm|lang=en&Name=test&Email=test&Subject=FUZZ&Message=test&CaptchaInput=test&__RequestVerificationToken=CfDJ8KGvccBxkMVPs6_I0Fbu22g8L-pOJmb6zFF8SR9Rj3gKUladCmXEx2X7CcY7xUQbIICoKFDGVG0GGYzaQzIJ2IGekXC04nL_McMYAUVropHec5AW_1AjeOddUahahsUaySK48Es69-3CQ_tFQFrwd3k
+POST|https://riyadhgreen.sa/Home/SendForm|lang=FUZZ&Name=test&Email=test&Subject=test&Message=test&CaptchaInput=test&__RequestVerificationToken=CfDJ8KGvccBxkMVPs6_I0Fbu22g8L-pOJmb6zFF8SR9Rj3gKUladCmXEx2X7CcY7xUQbIICoKFDGVG0GGYzaQzIJ2IGekXC04nL_McMYAUVropHec5AW_1AjeOddUahahsUaySK48Es69-3CQ_tFQFrwd3k
+POST|https://riyadhgreen.sa/Home/SendForm|lang=en&Name=FUZZ&Email=test&Subject=test&Message=test&CaptchaInput=test&__RequestVerificationToken=CfDJ8KGvccBxkMVPs6_I0Fbu22g8L-pOJmb6zFF8SR9Rj3gKUladCmXEx2X7CcY7xUQbIICoKFDGVG0GGYzaQzIJ2IGekXC04nL_McMYAUVropHec5AW_1AjeOddUahahsUaySK48Es69-3CQ_tFQFrwd3k
+POST|https://riyadhgreen.sa/Home/SendForm|lang=en&Name=test&Email=test&Subject=test&Message=test&CaptchaInput=FUZZ&__RequestVerificationToken=CfDJ8KGvccBxkMVPs6_I0Fbu22g8L-pOJmb6zFF8SR9Rj3gKUladCmXEx2X7CcY7xUQbIICoKFDGVG0GGYzaQzIJ2IGekXC04nL_McMYAUVropHec5AW_1AjeOddUahahsUaySK48Es69-3CQ_tFQFrwd3k
+POST|https://riyadhgreen.sa/Home/SendForm|lang=ar&Email=FUZZ&Name=test&Subject=test&Message=test&CaptchaInput=test&__RequestVerificationToken=CfDJ8KGvccBxkMVPs6_I0Fbu22jffTumto41hSwmtfYNBrLFA0N3TKVS5JjM0Ap8m3F5kOknvSaSViSEpHhlf8_paJhSuY6Nwvrg-AIo_aodnihCXiqLz57QQ73F6dmpdfUdfQssyi-8-bVPlxZtmC8jSMA
+POST|https://riyadhgreen.sa/Home/SendForm|lang=ar&Email=test&Name=test&Subject=FUZZ&Message=test&CaptchaInput=test&__RequestVerificationToken=CfDJ8KGvccBxkMVPs6_I0Fbu22jffTumto41hSwmtfYNBrLFA0N3TKVS5JjM0Ap8m3F5kOknvSaSViSEpHhlf8_paJhSuY6Nwvrg-AIo_aodnihCXiqLz57QQ73F6dmpdfUdfQssyi-8-bVPlxZtmC8jSMA
+POST|https://riyadhgreen.sa/Home/SendForm|Name=FUZZ
+POST|https://riyadhgreen.sa/Home/SendForm|CaptchaInput=FUZZ
+POST|https://riyadhgreen.sa/Home/SendForm|Message=FUZZ
+POST|https://riyadhgreen.sa/Home/SendForm|Email=FUZZ
+POST|https://riyadhgreen.sa/Home/SendForm|lang=FUZZ
+POST|https://riyadhgreen.sa/Home/SendForm|Subject=FUZZ
+POST|https://riyadhgreen.sa/Home/SendForm|__RequestVerificationToken=FUZZ

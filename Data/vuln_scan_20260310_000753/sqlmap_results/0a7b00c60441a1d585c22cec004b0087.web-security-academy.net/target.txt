@@ -1,1 +1,0 @@
-https://0a7b00c60441a1d585c22cec004b0087.web-security-academy.net/?cmd=FUZZ (GET)  # /usr/bin/sqlmap -u https://0a7b00c60441a1d585c22cec004b0087.web-security-academy.net/?cmd=FUZZ --batch --random-agent --level=1 --risk=1 --output-dir=/mnt/c/Users/awad/Downloads/pyarmor/auto_PenTest/Data/vuln_scan_20260310_000753/sqlmap_results

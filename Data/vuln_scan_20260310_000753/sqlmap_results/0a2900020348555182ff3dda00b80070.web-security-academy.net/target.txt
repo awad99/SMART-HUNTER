@@ -1,3 +1,0 @@
-https://0a2900020348555182ff3dda00b80070.web-security-academy.net/feedback/submit (POST)  # /usr/bin/sqlmap -u https://0a2900020348555182ff3dda00b80070.web-security-academy.net/feedback/submit --batch --random-agent --level=1 --risk=1 --output-dir=/mnt/c/Users/awad/Downloads/pyarmor/auto_PenTest/Data/vuln_scan_20260310_000753/sqlmap_results --data=csrf=YC52dnsTcwFX9BSYI3lGaXhGCqh2aeZg&name=test&email=test&subject=test&message=FUZZ
-
-csrf=YC52dnsTcwFX9BSYI3lGaXhGCqh2aeZg&name=test&email=test&subject=test&message=FUZZ

