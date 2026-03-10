@@ -10,26 +10,28 @@ RECON_FILE = "Data/Datasets/web_recon_ml_dataset.csv"
 VULN_FILE  = "Data/Datasets/vulnerability_ml_dataset.csv"
 MODEL_FILE = "Data/vulnerability_model.pkl"
 
-# Features used for training
+# Features used for training (Updated to match data_pipeline.ipynb)
 FEATURE_COLS = [
-    'url_length', 'has_https', 'path_depth', 'has_query_params', 'num_query_params',
-    'has_fragment', 'has_port', 'subdomain_count', 'is_ip_address', 'domain_length',
-    'domain_has_hyphens', 'status_code', 'status_category', 'response_size',
-    'response_time_ms', 'is_redirect', 'total_headers', 'server_header_present',
-    'x_powered_by_present', 'has_cookies', 'num_cookies', 'has_cors', 'cache_control',
-    'security_headers_count', 'has_csp', 'has_hsts', 'has_xss_protection',
-    'has_frame_options', 'has_content_type_options',
-    'has_forms', 'form_count', 'has_inputs', 'input_count',
-    'has_buttons', 'button_count', 'has_textarea', 'textarea_count',
-    'has_select', 'select_count', 'has_links', 'link_count',
-    'has_images', 'image_count', 'has_scripts', 'script_count',
-    'has_stylesheets', 'stylesheet_count', 'has_javascript',
-    'has_comments', 'comment_count', 'has_meta_tags', 'meta_count', 'has_title',
-    'server_apache', 'server_nginx', 'server_iis',
-    'tech_php', 'tech_aspnet', 'tech_jsp', 'tech_wordpress', 'tech_drupal', 'tech_joomla',
-    'has_debug_info', 'has_error_messages', 'has_sql_errors', 'has_file_paths',
-    'cookie_count', 'session_cookies', 'redirect_count', 'has_redirect_chain', 'final_https',
-    'input_to_form_ratio', 'script_to_content_ratio', 'security_score', 'interactivity_score',
+    'button_count', 'cache_control', 'comment_count', 'cookie_count', 'csp_header_reflection_detected', 'domain_has_hyphens',
+    'domain_length', 'external_link_count', 'external_script_count', 'file_upload_count', 'final_https',
+    'form_count', 'has_api_keys', 'has_buttons', 'has_comments', 'has_content_type_options',
+    'has_cookies', 'has_cors', 'has_csp', 'has_debug_info', 'has_error_messages',
+    'has_file_paths', 'has_file_upload', 'has_forms', 'has_fragment', 'has_frame_options',
+    'has_hidden_input', 'has_hsts', 'has_https', 'has_images', 'has_inputs',
+    'has_javascript', 'has_jwt', 'has_links', 'has_meta_tags', 'has_password_input',
+    'has_port', 'has_query_params', 'has_redirect_chain', 'has_scripts', 'has_search_input',
+    'has_select', 'has_sql_errors', 'has_stylesheets', 'has_textarea', 'has_title',
+    'has_waf', 'has_xss_protection', 'hidden_count', 'httponly_cookie_ratio', 'image_count',
+    'input_count', 'input_to_form_ratio', 'interactivity_score', 'internal_link_count', 'internal_script_count',
+    'is_ip_address', 'is_redirect', 'is_redirect_response', 'link_count', 'meta_count',
+    'num_cookies', 'num_query_params', 'password_count', 'path_depth', 'redirect_chain_len',
+    'redirect_count', 'reflection_detected', 'response_size', 'response_time_ms', 'samesite_cookie_ratio',
+    'script_count', 'script_to_content_ratio', 'search_count', 'secure_cookie_ratio', 'security_headers_count',
+    'security_score', 'select_count', 'server_apache', 'server_header_present', 'server_iis',
+    'server_nginx', 'session_cookies', 'status_category', 'status_code', 'stylesheet_count',
+    'subdomain_count', 'tech_aspnet', 'tech_drupal', 'tech_joomla', 'tech_jsp',
+    'tech_php', 'tech_wordpress', 'textarea_count', 'total_headers', 'url_length',
+    'waf_aws', 'waf_cloudflare', 'waf_imperva', 'x_powered_by_present'
 ]
 
 LABEL_COLS = ['has_sql_injection', 'has_xss', 'has_command_injection', 'has_path_traversal']
@@ -240,10 +242,17 @@ class VulnerabilityCheckerTraining:
         X_train_scaled = self.scaler.fit_transform(X_train)
         X_test_scaled = self.scaler.transform(X_test)
         
-        # Train model
+        # Train model with highly optimized hyperparameters for maximum accuracy
+        from sklearn.ensemble import HistGradientBoostingClassifier
         self.model = OneVsRestClassifier(
-            RandomForestClassifier(n_estimators=150, max_depth=12, random_state=42,
-                                   class_weight='balanced', min_samples_leaf=2, n_jobs=-1)
+            HistGradientBoostingClassifier(
+                max_iter=300,
+                max_depth=15,
+                learning_rate=0.08,
+                random_state=42,
+                class_weight='balanced',
+                l2_regularization=0.1
+            )
         )
         self.model.fit(X_train_scaled, Y_train)
 

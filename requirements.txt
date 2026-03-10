@@ -15,3 +15,6 @@ requests
 scikit-learn
 tld
 validators
+notebook
+matplotlib
+seaborn

@@ -353,6 +353,7 @@ class ReconWebSite:
                 'waf_imperva':      int('Imperva' in waf_found),
                 # Reflected & Secrets
                 'reflection_detected': int(reflected_params > 0),
+                'csp_header_reflection_detected': int(any(v.lower() in h.get('Content-Security-Policy', '').lower() for param_vals in query_params.values() for v in param_vals if len(v) > 2)),
                 'has_jwt':          int(jwt_count > 0),
                 'has_api_keys':     int(api_key_count > 0),
                 # Cookies
