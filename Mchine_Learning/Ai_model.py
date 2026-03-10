@@ -34,8 +34,8 @@ FEATURE_COLS = [
     'waf_aws', 'waf_cloudflare', 'waf_imperva', 'x_powered_by_present'
 ]
 
-LABEL_COLS = ['has_sql_injection', 'has_xss', 'has_command_injection', 'has_path_traversal']
-VULN_NAMES = {0: 'sql_injection', 1: 'xss', 2: 'command_injection', 3: 'path_traversal'}
+LABEL_COLS = ['has_sql_injection', 'has_xss', 'has_command_injection', 'has_path_traversal', 'has_idor']
+VULN_NAMES = {0: 'sql_injection', 1: 'xss', 2: 'command_injection', 3: 'path_traversal', 4: 'idor'}
 
 def deduplicate_recon_dataset(path=RECON_FILE):
     try:
@@ -114,7 +114,7 @@ class VulnerabilityCheckerTraining:
         np.random.seed(42)
         rows = []
         for _ in range(n):
-            profile = np.random.choice(['vuln_sqli', 'vuln_xss', 'vuln_cmdi', 'vuln_pt', 'secure', 'normal'])
+            profile = np.random.choice(['vuln_sqli', 'vuln_xss', 'vuln_cmdi', 'vuln_pt', 'vuln_idor', 'secure', 'normal'])
             r = {c: 0 for c in FEATURE_COLS}
             r['url_length']       = np.random.randint(15, 120)
             r['domain_length']    = np.random.randint(5, 40)
@@ -170,6 +170,16 @@ class VulnerabilityCheckerTraining:
                 r['path_depth'] = np.random.randint(2, 6)
                 for lbl in LABEL_COLS: r[lbl] = 0
                 r['has_path_traversal'] = 1
+            elif profile == 'vuln_idor':
+                r['has_query_params'] = 1; r['num_query_params'] = np.random.randint(1, 4)
+                r['has_forms'] = np.random.choice([0,1])
+                r['has_inputs'] = 1; r['input_count'] = np.random.randint(1, 5)
+                # IDOR is more prominent with numeric endpoints / APIs
+                r['path_depth'] = np.random.randint(2, 6)
+                r['security_headers_count'] = np.random.randint(0, 3)
+                r['status_code'] = np.random.choice([200, 401, 403], p=[.6, .2, .2])
+                for lbl in LABEL_COLS: r[lbl] = 0
+                r['has_idor'] = 1
             elif profile == 'secure':
                 r['has_https'] = 1; r['final_https'] = 1
                 r['security_headers_count'] = np.random.randint(5, 8)

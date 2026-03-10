@@ -13,6 +13,7 @@ ATTACK_PATH_MAP = {
     'xss':               ['Steal session cookies', 'Phishing / redirect', 'DOM manipulation'],
     'command_injection': ['RCE via OS commands', 'Reverse shell', 'File exfiltration'],
     'path_traversal':    ['Read /etc/passwd', 'Access config files', 'Source code disclosure'],
+    'idor':              ['Access other users data', 'Modify restricted records', 'Unauthorized actions'],
 }
 
 

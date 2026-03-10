@@ -26,16 +26,13 @@ warnings.filterwarnings('ignore')
 
 def main():
     # 1) Get target
-
-
-    # 2) Get target
     Target = input("\nEnter URL or IP Target: ").strip()
     if not Target:
         print("[-] No target"); return
         
     Cookie = input("Enter Session Cookie (or leave blank to auto-detect): ").strip()
     
-    # 3) URL target
+    # 2) URL target
     if Target.startswith(("http://", "https://")):
         if not Cookie:
             print(f"\n[*] Attempting to extract session cookie automatically from {Target}...")

