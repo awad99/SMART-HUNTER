@@ -170,8 +170,15 @@ def show_phase_prediction(scanner, phase: int, url: str, confirmed_vulns=None):
     prediction = scanner.predict_vulnerability(features) if scanner.model else None
     if not prediction: print(f"  [-] No model available"); return prediction
     preds = prediction['predictions']
+    max_prob = max(preds.values()) if preds else 0
+    
+    if max_prob < 0.05:
+        print(f"\n  [✓] ML Assessment: Clean / Low Risk (Max confidence: {max_prob:>5.1%})")
+        return prediction
+
     print(f"\n  {'VULNERABILITY':<28} {'CONFIDENCE':>10}   RISK\n  {'-'*56}")
     for name, prob in sorted(preds.items(), key=lambda x: x[1], reverse=True):
         lvl = '🔴 HIGH' if prob > 0.55 else '🟡 MED ' if prob > 0.25 else '🟢 LOW '
+        if prob < 0.01: continue # Skip near-zero noise
         print(f"  {name:<28} {'█'*int(prob*20):<20} {prob:>5.1%}  {lvl}")
     return prediction

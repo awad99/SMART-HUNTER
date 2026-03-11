@@ -1,0 +1,7 @@
+Content-Security-Policy|Prevents XSS and data injection
+Strict-Transport-Security|Forces HTTPS connections
+X-Content-Type-Options|Prevents MIME-type sniffing
+X-Frame-Options|Prevents clickjacking
+X-XSS-Protection|Browser XSS filter
+Referrer-Policy|Controls referrer info
+Permissions-Policy|Controls browser features

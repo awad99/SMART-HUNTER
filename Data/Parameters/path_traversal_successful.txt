@@ -1,0 +1,14 @@
+root:x:
+root:0:
+daemon:
+bin:x:
+nobody:
+/bin/bash
+/bin/sh
+nologin
+[boot loader]
+[operating systems]
+[extensions]
+; for 16-bit app support
+[fonts]
+[Mail]

@@ -1,15 +1,7 @@
-# Target: https://bugbounty.sa/
-GET: []
-POST: []
-ENDPOINTS:
-https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap
-./logo192.png
-https://fonts.googleapis.com/css2?family=Changa:wght@200..800&family=Orbitron:wght@400..900&display=swap
-./favicon.ico
-https://fonts.gstatic.com
-/assets/index-b360ea3c.css
-https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap
-https://fonts.googleapis.com
-./manifest.json
-https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swapGET|https://bugbounty.sa/reports?export=FUZZ|
-GET|https://bugbounty.sa/invoices?export=FUZZ|
+GET|https://0aae004c04b6053a81b9c10c002c00ef.web-security-academy.net/product?productId=FUZZ|
+POST|https://0aae004c04b6053a81b9c10c002c00ef.web-security-academy.net/login|csrf=UNSpb1OYboQilQX1Gd3rSWUpGpXtglFD&username=test&password=FUZZ
+POST|https://0aae004c04b6053a81b9c10c002c00ef.web-security-academy.net/login|csrf=UNSpb1OYboQilQX1Gd3rSWUpGpXtglFD&username=FUZZ&password=test
+POST|https://0aae004c04b6053a81b9c10c002c00ef.web-security-academy.net/login|csrf=rWtcioe7Ql77IfQn8dkUvMGq4lZD8tc0&username=FUZZ&password=test
+POST|https://0aae004c04b6053a81b9c10c002c00ef.web-security-academy.net/login|csrf=rWtcioe7Ql77IfQn8dkUvMGq4lZD8tc0&username=test&password=FUZZ
+POST|https://0aae004c04b6053a81b9c10c002c00ef.web-security-academy.net/login|csrf=FUZZ&username=test&password=test
+GET|https://0aae004c04b6053a81b9c10c002c00ef.web-security-academy.net/filter?category=FUZZ|
