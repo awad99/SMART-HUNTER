@@ -18,3 +18,16 @@ validators
 notebook
 matplotlib
 seaborn
+scipy
+pickle5
+tensorflow
+keras
+xgboost
+lightgbm
+tqdm
+pyyaml
+python-dateutil
+pytest
+pytest-cov
+jupyter
+ipykernel
