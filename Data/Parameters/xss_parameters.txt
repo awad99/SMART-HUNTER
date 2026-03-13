@@ -1,7 +1,49 @@
-GET|https://0aae004c04b6053a81b9c10c002c00ef.web-security-academy.net/product?productId=FUZZ|
-POST|https://0aae004c04b6053a81b9c10c002c00ef.web-security-academy.net/login|csrf=UNSpb1OYboQilQX1Gd3rSWUpGpXtglFD&username=test&password=FUZZ
-POST|https://0aae004c04b6053a81b9c10c002c00ef.web-security-academy.net/login|csrf=UNSpb1OYboQilQX1Gd3rSWUpGpXtglFD&username=FUZZ&password=test
-POST|https://0aae004c04b6053a81b9c10c002c00ef.web-security-academy.net/login|csrf=rWtcioe7Ql77IfQn8dkUvMGq4lZD8tc0&username=FUZZ&password=test
-POST|https://0aae004c04b6053a81b9c10c002c00ef.web-security-academy.net/login|csrf=rWtcioe7Ql77IfQn8dkUvMGq4lZD8tc0&username=test&password=FUZZ
-POST|https://0aae004c04b6053a81b9c10c002c00ef.web-security-academy.net/login|csrf=FUZZ&username=test&password=test
-GET|https://0aae004c04b6053a81b9c10c002c00ef.web-security-academy.net/filter?category=FUZZ|
+# Target: https://ipsar.chi.gov.sa/en/
+GET: []
+POST: []
+ENDPOINTS:
+/_next/static/css/de9ab3fa3f146f88.css
+/
+/ar/
+https://chi.gov.sa/Help/Pages/TermsOfUse.aspx
+/en/#home
+https://www.youtube.com/@SaudiCHI
+/en/
+/en/#objectives
+/_next/static/chunks/webpack-c3df9b82ebdbc893.js
+/en/#contactUs
+ http://raqmi.dga.gov.sa/platforms/DigitalStamp/ShowCertificate/8867
+/_next/static/media/1ab054267ad6ca78-s.p.ttf
+https://twitter.com/saudichi
+/assets/icons/logo.svg
+http://raqmi.dga.gov.sa/platforms/DigitalStamp/ShowCertificate/8867
+http://raqmi.dga.gov.sa/platforms/DigitalStamp/GetStampWFile/3611
+https://www.googletagmanager.com/gtag/js?id=G-HYQSZSBE3P
+/_next/static/media/8f471700fffbc7e5-s.p.ttf
+/_next/static/media/0150ab20fdfb57d9-s.p.ttf
+/assets/images/programs/1.png
+https://www.linkedin.com/company/saudichi/
+/_next/static/media/a8062c499e143a15-s.p.ttf
+/en/sandbox/
+/assets/images/about/about_shape.svg
+https://www.facebook.com/SaudiCHI
+/en/#programs
+/_next/static/media/dbf2d2d21cd360b5-s.p.ttf
+/assets/icons/programs/icon_1.svg
+/_next/static/media/452d5db1901d8c11-s.p.ttf
+/assets/icons/programs/icon_2.svg
+/en/idea-box/
+/assets/images/programs/2.png
+/_next/static/css/468279d06b1374d0.css
+/assets/images/about/mobile_shape_1.svg
+mailto:ipsar@chi.gov.sa
+/assets/icons/programs/icon_3.svg
+https://chi.gov.sa/en/Documents/Privacy%20Policy.pdf
+/assets/icons/programs/icon_6.svg
+/en/innovation-lab/
+/en/accelerator/
+/_next/static/media/a34f9d1faa5f3315-s.p.woff2
+/assets/images/about/mobile_shape_2.svg
+/assets/images/programs/3.png
+/assets/images/programs/6.png
+/en/#aboutUs

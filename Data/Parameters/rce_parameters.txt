@@ -1,7 +1,6 @@
-GET|https://0aae004c04b6053a81b9c10c002c00ef.web-security-academy.net/product?productId=FUZZ|
-POST|https://0aae004c04b6053a81b9c10c002c00ef.web-security-academy.net/login|csrf=UNSpb1OYboQilQX1Gd3rSWUpGpXtglFD&username=test&password=FUZZ
-POST|https://0aae004c04b6053a81b9c10c002c00ef.web-security-academy.net/login|csrf=UNSpb1OYboQilQX1Gd3rSWUpGpXtglFD&username=FUZZ&password=test
-POST|https://0aae004c04b6053a81b9c10c002c00ef.web-security-academy.net/login|csrf=rWtcioe7Ql77IfQn8dkUvMGq4lZD8tc0&username=FUZZ&password=test
-POST|https://0aae004c04b6053a81b9c10c002c00ef.web-security-academy.net/login|csrf=rWtcioe7Ql77IfQn8dkUvMGq4lZD8tc0&username=test&password=FUZZ
-POST|https://0aae004c04b6053a81b9c10c002c00ef.web-security-academy.net/login|csrf=FUZZ&username=test&password=test
-GET|https://0aae004c04b6053a81b9c10c002c00ef.web-security-academy.net/filter?category=FUZZ|
+POST|https://0a1b000b03fa98b78116a8ac00070019.web-security-academy.net/login|csrf=BFjFRiv1MXhd5PZw9gpRAX885DdjaqNQ&username=test&password=FUZZ
+POST|https://0a1b000b03fa98b78116a8ac00070019.web-security-academy.net/login|csrf=obNKpTK6RsWRjURBgDl87IZd1aYEyMNP&username=test&password=FUZZ
+POST|https://0a1b000b03fa98b78116a8ac00070019.web-security-academy.net/login|csrf=FUZZ&username=test&password=test
+GET|https://0a1b000b03fa98b78116a8ac00070019.web-security-academy.net/filter?category=FUZZ|
+POST|https://0a1b000b03fa98b78116a8ac00070019.web-security-academy.net/login|csrf=BFjFRiv1MXhd5PZw9gpRAX885DdjaqNQ&username=FUZZ&password=test
+POST|https://0a1b000b03fa98b78116a8ac00070019.web-security-academy.net/login|csrf=obNKpTK6RsWRjURBgDl87IZd1aYEyMNP&username=FUZZ&password=test

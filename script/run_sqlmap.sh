@@ -1,19 +1,15 @@
 #!/bin/bash
 
-# Usage: run_sqlmap.sh <targets_file> <output_dir>
+# Usage: run_sqlmap.sh <targets_file> <output_dir> [extra_args...]
 
 if [ $# -lt 2 ]; then
-    echo "Usage: $0 <targets_file> <output_dir>"
+    echo "Usage: $0 <targets_file> <output_dir> [extra_args...]"
     exit 1
 fi
 
 TARGETS_FILE="$1"
 OUT_DIR="$2"
-
-if [ ! -f "$TARGETS_FILE" ]; then
-    echo "[-] Targets file not found: $TARGETS_FILE"
-    exit 1
-fi
+shift 2
 
 echo "[*] Starting SQLMap bulk scan"
 
@@ -29,12 +25,22 @@ while IFS='|' read -r method url data || [ -n "$method" ]; do
     
     echo "Scanning ($method): $url"
     
-    # Prepare arguments
-    ARGS=("-u" "$url" "--batch" "--random-agent" "--level=1" "--risk=1" "--output-dir=$OUT_DIR")
-    [ -n "$COOKIE" ] && ARGS+=("--cookie=$COOKIE")
+    # Prepare arguments (defaults that can be overridden by $@)
+    ARGS=("-u" "$url" "--batch" "--random-agent" "--output-dir=$OUT_DIR" "$@")
     
     if [ "$method" == "POST" ]; then
         ARGS+=("--data=$data")
+        [ -n "$COOKIE" ] && ARGS+=("--cookie=$COOKIE")
+    elif [ "$method" == "COOKIE" ]; then
+        # Use BOTH the global cookie AND the target-specific cookie to maintain session
+        if [ -n "$COOKIE" ]; then
+            # Merge cookies if possible (data usually contains TrackingId=..., COOKIE contains session=...)
+            ARGS+=("--cookie=$COOKIE; $data")
+        else
+            ARGS+=("--cookie=$data")
+        fi
+    else
+        [ -n "$COOKIE" ] && ARGS+=("--cookie=$COOKIE")
     fi
 
     echo "Running: sqlmap ${ARGS[*]}"

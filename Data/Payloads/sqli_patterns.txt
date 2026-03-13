@@ -1,0 +1,39 @@
+you have an error in your sql syntax
+warning.*mysql_
+warning.*mysqli_
+warning.*pg_
+unclosed quotation mark
+quoted string not properly terminated
+microsoft.*odbc.*driver
+microsoft.*ole db.*provider
+ora-\d{5}
+oracle.*error
+oracle.*driver
+postgresql.*error
+pg_query\(\)
+pg_exec\(\)
+sqlite.*error
+sqlite3\.operational
+sql.*syntax.*error
+mysql_fetch
+mysql_num_rows
+supplied argument is not a valid mysql
+unterminated.*string.*literal
+invalid.*input.*syntax.*for.*type
+mssql_query\(\)
+odbc.*sql.*server
+db2.*sql.*error
+sybase.*error
+jet.*database.*engine
+access.*database.*engine
+division by zero
+invalid column name
+unknown column
+no such column
+column.*not found
+table.*doesn.t exist
+no such table
+operand.*should contain.*column
+subquery returns more than
+each.*must.*be.*followed
+sql command not properly ended
