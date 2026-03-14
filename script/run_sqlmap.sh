@@ -20,21 +20,26 @@ if [ -n "$COOKIE" ]; then
 fi
 
 # Read targets and run sqlmap
-while IFS='|' read -r method url data || [ -n "$method" ]; do
+while IFS='|' read -r method url data params || [ -n "$method" ]; do
     [ -z "$method" ] && continue
+    [ "$method" == "COOKIE" ] && [ -z "$url" ] && continue # Skip global cookie markers
     
     echo "Scanning ($method): $url"
     
     # Prepare arguments (defaults that can be overridden by $@)
-    ARGS=("-u" "$url" "--batch" "--random-agent" "--output-dir=$OUT_DIR" "$@")
+    # Added --flush-session and --fresh-queries to ensure clean, accurate scans per target
+    ARGS=("-u" "$url" "--batch" "--random-agent" "--output-dir=$OUT_DIR" "--flush-session" "--fresh-queries" "$@")
     
+    if [ -n "$params" ]; then
+        echo "    [*] Targeting specific parameters: $params"
+        ARGS+=("-p" "$params")
+    fi
+
     if [ "$method" == "POST" ]; then
         ARGS+=("--data=$data")
         [ -n "$COOKIE" ] && ARGS+=("--cookie=$COOKIE")
     elif [ "$method" == "COOKIE" ]; then
-        # Use BOTH the global cookie AND the target-specific cookie to maintain session
         if [ -n "$COOKIE" ]; then
-            # Merge cookies if possible (data usually contains TrackingId=..., COOKIE contains session=...)
             ARGS+=("--cookie=$COOKIE; $data")
         else
             ARGS+=("--cookie=$data")
@@ -43,7 +48,7 @@ while IFS='|' read -r method url data || [ -n "$method" ]; do
         [ -n "$COOKIE" ] && ARGS+=("--cookie=$COOKIE")
     fi
 
-    echo "Running: sqlmap ${ARGS[*]}"
+    # Run sqlmap
     sqlmap "${ARGS[@]}"
 done < "$TARGETS_FILE"
 

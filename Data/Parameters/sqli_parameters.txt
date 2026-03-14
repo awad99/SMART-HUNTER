@@ -1,4 +1,2 @@
-GET|https://0a3f00cb04cc37be87477bf000250033.web-security-academy.net/filter?category=Pets|
-GET|https://0a3f00cb04cc37be87477bf000250033.web-security-academy.net/product?productId=3|
-COOKIE|https://0a3f00cb04cc37be87477bf000250033.web-security-academy.net/|TrackingId=sJs7st59EdYHvEAN
-COOKIE|https://0a3f00cb04cc37be87477bf000250033.web-security-academy.net/|session=hJviXamCyI0ntuxQQUXPMwI59oLBXDnQ
+GET|https://0a0100770301fc40838ca0d9009c009c.web-security-academy.net/product?productId=FUZZ|
+GET|https://0a0100770301fc40838ca0d9009c009c.web-security-academy.net/image?filename=FUZZ|

@@ -9,6 +9,10 @@
             "breakout-script-tag"
         ],
         [
+            "</script><script>alert(\"{c}\")</script>",
+            "breakout-script-tag"
+        ],
+        [
             "'><script>alert('{c}')</script>",
             "breakout-single-script"
         ],

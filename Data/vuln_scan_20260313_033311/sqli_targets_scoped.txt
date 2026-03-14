@@ -1,2 +1,0 @@
-GET|https://0a7e004f03c1c4db814e4988005a006e.web-security-academy.net/filter?category=Accessories|
-GET|https://0a7e004f03c1c4db814e4988005a006e.web-security-academy.net/product?productId=5|

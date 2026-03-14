@@ -7,7 +7,7 @@ SMART-HUNTER is an automated, Machine Learning-guided web vulnerability and pene
 The project has been refactored into a modular architecture for better maintainability and performance:
 
 - **`main.py`**: The central orchestrator that manages the scan lifecycle.
-- **`Mchine_Learning/`**: 
+- **`Machine_Learning/`**: AI model architecture, training, and vulnerability prediction.
     - `Ai_model.py`: Core ML model training logic and dataset management.
     - `prediction.py`: Dual-phase prediction system (Phase 1: Pre-Recon, Phase 2: Post-Testing).
 - **`Recon/`**:
