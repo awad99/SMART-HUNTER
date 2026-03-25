@@ -43,4 +43,4 @@ javascript:prompt(1)
 
 {{7*7}}
 {{constructor.constructor('alert(1)')()}}
-<%= alert(1) %>
+<%= alert(1) %>                                        

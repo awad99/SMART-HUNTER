@@ -1,0 +1,6 @@
+POST|https://0a02006304d3117e8591c967007a001d.web-security-academy.net/login|csrf=FUZZ&username=&password=|
+POST|https://0a02006304d3117e8591c967007a001d.web-security-academy.net/login|csrf=5H4z4YXs3xX5lU0SNE3b6hEZXtae80x5&username=FUZZ&password=|
+POST|https://0a02006304d3117e8591c967007a001d.web-security-academy.net/login|csrf=5H4z4YXs3xX5lU0SNE3b6hEZXtae80x5&username=&password=FUZZ|
+POST|https://0a02006304d3117e8591c967007a001d.web-security-academy.net/login|csrf=GBad9b0xlsd38YMpLYx947lYmI2aUgkr&username=FUZZ&password=|
+POST|https://0a02006304d3117e8591c967007a001d.web-security-academy.net/login|csrf=GBad9b0xlsd38YMpLYx947lYmI2aUgkr&username=&password=FUZZ|
+GET|https://0a02006304d3117e8591c967007a001d.web-security-academy.net/filter||category

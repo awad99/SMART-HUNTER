@@ -1,6 +1,6 @@
 import os, sys, urllib.parse, requests, httpx, ipaddress, warnings
 import Recon.url_connection as url_connection
-import vulnerability_scan.URL_checkIfhaveVun as URL_checkIfhaveVun
+import vulnerability_scan.Scanner_vulnerability as URL_checkIfhaveVun
 import vulnerability_scan.path_Analyze as path_Analyze
 import machine
 from Machine_Learning.Ai_model import VulnerabilityCheckerTraining, MODEL_FILE

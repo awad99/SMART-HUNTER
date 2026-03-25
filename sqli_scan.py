@@ -1,7 +1,8 @@
 import os
 import sys
 import argparse
-from vulnerability_scan.URL_checkIfhaveVun import URLVulnerabilityChecker
+from vulnerability_scan.Scanner_vulnerability import URLVulnerabilityChecker
+from Data.Update_Data import get_data_system
 
 def run_standalone_sqli(url, cookie=None, thorough=False):
     print(f"\n{'='*60}")
@@ -50,9 +51,7 @@ def run_standalone_sqli(url, cookie=None, thorough=False):
     else:
         print(f"    [-] Built-in checks: No findings.")
     
-    # 3. SQLMap Integration (Phase 3)
-    # Only run SQLMap if no high-confidence SQLi found yet (to save time)
-    # or if the user wants thorough testing.
+
     native_sqli = any('SQL Injection' in v['type'] and v.get('confidence') == 'high' for v in sqli_vulns)
     
     print(f"\n[+] Starting Phase 3: SQLMap Integration...")
@@ -67,7 +66,10 @@ def run_standalone_sqli(url, cookie=None, thorough=False):
 
     # 4. Final Report
     checker.generate_report(url)
-    checker.extract_vulnerability_features(url)
+    resp = checker._make_request(url)
+    if resp:
+        features = get_data_system.extract_vulnerability_features(url, resp, checker.vulnerabilities_found)
+        get_data_system.update_dataset(features)
     
     print(f"\n{'='*60}")
     print(f"      SCAN COMPLETE")
@@ -86,3 +88,4 @@ if __name__ == "__main__":
         sys.exit(1)
         
     run_standalone_sqli(args.url, args.cookie, args.thorough)
+    sqlmap_results = checker.check_sql_injection_with_sqlmap()

