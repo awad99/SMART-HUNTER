@@ -1,0 +1,16 @@
+#!/bin/bash
+# XSStrike Target Information
+# URL: https://relaxed-mockingbird.apac01.hackviser.space/
+# Parameters found: title, link
+# Forms found: 1
+
+# Form Details:
+# Form 1: method=GET, action='', inputs=['title', 'link']
+
+# XSStrike Commands:
+echo 'Running: python3 xsstrike.py -u "https://relaxed-mockingbird.apac01.hackviser.space/" --data "title=XSS"'
+cd /mnt/c/Users/awad/Downloads/pyarmor/auto_PenTest/XSStrike && python3 xsstrike.py -u "https://relaxed-mockingbird.apac01.hackviser.space/" --data "title=XSS"
+echo '---'
+echo 'Running: python3 xsstrike.py -u "https://relaxed-mockingbird.apac01.hackviser.space/" --data "link=XSS"'
+cd /mnt/c/Users/awad/Downloads/pyarmor/auto_PenTest/XSStrike && python3 xsstrike.py -u "https://relaxed-mockingbird.apac01.hackviser.space/" --data "link=XSS"
+echo '---'

@@ -1,0 +1,7 @@
+GET  HTTP/1.1
+Host: google.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Cookie: AEC=AaJma5uRygbKCYkVEnDd3_VrgJTZ_sz_vbs2DG5oXlcNdiSUz963rrc3ww

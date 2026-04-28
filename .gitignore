@@ -1,0 +1,31 @@
+.env
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+site-packages/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Specific Project Data
+Data/scan_*
+Data/vuln_scan_*
+Data/Datasets/*.csv
+Data/*.log
+Data/*.pkl
+!Data/Update_Data.py
+setup_db.py
+# IDEs
+.vscode/
+.idea/

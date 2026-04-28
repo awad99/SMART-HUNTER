@@ -1,0 +1,456 @@
+{
+  "summary": {
+    "total_folders": 20,
+    "total_files": 61,
+    "total_size_mb": 17.40561294555664,
+    "file_types": {
+      ".txt": 28,
+      ".py": 4,
+      ".csv": 9,
+      ".pkl": 1,
+      ".json": 6,
+      ".log": 5,
+      ".pyc": 6,
+      "": 1,
+      ".sqlite": 1
+    },
+    "vuln_scan_folders": 0,
+    "parameter_files": 5,
+    "payload_files": 4,
+    "report_files": 1,
+    "targets_found": 14
+  },
+  "folder_hierarchy": {
+    "Datasets": {
+      "files_count": 8,
+      "size_kb": 14454.947265625,
+      "file_names": [
+        "final_training_data.csv",
+        "master_vulnerability_data.csv",
+        "vulnerability_ml_dataset.csv",
+        "web_recon_ml_dataset.csv",
+        "X_test.csv",
+        "X_train.csv",
+        "y_test.csv",
+        "y_train.csv"
+      ]
+    },
+    "domains": {
+      "files_count": 3,
+      "size_kb": 1404.365234375,
+      "file_names": [
+        "discovered_urls.txt",
+        "ffuf_results.json",
+        "subdomains.txt"
+      ]
+    },
+    "Logs": {
+      "files_count": 0,
+      "size_kb": 0,
+      "file_names": []
+    },
+    "Logs\\autopentest_results_20260325_080318": {
+      "files_count": 1,
+      "size_kb": 11.728515625,
+      "file_names": [
+        "autopentest_20260325_080318.log"
+      ]
+    },
+    "Logs\\autopentest_results_20260325_084507": {
+      "files_count": 1,
+      "size_kb": 3.6416015625,
+      "file_names": [
+        "autopentest_20260325_084507.log"
+      ]
+    },
+    "Logs\\autopentest_results_20260325_084718": {
+      "files_count": 1,
+      "size_kb": 4.728515625,
+      "file_names": [
+        "autopentest_20260325_084718.log"
+      ]
+    },
+    "Logs\\autopentest_results_20260325_090339": {
+      "files_count": 1,
+      "size_kb": 3.796875,
+      "file_names": [
+        "autopentest_20260325_090339.log"
+      ]
+    },
+    "Logs\\autopentest_results_20260325_090809": {
+      "files_count": 1,
+      "size_kb": 3.486328125,
+      "file_names": [
+        "autopentest_20260325_090809.log"
+      ]
+    },
+    "Parameters": {
+      "files_count": 8,
+      "size_kb": 33.107421875,
+      "file_names": [
+        "fuzzing_Target.txt",
+        "idor_params.txt",
+        "idor_paths.txt",
+        "path_traversal_successful.txt",
+        "path_traversal_target_parameters.txt",
+        "rce_parameters.txt",
+        "sqli_parameters.txt",
+        "xss_parameters.txt"
+      ]
+    },
+    "Payloads": {
+      "files_count": 9,
+      "size_kb": 29.9736328125,
+      "file_names": [
+        "idor_payloads.txt",
+        "rce_payloads.json",
+        "scan.txt",
+        "sqli_patterns.txt",
+        "sqli_payloads.json",
+        "Vuanlibrary_Expected_Location.txt",
+        "xsstrike_payloads.json",
+        "xsstrike_targets.txt",
+        "xss_patterns.json"
+      ]
+    },
+    "Security_system": {
+      "files_count": 0,
+      "size_kb": 0,
+      "file_names": []
+    },
+    "Security_system\\Header": {
+      "files_count": 1,
+      "size_kb": 0.3154296875,
+      "file_names": [
+        "Request_Header_XSS.txt"
+      ]
+    },
+    "Update_Data": {
+      "files_count": 2,
+      "size_kb": 5.75,
+      "file_names": [
+        "get_data_system.py",
+        "__init__.py"
+      ]
+    },
+    "Update_Data\\__pycache__": {
+      "files_count": 4,
+      "size_kb": 16.2138671875,
+      "file_names": [
+        "get_data_system.cpython-311.pyc",
+        "get_data_system.cpython-313.pyc",
+        "__init__.cpython-311.pyc",
+        "__init__.cpython-313.pyc"
+      ]
+    },
+    "vuln_scan_20260325_090854": {
+      "files_count": 2,
+      "size_kb": 4.00390625,
+      "file_names": [
+        "blind_sqli_report_20260325_091005.txt",
+        "sqli_targets_scoped.txt"
+      ]
+    },
+    "vuln_scan_20260325_090854\\sqlmap_results": {
+      "files_count": 0,
+      "size_kb": 0,
+      "file_names": []
+    },
+    "vuln_scan_20260325_090854\\sqlmap_results\\0a02006304d3117e8591c967007a001d.web-security-academy.net": {
+      "files_count": 3,
+      "size_kb": 8.73828125,
+      "file_names": [
+        "log",
+        "session.sqlite",
+        "target.txt"
+      ]
+    },
+    "Wordlists": {
+      "files_count": 7,
+      "size_kb": 164.8828125,
+      "file_names": [
+        "credentials.txt",
+        "idor_keyword.txt",
+        "path_traversal.txt",
+        "sqli_patterms.txt",
+        "Subdomain-wordlist.txt",
+        "WordList_Use.txt",
+        "xss_patterns.json"
+      ]
+    },
+    "__pycache__": {
+      "files_count": 2,
+      "size_kb": 0.32421875,
+      "file_names": [
+        "__init__.cpython-311.pyc",
+        "__init__.cpython-313.pyc"
+      ]
+    }
+  },
+  "critical_files": [
+    {
+      "category": "vulnerabilities",
+      "file": "C:\\D\\SMART-HUNTER\\Data\\master_vulnerability_data.csv",
+      "type": ".csv",
+      "size_kb": 0.7724609375,
+      "details": [
+        "url",
+        "xss_vuln",
+        "lfi_vuln",
+        "idor_vuln",
+        "rfi_vuln",
+        "cmdi_vuln",
+        "sqli_vuln",
+        "pt_vuln",
+        "total_vulns_high",
+        "total_issues_med_low",
+        "has_parameters",
+        "has_forms",
+        "has_cookies",
+        "has_error_messages",
+        "has_database_errors",
+        "has_login",
+        "has_upload",
+        "has_hidden_inputs",
+        "has_script_tags",
+        "has_file_includes",
+        "has_reflection",
+        "has_eval",
+        "has_exec",
+        "has_system",
+        "cvss_estimate"
+      ]
+    },
+    {
+      "category": "features",
+      "file": "C:\\D\\SMART-HUNTER\\Data\\master_vulnerability_data.csv",
+      "type": ".csv",
+      "size_kb": 0.7724609375,
+      "details": [
+        "url",
+        "xss_vuln",
+        "lfi_vuln",
+        "idor_vuln",
+        "rfi_vuln",
+        "cmdi_vuln",
+        "sqli_vuln",
+        "pt_vuln",
+        "total_vulns_high",
+        "total_issues_med_low",
+        "has_parameters",
+        "has_forms",
+        "has_cookies",
+        "has_error_messages",
+        "has_database_errors",
+        "has_login",
+        "has_upload",
+        "has_hidden_inputs",
+        "has_script_tags",
+        "has_file_includes",
+        "has_reflection",
+        "has_eval",
+        "has_exec",
+        "has_system",
+        "cvss_estimate"
+      ]
+    },
+    {
+      "category": "recon_data",
+      "file": "C:\\D\\SMART-HUNTER\\Data\\request_headers.txt",
+      "type": ".txt",
+      "size_kb": 0.2900390625,
+      "details": 7
+    },
+    {
+      "category": "vulnerabilities",
+      "file": "C:\\D\\SMART-HUNTER\\Data\\Datasets\\master_vulnerability_data.csv",
+      "type": ".csv",
+      "size_kb": 7.58984375,
+      "details": [
+        "url",
+        "has_parameters",
+        "has_forms",
+        "has_cookies",
+        "has_error_messages",
+        "has_database_errors",
+        "has_login",
+        "has_upload",
+        "has_hidden_inputs",
+        "has_script_tags",
+        "has_file_includes",
+        "has_reflection",
+        "has_eval",
+        "has_exec",
+        "has_system",
+        "sqli_vuln",
+        "xss_vuln",
+        "cmdi_vuln",
+        "pt_vuln",
+        "lfi_vuln",
+        "rfi_vuln",
+        "idor_vuln"
+      ]
+    },
+    {
+      "category": "features",
+      "file": "C:\\D\\SMART-HUNTER\\Data\\Datasets\\master_vulnerability_data.csv",
+      "type": ".csv",
+      "size_kb": 7.58984375,
+      "details": [
+        "url",
+        "has_parameters",
+        "has_forms",
+        "has_cookies",
+        "has_error_messages",
+        "has_database_errors",
+        "has_login",
+        "has_upload",
+        "has_hidden_inputs",
+        "has_script_tags",
+        "has_file_includes",
+        "has_reflection",
+        "has_eval",
+        "has_exec",
+        "has_system",
+        "sqli_vuln",
+        "xss_vuln",
+        "cmdi_vuln",
+        "pt_vuln",
+        "lfi_vuln",
+        "rfi_vuln",
+        "idor_vuln"
+      ]
+    },
+    {
+      "category": "domains",
+      "file": "C:\\D\\SMART-HUNTER\\Data\\domains\\discovered_urls.txt",
+      "type": ".txt",
+      "size_kb": 1390.697265625,
+      "details": 11907
+    },
+    {
+      "category": "domains",
+      "file": "C:\\D\\SMART-HUNTER\\Data\\domains\\subdomains.txt",
+      "type": ".txt",
+      "size_kb": 9.6728515625,
+      "details": 347
+    },
+    {
+      "category": "parameters",
+      "file": "C:\\D\\SMART-HUNTER\\Data\\Parameters\\fuzzing_Target.txt",
+      "type": ".txt",
+      "size_kb": 0.0205078125,
+      "details": 1
+    },
+    {
+      "category": "parameters",
+      "file": "C:\\D\\SMART-HUNTER\\Data\\Parameters\\idor_params.txt",
+      "type": ".txt",
+      "size_kb": 0.1201171875,
+      "details": 18
+    },
+    {
+      "category": "parameters",
+      "file": "C:\\D\\SMART-HUNTER\\Data\\Parameters\\idor_paths.txt",
+      "type": ".txt",
+      "size_kb": 30.677734375,
+      "details": 434
+    },
+    {
+      "category": "parameters",
+      "file": "C:\\D\\SMART-HUNTER\\Data\\Parameters\\path_traversal_successful.txt",
+      "type": ".txt",
+      "size_kb": 0.162109375,
+      "details": 14
+    },
+    {
+      "category": "parameters",
+      "file": "C:\\D\\SMART-HUNTER\\Data\\Parameters\\path_traversal_target_parameters.txt",
+      "type": ".txt",
+      "size_kb": 0.169921875,
+      "details": 28
+    },
+    {
+      "category": "parameters",
+      "file": "C:\\D\\SMART-HUNTER\\Data\\Parameters\\rce_parameters.txt",
+      "type": ".txt",
+      "size_kb": 0.65234375,
+      "details": 5
+    },
+    {
+      "category": "parameters",
+      "file": "C:\\D\\SMART-HUNTER\\Data\\Parameters\\sqli_parameters.txt",
+      "type": ".txt",
+      "size_kb": 0.65234375,
+      "details": 5
+    },
+    {
+      "category": "parameters",
+      "file": "C:\\D\\SMART-HUNTER\\Data\\Parameters\\xss_parameters.txt",
+      "type": ".txt",
+      "size_kb": 0.65234375,
+      "details": 5
+    },
+    {
+      "category": "vulnerabilities",
+      "file": "C:\\D\\SMART-HUNTER\\Data\\vuln_scan_20260325_090854\\blind_sqli_report_20260325_091005.txt",
+      "type": ".txt",
+      "size_kb": 3.2607421875,
+      "details": 71
+    }
+  ],
+  "database_mapping": {
+    "targets": {
+      "source": "URLs from train.txt, fuzzing_Target.txt, or CSV files",
+      "found_in": [
+        "C:\\D\\SMART-HUNTER\\Data\\master_vulnerability_data.csv",
+        "C:\\D\\SMART-HUNTER\\Data\\master_vulnerability_data.csv",
+        "C:\\D\\SMART-HUNTER\\Data\\master_vulnerability_data.csv"
+      ],
+      "sample_urls": [
+        "https://0a7f00c4041a207a98640b7600340087.web-security-academy.net/",
+        "https://0a48001f03204924870c977e00aa00f2.web-security-academy.net/",
+        "https://0aac000e03fd0b1b80eecb8f00bd00ef.web-security-academy.net/",
+        "http://www.sidefx.com/",
+        "https://www.doppler.com/"
+      ]
+    },
+    "scans": {
+      "source": "Folder names like vuln_scan_YYYYMMDD_HHMMSS",
+      "folders": []
+    },
+    "recon_data": {
+      "source": "request_headers.txt files",
+      "files": [
+        "C:\\D\\SMART-HUNTER\\Data\\request_headers.txt"
+      ]
+    },
+    "vulnerabilities": {
+      "source": "CSV files, SQLi reports, parameter files",
+      "files": [
+        "C:\\D\\SMART-HUNTER\\Data\\master_vulnerability_data.csv",
+        "C:\\D\\SMART-HUNTER\\Data\\Datasets\\master_vulnerability_data.csv",
+        "C:\\D\\SMART-HUNTER\\Data\\vuln_scan_20260325_090854\\blind_sqli_report_20260325_091005.txt"
+      ]
+    },
+    "features": {
+      "source": "CSV files with boolean columns",
+      "files": [
+        "C:\\D\\SMART-HUNTER\\Data\\master_vulnerability_data.csv",
+        "C:\\D\\SMART-HUNTER\\Data\\Datasets\\master_vulnerability_data.csv"
+      ]
+    },
+    "network_scans": {
+      "source": "Nmap/Masscan output files",
+      "files": []
+    }
+  },
+  "recommendations": [
+    "No vuln_scan folders found. Expected pattern: vuln_scan_YYYYMMDD_HHMMSS",
+    "Found 5 parameter files. These should be uploaded to vulnerabilities table as potential vulnerabilities.",
+    "Found 4 payload files. These can be used as payload data in vulnerabilities.",
+    "Domains folder found at 'domains'. discovered_urls.txt and subdomains.txt should be used for features extraction.",
+    "Parameters folder found at 'Parameters'. Files in this folder should be mapped to vulnerabilities with tool_used='param_discovery'.",
+    "Payloads folder found at 'Payloads'. These contain testing payloads."
+  ]
+}
