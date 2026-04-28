@@ -21,7 +21,7 @@ warnings.filterwarnings('ignore')
 UA = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/141.0.0.0 Safari/537.36'}
 DATASET_DIR      = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "Data")
 SCRIPT_DIR       = os.path.join(os.path.dirname(os.path.abspath(__file__)), "script")
-ML_DATASET_FILE  = os.path.join(DATASET_DIR, "Datasets", "web_recon_ml_dataset.csv")
+ML_DATASET_FILE  = os.path.join(DATASET_DIR, "Datasets", "Datasets_for_Model_Evaluation", "recon", "web_recon_ml_dataset.csv")
 REQUEST_DELAY    = 0.4   # seconds between redirect hops
 MAX_REDIRECTS    = 10
 
@@ -457,6 +457,24 @@ class ReconWebSite:
         self.stats.add('features', 1)
         print(f"[+] Features saved to DB — status:{features.get('status_code')}")
 
+        try:
+            os.makedirs(os.path.dirname(ML_DATASET_FILE), exist_ok=True)
+            file_exists = os.path.exists(ML_DATASET_FILE) and os.path.getsize(ML_DATASET_FILE) > 0
+            if file_exists:
+                columns = pd.read_csv(ML_DATASET_FILE, nrows=0).columns.tolist()
+            else:
+                columns = list(features.keys())
+            row = {col: features.get(col, 0) for col in columns}
+            pd.DataFrame([row], columns=columns).to_csv(
+                ML_DATASET_FILE,
+                mode='a',
+                header=not file_exists,
+                index=False,
+            )
+            print(f"[+] Recon dataset updated -> {ML_DATASET_FILE}")
+        except Exception as e:
+            print(f"[-] Recon dataset update error: {e}")
+
     # ── Request/Response display ───────────────────────────────────────────
     def print_request_response_details(self, response, url, is_final=True):
         try:
@@ -713,9 +731,10 @@ class ReconWebSite:
                 self.check_found_paths(base_url, fuzzing['found_paths'])
         return fuzzing
 
-    def parse_ffuf_results(self, base_url, results_file="ffuf_results.json"):
-        # Look for results in current dir or predictable locations since self.scan_dir is gone
-        for path in (results_file, "ffuf_results.json"):
+    def parse_ffuf_results(self, base_url, results_file=None):
+        canonical_results = os.path.join(DATASET_DIR, "ffuf_results.json")
+        search_paths = [results_file, canonical_results, "ffuf_results.json"] if results_file else [canonical_results, "ffuf_results.json"]
+        for path in search_paths:
             if os.path.exists(path) and os.path.getsize(path) > 0:
                 try:
                     data = json.load(open(path))

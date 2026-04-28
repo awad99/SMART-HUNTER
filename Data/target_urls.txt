@@ -1,0 +1,3 @@
+POST|https://0a9200c504b534138297740c00d10017.web-security-academy.net/login|csrf=FUZZ&username=&password=
+POST|https://0a9200c504b534138297740c00d10017.web-security-academy.net/login|csrf=5VdX361fcAQtZZlRZHpOKSFyW3TcBSBJ&username=FUZZ&password=
+POST|https://0a9200c504b534138297740c00d10017.web-security-academy.net/login|csrf=5VdX361fcAQtZZlRZHpOKSFyW3TcBSBJ&username=&password=FUZZ

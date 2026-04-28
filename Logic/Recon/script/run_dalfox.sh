@@ -11,6 +11,9 @@ TARGETS_FILE="$1"
 OUT_FILE="$2"
 PARALLEL_JOBS="${3:-5}"
 TIMEOUT="${4:-60}"
+OUT_DIR="$(dirname "$OUT_FILE")"
+LOG_DIR="$OUT_DIR/Logs"
+LOG_FILE="$LOG_DIR/$(basename "$OUT_FILE").log"
 
 if [ ! -f "$TARGETS_FILE" ]; then
     echo "[-] Targets file not found: $TARGETS_FILE"
@@ -20,6 +23,7 @@ fi
 echo "[*] Starting dalfox XSS scan"
 echo "[*] Targets : $TARGETS_FILE"
 echo "[*] Output  : $OUT_FILE"
+echo "[*] Log     : $LOG_FILE"
 
 # Prepare cookie arg
 COOKIE_ARG=""
@@ -29,6 +33,8 @@ fi
 
 # Clear output file
 > "$OUT_FILE"
+mkdir -p "$LOG_DIR"
+> "$LOG_FILE"
 
 # Read targets and run dalfox
 cnt=0
@@ -53,7 +59,7 @@ while IFS='|' read -r method url data || [ -n "$method" ]; do
         fi
     fi
 
-    echo "Running: dalfox url \"$url\" ${ARGS[*]}" >> "$OUT_FILE.log"
+    echo "Running: dalfox url \"$url\" ${ARGS[*]}" >> "$LOG_FILE"
     dalfox url "$url" "${ARGS[@]}" >> "$OUT_FILE" 2>&1
     
 done < "$TARGETS_FILE"

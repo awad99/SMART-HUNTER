@@ -1,5 +1,12 @@
-import re, time, urllib.parse, requests, httpx
-from Machine_Learning.Ai_model import VulnerabilityCheckerTraining, FEATURE_COLS, MODEL_FILE, model_needs_refresh
+import os, re, time, urllib.parse, requests, httpx
+from Machine_Learning.Ai_model import (
+    VulnerabilityCheckerTraining,
+    FEATURE_COLS,
+    MODEL_FILE,
+    RECON_FILE,
+    VULN_FILE,
+    model_needs_refresh,
+)
 
 
 # -- Prediction Constants ----------------------------------------------------
@@ -16,6 +23,97 @@ ATTACK_PATH_MAP = {
     'path_traversal':    ['Read /etc/passwd', 'Access config files', 'Source code disclosure'],
     'idor':              ['Access other users data', 'Modify restricted records', 'Unauthorized actions'],
 }
+
+
+def _count_csv_rows(path):
+    try:
+        if not os.path.exists(path):
+            return 0
+        with open(path, encoding='utf-8', errors='ignore') as fh:
+            lines = [line for line in fh.read().splitlines() if line.strip()]
+        return max(0, len(lines) - 1)
+    except Exception:
+        return 0
+
+
+def ml_prediction_ready(min_recon_rows=25, min_vuln_rows=5):
+    recon_rows = _count_csv_rows(RECON_FILE)
+    vuln_rows = _count_csv_rows(VULN_FILE)
+    return recon_rows >= min_recon_rows and vuln_rows >= min_vuln_rows
+
+
+def _finding_family(finding_type):
+    ftype = str(finding_type or "").lower()
+    if 'sql injection' in ftype:
+        return 'sql_injection'
+    if 'xss' in ftype or 'cross-site scripting' in ftype:
+        return 'xss'
+    if 'command injection' in ftype:
+        return 'command_injection'
+    if 'path traversal' in ftype or 'directory traversal' in ftype:
+        return 'path_traversal'
+    if 'idor' in ftype:
+        return 'idor'
+    return None
+
+
+def _build_prediction_from_findings(confirmed_vulns):
+    preds = {name: 0.0 for name in ATTACK_PATH_MAP}
+    counts = {name: 0 for name in ATTACK_PATH_MAP}
+    for finding in confirmed_vulns or []:
+        family = _finding_family(finding.get('type'))
+        if family:
+            counts[family] += 1
+
+    for family, count in counts.items():
+        if count > 0:
+            preds[family] = round(min(0.99, 0.78 + 0.06 * min(count - 1, 3)), 3)
+
+    top_risk = max(preds, key=preds.get) if preds else 'none'
+    top_confidence = float(preds.get(top_risk, 0.0)) if preds else 0.0
+    if top_confidence < 0.05:
+        top_risk = 'none'
+
+    return {
+        'predictions': preds,
+        'top_risk': top_risk,
+        'top_confidence': top_confidence,
+    }
+
+
+def _apply_post_scan_calibration(prediction, confirmed_vulns):
+    if not confirmed_vulns:
+        return prediction
+    if not prediction:
+        return _build_prediction_from_findings(confirmed_vulns)
+
+    preds = dict(prediction.get('predictions', {}))
+    counts = {name: 0 for name in ATTACK_PATH_MAP}
+    for finding in confirmed_vulns:
+        family = _finding_family(finding.get('type'))
+        if family:
+            counts[family] += 1
+
+    if not any(counts.values()):
+        return prediction
+
+    for family in ATTACK_PATH_MAP:
+        current = float(preds.get(family, 0.0))
+        if counts[family]:
+            preds[family] = round(max(current, min(0.99, 0.82 + 0.05 * min(counts[family] - 1, 3))), 3)
+        else:
+            preds[family] = round(current * 0.15, 3)
+
+    top_risk = max(preds, key=preds.get) if preds else 'none'
+    top_confidence = float(preds.get(top_risk, 0.0)) if preds else 0.0
+    if top_confidence < 0.05:
+        top_risk = 'none'
+
+    return {
+        'predictions': preds,
+        'top_risk': top_risk,
+        'top_confidence': top_confidence,
+    }
 
 
 class SmartVulnerabilityScanner(VulnerabilityCheckerTraining):
@@ -62,12 +160,16 @@ class SmartVulnerabilityScanner(VulnerabilityCheckerTraining):
     def smart_vulnerability_scan(self, model_path=MODEL_FILE, crawl_results=None):
         print(f"\n{'='*60}\n  SMART VULNERABILITY SCAN\n  Target: {self.url}\n{'='*60}")
         if model_path and not self.model:
-            if model_needs_refresh(model_path):
+            if not ml_prediction_ready():
+                print("[!] ML prediction skipped: canonical training datasets are too small or incomplete.")
+            elif model_needs_refresh(model_path):
                 self.train_model()
-                self.save_model(model_path)
+                if self.model:
+                    self.save_model(model_path)
             elif not self.load_model(model_path):
                 self.train_model()
-                self.save_model(model_path)
+                if self.model:
+                    self.save_model(model_path)
 
         features = self.extract_recon_features()
         self.prediction = self.predict_vulnerability(features) if self.model else None
@@ -173,7 +275,8 @@ class SmartVulnerabilityScanner(VulnerabilityCheckerTraining):
 def get_phase_prediction_data(scanner, phase: int, confirmed_vulns=None):
     features = scanner._url_only_features() if phase == 1 else scanner.extract_recon_features()
     prediction = scanner.predict_vulnerability(features) if scanner.model else None
-    
+    if phase == 22:
+        prediction = _apply_post_scan_calibration(prediction, confirmed_vulns)
     return prediction
 
 def show_phase_prediction(scanner, phase: int, url: str, confirmed_vulns=None):

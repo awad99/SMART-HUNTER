@@ -6,6 +6,7 @@ import argparse
 root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if root not in sys.path:
     sys.path.append(root)
+    sys.path.append(os.path.join(root, "Data"))
     sys.path.append(os.path.join(root, "Logic"))
     sys.path.append(os.path.join(root, "Logic", "Recon"))
     sys.path.append(os.path.join(root, "Logic", "Recon", "vulnerability_scan"))
@@ -84,11 +85,15 @@ def run_standalone_sqli(url, cookie=None, thorough=False):
     resp = checker._make_request(url)
     if resp:
         features = get_data_system.extract_vulnerability_features(url, resp, confirmed)
+        features['scan_id'] = getattr(checker, 'scan_id', '')
+        features['target_url'] = url
+        features['has_sql_errors'] = features.get('has_database_errors', 0)
+        features['reflection_detected'] = features.get('has_reflection', 0)
         features['is_vulnerable'] = 1 if confirmed else 0
-        if os.getenv("SMART_HUNTER_UPDATE_DATASET", "").lower() in {"1", "true", "yes"}:
+        if get_data_system.training_dataset_updates_enabled(default=True):
             get_data_system.update_dataset(features)
         else:
-            print("[*] Dataset update skipped (set SMART_HUNTER_UPDATE_DATASET=1 to enable)")
+            print("[*] Dataset update disabled by SMART_HUNTER_UPDATE_DATASET=0")
     
     print(f"\n{'='*60}")
     print(f"      SCAN COMPLETE")

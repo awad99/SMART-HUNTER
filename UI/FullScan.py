@@ -13,10 +13,11 @@ import Recon.url_connection as url_connection
 
 import vulnerability_scan.Scanner_vulnerability as URL_checkIfhaveVun
 import vulnerability_scan.path_Analyze as path_Analyze
+from vulnerability_scan.findings import split_findings
 from Data.Queries.scan_stats import ScanStats
 import machine
 from Machine_Learning.Ai_model import VulnerabilityCheckerTraining, MODEL_FILE, model_needs_refresh
-from Machine_Learning.prediction import SmartVulnerabilityScanner, show_phase_prediction
+from Machine_Learning.prediction import SmartVulnerabilityScanner, ml_prediction_ready, show_phase_prediction
 
 msg = r"""
       ___           _              _   _               _   _                     
@@ -86,14 +87,18 @@ def setup_active_scanner(target, cookie, scan_id=None):
     scanner = SmartVulnerabilityScanner(target, cookie=cookie)
     if scan_id:
         scanner.scan_id = scan_id
-    if model_needs_refresh(MODEL_FILE):
+    if not ml_prediction_ready():
+        print("[!] ML prediction disabled: canonical training datasets are not ready yet.")
+    elif model_needs_refresh(MODEL_FILE):
         print("[*] Training model from the latest evaluation datasets...")
         scanner.train_model()
-        scanner.save_model(MODEL_FILE)
+        if scanner.model:
+            scanner.save_model(MODEL_FILE)
     elif not scanner.load_model(MODEL_FILE):
         print("[*] No saved model found, training from scratch...")
         scanner.train_model()
-        scanner.save_model(MODEL_FILE)
+        if scanner.model:
+            scanner.save_model(MODEL_FILE)
     return scanner
 
 def run_url_pentest(target, cookie, scanner, scan_id, stats):
@@ -109,6 +114,11 @@ def run_url_pentest(target, cookie, scanner, scan_id, stats):
     pt_results = path_Analyze.crawl_and_scan(target, max_depth=3, cookie=cookie, scan_id=scan_id, stats=stats)
     pt_vulns = pt_results.get('vulns', []) if pt_results else []
 
+    print("\n" + "*"*64)
+    print("*  VULNERABILITY PREDICTION PHASE 2A: POST-RECON")
+    print("*"*64)
+    show_phase_prediction(scanner, phase=21, url=target)
+
     print("\n[*] Running ML-guided active vulnerability tests...")
     # Passing stats via the scanner object if supported, otherwise just proceeding
     # The SmartVulnerabilityScanner might need update too if it does DB ops, 
@@ -121,13 +131,14 @@ def run_url_pentest(target, cookie, scanner, scan_id, stats):
     if main_vulns:
         quick_vulns.extend(main_vulns)
 
+    confirmed_vulns, candidate_vulns = split_findings(quick_vulns)
+
     print("\n" + "*"*64)
     print("*  VULNERABILITY PREDICTION PHASE 2: POST-TESTING")
     print("*"*64)
 
-    show_phase_prediction(scanner, phase=21, url=target)
-    show_phase_prediction(scanner, phase=22, url=target, confirmed_vulns=quick_vulns)
-    return quick_vulns
+    show_phase_prediction(scanner, phase=22, url=target, confirmed_vulns=confirmed_vulns)
+    return confirmed_vulns, candidate_vulns
 
 def run_ip_pentest(target, scan_id, stats):
     try:
@@ -137,10 +148,12 @@ def run_ip_pentest(target, scan_id, stats):
     except ValueError:
         print(f"[-] Invalid target: {target}")
 
-def display_scan_summary(quick_vulns):
+def display_scan_summary(confirmed_vulns, candidate_vulns=None):
+    candidate_vulns = candidate_vulns or []
     print(f"\n{'='*64}\n  SCAN COMPLETE - FULL SUMMARY\n{'='*64}")
-    print(f"  Active scan findings : {len(quick_vulns)}")
-    for v in quick_vulns:
+    print(f"  Confirmed findings   : {len(confirmed_vulns)}")
+    print(f"  Candidates/suspected : {len(candidate_vulns)}")
+    for v in confirmed_vulns:
         finding_type = "VULNERABILITY" if v.get('confidence', '').lower() == 'high' else "ISSUE"
         print(f"    [{finding_type:13}] [{v.get('confidence', 'unknown').upper():6}] {v.get('type', ''):<35} param: {v.get('parameter', '')}")
     print(f"{'='*64}")
@@ -155,8 +168,8 @@ def run_scanner(target, cookie):
     stats.add('scans', 1)
     
     scanner = setup_active_scanner(target, cookie, scan_id=scan_id)
-    quick_vulns = run_url_pentest(target, cookie, scanner, scan_id, stats)
-    display_scan_summary(quick_vulns)
+    confirmed_vulns, candidate_vulns = run_url_pentest(target, cookie, scanner, scan_id, stats)
+    display_scan_summary(confirmed_vulns, candidate_vulns)
     
     parsed = urllib.parse.urlparse(target)
     if not parsed.scheme and not parsed.netloc:
