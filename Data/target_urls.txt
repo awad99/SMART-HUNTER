@@ -1,3 +1,7 @@
-POST|https://0ae400b60467c040809ab264007300a0.web-security-academy.net/login|csrf=FUZZ&username=&password=
-POST|https://0ae400b60467c040809ab264007300a0.web-security-academy.net/login|csrf=ihSts9tmj6mdYXblJ1ieAdQZapcuipjf&username=FUZZ&password=
-POST|https://0ae400b60467c040809ab264007300a0.web-security-academy.net/login|csrf=ihSts9tmj6mdYXblJ1ieAdQZapcuipjf&username=&password=FUZZ
+GET|https://0a5e003403c63c7480fc1ca8008c002f.web-security-academy.net/?search=FUZZ|
+POST|https://0a5e003403c63c7480fc1ca8008c002f.web-security-academy.net/post/comment|csrf=FUZZ&postId=2&comment=&name=&email=&website=
+POST|https://0a5e003403c63c7480fc1ca8008c002f.web-security-academy.net/post/comment|csrf=oDHizLv3B68R7y8p7yARRL6hPtRzI2Fr&postId=FUZZ&comment=&name=&email=&website=
+POST|https://0a5e003403c63c7480fc1ca8008c002f.web-security-academy.net/post/comment|csrf=oDHizLv3B68R7y8p7yARRL6hPtRzI2Fr&postId=2&comment=FUZZ&name=&email=&website=
+POST|https://0a5e003403c63c7480fc1ca8008c002f.web-security-academy.net/post/comment|csrf=oDHizLv3B68R7y8p7yARRL6hPtRzI2Fr&postId=2&comment=&name=FUZZ&email=&website=
+POST|https://0a5e003403c63c7480fc1ca8008c002f.web-security-academy.net/post/comment|csrf=oDHizLv3B68R7y8p7yARRL6hPtRzI2Fr&postId=2&comment=&name=&email=FUZZ&website=
+POST|https://0a5e003403c63c7480fc1ca8008c002f.web-security-academy.net/post/comment|csrf=oDHizLv3B68R7y8p7yARRL6hPtRzI2Fr&postId=2&comment=&name=&email=&website=FUZZ
