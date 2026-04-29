@@ -14,6 +14,7 @@ from Data.Queries.q_cookies       import save_cookies
 from Data.Queries.q_headers       import save_headers
 from Data.Queries.scan_stats      import ScanStats
 from Data.Queries.q_reports         import save_report
+from Data.Update_Data.target_scan_dataset import append_target_scan_row
 
 warnings.filterwarnings('ignore')
 
@@ -174,6 +175,15 @@ class ReconWebSite:
                     features = self.extract_recon_features(resp, current, is_redirect=True)
                     _save_features_direct(self.db, features)
                     self.stats.add('features', 1)
+                    try:
+                        append_target_scan_row(
+                            features,
+                            target_url=self.original_url,
+                            scan_id=self.scan_id,
+                            record_type="recon_redirect_hop",
+                        )
+                    except Exception as e:
+                        print(f"    [-] Target scan dataset update skipped: {e}")
                     
                     # DB: Save redirect hop via q_redirects directly
                     from Data.Queries.q_redirects import save_redirect_hop
@@ -448,7 +458,7 @@ class ReconWebSite:
                     'status_code': getattr(response, 'status_code', 0), 'error_occurred': 1}
 
     # ── ML dataset ─────────────────────────────────────────────────────────
-    def save_ml_dataset(self, features):
+    def save_ml_dataset(self, features, update_training=True, target_url=None):
         if features.get('error_occurred'):
             return
         
@@ -456,6 +466,21 @@ class ReconWebSite:
         _save_features_direct(self.db, features)
         self.stats.add('features', 1)
         print(f"[+] Features saved to DB — status:{features.get('status_code')}")
+
+        try:
+            target_dataset = append_target_scan_row(
+                features,
+                target_url=target_url or self.original_url,
+                scan_id=self.scan_id,
+                record_type="recon_page",
+            )
+            if target_dataset:
+                print(f"[+] Target scan dataset updated -> {target_dataset}")
+        except Exception as e:
+            print(f"[-] Target scan dataset update error: {e}")
+
+        if not update_training:
+            return
 
         try:
             os.makedirs(os.path.dirname(ML_DATASET_FILE), exist_ok=True)

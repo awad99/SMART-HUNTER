@@ -9,7 +9,7 @@ if [[ "$TARGETS_FILE" != /* ]] && [[ "$TARGETS_FILE" != ?:* ]]; then
 fi
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-PWN_DIR="$DIR/../../Logic/Recon/vulnerability_scan/PwnTraverse"
+PWN_DIR="$DIR/../../vulnerability_scan/PwnTraverse"
 
 if [ -f "$PWN_DIR/exploit.py" ]; then
     echo "[*] Running PwnTraverse on targets in $TARGETS_FILE ..."

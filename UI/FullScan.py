@@ -6,7 +6,7 @@ if root not in sys.path:
     sys.path.append(root)
     sys.path.append(os.path.join(root, "Logic"))
     sys.path.append(os.path.join(root, "Logic", "Recon"))
-    sys.path.append(os.path.join(root, "Logic", "Recon", "vulnerability_scan"))
+    sys.path.append(os.path.join(root, "Logic", "vulnerability_scan"))
     sys.path.append(os.path.join(root, "Data"))
 
 import Recon.url_connection as url_connection
@@ -16,8 +16,8 @@ import vulnerability_scan.path_Analyze as path_Analyze
 from vulnerability_scan.findings import split_findings
 from Data.Queries.scan_stats import ScanStats
 import machine
-from Machine_Learning.Ai_model import VulnerabilityCheckerTraining, MODEL_FILE, model_needs_refresh
-from Machine_Learning.prediction import SmartVulnerabilityScanner, ml_prediction_ready, show_phase_prediction
+from Machine_Learning.Ai_model import MODEL_FILE
+from Machine_Learning.prediction import SmartVulnerabilityScanner, ensure_prediction_model, show_phase_prediction
 
 msg = r"""
       ___           _              _   _               _   _                     
@@ -87,35 +87,31 @@ def setup_active_scanner(target, cookie, scan_id=None):
     scanner = SmartVulnerabilityScanner(target, cookie=cookie)
     if scan_id:
         scanner.scan_id = scan_id
-    if not ml_prediction_ready():
-        print("[!] ML prediction disabled: canonical training datasets are not ready yet.")
-    elif model_needs_refresh(MODEL_FILE):
-        print("[*] Training model from the latest evaluation datasets...")
-        scanner.train_model()
-        if scanner.model:
-            scanner.save_model(MODEL_FILE)
-    elif not scanner.load_model(MODEL_FILE):
-        print("[*] No saved model found, training from scratch...")
-        scanner.train_model()
-        if scanner.model:
-            scanner.save_model(MODEL_FILE)
+    if not ensure_prediction_model(scanner, model_path=MODEL_FILE, allow_train=True):
+        print("[!] ML prediction disabled: no saved model is available and the canonical training datasets are not ready yet.")
     return scanner
 
 def run_url_pentest(target, cookie, scanner, scan_id, stats):
     print("\n" + "*"*64)
-    print("*  VULNERABILITY PREDICTION PHASE 1: PRE-RECON START")
+    print("*  LOGIC PHASE 1: RECON")
     print("*"*64)
-    show_phase_prediction(scanner, phase=1, url=target)
 
-    if url_connection.MainRecon(target, cookie=cookie, scan_id=scan_id, stats=stats):
-        print("\n[+] Recon complete")
+    recon_ok = url_connection.MainRecon(target, cookie=cookie, scan_id=scan_id, stats=stats)
+    if recon_ok:
+        print("\n[+] Recon phase complete")
+    else:
+        print("\n[!] Recon phase did not complete cleanly; continuing with vulnerability_scan phase")
+
+    print("\n" + "*"*64)
+    print("*  LOGIC PHASE 2: VULNERABILITY_SCAN")
+    print("*"*64)
 
     print("\n[*] Running path traversal crawler & scanner...")
     pt_results = path_Analyze.crawl_and_scan(target, max_depth=3, cookie=cookie, scan_id=scan_id, stats=stats)
     pt_vulns = pt_results.get('vulns', []) if pt_results else []
 
     print("\n" + "*"*64)
-    print("*  VULNERABILITY PREDICTION PHASE 2A: POST-RECON")
+    print("*  VULNERABILITY PREDICTION PHASE 1: POST-RECON")
     print("*"*64)
     show_phase_prediction(scanner, phase=21, url=target)
 

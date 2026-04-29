@@ -12,7 +12,7 @@ from Machine_Learning.Ai_model import (
 # -- Prediction Constants ----------------------------------------------------
 PHASE_LABELS = {
     1:  " PHASE 1 - EARLY PREDICTION  (URL structure only, before recon)",
-    21: " PHASE 2A - RECON PREDICTION  (live features, after page fetch)",
+    21: " PHASE 1 - RECON PREDICTION  (live features, after recon)",
     22: " PHASE 2B - FINAL PREDICTION  (post-scan, confirmed results)",
 }
 
@@ -40,6 +40,33 @@ def ml_prediction_ready(min_recon_rows=25, min_vuln_rows=5):
     recon_rows = _count_csv_rows(RECON_FILE)
     vuln_rows = _count_csv_rows(VULN_FILE)
     return recon_rows >= min_recon_rows and vuln_rows >= min_vuln_rows
+
+
+def ensure_prediction_model(scanner, model_path=MODEL_FILE, allow_train=True):
+    if getattr(scanner, 'model', None) is not None:
+        return True
+
+    model_exists = bool(model_path and os.path.exists(model_path))
+    ready = ml_prediction_ready()
+
+    if model_exists and scanner.load_model(model_path):
+        if allow_train and ready and model_needs_refresh(model_path):
+            print("[*] Refreshing saved ML model from the latest datasets...")
+            scanner.train_model()
+            if scanner.model:
+                scanner.save_model(model_path)
+        elif not ready:
+            print("[*] Using saved ML model; current training datasets are still too small for retraining.")
+        return scanner.model is not None
+
+    if allow_train and ready:
+        print("[*] Training ML model from available datasets...")
+        scanner.train_model()
+        if scanner.model and model_path:
+            scanner.save_model(model_path)
+        return scanner.model is not None
+
+    return False
 
 
 def _finding_family(finding_type):
@@ -160,16 +187,8 @@ class SmartVulnerabilityScanner(VulnerabilityCheckerTraining):
     def smart_vulnerability_scan(self, model_path=MODEL_FILE, crawl_results=None):
         print(f"\n{'='*60}\n  SMART VULNERABILITY SCAN\n  Target: {self.url}\n{'='*60}")
         if model_path and not self.model:
-            if not ml_prediction_ready():
-                print("[!] ML prediction skipped: canonical training datasets are too small or incomplete.")
-            elif model_needs_refresh(model_path):
-                self.train_model()
-                if self.model:
-                    self.save_model(model_path)
-            elif not self.load_model(model_path):
-                self.train_model()
-                if self.model:
-                    self.save_model(model_path)
+            if not ensure_prediction_model(self, model_path=model_path, allow_train=True):
+                print("[!] ML prediction skipped: no saved model is available and the canonical datasets are too small or incomplete.")
 
         features = self.extract_recon_features()
         self.prediction = self.predict_vulnerability(features) if self.model else None
@@ -273,6 +292,7 @@ class SmartVulnerabilityScanner(VulnerabilityCheckerTraining):
         return urllib.parse.urlunparse((p.scheme, p.netloc, p.path, p.params, urllib.parse.urlencode(q, doseq=True), p.fragment))
 
 def get_phase_prediction_data(scanner, phase: int, confirmed_vulns=None):
+    ensure_prediction_model(scanner, model_path=MODEL_FILE, allow_train=False)
     features = scanner._url_only_features() if phase == 1 else scanner.extract_recon_features()
     prediction = scanner.predict_vulnerability(features) if scanner.model else None
     if phase == 22:

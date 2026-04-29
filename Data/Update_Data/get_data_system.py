@@ -5,6 +5,7 @@ import pandas as pd
 from urllib.parse import urlparse, parse_qs
 from bs4 import BeautifulSoup
 from datetime import datetime
+from Data.Update_Data.target_scan_dataset import append_target_scan_row
 
 # -- Constants --------------------------------------------------------------
 DATA_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -256,6 +257,15 @@ def update_dataset(features):
     
     try:
         row = _build_canonical_vulnerability_row(features)
+        try:
+            append_target_scan_row(
+                row,
+                target_url=row.get('url'),
+                scan_id=row.get('scan_id'),
+                record_type="vulnerability_summary",
+            )
+        except Exception as e:
+            print(f"    [-] Target scan dataset update skipped: {e}")
         df = pd.DataFrame([row], columns=CANONICAL_VULN_COLUMNS)
         file_exists = os.path.exists(VULN_DATASET) and os.path.getsize(VULN_DATASET) > 0
         df.to_csv(VULN_DATASET, mode='a', header=not file_exists, index=False)

@@ -18,7 +18,7 @@ if root not in sys.path:
     sys.path.append(root)
     sys.path.append(os.path.join(root, "Logic"))
     sys.path.append(os.path.join(root, "Logic", "Recon"))
-    sys.path.append(os.path.join(root, "Logic", "Recon", "vulnerability_scan"))
+    sys.path.append(os.path.join(root, "Logic", "vulnerability_scan"))
 
 import FullScan 
 import Mulit_Scan 

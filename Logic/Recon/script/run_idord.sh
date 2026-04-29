@@ -4,7 +4,7 @@
 TARGET_URL=$1
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-IDORD_WRAPPER="$DIR/../../Logic/Recon/vulnerability_scan/IDORD/Wrapper/IDORD.py"
+IDORD_WRAPPER="$DIR/../../vulnerability_scan/IDORD/Wrapper/IDORD.py"
 
 if [ -f "$IDORD_WRAPPER" ]; then
     python3 "$IDORD_WRAPPER" "$TARGET_URL"
