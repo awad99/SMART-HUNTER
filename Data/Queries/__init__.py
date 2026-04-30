@@ -11,6 +11,8 @@ from Data.Queries.q_headers         import save_headers
 from Data.Queries.q_cookies         import save_cookies
 from Data.Queries.q_endpoints       import save_endpoints
 from Data.Queries.q_forms           import save_forms
+from Data.Queries.q_http_traces     import save_http_trace, save_http_trace_headers
+from Data.Queries.q_http_trace_labels import save_http_trace_label
 from Data.Queries.scan_stats        import ScanStats
 
 __all__ = [
@@ -19,5 +21,6 @@ __all__ = [
     'save_features', 'save_fuzz_results', 'save_subdomains',
     'save_raw_response', 'save_redirect_hop', 'save_headers',
     'save_cookies', 'save_endpoints', 'save_forms',
+    'save_http_trace', 'save_http_trace_headers', 'save_http_trace_label',
     'ScanStats',
 ]

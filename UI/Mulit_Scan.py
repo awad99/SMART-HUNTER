@@ -1,60 +1,41 @@
 import concurrent.futures
 import os
 import sys
-import threading
 import time
-import urllib.parse
 from datetime import datetime
-
-import requests
-from bs4 import BeautifulSoup
-from urllib3.exceptions import InsecureRequestWarning
 
 
 root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join(root, "Data")
 TARGET_FILE = os.path.join(DATA_DIR, "targets.txt")
 
-if root not in sys.path:
-    sys.path.append(root)
-    sys.path.append(os.path.join(root, "Logic"))
-    sys.path.append(os.path.join(root, "Logic", "Recon"))
-    sys.path.append(os.path.join(root, "Logic", "vulnerability_scan"))
+for path in (
+    root,
+    os.path.join(root, "Logic"),
+    os.path.join(root, "Logic", "Recon"),
+    os.path.join(root, "Logic", "vulnerability_scan"),
+):
+    if path not in sys.path:
+        sys.path.append(path)
 
-from Data.Update_Data import get_data_system
-
-
-UA = {
-    "User-Agent": (
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-        "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
-    ),
-    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-}
-
-SQL_ERROR_MARKERS = (
-    "sql syntax",
-    "mysql",
-    "postgresql",
-    "sqlite",
-    "ora-",
-    "odbc",
-    "syntax error",
-    "unterminated string",
-    "quoted string",
-)
-
-THREAD_LOCAL = threading.local()
+import Recon.url_connection as url_connection
+import vulnerability_scan.path_Analyze as path_Analyze
+from Data.Queries.scan_stats import ScanStats
+from Data.Update_Data.target_scan_dataset import get_target_scan_dataset_path
 
 
-requests.packages.urllib3.disable_warnings(category=InsecureRequestWarning)
-
-
-def _env_int(name, default, minimum=1):
+def _env_int(name, default, minimum=0):
     try:
         return max(minimum, int(os.getenv(name, "") or default))
     except (TypeError, ValueError):
         return default
+
+
+def _env_bool(name, default=False):
+    raw = str(os.getenv(name, "")).strip().lower()
+    if not raw:
+        return default
+    return raw in {"1", "true", "yes", "on", "enable", "enabled"}
 
 
 def _normalize_url(url):
@@ -66,12 +47,32 @@ def _normalize_url(url):
     return url
 
 
-def _same_origin(base_url, candidate_url):
-    return urllib.parse.urlparse(base_url).netloc == urllib.parse.urlparse(candidate_url).netloc
+def _snapshot_stats(stats):
+    snapshot = {}
+    counts = getattr(stats, "_counts", {}) if stats else {}
+    for table, values in counts.items():
+        snapshot[table] = {
+            "added": int(values.get("added", 0)),
+            "modified": int(values.get("modified", 0)),
+            "deleted": int(values.get("deleted", 0)),
+        }
+    return snapshot
+
+
+def _total_stat(stats_snapshot, table_name):
+    row = (stats_snapshot or {}).get(table_name, {})
+    return int(row.get("added", 0)) + int(row.get("modified", 0)) + int(row.get("deleted", 0))
+
+
+def _unique_target_count(items, keys):
+    unique = set()
+    for item in items or []:
+        unique.add(tuple(item.get(key, "") for key in keys))
+    return len(unique)
 
 
 def read_target_urls():
-    print("\n[*] FAST MULTI-TARGET DATASET SCANNER")
+    print("\n[*] ACCELERATED MULTI-TARGET FULL RECON")
     print("[*] Enter target URLs (one per line).")
     print("[*] Press Enter on an empty line to start, or use Data/targets.txt if no URL is entered.")
     urls = []
@@ -98,10 +99,10 @@ def read_target_urls():
             sys.exit(0)
 
     if not urls and os.path.exists(TARGET_FILE):
-        with open(TARGET_FILE, encoding="utf-8", errors="ignore") as f:
-            for line in f:
+        with open(TARGET_FILE, encoding="utf-8", errors="ignore") as handle:
+            for line in handle:
                 url = _normalize_url(line)
-                if url and url.startswith(("http://", "https://")) and url not in seen:
+                if url and url not in seen and url.startswith(("http://", "https://")):
                     seen.add(url)
                     urls.append(url)
         if urls:
@@ -109,198 +110,82 @@ def read_target_urls():
 
     if urls:
         os.makedirs(DATA_DIR, exist_ok=True)
-        with open(TARGET_FILE, "w", encoding="utf-8") as f:
+        with open(TARGET_FILE, "w", encoding="utf-8") as handle:
             for url in urls:
-                f.write(url + "\n")
+                handle.write(url + "\n")
         print(f"    [+] Saved {len(urls)} URL(s) to {TARGET_FILE}")
 
     return urls
 
 
-def _build_session():
-    session = requests.Session()
-    adapter = requests.adapters.HTTPAdapter(pool_connections=100, pool_maxsize=100)
-    session.mount("http://", adapter)
-    session.mount("https://", adapter)
-    session.headers.update(UA)
-    return session
-
-
-def _get_worker_session():
-    session = getattr(THREAD_LOCAL, "session", None)
-    if session is None:
-        session = _build_session()
-        THREAD_LOCAL.session = session
-    return session
-
-
-def _fetch(session, url, timeout):
-    try:
-        start = time.perf_counter()
-        response = session.get(url, timeout=timeout, verify=False, allow_redirects=True)
-        response.elapsed_ms_fast = int((time.perf_counter() - start) * 1000)
-        return response
-    except Exception as exc:
-        return exc
-
-
-def _discover_light_targets(url, response, max_links=4):
-    targets = {"get": []}
-    parsed = urllib.parse.urlparse(response.url or url)
-    base_url = urllib.parse.urlunparse((parsed.scheme, parsed.netloc, parsed.path, "", "", ""))
-    query = urllib.parse.parse_qs(parsed.query, keep_blank_values=True)
-    if query:
-        targets["get"].append({
-            "url": base_url,
-            "full_url": response.url,
-            "params": list(query.keys()),
-            "defaults": {k: v[0] if v else "" for k, v in query.items()},
-        })
-
-    content_type = response.headers.get("content-type", "")
-    if "html" not in content_type.lower():
-        return targets
-
-    try:
-        html = response.text or ""
-        soup = BeautifulSoup(html[:250000], "html.parser")
-    except Exception:
-        return targets
-
-    added = 0
-    for a_tag in soup.find_all("a", href=True):
-        if added >= max_links:
-            break
-        full_url = urllib.parse.urljoin(response.url or url, a_tag["href"])
-        if not _same_origin(response.url or url, full_url):
-            continue
-        link_parsed = urllib.parse.urlparse(full_url)
-        link_query = urllib.parse.parse_qs(link_parsed.query, keep_blank_values=True)
-        if not link_query:
-            continue
-        link_base = urllib.parse.urlunparse((link_parsed.scheme, link_parsed.netloc, link_parsed.path, "", "", ""))
-        targets["get"].append({
-            "url": link_base,
-            "full_url": full_url,
-            "params": list(link_query.keys()),
-            "defaults": {k: v[0] if v else "" for k, v in link_query.items()},
-        })
-        added += 1
-
-    seen = set()
-    unique = []
-    for target in targets["get"]:
-        key = (target["url"], tuple(sorted(target["params"])))
-        if key in seen:
-            continue
-        seen.add(key)
-        unique.append(target)
-    targets["get"] = unique
-    return targets
-
-
-def _inject_get_url(target, param, value):
-    source_url = target.get("full_url") or target.get("url")
-    parsed = urllib.parse.urlparse(source_url)
-    query = urllib.parse.parse_qs(parsed.query, keep_blank_values=True)
-    for key, default in (target.get("defaults") or {}).items():
-        query[key] = [default]
-    query[param] = [value]
-    encoded = urllib.parse.urlencode(query, doseq=True)
-    return urllib.parse.urlunparse((parsed.scheme, parsed.netloc, parsed.path, "", encoded, ""))
-
-
-def _fast_active_probes(session, targets, timeout, max_params):
-    findings = []
-    tested = 0
-    canary = f"SHFAST{int(time.time() * 1000)}"
-
-    for target in targets.get("get", []):
-        for param in target.get("params", [])[:max_params]:
-            tested += 1
-            try:
-                reflected_url = _inject_get_url(target, param, canary)
-                reflected = session.get(reflected_url, timeout=timeout, verify=False, allow_redirects=True)
-                if canary in (reflected.text or ""):
-                    findings.append({
-                        "type": "Reflection Candidate",
-                        "parameter": param,
-                        "payload": canary,
-                        "evidence": "Fast canary reflected in response",
-                        "tool": "fast_multi_probe",
-                        "confidence": "low",
-                        "status": "candidate",
-                        "url": target.get("url"),
-                        "method": "GET",
-                    })
-
-                quote_url = _inject_get_url(target, param, "'")
-                quote_resp = session.get(quote_url, timeout=timeout, verify=False, allow_redirects=True)
-                quote_text = (quote_resp.text or "").lower()
-                if any(marker in quote_text for marker in SQL_ERROR_MARKERS):
-                    findings.append({
-                        "type": "SQL Injection Candidate",
-                        "parameter": param,
-                        "payload": "'",
-                        "evidence": "Fast quote probe triggered database error text",
-                        "tool": "fast_multi_probe",
-                        "confidence": "medium",
-                        "status": "candidate",
-                        "url": target.get("url"),
-                        "method": "GET",
-                    })
-            except Exception:
-                continue
-
-    return findings, tested
-
-
-def _features_for_response(url, response, findings, scan_id):
-    features = get_data_system.extract_vulnerability_features(url, response, [])
-    features["scan_id"] = scan_id
-    features["target_url"] = url
-    features["status_code"] = getattr(response, "status_code", 0)
-    features["response_size"] = len(getattr(response, "text", "") or "")
-    features["response_time_ms"] = getattr(response, "elapsed_ms_fast", 0)
-    features["has_sql_errors"] = features.get("has_database_errors", 0)
-    features["reflection_detected"] = int(any(f.get("type") == "Reflection Candidate" for f in findings))
-    features["is_vulnerable"] = 0
-    features["vulnerability_type"] = ",".join(sorted({f.get("type", "") for f in findings if f.get("type")}))
-    return features
-
-
-def fast_scan_target(url, idx, total_count, timeout, max_params):
-    scan_id = f"multi_fast_{datetime.now().strftime('%Y%m%d_%H%M%S')}_{idx:04d}"
-    session = _get_worker_session()
+def run_parallel_target_scan(url, idx, batch_id, enable_crawl, crawl_depth, crawl_threads, enable_pwntraverse):
     started = time.perf_counter()
+    scan_id = f"{batch_id}_{idx:04d}"
+    stats = ScanStats(scan_id)
 
-    response = _fetch(session, url, timeout)
-    if isinstance(response, Exception):
+    try:
+        recon = url_connection.MainRecon(
+            url,
+            cookie=None,
+            scan_id=scan_id,
+            stats=stats,
+            interactive=False,
+            enable_fuzz=False,
+            return_details=True,
+        )
+        if not recon.get("ok"):
+            return {
+                "url": url,
+                "ok": False,
+                "scan_id": scan_id,
+                "error": recon.get("error") or "Recon failed",
+                "elapsed": time.perf_counter() - started,
+                "recon": recon,
+            }
+
+        crawl_results = None
+        crawl_target = recon.get("final_url") or url
+        if enable_crawl and crawl_depth > 0:
+            crawl_results = path_Analyze.crawl_and_scan(
+                crawl_target,
+                max_depth=crawl_depth,
+                cookie=None,
+                scan_id=scan_id,
+                stats=stats,
+                threads=crawl_threads,
+                enable_pwntraverse=enable_pwntraverse,
+            )
+
+        params_found = _unique_target_count((crawl_results or {}).get("discovered_params", []), ("url", "param", "method"))
+        forms_found = _unique_target_count((crawl_results or {}).get("discovered_forms", []), ("url", "param", "method"))
+        pages_crawled = len((crawl_results or {}).get("visited", []))
+        stats_snapshot = _snapshot_stats(stats)
+
+        return {
+            "url": url,
+            "ok": True,
+            "scan_id": scan_id,
+            "status": recon.get("status_code"),
+            "final_url": crawl_target,
+            "elapsed": time.perf_counter() - started,
+            "recon": recon,
+            "crawl": crawl_results,
+            "pages_crawled": pages_crawled,
+            "params_found": params_found,
+            "forms_found": forms_found,
+            "subdomains_found": _total_stat(stats_snapshot, "subdomains"),
+            "endpoints_found": _total_stat(stats_snapshot, "endpoints"),
+            "recon_params_found": _total_stat(stats_snapshot, "discovered_parameters"),
+            "target_csv": get_target_scan_dataset_path(crawl_target, scan_id) if crawl_results else "",
+        }
+    except Exception as exc:
         return {
             "url": url,
             "ok": False,
             "scan_id": scan_id,
-            "error": f"{response.__class__.__name__}: {response}",
-            "findings": [],
+            "error": f"{exc.__class__.__name__}: {exc}",
             "elapsed": time.perf_counter() - started,
         }
-
-    targets = _discover_light_targets(url, response)
-    findings, tested_params = _fast_active_probes(session, targets, timeout, max_params)
-    features = _features_for_response(url, response, findings, scan_id)
-    elapsed = time.perf_counter() - started
-    return {
-        "url": url,
-        "ok": True,
-        "scan_id": scan_id,
-        "status": response.status_code,
-        "final_url": response.url,
-        "targets": sum(len(t.get("params", [])) for t in targets.get("get", [])),
-        "tested_params": tested_params,
-        "findings": findings,
-        "features": features,
-        "elapsed": elapsed,
-    }
 
 
 def main():
@@ -309,53 +194,85 @@ def main():
         print("[-] No valid URLs provided. Exiting.")
         return
 
-    workers = _env_int("SMART_HUNTER_MULTI_WORKERS", min(32, max(8, len(urls))), minimum=1)
-    timeout = _env_int("SMART_HUNTER_MULTI_TIMEOUT", 5, minimum=1)
-    max_params = _env_int("SMART_HUNTER_MULTI_MAX_PARAMS", 4, minimum=1)
+    workers = _env_int("SMART_HUNTER_MULTI_WORKERS", min(16, max(4, len(urls))), minimum=1)
+    crawl_depth = _env_int("SMART_HUNTER_MULTI_CRAWL_DEPTH", 2, minimum=0)
+    crawl_threads = _env_int("SMART_HUNTER_MULTI_CRAWL_THREADS", 12, minimum=1)
+    enable_crawl = _env_bool("SMART_HUNTER_MULTI_ENABLE_CRAWL", True)
+    enable_pwntraverse = _env_bool("SMART_HUNTER_MULTI_ENABLE_PWNTRAVERSE", False)
+    batch_id = f"multi_full_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
 
-    print(f"\n[*] Starting FAST multi-target scan for {len(urls)} target(s)")
-    print(f"[*] workers={workers} timeout={timeout}s max_params_per_target={max_params}")
-    print("[*] Deep tools are skipped here; use FULL scan for full validation.\n")
+    print(f"\n[*] Starting accelerated multi-target scan for {len(urls)} target(s)")
+    print(
+        f"[*] workers={workers} crawl_enabled={int(enable_crawl)} "
+        f"crawl_depth={crawl_depth} crawl_threads={crawl_threads}"
+    )
+    if enable_pwntraverse:
+        print("[*] Full reconnaissance and crawler validation are enabled, including PwnTraverse.\n")
+    else:
+        print("[*] Full reconnaissance is enabled. Fuzzing and PwnTraverse are skipped in parallel mode for speed and safety.\n")
 
     started = time.perf_counter()
     results = []
     with concurrent.futures.ThreadPoolExecutor(max_workers=workers) as executor:
         futures = {
-            executor.submit(fast_scan_target, url, idx, len(urls), timeout, max_params): (idx, url)
+            executor.submit(
+                run_parallel_target_scan,
+                url,
+                idx,
+                batch_id,
+                enable_crawl,
+                crawl_depth,
+                crawl_threads,
+                enable_pwntraverse,
+            ): (idx, url)
             for idx, url in enumerate(urls, 1)
         }
+
         for future in concurrent.futures.as_completed(futures):
             idx, url = futures[future]
             try:
                 result = future.result()
             except Exception as exc:
-                result = {"url": url, "ok": False, "error": str(exc), "findings": [], "elapsed": 0}
+                result = {
+                    "url": url,
+                    "ok": False,
+                    "error": f"{exc.__class__.__name__}: {exc}",
+                    "elapsed": 0,
+                }
             results.append(result)
 
             if result.get("ok"):
                 print(
-                    f"    [{idx}/{len(urls)}] {url} -> "
-                    f"HTTP {result.get('status')} | params:{result.get('tested_params', 0)} "
-                    f"| candidates:{len(result.get('findings', []))} | {result.get('elapsed', 0):.1f}s"
+                    f"    [{idx}/{len(urls)}] {url} -> HTTP {result.get('status')} "
+                    f"| subdomains:{result.get('subdomains_found', 0)} "
+                    f"| pages:{result.get('pages_crawled', 0)} "
+                    f"| params:{result.get('recon_params_found', 0) + result.get('params_found', 0)} "
+                    f"| {result.get('elapsed', 0):.1f}s"
                 )
             else:
                 print(f"    [{idx}/{len(urls)}] {url} -> ERROR: {result.get('error')}")
 
-    ok_count = sum(1 for result in results if result.get("ok"))
-    finding_count = sum(len(result.get("findings", [])) for result in results)
-    saved_rows = get_data_system.update_dataset_batch(
-        [result.get("features") for result in results if result.get("ok") and result.get("features")],
-        quiet=True,
-    )
-    elapsed = time.perf_counter() - started
+    ok_results = [result for result in results if result.get("ok")]
+    total_elapsed = time.perf_counter() - started
+    total_pages = sum(result.get("pages_crawled", 0) for result in ok_results)
+    total_forms = sum(result.get("forms_found", 0) for result in ok_results)
+    total_params = sum(result.get("params_found", 0) + result.get("recon_params_found", 0) for result in ok_results)
+    total_subdomains = sum(result.get("subdomains_found", 0) for result in ok_results)
+    total_endpoints = sum(result.get("endpoints_found", 0) for result in ok_results)
+
     print("\n" + "=" * 60)
-    print(" FAST MULTI-TARGET SUMMARY")
+    print(" PARALLEL FULL RECON SUMMARY")
     print("=" * 60)
-    print(f" Targets scanned : {ok_count}/{len(urls)}")
-    print(f" Candidates      : {finding_count}")
-    print(f" Dataset rows    : {saved_rows}")
-    print(f" Total time      : {elapsed:.1f}s")
-    print(f" Dataset         : {get_data_system.VULN_DATASET}")
+    print(f" Targets completed : {len(ok_results)}/{len(urls)}")
+    print(f" Subdomains found  : {total_subdomains}")
+    print(f" Endpoints found   : {total_endpoints}")
+    print(f" Parameters found  : {total_params}")
+    print(f" Forms found       : {total_forms}")
+    print(f" Pages crawled     : {total_pages}")
+    print(f" Total time        : {total_elapsed:.1f}s")
+    print(f" Recon dataset     : {url_connection.ML_DATASET_FILE}")
+    if any(result.get("target_csv") for result in ok_results):
+        print(f" Target CSV sample  : {next(result.get('target_csv') for result in ok_results if result.get('target_csv'))}")
     print("=" * 60)
 
 

@@ -25,7 +25,10 @@ from Data.Queries.q_cookies       import save_cookies
 from Data.Queries.q_headers       import save_headers
 from Data.Queries.scan_stats      import ScanStats
 from Data.Queries.q_reports         import save_report
+from Data.Update_Data.nlp_trace_writer import NLPTraceWriter
 from Data.Update_Data.target_scan_dataset import append_target_scan_row
+from Logic.NLP.http_trace_builder import HTTPTraceBuilder
+from Logic.NLP.route_decider import RouteDecider
 
 warnings.filterwarnings('ignore')
 
@@ -188,6 +191,11 @@ class ReconWebSite:
         self._analysis_cache = {}
         self._last_response = None
         self._request_headers = {**UA, **({'Cookie': self.cookie} if self.cookie else {})}
+        self._captured_response_ids = set()
+        self._latest_trace_id = ""
+        self.trace_writer = NLPTraceWriter()
+        self.trace_builder = HTTPTraceBuilder()
+        self.route_decider = RouteDecider()
         
         # Database Initialization
         self.db = DatabaseManager()
@@ -246,6 +254,65 @@ class ReconWebSite:
             params["proxy"] = proxy
         return httpx.Client(**params)
 
+    def _write_nlp_trace_bundle(self, trace_bundle):
+        if not trace_bundle:
+            return None
+        decision = self.route_decider.decide(trace_bundle) if self.route_decider else None
+        if decision:
+            valuable_target = decision.get("valuable_target", 0)
+            trace_bundle["request"]["label_is_valuable_target"] = valuable_target
+            trace_bundle["response"]["label_is_valuable_target"] = valuable_target
+            trace_bundle["label"].update(
+                {
+                    "label_target_value": valuable_target,
+                    "label_candidate_family": decision.get("candidate_family", ""),
+                    "label_confidence": decision.get("confidence", 0.0),
+                    "analyzer_route": decision.get("analyzer_route", ""),
+                    "analyzer_reason": decision.get("reason", ""),
+                }
+            )
+        self.trace_writer.write_trace_bundle(trace_bundle, db=self.db)
+        self._latest_trace_id = trace_bundle["request"].get("trace_id", self._latest_trace_id)
+        return decision
+
+    def _capture_response_trace(self, response, fallback_url, source_module, label_source="passive_trace", input_names=None):
+        if response is None:
+            return None
+        response_id = id(response)
+        if response_id in self._captured_response_ids:
+            return None
+        self._captured_response_ids.add(response_id)
+        bundle = self.trace_builder.build_from_response_object(
+            scan_id=self.scan_id,
+            source_module=source_module,
+            response=response,
+            fallback_url=fallback_url,
+            parent_trace_id=self._latest_trace_id,
+            label_source=label_source,
+            input_names=input_names or [],
+        )
+        return self._write_nlp_trace_bundle(bundle)
+
+    def _capture_analysis_trace(self, url, params):
+        input_names = []
+        for item in params.get("inputs", []):
+            name = (item or {}).get("name")
+            if name:
+                input_names.append(name)
+        input_names.extend(params.get("get_params", []))
+        input_names.extend(params.get("post_params", []))
+        bundle = self.trace_builder.build_candidate_trace(
+            scan_id=self.scan_id,
+            source_module="recon.response_analysis",
+            page_url=url,
+            request_method="GET",
+            request_headers=self._request_headers,
+            input_names=_ordered_unique(input_names),
+            parent_trace_id=self._latest_trace_id,
+            label_source="response_analysis",
+        )
+        return self._write_nlp_trace_bundle(bundle)
+
     def _get_waf_matches(self, response):
         headers_lower = {k.lower(): v.lower() for k, v in response.headers.items()}
         body_lower = (response.text or "")[:4000].lower()
@@ -299,6 +366,7 @@ class ReconWebSite:
                     self._last_response = resp
                     self._grab_cookies(resp, current)
                     self._grab_headers(resp, current)
+                    self._capture_response_trace(resp, current, "recon.track_redirects", label_source="passive_trace")
                     print(f"    [{count+1}] {current} → {resp.status_code}")
                     
                     # DB: Save features for each hop via q_features directly
@@ -879,6 +947,7 @@ class ReconWebSite:
             # DB: Save raw response directly via q_raw_responses
             save_raw_response(self.db, self.scan_id, url, response.status_code, body, response.headers)
             self.stats.add('raw_responses', 1)
+            self._capture_response_trace(response, url, "recon.final_response", label_source="passive_trace")
             
             if is_final:
                 self.Get_Response = response.text
@@ -917,6 +986,7 @@ class ReconWebSite:
         print(f"[+] Analysis: {len(params['forms'])} forms, {len(params['links'])} links, "
               f"{len(params['inputs'])} inputs, {len(params['endpoints'])} endpoints")
         self._save_analysis(params, url)
+        self._capture_analysis_trace(url, params)
         return params
 
     def _parse_form(self, html):
@@ -1221,6 +1291,18 @@ def test_connection(url, cookie=None, scan_id=None, stats=None, recon=None):
     return None, None
 
 
+def _scan_stats_snapshot(stats):
+    snapshot = {}
+    counts = getattr(stats, "_counts", {}) if stats else {}
+    for table, values in counts.items():
+        snapshot[table] = {
+            "added": int(values.get("added", 0)),
+            "modified": int(values.get("modified", 0)),
+            "deleted": int(values.get("deleted", 0)),
+        }
+    return snapshot
+
+
 def _legacy_MainRecon(url, cookie=None, scan_id=None, stats=None):
     try:
         print(f"[*] Starting reconnaissance for: {url}")
@@ -1298,7 +1380,20 @@ def _legacy_MainRecon(url, cookie=None, scan_id=None, stats=None):
     return True
 
 
-def MainRecon(url, cookie=None, scan_id=None, stats=None):
+def MainRecon(url, cookie=None, scan_id=None, stats=None, interactive=True, enable_fuzz=None, return_details=False):
+    details = {
+        "ok": False,
+        "original_url": url,
+        "final_url": None,
+        "status_code": None,
+        "has_waf": False,
+        "waf_vendors": [],
+        "security_score": None,
+        "security_grade": None,
+        "stats": _scan_stats_snapshot(stats),
+        "error": None,
+    }
+    recon = None
     try:
         print(f"[*] Starting reconnaissance for: {url}")
         recon = ReconWebSite(url, cookie=cookie, scan_id=scan_id, stats=stats)
@@ -1306,7 +1401,9 @@ def MainRecon(url, cookie=None, scan_id=None, stats=None):
 
         if not response or not recon_obj:
             _update_scan_status_direct(recon.db, recon.scan_id, 'failed', None, has_waf=False, waf_vendors=None, grade=None, score=None)
-            return False
+            details["error"] = "Could not reach target"
+            details["stats"] = _scan_stats_snapshot(getattr(recon, "stats", stats))
+            return details if return_details else False
 
         recon = recon_obj
         if stats:
@@ -1316,6 +1413,14 @@ def MainRecon(url, cookie=None, scan_id=None, stats=None):
         waf_vendors = recon.detect_waf(response)
         present = recon.print_security_summary(response)
         grade = "A" if present >= 7 else "B" if present >= 5 else "C" if present >= 3 else "F"
+        details.update({
+            "final_url": recon.final_url,
+            "status_code": getattr(response, "status_code", None),
+            "has_waf": bool(waf_vendors),
+            "waf_vendors": waf_vendors or [],
+            "security_score": present,
+            "security_grade": grade,
+        })
 
         recon.print_request_response_details(response, recon.final_url, is_final=True)
         recon.Get_Target_From_Response()
@@ -1353,9 +1458,18 @@ def MainRecon(url, cookie=None, scan_id=None, stats=None):
                 except Exception as ex:
                     print(f"    [-] Discovery task failed ({name}): {ex}")
 
-        ans = robust_input("\nFuzz with ffuf? (y/n): ", default='n')
-        if ans == 'y':
+        should_fuzz = False
+        if enable_fuzz is None:
+            if interactive:
+                ans = robust_input("\nFuzz with ffuf? (y/n): ", default='n')
+                should_fuzz = ans == 'y'
+        else:
+            should_fuzz = bool(enable_fuzz)
+
+        if should_fuzz:
             recon.fuzz_url(target)
+        elif not interactive or enable_fuzz is not None:
+            print("[*] Fuzzing skipped for this run.")
 
         if stats is None:
             recon.stats.print_summary()
@@ -1372,7 +1486,9 @@ def MainRecon(url, cookie=None, scan_id=None, stats=None):
             print(f"[+] Recon phase complete.")
 
         recon.show_dataset_stats()
-        return True
+        details["ok"] = True
+        details["stats"] = _scan_stats_snapshot(recon.stats)
+        return details if return_details else True
 
     except KeyboardInterrupt:
         print("\n[!] Cancelled")
@@ -1380,7 +1496,9 @@ def MainRecon(url, cookie=None, scan_id=None, stats=None):
         import traceback
         print(f"[-] Error: {e}")
         traceback.print_exc()
-    return False
+        details["error"] = str(e)
+    details["stats"] = _scan_stats_snapshot(getattr(recon, "stats", stats))
+    return details if return_details else False
 
 
 if __name__ == "__main__":

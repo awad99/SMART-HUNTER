@@ -22,6 +22,8 @@ from Data.Queries.q_cookies         import save_cookies         as _q_cookies
 from Data.Queries.q_endpoints       import save_endpoints       as _q_endpoints
 from Data.Queries.q_forms           import save_forms           as _q_forms
 from Data.Queries.q_reports         import save_report         as _q_reports
+from Data.Queries.q_http_traces     import save_http_trace      as _q_http_trace, save_http_trace_headers as _q_http_trace_headers
+from Data.Queries.q_http_trace_labels import save_http_trace_label as _q_http_trace_label
 
 
 class DatabaseManager:
@@ -148,3 +150,15 @@ class DatabaseManager:
     # =========================================================================
     def add_report(self, scan_id, report_type, content):
         return _q_reports(self, scan_id, report_type, content)
+
+    # =========================================================================
+    # HTTP NLP Traces — delegate
+    # =========================================================================
+    def add_http_trace(self, request_row, response_row):
+        return _q_http_trace(self, request_row, response_row)
+
+    def add_http_trace_headers(self, header_rows):
+        return _q_http_trace_headers(self, header_rows)
+
+    def add_http_trace_label(self, label_row):
+        return _q_http_trace_label(self, label_row)
