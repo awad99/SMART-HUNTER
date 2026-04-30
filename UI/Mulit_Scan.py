@@ -8,6 +8,7 @@ from datetime import datetime
 
 import requests
 from bs4 import BeautifulSoup
+from urllib3.exceptions import InsecureRequestWarning
 
 
 root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -43,7 +44,10 @@ SQL_ERROR_MARKERS = (
     "quoted string",
 )
 
-DATASET_LOCK = threading.Lock()
+THREAD_LOCAL = threading.local()
+
+
+requests.packages.urllib3.disable_warnings(category=InsecureRequestWarning)
 
 
 def _env_int(name, default, minimum=1):
@@ -122,6 +126,14 @@ def _build_session():
     return session
 
 
+def _get_worker_session():
+    session = getattr(THREAD_LOCAL, "session", None)
+    if session is None:
+        session = _build_session()
+        THREAD_LOCAL.session = session
+    return session
+
+
 def _fetch(session, url, timeout):
     try:
         start = time.perf_counter()
@@ -150,7 +162,8 @@ def _discover_light_targets(url, response, max_links=4):
         return targets
 
     try:
-        soup = BeautifulSoup(response.text or "", "html.parser")
+        html = response.text or ""
+        soup = BeautifulSoup(html[:250000], "html.parser")
     except Exception:
         return targets
 
@@ -258,7 +271,7 @@ def _features_for_response(url, response, findings, scan_id):
 
 def fast_scan_target(url, idx, total_count, timeout, max_params):
     scan_id = f"multi_fast_{datetime.now().strftime('%Y%m%d_%H%M%S')}_{idx:04d}"
-    session = _build_session()
+    session = _get_worker_session()
     started = time.perf_counter()
 
     response = _fetch(session, url, timeout)
@@ -275,9 +288,6 @@ def fast_scan_target(url, idx, total_count, timeout, max_params):
     targets = _discover_light_targets(url, response)
     findings, tested_params = _fast_active_probes(session, targets, timeout, max_params)
     features = _features_for_response(url, response, findings, scan_id)
-
-    with DATASET_LOCK:
-        dataset_ok = get_data_system.update_dataset(features)
     elapsed = time.perf_counter() - started
     return {
         "url": url,
@@ -288,7 +298,7 @@ def fast_scan_target(url, idx, total_count, timeout, max_params):
         "targets": sum(len(t.get("params", [])) for t in targets.get("get", [])),
         "tested_params": tested_params,
         "findings": findings,
-        "dataset_ok": bool(dataset_ok),
+        "features": features,
         "elapsed": elapsed,
     }
 
@@ -299,9 +309,9 @@ def main():
         print("[-] No valid URLs provided. Exiting.")
         return
 
-    workers = _env_int("SMART_HUNTER_MULTI_WORKERS", min(16, max(4, len(urls))), minimum=1)
-    timeout = _env_int("SMART_HUNTER_MULTI_TIMEOUT", 6, minimum=1)
-    max_params = _env_int("SMART_HUNTER_MULTI_MAX_PARAMS", 6, minimum=1)
+    workers = _env_int("SMART_HUNTER_MULTI_WORKERS", min(32, max(8, len(urls))), minimum=1)
+    timeout = _env_int("SMART_HUNTER_MULTI_TIMEOUT", 5, minimum=1)
+    max_params = _env_int("SMART_HUNTER_MULTI_MAX_PARAMS", 4, minimum=1)
 
     print(f"\n[*] Starting FAST multi-target scan for {len(urls)} target(s)")
     print(f"[*] workers={workers} timeout={timeout}s max_params_per_target={max_params}")
@@ -333,12 +343,17 @@ def main():
 
     ok_count = sum(1 for result in results if result.get("ok"))
     finding_count = sum(len(result.get("findings", [])) for result in results)
+    saved_rows = get_data_system.update_dataset_batch(
+        [result.get("features") for result in results if result.get("ok") and result.get("features")],
+        quiet=True,
+    )
     elapsed = time.perf_counter() - started
     print("\n" + "=" * 60)
     print(" FAST MULTI-TARGET SUMMARY")
     print("=" * 60)
     print(f" Targets scanned : {ok_count}/{len(urls)}")
     print(f" Candidates      : {finding_count}")
+    print(f" Dataset rows    : {saved_rows}")
     print(f" Total time      : {elapsed:.1f}s")
     print(f" Dataset         : {get_data_system.VULN_DATASET}")
     print("=" * 60)

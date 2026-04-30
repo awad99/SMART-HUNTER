@@ -249,12 +249,23 @@ def _build_canonical_vulnerability_row(features):
     })
     return row
 
-def update_dataset(features):
+def _append_vulnerability_rows(rows, quiet=False):
+    if not rows:
+        return 0
+
+    os.makedirs(os.path.dirname(VULN_DATASET), exist_ok=True)
+    df = pd.DataFrame(rows, columns=CANONICAL_VULN_COLUMNS)
+    file_exists = os.path.exists(VULN_DATASET) and os.path.getsize(VULN_DATASET) > 0
+    df.to_csv(VULN_DATASET, mode='a', header=not file_exists, index=False)
+    if not quiet:
+        print(f"    [+] Vulnerability dataset updated with {len(rows)} row(s) -> {VULN_DATASET}")
+    return len(rows)
+
+
+def update_dataset(features, quiet=False):
     if not features:
         return
 
-    os.makedirs(os.path.dirname(VULN_DATASET), exist_ok=True)
-    
     try:
         row = _build_canonical_vulnerability_row(features)
         try:
@@ -265,15 +276,47 @@ def update_dataset(features):
                 record_type="vulnerability_summary",
             )
         except Exception as e:
-            print(f"    [-] Target scan dataset update skipped: {e}")
-        df = pd.DataFrame([row], columns=CANONICAL_VULN_COLUMNS)
-        file_exists = os.path.exists(VULN_DATASET) and os.path.getsize(VULN_DATASET) > 0
-        df.to_csv(VULN_DATASET, mode='a', header=not file_exists, index=False)
-        print(f"    [+] Vulnerability dataset updated for {row.get('url')} -> {VULN_DATASET}")
+            if not quiet:
+                print(f"    [-] Target scan dataset update skipped: {e}")
+        _append_vulnerability_rows([row], quiet=quiet)
         return True
     except Exception as e:
-        print(f"    [-] Error updating dataset: {e}")
+        if not quiet:
+            print(f"    [-] Error updating dataset: {e}")
         return False
+
+
+def update_dataset_batch(features_list, quiet=False):
+    if not features_list:
+        return 0
+
+    rows = []
+    for features in features_list:
+        if not features:
+            continue
+        try:
+            row = _build_canonical_vulnerability_row(features)
+            rows.append(row)
+            try:
+                append_target_scan_row(
+                    row,
+                    target_url=row.get('url'),
+                    scan_id=row.get('scan_id'),
+                    record_type="vulnerability_summary",
+                )
+            except Exception as e:
+                if not quiet:
+                    print(f"    [-] Target scan dataset update skipped: {e}")
+        except Exception as e:
+            if not quiet:
+                print(f"    [-] Error preparing dataset row: {e}")
+
+    try:
+        return _append_vulnerability_rows(rows, quiet=quiet)
+    except Exception as e:
+        if not quiet:
+            print(f"    [-] Error updating dataset batch: {e}")
+        return 0
 
 if __name__ == "__main__":
     print("[*] Dataset System Utility Loaded")

@@ -1,7 +1,18 @@
-import re, json, os, time, subprocess, warnings, urllib.parse, threading
-import httpx, pandas as pd
-from urllib.parse import parse_qs, urlparse, urljoin
+import concurrent.futures
+import ipaddress
+import json
+import os
+import re
+import subprocess
+import threading
+import time
+import urllib.parse
+import warnings
 from datetime import datetime
+from urllib.parse import parse_qs, urlparse, urljoin
+
+import httpx, pandas as pd
+from bs4 import BeautifulSoup
 from database_manager import DatabaseManager
 
 # ── استيراد مباشر من ملفات Queries ────────────────────────────────────
@@ -23,8 +34,14 @@ UA = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.3
 DATASET_DIR      = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "Data")
 SCRIPT_DIR       = os.path.join(os.path.dirname(os.path.abspath(__file__)), "script")
 ML_DATASET_FILE  = os.path.join(DATASET_DIR, "Datasets", "Datasets_for_Model_Evaluation", "recon", "web_recon_ml_dataset.csv")
-REQUEST_DELAY    = 0.4   # seconds between redirect hops
-MAX_REDIRECTS    = 10
+REQUEST_DELAY    = float(os.getenv("SMART_HUNTER_RECON_REDIRECT_DELAY", "0"))
+MAX_REDIRECTS    = max(1, int(os.getenv("SMART_HUNTER_RECON_MAX_REDIRECTS", "10")))
+HTTP_TIMEOUT     = float(os.getenv("SMART_HUNTER_RECON_TIMEOUT", "10"))
+MAX_ANALYSIS_BYTES = max(50000, int(os.getenv("SMART_HUNTER_RECON_MAX_ANALYSIS_BYTES", "500000")))
+DISCOVERY_WORKERS = max(1, int(os.getenv("SMART_HUNTER_RECON_DISCOVERY_WORKERS", "3")))
+DATASET_LOCK = threading.Lock()
+_RECON_DATASET_COLUMNS_CACHE = None
+_PROXY_CACHE = {"checked": False, "value": None}
 
 # -- WAF signatures ---------------------------------------------------------
 _WAF_SIGS = {
@@ -60,6 +77,86 @@ _RE_SCRIPT_SRC = re.compile(r'<script[^>]*src=[\'"]([^\'"]+)[\'"]', re.I)
 _RE_HREF = re.compile(r'<a[^>]*href=[\'"]([^\'"]+)[\'"]', re.I)
 _RE_JWT = re.compile(r'eyJ[a-zA-Z0-9_-]+\.eyJ[a-zA-Z0-9_-]+\.[a-zA-Z0-9_-]+')
 _RE_API_KEY = re.compile(r'(?i)(?:api_key|apikey|access_token|secret_key)[\'"]?\s*[:=]\s*[\'"]?([a-zA-Z0-9_\-]{16,})[\'"]?')
+_RE_FILE_PATHS = re.compile(r'(?i)(?:/etc/|/var/www/|/home/|[A-Z]:\\(?:inetpub|xampp|Users|Windows)\\)')
+_RE_DEBUG_INFO = re.compile(r'(?i)(?:debug|console\.log|var_dump|print_r|traceback|stack trace)')
+_RE_ERROR_MSG = re.compile(r'(?i)(?:error|exception|warning|traceback|stack trace|fatal)')
+_RE_SQL_ERR = re.compile(r'(?i)(?:sql syntax|mysql|postgresql|oracle|sqlite|database error|odbc|ora-\d+)')
+_RE_TOKEN_NAME = re.compile(r'(?i)(?:csrf|xsrf|token|authenticity|nonce)')
+_RE_LOGIN_HINT = re.compile(r'(?i)(?:login|signin|auth|account|user|email|pass)')
+_RE_COMMENT = re.compile(r'<!--')
+
+
+def _env_bool(name, default=False):
+    raw = str(os.getenv(name, "")).strip().lower()
+    if not raw:
+        return default
+    return raw in {"1", "true", "yes", "on", "enable", "enabled"}
+
+
+def _normalize_url(url):
+    text = (url or "").strip()
+    if not text:
+        return ""
+    if not text.startswith(("http://", "https://")):
+        text = "https://" + text
+    return text
+
+
+def _ordered_unique(items):
+    out = []
+    seen = set()
+    for item in items:
+        if item in seen or item in ("", None):
+            continue
+        seen.add(item)
+        out.append(item)
+    return out
+
+
+def _safe_ratio(numerator, denominator):
+    return (numerator / denominator) if denominator else 0.0
+
+
+def _host_scope_suffix(hostname):
+    parts = [part for part in (hostname or "").split(".") if part]
+    if len(parts) > 2:
+        return ".".join(parts[1:])
+    return hostname or ""
+
+
+def _same_scope_host(candidate_host, base_host):
+    candidate = (candidate_host or "").lower()
+    base = (base_host or "").lower()
+    suffix = _host_scope_suffix(base)
+    return bool(candidate) and (
+        candidate == base or
+        candidate.endswith("." + base) or
+        candidate == suffix or
+        candidate.endswith("." + suffix)
+    )
+
+
+def _same_scope_url(candidate_url, base_url):
+    candidate_host = urlparse(candidate_url).hostname or ""
+    base_host = urlparse(base_url).hostname or ""
+    return _same_scope_host(candidate_host, base_host)
+
+
+def _normalize_candidate_url(base_url, candidate):
+    href = (candidate or "").strip()
+    if not href:
+        return ""
+    if href.startswith(("javascript:", "data:", "mailto:", "tel:", "#")):
+        return ""
+    return urljoin(base_url, href)
+
+
+def _is_ip_address(value):
+    try:
+        ipaddress.ip_address(value)
+        return 1
+    except ValueError:
+        return 0
 
 
 
@@ -83,11 +180,14 @@ class ReconWebSite:
 # ===========================================================================
 
     def __init__(self, url, cookie=None, scan_id=None, stats=None):
-        self.original_url = self.url = self.final_url = url
+        self.original_url = self.url = _normalize_url(url)
         self.cookie       = cookie
         self.final_url    = None
         self.Get_Response = self.Get_Request = None
         self.scan_id      = scan_id or datetime.now().strftime('%Y%m%d_%H%M%S')
+        self._analysis_cache = {}
+        self._last_response = None
+        self._request_headers = {**UA, **({'Cookie': self.cookie} if self.cookie else {})}
         
         # Database Initialization
         self.db = DatabaseManager()
@@ -104,25 +204,59 @@ class ReconWebSite:
 
     # -- Proxy --------------------------------------------------------------
     def _find_proxy(self):
-        """Try Burp (8080) then ZAP (8081); return proxy URL or None."""
+        manual_proxy = os.getenv("SMART_HUNTER_PROXY") or os.getenv("HTTPS_PROXY") or os.getenv("HTTP_PROXY")
+        if manual_proxy:
+            return manual_proxy
+
+        if not _env_bool("SMART_HUNTER_AUTO_PROXY", False):
+            return None
+
+        if _PROXY_CACHE["checked"]:
+            return _PROXY_CACHE["value"]
+
         for port in (8080, 8081):
-            url = f"http://127.0.0.1:{port}"
+            proxy_url = f"http://127.0.0.1:{port}"
             try:
-                with httpx.Client(proxies=url, timeout=2.0, verify=False) as c:
-                    c.get("http://example.com", timeout=2.0)
-                print(f"[+] Proxy on port {port}")
-                return url
+                with httpx.Client(proxy=proxy_url, timeout=2.0, verify=False, trust_env=False) as client:
+                    client.get("http://example.com", timeout=2.0)
+                _PROXY_CACHE["checked"] = True
+                _PROXY_CACHE["value"] = proxy_url
+                print(f"[+] Proxy detected on port {port}")
+                return proxy_url
             except Exception:
-                pass
-        print("[-] No proxy found")
+                continue
+
+        _PROXY_CACHE["checked"] = True
+        _PROXY_CACHE["value"] = None
         return None
+
+    def _build_client(self, follow_redirects=False):
+        proxy = self._find_proxy()
+        params = {
+            "timeout": httpx.Timeout(HTTP_TIMEOUT),
+            "follow_redirects": follow_redirects,
+            "verify": False,
+            "http2": True,
+            "headers": self._request_headers,
+            "cookies": self.get_cookies_for_requests() if self.cookies else None,
+            "limits": httpx.Limits(max_connections=20, max_keepalive_connections=10),
+            "trust_env": not bool(proxy),
+        }
+        if proxy:
+            params["proxy"] = proxy
+        return httpx.Client(**params)
+
+    def _get_waf_matches(self, response):
+        headers_lower = {k.lower(): v.lower() for k, v in response.headers.items()}
+        body_lower = (response.text or "")[:4000].lower()
+        return [
+            vendor for vendor, sigs in _WAF_SIGS.items()
+            if any(sig in headers_lower or sig in headers_lower.get("set-cookie", "") or sig in body_lower for sig in sigs)
+        ]
 
     # -- WAF detection ------------------------------------------------------
     def detect_waf(self, response):
-        h    = {k.lower(): v.lower() for k, v in response.headers.items()}
-        body = (response.text or "")[:4000].lower()
-        found = [p for p, sigs in _WAF_SIGS.items()
-                 if any(s in h or s in h.get("set-cookie","") or s in body for s in sigs)]
+        found = self._get_waf_matches(response)
         print(f"    [!] WAF/CDN: {', '.join(found)}" if found else "    [*] No WAF detected")
         return found
 
@@ -142,31 +276,27 @@ class ReconWebSite:
 
     # ── Redirect tracker ───────────────────────────────────────────────────
     def track_redirects(self, url):
-        proxy    = self._find_proxy()
-        current  = url
-        count    = 0
-        self.redirect_chain = [{'url': url, 'type': 'ORIGINAL'}]
+        current = _normalize_url(url or self.original_url)
+        count = 0
+        self.redirect_chain = [{'url': current, 'type': 'ORIGINAL'}]
         self.cookies = []
         self.headers = []
 
-        params = dict(timeout=10.0, follow_redirects=False, verify=False)
-        if proxy:
-            params['proxies'] = proxy
-            print(f"[*] Using proxy: {proxy}")
-
         try:
-            with httpx.Client(**params) as c:
+            with self._build_client(follow_redirects=False) as c:
                 while count < MAX_REDIRECTS:
-                    if count:
+                    if count and REQUEST_DELAY:
                         time.sleep(REQUEST_DELAY)
                     try:
-                        hdr = {**UA, **({'Cookie': self.cookie} if self.cookie else {})}
-                        resp = c.get(current, headers=hdr)
+                        resp = c.get(current)
                     except httpx.TimeoutException:
-                        print(f"    [-] Timeout: {current}"); break
+                        print(f"    [-] Timeout: {current}")
+                        break
                     except Exception as e:
-                        print(f"    [-] Error: {e}"); break
+                        print(f"    [-] Error: {e}")
+                        break
 
+                    self._last_response = resp
                     self._grab_cookies(resp, current)
                     self._grab_headers(resp, current)
                     print(f"    [{count+1}] {current} → {resp.status_code}")
@@ -196,16 +326,13 @@ class ReconWebSite:
 
                     if resp.status_code in (301, 302, 303, 307, 308):
                         loc = resp.headers.get('location')
-                        if not loc: break
-                        if loc.startswith('/'):
-                            p = urlparse(current)
-                            loc = f"{p.scheme}://{p.netloc}{loc}"
-                        elif not loc.startswith(('http://', 'https://')):
-                            loc = urljoin(current, loc)
-                        current = loc; count += 1
+                        if not loc:
+                            break
+                        current = urljoin(current, loc)
+                        count += 1
                     else:
-                        self.final_url = current
-                        self.redirect_chain.append({'url': current, 'type': 'FINAL', 'status': resp.status_code})
+                        self.final_url = str(resp.url)
+                        self.redirect_chain.append({'url': self.final_url, 'type': 'FINAL', 'status': resp.status_code})
                         return resp
         except Exception as e:
             print(f"    [-] Client setup error: {e}")
@@ -227,7 +354,7 @@ class ReconWebSite:
         self.headers.append({'url': url, 'status_code': response.status_code,
                              'headers': dict(response.headers),
                              'timestamp': datetime.now().isoformat()})
-        n = save_headers(self.db, self.scan_id, url, response.status_code, dict(response.headers))
+        save_headers(self.db, self.scan_id, url, response.status_code, dict(response.headers))
         self.stats.add('response_headers', len(response.headers))
 
     def get_cookies_for_requests(self):
@@ -287,155 +414,379 @@ class ReconWebSite:
             return len(re.findall(compiled_regex_or_pattern, text, re.IGNORECASE))
         return len(compiled_regex_or_pattern.findall(text))
 
+    def _analyze_html_document(self, html, base_url, content_type=""):
+        body = html or ""
+        key = f"{base_url}|{len(body)}|{hash(body[:4096])}"
+        cached = self._analysis_cache.get(key)
+        if cached is not None:
+            return cached
+
+        analysis = {
+            'forms': [],
+            'get_params': [],
+            'post_params': [],
+            'buttons': [],
+            'links': [],
+            'inputs': [],
+            'endpoints': [],
+            'password_count': 0,
+            'hidden_count': 0,
+            'file_upload_count': 0,
+            'search_count': 0,
+            'email_input_count': 0,
+            'url_input_count': 0,
+            'textarea_count': 0,
+            'select_count': 0,
+            'button_count': 0,
+            'link_count': 0,
+            'image_count': 0,
+            'meta_count': 0,
+            'stylesheet_count': 0,
+            'script_count': 0,
+            'inline_script_count': 0,
+            'internal_script_count': 0,
+            'external_script_count': 0,
+            'internal_link_count': 0,
+            'external_link_count': 0,
+            'same_origin_form_count': 0,
+            'external_form_count': 0,
+            'get_form_count': 0,
+            'post_form_count': 0,
+            'login_form_count': 0,
+            'csrf_token_input_count': 0,
+            'unique_input_names': 0,
+            'unique_endpoint_count': 0,
+            'parameterized_link_count': 0,
+            'api_like_endpoint_count': 0,
+            'inline_event_handler_count': 0,
+            'mailto_link_count': 0,
+            'tel_link_count': 0,
+            'comment_count': len(_RE_COMMENT.findall(body[:MAX_ANALYSIS_BYTES])),
+            'has_title': 0,
+            'analysis_truncated': int(len(body) > MAX_ANALYSIS_BYTES),
+        }
+
+        is_html = "html" in (content_type or "").lower() or "<html" in body[:1000].lower() or "<form" in body[:1000].lower()
+        if not is_html:
+            self._analysis_cache[key] = analysis
+            return analysis
+
+        snippet = body[:MAX_ANALYSIS_BYTES]
+        soup = BeautifulSoup(snippet, "html.parser")
+        input_names = []
+
+        for tag in soup.find_all(True):
+            analysis['inline_event_handler_count'] += sum(
+                1 for attr_name in tag.attrs.keys() if str(attr_name).lower().startswith("on")
+            )
+
+        field_tags = soup.find_all(["input", "textarea", "select"])
+        for field in field_tags:
+            tag_name = field.name.lower()
+            field_type = (field.get("type") or tag_name or "text").lower()
+            name = (field.get("name") or "").strip()
+            field_info = {
+                'type': field_type,
+                'name': name,
+                'id': field.get("id"),
+            }
+            analysis['inputs'].append(field_info)
+            if name:
+                input_names.append(name)
+            if field_type == "password":
+                analysis['password_count'] += 1
+            if field_type == "hidden":
+                analysis['hidden_count'] += 1
+            if field_type == "file":
+                analysis['file_upload_count'] += 1
+            if field_type == "search" or (name and name.lower() in {"search", "q", "query"}):
+                analysis['search_count'] += 1
+            if field_type == "email":
+                analysis['email_input_count'] += 1
+            if field_type == "url":
+                analysis['url_input_count'] += 1
+            if tag_name == "textarea":
+                analysis['textarea_count'] += 1
+            if tag_name == "select":
+                analysis['select_count'] += 1
+            if name and _RE_TOKEN_NAME.search(name):
+                analysis['csrf_token_input_count'] += 1
+
+        for form in soup.find_all("form"):
+            action_raw = (form.get("action") or "").strip()
+            action = _normalize_candidate_url(base_url, action_raw) or base_url
+            method = (form.get("method") or "GET").upper()
+            form_inputs = []
+            has_password = False
+            has_file = False
+            has_hidden = False
+
+            for field in form.find_all(["input", "textarea", "select"]):
+                field_type = (field.get("type") or field.name or "text").lower()
+                name = (field.get("name") or "").strip()
+                if name:
+                    form_inputs.append(name)
+                has_password = has_password or field_type == "password"
+                has_file = has_file or field_type == "file"
+                has_hidden = has_hidden or field_type == "hidden"
+
+            normalized_inputs = _ordered_unique(form_inputs)
+            form_entry = {
+                'action': action,
+                'method': method,
+                'inputs': normalized_inputs,
+                'has_password': has_password,
+                'has_file': has_file,
+                'has_hidden': has_hidden,
+            }
+            analysis['forms'].append(form_entry)
+            analysis['endpoints'].append(action)
+
+            if method == "POST":
+                analysis['post_form_count'] += 1
+                analysis['post_params'].extend(normalized_inputs)
+            else:
+                analysis['get_form_count'] += 1
+                analysis['get_params'].extend(normalized_inputs)
+
+            if _same_scope_url(action, base_url):
+                analysis['same_origin_form_count'] += 1
+            else:
+                analysis['external_form_count'] += 1
+
+            if has_password or any(_RE_LOGIN_HINT.search(item or "") for item in normalized_inputs) or _RE_LOGIN_HINT.search(action_raw or ""):
+                analysis['login_form_count'] += 1
+
+        for tag in soup.find_all(["a", "link", "area"], href=True):
+            href = (tag.get("href") or "").strip()
+            if not href:
+                continue
+            lowered = href.lower()
+            if lowered.startswith("mailto:"):
+                analysis['mailto_link_count'] += 1
+                continue
+            if lowered.startswith("tel:"):
+                analysis['tel_link_count'] += 1
+                continue
+            full_url = _normalize_candidate_url(base_url, href)
+            if not full_url:
+                continue
+            analysis['links'].append(full_url)
+            analysis['endpoints'].append(full_url)
+            if _same_scope_url(full_url, base_url):
+                analysis['internal_link_count'] += 1
+            else:
+                analysis['external_link_count'] += 1
+            if parse_qs(urlparse(full_url).query):
+                analysis['parameterized_link_count'] += 1
+            path = urlparse(full_url).path.lower()
+            if "/api/" in path or path.endswith(".json"):
+                analysis['api_like_endpoint_count'] += 1
+
+        for script in soup.find_all("script"):
+            src = (script.get("src") or "").strip()
+            if src:
+                full_src = _normalize_candidate_url(base_url, src)
+                if full_src:
+                    analysis['endpoints'].append(full_src)
+                    if _same_scope_url(full_src, base_url):
+                        analysis['internal_script_count'] += 1
+                    else:
+                        analysis['external_script_count'] += 1
+            else:
+                analysis['inline_script_count'] += 1
+
+        for button in soup.find_all("button"):
+            analysis['buttons'].append({
+                'type': (button.get("type") or "button").lower(),
+                'content': " ".join(button.stripped_strings),
+            })
+        for field in soup.find_all("input"):
+            if (field.get("type") or "").lower() in {"button", "submit"}:
+                analysis['buttons'].append({
+                    'type': (field.get("type") or "button").lower(),
+                    'value': field.get("value"),
+                    'name': field.get("name"),
+                })
+
+        analysis['image_count'] = len(soup.find_all("img"))
+        analysis['meta_count'] = len(soup.find_all("meta"))
+        analysis['stylesheet_count'] = sum(
+            1 for link in soup.find_all("link")
+            if "stylesheet" in " ".join(link.get("rel", [] if link.get("rel") is None else link.get("rel"))).lower()
+        )
+        analysis['has_title'] = int(bool(soup.title and soup.title.get_text(strip=True)))
+        analysis['script_count'] = analysis['inline_script_count'] + analysis['internal_script_count'] + analysis['external_script_count']
+        analysis['button_count'] = len(analysis['buttons'])
+        analysis['link_count'] = len(analysis['links'])
+        analysis['get_params'] = _ordered_unique(analysis['get_params'])
+        analysis['post_params'] = _ordered_unique(analysis['post_params'])
+        analysis['links'] = _ordered_unique(analysis['links'])
+        analysis['endpoints'] = _ordered_unique(analysis['endpoints'])
+        analysis['unique_input_names'] = len(set(name for name in input_names if name))
+        analysis['unique_endpoint_count'] = len(analysis['endpoints'])
+
+        self._analysis_cache[key] = analysis
+        return analysis
+
     def extract_recon_features(self, response, url, is_redirect=False):
         try:
-            p   = urlparse(url)
-            h   = response.headers
-            c   = (response.text or "").lower()
-            srv = h.get('Server','').lower()
-            pb  = h.get('X-Powered-By','').lower()
+            parsed_url = urlparse(url)
+            headers = response.headers
+            body = response.text or ""
+            body_lower = body.lower()
+            content_type = headers.get('Content-Type', '')
+            dom = self._analyze_html_document(body, url, content_type=content_type)
+            waf_found = self._get_waf_matches(response)
+            server_header = headers.get('Server', '')
+            server_lower = server_header.lower()
+            powered_by = headers.get('X-Powered-By', '').lower()
+            query_params = parse_qs(parsed_url.query, keep_blank_values=True)
+            reflected_params = sum(
+                1 for values in query_params.values() for value in values
+                if len(value) > 2 and value.lower() in body_lower
+            )
 
-            def _has(tag):  return int(f'<{tag}' in c)
-            def _cnt(tag):  return self._count(rf'<{tag}[^>]*>', c)
-
-            # WAF detection
-            waf_headers = {k.lower(): v.lower() for k, v in h.items()}
-            waf_found = [vendor for vendor, sigs in _WAF_SIGS.items()
-                         if any(s in waf_headers or s in waf_headers.get("set-cookie","") or s in c[:4000] for s in sigs)]
-
-            # Input types
-            password_count = self._count(_RE_PASSWORD, c)
-            hidden_count = self._count(_RE_HIDDEN, c)
-            file_upload_count = self._count(_RE_FILE, c)
-            search_count = self._count(_RE_SEARCH, c) + self._count(_RE_SEARCH_NAME, c)
-
-            # Internal vs External scripts/links
-            scripts = _RE_SCRIPT_SRC.findall(c)
-            internal_scripts = sum(1 for src in scripts if not src.startswith('http') or p.netloc in src)
-            external_scripts = len(scripts) - internal_scripts
-
-            links = _RE_HREF.findall(c)
-            internal_links = sum(1 for href in links if not href.startswith('http') or p.netloc in href)
-            external_links = len(links) - internal_links
-
-            # Cookies Security
-            cookie_headers = getattr(h, 'get_list', lambda x: [h.get(x)] if h.get(x) else [])('set-cookie')
+            cookie_headers = headers.get_list('set-cookie') if hasattr(headers, 'get_list') else ([headers.get('set-cookie')] if headers.get('set-cookie') else [])
             num_set_cookies = len(cookie_headers)
-            secure_cookies = sum(1 for ch in cookie_headers if 'secure' in ch.lower())
-            httponly_cookies = sum(1 for ch in cookie_headers if 'httponly' in ch.lower())
-            samesite_cookies = sum(1 for ch in cookie_headers if 'samesite=strict' in ch.lower() or 'samesite=lax' in ch.lower())
-
-            secure_cookie_ratio = secure_cookies / num_set_cookies if num_set_cookies else 0.0
-            httponly_cookie_ratio = httponly_cookies / num_set_cookies if num_set_cookies else 0.0
-            samesite_cookie_ratio = samesite_cookies / num_set_cookies if num_set_cookies else 0.0
-
-            # JWT / Secrets
-            jwt_count = len(_RE_JWT.findall(response.text or ""))
-            api_key_count = len(_RE_API_KEY.findall(c))
-
-            # Reflected Params
-            query_params = parse_qs(p.query)
-            reflected_params = sum(1 for param_vals in query_params.values() for v in param_vals if len(v) > 2 and v.lower() in c)
+            secure_cookies = sum(1 for item in cookie_headers if item and 'secure' in item.lower())
+            httponly_cookies = sum(1 for item in cookie_headers if item and 'httponly' in item.lower())
+            samesite_cookies = sum(
+                1 for item in cookie_headers
+                if item and ('samesite=strict' in item.lower() or 'samesite=lax' in item.lower() or 'samesite=none' in item.lower())
+            )
+            jwt_count = len(_RE_JWT.findall(body))
+            api_key_count = len(_RE_API_KEY.findall(body))
 
             features = {
-                # URL
                 'url_length':        len(url),
                 'has_https':         int(url.startswith('https')),
-                'path_depth':        len([x for x in p.path.split('/') if x]),
-                'has_query_params':  int(bool(p.query)),
-                'num_query_params':  len(parse_qs(p.query)),
-                'has_fragment':      int(bool(p.fragment)),
-                'has_port':          int(bool(p.port)),
-                'subdomain_count':   max(0, len(p.netloc.split('.'))-2),
-                'is_ip_address':     int(bool(re.match(r'\d+\.\d+\.\d+\.\d+', p.netloc))),
-                'domain_length':     len(p.netloc),
-                'domain_has_hyphens':int('-' in p.netloc),
-                'domain_tld':        p.netloc.split('.')[-1] if '.' in p.netloc else 'unknown',
-                # Response
+                'path_depth':        len([x for x in parsed_url.path.split('/') if x]),
+                'has_query_params':  int(bool(parsed_url.query)),
+                'num_query_params':  len(query_params),
+                'has_fragment':      int(bool(parsed_url.fragment)),
+                'has_port':          int(bool(parsed_url.port)),
+                'subdomain_count':   max(0, len(parsed_url.netloc.split('.'))-2),
+                'is_ip_address':     _is_ip_address(parsed_url.hostname or parsed_url.netloc),
+                'domain_length':     len(parsed_url.netloc),
+                'domain_has_hyphens':int('-' in parsed_url.netloc),
+                'domain_tld':        parsed_url.netloc.split('.')[-1] if '.' in parsed_url.netloc else 'unknown',
                 'status_code':       response.status_code,
                 'status_category':   response.status_code // 100,
-                'response_size':     len(response.text or ''),
+                'response_size':     len(body),
                 'response_time_ms':  getattr(response, 'elapsed', None) and response.elapsed.total_seconds()*1000 or 0,
                 'is_redirect':       int(is_redirect),
                 'redirect_chain_len':len(self.redirect_chain),
-                # Headers
-                'total_headers':         len(h),
-                'server_header_present': int('Server' in h),
-                'server_header':         h.get('Server','unknown').split('/')[0],
-                'x_powered_by_present':  int('X-Powered-By' in h),
-                'content_type':          self._ct(h.get('Content-Type','')),
-                'has_cookies':           int('Set-Cookie' in h),
+                'total_headers':         len(headers),
+                'server_header_present': int('Server' in headers),
+                'server_header':         server_header.split('/')[0] if server_header else 'unknown',
+                'x_powered_by_present':  int('X-Powered-By' in headers),
+                'content_type':          self._ct(content_type),
+                'has_cookies':           int('Set-Cookie' in headers),
                 'num_cookies':           len(response.cookies),
-                'has_cors':              int('Access-Control-Allow-Origin' in h),
-                'cache_control':         int('Cache-Control' in h),
-                'security_headers_count':sum(1 for s in _SEC_HEADERS if s in h),
-                'has_csp':               int('Content-Security-Policy' in h),
-                'has_hsts':              int('Strict-Transport-Security' in h),
-                'has_xss_protection':    int('X-XSS-Protection' in h),
-                'has_frame_options':     int('X-Frame-Options' in h),
-                'has_content_type_options': int('X-Content-Type-Options' in h),
-                # HTML elements
-                'has_forms':    _has('form'), 'form_count':     _cnt('form'),
-                'has_inputs':   _has('input'),'input_count':    _cnt('input'),
-                'has_password_input': int(password_count > 0), 'password_count': password_count,
-                'has_hidden_input':   int(hidden_count > 0),   'hidden_count': hidden_count,
-                'has_file_upload':    int(file_upload_count > 0), 'file_upload_count': file_upload_count,
-                'has_search_input':   int(search_count > 0),   'search_count': search_count,
-                'has_buttons':  _has('button'),'button_count':  _cnt('button'),
-                'has_textarea': _has('textarea'),'textarea_count':_cnt('textarea'),
-                'has_select':   _has('select'),'select_count':  _cnt('select'),
-                'has_scripts':  _has('script'),'script_count':  _cnt('script'),
-                'internal_script_count': internal_scripts, 'external_script_count': external_scripts,
-                'has_links':    int('<a href' in c),'link_count': self._count(r'<a [^>]*href[^>]*>', c),
-                'internal_link_count': internal_links, 'external_link_count': external_links,
-                'has_images':   _has('img'),  'image_count':   _cnt('img'),
-                'has_meta_tags':_has('meta'), 'meta_count':    _cnt('meta'),
-                'has_stylesheets': int('stylesheet' in c),
-                'stylesheet_count': self._count(r'<link[^>]*rel=[\'"]stylesheet[\'"][^>]*>', c),
-                'has_javascript':int('<script' in c or 'javascript:' in c),
-                'has_comments': int('<!--' in c), 'comment_count': c.count('<!--'),
-                'has_title':    int('<title>' in c),
-                # Tech stack
-                'server_apache':    int('apache' in srv),
-                'server_nginx':     int('nginx' in srv),
-                'server_iis':       int('iis' in srv or 'microsoft' in srv),
-                'tech_php':         int('php' in pb or '.php' in c),
-                'tech_aspnet':      int('asp.net' in pb or '.aspx' in c),
-                'tech_jsp':         int('.jsp' in c),
-                'tech_wordpress':   int('wp-content' in c or 'wordpress' in c),
-                'tech_drupal':      int('drupal' in c),
-                'tech_joomla':      int('joomla' in c),
-                # Security indicators & WAF
-                'has_debug_info':   int(any(w in c for w in ['debug','console.log','var_dump','print_r'])),
-                'has_error_messages':int(any(w in c for w in ['error','exception','warning','stack trace'])),
-                'has_sql_errors':   int(any(w in c for w in ['sql','database','mysql','postgresql','oracle'])),
-                'has_file_paths':   int(any(w in c for w in ['/etc/','c:\\','/var/www/','/home/'])),
+                'has_cors':              int('Access-Control-Allow-Origin' in headers),
+                'cache_control':         int('Cache-Control' in headers),
+                'security_headers_count':sum(1 for item in _SEC_HEADERS if item in headers),
+                'has_csp':               int('Content-Security-Policy' in headers),
+                'has_hsts':              int('Strict-Transport-Security' in headers),
+                'has_xss_protection':    int('X-XSS-Protection' in headers),
+                'has_frame_options':     int('X-Frame-Options' in headers),
+                'has_content_type_options': int('X-Content-Type-Options' in headers),
+                'has_forms':    int(bool(dom['forms'])),
+                'form_count':   len(dom['forms']),
+                'has_inputs':   int(bool(dom['inputs'])),
+                'input_count':  len(dom['inputs']),
+                'has_password_input': int(dom['password_count'] > 0),
+                'password_count': dom['password_count'],
+                'has_hidden_input': int(dom['hidden_count'] > 0),
+                'hidden_count': dom['hidden_count'],
+                'has_file_upload': int(dom['file_upload_count'] > 0),
+                'file_upload_count': dom['file_upload_count'],
+                'has_search_input': int(dom['search_count'] > 0),
+                'search_count': dom['search_count'],
+                'has_buttons':  int(dom['button_count'] > 0),
+                'button_count': dom['button_count'],
+                'has_textarea': int(dom['textarea_count'] > 0),
+                'textarea_count': dom['textarea_count'],
+                'has_select':   int(dom['select_count'] > 0),
+                'select_count': dom['select_count'],
+                'has_scripts':  int(dom['script_count'] > 0),
+                'script_count': dom['script_count'],
+                'inline_script_count': dom['inline_script_count'],
+                'internal_script_count': dom['internal_script_count'],
+                'external_script_count': dom['external_script_count'],
+                'has_links':    int(dom['link_count'] > 0),
+                'link_count':   dom['link_count'],
+                'internal_link_count': dom['internal_link_count'],
+                'external_link_count': dom['external_link_count'],
+                'has_images':   int(dom['image_count'] > 0),
+                'image_count':  dom['image_count'],
+                'has_meta_tags':int(dom['meta_count'] > 0),
+                'meta_count':   dom['meta_count'],
+                'has_stylesheets': int(dom['stylesheet_count'] > 0),
+                'stylesheet_count': dom['stylesheet_count'],
+                'has_javascript': int(dom['script_count'] > 0 or dom['inline_event_handler_count'] > 0 or 'javascript:' in body_lower),
+                'has_comments': int(dom['comment_count'] > 0),
+                'comment_count': dom['comment_count'],
+                'has_title':    dom['has_title'],
+                'server_apache':    int('apache' in server_lower),
+                'server_nginx':     int('nginx' in server_lower),
+                'server_iis':       int('iis' in server_lower or 'microsoft' in server_lower),
+                'tech_php':         int('php' in powered_by or '.php' in body_lower),
+                'tech_aspnet':      int('asp.net' in powered_by or '.aspx' in body_lower),
+                'tech_jsp':         int('.jsp' in body_lower),
+                'tech_wordpress':   int('wp-content' in body_lower or 'wordpress' in body_lower),
+                'tech_drupal':      int('drupal' in body_lower),
+                'tech_joomla':      int('joomla' in body_lower),
+                'has_debug_info':   int(bool(_RE_DEBUG_INFO.search(body_lower))),
+                'has_error_messages': int(bool(_RE_ERROR_MSG.search(body_lower))),
+                'has_sql_errors':   int(bool(_RE_SQL_ERR.search(body_lower))),
+                'has_file_paths':   int(bool(_RE_FILE_PATHS.search(body))),
                 'has_waf':          int(bool(waf_found)),
                 'waf_cloudflare':   int('Cloudflare' in waf_found),
                 'waf_aws':          int('AWS WAF' in waf_found),
                 'waf_imperva':      int('Imperva' in waf_found),
-                # Reflected & Secrets
                 'reflection_detected': int(reflected_params > 0),
-                'csp_header_reflection_detected': int(any(v.lower() in h.get('Content-Security-Policy', '').lower() for param_vals in query_params.values() for v in param_vals if len(v) > 2)),
+                'csp_header_reflection_detected': int(any(
+                    value.lower() in headers.get('Content-Security-Policy', '').lower()
+                    for values in query_params.values() for value in values if len(value) > 2
+                )),
                 'has_jwt':          int(jwt_count > 0),
+                'jwt_count':        jwt_count,
                 'has_api_keys':     int(api_key_count > 0),
-                # Cookies
+                'api_key_count':    api_key_count,
                 'cookie_count':    len(self.cookies),
                 'session_cookies': sum(1 for k in self.cookies if 'session' in k.get('name','').lower()),
-                'secure_cookie_ratio': secure_cookie_ratio,
-                'httponly_cookie_ratio': httponly_cookie_ratio,
-                'samesite_cookie_ratio': samesite_cookie_ratio,
-                # Redirect
+                'secure_cookie_ratio': _safe_ratio(secure_cookies, num_set_cookies),
+                'httponly_cookie_ratio': _safe_ratio(httponly_cookies, num_set_cookies),
+                'samesite_cookie_ratio': _safe_ratio(samesite_cookies, num_set_cookies),
                 'redirect_count':      max(0, len(self.redirect_chain)-1),
                 'has_redirect_chain':  int(len(self.redirect_chain) > 1),
                 'final_https':         int(bool(self.final_url) and self.final_url.startswith('https')),
-                # Derived
-                'input_to_form_ratio': 0,
-                'script_to_content_ratio': 0,
-                'security_score':      0,
-                'interactivity_score': 0,
-                # Meta
-                'is_vulnerable':      0, # Default Target Label
+                'get_form_count': dom['get_form_count'],
+                'post_form_count': dom['post_form_count'],
+                'has_login_form': int(dom['login_form_count'] > 0),
+                'login_form_count': dom['login_form_count'],
+                'csrf_token_input_count': dom['csrf_token_input_count'],
+                'has_csrf_token': int(dom['csrf_token_input_count'] > 0),
+                'same_origin_form_count': dom['same_origin_form_count'],
+                'external_form_count': dom['external_form_count'],
+                'unique_input_names': dom['unique_input_names'],
+                'unique_endpoint_count': dom['unique_endpoint_count'],
+                'parameterized_link_count': dom['parameterized_link_count'],
+                'api_like_endpoint_count': dom['api_like_endpoint_count'],
+                'inline_event_handler_count': dom['inline_event_handler_count'],
+                'email_input_count': dom['email_input_count'],
+                'url_input_count': dom['url_input_count'],
+                'mailto_link_count': dom['mailto_link_count'],
+                'tel_link_count': dom['tel_link_count'],
+                'body_truncated_for_analysis': dom['analysis_truncated'],
+                'input_to_form_ratio': _safe_ratio(len(dom['inputs']), len(dom['forms'])),
+                'script_to_content_ratio': _safe_ratio(dom['script_count'], max(len(body), 1)),
+                'security_score': _safe_ratio(sum(1 for item in _SEC_HEADERS if item in headers), len(_SEC_HEADERS)),
+                'interactivity_score': _safe_ratio(len(dom['forms']) + len(dom['inputs']) + dom['button_count'], max(len(body) / 1000, 1)),
+                'is_vulnerable':      0,
+                'vulnerability_type': '',
                 'scan_id':    self.scan_id,
                 'timestamp':  datetime.now().isoformat(),
                 'target_url': url,
@@ -444,11 +795,6 @@ class ReconWebSite:
                 'final_url':  self.final_url or url,
             }
 
-            fc = features['form_count']
-            features['input_to_form_ratio']      = features['input_count'] / fc if fc else 0
-            features['script_to_content_ratio']  = features['script_count'] / max(features['response_size'],1)
-            features['security_score']           = features['security_headers_count'] / len(_SEC_HEADERS)
-            features['interactivity_score']      = (fc + features['input_count'] + features['button_count']) / max(features['response_size']/1000, 1)
             return features
 
         except Exception as e:
@@ -459,6 +805,8 @@ class ReconWebSite:
 
     # ── ML dataset ─────────────────────────────────────────────────────────
     def save_ml_dataset(self, features, update_training=True, target_url=None):
+        global _RECON_DATASET_COLUMNS_CACHE
+
         if features.get('error_occurred'):
             return
         
@@ -483,19 +831,32 @@ class ReconWebSite:
             return
 
         try:
-            os.makedirs(os.path.dirname(ML_DATASET_FILE), exist_ok=True)
-            file_exists = os.path.exists(ML_DATASET_FILE) and os.path.getsize(ML_DATASET_FILE) > 0
-            if file_exists:
-                columns = pd.read_csv(ML_DATASET_FILE, nrows=0).columns.tolist()
-            else:
-                columns = list(features.keys())
-            row = {col: features.get(col, 0) for col in columns}
-            pd.DataFrame([row], columns=columns).to_csv(
-                ML_DATASET_FILE,
-                mode='a',
-                header=not file_exists,
-                index=False,
-            )
+            with DATASET_LOCK:
+                os.makedirs(os.path.dirname(ML_DATASET_FILE), exist_ok=True)
+                file_exists = os.path.exists(ML_DATASET_FILE) and os.path.getsize(ML_DATASET_FILE) > 0
+                columns = list(_RECON_DATASET_COLUMNS_CACHE or [])
+
+                if not columns:
+                    columns = pd.read_csv(ML_DATASET_FILE, nrows=0).columns.tolist() if file_exists else list(features.keys())
+
+                new_columns = [col for col in features.keys() if col not in columns]
+                if file_exists and new_columns:
+                    existing = pd.read_csv(ML_DATASET_FILE)
+                    for col in new_columns:
+                        existing[col] = 0
+                    columns = columns + new_columns
+                    existing.to_csv(ML_DATASET_FILE, index=False)
+                elif not file_exists:
+                    columns = list(features.keys())
+
+                _RECON_DATASET_COLUMNS_CACHE = columns
+                row = {col: features.get(col, 0) for col in columns}
+                pd.DataFrame([row], columns=columns).to_csv(
+                    ML_DATASET_FILE,
+                    mode='a',
+                    header=not file_exists,
+                    index=False,
+                )
             print(f"[+] Recon dataset updated -> {ML_DATASET_FILE}")
         except Exception as e:
             print(f"[-] Recon dataset update error: {e}")
@@ -541,25 +902,18 @@ class ReconWebSite:
     def Analyze_Response(self, url):
         if not self.Get_Response: print("[-] No response to analyze"); return None
         html = self.Get_Response
+        analysis = self._analyze_html_document(html, url, content_type="text/html")
         params = {
-            'url': url, 'forms': [], 'get_params': [], 'post_params': [],
-            'buttons': [], 'links': [], 'inputs': [], 'endpoints': [],
+            'url': url,
+            'forms': analysis['forms'],
+            'get_params': analysis['get_params'],
+            'post_params': analysis['post_params'],
+            'buttons': analysis['buttons'],
+            'links': analysis['links'],
+            'inputs': analysis['inputs'],
+            'endpoints': analysis['endpoints'],
             'cookies': self.get_cookies_for_requests(),
         }
-        for fm in re.findall(r'<form[^>]*>(.*?)</form>', html, re.I|re.S):
-            fd = self._parse_form(fm)
-            if fd['inputs']:
-                params['forms'].append(fd)
-                (params['post_params'] if fd['method']=='POST' else params['get_params']).extend(fd['inputs'])
-        params.update({
-            'buttons':   self._extract_buttons(html),
-            'links':     re.findall(r'href\s*=\s*["\']([^"\']*)["\']', html, re.I),
-            'inputs':    [{'type': self._attr(t,'type') or 'text', 'name': self._attr(t,'name'),
-                           'id': self._attr(t,'id')} for t in re.findall(r'<input[^>]*>', html, re.I)],
-            'endpoints': list(set(re.findall(r'(?:href|action)\s*=\s*["\']([^"\']*)["\']', html, re.I))),
-        })
-        params['get_params']  = list(set(params['get_params']))
-        params['post_params'] = list(set(params['post_params']))
         print(f"[+] Analysis: {len(params['forms'])} forms, {len(params['links'])} links, "
               f"{len(params['inputs'])} inputs, {len(params['endpoints'])} endpoints")
         self._save_analysis(params, url)
@@ -589,10 +943,17 @@ class ReconWebSite:
 
     def Analyze_Request(self):
         if not self.Get_Request: print("[-] No request to analyze"); return
-        found = re.findall(r'^(Content-Security-Policy|Strict-Transport-Security|X-Content-Type-Options'
-                           r'|X-Frame-Options|X-XSS-Protection): (.*)$', self.Get_Request, re.M)
-        print(f"[+] Security headers in request: {len(found)}")
-        for h, v in found: print(f"    {h}: {v}")
+        lines = [line for line in self.Get_Request.splitlines() if line.strip()]
+        request_line = lines[0] if lines else ""
+        headers = [line for line in lines[1:] if ":" in line]
+        interesting = [
+            line for line in headers
+            if line.lower().startswith(("host:", "cookie:", "authorization:", "referer:", "origin:", "user-agent:", "accept:"))
+        ]
+        print(f"[+] Request summary: {request_line}")
+        print(f"[+] Request headers captured: {len(headers)}")
+        for line in interesting[:10]:
+            print(f"    {line}")
 
     def _save_analysis(self, params, url):
         # 1. Response Analysis Summary
@@ -601,6 +962,10 @@ class ReconWebSite:
             lines.append(f"\nForm [{form['method']}] {form['action']}: {form['inputs']}")
         for link in params['links'][:50]:
             lines.append(f"Link: {link}")
+        lines.append("")
+        lines.append(f"GET params : {len(params['get_params'])}")
+        lines.append(f"POST params: {len(params['post_params'])}")
+        lines.append(f"Endpoints  : {len(params['endpoints'])}")
         
         save_report(self.db, self.scan_id, 'response_analysis', "\n".join(lines))
 
@@ -612,7 +977,7 @@ class ReconWebSite:
         from Data.Queries.q_forms import save_forms
         from Data.Queries.q_endpoints import save_endpoints
         n_forms = save_forms(self.db, self.scan_id, url, params['forms'])
-        n_endpoints = save_endpoints(self.db, self.scan_id, url, params['endpoints'])
+        n_endpoints = save_endpoints(self.db, self.scan_id, url, params['endpoints'], source='response_html')
         self.stats.add('forms', n_forms).add('endpoints', n_endpoints)
 
         print(f"[+] Analysis saved to DB")
@@ -637,7 +1002,9 @@ class ReconWebSite:
             proc = subprocess.Popen(
                 cmd,
                 stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
-                text=True
+                text=True,
+                errors="replace",
+                bufsize=1,
             )
             deadline = time.time() + timeout if timeout else None
             for raw in proc.stdout:
@@ -663,22 +1030,34 @@ class ReconWebSite:
             print(f"    [+] Script execution finished ({len(lines)} lines of output)")
         return lines or None
 
+    def _normalize_in_scope_urls(self, values, base_url):
+        normalized = []
+        for item in values or []:
+            text = (item or "").strip()
+            if not text:
+                continue
+            candidate = _normalize_url(text) if text.startswith(("http://", "https://")) else _normalize_candidate_url(base_url, text)
+            if candidate and _same_scope_url(candidate, base_url):
+                normalized.append(candidate)
+        return _ordered_unique(normalized)
+
     def _get_subdomain(self, url):
         print(f"\n[*] Subdomain discovery: {url}")
         res = self._run_script(os.path.join(SCRIPT_DIR, "get_subdomain.sh"), url, timeout=120)
         if res:
             subs = []
+            target_host = urlparse(url).hostname or ""
             for line in res:
                 line = line.strip()
                 if not line:
                     continue
                 parts = line.split()
-                candidate = parts[-1] if parts else line
-                if '.' in candidate and not candidate.startswith('-') and len(candidate) > 3:
+                candidate = (parts[-1] if parts else line).strip().strip("[](),").lower()
+                if '.' in candidate and not candidate.startswith('-') and len(candidate) > 3 and _same_scope_host(candidate, target_host):
                     subs.append(candidate)
+            subs = _ordered_unique(subs)
             if subs:
                 print(f"    [+] Saving {len(subs)} subdomains to DB")
-                # DB: Save subdomains directly via q_subdomains
                 n = save_subdomains(self.db, self.scan_id, subs)
                 self.stats.add('subdomains', n)
             else:
@@ -689,7 +1068,7 @@ class ReconWebSite:
         print(f"\n[*] URL discovery: {url}")
         res = self._run_script(os.path.join(SCRIPT_DIR, "get_URLs.sh"), url, timeout=150)
         if res:
-            urls = [line.strip() for line in res if line.startswith('http')]
+            urls = self._normalize_in_scope_urls(res, url)
             if urls:
                 print(f"    [+] Saving {len(urls)} discovered URLs to DB")
                 from Data.Queries.q_endpoints import save_endpoints
@@ -703,25 +1082,29 @@ class ReconWebSite:
         if res:
             from Data.Queries.q_parameters import save_discovered_parameters
             params_to_save = []
-            target_host = urllib.parse.urlparse(url).netloc
+            seen = set()
             
             for line in res:
                 line = line.strip()
-                if not line: continue
-                # Parse output from get_parmtras.sh (usually URLs with ?)
-                if '?' in line:
-                    u_parsed = urllib.parse.urlparse(line)
-                    qs = urllib.parse.parse_qs(u_parsed.query)
-                    for p_name in qs.keys():
-                        params_to_save.append({
-                            'url': line,
-                            'parameter': p_name,
-                            'method': 'GET',
-                            'raw_line': line
-                        })
-                else:
+                if not line:
+                    continue
+                candidate_url = _normalize_url(line) if line.startswith(("http://", "https://")) else _normalize_candidate_url(url, line)
+                if not candidate_url or not _same_scope_url(candidate_url, url):
+                    continue
+                parsed = urllib.parse.urlparse(candidate_url)
+                query_map = urllib.parse.parse_qs(parsed.query, keep_blank_values=True)
+                if not query_map:
+                    continue
+                clean_url = urllib.parse.urlunparse((parsed.scheme, parsed.netloc, parsed.path, "", parsed.query, ""))
+                for param_name in query_map.keys():
+                    key = (clean_url, param_name, 'GET')
+                    if key in seen:
+                        continue
+                    seen.add(key)
                     params_to_save.append({
-                        'url': line,
+                        'url': clean_url,
+                        'parameter': param_name,
+                        'method': 'GET',
                         'raw_line': line
                     })
             
@@ -762,7 +1145,8 @@ class ReconWebSite:
         for path in search_paths:
             if os.path.exists(path) and os.path.getsize(path) > 0:
                 try:
-                    data = json.load(open(path))
+                    with open(path, encoding="utf-8", errors="ignore") as handle:
+                        data = json.load(handle)
                     entries = [{'url': e['url'], 'status': e.get('status',0), 'length': e.get('length',0)}
                                for e in data.get('results', []) if e.get('url')]
                     for e in entries: print(f"    [{e['status']}] {e['url']} ({e['length']} B)")
@@ -780,14 +1164,11 @@ class ReconWebSite:
         return {'found_paths': [], 'raw': []}
 
     def check_found_paths(self, base_url, paths):
+        paths = self._normalize_in_scope_urls(paths, base_url)
         print(f"\n[*] Verifying {len(paths)} paths...")
-        import concurrent.futures
-        
-        hdr = {**UA, **({'Cookie': self.cookie} if getattr(self, 'cookie', None) else {})}
-        
-        # Share a single client across all threads for HTTP/2 connection pooling
-        client = httpx.Client(timeout=8.0, verify=False, follow_redirects=True, headers=hdr)
-        
+        if not paths:
+            return
+
         def _verify(args):
             i, url = args
             try:
@@ -796,10 +1177,9 @@ class ReconWebSite:
             except Exception as ex:
                 print(f"  [{i}/{len(paths)}] ERROR: {ex}")
 
-        with concurrent.futures.ThreadPoolExecutor(max_workers=50) as executor:
-            list(executor.map(_verify, enumerate(paths, 1)))
-            
-        client.close()
+        with self._build_client(follow_redirects=True) as client:
+            with concurrent.futures.ThreadPoolExecutor(max_workers=min(50, len(paths))) as executor:
+                list(executor.map(_verify, enumerate(paths, 1)))
 
     # ── Cookie / header persistence ────────────────────────────────────────
     def save_cookies_and_headers(self):
@@ -826,10 +1206,10 @@ class ReconWebSite:
 # Module-level helpers
 # ═══════════════════════════════════════════════════════════════════════════
 
-def test_connection(url, cookie=None, scan_id=None):
+def test_connection(url, cookie=None, scan_id=None, stats=None, recon=None):
     try:
-        recon = ReconWebSite(url, cookie=cookie, scan_id=scan_id)
-        response = recon.track_redirects(url)
+        recon = recon or ReconWebSite(url, cookie=cookie, scan_id=scan_id, stats=stats)
+        response = recon.track_redirects(recon.original_url)
         if response:
             print(f"[+] Reached: {recon.final_url}")
             recon.print_redirect_summary()
@@ -841,20 +1221,22 @@ def test_connection(url, cookie=None, scan_id=None):
     return None, None
 
 
-def MainRecon(url, cookie=None, scan_id=None, stats=None):
+def _legacy_MainRecon(url, cookie=None, scan_id=None, stats=None):
     try:
         print(f"[*] Starting reconnaissance for: {url}")
         recon = ReconWebSite(url, cookie=cookie, scan_id=scan_id, stats=stats)
-        response, recon_obj = test_connection(url, cookie=cookie, scan_id=scan_id)
+        response, recon_obj = test_connection(url, cookie=cookie, scan_id=scan_id, stats=stats, recon=recon)
 
         if response and recon_obj:
             recon = recon_obj
-            # Ensure recon_obj uses the same stats if passed
-            if stats: recon.stats = stats
+            if stats:
+                recon.stats = stats
+
+            waf_vendors = recon.detect_waf(response)
+            present = recon.print_security_summary(response)
+            grade = "A" if present >= 7 else "B" if present >= 5 else "C" if present >= 3 else "F"
 
             print("\n[*] WAF check...")
-            recon.detect_waf(response)
-            recon.print_security_summary(response)
             recon.print_request_response_details(response, recon.final_url, is_final=True)
             recon.Get_Target_From_Response()
             recon.Get_Target_From_Request()
@@ -862,22 +1244,18 @@ def MainRecon(url, cookie=None, scan_id=None, stats=None):
             recon.Analyze_Request()
             recon.save_cookies_and_headers()
             
-            # DB: Final update of scan summary via direct query
-            present = recon.print_security_summary(response)
-            grade = "A" if present >= 7 else "B" if present >= 5 else "C" if present >= 3 else "F"
             _update_scan_status_direct(recon.db, recon.scan_id, 'completed', recon.final_url, 
-                                        has_waf=bool(recon.detect_waf(response)),
-                                        waf_vendors=recon.detect_waf(response),
+                                        has_waf=bool(waf_vendors),
+                                        waf_vendors=waf_vendors,
                                         grade=grade, score=present)
             recon.stats.update('scans', 1)
 
             # ── Run discovery tasks in parallel ──────────────────────────
-            import threading
             target = recon.final_url
-            tasks = [
-                threading.Thread(target=recon._get_subdomain,    args=(target,), name="subdomain"),
-                threading.Thread(target=recon._get_URLs,         args=(target,), name="urls"),
-                threading.Thread(target=recon._get_Paramtes_xss, args=(target,), name="params"),
+            jobs = [
+                ("subdomain", recon._get_subdomain),
+                ("urls", recon._get_URLs),
+                ("params", recon._get_Paramtes_xss),
             ]
             print("\n[*] Starting parallel discovery (subdomains + URLs + params)...")
             for t in tasks:
@@ -918,6 +1296,91 @@ def MainRecon(url, cookie=None, scan_id=None, stats=None):
         import traceback
         print(f"[-] Error: {e}"); traceback.print_exc()
     return True
+
+
+def MainRecon(url, cookie=None, scan_id=None, stats=None):
+    try:
+        print(f"[*] Starting reconnaissance for: {url}")
+        recon = ReconWebSite(url, cookie=cookie, scan_id=scan_id, stats=stats)
+        response, recon_obj = test_connection(url, cookie=cookie, scan_id=scan_id, stats=stats, recon=recon)
+
+        if not response or not recon_obj:
+            _update_scan_status_direct(recon.db, recon.scan_id, 'failed', None, has_waf=False, waf_vendors=None, grade=None, score=None)
+            return False
+
+        recon = recon_obj
+        if stats:
+            recon.stats = stats
+
+        print("\n[*] WAF check...")
+        waf_vendors = recon.detect_waf(response)
+        present = recon.print_security_summary(response)
+        grade = "A" if present >= 7 else "B" if present >= 5 else "C" if present >= 3 else "F"
+
+        recon.print_request_response_details(response, recon.final_url, is_final=True)
+        recon.Get_Target_From_Response()
+        recon.Get_Target_From_Request()
+        recon.Analyze_Response(recon.final_url)
+        recon.Analyze_Request()
+        recon.save_cookies_and_headers()
+
+        _update_scan_status_direct(
+            recon.db,
+            recon.scan_id,
+            'completed',
+            recon.final_url,
+            has_waf=bool(waf_vendors),
+            waf_vendors=waf_vendors,
+            grade=grade,
+            score=present,
+        )
+        recon.stats.update('scans', 1)
+
+        target = recon.final_url or recon.original_url
+        jobs = [
+            ("subdomain", recon._get_subdomain),
+            ("urls", recon._get_URLs),
+            ("params", recon._get_Paramtes_xss),
+        ]
+        print("\n[*] Starting parallel discovery (subdomains + URLs + params)...")
+        with concurrent.futures.ThreadPoolExecutor(max_workers=min(DISCOVERY_WORKERS, len(jobs))) as executor:
+            future_map = {executor.submit(handler, target): name for name, handler in jobs}
+            for future in concurrent.futures.as_completed(future_map):
+                name = future_map[future]
+                try:
+                    future.result()
+                    print(f"    [+] Discovery task complete: {name}")
+                except Exception as ex:
+                    print(f"    [-] Discovery task failed ({name}): {ex}")
+
+        ans = robust_input("\nFuzz with ffuf? (y/n): ", default='n')
+        if ans == 'y':
+            recon.fuzz_url(target)
+
+        if stats is None:
+            recon.stats.print_summary()
+
+            import io, sys
+            old_stdout = sys.stdout
+            sys.stdout = buf = io.StringIO()
+            recon.stats.print_summary()
+            sys.stdout = old_stdout
+            save_report(recon.db, recon.scan_id, 'scan_stats', buf.getvalue())
+
+            print(f"[+] Scan completed. Stats saved to DB.")
+        else:
+            print(f"[+] Recon phase complete.")
+
+        recon.show_dataset_stats()
+        return True
+
+    except KeyboardInterrupt:
+        print("\n[!] Cancelled")
+    except Exception as e:
+        import traceback
+        print(f"[-] Error: {e}")
+        traceback.print_exc()
+    return False
 
 
 if __name__ == "__main__":
