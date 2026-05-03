@@ -1,7 +1,5 @@
-http://www.sidefx.com/
-https://www.doppler.com/
-https://moonpay.com/
-http://magiceden.io/
-https://www.expediagroup.com/
-https://blend.com/
-https://metamask.io
+https://emmncts.stc.com.sa/AirWatch/Login?ReturnUrl=%2FAirWatch%2F
+https://emmncts.stc.com.sa/AirWatch/Login/Login/Login-User
+https://emmncts.stc.com.sa
+https://emmncts.stc.com.sa/AirWatch/Login?ReturnUrl=
+https://emmncts.stc.com.sa/AirWatch/Login/Login/TroubleLoggingIn

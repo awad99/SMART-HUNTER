@@ -1,4 +1,3 @@
-https://bm.stc.com.sa/jsp/ge/ge01.jsp
 https://www.stc.com.sa/
 https://sa-dev-admin.nearpay.io/
 https://github.com/
@@ -217,3 +216,4 @@ https://alscotoday.com/go/
 https://www.netscaler.com/
 https://www.stc.com.sa/ar/personal/home.html
 https://ipsar.chi.gov.sa/en/
+https://bm.stc.com.sa/jsp/ge/ge01.jsp

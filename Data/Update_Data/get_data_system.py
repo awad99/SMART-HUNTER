@@ -162,6 +162,22 @@ def _to_int(value, default=0):
     except Exception:
         return default
 
+def _to_float(value, default=0.0):
+    try:
+        if value is None or value == "":
+            return default
+        return float(value)
+    except Exception:
+        return default
+
+def _safe_div(numerator, denominator, default=0.0):
+    try:
+        if not denominator:
+            return default
+        return float(numerator) / float(denominator)
+    except Exception:
+        return default
+
 def _domain_for(url):
     try:
         return urlparse(str(url)).netloc.lower()
@@ -171,27 +187,195 @@ def _domain_for(url):
 def _has_any(features, *names):
     return int(any(_to_int(features.get(name, 0)) for name in names))
 
+def _finding_terms(features):
+    terms = []
+    for key in (
+        'vulnerability_type',
+        'finding_types',
+        'confirmed_vulnerability_types',
+        'candidate_vulnerability_types',
+    ):
+        value = features.get(key)
+        if isinstance(value, (list, tuple, set)):
+            terms.extend(str(item) for item in value if item)
+        elif value:
+            parts = [part.strip() for part in re.split(r"[|,;/]+", str(value)) if part.strip()]
+            terms.extend(parts)
+
+    for key in ('confirmed_findings', 'vulnerabilities_found', 'findings'):
+        value = features.get(key)
+        if not isinstance(value, (list, tuple)):
+            continue
+        for item in value:
+            if isinstance(item, dict):
+                finding_type = item.get('type') or item.get('vulnerability_type') or item.get('name')
+                if finding_type:
+                    terms.append(str(finding_type))
+            elif item:
+                terms.append(str(item))
+
+    return " | ".join(terms).lower()
+
+def _has_term(text, *needles):
+    haystack = str(text or "").lower()
+    return int(any(needle in haystack for needle in needles))
+
+def _build_indicator_summary(features):
+    if features.get('previous_scan_indicators'):
+        return str(features.get('previous_scan_indicators'))
+
+    parts = []
+    for key, label in (
+        ('pages_crawled', 'pages'),
+        ('forms_found', 'form_params'),
+        ('params_found', 'params'),
+        ('recon_params_found', 'recon_params'),
+        ('subdomains_found', 'subdomains'),
+        ('endpoints_found', 'endpoints'),
+    ):
+        value = _to_int(features.get(key, 0))
+        if value > 0:
+            parts.append(f"{label}={value}")
+
+    for key, label in (
+        ('has_waf', 'waf'),
+        ('has_error_messages', 'errors'),
+        ('has_sql_errors', 'sql_errors'),
+        ('has_database_errors', 'db_errors'),
+        ('has_debug_info', 'debug'),
+        ('has_login_form', 'login_form'),
+        ('has_api_keys', 'api_keys'),
+        ('has_jwt', 'jwt'),
+        ('body_truncated_for_analysis', 'truncated_body'),
+    ):
+        if _to_int(features.get(key, 0)):
+            parts.append(label)
+
+    status_code = _to_int(features.get('status_code', 0))
+    if status_code:
+        parts.append(f"status={status_code}")
+
+    content_type = str(features.get('content_type', '') or '').strip()
+    if content_type:
+        parts.append(f"content={content_type}")
+
+    return "|".join(parts)
+
 def _build_canonical_vulnerability_row(features):
     url = features.get('target_url') or features.get('url') or ''
     now = datetime.now()
     parsed = urlparse(url)
     query_params = parse_qs(parsed.query)
     path_parts = [part for part in parsed.path.split('/') if part]
+    finding_terms = _finding_terms(features)
 
-    has_sql_injection = _has_any(features, 'has_sql_injection', 'sqli_vuln')
-    has_xss = _has_any(features, 'has_xss', 'xss_vuln')
-    has_command_injection = _has_any(features, 'has_command_injection', 'cmdi_vuln')
-    has_path_traversal = _has_any(features, 'has_path_traversal', 'pt_vuln')
-    has_file_inclusion = _has_any(features, 'has_file_inclusion', 'lfi_vuln', 'rfi_vuln')
-    has_idor = _has_any(features, 'has_idor', 'idor_vuln')
+    has_sql_injection = max(
+        _has_any(features, 'has_sql_injection', 'sqli_vuln'),
+        _has_term(finding_terms, 'sql injection', 'sqli'),
+    )
+    has_xss = max(
+        _has_any(features, 'has_xss', 'xss_vuln'),
+        _has_term(finding_terms, 'cross-site scripting', 'xss'),
+    )
+    has_command_injection = max(
+        _has_any(features, 'has_command_injection', 'cmdi_vuln'),
+        _has_term(finding_terms, 'command injection', 'cmdi', 'rce'),
+    )
+    has_path_traversal = max(
+        _has_any(features, 'has_path_traversal', 'pt_vuln'),
+        _has_term(finding_terms, 'path traversal', 'directory traversal'),
+    )
+    has_file_inclusion = max(
+        _has_any(features, 'has_file_inclusion', 'lfi_vuln', 'rfi_vuln'),
+        _has_term(finding_terms, 'file inclusion', 'lfi', 'rfi'),
+    )
+    has_idor = max(
+        _has_any(features, 'has_idor', 'idor_vuln'),
+        _has_term(finding_terms, 'idor'),
+    )
 
-    total_vulns = (
+    detected_total_vulns = (
         has_sql_injection +
         has_xss +
         has_command_injection +
         has_path_traversal +
         has_file_inclusion +
         has_idor
+    )
+    provided_total_vulns = max(
+        _to_int(features.get('total_vulnerabilities', -1), -1),
+        _to_int(features.get('confirmed_vulnerabilities', -1), -1),
+        _to_int(features.get('confirmed_vuln_count', -1), -1),
+    )
+    total_vulns = max(detected_total_vulns, provided_total_vulns, 0)
+
+    prev_has_forms = _to_int(features.get('prev_has_forms', features.get('has_forms', 0)))
+    prev_has_inputs = _to_int(features.get('prev_has_inputs', features.get('has_inputs', 0)))
+    prev_form_count = max(
+        _to_int(features.get('prev_form_count', features.get('form_count', 0))),
+        prev_has_forms,
+    )
+    prev_input_count = max(
+        _to_int(features.get('prev_input_count', features.get('input_count', 0))),
+        _to_int(features.get('forms_found', 0)),
+        prev_has_inputs,
+    )
+    prev_has_debug_info = _to_int(features.get('prev_has_debug_info', features.get('has_debug_info', 0)))
+    prev_has_error_messages = _to_int(
+        features.get('prev_has_error_messages', features.get('has_error_messages', features.get('has_database_errors', 0)))
+    )
+    prev_technology_php = _to_int(features.get('prev_technology_php', features.get('tech_php', 0)))
+    prev_technology_aspnet = _to_int(features.get('prev_technology_aspnet', features.get('tech_aspnet', 0)))
+    prev_technology_wordpress = _to_int(features.get('prev_technology_wordpress', features.get('tech_wordpress', 0)))
+    prev_security_headers_count = _to_int(
+        features.get('prev_security_headers_count', features.get('security_headers_count', 0))
+    )
+    prev_response_size = _to_int(features.get('prev_response_size', features.get('response_size', 0)))
+    scan_tools_used_count = _to_int(features.get('scan_tools_used_count', features.get('tools_used_count', 0)))
+    tools_used_count = max(scan_tools_used_count, int(has_sql_injection + has_xss + has_command_injection))
+    total_issues = max(
+        total_vulns,
+        _to_int(features.get('total_issues', 0)),
+        _to_int(features.get('candidate_issue_count', 0)),
+    )
+    attack_surface = max(
+        1,
+        prev_input_count +
+        _to_int(features.get('params_found', 0)) +
+        _to_int(features.get('recon_params_found', 0)) +
+        _to_int(features.get('num_query_params', len(query_params))),
+    )
+    vuln_density = _to_float(features.get('vuln_density', _safe_div(total_vulns, attack_surface)))
+    tool_effectiveness = _to_float(
+        features.get(
+            'tool_effectiveness',
+            _safe_div(total_vulns, tools_used_count, default=0.0),
+        )
+    )
+    issue_density = _to_float(
+        features.get(
+            'issue_density',
+            _safe_div(total_issues, max(prev_response_size / 1024.0, 1.0)),
+        )
+    )
+    security_risk_score = _to_float(
+        features.get(
+            'security_risk_score',
+            (
+                total_vulns * 3.0 +
+                prev_has_debug_info * 0.75 +
+                prev_has_error_messages * 0.75 +
+                _to_int(features.get('has_sql_errors', features.get('has_database_errors', 0))) * 0.75 +
+                _to_int(features.get('has_file_paths', 0)) * 0.5 +
+                _to_int(features.get('has_query_params', int(bool(parsed.query)))) * 0.3 +
+                prev_has_forms * 0.25 +
+                prev_has_inputs * 0.25 +
+                max(0, 5 - prev_security_headers_count) * 0.2
+            ),
+        )
+    )
+    input_vulnerability_ratio = _to_float(
+        features.get('input_vulnerability_ratio', _safe_div(total_vulns, max(prev_input_count, 1)))
     )
 
     row = {col: 0 for col in CANONICAL_VULN_COLUMNS}
@@ -207,44 +391,46 @@ def _build_canonical_vulnerability_row(features):
         'has_path_traversal': has_path_traversal,
         'has_file_inclusion': has_file_inclusion,
         'vulnerability_score': float(total_vulns),
-        'critical_vuln_count': total_vulns,
-        'high_vuln_count': total_vulns,
-        'sqlmap_vulns_found': has_sql_injection,
-        'dalfox_vulns_found': has_xss,
-        'commix_vulns_found': has_command_injection,
-        'tools_used_count': int(has_sql_injection + has_xss + has_command_injection),
-        'sqlmap_confidence_avg': float(has_sql_injection),
-        'dalfox_confidence_avg': float(has_xss),
-        'commix_confidence_avg': float(has_command_injection),
-        'used_previous_scan': 0,
-        'previous_scan_indicators': '',
-        'scan_hour': now.hour,
-        'scan_day_of_week': now.weekday(),
-        'url_length': len(url),
-        'has_https': int(parsed.scheme.lower() == 'https'),
-        'path_depth': len(path_parts),
-        'has_query_params': int(bool(parsed.query)),
-        'num_query_params': len(query_params),
-        'subdomain_count': max(0, len(parsed.netloc.split('.')) - 2) if parsed.netloc else 0,
-        'prev_has_forms': _to_int(features.get('has_forms', 0)),
-        'prev_has_inputs': 0,
-        'prev_form_count': _to_int(features.get('has_forms', 0)),
-        'prev_input_count': 0,
-        'prev_has_debug_info': 0,
-        'prev_has_error_messages': _to_int(features.get('has_error_messages', 0)),
-        'prev_technology_php': 0,
-        'prev_technology_aspnet': 0,
-        'prev_technology_wordpress': 0,
-        'prev_security_headers_count': 0,
-        'prev_response_size': 0,
-        'days_since_last_scan': 0,
-        'vuln_density': float(total_vulns),
-        'tool_effectiveness': float(total_vulns),
-        'security_risk_score': float(total_vulns),
-        'input_vulnerability_ratio': float(total_vulns),
-        'previous_scan_accuracy': 0,
-        'total_issues': total_vulns,
-        'issue_density': float(total_vulns),
+        'critical_vuln_count': max(_to_int(features.get('critical_vuln_count', 0)), total_vulns),
+        'high_vuln_count': max(_to_int(features.get('high_vuln_count', 0)), total_vulns),
+        'sqlmap_vulns_found': max(_to_int(features.get('sqlmap_vulns_found', 0)), has_sql_injection),
+        'dalfox_vulns_found': max(_to_int(features.get('dalfox_vulns_found', 0)), has_xss),
+        'commix_vulns_found': max(_to_int(features.get('commix_vulns_found', 0)), has_command_injection),
+        'tools_used_count': tools_used_count,
+        'sqlmap_confidence_avg': _to_float(features.get('sqlmap_confidence_avg', float(has_sql_injection))),
+        'dalfox_confidence_avg': _to_float(features.get('dalfox_confidence_avg', float(has_xss))),
+        'commix_confidence_avg': _to_float(features.get('commix_confidence_avg', float(has_command_injection))),
+        'used_previous_scan': _to_int(features.get('used_previous_scan', 0)),
+        'previous_scan_indicators': _build_indicator_summary(features),
+        'scan_hour': _to_int(features.get('scan_hour', now.hour)),
+        'scan_day_of_week': _to_int(features.get('scan_day_of_week', now.weekday())),
+        'url_length': _to_int(features.get('url_length', len(url))),
+        'has_https': _to_int(features.get('has_https', int(parsed.scheme.lower() == 'https'))),
+        'path_depth': _to_int(features.get('path_depth', len(path_parts))),
+        'has_query_params': _to_int(features.get('has_query_params', int(bool(parsed.query)))),
+        'num_query_params': _to_int(features.get('num_query_params', len(query_params))),
+        'subdomain_count': _to_int(
+            features.get('subdomain_count', max(0, len(parsed.netloc.split('.')) - 2) if parsed.netloc else 0)
+        ),
+        'prev_has_forms': prev_has_forms,
+        'prev_has_inputs': prev_has_inputs,
+        'prev_form_count': prev_form_count,
+        'prev_input_count': prev_input_count,
+        'prev_has_debug_info': prev_has_debug_info,
+        'prev_has_error_messages': prev_has_error_messages,
+        'prev_technology_php': prev_technology_php,
+        'prev_technology_aspnet': prev_technology_aspnet,
+        'prev_technology_wordpress': prev_technology_wordpress,
+        'prev_security_headers_count': prev_security_headers_count,
+        'prev_response_size': prev_response_size,
+        'days_since_last_scan': _to_int(features.get('days_since_last_scan', 0)),
+        'vuln_density': vuln_density,
+        'tool_effectiveness': tool_effectiveness,
+        'security_risk_score': security_risk_score,
+        'input_vulnerability_ratio': input_vulnerability_ratio,
+        'previous_scan_accuracy': _to_float(features.get('previous_scan_accuracy', 0)),
+        'total_issues': total_issues,
+        'issue_density': issue_density,
         'has_idor': has_idor,
     })
     return row

@@ -190,6 +190,7 @@ class ReconWebSite:
         self.scan_id      = scan_id or datetime.now().strftime('%Y%m%d_%H%M%S')
         self._analysis_cache = {}
         self._last_response = None
+        self.latest_recon_features = {}
         self._request_headers = {**UA, **({'Cookie': self.cookie} if self.cookie else {})}
         self._captured_response_ids = set()
         self._latest_trace_id = ""
@@ -877,6 +878,7 @@ class ReconWebSite:
 
         if features.get('error_occurred'):
             return
+        self.latest_recon_features = dict(features)
         
         # DB: Save features directly via q_features
         _save_features_direct(self.db, features)
@@ -1392,6 +1394,7 @@ def MainRecon(url, cookie=None, scan_id=None, stats=None, interactive=True, enab
         "security_grade": None,
         "stats": _scan_stats_snapshot(stats),
         "error": None,
+        "feature_snapshot": {},
     }
     recon = None
     try:
@@ -1403,6 +1406,7 @@ def MainRecon(url, cookie=None, scan_id=None, stats=None, interactive=True, enab
             _update_scan_status_direct(recon.db, recon.scan_id, 'failed', None, has_waf=False, waf_vendors=None, grade=None, score=None)
             details["error"] = "Could not reach target"
             details["stats"] = _scan_stats_snapshot(getattr(recon, "stats", stats))
+            details["feature_snapshot"] = dict(getattr(recon, "latest_recon_features", {}) or {})
             return details if return_details else False
 
         recon = recon_obj
@@ -1488,6 +1492,7 @@ def MainRecon(url, cookie=None, scan_id=None, stats=None, interactive=True, enab
         recon.show_dataset_stats()
         details["ok"] = True
         details["stats"] = _scan_stats_snapshot(recon.stats)
+        details["feature_snapshot"] = dict(getattr(recon, "latest_recon_features", {}) or {})
         return details if return_details else True
 
     except KeyboardInterrupt:
@@ -1498,6 +1503,7 @@ def MainRecon(url, cookie=None, scan_id=None, stats=None, interactive=True, enab
         traceback.print_exc()
         details["error"] = str(e)
     details["stats"] = _scan_stats_snapshot(getattr(recon, "stats", stats))
+    details["feature_snapshot"] = dict(getattr(recon, "latest_recon_features", {}) or {}) if recon else {}
     return details if return_details else False
 
 

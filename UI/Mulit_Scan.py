@@ -21,6 +21,7 @@ for path in (
 import Recon.url_connection as url_connection
 import vulnerability_scan.path_Analyze as path_Analyze
 from Data.Queries.scan_stats import ScanStats
+from Data.Update_Data import get_data_system
 from Data.Update_Data.target_scan_dataset import get_target_scan_dataset_path
 
 
@@ -69,6 +70,63 @@ def _unique_target_count(items, keys):
     for item in items or []:
         unique.add(tuple(item.get(key, "") for key in keys))
     return len(unique)
+
+
+def _confirmed_findings(findings):
+    confirmed = []
+    for finding in findings or []:
+        if not isinstance(finding, dict):
+            continue
+        confidence = str(finding.get("confidence", "")).strip().lower()
+        status = str(finding.get("status", "")).strip().lower()
+        if confidence == "high" or status == "confirmed":
+            confirmed.append(finding)
+    return confirmed
+
+
+def _build_multi_target_dataset_features(result):
+    recon = result.get("recon") or {}
+    crawl = result.get("crawl") or {}
+    features = dict(recon.get("feature_snapshot") or {})
+
+    if not features:
+        return {}
+
+    confirmed = _confirmed_findings(crawl.get("vulns", []))
+    finding_types = []
+    for finding in confirmed:
+        finding_type = finding.get("type") or finding.get("vulnerability_type")
+        if finding_type:
+            finding_types.append(str(finding_type))
+
+    final_url = result.get("final_url") or features.get("final_url") or features.get("target_url") or result.get("url") or ""
+    features.update({
+        "scan_id": result.get("scan_id") or features.get("scan_id") or "",
+        "url": final_url,
+        "target_url": final_url,
+        "original_url": features.get("original_url") or result.get("url") or final_url,
+        "final_url": final_url,
+        "status_code": result.get("status") or features.get("status_code") or 0,
+        "pages_crawled": result.get("pages_crawled", 0),
+        "forms_found": result.get("forms_found", 0),
+        "params_found": result.get("params_found", 0),
+        "recon_params_found": result.get("recon_params_found", 0),
+        "subdomains_found": result.get("subdomains_found", 0),
+        "endpoints_found": result.get("endpoints_found", 0),
+        "confirmed_vuln_count": len(confirmed),
+        "finding_types": "|".join(finding_types),
+        "is_vulnerable": int(bool(confirmed)),
+        "previous_scan_indicators": (
+            f"multi_target=1|pages={result.get('pages_crawled', 0)}"
+            f"|params={result.get('params_found', 0)}"
+            f"|recon_params={result.get('recon_params_found', 0)}"
+            f"|subdomains={result.get('subdomains_found', 0)}"
+            f"|endpoints={result.get('endpoints_found', 0)}"
+            f"|crawl={int(bool(crawl))}"
+            f"|pwntraverse={int(_env_bool('SMART_HUNTER_MULTI_ENABLE_PWNTRAVERSE', False))}"
+        ),
+    })
+    return features
 
 
 def read_target_urls():
@@ -154,6 +212,7 @@ def run_parallel_target_scan(url, idx, batch_id, enable_crawl, crawl_depth, craw
                 stats=stats,
                 threads=crawl_threads,
                 enable_pwntraverse=enable_pwntraverse,
+                update_training_dataset=False,
             )
 
         params_found = _unique_target_count((crawl_results or {}).get("discovered_params", []), ("url", "param", "method"))
@@ -176,7 +235,7 @@ def run_parallel_target_scan(url, idx, batch_id, enable_crawl, crawl_depth, craw
             "subdomains_found": _total_stat(stats_snapshot, "subdomains"),
             "endpoints_found": _total_stat(stats_snapshot, "endpoints"),
             "recon_params_found": _total_stat(stats_snapshot, "discovered_parameters"),
-            "target_csv": get_target_scan_dataset_path(crawl_target, scan_id) if crawl_results else "",
+            "target_csv": get_target_scan_dataset_path(crawl_target, scan_id),
         }
     except Exception as exc:
         return {
@@ -199,6 +258,7 @@ def main():
     crawl_threads = _env_int("SMART_HUNTER_MULTI_CRAWL_THREADS", 12, minimum=1)
     enable_crawl = _env_bool("SMART_HUNTER_MULTI_ENABLE_CRAWL", True)
     enable_pwntraverse = _env_bool("SMART_HUNTER_MULTI_ENABLE_PWNTRAVERSE", False)
+    update_dataset = get_data_system.training_dataset_updates_enabled(default=True)
     batch_id = f"multi_full_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
 
     print(f"\n[*] Starting accelerated multi-target scan for {len(urls)} target(s)")
@@ -259,6 +319,12 @@ def main():
     total_params = sum(result.get("params_found", 0) + result.get("recon_params_found", 0) for result in ok_results)
     total_subdomains = sum(result.get("subdomains_found", 0) for result in ok_results)
     total_endpoints = sum(result.get("endpoints_found", 0) for result in ok_results)
+    dataset_rows = [_build_multi_target_dataset_features(result) for result in ok_results]
+    dataset_rows = [row for row in dataset_rows if row]
+    dataset_rows_written = 0
+
+    if update_dataset and dataset_rows:
+        dataset_rows_written = get_data_system.update_dataset_batch(dataset_rows, quiet=True)
 
     print("\n" + "=" * 60)
     print(" PARALLEL FULL RECON SUMMARY")
@@ -271,6 +337,11 @@ def main():
     print(f" Pages crawled     : {total_pages}")
     print(f" Total time        : {total_elapsed:.1f}s")
     print(f" Recon dataset     : {url_connection.ML_DATASET_FILE}")
+    if update_dataset:
+        print(f" Vuln dataset rows : {dataset_rows_written}")
+        print(f" Vuln dataset      : {get_data_system.VULN_DATASET}")
+    else:
+        print(" Vuln dataset      : disabled by SMART_HUNTER_UPDATE_DATASET=0")
     if any(result.get("target_csv") for result in ok_results):
         print(f" Target CSV sample  : {next(result.get('target_csv') for result in ok_results if result.get('target_csv'))}")
     print("=" * 60)
