@@ -384,5 +384,32 @@
             ";script-src *",
             "csp-script-src-wildcard"
         ]
+    ],
+    "DANGEROUS_MARKERS": [
+        "<script",
+        "</script",
+        "<img",
+        "<svg",
+        "<body",
+        "<iframe",
+        "<details",
+        "<marquee",
+        "<input",
+        "<select",
+        "<math",
+        "onerror=",
+        "onload=",
+        "onfocus=",
+        "onclick=",
+        "ontoggle=",
+        "onstart=",
+        "onmouseover=",
+        "onblur=",
+        "onchange=",
+        "javascript:",
+        "data:text/html",
+        "alert(",
+        "confirm(",
+        "prompt("
     ]
 }

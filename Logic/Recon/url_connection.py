@@ -1121,19 +1121,27 @@ class ReconWebSite:
             target_host = urlparse(url).hostname or ""
             for line in res:
                 line = line.strip()
-                if not line:
+                # Skip empty lines or script status/progress markers
+                if not line or line.startswith("[*]") or line.startswith("[-]"):
                     continue
+                
                 parts = line.split()
+                # Extract potential hostname (usually the last part of a line if it's a list)
                 candidate = (parts[-1] if parts else line).strip().strip("[](),").lower()
-                if '.' in candidate and not candidate.startswith('-') and len(candidate) > 3 and _same_scope_host(candidate, target_host):
+                
+                if ('.' in candidate and 
+                    not candidate.startswith('-') and 
+                    len(candidate) > 3 and 
+                    _same_scope_host(candidate, target_host)):
                     subs.append(candidate)
+                    
             subs = _ordered_unique(subs)
             if subs:
                 print(f"    [+] Saving {len(subs)} subdomains to DB")
                 n = save_subdomains(self.db, self.scan_id, subs)
                 self.stats.add('subdomains', n)
             else:
-                print("    [-] No valid subdomains parsed from script output")
+                print("    [*] No additional subdomains found for this target")
         return res
 
     def _get_URLs(self, url):

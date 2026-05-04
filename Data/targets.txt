@@ -1,5 +1,3 @@
-https://emmncts.stc.com.sa/AirWatch/Login?ReturnUrl=%2FAirWatch%2F
-https://emmncts.stc.com.sa/AirWatch/Login/Login/Login-User
-https://emmncts.stc.com.sa
-https://emmncts.stc.com.sa/AirWatch/Login?ReturnUrl=
-https://emmncts.stc.com.sa/AirWatch/Login/Login/TroubleLoggingIn
+https://0abe002603cc05568228cfd000de00a7.web-security-academy.net/product?productId=
+https://0abe002603cc05568228cfd000de00a7.web-security-academy.net/feedback/submit
+https://0abe002603cc05568228cfd000de00a7.web-security-academy.net

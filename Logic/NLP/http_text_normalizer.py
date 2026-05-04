@@ -129,6 +129,27 @@ def html_to_text(body_text, limit=4000):
     return sanitize_text(stripped, limit)
 
 
+def extract_smart_snippet(body_text, limit=4000):
+    text = coerce_text(body_text)
+    if len(text) <= limit:
+        return html_to_text(text, limit)
+    
+    match = None
+    for pattern in (_SQL_ERROR_RE, _TRACEBACK_RE, _PATH_RE):
+        m = pattern.search(text)
+        if m:
+            match = m
+            break
+            
+    if match:
+        start_idx = max(0, match.start() - 500)
+        end_idx = min(len(text), match.start() + (limit - 500))
+        snippet = text[start_idx:end_idx]
+        return html_to_text(snippet, limit)
+        
+    return html_to_text(text, limit)
+
+
 def extract_error_signatures(text, status_code=None):
     value = coerce_text(text)
     tokens = []

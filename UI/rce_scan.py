@@ -4,11 +4,15 @@ import argparse
 
 # Add the project root and necessary subdirectories to sys.path to allow importing from top-level packages
 root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-if root not in sys.path:
-    sys.path.append(root)
-    sys.path.append(os.path.join(root, "Logic"))
-    sys.path.append(os.path.join(root, "Logic", "Recon"))
-    sys.path.append(os.path.join(root, "Logic", "vulnerability_scan"))
+for p in [
+    root,
+    os.path.join(root, "Logic"),
+    os.path.join(root, "Logic", "Recon"),
+    os.path.join(root, "Logic", "vulnerability_scan"),
+    os.path.join(root, "Data"),
+]:
+    if p not in sys.path:
+        sys.path.append(p)
 
 from vulnerability_scan.Scanner_vulnerability import URLVulnerabilityChecker
 

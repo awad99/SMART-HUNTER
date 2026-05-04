@@ -9,6 +9,7 @@ if root not in sys.path:
     sys.path.append(os.path.join(root, "Logic"))
     sys.path.append(os.path.join(root, "Logic", "Recon"))
     sys.path.append(os.path.join(root, "Logic", "vulnerability_scan"))
+    sys.path.append(os.path.join(root, "Data"))
 
 from vulnerability_scan.Scanner_vulnerability import URLVulnerabilityChecker
 from Data.Update_Data import get_data_system

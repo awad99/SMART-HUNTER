@@ -1,0 +1,3 @@
+GET|https://0a9400a7030d86998008085a000900b1.web-security-academy.net/filter?category=*||category
+POST|https://0a9400a7030d86998008085a000900b1.web-security-academy.net/login|csrf=*&username=*&password=*|csrf,username,password
+COOKIE|https://0a9400a7030d86998008085a000900b1.web-security-academy.net/|session=*|session
