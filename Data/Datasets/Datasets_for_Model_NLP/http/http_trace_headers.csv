@@ -1098,3 +1098,65 @@ scan_id,trace_id,source_module,header_scope,header_name,header_value_masked_text
 20260505_000829,b6caf541d7ea4f58b588575968851143,path_analyze.page.depth_0,response,content-encoding,gzip,content-encoding: gzip,,2
 20260505_000829,b6caf541d7ea4f58b588575968851143,path_analyze.page.depth_0,response,connection,close,connection: close,,3
 20260505_000829,b6caf541d7ea4f58b588575968851143,path_analyze.page.depth_0,response,content-length,1619,content-length: 1619,,4
+20260508_185514,3a39e373a43d414ab9f52ea35eddcbae,recon.track_redirects,request,host,example.com,host: example.com,,0
+20260508_185514,3a39e373a43d414ab9f52ea35eddcbae,recon.track_redirects,request,accept,*/*,accept: */*,,1
+20260508_185514,3a39e373a43d414ab9f52ea35eddcbae,recon.track_redirects,request,accept-encoding,"gzip, deflate, zstd","accept-encoding: gzip, deflate, zstd",,2
+20260508_185514,3a39e373a43d414ab9f52ea35eddcbae,recon.track_redirects,request,connection,keep-alive,connection: keep-alive,,3
+20260508_185514,3a39e373a43d414ab9f52ea35eddcbae,recon.track_redirects,request,user-agent,Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/141.0.0.0 Safari/537.36,user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/141.0.0.0 Safari/537.36,,4
+20260508_185514,3a39e373a43d414ab9f52ea35eddcbae,recon.track_redirects,response,date,"Fri, 08 May 2026 17:55:19 GMT","date: Fri, 08 May 2026 17:55:19 GMT",,0
+20260508_185514,3a39e373a43d414ab9f52ea35eddcbae,recon.track_redirects,response,content-type,text/html,content-type: text/html,,1
+20260508_185514,3a39e373a43d414ab9f52ea35eddcbae,recon.track_redirects,response,transfer-encoding,chunked,transfer-encoding: chunked,,2
+20260508_185514,3a39e373a43d414ab9f52ea35eddcbae,recon.track_redirects,response,connection,keep-alive,connection: keep-alive,,3
+20260508_185514,3a39e373a43d414ab9f52ea35eddcbae,recon.track_redirects,response,server,cloudflare,server: cloudflare,,4
+20260508_185514,3a39e373a43d414ab9f52ea35eddcbae,recon.track_redirects,response,last-modified,"Wed, 06 May 2026 14:17:14 GMT","last-modified: Wed, 06 May 2026 14:17:14 GMT",,5
+20260508_185514,3a39e373a43d414ab9f52ea35eddcbae,recon.track_redirects,response,allow,"GET, HEAD","allow: GET, HEAD",,6
+20260508_185514,3a39e373a43d414ab9f52ea35eddcbae,recon.track_redirects,response,cf-cache-status,HIT,cf-cache-status: HIT,,7
+20260508_185514,3a39e373a43d414ab9f52ea35eddcbae,recon.track_redirects,response,age,1892,age: 1892,,8
+20260508_185514,3a39e373a43d414ab9f52ea35eddcbae,recon.track_redirects,response,content-encoding,gzip,content-encoding: gzip,,9
+20260508_185514,3a39e373a43d414ab9f52ea35eddcbae,recon.track_redirects,response,cf-ray,9f8a55af9e013375-AAE,cf-ray: 9f8a55af9e013375-AAE,,10
+20260508_185514,9d889fe4e8584c16a05779b36c903366,path_analyze.page.depth_0,request,user-agent,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36","user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",,0
+20260508_185514,9d889fe4e8584c16a05779b36c903366,path_analyze.page.depth_0,request,accept-encoding,"gzip, deflate","accept-encoding: gzip, deflate",,1
+20260508_185514,9d889fe4e8584c16a05779b36c903366,path_analyze.page.depth_0,request,accept,*/*,accept: */*,,2
+20260508_185514,9d889fe4e8584c16a05779b36c903366,path_analyze.page.depth_0,request,connection,keep-alive,connection: keep-alive,,3
+20260508_185514,9d889fe4e8584c16a05779b36c903366,path_analyze.page.depth_0,response,date,"Fri, 08 May 2026 17:55:21 GMT","date: Fri, 08 May 2026 17:55:21 GMT",,0
+20260508_185514,9d889fe4e8584c16a05779b36c903366,path_analyze.page.depth_0,response,content-type,text/html,content-type: text/html,,1
+20260508_185514,9d889fe4e8584c16a05779b36c903366,path_analyze.page.depth_0,response,transfer-encoding,chunked,transfer-encoding: chunked,,2
+20260508_185514,9d889fe4e8584c16a05779b36c903366,path_analyze.page.depth_0,response,connection,keep-alive,connection: keep-alive,,3
+20260508_185514,9d889fe4e8584c16a05779b36c903366,path_analyze.page.depth_0,response,server,cloudflare,server: cloudflare,,4
+20260508_185514,9d889fe4e8584c16a05779b36c903366,path_analyze.page.depth_0,response,last-modified,"Wed, 06 May 2026 14:17:14 GMT","last-modified: Wed, 06 May 2026 14:17:14 GMT",,5
+20260508_185514,9d889fe4e8584c16a05779b36c903366,path_analyze.page.depth_0,response,allow,"GET, HEAD","allow: GET, HEAD",,6
+20260508_185514,9d889fe4e8584c16a05779b36c903366,path_analyze.page.depth_0,response,cf-cache-status,HIT,cf-cache-status: HIT,,7
+20260508_185514,9d889fe4e8584c16a05779b36c903366,path_analyze.page.depth_0,response,age,1894,age: 1894,,8
+20260508_185514,9d889fe4e8584c16a05779b36c903366,path_analyze.page.depth_0,response,content-encoding,gzip,content-encoding: gzip,,9
+20260508_185514,9d889fe4e8584c16a05779b36c903366,path_analyze.page.depth_0,response,cf-ray,9f8a55ba48ceb6bf-AAE,cf-ray: 9f8a55ba48ceb6bf-AAE,,10
+20260508_185626,8acb93421f85481db7fad84ef15c13a0,recon.track_redirects,request,host,example.com,host: example.com,,0
+20260508_185626,8acb93421f85481db7fad84ef15c13a0,recon.track_redirects,request,accept,*/*,accept: */*,,1
+20260508_185626,8acb93421f85481db7fad84ef15c13a0,recon.track_redirects,request,accept-encoding,"gzip, deflate, zstd","accept-encoding: gzip, deflate, zstd",,2
+20260508_185626,8acb93421f85481db7fad84ef15c13a0,recon.track_redirects,request,connection,keep-alive,connection: keep-alive,,3
+20260508_185626,8acb93421f85481db7fad84ef15c13a0,recon.track_redirects,request,user-agent,Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/141.0.0.0 Safari/537.36,user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/141.0.0.0 Safari/537.36,,4
+20260508_185626,8acb93421f85481db7fad84ef15c13a0,recon.track_redirects,response,date,"Fri, 08 May 2026 17:56:30 GMT","date: Fri, 08 May 2026 17:56:30 GMT",,0
+20260508_185626,8acb93421f85481db7fad84ef15c13a0,recon.track_redirects,response,content-type,text/html,content-type: text/html,,1
+20260508_185626,8acb93421f85481db7fad84ef15c13a0,recon.track_redirects,response,transfer-encoding,chunked,transfer-encoding: chunked,,2
+20260508_185626,8acb93421f85481db7fad84ef15c13a0,recon.track_redirects,response,connection,keep-alive,connection: keep-alive,,3
+20260508_185626,8acb93421f85481db7fad84ef15c13a0,recon.track_redirects,response,server,cloudflare,server: cloudflare,,4
+20260508_185626,8acb93421f85481db7fad84ef15c13a0,recon.track_redirects,response,last-modified,"Wed, 06 May 2026 14:17:14 GMT","last-modified: Wed, 06 May 2026 14:17:14 GMT",,5
+20260508_185626,8acb93421f85481db7fad84ef15c13a0,recon.track_redirects,response,allow,"GET, HEAD","allow: GET, HEAD",,6
+20260508_185626,8acb93421f85481db7fad84ef15c13a0,recon.track_redirects,response,cf-cache-status,HIT,cf-cache-status: HIT,,7
+20260508_185626,8acb93421f85481db7fad84ef15c13a0,recon.track_redirects,response,age,1963,age: 1963,,8
+20260508_185626,8acb93421f85481db7fad84ef15c13a0,recon.track_redirects,response,content-encoding,gzip,content-encoding: gzip,,9
+20260508_185626,8acb93421f85481db7fad84ef15c13a0,recon.track_redirects,response,cf-ray,9f8a576aac13b6ca-AAE,cf-ray: 9f8a576aac13b6ca-AAE,,10
+20260508_185626,fbb5d32641974130a88a3e71b7130ff2,path_analyze.page.depth_0,request,user-agent,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36","user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",,0
+20260508_185626,fbb5d32641974130a88a3e71b7130ff2,path_analyze.page.depth_0,request,accept-encoding,"gzip, deflate","accept-encoding: gzip, deflate",,1
+20260508_185626,fbb5d32641974130a88a3e71b7130ff2,path_analyze.page.depth_0,request,accept,*/*,accept: */*,,2
+20260508_185626,fbb5d32641974130a88a3e71b7130ff2,path_analyze.page.depth_0,request,connection,keep-alive,connection: keep-alive,,3
+20260508_185626,fbb5d32641974130a88a3e71b7130ff2,path_analyze.page.depth_0,response,date,"Fri, 08 May 2026 17:56:32 GMT","date: Fri, 08 May 2026 17:56:32 GMT",,0
+20260508_185626,fbb5d32641974130a88a3e71b7130ff2,path_analyze.page.depth_0,response,content-type,text/html,content-type: text/html,,1
+20260508_185626,fbb5d32641974130a88a3e71b7130ff2,path_analyze.page.depth_0,response,transfer-encoding,chunked,transfer-encoding: chunked,,2
+20260508_185626,fbb5d32641974130a88a3e71b7130ff2,path_analyze.page.depth_0,response,connection,keep-alive,connection: keep-alive,,3
+20260508_185626,fbb5d32641974130a88a3e71b7130ff2,path_analyze.page.depth_0,response,server,cloudflare,server: cloudflare,,4
+20260508_185626,fbb5d32641974130a88a3e71b7130ff2,path_analyze.page.depth_0,response,last-modified,"Wed, 06 May 2026 14:17:14 GMT","last-modified: Wed, 06 May 2026 14:17:14 GMT",,5
+20260508_185626,fbb5d32641974130a88a3e71b7130ff2,path_analyze.page.depth_0,response,allow,"GET, HEAD","allow: GET, HEAD",,6
+20260508_185626,fbb5d32641974130a88a3e71b7130ff2,path_analyze.page.depth_0,response,cf-cache-status,HIT,cf-cache-status: HIT,,7
+20260508_185626,fbb5d32641974130a88a3e71b7130ff2,path_analyze.page.depth_0,response,age,1965,age: 1965,,8
+20260508_185626,fbb5d32641974130a88a3e71b7130ff2,path_analyze.page.depth_0,response,content-encoding,gzip,content-encoding: gzip,,9
+20260508_185626,fbb5d32641974130a88a3e71b7130ff2,path_analyze.page.depth_0,response,cf-ray,9f8a57754dedb6ce-AAE,cf-ray: 9f8a57754dedb6ce-AAE,,10

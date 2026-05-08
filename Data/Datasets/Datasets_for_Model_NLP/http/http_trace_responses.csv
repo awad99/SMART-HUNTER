@@ -843,3 +843,87 @@ content-encoding: gzip
 content-length: 1619
 content-type: text/html; charset=utf-8
 x-frame-options: SAMEORIGIN",response_content_type_html security_header_x_frame_options_present,x_frame_options,,5,1,0,10755,0.06,0,path_crawl_page
+20260508_185514,3a39e373a43d414ab9f52ea35eddcbae,recon.track_redirects,200,3458.596,,,"Example Domain body{background:#eee;width:60vw;margin:15vh auto;font-family:system-ui,sans-serif}h1{font-size:1.5em}div{opacity:0.8}a:link,a:visited{color:#348} Example Domain This domain is for use in documentation examples without needing permission. Avoid use in operations. Learn more",,,"date: Fri, 08 May 2026 17:55:19 GMT
+content-type: text/html
+transfer-encoding: chunked
+connection: keep-alive
+server: cloudflare
+last-modified: Wed, 06 May 2026 14:17:14 GMT
+allow: GET, HEAD
+cf-cache-status: HIT
+age: 1892
+content-encoding: gzip
+cf-ray: 9f8a55af9e013375-AAE","age: 1892
+allow: GET, HEAD
+cf-cache-status: HIT
+cf-ray: 9f8a55af9e013375-AAE
+connection: keep-alive
+content-encoding: gzip
+content-type: text/html
+date: Fri, 08 May 2026 17:55:19 GMT
+last-modified: Wed, 06 May 2026 14:17:14 GMT
+server: cloudflare
+transfer-encoding: chunked",response_content_type_html response_server_disclosed,,,11,0,0,528,0.27,1,passive_trace
+20260508_185514,9d889fe4e8584c16a05779b36c903366,path_analyze.page.depth_0,200,1436.322,,,"Example Domain body{background:#eee;width:60vw;margin:15vh auto;font-family:system-ui,sans-serif}h1{font-size:1.5em}div{opacity:0.8}a:link,a:visited{color:#348} Example Domain This domain is for use in documentation examples without needing permission. Avoid use in operations. Learn more",,,"date: Fri, 08 May 2026 17:55:21 GMT
+content-type: text/html
+transfer-encoding: chunked
+connection: keep-alive
+server: cloudflare
+last-modified: Wed, 06 May 2026 14:17:14 GMT
+allow: GET, HEAD
+cf-cache-status: HIT
+age: 1894
+content-encoding: gzip
+cf-ray: 9f8a55ba48ceb6bf-AAE","age: 1894
+allow: GET, HEAD
+cf-cache-status: HIT
+cf-ray: 9f8a55ba48ceb6bf-AAE
+connection: keep-alive
+content-encoding: gzip
+content-type: text/html
+date: Fri, 08 May 2026 17:55:21 GMT
+last-modified: Wed, 06 May 2026 14:17:14 GMT
+server: cloudflare
+transfer-encoding: chunked",response_content_type_html response_server_disclosed,,,11,0,0,528,0.27,0,path_crawl_page
+20260508_185626,8acb93421f85481db7fad84ef15c13a0,recon.track_redirects,200,1881.807,,,"Example Domain body{background:#eee;width:60vw;margin:15vh auto;font-family:system-ui,sans-serif}h1{font-size:1.5em}div{opacity:0.8}a:link,a:visited{color:#348} Example Domain This domain is for use in documentation examples without needing permission. Avoid use in operations. Learn more",,,"date: Fri, 08 May 2026 17:56:30 GMT
+content-type: text/html
+transfer-encoding: chunked
+connection: keep-alive
+server: cloudflare
+last-modified: Wed, 06 May 2026 14:17:14 GMT
+allow: GET, HEAD
+cf-cache-status: HIT
+age: 1963
+content-encoding: gzip
+cf-ray: 9f8a576aac13b6ca-AAE","age: 1963
+allow: GET, HEAD
+cf-cache-status: HIT
+cf-ray: 9f8a576aac13b6ca-AAE
+connection: keep-alive
+content-encoding: gzip
+content-type: text/html
+date: Fri, 08 May 2026 17:56:30 GMT
+last-modified: Wed, 06 May 2026 14:17:14 GMT
+server: cloudflare
+transfer-encoding: chunked",response_content_type_html response_server_disclosed,,,11,0,0,528,0.27,1,passive_trace
+20260508_185626,fbb5d32641974130a88a3e71b7130ff2,path_analyze.page.depth_0,200,1145.333,,,"Example Domain body{background:#eee;width:60vw;margin:15vh auto;font-family:system-ui,sans-serif}h1{font-size:1.5em}div{opacity:0.8}a:link,a:visited{color:#348} Example Domain This domain is for use in documentation examples without needing permission. Avoid use in operations. Learn more",,,"date: Fri, 08 May 2026 17:56:32 GMT
+content-type: text/html
+transfer-encoding: chunked
+connection: keep-alive
+server: cloudflare
+last-modified: Wed, 06 May 2026 14:17:14 GMT
+allow: GET, HEAD
+cf-cache-status: HIT
+age: 1965
+content-encoding: gzip
+cf-ray: 9f8a57754dedb6ce-AAE","age: 1965
+allow: GET, HEAD
+cf-cache-status: HIT
+cf-ray: 9f8a57754dedb6ce-AAE
+connection: keep-alive
+content-encoding: gzip
+content-type: text/html
+date: Fri, 08 May 2026 17:56:32 GMT
+last-modified: Wed, 06 May 2026 14:17:14 GMT
+server: cloudflare
+transfer-encoding: chunked",response_content_type_html response_server_disclosed,,,11,0,0,528,0.27,0,path_crawl_page

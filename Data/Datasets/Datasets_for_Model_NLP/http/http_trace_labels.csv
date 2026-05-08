@@ -133,3 +133,7 @@ scan_id,trace_id,parent_trace_id,baseline_trace_id,source_module,label_target_va
 20260505_000829,21c985036e814d4f9c88db8dbe7e6e37,,,recon.track_redirects,1,header_injection_candidate,,passive_trace,0.74,False,,run_header_scan,override style request header present
 20260505_000829,0d917bddffef48c99e6baa1fc8238331,21c985036e814d4f9c88db8dbe7e6e37,,recon.response_analysis,0,low_value_static,,response_analysis,0.0,False,,skip_heavy_scan,no strong passive signal
 20260505_000829,b6caf541d7ea4f58b588575968851143,,,path_analyze.page.depth_0,0,low_value_static,,path_crawl_page,0.0,False,,skip_heavy_scan,no strong passive signal
+20260508_185514,3a39e373a43d414ab9f52ea35eddcbae,,,recon.track_redirects,1,header_injection_candidate,,passive_trace,0.74,False,,run_header_scan,override style request header present; server banner disclosed
+20260508_185514,9d889fe4e8584c16a05779b36c903366,,,path_analyze.page.depth_0,0,header_misconfiguration_candidate,,path_crawl_page,0.08,False,,skip_heavy_scan,server banner disclosed
+20260508_185626,8acb93421f85481db7fad84ef15c13a0,,,recon.track_redirects,1,header_injection_candidate,,passive_trace,0.74,False,,run_header_scan,override style request header present; server banner disclosed
+20260508_185626,fbb5d32641974130a88a3e71b7130ff2,,,path_analyze.page.depth_0,0,header_misconfiguration_candidate,,path_crawl_page,0.08,False,,skip_heavy_scan,server banner disclosed
