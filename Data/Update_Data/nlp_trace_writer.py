@@ -265,14 +265,44 @@ class NLPTraceWriter:
         with open(path, "a", encoding="utf-8", newline="") as handle:
             writer = csv.DictWriter(handle, fieldnames=columns)
             writer.writerow(values)
+        
+        # --- Cloud Sync ---
+        self._cloud_sync(path, [values])
 
     def _append_rows(self, path, columns, rows):
         if not rows:
             return
+        to_write = []
+        for row in rows:
+            to_write.append({column: row.get(column, "") for column in columns})
+            
         with open(path, "a", encoding="utf-8", newline="") as handle:
             writer = csv.DictWriter(handle, fieldnames=columns)
-            for row in rows:
-                writer.writerow({column: row.get(column, "") for column in columns})
+            writer.writerows(to_write)
+        
+        # --- Cloud Sync ---
+        self._cloud_sync(path, to_write)
+
+    def _cloud_sync(self, local_path, records):
+        try:
+            from Logic.hf_integration import upload_data_to_cloud
+            from pathlib import Path
+            p = Path(local_path).resolve()
+            datasets_root = (Path(BASE_DIR) / "Data" / "Datasets").resolve()
+            
+            if datasets_root in p.parents:
+                rel_path = str(p.relative_to(datasets_root).parent).replace("\\", "/")
+                filename = p.name
+                scan_id = records[0].get("scan_id", "unknown") if records else "unknown"
+                
+                upload_data_to_cloud(
+                    relative_path=rel_path,
+                    filename=filename,
+                    records=records,
+                    scan_id=scan_id
+                )
+        except Exception:
+            pass
 
     def write_trace_bundle(self, trace_bundle, db=None):
         self.ensure_layout()

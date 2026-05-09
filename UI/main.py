@@ -19,6 +19,7 @@ if root not in sys.path:
     sys.path.append(os.path.join(root, "Logic"))
     sys.path.append(os.path.join(root, "Logic", "Recon"))
     sys.path.append(os.path.join(root, "Logic", "vulnerability_scan"))
+    sys.path.append(os.path.join(root, "Data"))
 
 import FullScan 
 import Mulit_Scan 
@@ -99,6 +100,7 @@ def DatabaseSettings():
         elif choice == '2':
             print("[*] Running Database Setup...")
             try:
+                # pyrefly: ignore [missing-import]
                 import setup_db
                 success = setup_db.setup()
                 if success:
@@ -160,6 +162,15 @@ def MainOptions():
 
 def main():
     display_banner()
+    
+    # --- Cloud Asset Sync ---
+    try:
+        from Logic.hf_integration import sync_assets
+        sync_assets()
+    except Exception as e:
+        print(f"[*] Cloud Sync Skipped: {e}")
+    # ------------------------
+
     start_database_service()
     try:
         MainOptions()

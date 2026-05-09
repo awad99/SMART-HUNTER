@@ -81,4 +81,19 @@ def append_target_scan_row(features, target_url=None, scan_id=None, record_type=
             index=False,
         )
 
+    # --- Cloud Sync Integration ---
+    try:
+        from Logic.hf_integration import upload_data_to_cloud
+        # Path relative to Data/Datasets
+        rel_path = "Dataets_for_targetscan"
+        upload_data_to_cloud(
+            relative_path=rel_path,
+            filename=os.path.basename(path),
+            records=[out_row],
+            scan_id=effective_scan_id
+        )
+    except Exception:
+        pass
+    # ------------------------------
+
     return path

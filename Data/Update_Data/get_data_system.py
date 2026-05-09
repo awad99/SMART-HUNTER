@@ -445,6 +445,22 @@ def _append_vulnerability_rows(rows, quiet=False):
     df.to_csv(VULN_DATASET, mode='a', header=not file_exists, index=False)
     if not quiet:
         print(f"    [+] Vulnerability dataset updated with {len(rows)} row(s) -> {VULN_DATASET}")
+    
+    # --- Cloud Sync Integration ---
+    try:
+        from Logic.hf_integration import upload_data_to_cloud
+        # Path: Datasets_for_Model_Evaluation/vulnerability
+        rel_path = "Datasets_for_Model_Evaluation/vulnerability"
+        filename = os.path.basename(VULN_DATASET)
+        upload_data_to_cloud(
+            relative_path=rel_path,
+            filename=filename,
+            records=rows
+        )
+    except Exception:
+        pass
+    # ------------------------------
+
     return len(rows)
 
 
