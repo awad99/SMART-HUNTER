@@ -1496,3 +1496,478 @@ content-length: 1389
 content-type: text/html; charset=utf-8
 x-frame-options: SAMEORIGIN",response_content_type_html security_header_x_frame_options_present,x_frame_options,,path_crawl_page
 ,,,,,0,0,20260505_112305,1ef21f18fdd048719e635fa2289178ed,path_analyze.form_depth_1,0.0,,,,,,,,,path_candidate
+200,,"content-encoding: gzip
+content-length: 1572
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",,,10669,1,20260505_233622,03700316efa4461cbe71d51aae953f8f,recon.track_redirects,933.11,Blind OS command injection with time delays Blind OS command injection with time delays Back&nbsp;to&nbsp;lab&nbsp;description&nbsp; LAB Not solved Home | Submit feedback | Dancing In The Dark $40.28 View details Hitch A Lift $77.20 View details Poo Head - It&apos;s not just an insult anymore. $72.70 View details The Giant Enter Key $64.27 View details Fur Babies $17.64 View details Hologram Stand In $60.99 View details Safety First $63.67 View details Adult Space Hopper $90.89 View details There is No &apos;I&apos; in Team $96.26 View details Babbage Web Spray $68.17 View details The Trolley-ON $57.75 View details,,,"content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN
+content-encoding: gzip
+content-length: 1572","content-encoding: gzip
+content-length: 1572
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",response_content_type_html security_header_x_frame_options_present,x_frame_options,,passive_trace
+,,,,,0,0,20260505_233622,001daeabb89e4cbf8cdef2be40df13b7,recon.response_analysis,0.0,,,,,,,,,response_analysis
+200,,"connection: close
+content-encoding: gzip
+content-length: 1572
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",,,10669,0,20260505_233622,b43f46db3a5c4f568600bcbac3e3d95c,path_analyze.page.depth_0,1050.168,Blind OS command injection with time delays Blind OS command injection with time delays Back&nbsp;to&nbsp;lab&nbsp;description&nbsp; LAB Not solved Home | Submit feedback | Dancing In The Dark $40.28 View details Hitch A Lift $77.20 View details Poo Head - It&apos;s not just an insult anymore. $72.70 View details The Giant Enter Key $64.27 View details Fur Babies $17.64 View details Hologram Stand In $60.99 View details Safety First $63.67 View details Adult Space Hopper $90.89 View details There is No &apos;I&apos; in Team $96.26 View details Babbage Web Spray $68.17 View details The Trolley-ON $57.75 View details,,,"content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN
+content-encoding: gzip
+connection: close
+content-length: 1572","connection: close
+content-encoding: gzip
+content-length: 1572
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",response_content_type_html security_header_x_frame_options_present,x_frame_options,,path_crawl_page
+200,,"connection: close
+content-encoding: gzip
+content-length: 1570
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",,,4253,0,20260505_233622,8da3472f8f9f49048cd83896481fbdb1,path_analyze.page.depth_1,843.219,"Blind OS command injection with time delays Blind OS command injection with time delays Back&nbsp;to&nbsp;lab&nbsp;description&nbsp; LAB Not solved Home | Submit feedback | There is No 'I' in Team $96.26 Description: We've all been there, a deadline is approaching and everyone is pulling together. Well, not quite everyone. There's always one colleague who secretly wishes you will fail, and they will jump in and save the day, solo! Not anymore. With our new 'Team' alert there will no longer be any renegades in the pack. The master team sign will sit proudly in your conference room; each time someone uses the word 'I' lights will flash and an alarm will sound. Ear piercing sirens that no-one will ever want to hear again. Smaller units are available to dot around your office building, there won't be anywhere safe for a secret meeting, or plots to overthrow your company. With a control panel at your fingertips, the hidden cameras will swiftly pinpoint the culprits, and you will able to talk to them directly through the units. Our motto, 'teamwork makes dreams work', says it all. Stamp out the solo flying, get ahead wannabes. We have a team (there's that word again) of highly skilled installers who will guide you through the process and give you a free estimate today! Return to list",redirect_hint,,"content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN
+content-encoding: gzip
+connection: close
+content-length: 1570","connection: close
+content-encoding: gzip
+content-length: 1570
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",response_content_type_html security_header_x_frame_options_present,x_frame_options,,path_crawl_page
+200,,"connection: close
+content-encoding: gzip
+content-length: 1513
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",,,4156,0,20260505_233622,9d5d8f724b2e4d6a9d3a653987d7d9c9,path_analyze.page.depth_1,875.257,"Blind OS command injection with time delays Blind OS command injection with time delays Back&nbsp;to&nbsp;lab&nbsp;description&nbsp; LAB Not solved Home | Submit feedback | Hitch A Lift $77.20 Description: There was a time when we all thought by car sharing we were helping to save our planet. Even this is an outdated convention, and things have rapidly moved on. We would like to reduce the number of cars on the road even further, aiming one day for it to be none at all. This is where we come in, our new 'Hitch A Lift' harness is the future of commuting, improving life on earth, and boosting our own health and fitness in the process. Just strap on a buddy and use what God gave you to get yourselves to work. One of you might be stronger than the other, but you can still take it in turns as our harness can be attached, and unattached, in seconds. There is a maximum recommended weight of 224 lbs so choose your hitch buddy wisely. It is important that the weaker of the two get some practice in, you don't want to lose muscle power by not using those legs and upper body strength for long periods of time. Say goodbye to traffic jams and pollution, hitch up with a buddy today. Return to list",redirect_hint,,"content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN
+content-encoding: gzip
+connection: close
+content-length: 1513","connection: close
+content-encoding: gzip
+content-length: 1513
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",response_content_type_html security_header_x_frame_options_present,x_frame_options,,path_crawl_page
+200,,"connection: close
+content-encoding: gzip
+content-length: 1881
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",,,4898,0,20260505_233622,d70a3544d0934d028a70b41de611e907,path_analyze.page.depth_1,796.811,"Blind OS command injection with time delays Blind OS command injection with time delays Back&nbsp;to&nbsp;lab&nbsp;description&nbsp; LAB Not solved Home | Submit feedback | Folding Gadgets $59.49 Description: Folding smartphones that open up to reveal a handy little tablet are about to hit the market. Is folding the future of technology? As gadget trends go from large to small, back to large again, small again, huge, I guess folding has to be the answer, the best of both worlds. They are still bulky though, once we start folding everything things have a tendency to get thicker. Purses and briefcases will need to be adjusted to accommodate these new convenient, but bulky items. With this new concept, we can really make outside spaces and coffee houses our home offices. Pitch up in the park on a sunny day, and dig deep into your oversized carpet bag, with magician-like prowess you will be able to unfold your desk, PC, speakers, keyboards and mice until you have everything you need to start your days work. Even your travel mug and flask will conveniently unfold leaving you hydrated in that hot summers sun. I was a bit of a trendsetter in this department, I have always folded my paper money, my grandmother used to do it and I guess the influence stuck with me. Little did granny know that 40 years on we would all be folding our money, and everything else we can attach minuscule hinges to. We have always folded our laundry as well, that goes back centuries. Like all good inventions, it takes time to bring these things to market. To be honest I've been crying out for a tablet that makes phone calls ever since my eyesight deteriorated. Sadly it will probably only be affordable to those that can afford laser surgery, and they're just being greedy as they have no problems looking at a tiny cell phone screen. I hate touch screens and have had a folding keyboard for yonks, give me a giant Blackberry any day! Return to list",redirect_hint,,"content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN
+content-encoding: gzip
+connection: close
+content-length: 1881","connection: close
+content-encoding: gzip
+content-length: 1881
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",response_content_type_html security_header_x_frame_options_present,x_frame_options,,path_crawl_page
+200,,"connection: close
+content-encoding: gzip
+content-length: 1643
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",,,4398,0,20260505_233622,1b71d3c1ba5e441c92ac2ed4f7208bd1,path_analyze.page.depth_1,957.657,"Blind OS command injection with time delays Blind OS command injection with time delays Back&nbsp;to&nbsp;lab&nbsp;description&nbsp; LAB Not solved Home | Submit feedback | The Lazy Dog $9.67 Description: The Lazy Dog is brought to you by the same people who invented the wheel. Do you become frustrated when your small dog just can't keep up the pace, or stubbornly sits and gives up walking altogether? If the answer is yes, then The Lazy Dog is for you! As easy to fit as a harness these remote controlled owl wings are a must have for any dog lover. As soon as your pooch has taken its last step of the day just snap the wings into place and click the red 'flapping' button on your handheld remote. After a few seconds, your furry friend will be off the ground and up, up and away. Once at a safe height, WARNING: BEWARE OF LOW HANGING BRANCHES, click the blue button to initiate cruise control. The wings have inbuilt cameras so you can see what your dog sees. When clicking the black button your dog can swoop down and gain speed in the 'fake chasing rabbits' mode. This function is used at the owner's risk as it uses a lot of power, and if the battery pack dies a nasty accident could occur. Carrying your pooch has become a thing of the past. With The Lazy Dog, the dog park will become a place to enjoy again. You can also purchase an aviator hat and goggles, extra protection and peace of mind for you and your pooch. Return to list",redirect_hint,,"content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN
+content-encoding: gzip
+connection: close
+content-length: 1643","connection: close
+content-encoding: gzip
+content-length: 1643
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",response_content_type_html security_header_x_frame_options_present,x_frame_options,,path_crawl_page
+200,,"connection: close
+content-encoding: gzip
+content-length: 1720
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",,,4547,0,20260505_233622,3b112740e4e440879e7e055f226df0ab,path_analyze.page.depth_1,968.376,"Blind OS command injection with time delays Blind OS command injection with time delays Back&nbsp;to&nbsp;lab&nbsp;description&nbsp; LAB Not solved Home | Submit feedback | Babbage Web Spray $68.17 Description: Webs can be so unpredictable, falling apart and crashing to the ground just when you don't want them to. Babbage web spray is here to help. This easy to use solvent will keep any web fully functional for as long as you need it to be. There is nothing more rewarding than waking up to a full web of bugs, you no longer need to fear eggs being laid overnight in your leftover pizza. The concerns of leaving food out as the refuse bag is full are gone forever. No flies on you, or your takeaway. Easy to use, just wait for Mr. Spider to do his daily rounds, shake the can and spray the web. WARNING: Make sure it is completely dry before Mr spider returns, you don't want him getting stuck and losing a leg in an effort to break free. The solvent has highly tested ingredients that work with the web's own adhesive qualities in order for it to be a complete working bug catcher. Babbage is a very versatile product, if used on low lying webs it will also work as a catcher of mice, rats, and even the odd curious raccoon. And there's more, if not overused it can even replace your conventional hairspray. WARNING: DO NOT USE ON WET HAIR. The solvent will clump and become permanent. For such a small price you'd be a fool not to give it a try. You can be the envy of your neighborhood, and you'll never be short of visitors who will want to see your web display. Return to list",redirect_hint,,"content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN
+content-encoding: gzip
+connection: close
+content-length: 1720","connection: close
+content-encoding: gzip
+content-length: 1720
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",response_content_type_html security_header_x_frame_options_present,x_frame_options,,path_crawl_page
+200,,"connection: close
+content-encoding: gzip
+content-length: 1373
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",,,3869,0,20260505_233622,62a915c993d9489db78ae0ca979b68c3,path_analyze.page.depth_1,975.391,"Blind OS command injection with time delays Blind OS command injection with time delays Back&nbsp;to&nbsp;lab&nbsp;description&nbsp; LAB Not solved Home | Submit feedback | The Giant Enter Key $64.27 Description: Made from soft, nylon material and stuffed with cotton, this giant enter key is the ideal office addition. Simply plug it in via a USB port and use it as you're normal enter button! The only difference being is you can smash the living heck out of it whenever you're annoyed. This not only saves your existing keyboard from yet another hammering, but also ensures you won't get billed by your boss for damage to company property. This is also an ideal gift for that angry co-worker or stressed out secretary that you just fear to walk past. So, whether it's for you or a gift for an agitated friend, this sheer surface size of this button promises you'll never miss when you go to let that anger out. Return to list",redirect_hint,,"content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN
+content-encoding: gzip
+connection: close
+content-length: 1373","connection: close
+content-encoding: gzip
+content-length: 1373
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",response_content_type_html security_header_x_frame_options_present,x_frame_options,,path_crawl_page
+200,,"connection: close
+content-encoding: gzip
+content-length: 1550
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",,,4298,0,20260505_233622,5c13b87127e1492e9f48d9e9a7eb84c5,path_analyze.page.depth_1,987.518,"Blind OS command injection with time delays Blind OS command injection with time delays Back&nbsp;to&nbsp;lab&nbsp;description&nbsp; LAB Not solved Home | Submit feedback | Mood Enhancer $24.76 Description: Do you ever get those days when you just feel sad for no reason? Sometimes it can be weather related, those dark wet days can really bring your mood down. We have the perfect solution with our new Mood Enhancer. In your package, you will receive a small chalkboard with a rainbow of chalk colors. You can prepare your Mood Enhancer in advance to avoid that dip in emotions, pick out the yellow chalk and draw a nice big smiley sun. You can leave it like that if you wish, or you can pick out the blue chalk and color in a nice clear bright blue sky. With all the colors of the rainbow at your fingertips a picture of a rainbow is only a few chalk lines away, nothing says I'm ready to face the day like a nice big rainbow. Better still turn that rainbow upside down to reveal a huge multicolored grin, smiles are infectious you know, before long you will be smiling as well. All chalks can be replaced whenever you are running low, but please be advised we can't sell colors individually, all replacements come as full packs of the complete set. We're sure you will find happy things to draw using all the colors at hand. Return to list",redirect_hint,,"content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN
+content-encoding: gzip
+connection: close
+content-length: 1550","connection: close
+content-encoding: gzip
+content-length: 1550
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",response_content_type_html security_header_x_frame_options_present,x_frame_options,,path_crawl_page
+200,,"connection: close
+content-encoding: gzip
+content-length: 1317
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",,,3783,0,20260505_233622,a7b1504f3b5646ad9a9dfa76371711d0,path_analyze.page.depth_1,1001.651,"Blind OS command injection with time delays Blind OS command injection with time delays Back&nbsp;to&nbsp;lab&nbsp;description&nbsp; LAB Not solved Home | Submit feedback | Laser Tag $88.11 Description: These mini Laser Tag guns are the ideal addition for your keyring, because you never know when you and a mate will fancy an impromptu game of tag! It's the first to lose 3 lives that loses! This on the go gadget is the perfect gift for anyone who loves Laser Tag and anyone that loves a bit of fun all the time. These are ideal for any environment, from having a laugh during an office break or as something to play travelling. Batteries are included so as soon as you open up the package simply find your opponent and get tagging! Get this ultra-fun pair of guns today and have hours of fun with your friends. Return to list",redirect_hint,,"content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN
+content-encoding: gzip
+connection: close
+content-length: 1317","connection: close
+content-encoding: gzip
+content-length: 1317
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",response_content_type_html security_header_x_frame_options_present,x_frame_options,,path_crawl_page
+200,,"connection: close
+content-encoding: gzip
+content-length: 1400
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",,,3953,0,20260505_233622,205aa581e25346c985bcf25df6709c53,path_analyze.page.depth_1,996.51,"Blind OS command injection with time delays Blind OS command injection with time delays Back&nbsp;to&nbsp;lab&nbsp;description&nbsp; LAB Not solved Home | Submit feedback | Caution Sign $58.29 Description: Alert your loved ones to the perils of the bathroom before it's too late thanks to this novelty sign. Perfect for home or even the office, be sure to pop it under your arm and take it to the loo when you're going for an extended visit. Its bright yellow colour and red caution sign means no one can ever yell at you for not forewarning them what they have to endure following you into the restroom. The foldable design means you simply leave it out as long as is needed and collapse it when it's safe to return. The sign is also double sided to be absolutely certain that there will be no confusion! It's the ideal secret Santa gift for that co-worker, you know the one! It also makes a great gag gift and stocking filler! Be warned and stay safe with this toilet caution sign! Return to list",redirect_hint,,"content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN
+content-encoding: gzip
+connection: close
+content-length: 1400","connection: close
+content-encoding: gzip
+content-length: 1400
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",response_content_type_html security_header_x_frame_options_present,x_frame_options,,path_crawl_page
+200,,"connection: close
+content-encoding: gzip
+content-length: 1530
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",,,4184,0,20260505_233622,3d2e21db79654bcaa3ff72d45c820804,path_analyze.page.depth_1,1004.312,"Blind OS command injection with time delays Blind OS command injection with time delays Back&nbsp;to&nbsp;lab&nbsp;description&nbsp; LAB Not solved Home | Submit feedback | Paddling Pool Shoes $97.67 Description: We know many people, just like me, who cannot tolerate their feet overheating in the summer. If there's a problem, then we like to fix it. And fix it we have. We'd like to introduce you to our paddling pool shoes. These cute little items will keep your feet cool all day long. You can easily top them up when the water has started to evaporate, and they are fully adjustable to fit any foot size. Imagine cooling by the poolside and watching your fellow travelers see green with envy as their sweaty feet get a bit too much for them. We do recommend wearing them at home first until you get used to their unusual shape and design. Once you have mastered control over them you will be able to walk on any surface, even slippery poolside ones. With so many designs to choose from we guarantee you will find the perfect match for your entire wardrobe. Best of all, they are easy to transport as they can be quickly inflated and deflated to save room in your suitcase. Happy holiday, stay cool my friends. Return to list",redirect_hint,,"content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN
+content-encoding: gzip
+connection: close
+content-length: 1530","connection: close
+content-encoding: gzip
+content-length: 1530
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",response_content_type_html security_header_x_frame_options_present,x_frame_options,,path_crawl_page
+200,,"connection: close
+content-encoding: gzip
+content-length: 1523
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",,,4232,0,20260505_233622,1c77337cd9354edab0db22cbd59b3919,path_analyze.page.depth_1,1022.464,"Blind OS command injection with time delays Blind OS command injection with time delays Back&nbsp;to&nbsp;lab&nbsp;description&nbsp; LAB Not solved Home | Submit feedback | Pest Control Umbrella $8.25 Description: We recently discovered, by accident, that vermin and all manner of pets and pests are attracted to umbrellas. Not to just any umbrellas though, they have to be long, pointy ones. It is very hard these days to get hold of an umbrella that isn't collapsible, these will not work as pest control. So, we decided to start designing and manufacturing our unique Pest Control Umbrella, the only genuine umbrella that will do the job. We have all copyright on these brollies and no other companies are allowed to remotely hint that their umbrellas can be used to rid yourself of those pesky pests. Never knowingly undersold we guarantee a price match on any other form of pest control, but not if you use a different umbrella for the job. Easy to use, just pop under your arm, pointy end facing behind you and watch the creatures follow your lead. By purchasing this highly effective product you will be well on your way to starting up your own pest control business, a little investment now will pay great dividends in the future for you and your family. Return to list",redirect_hint,,"content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN
+content-encoding: gzip
+connection: close
+content-length: 1523","connection: close
+content-encoding: gzip
+content-length: 1523
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",response_content_type_html security_header_x_frame_options_present,x_frame_options,,path_crawl_page
+200,,"connection: close
+content-encoding: gzip
+content-length: 1541
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",,,4229,0,20260505_233622,a7d43e9faa034d5aaa85c630406fe485,path_analyze.page.depth_1,1245.099,"Blind OS command injection with time delays Blind OS command injection with time delays Back&nbsp;to&nbsp;lab&nbsp;description&nbsp; LAB Not solved Home | Submit feedback | The Trolley-ON $57.75 Description: Some days life can be so tough, everything seems to get in your way, and you can't juggle everything the way you need to. Our extremely versatile Trolley-ON is the answer to all your prayers. Not only is the Trolley-ON useful for transporting things like; luggage, shopping, purses, and a change of clothes, it also doubles up as a buggy and dog basket. If you find you can't reach the top shelves in the supermarket aisles, just hop in and give yourself a leg up. This is a great product for couples, as it is not yet self-propelled, with two of you at the helm you will be able to take it in turns to Kart down steep roads and hills, not just practical but fun too! Please be advised not to pick up a freebie in car parks and along railway lines, these Trolley-Ons are likely to be malfunctioning and we cannot guarantee your safety. You can buy from a name you trust and we offer a full service and MOT for two years from the date of purchase. Once you incorporate this product into your everyday life you will wonder how you ever lived without it. Return to list",redirect_hint,,"content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN
+content-encoding: gzip
+connection: close
+content-length: 1541","connection: close
+content-encoding: gzip
+content-length: 1541
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",response_content_type_html security_header_x_frame_options_present,x_frame_options,,path_crawl_page
+200,,"connection: close
+content-encoding: gzip
+content-length: 1594
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",,,4294,0,20260505_233622,07e7fbebd55e4d5f842897e3b91d8cac,path_analyze.page.depth_1,1254.294,"Blind OS command injection with time delays Blind OS command injection with time delays Back&nbsp;to&nbsp;lab&nbsp;description&nbsp; LAB Not solved Home | Submit feedback | Dancing In The Dark $40.28 Description: Are you a really, really bad dancer? Don't worry you're not alone. It is believed every 1 in 4 people are very bad at strutting their funky stuff. Here at 'Dancing In The Dark', we feel your pain. The silhouette suit which allows complete anonymity was originally designed by one of our interns fed up with her dad embarrassing her at local events. We loved the idea so much we decided to go into production straight away. The stretchy, breathable, fabric enables freedom of movement and guarantees a non-sweaty dancing experience. Easily put on and pulled off you can pop to the toilets and change at any time you want to dance without judgment. Once wearing your dancing skin it's best to avoid all contact with the people you arrived at the venue with, it might be a little too easy to identify you amongst family and friends. With this inexpensive, but very valuable, suit you can freestyle the night away without any inhibitions. If you spot someone making a fool of themselves, you can discreetly pass on our details as you get your Saturday Night Fever on. Let them talk about somebody else for a change. Return to list",redirect_hint,,"content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN
+content-encoding: gzip
+connection: close
+content-length: 1594","connection: close
+content-encoding: gzip
+content-length: 1594
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",response_content_type_html security_header_x_frame_options_present,x_frame_options,,path_crawl_page
+200,,"connection: close
+content-encoding: gzip
+content-length: 1568
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",,,4328,0,20260505_233622,7da3465eec01445b94ffb7c9ee989bea,path_analyze.page.depth_1,1876.368,"Blind OS command injection with time delays Blind OS command injection with time delays Back&nbsp;to&nbsp;lab&nbsp;description&nbsp; LAB Not solved Home | Submit feedback | Hologram Stand In $60.99 Description: Do you ever have one of those days where nothing looks right, and you just don't feel like going to the ball? Never fear, Hologram Stand In is here. There are times when you can't say no to that important invite, you need to show your face to the right people. But, we all have off days and know we won't be showing the right face if we turn up feeling like a sack of potatoes. We spend time with our customers when they are having their best days, with 360-degree hologram mapping, and typical response recordings you shall go to the ball. Our experts are on hand throughout the evening enabling them to project you into the correct settings. We will also program polite excuses to leave the room should your hologram not be able to respond appropriately to a given set of questions. With your Hologram Stand In you never need to worry about all those stressful high expectations again. You will look just as fresh and amazing at the end of the night as you do at the start. Put your best dress on, smile and we will do the rest. Full money back guarantee if your night is not a huge success*. *Judged by whether you manage to pull it off. Return to list",redirect_hint,,"content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN
+content-encoding: gzip
+connection: close
+content-length: 1568","connection: close
+content-encoding: gzip
+content-length: 1568
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",response_content_type_html security_header_x_frame_options_present,x_frame_options,,path_crawl_page
+200,,"connection: close
+content-encoding: gzip
+content-length: 1515
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",,,4197,0,20260505_233622,663faf0f574c4cc3a37d9b4334934e34,path_analyze.page.depth_1,1898.332,"Blind OS command injection with time delays Blind OS command injection with time delays Back&nbsp;to&nbsp;lab&nbsp;description&nbsp; LAB Not solved Home | Submit feedback | The Splash $52.16 Description: Are you one of those people who finds it hard to get going in the morning? Maybe you've tried stretching, or even Yoga to loosen those limbs and free your brain. If you're not a stretchy limb athlete we have the perfect solution for you. 'The Splash'. We supply you with a unique lightweight bucket, proven to hold a vast volume of liquid. Before you go to bed just fill the bucket with regular tap water and leave in a handy place for the morning. On waking grab that bucket and splash that water all over yourself, we find holding the bucket above your head works best. Not only is 'The Splash' refreshing and revitalizing it is a great time saver, as you will not need to take a separate shower before leaving home. We do strongly advise all of our customers to place plastic sheeting on the floors and bedding to avoid water damage, these are sold separately and in easy to cut sheets so they can be customized to fit your furnishings. Don't be a Dopey Doris as you start your day, be a Bright Button with 'The Splash'. Return to list",redirect_hint,,"content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN
+content-encoding: gzip
+connection: close
+content-length: 1515","connection: close
+content-encoding: gzip
+content-length: 1515
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",response_content_type_html security_header_x_frame_options_present,x_frame_options,,path_crawl_page
+200,,"connection: close
+content-encoding: gzip
+content-length: 1438
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",,,4012,0,20260505_233622,62c76d40f4424179afb11569a0732faa,path_analyze.page.depth_1,972.143,"Blind OS command injection with time delays Blind OS command injection with time delays Back&nbsp;to&nbsp;lab&nbsp;description&nbsp; LAB Not solved Home | Submit feedback | WTF? - The adult party game $0.30 Description: WTF? - Quizzing just got a whole lot more entertaining - and personal! Thanks to the warped minds of the creators, you can sit down with your friends and definitely not family and get some sordid secrets from someone you've always suspected has been up to no good. Simply flip the egg timer and get them to answer as many questions in that time as possible, simple right? Well, yes, but' these aren't any old questions, so make sure you're comfortable hearing some uncomfortable truths from your friend's mouths. Mouths you may never look at in the same way again. Of course, the opportunity to lie is there. But it needs to be one filthy lie, so make sure it's a good one and make sure it's believable too! So get your friends round or break the ice with new ones and learn about people on levels you only dared dream of before! Return to list",redirect_hint,,"content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN
+content-encoding: gzip
+connection: close
+content-length: 1438","connection: close
+content-encoding: gzip
+content-length: 1438
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",response_content_type_html security_header_x_frame_options_present,x_frame_options,,path_crawl_page
+200,,"connection: close
+content-encoding: gzip
+content-length: 1589
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",,,4364,0,20260505_233622,a98d6d09d4124219845cc80b09d5f7f8,path_analyze.page.depth_1,1069.238,"Blind OS command injection with time delays Blind OS command injection with time delays Back&nbsp;to&nbsp;lab&nbsp;description&nbsp; LAB Not solved Home | Submit feedback | Safety First $63.67 Description: Here at Safety First, we have a dedicated team who work tirelessly to allay your fears and keep your loved ones free from harm. One of the biggest concerns we hear about is road safety and children. Once they start taking themselves to and from school the parents can't settle for fear they might meet with a road traffic accident. We have spent the last ten years addressing this issue, and now we have the infrastructure in place for this never to be a concern again. The first ever overhead lines are in place. Your children will be safe 100 ft above the ground. High enough not to meet with any oncoming vehicles, and low enough not to get in the way of any potentially low flying aircraft. All children will be escorted on their first day of use, they will be orientated in the use of digital map guidance, and taken through the techniques required to reach their destination without any mishaps along the way. In order to use this service, you are required to register your child with us, pay a fee renewable annually, and to sign a disclaimer taking full responsibility for your child. Please feel free to contact us with any further questions or to order the subscription package. Return to list",redirect_hint,,"content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN
+content-encoding: gzip
+connection: close
+content-length: 1589","connection: close
+content-encoding: gzip
+content-length: 1589
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",response_content_type_html security_header_x_frame_options_present,x_frame_options,,path_crawl_page
+200,,"connection: close
+content-encoding: gzip
+content-length: 1119
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",,,3684,0,20260505_233622,4a69a42cd76143be9bc121955c4c2675,path_analyze.page.depth_1,833.934,Blind OS command injection with time delays Blind OS command injection with time delays Back&nbsp;to&nbsp;lab&nbsp;description&nbsp; LAB Not solved Home | Submit feedback | Submit feedback Name: Email: Subject: Message: Submit feedback,,,"content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN
+content-encoding: gzip
+connection: close
+content-length: 1119","connection: close
+content-encoding: gzip
+content-length: 1119
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",response_content_type_html security_header_x_frame_options_present,x_frame_options,,path_crawl_page
+200,,"connection: close
+content-encoding: gzip
+content-length: 1450
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",,,4083,0,20260505_233622,c11253da5985408abadafe460fd5751d,path_analyze.page.depth_1,1114.515,"Blind OS command injection with time delays Blind OS command injection with time delays Back&nbsp;to&nbsp;lab&nbsp;description&nbsp; LAB Not solved Home | Submit feedback | Adult Space Hopper $90.89 Description: Sometimes being an adult just gets boring. Why not hop back in time and have a bounce on one of these bad boys. But I'm too big for space hoppers I hear you cry, not anymore. No more embarrassing accidents in the garden, no more falling off your kid's miniature hopper that doesn't balance your bum properly. Simply hop on the Adult Space Hopper on relieve your youth. Better yet, why not get several for the garden and liven up those parties. It's also an ideal addition to any office, give your staff a break and a laugh and liven up those work do's. Debbie's been sat still all day on her chair dealing with the accounts, why not let her hop around the office or have a race to re-energize her. Whatever your reason, whether it's staff moral, party games at home or the garden, the Adult Space Hopper is the perfect gift for a fun-loving adult and it's sure to break the ice between strangers and new colleagues. Return to list",redirect_hint,,"content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN
+content-encoding: gzip
+connection: close
+content-length: 1450","connection: close
+content-encoding: gzip
+content-length: 1450
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",response_content_type_html security_header_x_frame_options_present,x_frame_options,,path_crawl_page
+,,,,,0,0,20260505_233622,1e311bc2783c45e6b3860598b08ba46f,path_analyze.form_depth_1,0.0,,,,,,,,,path_candidate
+200,,"connection: close
+content-encoding: gzip
+content-length: 1461
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",,,4062,0,20260505_233622,a010e97274084502ba6435be5befd421,path_analyze.page.depth_1,948.167,"Blind OS command injection with time delays Blind OS command injection with time delays Back&nbsp;to&nbsp;lab&nbsp;description&nbsp; LAB Not solved Home | Submit feedback | Poo Head - It's not just an insult anymore. $72.70 Description: Do you find yourself thinking about what ludicrous games to play during the festive season? Do you think you'll never find anything as stupid as last year? Think again, thanks to Poo Head. The game for everyone. Simply throw poop at your friend's head and see how much you can get to stick. This game promotes positive mental health, as throwing turds at your friends is secretly what everyone has dreamed of for so long. And, just to be greedy, three poops are included in each pack for optimal poop throwing entertainment. We can only imagine that someone said 'this idea stinks' after the original pitch and the powers that be took it as a compliment because here it is, live, in the brown flesh. So, simply strap on the helmet (included) and take it in turns to throw poop at your loved ones and friends. Kids will love it and adults will pretend they don't. Return to list",redirect_hint,,"content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN
+content-encoding: gzip
+connection: close
+content-length: 1461","connection: close
+content-encoding: gzip
+content-length: 1461
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",response_content_type_html security_header_x_frame_options_present,x_frame_options,,path_crawl_page
+200,,"connection: close
+content-encoding: gzip
+content-length: 1524
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",,,4181,0,20260505_233622,cc201cb768fd4bee92e960e17b465f2a,path_analyze.page.depth_1,976.173,"Blind OS command injection with time delays Blind OS command injection with time delays Back&nbsp;to&nbsp;lab&nbsp;description&nbsp; LAB Not solved Home | Submit feedback | Fur Babies $17.64 Description: Fur babies is a new concept for those of you who live in apartments where the Landlord doesn't allow pets. We have a huge selection of cute animal suits you can dress your babies in. All suits are made from breathable fabrics keeping your little ones cool, or warm, all year round. If you want a rabbit, what the heck, have a rabbit. If the landlord makes an appearance, just slip the hood down and he/she need never know. The best bit is we all know babies love raw veggies, you can hand feed them and talk to them in that silly voice reserved for animals and children. You will never be refused entry to your favorite restaurants again, your fur baby will be at your side wherever you go. They conveniently poop in a diaper so no early morning walks either. Have the best of both worlds, and surprise your friends and family if you purchase from one of our Wild and Rare ranges. Join the trendsetters of Beverly Hills, show off on Instagram, but remember a fur baby is for life, and not just for Christmas. Return to list",redirect_hint,,"content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN
+content-encoding: gzip
+connection: close
+content-length: 1524","connection: close
+content-encoding: gzip
+content-length: 1524
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",response_content_type_html security_header_x_frame_options_present,x_frame_options,,path_crawl_page
+200,,"content-encoding: gzip
+content-length: 2303
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",,,8171,1,20260508_204423,f908f703048a474ead08bfec28bfbccd,recon.track_redirects,688.375,"Stored DOM XSS Stored DOM XSS Back&nbsp;to&nbsp;lab&nbsp;description&nbsp; LAB Not solved Home | Tracking Your Kids It's not Big Brother who's watching you, it's your folks! The first generation of datafied children is hitting the streets. What does this mean? Basically, we know where they are, where they've been and when they were last 'live' on... View post Fake News Is it just me that finds the way people share things on social media, without checking into them really disturbing? I've started checking things out now, not because I want to share but so I can somehow, politely, let them... View post Video Games Made Me A Better Surgeon Recently there was an article on this very subject. I felt it was slightly lacking in depth, there was a lot of input from professionals discussing dexterity, did video games improve that or make it worse. I imagine the surgeon... View post Open Sans - I love You I never thought this could happen to me, but it has. You hear stories about people falling in love with inanimate objects and laugh at their 'weirdness', but now I fully understand what they've been going through. View post Lies, Lies & More Lies I remember the first time I told a lie. That's not to say I didn't do it before then, I just don't remember. I was nine years old and at my third school already. Fitting into already established friendship groups... View post Don't Believe Everything You Read Don't believe everything you read is not only a common expression, it's also a pretty obvious one. Although, it's common and obvious because it's an old saying, an old saying rooted in print journalism and their individual biases. But now,... View post The Lies People Tell The best kind of lies are the ones you overhear other people telling. You know they are lying because you're standing in a bar when you hear them on the phone saying, 'I'm in the grocery st",,,"content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN
+content-encoding: gzip
+content-length: 2303","content-encoding: gzip
+content-length: 2303
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",response_content_type_html security_header_x_frame_options_present,x_frame_options,,passive_trace
+,,,,,0,0,20260508_204423,a52418a9e5534c32b7afb9d2473b649e,recon.response_analysis,0.0,,,,,,,,,response_analysis
+200,,"connection: close
+content-encoding: gzip
+content-length: 2303
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",,,8171,0,20260508_204423,0d607d44591846a6be8a36e4137a396d,path_analyze.page.depth_0,769.985,"Stored DOM XSS Stored DOM XSS Back&nbsp;to&nbsp;lab&nbsp;description&nbsp; LAB Not solved Home | Tracking Your Kids It's not Big Brother who's watching you, it's your folks! The first generation of datafied children is hitting the streets. What does this mean? Basically, we know where they are, where they've been and when they were last 'live' on... View post Fake News Is it just me that finds the way people share things on social media, without checking into them really disturbing? I've started checking things out now, not because I want to share but so I can somehow, politely, let them... View post Video Games Made Me A Better Surgeon Recently there was an article on this very subject. I felt it was slightly lacking in depth, there was a lot of input from professionals discussing dexterity, did video games improve that or make it worse. I imagine the surgeon... View post Open Sans - I love You I never thought this could happen to me, but it has. You hear stories about people falling in love with inanimate objects and laugh at their 'weirdness', but now I fully understand what they've been going through. View post Lies, Lies & More Lies I remember the first time I told a lie. That's not to say I didn't do it before then, I just don't remember. I was nine years old and at my third school already. Fitting into already established friendship groups... View post Don't Believe Everything You Read Don't believe everything you read is not only a common expression, it's also a pretty obvious one. Although, it's common and obvious because it's an old saying, an old saying rooted in print journalism and their individual biases. But now,... View post The Lies People Tell The best kind of lies are the ones you overhear other people telling. You know they are lying because you're standing in a bar when you hear them on the phone saying, 'I'm in the grocery st",,,"content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN
+content-encoding: gzip
+connection: close
+content-length: 2303","connection: close
+content-encoding: gzip
+content-length: 2303
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",response_content_type_html security_header_x_frame_options_present,x_frame_options,,path_crawl_page
+200,,"connection: close
+content-encoding: gzip
+content-length: 2619
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",,,7028,0,20260508_204423,1b68aeeb5e424430a75d5a6fb7cb004e,path_analyze.page.depth_1,800.727,"Stored DOM XSS Stored DOM XSS Back&nbsp;to&nbsp;lab&nbsp;description&nbsp; LAB Not solved Home | Trying To Save The World Selma Soul | 22 April 2026 But I Can&apos;t ... I gave up eating meat when I was a teenager, it wasn&apos;t hard, I didn&apos;t do it for the animals I just couldn&apos;t stand the chewing process. Fast forward 20 years and my boyfriend persuaded me to try a piece of steak, &apos;It will melt in your mouth.&apos; he told me. He was right, it did and it tasted great. Turns out my mum was just a really, really bad cook! My new lease of life as a carnivore started taking shape, sausages, bacon, sausages in bacon...I ate it all. Then along came Social Media. It turned out I knew too many vegetarians and Vegans on Facebook, the videos just kept coming and coming, pigs, cows, sheep, all sad and not wanting to die. After one particularly disturbing piggy video, I put down my knife and fork and started grazing on some salad leaves. I was back to being a proper vegetarian, it was fine, I&apos;d done it before and I could do it again, any temptation soon evaporated when I thought of that poor little piggy. But then the Vgang upped their game, it all became about dairy, baby calves being taken from their mothers, dairy cows crying as they were taken away. It all became too much and I took the step and became a vegan. Being a vegan is very hard, no matter what the plant-based eating brigade tell you. The worst thing about finding some vegan edibles was to then discover they contain palm oil, right at the time everyone was up in arms about palm oil. I could no longer go food shopping without my glasses and a list of meat, fish, eggs, dairy, palm oil free products. I didn&apos;t have to worry too much about plastic packaging or buying plastic bags as I had nothing to put in them anyway. I didn&apos;t eat vegan cheese despite being a big cheese eater, because it is disgusting. So after two weeks dairy free I imploded and ordered the cheesiest pizza on the menu. This is what happens when you deprive yourself of something you enjoy, you binge on it when you fall off the wagon. So I started eating cheese again but stuck to the other changes. THEN it became about my make-up, was it cruelty-free? My clothes, shoes, bedding, towels, curtains, cushion covers, china, cutlery pretty much anything you come into contact in daily life. Who made it? What conditions do they work in? How old are they? How much do they get paid? Ultimately I learned the only way I could save the animals, save the children, and save the planet would be to lay naked in a field in the middle of nowhere and eat nothing! Comments",,,"content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN
+content-encoding: gzip
+connection: close
+content-length: 2619","connection: close
+content-encoding: gzip
+content-length: 2619
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",response_content_type_html security_header_x_frame_options_present,x_frame_options,,path_crawl_page
+200,,"connection: close
+content-encoding: gzip
+content-length: 2436
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",,,6833,0,20260508_204423,51d40d166f614c74a262560805d173ca,path_analyze.page.depth_1,919.655,"Stored DOM XSS Stored DOM XSS Back&nbsp;to&nbsp;lab&nbsp;description&nbsp; LAB Not solved Home | The Lies People Tell Mick Mouse | 18 April 2026 The best kind of lies are the ones you overhear other people telling. You know they are lying because you&apos;re standing in a bar when you hear them on the phone saying, &apos;I&apos;m in the grocery store.&apos; At times like this I have an overwhelming urge to run up to them, and loudly report their room is ready, or &apos;it&apos;s your round&apos;. For some people lying comes very easy. Some people will even tell a lie before they tell the truth. Once you&apos;re caught out in a lie it&apos;ll be hard for anyone to trust you again, so why do it? But then, what kind of place would the world be if we all told the truth? It would be a tough one I&apos;m sure. As an insecure, and overly sensitive person, I appreciate the lies, or comforting untruths people tell me. Getting a short haircut you really hate, which looks absolutely terrible, needs the words, &apos;I like your hair short&apos;, It means they like your hair short, but not at that precise moment. Very clever that one, and I&apos;m more than happy to take that. It is a useful tool for all responses, &apos;dresses really suit you&apos;, but clearly not the one you are wearing. The one that throws me is when someone says they like your crazy boots, and wish they had the courage to wear something like that. I then think other people are staring at me and I&apos;m wearing something totally inappropriate. Then you get the people who tell the truth, the whole truth, and nothing but the truth. These people scare me half to death. This is the only time I advocate the telling of lies, chuck them all my way, please. These people aren&apos;t even responding to questions, the last thing you want to do is ask these people any questions of a personal nature at all. They freely, without prompting, offer up their opinions about how you look, what you wear, and every word that comes out of your mouth. These people should be avoided at all costs if you ever want to leave the house again and not feel like a sack of potatoes, they are toxic to the very core. The moral of the story, if there is one, is about balance. What some people like to call, &apos;white lies&apos;. The gentle untruths that spare people&apos;s feelings, and make them happy, or happier than they were when you first ask them that potentially explosive question, &apos;Do you like my new boots?&apos; Comments loadComments('/post/comment') Leave a comment",,,"content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN
+content-encoding: gzip
+connection: close
+content-length: 2436","connection: close
+content-encoding: gzip
+content-length: 2436
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",response_content_type_html security_header_x_frame_options_present,x_frame_options,,path_crawl_page
+200,,"connection: close
+content-encoding: gzip
+content-length: 2841
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",,,7696,0,20260508_204423,dcab00bf47ba457ea5fb1e787e22d872,path_analyze.page.depth_1,924.971,"Stored DOM XSS Stored DOM XSS Back&nbsp;to&nbsp;lab&nbsp;description&nbsp; LAB Not solved Home | Don&apos;t Believe Everything You Read Cindy Music | 16 April 2026 Don&apos;t believe everything you read is not only a common expression, it&apos;s also a pretty obvious one. Although, it&apos;s common and obvious because it&apos;s an old saying, an old saying rooted in print journalism and their individual biases. But now, there&apos;s a whole new plethora of rubbish media outlets that seemingly spew whatever they fancy, lucky us! I am of course referring to pages mainly found on social media platforms. You may see a headline and think no one in their right mind would believe this nonsense, but on closer inspection in the comment section, there are people furious / delighted at whatever the lie of the day is. Politicians have called on social media sites to clamp down on misleading stories and outright lies, which is possibly the most ironic thing to have been said in years, but apparently it&apos;s hard to shut down pages spewing falsehoods, thanks Zuckerberg. The important thing to remember is that the page who have published the article have an agenda. Let&apos;s face it, it&apos;s probably click bait, fake news enticing click bait. Remember when fake news and click bait weren&apos;t four of the most prominent words in society? Simpler times indeed. So, to spot these tales that probably are not true, there&apos;s a few things to look out for. Firstly, does it make your blood boil? These stories usually use some misleading headline to get you to access their main site, where you find out that the headline was either a lie or grossly over exaggerated. The other thing is that by writing blood boiling headlines you whip people into a frenzy, arguments erupt in the comment section, feelings are hurt and the only winner is the page you&apos;re getting more people to view. A good name for articles like this is &apos;outrage bait&apos;. It&apos;s there to shock and anger people and it can be pretty darn damaging. Angering the masses by claiming minorities are &apos;demanding&apos; things gets that page huge reactions and responses. For instance, recently a page claimed 25% of people surveyed think Santa Claus should now be a woman or gender fluid - cue the rage. Obviously, this survey was either rigged, faked or just plain made up to anger people and all this does is get minority groups more backlash. Backlash for things they haven&apos;t even mentioned. The horrid thing is, these pages know the contentious issues in society and, like newspapers before, they put a spin on things that they know will get a reaction because some people will believe anything. News in general in these times is so hard to believe, you&apos;ve got politicians and",,,"content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN
+content-encoding: gzip
+connection: close
+content-length: 2841","connection: close
+content-encoding: gzip
+content-length: 2841
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",response_content_type_html security_header_x_frame_options_present,x_frame_options,,path_crawl_page
+200,,"connection: close
+content-encoding: gzip
+content-length: 2171
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",,,6150,0,20260508_204423,0d7cada8c26043eda20947f91f83ebb2,path_analyze.page.depth_1,969.56,"Stored DOM XSS Stored DOM XSS Back&nbsp;to&nbsp;lab&nbsp;description&nbsp; LAB Not solved Home | Failing The High Five - And More Andy Tool | 19 April 2026 I&apos;m one of those awkward people who shouldn&apos;t spend so much time talking to strangers/acquaintances. Too friendly and far too jolly, that&apos;s me. So, when you go in for the high five, and it fails miserably, you don&apos;t half look an idiot. It&apos;s worse if you&apos;re chortling when you do it, then you&apos;re not sure what to do with your face, hands, voice, and every hair on your head. Laughing when you talk is a sure sign of awkwardness, or a self-awareness you really aren&apos;t very funny. So, you&apos;re trying to indicate what you&apos;re saying is funny, and the other person should laugh. Like the failed high five, there is the &apos;<token>&apos;<token>&apos;, where they may or may not be within easy earshot. This one is very embarrassing, especially if you are in company. As they drift past, oblivious to your sophisticated repartee, you&apos;re still making that fake laughing sound as you turn to your companion. Your companion is probably more embarrassed than you, they are tarred with the same brush by association. It all just feels a bit awkward. The trouble with listening to everyone else&apos;s conversations is, they don&apos;t often realize you are. When you butt in with, &apos;I&apos;m Sorry but I couldn&apos;t help overhearing&apos;, they&apos;re so busy staring at you, and wondering who the nosey bod is, they will have lost the gist of pretty much everything you said. Again, you are left with what I like to call the &apos;after face&apos;, slightly crumpled, fading smile, with choking sounds. The moral of this story is. Gemma is a wally, don&apos;t be like Gemma. Comments loadComments('/post/comment') Leave a comment Comment: Name: Email: Website: Post Comment Back to Blog",,,"content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN
+content-encoding: gzip
+connection: close
+content-length: 2171","connection: close
+content-encoding: gzip
+content-length: 2171
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",response_content_type_html security_header_x_frame_options_present,x_frame_options,,path_crawl_page
+200,,"connection: close
+content-encoding: gzip
+content-length: 2244
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",,,6280,0,20260508_204423,3ddea3d95ce54173a588c069c9ef8c23,path_analyze.page.depth_1,929.561,"Stored DOM XSS Stored DOM XSS Back&nbsp;to&nbsp;lab&nbsp;description&nbsp; LAB Not solved Home | Tracking Your Kids Kareem Bun | 10 April 2026 It&apos;s not Big Brother who&apos;s watching you, it&apos;s your folks! The first generation of datafied children is hitting the streets. What does this mean? Basically, we know where they are, where they&apos;ve been and when they were last &apos;live&apos; on social media. My son passed through his &apos;going out&apos; years without being trackable. What a blessing that was I can tell you. To be honest, I don&apos;t want to know if he&apos;s traveling on the subway across New York at 2am, I really, really don&apos;t. When he first started going out I didn&apos;t sleep very well, and would only settle once he came in. Now, can you imagine if instead of tossing and turning in my comfortable bed, I was tracking his movements on my cell like a crazy woman? What happens to your heart rate when that little dot stops flashing just as he is in an area considered a bit dodgy? If you have been brought up as a Christian, it was only God who was Omniscient, now everyone is. No more little white lies about who&apos;s house you&apos;re going to as you sneak off to a party with the kids your parents don&apos;t approve of. Not only would I not have wanted my folks to know where I was every second of the day, what kind of person wants to stalk another person like that? Parental controls aren&apos;t just for the television, tracking is the real parental control. I wonder how many people in relationships have trackers for their partner on their phones. It used to be frowned upon to peek at your partner&apos;s messages when they were in the shower, now they can track you peeking at their messages with the secondary device they&apos;ve hidden in the toilet cistern for &apos;special occasions&apos;. The spy is being spied on, very confusing, nearly as confusing to me as time travel. Who is really spying on whom? Comments loadComments('/post/comment') Leave a comment Comment: Name: Email: Website: Post Comment Back to Blog",,,"content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN
+content-encoding: gzip
+connection: close
+content-length: 2244","connection: close
+content-encoding: gzip
+content-length: 2244
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",response_content_type_html security_header_x_frame_options_present,x_frame_options,,path_crawl_page
+200,,"connection: close
+content-encoding: gzip
+content-length: 2328
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",,,6428,0,20260508_204423,7f3c8209c06f48098669693d114685a6,path_analyze.page.depth_1,950.087,"Stored DOM XSS Stored DOM XSS Back&nbsp;to&nbsp;lab&nbsp;description&nbsp; LAB Not solved Home | Open Sans - I love You Paul Amuscle | 13 April 2026 I never thought this could happen to me, but it has. You hear stories about people falling in love with inanimate objects and laugh at their &apos;weirdness&apos;, but now I fully understand what they&apos;ve been going through. In the days when fonts were limited I always shrugged off the boringness of Arial, I was a Comic Sans kind of girl. Then Comic started to get a really bad reputation, I didn&apos;t want to be left behind so I tried a few of the new ones. A brief dalliance with Lobster made me happy temporarily, but couldn&apos;t stay the course. Oswald was lovely, all sophisticated and tall, but became a bit dull over time. I wrestled with the impact I was trying to make on the world. Pacifico was so romantic and dreamy, but I couldn&apos;t settle for a dreamer when there was work to be done. I tried to embrace my individuality and had a reasonably long-term relationship with Georgia, she was quite plain but always reliable, but New Baskerville blew me away with its sense of adventure and &apos;je ne sais quoi&apos;. I realized I couldn&apos;t keep changing my fonts like this, I needed to settle down and find a future with something new. Along came Open Sans, my first impressions weren&apos;t great. Over time I came to love the simpleness of Open, I&apos;d previously been looking for something exciting, but Open has it all. Others might think Open is the plain Jane of the font world, but I see so much more. Clean lines, no ambiguity, always right, well presented at all times. And with me as the driving force behind Open, we have fun and lots of it. I now know that Open and I have a bright future together, I can type our words of love and carry them with me wherever I go. Always together, never apart, we go hand in hand and communicate to the world as one. There&apos;s no going back for me, the others were just trial runs, Open Sans is the real deal and I will never go back to how my life was before. Comments loadComments('/post/comment') Leave a comment Comment: Name: Email: Website:",,,"content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN
+content-encoding: gzip
+connection: close
+content-length: 2328","connection: close
+content-encoding: gzip
+content-length: 2328
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",response_content_type_html security_header_x_frame_options_present,x_frame_options,,path_crawl_page
+200,,"connection: close
+content-encoding: gzip
+content-length: 2281
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",,,6384,0,20260508_204423,345d44b9a1b7444485f9cb537833a255,path_analyze.page.depth_1,977.588,"Stored DOM XSS Stored DOM XSS Back&nbsp;to&nbsp;lab&nbsp;description&nbsp; LAB Not solved Home | Fake News Martin O&apos;Beans | 11 April 2026 Is it just me that finds the way people share things on social media, without checking into them really disturbing? I&apos;ve started checking things out now, not because I want to share but so I can somehow, politely, let them know they&apos;re complete idiots. Anything to do with missing children is always serious and a good item to share, and fast. Recently a friend shared one of these posts and I did my little bit of detective work. I was able to comment, &apos;not to worry, he was found safe and well - in 2014!&apos; What disturbs me the most about &apos;sharing&apos; is the possible ramifications of these posts. Some poor bloke is sitting at home enjoying his first cup of tea of the day when the police kick his front door in. Why? Because he pissed someone off recently and they posted his pic on social media, telling everyone he beat an old lady over the head with a bicycle pump. &apos;Plz sher so we can catch this scum!&apos; We have all become automatons, and half the time people only ever read the headlines, never the whole articles. Click and share, click and share&apos; You have to love it though when people believe the headlines of satirical publications, they share with rage and indignation, first 3 comments express the wish that it is not true, third comment links to snopes.com (that&apos;ll be me then) &apos;Sorry, fake news.&apos; Sorry, not sorry, positively gleeful. Grammar nazis have become a thing on social media, I&apos;m the fake news equivalent. I have little trust in pleas for donations for worthy causes if there is a single spelling mistake in the post. Recently I was quizzing a woman about her GoFundMe campaign, I&apos;d read the original news item and thought if she wasn&apos;t prepared to spell check her request for help, then she must be a dishonest woman trying to deceive the general public. This probably says more about me than any of them. Comments loadComments('/post/comment') Leave a comment Comment: Name: Email: Website: Post Comment",,,"content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN
+content-encoding: gzip
+connection: close
+content-length: 2281","connection: close
+content-encoding: gzip
+content-length: 2281
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",response_content_type_html security_header_x_frame_options_present,x_frame_options,,path_crawl_page
+200,,"connection: close
+content-encoding: gzip
+content-length: 2281
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",,,6353,0,20260508_204423,89ac241be263456d9b57d61081fd4ad0,path_analyze.page.depth_1,934.342,"Stored DOM XSS Stored DOM XSS Back&nbsp;to&nbsp;lab&nbsp;description&nbsp; LAB Not solved Home | Video Games Made Me A Better Surgeon Nat Itoode | 12 April 2026 Recently there was an article on this very subject. I felt it was slightly lacking in depth, there was a lot of input from professionals discussing dexterity, did video games improve that or make it worse. I imagine the surgeon who made this bold statement was annoyed they only focussed on one of the areas where video games had improved her performance. After spending many days, and nights, researching this claim by playing a variety of video games I set myself some tasks to see if my dexterity had improved. Initially, I felt a bit wobbly, the bright light of the kitchen made my head ache and I had tremors trying to open the cutlery drawer. Firstly I took a bread knife and attempted to slice an uncut loaf. The result was just as bad as before I spent time playing video games. Uneven slices with gaping holes. Next, I wanted to test precision and accuracy by attempting to slice an apple into even segments. I cut one of my pinkies and nearly sliced the top off my thumb. I concluded at this point I had not spent enough time playing video games and continued with another 30 days and nights of non-stop gaming. Following this I thought I would try new skills, ones I felt were pretty close in technical skills to that of a surgeon. I pierced an orange with a tiny camera hooked up to my widescreen TV; I then started removing pips, the goal was not to puncture any of the segmenty flesh. It was carnage. Playing video games seemed to dull my senses, leave me disorientated and slightly confused. The big, bad, outside world had become a platform game where I tried to pick things up to accrue points. The nightmare ended following a high-speed car chase having knocked over several bollards with my terrifyingly inaccurate directional skills. Years of training made you a better surgeon young lady, not video games! Comments loadComments('/post/comment') Leave a comment Comment: Name: Email: Website: Post Comment",redirect_hint,,"content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN
+content-encoding: gzip
+connection: close
+content-length: 2281","connection: close
+content-encoding: gzip
+content-length: 2281
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",response_content_type_html security_header_x_frame_options_present,x_frame_options,,path_crawl_page
+200,,"connection: close
+content-encoding: gzip
+content-length: 2866
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",,,7702,0,20260508_204423,7e6b949c040b4788b86788785a778166,path_analyze.page.depth_1,943.645,"Stored DOM XSS Stored DOM XSS Back&nbsp;to&nbsp;lab&nbsp;description&nbsp; LAB Not solved Home | Lies, Lies &amp; More Lies Kit Kat | 15 April 2026 I remember the first time I told a lie. That&apos;s not to say I didn&apos;t do it before then, I just don&apos;t remember. I was nine years old and at my third school already. Fitting into already established friendship groups was hard. So on that dreaded Monday morning when we had to sit and write about what we did over the weekend I made up a great big fat lie in the hope of making myself an interesting person. I told the class the window cleaner had fallen off his ladder. This is when I learned lies don&apos;t get you anywhere. Nobody liked me any the more for it, it did not dramatically transform my world into a better one. I have a book on my desk called &apos;Lying&apos;, my son suggested I read it as telling lies has always been a big topic of conversation. The types of lies we tell. He insists that even though I don&apos;t think I tell lies, I get creative with the truth. Should someone call I don&apos;t want to speak to, but for some reason, the phone must be answered? I will tell him to say I&apos;m in the bath. I will then go and stand in the bath so that I am at ease with my conscience. I have not told a lie, I am in the bath. People always say it&apos;s OK to tell &apos;little white lies&apos;, if it is in the best interest of the person being little-white-lied to. Recently I mentioned to an (almost) total stranger that I had lost 14lbs in weight. He replied, &apos;I thought you had, I noticed that.&apos; When I got all excited and started pulling my stomach in and preening myself he added, &apos;I didn&apos;t really, I just know the right things to say.&apos; I ask you, what kind of perverse lie is that? In society we grade our lies; the little white one, a great big fat one, a fib (equal to the little white lie) but all lies have consequences. Imagine if it had turned out that someone in my class knew my window cleaner, saw him up a ladder on the way home from school and called up to ask if he was OK after his fall. He could have been startled, dropped his bucket on the child and have proceeded to actually fall off his ladder. In my fantasies, it would have been the most popular girl with the long blonde hair who got hit by the bucket. I&apos;m sure she was lovely really. You know the biggest question of all time, &apos;does my butt look big in this?&apos; In an effort to be kind, and not get a punch on the nose, the answer is nearly always, &apos;no.&apos; My favorite response has to be, &apos;your butt doesn&apos;t look big in just &apos;this&apos;, it looks big in everything because you have a big butt.&apos; I think there would be a small number of people who could get away with that. But",,,"content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN
+content-encoding: gzip
+connection: close
+content-length: 2866","connection: close
+content-encoding: gzip
+content-length: 2866
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",response_content_type_html security_header_x_frame_options_present,x_frame_options,,path_crawl_page
+200,,"connection: close
+content-encoding: gzip
+content-length: 2510
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",,,6826,0,20260508_204423,330080e6bb5047ac8b10d0db0324bdec,path_analyze.page.depth_1,1795.011,"Stored DOM XSS Stored DOM XSS Back&nbsp;to&nbsp;lab&nbsp;description&nbsp; LAB Not solved Home | Wedding Bells Will Power | 19 April 2026 There&apos;s a new craze that is crazier than the craziest crazes so far - in my opinion. This is the one where a couple fall in love, get engaged, then invite their family and friends to pay for the wedding. What could possibly go wrong? Pretty much everything can go wrong. To start with the assumption is that the guests would have stumped up a reasonable amount of money on a gift in the first place. The theory, replace that gift with money. Money paid in advance of the reception so that it can be booked and paid for ready for the big day. I&apos;m guessing the only person happy about this set up would be the Father of the bride who has always been expected to dig deep to send off his one and only beloved daughter. Fast forward to social media groups. &apos;My best friend is getting married and wants us to contribute to the cost of the wedding. I think this is really rude, what do y&apos;all think?&apos; Here follows 500 opinions until admin finally turns off comments. The general consensus is less than romantic, as strangers suggest the relationship might break down, and then you&apos;re out of pocket having already contributed to the non-refundable sandwiches and sparkle. Should this plan actually make it to the table, can you imagine the chaos at the buffet as everyone rushes forward to get their money&apos;s worth? Aunt Val insists on taking the table decorations home with her, and Uncle Ross fills his pockets with the complimentary mints at the front desk. If you let people pay for stuff, they then have the right to complain. About everything. And complain they will. Normally civilized people will become feral as they expect their $50 contribution to provide them with something a little fancier than a single serving of doughnuts, instead of a nice slab of wedding cake. Blame Cousin Eve, she only paid in $5, something had to give. Soon the whispering will begin, &apos;how much did you put in?&apos; Followed by, &apos;I heard Val only donated $5, she should not be allowed to have anything to eat.&apos; Resentment will grow. Relatives will fall out and probably never speak to each other again, until the next family gathering at least. If you want the wedding of your dreams, save up like the rest of us and pay for it yourself. Comments loadComments('/post/comment') Leave a comment",redirect_hint,,"content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN
+content-encoding: gzip
+connection: close
+content-length: 2510","connection: close
+content-encoding: gzip
+content-length: 2510
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",response_content_type_html security_header_x_frame_options_present,x_frame_options,,path_crawl_page
+,,,,,0,1,20260508_204423,17ed1b446b77447683d4074c5cf96fed,path_analyze.form_depth_1,0.0,,,,,,,,,path_candidate
+,,,,,0,1,20260508_204423,bd4c3dad2eea4befbcddf511cfe5730e,path_analyze.form_depth_1,0.0,,,,,,,,,path_candidate
+,,,,,0,1,20260508_204423,f42caeea25504c59a62d54631c6ee3d6,path_analyze.form_depth_1,0.0,,,,,,,,,path_candidate
+,,,,,0,1,20260508_204423,9809330292ea465c98b3f7b0f584e0d8,path_analyze.form_depth_1,0.0,,,,,,,,,path_candidate
+,,,,,0,1,20260508_204423,bb7fc8744f2e4bf7aec2d89910ccf6c8,path_analyze.form_depth_1,0.0,,,,,,,,,path_candidate
+,,,,,0,1,20260508_204423,97d746e7d20f4c03a59e8a4bd35f8fa3,path_analyze.form_depth_1,0.0,,,,,,,,,path_candidate
+,,,,,0,1,20260508_204423,a096df0e430a4285a015e876df8e2b00,path_analyze.form_depth_1,0.0,,,,,,,,,path_candidate
+,,,,,0,1,20260508_204423,ae471e4939b3406eb06360cd98e0bf12,path_analyze.form_depth_1,0.0,,,,,,,,,path_candidate
+,,,,,0,1,20260508_204423,a124e169e84f4d3abba3f934c93dbf81,path_analyze.form_depth_1,0.0,,,,,,,,,path_candidate
+,,,,,0,1,20260508_204423,a4f223ad81da4bb59be813ceccca0c31,path_analyze.form_depth_1,0.0,,,,,,,,,path_candidate
+500,,"connection: close
+content-encoding: gzip
+content-length: 828
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",,,2379,1,20260508_204423,76e8b9e3b3934820937b01445f8ef7b5,path_analyze.page.depth_2,683.096,Stored DOM XSS Stored DOM XSS Back to lab home Back&nbsp;to&nbsp;lab&nbsp;description&nbsp; LAB Not solved Internal Server Error postId must be a number,server_error_status,,"content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN
+content-encoding: gzip
+connection: close
+content-length: 828","connection: close
+content-encoding: gzip
+content-length: 828
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",response_content_type_html security_header_x_frame_options_present,x_frame_options,,path_crawl_page

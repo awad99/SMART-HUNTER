@@ -1,0 +1,1 @@
+POST|https://0abd0064033b556881c8115b00e30098.web-security-academy.net/product/stock|productId=4&storeId=FUZZ

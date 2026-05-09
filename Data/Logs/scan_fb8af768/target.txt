@@ -1,0 +1,1 @@
+POST|https://0ae500d603444e9e80efe90f001e000d.web-security-academy.net/feedback/submit|csrf=nfbD7DW3EJKSIPiEIdi64L5ZvsO1goc6&name=FUZZ&email=FUZZ&subject=FUZZ&message=FUZZ

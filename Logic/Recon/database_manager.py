@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 # Load environment variables from .env file
 load_dotenv()
 
-# ── استيراد دوال Queries ──────────────────────────────────────
+# ── takes functions of Queries ──────────────────────────────
 from Data.Queries.q_scans          import create_scan          as _q_create_scan
 from Data.Queries.q_scans          import update_scan_status   as _q_update_scan
 from Data.Queries.q_vulnerabilities import save_vulnerability       as _q_vuln_one

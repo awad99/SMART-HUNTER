@@ -18,15 +18,27 @@ fi
 echo "[*] Starting Commix bulk scan"
 
 # Read targets and run commix
-while IFS='|' read -r method url data || [ -n "$method" ]; do
+while IFS='|' read -r method url data test_params page_url || [ -n "$method" ]; do
     [ -z "$method" ] && continue
 
     echo "Scanning ($method): $url"
 
     # Prepare arguments — no --smart (it skips valid targets), higher timeout
-    ARGS=("--url" "$url" "--batch" "--random-agent" "--timeout=30")
+    ARGS=(
+        "--url" "$url"
+        "--batch"
+        "--random-agent"
+        "--timeout=30"
+        "--level=3"
+        "--time-sec=${COMMIX_TIME_SEC:-5}"
+        "--ignore-session"
+        "--flush-session"
+        "--url-reload"
+        "--ignore-code=400,401,403,404,500"
+    )
     [ -n "$COOKIE" ] && ARGS+=("--cookie=$COOKIE")
 
+    SELECTED_PARAMS="$test_params"
     if [ "$method" == "POST" ]; then
         # Find which parameter has FUZZ and target it specifically
         FUZZ_PARAM=""
@@ -44,10 +56,13 @@ while IFS='|' read -r method url data || [ -n "$method" ]; do
             fi
         done
         ARGS+=("--data=$CLEAN_DATA")
-        # Tell commix exactly which parameter to test
         if [ -n "$FUZZ_PARAM" ]; then
-            ARGS+=("-p" "$FUZZ_PARAM")
+            SELECTED_PARAMS="$FUZZ_PARAM"
         fi
+    fi
+
+    if [ -n "$SELECTED_PARAMS" ]; then
+        ARGS+=("-p" "$SELECTED_PARAMS")
     fi
 
     # Run and log
