@@ -216,6 +216,7 @@ class VulnerabilityCheckerTraining:
             r['script_to_content_ratio']   = r['script_count'] / max(r['response_size'], 1)
             r['security_score']            = r.get('security_score', r['security_headers_count'] / 8)
             r['interactivity_score']       = (r.get('form_count',0) + r['input_count'] + r.get('button_count',0)) / max(r['response_size']/1000, 1)
+            r['is_synthetic'] = 1  # Flag to distinguish from real data
             rows.append(r)
         return pd.DataFrame(rows)
 
@@ -261,10 +262,21 @@ class VulnerabilityCheckerTraining:
                 frames.append(recon)
 
             real_count = sum(len(f) for f in frames)
-            aug_count  = max(100, 200 - real_count * 3)
-            aug = self._generate_augmented_data(aug_count)
-            frames.append(aug)
-            print(f"[+] Combined data (real:{real_count}, aug:{aug_count})")
+
+            # FIX: Only add synthetic data when real data is very sparse,
+            # and cap synthetic at 30% of total to avoid drowning real signal.
+            if real_count < 50:
+                # Synthetic should never exceed ~30% of the final dataset
+                aug_count = max(20, min(int(real_count * 0.45), 80))
+                aug = self._generate_augmented_data(aug_count)
+                frames.append(aug)
+                print(f"[!] WARNING: Only {real_count} real rows available. ")
+                print(f"    Adding {aug_count} synthetic rows (capped at 30%% of total).")
+                print(f"    Model accuracy will be LIMITED until more real data is collected.")
+            else:
+                aug_count = 0
+                print(f"[+] Sufficient real data ({real_count} rows) — skipping synthetic augmentation.")
+            print(f"[+] Combined data (real:{real_count}, synthetic:{aug_count})")
 
             combined = pd.concat(frames, ignore_index=True)
             # Ensure target labels exist in combined data for fallback
@@ -471,6 +483,8 @@ class VulnerabilityCheckerTraining:
         print(f"[+] Model saved -> {path} ({len(self.trained_feature_columns)} features)")
 
     def load_model(self, path=MODEL_FILE):
+        if not os.path.exists(path):
+            return False
         try:
             d = joblib.load(path)
             self.model  = d['model']

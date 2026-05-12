@@ -12,7 +12,7 @@ if root not in sys.path:
 import Recon.url_connection as url_connection
 
 import vulnerability_scan.Scanner_vulnerability as URL_checkIfhaveVun
-import vulnerability_scan.path_Analyze as path_Analyze
+import vulnerability_scan.pathScanner.path_Analyze as path_Analyze
 from vulnerability_scan.findings import split_findings
 from Data.Queries.scan_stats import ScanStats
 import machine

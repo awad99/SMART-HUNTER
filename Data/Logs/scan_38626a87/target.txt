@@ -1,0 +1,1 @@
+POST|https://wafid.com/en/medical-status-search/|csrfmiddlewaretoken=huhnzQSAZryUXuZ15BlPK5AxGoDhJZuwBNNLkfcjnsJb4aW8duU69q3QWjDtntLd&search_variant=slip&passport=test&nationality=Select+nationality&gcc_slip_no=test&captcha=|search_variant,gcc_slip_no,csrfmiddlewaretoken,passport,nationality,captcha|https://wafid.com/en/medical-status-search/

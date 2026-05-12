@@ -1,0 +1,1 @@
+POST|https://career-sa20.hr.cloud.sap/career?site=&company=stc&lang=ar%5FSA&login_ns=register&career_ns=home&navBarLevel=MY_PROFILE|ucc_email=scan%40example.com|ucc_email|https://careers.stc.com.sa/

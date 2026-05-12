@@ -1,0 +1,1 @@
+GET|https://wafid.com/en/medical-center/search/?country=Enter+Country&city=Enter+city&name=scanner||country,city,name

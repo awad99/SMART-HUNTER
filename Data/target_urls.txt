@@ -1,5 +1,4 @@
-POST|https://0ac5000703dc22b780303f49001c0032.web-security-academy.net/feedback/submit|csrf=FUZZ&name=&email=&subject=&message=
-POST|https://0ac5000703dc22b780303f49001c0032.web-security-academy.net/feedback/submit|csrf=39qFx22c9Wln90FrRVpa5PspJq3GajVH&name=FUZZ&email=&subject=&message=
-POST|https://0ac5000703dc22b780303f49001c0032.web-security-academy.net/feedback/submit|csrf=39qFx22c9Wln90FrRVpa5PspJq3GajVH&name=&email=FUZZ&subject=&message=
-POST|https://0ac5000703dc22b780303f49001c0032.web-security-academy.net/feedback/submit|csrf=39qFx22c9Wln90FrRVpa5PspJq3GajVH&name=&email=&subject=FUZZ&message=
-POST|https://0ac5000703dc22b780303f49001c0032.web-security-academy.net/feedback/submit|csrf=39qFx22c9Wln90FrRVpa5PspJq3GajVH&name=&email=&subject=&message=FUZZ
+POST|https://0a92006904219575838faa3f001b007c.web-security-academy.net/login|csrf=FUZZ&username=&password=
+POST|https://0a92006904219575838faa3f001b007c.web-security-academy.net/login|csrf=URpofxpY7JVStKyjLV8zrC6nOUvGgEMh&username=FUZZ&password=
+POST|https://0a92006904219575838faa3f001b007c.web-security-academy.net/login|csrf=URpofxpY7JVStKyjLV8zrC6nOUvGgEMh&username=&password=FUZZ
+GET|https://0a92006904219575838faa3f001b007c.web-security-academy.net/product/?productId=FUZZ|

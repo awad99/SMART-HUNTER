@@ -1,3 +1,2 @@
-GET|https://0af5001d049e2a4a80f9ee4800400053.web-security-academy.net/filter?category=*||category
-GET|https://0af5001d049e2a4a80f9ee4800400053.web-security-academy.net/product?productId=*||productId
-COOKIE|https://0af5001d049e2a4a80f9ee4800400053.web-security-academy.net/|session=*|session
+GET|https://0a5300a104824a928091c1bb00b500f6.web-security-academy.net/filter?category=*||category
+COOKIE|https://0a5300a104824a928091c1bb00b500f6.web-security-academy.net/|session=*|session

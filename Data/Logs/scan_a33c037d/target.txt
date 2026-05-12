@@ -1,0 +1,1 @@
+GET|https://careers.stc.com.sa/talentcommunity/subscribe/?rmpLoginEmail=&rmpLoginPwd=test||rmpLoginEmail,rmpLoginPwd

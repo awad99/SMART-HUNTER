@@ -1,0 +1,1 @@
+POST|https://0a4e001704e0d31682100b58009a00ac.web-security-academy.net/login|csrf=CPkUMlPi907s0s6dqO2b9fYnncgwKyZ0&username=scanner&password=test|username,password|https://0a4e001704e0d31682100b58009a00ac.web-security-academy.net/my-account

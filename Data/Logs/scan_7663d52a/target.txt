@@ -1,0 +1,1 @@
+GET|https://iot.stc.com.sa/html/portal/css.jsp?colorSchemeId=FUZZ|

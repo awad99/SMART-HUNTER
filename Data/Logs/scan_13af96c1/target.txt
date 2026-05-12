@@ -1,0 +1,1 @@
+POST|https://careers.stc.com.sa/talentcommunity/subscribe/?locale=ar_SA&cat=7737123|frequency=7|frequency|https://careers.stc.com.sa/go/%D8%B0%D9%88%D9%8A-%D8%A7%D9%84%D8%AE%D8%A8%D8%B1%D8%A9/7737123/

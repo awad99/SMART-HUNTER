@@ -217,9 +217,10 @@ class SmartVulnerabilityScanner(VulnerabilityCheckerTraining):
         if not target_list:
             p = urllib.parse.urlparse(self.url)
             params = urllib.parse.parse_qs(p.query) if p.query else {}
-            if not params:
-                params = {'search': ['test']}
-            target_list = [('GET', self.url, params)]
+            if params:
+                target_list = [('GET', self.url, params)]
+            else:
+                print("[!] No injectable parameters discovered — skipping active tests that require parameters.")
 
         vulns = []
         if self.prediction:
@@ -228,7 +229,7 @@ class SmartVulnerabilityScanner(VulnerabilityCheckerTraining):
             if preds.get('xss', 0) > 0.15: vulns.extend(self._test_xss(target_list))
             if preds.get('command_injection', 0) > 0.15: vulns.extend(self._test_command_injection())
             if preds.get('path_traversal', 0) > 0.15:
-                import vulnerability_scan.path_Analyze as path_Analyze
+                import vulnerability_scan.pathScanner.path_Analyze as path_Analyze
                 pt_res = path_Analyze.crawl_and_scan(self.url, max_depth=2, cookie=self.cookie)
                 if pt_res and pt_res.get('vulns'): vulns.extend(pt_res['vulns'])
             if not vulns and all(v < 0.15 for v in preds.values()):
@@ -240,7 +241,9 @@ class SmartVulnerabilityScanner(VulnerabilityCheckerTraining):
     def _test_sql_injection(self):
         vulns = []
         p = urllib.parse.urlparse(self.url)
-        params_to_test = urllib.parse.parse_qs(p.query) if p.query else {'id':['test']}
+        params_to_test = urllib.parse.parse_qs(p.query) if p.query else {}
+        if not params_to_test:
+            return vulns  # No real parameters to test
         errors = ['sql syntax', 'mysql', 'postgresql', 'oracle', 'sqlite', 'syntax error']
         payloads = [("'", "error-based"), ("' OR '1'='1", "boolean-based")]
         hdr = {'Cookie': self.cookie} if self.cookie else None
@@ -257,7 +260,9 @@ class SmartVulnerabilityScanner(VulnerabilityCheckerTraining):
     def _test_xss(self, target_list=None):
         vulns = []
         if not target_list:
-            p = urllib.parse.urlparse(self.url); params = urllib.parse.parse_qs(p.query) if p.query else {'search':['test']}
+            p = urllib.parse.urlparse(self.url); params = urllib.parse.parse_qs(p.query) if p.query else {}
+            if not params:
+                return vulns  # No real parameters to test
             target_list = [('GET', self.url, params)]
         canary = 'xSsT3st'
         payloads = [(f'<script>alert("{canary}")</script>', "script tag")]
@@ -274,7 +279,9 @@ class SmartVulnerabilityScanner(VulnerabilityCheckerTraining):
 
     def _test_command_injection(self):
         vulns = []
-        p = urllib.parse.urlparse(self.url); params = urllib.parse.parse_qs(p.query) if p.query else {'cmd':['test']}
+        p = urllib.parse.urlparse(self.url); params = urllib.parse.parse_qs(p.query) if p.query else {}
+        if not params:
+            return vulns  # No real parameters to test
         payloads = [";ls", "|id", "$(whoami)"]
         hdr = {'Cookie': self.cookie} if self.cookie else None
         for param in list(params.keys())[:4]:

@@ -1,7 +1,1 @@
-<<<<<<< HEAD
-https://0ac5000703dc22b780303f49001c0032.web-security-academy.net
-https://0ac5000703dc22b780303f49001c0032.web-security-academy.net/product?productId=
-https://0ac5000703dc22b780303f49001c0032.web-security-academy.net/feedback/submit
-=======
-http://example.com
->>>>>>> 346cef5a86f3e5f777c702afd18b09c0e299ed25
+https://wafid.com/en/medical-center/search/?page=

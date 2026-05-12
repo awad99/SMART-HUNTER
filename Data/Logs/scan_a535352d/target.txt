@@ -1,0 +1,1 @@
+https://www.flynas.com/api/publishers/v2/sessions?publisherAlias=

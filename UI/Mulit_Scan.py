@@ -19,7 +19,7 @@ for path in (
         sys.path.append(path)
 
 import Recon.url_connection as url_connection
-import vulnerability_scan.path_Analyze as path_Analyze
+import vulnerability_scan.pathScanner.path_Analyze as path_Analyze
 from Data.Queries.scan_stats import ScanStats
 from Data.Update_Data import get_data_system
 from Data.Update_Data.target_scan_dataset import get_target_scan_dataset_path

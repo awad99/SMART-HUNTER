@@ -216,6 +216,35 @@ def _finding_terms(features):
 
     return " | ".join(terms).lower()
 
+def _confirmed_finding_families(features):
+    """Extract vulnerability families ONLY from confirmed findings with high confidence.
+    This prevents label leakage from tool names or descriptive text."""
+    families = set()
+    for key in ('confirmed_findings', 'vulnerabilities_found', 'findings'):
+        value = features.get(key)
+        if not isinstance(value, (list, tuple)):
+            continue
+        for item in value:
+            if not isinstance(item, dict):
+                continue
+            confidence = str(item.get('confidence', '')).lower()
+            if confidence != 'high':
+                continue  # Only accept high-confidence confirmed findings
+            finding_type = str(item.get('type') or item.get('vulnerability_type') or '').lower()
+            if 'sql injection' in finding_type or 'sqli' in finding_type:
+                families.add('sql_injection')
+            elif 'xss' in finding_type or 'cross-site scripting' in finding_type:
+                families.add('xss')
+            elif 'command injection' in finding_type or 'cmdi' in finding_type or 'rce' in finding_type:
+                families.add('command_injection')
+            elif 'path traversal' in finding_type or 'directory traversal' in finding_type:
+                families.add('path_traversal')
+            elif 'file inclusion' in finding_type or 'lfi' in finding_type or 'rfi' in finding_type:
+                families.add('file_inclusion')
+            elif 'idor' in finding_type:
+                families.add('idor')
+    return families
+
 def _has_term(text, *needles):
     haystack = str(text or "").lower()
     return int(any(needle in haystack for needle in needles))
@@ -269,29 +298,34 @@ def _build_canonical_vulnerability_row(features):
     path_parts = [part for part in parsed.path.split('/') if part]
     finding_terms = _finding_terms(features)
 
+    # FIX: Labels come ONLY from explicit feature flags and confirmed findings.
+    # We no longer use _has_term(finding_terms, ...) which caused label leakage
+    # by letting tool names and descriptive text influence vulnerability labels.
+    confirmed_families = _confirmed_finding_families(features)
+
     has_sql_injection = max(
         _has_any(features, 'has_sql_injection', 'sqli_vuln'),
-        _has_term(finding_terms, 'sql injection', 'sqli'),
+        int('sql_injection' in confirmed_families),
     )
     has_xss = max(
         _has_any(features, 'has_xss', 'xss_vuln'),
-        _has_term(finding_terms, 'cross-site scripting', 'xss'),
+        int('xss' in confirmed_families),
     )
     has_command_injection = max(
         _has_any(features, 'has_command_injection', 'cmdi_vuln'),
-        _has_term(finding_terms, 'command injection', 'cmdi', 'rce'),
+        int('command_injection' in confirmed_families),
     )
     has_path_traversal = max(
         _has_any(features, 'has_path_traversal', 'pt_vuln'),
-        _has_term(finding_terms, 'path traversal', 'directory traversal'),
+        int('path_traversal' in confirmed_families),
     )
     has_file_inclusion = max(
         _has_any(features, 'has_file_inclusion', 'lfi_vuln', 'rfi_vuln'),
-        _has_term(finding_terms, 'file inclusion', 'lfi', 'rfi'),
+        int('file_inclusion' in confirmed_families),
     )
     has_idor = max(
         _has_any(features, 'has_idor', 'idor_vuln'),
-        _has_term(finding_terms, 'idor'),
+        int('idor' in confirmed_families),
     )
 
     detected_total_vulns = (

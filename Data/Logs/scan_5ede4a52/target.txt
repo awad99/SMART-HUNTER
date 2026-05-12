@@ -1,0 +1,1 @@
+GET|https://iot.stc.com.sa/web/guest/home?p_p_mode=FUZZ|

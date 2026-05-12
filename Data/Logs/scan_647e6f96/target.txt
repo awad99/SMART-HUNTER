@@ -1,0 +1,1 @@
+http://sada.net.sa/commonresource/js/jquery.validate.js?v0.1

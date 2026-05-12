@@ -1,0 +1,1 @@
+GET|https://accessanywhere.stc.com.sa/app/auth/login?TAM_OP=login&URL=https%3A%2F%2Ffsso.stc.com.sa%2F&HOSTNAME=fsso.stc.com.sa||URL,HOSTNAME,TAM_OP

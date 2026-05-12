@@ -1,0 +1,1 @@
+POST|https://iot.stc.com.sa/web/guest/home?_58_redirect=FUZZ|

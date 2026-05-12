@@ -1,0 +1,1 @@
+POST|https://wafid.com/en/search-slip/|csrfmiddlewaretoken=F0P3z6aSSYZcuBKCeo8Iw7Jjuwr9biwhMEsI4JrC3JWUV75vy4w908fKxuSQwuEa&passport=test&nationality=Select+nationality&captcha=|csrfmiddlewaretoken,passport,nationality,captcha|https://wafid.com/en/search-slip/

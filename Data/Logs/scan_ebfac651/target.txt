@@ -1,0 +1,1 @@
+GET|https://careers.stc.com.sa/content/Talent-Incubation-Program/?locale=ar_SA||locale

@@ -1,0 +1,1 @@
+http://sada.net.sa/admin/js/admin-config.js?v0.1

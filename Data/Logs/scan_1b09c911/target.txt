@@ -1,0 +1,1 @@
+GET|https://careers.stc.com.sa/search/?createNewAlert=false&q=test&optionsFacetsDD_location=%D8%A7%D9%84%D9%83%D9%84&optionsFacetsDD_facility=%D8%A7%D9%84%D9%83%D9%84&optionsFacetsDD_customfield1=%D8%A7%D9%84%D9%83%D9%84||createNewAlert,q,optionsFacetsDD_location,optionsFacetsDD_facility,optionsFacetsDD_customfield1

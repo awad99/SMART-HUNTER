@@ -1,0 +1,1 @@
+POST|https://iot.stc.com.sa/web/guest/home?p_p_id=58&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-1&p_p_col_count=3&saveLastPath=0&_58_struts_action=%2Flogin%2Fforgot_password|_58_redirect=/web/guest/home?p_p_id=58&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&p_p_col_id=column-1&p_p_col_count=3&_58_step=1&_58_screenName=&_58_captchaText=FUZZ

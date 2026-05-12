@@ -1,0 +1,1 @@
+POST|https://iot.stc.com.sa/web/guest/home?p_p_id=82&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&_82_struts_action=%2Flanguage%2Fview&_82_redirect=%2Fimage%2F|languageId=FUZZ

@@ -34,10 +34,15 @@ def _lock_for(path):
         return _LOCKS[path]
 
 
-def get_target_scan_dataset_path(target_url, scan_id=None):
+def get_target_scan_dataset_path(target_url, scan_id=None, record_type="mixed"):
     target = _target_name(target_url)
     suffix = _safe_part(scan_id, fallback="", max_len=40)
-    filename = f"{target}_{suffix}.csv" if suffix else f"{target}.csv"
+    # FIX: Separate record types into different files to prevent schema drift
+    type_tag = _safe_part(record_type, fallback="mixed", max_len=30)
+    if suffix:
+        filename = f"{target}_{suffix}_{type_tag}.csv"
+    else:
+        filename = f"{target}_{type_tag}.csv"
     return os.path.join(TARGET_SCAN_DIR, filename)
 
 
@@ -55,7 +60,7 @@ def append_target_scan_row(features, target_url=None, scan_id=None, record_type=
     row.setdefault("dataset_record_type", record_type)
     row.setdefault("saved_at", datetime.now().isoformat())
 
-    path = get_target_scan_dataset_path(effective_target, effective_scan_id)
+    path = get_target_scan_dataset_path(effective_target, effective_scan_id, record_type=record_type)
     os.makedirs(os.path.dirname(path), exist_ok=True)
 
     lock = _lock_for(path)

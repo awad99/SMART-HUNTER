@@ -1,0 +1,1 @@
+GET|https://careers.stc.com.sa/content/COOP/?locale=ar_SA||locale

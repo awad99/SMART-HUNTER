@@ -1,0 +1,1 @@
+GET|https://careers.stc.com.sa/content/Development-Programs/?locale=ar_SA||locale

