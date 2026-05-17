@@ -1,0 +1,1 @@
+GET|https://0a14000f04a88373807e0302007f001e.web-security-academy.net/post?postId=10||postId

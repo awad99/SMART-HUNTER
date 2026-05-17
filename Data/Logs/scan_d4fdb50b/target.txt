@@ -1,0 +1,1 @@
+POST|https://0ad7002d03b1bcb28127ed6e007e005d.web-security-academy.net/post/comment|csrf=nwAh1TPPkEvXbVyIX12tlyyXe25obKr6&postId=4&comment=security+test+message&name=scanner&email=scan%40example.com&website=test|email,postId,comment,name,website|https://0ad7002d03b1bcb28127ed6e007e005d.web-security-academy.net/post?postId=4

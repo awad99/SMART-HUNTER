@@ -223,15 +223,21 @@ class SmartVulnerabilityScanner(VulnerabilityCheckerTraining):
                 print("[!] No injectable parameters discovered — skipping active tests that require parameters.")
 
         vulns = []
+        if crawl_results and crawl_results.get('vulns'):
+            vulns.extend(crawl_results['vulns'])
+
         if self.prediction:
             preds = self.prediction['predictions']
             if preds.get('sql_injection', 0) > 0.15: vulns.extend(self._test_sql_injection())
             if preds.get('xss', 0) > 0.15: vulns.extend(self._test_xss(target_list))
             if preds.get('command_injection', 0) > 0.15: vulns.extend(self._test_command_injection())
-            if preds.get('path_traversal', 0) > 0.15:
+            
+            # Only run PT if it wasn't already found and prediction is high
+            if preds.get('path_traversal', 0) > 0.15 and not any(v.get('type') == 'Path Traversal' for v in vulns):
                 import vulnerability_scan.pathScanner.path_Analyze as path_Analyze
                 pt_res = path_Analyze.crawl_and_scan(self.url, max_depth=2, cookie=self.cookie)
                 if pt_res and pt_res.get('vulns'): vulns.extend(pt_res['vulns'])
+            
             if not vulns and all(v < 0.15 for v in preds.values()):
                 vulns.extend(self._test_sql_injection()); vulns.extend(self._test_xss(target_list))
         else:

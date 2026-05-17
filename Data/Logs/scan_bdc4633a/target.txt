@@ -1,0 +1,1 @@
+POST|https://0acc0092046b8bce80f19ebb009100d5.web-security-academy.net/feedback/submit|csrf=P5hBQUB617VHQdfXRzg2TDQL2jC2Kiug&name=scanner&email=scan%40example.com&subject=security-test&message=security+test+message|email,name,subject,message|https://0acc0092046b8bce80f19ebb009100d5.web-security-academy.net/feedback

@@ -1,0 +1,1 @@
+GET|https://0a10003d03493c4196b302d900dc00f9.web-security-academy.net/product?productId=1||productId

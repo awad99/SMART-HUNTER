@@ -41,8 +41,17 @@ class DatabaseManager:
     def connect(self):
         try:
             if not self.conn or self.conn.closed:
-                self.conn = psycopg2.connect(**self.conn_params)
+                # Set a shorter connection timeout to fail fast
+                self.conn = psycopg2.connect(**self.conn_params, connect_timeout=3)
             return True
+        except psycopg2.OperationalError as e:
+            # Avoid spamming if connection refused
+            if "connection refused" in str(e).lower() or "timeout" in str(e).lower():
+                # Just print once or keep it short
+                pass 
+            else:
+                print(f"[-] Database connection error: {e}")
+            return False
         except Exception as e:
             print(f"[-] Database connection error: {e}")
             return False

@@ -1,0 +1,1 @@
+GET|https://0ab9003704e9138f80fc122c00b100bb.web-security-academy.net/?search=test||search
