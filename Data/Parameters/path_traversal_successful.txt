@@ -3,12 +3,43 @@ root:0:
 daemon:
 bin:x:
 nobody:
+www-data:
+syslog:
+mysql:
+postgres:
 /bin/bash
 /bin/sh
+/bin/false
+/usr/sbin/nologin
 nologin
+nameserver
+127.0.0.1
 [boot loader]
 [operating systems]
 [extensions]
 ; for 16-bit app support
 [fonts]
 [Mail]
+[MCI Extensions.BAK]
+ECHO is
+Volume Serial Number
+Microsoft Windows
+Program Files
+WINDOWS
+<?php
+<?xml
+<web-app
+<configuration>
+<connectionStrings>
+DB_PASSWORD
+DB_HOST
+DB_USERNAME
+APP_KEY
+SECRET_KEY
+AWS_SECRET
+DocumentRoot
+ServerRoot
+<VirtualHost
+server_name
+upstream
+proxy_pass
