@@ -210478,3 +210478,42 @@ accept: */*
 connection: keep-alive
 cookie: trackingid=<masked>; session=<masked>
 user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",cookie_name_session cookie_name_trackingid,missing,,session_cookie,path_candidate
+login,,GET,session trackingid,"accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: trackingid=<masked>; session=<masked>
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",chrome,,,0,1,20260522_224111,0c83b0708af1438dbc6b6e23ee701125,path_analyze.page.depth_2,/login,,,csrf username password,,"user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: trackingid=<masked>; session=<masked>","accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: trackingid=<masked>; session=<masked>
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",cookie_name_session cookie_name_trackingid,missing,,session_cookie,path_crawl_page
+login,,POST,session trackingid,"accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: trackingid=<masked>; session=<masked>
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",chrome,,,0,0,20260522_224111,ce267346f18748428e20e75ad1084fbd,path_analyze.form_depth_2,/login,,csrf=<token>&username=&password=,csrf username password,,"user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: trackingid=<masked>; session=<masked>","accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: trackingid=<masked>; session=<masked>
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",cookie_name_session cookie_name_trackingid,missing,,session_cookie,path_candidate
+login,,POST,session trackingid,"accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: trackingid=<masked>; session=<masked>
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",chrome,,,0,0,20260522_224111,d38e602f0a284b8ea89694273fb6ceff,path_analyze.form-depth-2,/login,,csrf=<token>&username=&password=,csrf username password,,"user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: trackingid=<masked>; session=<masked>","accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: trackingid=<masked>; session=<masked>
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",cookie_name_session cookie_name_trackingid,missing,,session_cookie,path_candidate
