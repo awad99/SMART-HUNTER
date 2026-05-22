@@ -1,65 +1,141 @@
-# SMART-HUNTER 
+<div align="center">
 
-SMART-HUNTER is an automated, Machine Learning-guided web vulnerability and penetration testing tool. It combines deep site reconnaissance, dual-phase ML-driven vulnerability prediction, and active exploitation to provide a comprehensive security assessment of web applications and network services.
+# 🎯 SMART-HUNTER
 
-## Architecture
+**An Automated, Machine Learning-Guided Web Vulnerability & Penetration Testing Framework**
 
-The project has been refactored into a modular architecture for better maintainability and performance:
+[![Python Version](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://python.org)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-- **`main.py`**: The central orchestrator that manages the scan lifecycle.
-- **`Machine_Learning/`**: AI model architecture, training, and vulnerability prediction.
-    - `Ai_model.py`: Core ML model training logic and dataset management.
-    - `prediction.py`: Dual-phase prediction system (Phase 1: Pre-Recon, Phase 2: Post-Testing).
-- **`Recon/`**:
-    - `url_connection.py`: Deep site reconnaissance, header analysis, and WAF detection.
-- **`vulnerability_scan/`**:
-    - `URL_checkIfhaveVun.py`: Integration with Dalfox, SQLMap, and Commix (WSL-compatible).
-    - `path_Analyze.py`: Advanced path traversal crawling and scanning.
-- **`Data/`**: Centralized storage for datasets, results, and logs.
+*SMART-HUNTER combines deep site reconnaissance, dual-phase machine learning vulnerability prediction, and active exploitation to provide a comprehensive security assessment of web applications and network services.*
 
-## Features
+</div>
 
-- **Dual-Phase ML Prediction**:
-  - **Phase 1 (Pre-Recon)**: Initial risk assessment based on URL structure.
-  - **Phase 2 (Post-Testing)**: Refined prediction using live reconnaissance features and scan results.
-- **Advanced Vulnerability Scanning**:
-  - Built-in checkers for SQLi, XSS, and RCE.
-  - Seamless integration with **SQLMap**, **Dalfox**, and **Commix** using automated WSL path translation for Windows users.
-- **Automated Network Pentesting**:
-  - **Nmap** integration for service discovery.
-  - **Metasploit** (via `pymetasploit3`) for automated exploitation of detected services.
-- **Scalable Reconnaissance**:
-  - Intelligent crawling, form extraction, and WAF identification.
-  - Directory fuzzing via **ffuf**.
+---
 
-## Requirements
+## 🌟 Overview
 
-Ensure the required system binaries are installed (mapped via WSL for Windows):
+SMART-HUNTER is designed for security researchers and penetration testers who need an intelligent, automated workflow. It doesn't just blindly send payloads; it analyzes the target structure, predicts likely vulnerabilities using trained ML models, and orchestrates specialized scanners (like SQLMap, Dalfox, and Commix) to confirm and exploit findings.
 
-- System Tools: `curl`, `nmap`, `bash`
-- Security Tools: `ffuf`, `sqlmap`, `dalfox`, `commix`, `metasploit-framework`
+## 🚀 Key Features
 
-Install Python dependencies:
+### 🧠 Dual-Phase Machine Learning Prediction
+- **Phase 1 (Pre-Recon):** Initial risk assessment based purely on URL structures and parameters.
+- **Phase 2 (Post-Testing):** Refined vulnerability prediction utilizing live reconnaissance features, WAF detection, and active scan results.
 
-```bash
-pip install -r requrement.txt
+### 🛡️ Advanced Vulnerability Scanning
+Built-in and integrated scanners targeting critical web vulnerabilities:
+- **SQL Injection (SQLi):** Comprehensive checks including Error-based, Boolean-based, Time-based, UNION-based, and **Out-of-Band (OOB) DNS Exfiltration** (with native *Interactsh* and *Burp Collaborator* support).
+- **Cross-Site Scripting (XSS):** Reflected, Stored, and DOM-based XSS scanning.
+- **Remote Code Execution (RCE):** Command injection checks via native payloads and Commix.
+- **Insecure Direct Object Reference (IDOR):** Automated enumeration and authorization bypass testing.
+- **Path Traversal:** Advanced directory traversal crawling and LFI/RFI scanning.
+
+### 🔌 Seamless Tool Integration (WSL Compatible)
+SMART-HUNTER natively wraps industry-standard tools, automatically handling Windows Subsystem for Linux (WSL) path translations for Windows users:
+- **SQLMap** for advanced SQL injection.
+- **Dalfox** for fast XSS scanning.
+- **Commix** for OS command injection.
+- **Metasploit Framework** (`pymetasploit3`) for network vulnerability exploitation.
+- **Nmap** for service discovery.
+- **FFuF** for rapid directory and parameter fuzzing.
+
+### 🕵️ Scalable Reconnaissance
+- Intelligent crawling and form extraction.
+- Automatic session/cookie extraction and CSRF token handling.
+- WAF (Web Application Firewall) identification.
+
+---
+
+## 📂 Architecture
+
+The project has been refactored into a highly modular architecture:
+
+```text
+SMART-HUNTER/
+├── main.py                    # Main orchestrator entry point
+├── UI/                        # User Interfaces & Scan Launchers
+│   ├── FullScan.py            # Comprehensive pipeline scanner
+│   ├── sqli_scan.py           # Standalone SQLi scanner
+│   └── ...                    # Other standalone modules
+├── Logic/                     # Core Business Logic
+│   ├── vulnerability_scan/    # Active scanners (SQLi, XSS, RCE, IDOR, Path)
+│   └── Recon/                 # Reconnaissance & Network tools
+├── Data/                      # Storage
+│   ├── Machine_Learning/      # ML models, training logic, and datasets
+│   ├── Payloads/              # Canonical JSON and TXT payload dictionaries
+│   └── Queries/               # Database interaction scripts
+└── README.md                  
 ```
 
-## Usage
+---
 
-### 1. Smart Web Vulnerability Scanner
-To start the ML-guided vulnerability scanner:
+## 🛠️ Requirements & Installation
+
+### System Dependencies
+Ensure the following tools are installed (if running on Windows, these should be accessible via WSL):
+- `curl`, `bash`
+- `nmap`
+- `ffuf`, `sqlmap`, `dalfox`, `commix`
+- `metasploit-framework`
+- `interactsh-client` *(Optional: highly recommended for automated OOB SQLi testing)*
+
+### Python Setup
+Clone the repository and install the dependencies:
+
+```bash
+git clone https://github.com/awad99/SMART-HUNTER.git
+cd SMART-HUNTER
+pip install -r requirements.txt
+```
+
+---
+
+## 💻 Usage
+
+SMART-HUNTER provides both a unified pipeline and standalone modules for targeted testing.
+
+### 1. Smart Web Vulnerability Scanner (Full Pipeline)
+Run the complete ML-guided scanner against a target URL or IP. This module will automatically handle recon, parameter discovery, ML prediction, and active scanning.
+
 ```bash
 python main.py
+# or
+python UI/FullScan.py
 ```
-*The tool will automatically extract cookies (if any), perform dual-phase ML prediction, and orchestrate the scanning modules.*
+*The tool will prompt for the target URL. By default, it will automatically attempt to extract session cookies and perform OOB SQLi testing via Interactsh.*
 
-### 2. Network Exploit Automator
-To scan network infrastructure and launch Metasploit exploits:
+### 2. Standalone Targeted Scanners
+If you only want to test for specific vulnerabilities, use the standalone UI modules.
+
+**Example: Standalone SQLi Scanner**
 ```bash
-python mchine.py
+python UI/sqli_scan.py "https://target.com/page.php?id=1" --oob --interactsh
 ```
-*Ensure `msfrpcd` is running before launching this module.*
+**Flags:**
+- `--cookie`: Provide a session cookie (e.g., `"TrackingId=xyz; session=abc"`)
+- `--thorough`: Force SQLMap to run even if the built-in scanner already confirms a vulnerability.
+- `--oob`: Enable Out-of-Band (DNS exfiltration) SQLi scanning.
+- `--interactsh`: Automatically launch the `interactsh-client` to detect OOB callbacks.
+- `--collaborator <domain>`: Use a manual callback domain (e.g., your Burp Collaborator payload URL) instead of Interactsh.
 
-## Disclaimer
-This tool is intended for ethical hacking, security research, and authorized penetration testing only. Do not use this tool against targets without prior mutual consent. The authors and contributors are not responsible for any misuse, damage, or legal consequences caused by this software.
+### 3. Network Exploit Automator
+To scan network infrastructure and automatically launch Metasploit exploits:
+```bash
+python UI/machine.py
+```
+*(Note: Ensure `msfrpcd` is running locally before launching this module).*
+
+---
+
+## ⚠️ Disclaimer
+
+**SMART-HUNTER is intended for ethical hacking, security research, and authorized penetration testing only.** 
+
+Do not use this tool against targets, networks, or applications without prior, explicit, and mutual consent from the owner. The authors and contributors are not responsible for any misuse, damage, or legal consequences caused by this software. Use it responsibly!
+
+---
+
+<div align="center">
+<i>Built with by awad99 and datawithakram</i>
+</div>

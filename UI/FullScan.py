@@ -41,7 +41,13 @@ def display_banner():
 def get_user_inputs():
     target = input("\nEnter URL or IP Target: ").strip()
     cookie = input("Enter Session Cookie (or leave blank to auto-detect): ").strip()
-    return target, cookie
+    
+    # Enable OOB via Interactsh by default for full scans
+    enable_oob = True
+    use_interactsh = True
+    collaborator_domain = None
+
+    return target, cookie, enable_oob, use_interactsh, collaborator_domain
 
 def auto_extract_cookie(target):
     print(f"\n[*] Attempting to extract session cookie automatically from {target}...")
@@ -91,7 +97,7 @@ def setup_active_scanner(target, cookie, scan_id=None):
         print("[!] ML prediction disabled: no saved model is available and the canonical training datasets are not ready yet.")
     return scanner
 
-def run_url_pentest(target, cookie, scanner, scan_id, stats):
+def run_url_pentest(target, cookie, scanner, scan_id, stats, enable_oob=False, use_interactsh=False, collaborator_domain=None):
     print("\n" + "*"*64)
     print("*  LOGIC PHASE 1: RECON")
     print("*"*64)
@@ -123,7 +129,7 @@ def run_url_pentest(target, cookie, scanner, scan_id, stats):
 
     quick_vulns.extend(pt_vulns)
 
-    main_vulns = URL_checkIfhaveVun.MainestVuln(target, cookie=cookie, scan_id=scan_id, stats=stats)
+    main_vulns = URL_checkIfhaveVun.MainestVuln(target, cookie=cookie, scan_id=scan_id, stats=stats, enable_oob=enable_oob, collaborator_domain=collaborator_domain, use_interactsh=use_interactsh)
     if main_vulns:
         quick_vulns.extend(main_vulns)
 
@@ -154,7 +160,7 @@ def display_scan_summary(confirmed_vulns, candidate_vulns=None):
         print(f"    [{finding_type:13}] [{v.get('confidence', 'unknown').upper():6}] {v.get('type', ''):<35} param: {v.get('parameter', '')}")
     print(f"{'='*64}")
 
-def run_scanner(target, cookie):
+def run_scanner(target, cookie, enable_oob=False, use_interactsh=False, collaborator_domain=None):
     from datetime import datetime
     scan_id = datetime.now().strftime('%Y%m%d_%H%M%S')
     print(f"[*] Starting Global Scan Session: {scan_id}")
@@ -164,7 +170,7 @@ def run_scanner(target, cookie):
     stats.add('scans', 1)
     
     scanner = setup_active_scanner(target, cookie, scan_id=scan_id)
-    confirmed_vulns, candidate_vulns = run_url_pentest(target, cookie, scanner, scan_id, stats)
+    confirmed_vulns, candidate_vulns = run_url_pentest(target, cookie, scanner, scan_id, stats, enable_oob=enable_oob, use_interactsh=use_interactsh, collaborator_domain=collaborator_domain)
     display_scan_summary(confirmed_vulns, candidate_vulns)
     
     parsed = urllib.parse.urlparse(target)
@@ -173,7 +179,7 @@ def run_scanner(target, cookie):
 
 def main():
     display_banner()
-    target, cookie = get_user_inputs()
+    target, cookie, enable_oob, use_interactsh, collaborator_domain = get_user_inputs()
     if not target:
         print("[-] No target"); return
         
@@ -184,7 +190,7 @@ def main():
         print(f"\n[*] Target URL: {target}")
         if cookie: print(f"[*] Using Cookie: {cookie}")
 
-        run_scanner(target, cookie)
+        run_scanner(target, cookie, enable_oob=enable_oob, use_interactsh=use_interactsh, collaborator_domain=collaborator_domain)
     else:
         run_ip_pentest(target)
 

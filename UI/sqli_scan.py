@@ -15,7 +15,7 @@ from vulnerability_scan.Scanner_vulnerability import URLVulnerabilityChecker
 from vulnerability_scan.findings import split_findings
 from Data.Update_Data import get_data_system
 
-def run_standalone_sqli(url, cookie=None, thorough=False):
+def run_standalone_sqli(url, cookie=None, thorough=False, enable_oob=False, collaborator_domain=None, use_interactsh=False):
     print(f"\n{'='*60}")
     print(f"      SMART-HUNTER: STANDALONE SQLi SCANNER")
     print(f"{'='*60}")
@@ -24,7 +24,12 @@ def run_standalone_sqli(url, cookie=None, thorough=False):
         print(f"[*] Cookie: [PROVIDED]")
     
     # Initialize the modularized checker
-    checker = URLVulnerabilityChecker(cookie=cookie)
+    checker = URLVulnerabilityChecker(
+        cookie=cookie, 
+        enable_oob=enable_oob, 
+        collaborator_domain=collaborator_domain, 
+        use_interactsh=use_interactsh
+    )
     checker.current_target_url = url
     
     # 1. Parameter Discovery
@@ -104,7 +109,15 @@ def main():
     if not target: return
     cookie = input("Enter Session Cookie (optional): ").strip()
     thorough = input("Enable Thorough Scan (SQLMap) [y/N]: ").strip().lower() == 'y'
-    run_standalone_sqli(target, cookie if cookie else None, thorough)
+    oob = input("Enable Out-of-Band (OOB) Scan? [y/N]: ").strip().lower() == 'y'
+    interactsh = False
+    collab_domain = None
+    if oob:
+        interactsh = input("Use Interactsh for callback? (requires interactsh-client) [Y/n]: ").strip().lower() != 'n'
+        if not interactsh:
+            collab_domain = input("Enter manual collaborator domain (e.g., xxx.burpcollaborator.net): ").strip()
+            
+    run_standalone_sqli(target, cookie if cookie else None, thorough, oob, collab_domain, interactsh)
 
 if __name__ == "__main__":
     if len(sys.argv) > 1:
@@ -112,7 +125,10 @@ if __name__ == "__main__":
         parser.add_argument("url", help="Target URL to scan")
         parser.add_argument("--cookie", help="Session cookie (optional)")
         parser.add_argument("--thorough", action="store_true", help="Force SQLMap even if built-in finds SQLi")
+        parser.add_argument("--oob", action="store_true", help="Enable Out-of-Band (OOB) SQLi scanning")
+        parser.add_argument("--collaborator", help="Manual collaborator domain for OOB scanning")
+        parser.add_argument("--interactsh", action="store_true", help="Use Interactsh for OOB callbacks")
         args = parser.parse_args()
-        run_standalone_sqli(args.url, args.cookie, args.thorough)
+        run_standalone_sqli(args.url, args.cookie, args.thorough, args.oob, args.collaborator, args.interactsh)
     else:
         main()
