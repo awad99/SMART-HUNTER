@@ -1,1 +1,1 @@
-POST|https://0ac3001d044c6e5e8053082e002c00b1.web-security-academy.net/login|csrf=e90yTPmt8yG1QTb6sYsTIdu51l7Q4OfL&username=scanner&password=test|username,password|https://0ac3001d044c6e5e8053082e002c00b1.web-security-academy.net/my-account
+POST|https://0ac3001d044c6e5e8053082e002c00b1.web-security-academy.net/login|csrf=Ly9V4EfM9cUviltPD3S1da8z9jag3Mpp&username=scanner&password=test|username,password|https://0ac3001d044c6e5e8053082e002c00b1.web-security-academy.net/my-account
