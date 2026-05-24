@@ -130176,3 +130176,220 @@ x-frame-options: SAMEORIGIN",response_content_type_html security_header_x_frame_
 20260524_174216,65cf8cb632ba4d1f84e76d8c8b53a40f,path_analyze.form_depth_1,,0.0,,,,,,,,,,,0,0,0,0,0.0,0,path_candidate
 20260524_174216,0bcf330923334e799fa7d438d2629ff9,path_analyze.form_depth_1,,0.0,,,,,,,,,,,0,0,0,0,0.0,0,path_candidate
 20260524_174216,35ef607519464345a7940e8b63879f95,path_analyze.form_depth_1,,0.0,,,,,,,,,,,0,0,0,0,0.0,0,path_candidate
+20260524_223128,f255f7046e9449148779df2c525d6fda,recon.track_redirects,200,771.458,text/html; charset=utf-8,Exploiting XXE using external entities to retrieve files,"Exploiting XXE using external entities to retrieve files Exploiting XXE using external entities to retrieve files Back&nbsp;to&nbsp;lab&nbsp;description&nbsp; LAB Not solved Home | Caution Sign $12.92 View details Inflatable Dartboard $99.12 View details Six Pack Beer Belt $24.22 View details More Than Just Birdsong $24.24 View details Eggtastic, Fun, Food Eggcessories $60.57 View details There is No &apos;I&apos; in Team $34.25 View details Potato Theater $23.64 View details Giant Pillow Thing $75.00 View details Giant Grasshopper $46.25 View details Sprout More Brain Power $38.88 View details Folding Gadgets $59.70 View details Sarcastic",,,"content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN
+content-encoding: gzip
+content-length: 1569","content-encoding: gzip
+content-length: 1569
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",response_content_type_html security_header_x_frame_options_present,x_frame_options,,4,1,0,10645,0.06,1,passive_trace
+20260524_223128,885ede6b38b941429211b1dc2cbb18fa,recon.response_analysis,,0.0,,,,,,,,,,,0,0,0,0,0.0,0,response_analysis
+20260524_223128,e63b85eb6fe14ca2b6be920ecac84a09,path_analyze.page.depth_0,200,663.823,text/html; charset=utf-8,Exploiting XXE using external entities to retrieve files,"Exploiting XXE using external entities to retrieve files Exploiting XXE using external entities to retrieve files Back&nbsp;to&nbsp;lab&nbsp;description&nbsp; LAB Not solved Home | Caution Sign $12.92 View details Inflatable Dartboard $99.12 View details Six Pack Beer Belt $24.22 View details More Than Just Birdsong $24.24 View details Eggtastic, Fun, Food Eggcessories $60.57 View details There is No &apos;I&apos; in Team $34.25 View details Potato Theater $23.64 View details Giant Pillow Thing $75.00 View details Giant Grasshopper $46.25 View details Sprout More Brain Power $38.88 View details Folding Gadgets $59.70 View details Sarcastic",,,"content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN
+content-encoding: gzip
+connection: close
+content-length: 1569","connection: close
+content-encoding: gzip
+content-length: 1569
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",response_content_type_html security_header_x_frame_options_present,x_frame_options,,5,1,0,10645,0.06,1,path_crawl_page
+20260524_223128,18ace92a847b45c4949d58451ba1f44b,path_analyze.page.depth_1,200,696.313,text/html; charset=utf-8,Exploiting XXE using external entities to retrieve files,"Exploiting XXE using external entities to retrieve files Exploiting XXE using external entities to retrieve files Back&nbsp;to&nbsp;lab&nbsp;description&nbsp; LAB Not solved Home | Fur Babies $31.61 Description: Fur babies is a new concept for those of you who live in apartments where the Landlord doesn't allow pets. We have a huge selection of cute animal suits you can dress your babies in. All suits are made from breathable fabrics keeping your little ones cool, or warm, all year round. If you want a rabbit, what the heck, have a rabbit. If the landlord makes an appearance, just slip the hood down and he/she need never know. The best bit is we all know babies love raw veggies, you can hand feed them and talk to them in that silly voice reserved for animals and children. You will never be refused entry to your favorite restaurants again, your fur baby will be at your side wherever you go. They conveniently poop in a diaper so no early morning walks either. Have the best of both worlds, and surprise your friends and family if you purchase from one of our Wild and Rare ranges. Join the trendsetters of Beverly Hills, show off on Instagram, but remember a fur baby is for life, and not just for Christmas. London Paris Milan Check stock Return to list",redirect_hint,,"content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN
+content-encoding: gzip
+connection: close
+content-length: 1721","connection: close
+content-encoding: gzip
+content-length: 1721
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",response_content_type_html security_header_x_frame_options_present,x_frame_options,,5,1,0,4934,0.06,1,path_crawl_page
+20260524_223128,47c85ab5f84841f986a64170140fc59a,path_analyze.page.depth_1,200,679.986,text/html; charset=utf-8,Exploiting XXE using external entities to retrieve files,"Exploiting XXE using external entities to retrieve files Exploiting XXE using external entities to retrieve files Back&nbsp;to&nbsp;lab&nbsp;description&nbsp; LAB Not solved Home | Sprout More Brain Power $38.88 Description: At a time when natural remedies, things we can freely grow in our gardens, have their legality being questioned, we are delighted to inform you that Brussel Sprouts have now been added to the list. Yes, you can now happily order these healing gems directly from us with express shipping. As you can no longer grow these yourself due to the new restrictions being imposed on the product, indeed the penalty is high should you now attempt to do so, we are proud to be the first company to obtain a license for Sprout More Brain Power. Although the starting price seems astronomically high, one sprout can be divided into peelable layers. Each layer will enhance your performance at work for approximately two hours. If you find a dull brain moment coming on you can pop in another layer, but must not exceed the stated dose of one sprout per day. As tempting as it might be to do so, as your brain buzzes with award-winning ideas, excessive use can lead to social isolation and stomach pain. So don't delay, improve your prospects with your one a day, and Sprout More Brain Power. London Paris Milan Check stock Return to list",redirect_hint,,"content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN
+content-encoding: gzip
+connection: close
+content-length: 1744","connection: close
+content-encoding: gzip
+content-length: 1744
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",response_content_type_html security_header_x_frame_options_present,x_frame_options,,5,1,0,5004,0.06,1,path_crawl_page
+20260524_223128,8923bf6b63e94c7d88e8fe4d7fa1e48e,path_analyze.page.depth_1,200,730.975,text/html; charset=utf-8,Exploiting XXE using external entities to retrieve files,"Exploiting XXE using external entities to retrieve files Exploiting XXE using external entities to retrieve files Back&nbsp;to&nbsp;lab&nbsp;description&nbsp; LAB Not solved Home | Pest Control Umbrella $46.58 Description: We recently discovered, by accident, that vermin and all manner of pets and pests are attracted to umbrellas. Not to just any umbrellas though, they have to be long, pointy ones. It is very hard these days to get hold of an umbrella that isn't collapsible, these will not work as pest control. So, we decided to start designing and manufacturing our unique Pest Control Umbrella, the only genuine umbrella that will do the job. We have all copyright on these brollies and no other companies are allowed to remotely hint that their umbrellas can be used to rid yourself of those pesky pests. Never knowingly undersold we guarantee a price match on any other form of pest control, but not if you use a different umbrella for the job. Easy to use, just pop under your arm, pointy end facing behind you and watch the creatures follow your lead. By purchasing this highly effective product you will be well on your way to starting up your own pest control business, a little investment now will pay great dividends in the future for you and your family. London Paris Milan Check stock Return to list",redirect_hint,,"content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN
+content-encoding: gzip
+connection: close
+content-length: 1724","connection: close
+content-encoding: gzip
+content-length: 1724
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",response_content_type_html security_header_x_frame_options_present,x_frame_options,,5,1,0,4986,0.06,1,path_crawl_page
+20260524_223128,96d49199d04b4a6997bbdbfa477f52f2,path_analyze.page.depth_1,200,728.31,text/html; charset=utf-8,Exploiting XXE using external entities to retrieve files,"Exploiting XXE using external entities to retrieve files Exploiting XXE using external entities to retrieve files Back&nbsp;to&nbsp;lab&nbsp;description&nbsp; LAB Not solved Home | Roulette Drinking Game $58.61 Description: The Roulette Drinking Game - Because drinking is more fun when you have no idea what you're about to get! Get the party started and get your guests in the spirit with this novelty drinking game! This spinning wheel of booze comes with 16 shot glasses to add whatever you like to. Choose whatever you please and add as much or as little as you like to get those palms sweating of everyone playing. Don't be afraid to get a bit daring as well and spice things up with a dash of chilli vodka or anything else you can find in your liquor cabinet. The Roulette Drinking Game is the ideal gift and addition for house parties, hen do's and stag do's. Break the ice for those who haven't met and get your revenge on those you know all too well. London Paris Milan Check stock Return to list",redirect_hint,,"content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN
+content-encoding: gzip
+connection: close
+content-length: 1560","connection: close
+content-encoding: gzip
+content-length: 1560
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",response_content_type_html security_header_x_frame_options_present,x_frame_options,,5,1,0,4668,0.06,1,path_crawl_page
+20260524_223128,3941f5eceadf408e9123484023a346bb,path_analyze.page.depth_1,200,798.939,text/html; charset=utf-8,Exploiting XXE using external entities to retrieve files,"Exploiting XXE using external entities to retrieve files Exploiting XXE using external entities to retrieve files Back&nbsp;to&nbsp;lab&nbsp;description&nbsp; LAB Not solved Home | Folding Gadgets $59.70 Description: Folding smartphones that open up to reveal a handy little tablet are about to hit the market. Is folding the future of technology? As gadget trends go from large to small, back to large again, small again, huge, I guess folding has to be the answer, the best of both worlds. They are still bulky though, once we start folding everything things have a tendency to get thicker. Purses and briefcases will need to be adjusted to accommodate these new convenient, but bulky items. With this new concept, we can really make outside spaces and coffee houses our home offices. Pitch up in the park on a sunny day, and dig deep into your oversized carpet bag, with magician-like prowess you will be able to unfold your desk, PC, speakers, keyboards and mice until you have everything you need to start your days work. Even your travel mug and flask will conveniently unfold leaving you hydrated in that hot summers sun. I was a bit of a trendsetter in this department, I have always folded my paper money, my grandmother used to do it and I guess the influence stuck with me. Little did granny know that 40 years on we would all be folding our money, and everything else we can attach minuscule hinges to. We have always folded our laundry as well, that goes back centuries. Like all good inventions, it takes time to bring these things to market. To be honest I've been crying out for a tablet that makes phone calls ever since my eyesight deteriorated. Sadly it will probably only be affordable to those that can afford laser surgery, and they're just being greedy as they have no problems looking at a tiny cell phone screen. I hate touch screens and have had a folding keyboard for yonks, give me a giant Blackberry any day! London Paris Milan Check stock Return to list",redirect_hint,,"content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN
+content-encoding: gzip
+connection: close
+content-length: 2082","connection: close
+content-encoding: gzip
+content-length: 2082
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",response_content_type_html security_header_x_frame_options_present,x_frame_options,,5,1,0,5651,0.06,1,path_crawl_page
+20260524_223128,b937a286f6e84b14a8cbd42e682a4d03,path_analyze.page.depth_1,200,699.097,text/html; charset=utf-8,Exploiting XXE using external entities to retrieve files,"Exploiting XXE using external entities to retrieve files Exploiting XXE using external entities to retrieve files Back&nbsp;to&nbsp;lab&nbsp;description&nbsp; LAB Not solved Home | Single Use Food Hider $19.08 Description: The days of finding your favorite lunch stolen from the fridge in the workplace are over. All manner of items can be hidden within the flesh of this single-use banana skin. Pop them in and seal it up, after all, no-one is going to pinch your banana, are they? We have a dedicated team of banana eaters here at HQ in Arizona, all in need of boosting their potassium intake. We pride ourselves in being able to support the community and reduce waste by selling on the by-product to you. No need to leave angry sticky notes all around the kitchen, no need to waste valuable resources by labeling all your foodstuffs anymore. We are proud of our award-winning product which has earned us a number of small prizes for innovation, propelling us into the World Wide market. We can guarantee all of our bananas are eaten in Europe and the US, ensuring an ethically sourced product, leading to convenience and peace of mind for all of our customers. We offer a 30-day money back guarantee providing the banana skin is returned to us in its original form, and must still be yellow. London Paris Milan Check stock Return to list",redirect_hint,,"content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN
+content-encoding: gzip
+connection: close
+content-length: 1762","connection: close
+content-encoding: gzip
+content-length: 1762
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",response_content_type_html security_header_x_frame_options_present,x_frame_options,,5,1,0,5016,0.06,1,path_crawl_page
+20260524_223128,c9985469670344d590ae3557832ce295,path_analyze.page.depth_1,200,837.919,text/html; charset=utf-8,Exploiting XXE using external entities to retrieve files,"Exploiting XXE using external entities to retrieve files Exploiting XXE using external entities to retrieve files Back&nbsp;to&nbsp;lab&nbsp;description&nbsp; LAB Not solved Home | There is No 'I' in Team $34.25 Description: We've all been there, a deadline is approaching and everyone is pulling together. Well, not quite everyone. There's always one colleague who secretly wishes you will fail, and they will jump in and save the day, solo! Not anymore. With our new 'Team' alert there will no longer be any renegades in the pack. The master team sign will sit proudly in your conference room; each time someone uses the word 'I' lights will flash and an alarm will sound. Ear piercing sirens that no-one will ever want to hear again. Smaller units are available to dot around your office building, there won't be anywhere safe for a secret meeting, or plots to overthrow your company. With a control panel at your fingertips, the hidden cameras will swiftly pinpoint the culprits, and you will able to talk to them directly through the units. Our motto, 'teamwork makes dreams work', says it all. Stamp out the solo flying, get ahead wannabes. We have a team (there's that word again) of highly skilled installers who will guide you through the process and give you a free estimate today! London Paris Milan Check stock Return to list",redirect_hint,,"content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN
+content-encoding: gzip
+connection: close
+content-length: 1771","connection: close
+content-encoding: gzip
+content-length: 1771
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",response_content_type_html security_header_x_frame_options_present,x_frame_options,,5,1,0,5005,0.06,1,path_crawl_page
+20260524_223128,f2545c68be4b416ea73be3c1a204b836,path_analyze.page.depth_1,200,850.734,text/html; charset=utf-8,Exploiting XXE using external entities to retrieve files,"Exploiting XXE using external entities to retrieve files Exploiting XXE using external entities to retrieve files Back&nbsp;to&nbsp;lab&nbsp;description&nbsp; LAB Not solved Home | Cheshire Cat Grin $8.51 Description: We've all been there, found ourselves in a situation where we find it hard to look interested in what our colleagues, bosses, friends, and family are saying. With our smile insert, you can now fake it like a pro. Easy to use and completely hypoallergenic with one size fits all. Ever glazed over as your pals regale you with tales of their day on the golf course with the boss? This is the product for you. Not only will you appear fully engaged and happy in their company, but you will also be the object of everyone's eye as they fawn over your bright, white Cheshire Cat Grin. No need to spill the beans on this one, this insert is available by invitation only and is protected by the rules of the magician's code. In order to maintain the ruse we will regularly enhance this product by changing the size and shape of the teeth, but always guarantee a huge smile to be proud of. For those of you unlucky enough to have lost the essential front smiling teeth we can make smiles to order. Grab yourself some poster putty, bite down on it and we'll do the rest. Say 'yes' to success today and keep those crashing bores as happy as you look. London Paris Milan Check stock Return to list",redirect_hint,,"content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN
+content-encoding: gzip
+connection: close
+content-length: 1796","connection: close
+content-encoding: gzip
+content-length: 1796
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",response_content_type_html security_header_x_frame_options_present,x_frame_options,,5,1,0,5072,0.06,1,path_crawl_page
+20260524_223128,6119dbd0ce6a4d9ca90592ae367ac31f,path_analyze.page.depth_1,200,830.099,text/html; charset=utf-8,Exploiting XXE using external entities to retrieve files,"Exploiting XXE using external entities to retrieve files Exploiting XXE using external entities to retrieve files Back&nbsp;to&nbsp;lab&nbsp;description&nbsp; LAB Not solved Home | Giant Pillow Thing $75.00 Description: Giant Pillow Thing - Because, why not? Have you ever been sat at home or in the office and thought, I'd much rather sit in something that a team of Gurkha guides couldn't find me in? Well, look no further than this enormous, luxury pillow. It's ideal for car parks, open air fields, unused basements and big living rooms. Simply drag it in with your team of weight lifters and hide from your loved ones for days. This is the perfect product to lounge in comfort in front of the TV on, have a family reunion in, or land on after jumping out of a plane. London Paris Milan Check stock Return to list",redirect_hint,,"content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN
+content-encoding: gzip
+connection: close
+content-length: 1498","connection: close
+content-encoding: gzip
+content-length: 1498
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",response_content_type_html security_header_x_frame_options_present,x_frame_options,,5,1,0,4471,0.06,1,path_crawl_page
+20260524_223128,d0e8242b5a5e407ea63bcf794b836fe7,path_analyze.page.depth_1,200,844.954,text/html; charset=utf-8,Exploiting XXE using external entities to retrieve files,"Exploiting XXE using external entities to retrieve files Exploiting XXE using external entities to retrieve files Back&nbsp;to&nbsp;lab&nbsp;description&nbsp; LAB Not solved Home | Inflatable Dartboard $99.12 Description: Forget the traditional pocket travel games, things have just got much more exciting. Now you can play darts wherever you choose with our inflatable dartboard, and folding darts. All you need is a pair of lungs and there she blows. Ready to play in seconds. With a handy hanging ring, puncture kit, hammer, and approximately 1000 nails, this is the complete starter set for any darts enthusiast. They said it couldn't be done, they were wrong. Our team of top scientists, with a generous donation from the US Darts Masters, worked tirelessly for over three years to succeed with this major project. Now it's time to reap the rewards as it can be yours today at a very competitive price. No stone has been left unturned in the design and manufacture of our inflatable dartboard, tried and tested by many amateurs and professionals alike, we can't see what could possibly go wrong. All our product testing and focus groups were organized by past contestants of The Apprentice, guaranteeing accurate feedback and trustworthy results. As we launch this product for the first time we are offering a small sum to encourage you to leave feedback on our site, this way our customer base can flourish as they see how successful the inflatable dartboard has become. Order, sign up, play, and feedback to us today. London Paris Milan Check stock Return to list",redirect_hint,,"content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN
+content-encoding: gzip
+connection: close
+content-length: 1877","connection: close
+content-encoding: gzip
+content-length: 1877
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",response_content_type_html security_header_x_frame_options_present,x_frame_options,,5,1,0,5245,0.06,1,path_crawl_page
+20260524_223128,ebc80e14b8c8416294cea0d2f1cbf525,path_analyze.page.depth_1,200,862.246,text/html; charset=utf-8,Exploiting XXE using external entities to retrieve files,"Exploiting XXE using external entities to retrieve files Exploiting XXE using external entities to retrieve files Back&nbsp;to&nbsp;lab&nbsp;description&nbsp; LAB Not solved Home | Eggtastic, Fun, Food Eggcessories $60.57 Description: Mealtimes never need be boring again. Whether you use an egg cup or not there's no need to let standards slip. For a modest sum, you can now own a selection of googly eyes, feathers, buttons and edible glitter to ensure your food is dressed to impress. Perhaps you want to impress a date, or surprise a loved one with breakfast in bed - forget flowers and chocolates. Your partner will be bowled over by your originality, and literally tickled pink by the cute feather accessories. Make your kitchen a fun place to prepare food, what better way to start cooking than to have all your produce watching you. Egging you on, encouraging you to do your best. You don't even need to stop at food, you can accessorize all those dull bits and bobs you have lying around your home. You get plenty of bang for your buck, and for one day only we are offering the first one hundred customers an extra set of oversized googly eyes for free. Imagine them on the bonnet of your car, they are sure to brighten the day of passers-by. What are you waiting for? Get your complete entertaining package today. London Paris Milan Check stock Return to list",redirect_hint,,"content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN
+content-encoding: gzip
+connection: close
+content-length: 1774","connection: close
+content-encoding: gzip
+content-length: 1774
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",response_content_type_html security_header_x_frame_options_present,x_frame_options,,5,1,0,5022,0.06,1,path_crawl_page
+20260524_223128,c95498709b9542dc91a710cae35a0fb4,path_analyze.page.depth_1,200,775.778,text/html; charset=utf-8,Exploiting XXE using external entities to retrieve files,"Exploiting XXE using external entities to retrieve files Exploiting XXE using external entities to retrieve files Back&nbsp;to&nbsp;lab&nbsp;description&nbsp; LAB Not solved Home | More Than Just Birdsong $24.24 Description: There was a time when the only decorations you would see on the wires of a wooden utility pole were socks and baseball boots; the odd colorful kite as well if you were lucky. We have come up with a more desirable way to liven up those ugly overhead wires. Our collection of musical notes are made from electro resistant materials ensuring they are perfectly safe even following a surge, or a lightning strike. What's more exciting though, is we will customize all our crotchets and quavers so you can create a real musical score. You choose the music and we will do the rest. The treble clef even has an inbuilt bird feeder to keep the birds whistling a happy tune throughout the stark winter days. Pleasing to the eye, as well as kind to the local wildlife, you can buy safe in the knowledge you are doing your own little bit for planet earth. Be the trendsetter you have always wanted to be, order your music without delay. London Paris Milan Check stock Return to list",redirect_hint,,"content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN
+content-encoding: gzip
+connection: close
+content-length: 1700","connection: close
+content-encoding: gzip
+content-length: 1700
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",response_content_type_html security_header_x_frame_options_present,x_frame_options,,5,1,0,4864,0.06,1,path_crawl_page
+20260524_223128,934f9f9292e14bc486f885d60f22f06c,path_analyze.page.depth_1,200,903.029,text/html; charset=utf-8,Exploiting XXE using external entities to retrieve files,"mously threatening size, and train them to bite using the keyword, 'bite'. This is particularly useful when other pet owners aren't put off by its peculiarities and insist on chatting 'animal' with you. The grasshoppers are surprisingly easy to keep. They will keep your home free of bugs and vermin and need little else to eat. They are slightly jumpy about being taken out on a leash, but with practice, you will find a way to fall in step quite quickly. This particular breed has an exceptionally long lifespan and can be passed down through the generations. The grasshopper hasn't been cat, dog or child tested so we highly recommend not having any visit your home. Can be housed with other grasshoppers, an older quiet one could help to show it the ropes and understand the rules of the house. London Paris Milan Check stock Return to list",exception_trace_signature redirect_hint,,"content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN
+content-encoding: gzip
+connection: close
+content-length: 1776","connection: close
+content-encoding: gzip
+content-length: 1776
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",response_content_type_html security_header_x_frame_options_present,x_frame_options,,5,1,0,5045,0.06,1,path_crawl_page
+20260524_223128,c7ac5c29ab9a400d8a3512bc26a4a581,path_analyze.page.depth_1,200,919.316,text/html; charset=utf-8,Exploiting XXE using external entities to retrieve files,"Exploiting XXE using external entities to retrieve files Exploiting XXE using external entities to retrieve files Back&nbsp;to&nbsp;lab&nbsp;description&nbsp; LAB Not solved Home | BBQ Suitcase $97.92 Description: Get grilling on the go thanks to this super-handy BBQ Suitcase! Have fun in the sun and take this practical BBQ with you. With its handy travel design, it's easy to pick up, clean and transport. Designed for ultimate ease and safety, the BBQ Suitcase is an ideal gift for any loved one this summer who's great at grilling. This stylish suitcase design is also perfect for camping trips and music festivals. It's coal powered too to guarantee that extra flavour for your food and its stainless steel design means it's easy to clean and lightweight to carry around! London Paris Milan Check stock Return to list",redirect_hint,,"content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN
+content-encoding: gzip
+connection: close
+content-length: 1475","connection: close
+content-encoding: gzip
+content-length: 1475
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",response_content_type_html security_header_x_frame_options_present,x_frame_options,,5,1,0,4485,0.06,1,path_crawl_page
+20260524_223128,8fad675b3cc246ceb1f48f9f1be726ad,path_analyze.page.depth_1,200,938.607,text/html; charset=utf-8,Exploiting XXE using external entities to retrieve files,"Exploiting XXE using external entities to retrieve files Exploiting XXE using external entities to retrieve files Back&nbsp;to&nbsp;lab&nbsp;description&nbsp; LAB Not solved Home | Com-Tool $75.73 Description: You Need Never Look Anyone In The Eye Again Com-Tool is delighted to bring you this revolutionary concept in the world of communication. It does exactly what it says on the tin. An innovative new way to socialize and enjoy live major events with the flick of a switch (finger on a touchscreen). Feedback has been phenomenal as Com-Tool is being introduced into a variety of social settings: 'I was so shy on my wedding day, Com-Tool came to the rescue as everyone followed the service on their Coms. I was terrified I'd mess up on my vows, but we exchanged them via a guests' Whatsapp group, I'm a great touchscreen typist so it was word perfect on the day.' 'I was so excited to get tickets to see my favorite band, I was able to record the entire event on Com-Tool, it was almost like being there.' 'Com-Tool helped me in my search for true love. I've been able to take photos of myself and add cute little filters, beauty mode is awesome, I look ten years younger and almost a completely different person.' Don't just take our word for it, take theirs. Join the merry band of satisfied customers today. London Paris Milan Check stock Return to list",redirect_hint,,"content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN
+content-encoding: gzip
+connection: close
+content-length: 1792","connection: close
+content-encoding: gzip
+content-length: 1792
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",response_content_type_html security_header_x_frame_options_present,x_frame_options,,5,1,0,5050,0.06,1,path_crawl_page
+20260524_223128,b681cab4cf8744ae8c0bcc1be060898a,path_analyze.page.depth_1,200,1011.821,text/html; charset=utf-8,Exploiting XXE using external entities to retrieve files,"Exploiting XXE using external entities to retrieve files Exploiting XXE using external entities to retrieve files Back&nbsp;to&nbsp;lab&nbsp;description&nbsp; LAB Not solved Home | ZZZZZZ Bed - Your New Home Office $32.08 Description: We are delighted to introduce you to our new, state of the art, home office. ZZZZZZ Bed is a revolutionary space-saving concept for those of you struggling to fit everything into your tiny home. But it's not just about its useful integration in your existing room, it's also about the convenience it offers in your work and leisure time. Picture this, you are halfway through your working day and it's time for a well-earned nap. You will be able to save time by moving your work to one side, as you lie back and drift off without interrupting the natural flow of the day. When you've had your power nap, and are ready to get back to it everything is there waiting for you. Nothing can offer you a work-life balance like the ZZZZZZ bed can. Sleep in comfort when you need to, whatever time of day it is. Wake up and work any time sleep is getting the better of you, your office will always be at your fingertips. Call us today for a free quote and to discuss any of our innovative add-ons you will wonder how you ever lived without London Paris Milan Check stock Return to list",redirect_hint,,"content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN
+content-encoding: gzip
+connection: close
+content-length: 1724","connection: close
+content-encoding: gzip
+content-length: 1724
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",response_content_type_html security_header_x_frame_options_present,x_frame_options,,5,1,0,4974,0.06,1,path_crawl_page
+20260524_223128,2741279be6b446adb6df9d9ffe4f550c,path_analyze.page.depth_1,200,1069.446,text/html; charset=utf-8,Exploiting XXE using external entities to retrieve files,"Exploiting XXE using external entities to retrieve files Exploiting XXE using external entities to retrieve files Back&nbsp;to&nbsp;lab&nbsp;description&nbsp; LAB Not solved Home | Caution Sign $12.92 Description: Alert your loved ones to the perils of the bathroom before it's too late thanks to this novelty sign. Perfect for home or even the office, be sure to pop it under your arm and take it to the loo when you're going for an extended visit. Its bright yellow colour and red caution sign means no one can ever yell at you for not forewarning them what they have to endure following you into the restroom. The foldable design means you simply leave it out as long as is needed and collapse it when it's safe to return. The sign is also double sided to be absolutely certain that there will be no confusion! It's the ideal secret Santa gift for that co-worker, you know the one! It also makes a great gag gift and stocking filler! Be warned and stay safe with this toilet caution sign! London Paris Milan Check stock Return to list",redirect_hint,,"content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN
+content-encoding: gzip
+connection: close
+content-length: 1590","connection: close
+content-encoding: gzip
+content-length: 1590
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",response_content_type_html security_header_x_frame_options_present,x_frame_options,,5,1,0,4705,0.06,1,path_crawl_page
+20260524_223128,7c65541253f94b71904ae43fde742e2a,path_analyze.page.depth_1,200,1035.05,text/html; charset=utf-8,Exploiting XXE using external entities to retrieve files,"Exploiting XXE using external entities to retrieve files Exploiting XXE using external entities to retrieve files Back&nbsp;to&nbsp;lab&nbsp;description&nbsp; LAB Not solved Home | Six Pack Beer Belt $24.22 Description: The Six Pack Beer Belt - because who wants just one beer? Say goodbye to long queues at the bar thanks to this handy belt. This beer belt is fully adjustable up to 50' waist, meaning you can change the size according to how much beer you're drinking. With its camouflage design, it's easy to sneak beer into gigs, parties and festivals. This is the perfect gift for a beer lover or just someone who hates paying for drinks at the bar! Simply strap it on and load it up with your favourite beer cans or bottles and you're off! Thanks to this sturdy design, you'll always be able to boast about having a six pack. Buy this adjustable belt today and never go thirsty again! London Paris Milan Check stock Return to list",redirect_hint,,"content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN
+content-encoding: gzip
+connection: close
+content-length: 1550","connection: close
+content-encoding: gzip
+content-length: 1550
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",response_content_type_html security_header_x_frame_options_present,x_frame_options,,5,1,0,4597,0.06,1,path_crawl_page
+20260524_223128,10d0bc1be6e142db94a38623f5d9517a,path_analyze.page.depth_1,200,844.677,text/html; charset=utf-8,Exploiting XXE using external entities to retrieve files,"Exploiting XXE using external entities to retrieve files Exploiting XXE using external entities to retrieve files Back&nbsp;to&nbsp;lab&nbsp;description&nbsp; LAB Not solved Home | Sarcastic 9 Ball $49.99 Description: Ever find yourself asking stupid questions that you should know the answer to? Luckily the Sarcastic 9 Ball is here to put an end to obvious questions! With blunt and brutally honest answers like: 'Well, duh!' and 'Yes, if you leave me alone!' you and your friends will get the right answer every shake, albeit with a withering put down to boot. The Sarcastic Nine Ball is the perfect gift for that loved one or friend that just won't let up with those nagging questions. Give it as a present, or simply carry it with you and get an ironic answer for their stupidity every time! This product is Ridley's spin on the magic eight ball that traditional offers sound advice and guidance, whereas the Nine Ball takes a far blunter approach, an approach that's well needed sometimes. Get your own back on those annoying question askers or give as a gift to someone who's confused constantly! London Paris Milan Check stock Return to list",redirect_hint,,"content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN
+content-encoding: gzip
+connection: close
+content-length: 1651","connection: close
+content-encoding: gzip
+content-length: 1651
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",response_content_type_html security_header_x_frame_options_present,x_frame_options,,5,1,0,4818,0.06,1,path_crawl_page
+20260524_223128,5d670a3e226c4760a73b504403dfce1d,path_analyze.page.depth_1,200,765.253,text/html; charset=utf-8,Exploiting XXE using external entities to retrieve files,"Exploiting XXE using external entities to retrieve files Exploiting XXE using external entities to retrieve files Back&nbsp;to&nbsp;lab&nbsp;description&nbsp; LAB Not solved Home | Potato Theater $23.64 Description: Welcome to a new way for your children to play 'make believe' with our patent pending Potato Theater. Almost everything they need to perform plays for their friends and family can be found around the house. But we have the magic ingredients to make the performance as realistic and as exciting as possible. We have produced a comprehensive list of how to bring your plays to life, from googling plays, to links to places to buy the essential googly eyes, and where to get pens for drawing the facial expressions. A number of miniature props will also be needed to suspend disbelief, and ensure a realistic perspective. We can tell you where to buy these as well. We really are the only one stop shop for Potato Theater, subscribe to our ebook today and find out how to bring a little imagination into the lives of your little ones. You will discover your Potato Theater can be expanded by using other fruit and vegetables, and which of these last the longest in your refrigerator. One quick download and your rainy day will be transformed, as soon as you buy everything you need to bring your spuds to life. Send us your videos and we will share our favorite ones on our website, and social media pages. Happy shopping. London Paris Milan Check stock Return to list",redirect_hint,,"content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN
+content-encoding: gzip
+connection: close
+content-length: 1786","connection: close
+content-encoding: gzip
+content-length: 1786
+content-type: text/html; charset=utf-8
+x-frame-options: SAMEORIGIN",response_content_type_html security_header_x_frame_options_present,x_frame_options,,5,1,0,5149,0.06,1,path_crawl_page
+20260524_223128,20310ee5e1b746389ab296d3091d0718,path_analyze.form_depth_1,,0.0,,,,,,,,,,,0,0,0,0,0.0,0,path_candidate
+20260524_223128,279bd9fd81404c08918b55aa0fdf5277,path_analyze.form_depth_1,,0.0,,,,,,,,,,,0,0,0,0,0.0,0,path_candidate
+20260524_223128,ce0e91d554c148afa2a42eb5f5b60337,path_analyze.form_depth_1,,0.0,,,,,,,,,,,0,0,0,0,0.0,0,path_candidate
+20260524_223128,21bb8de13676476bbfc8ed87e6aa1769,path_analyze.form_depth_1,,0.0,,,,,,,,,,,0,0,0,0,0.0,0,path_candidate
+20260524_223128,acb2620b5ed94c25ab2c826db1a7f329,path_analyze.form_depth_1,,0.0,,,,,,,,,,,0,0,0,0,0.0,0,path_candidate
+20260524_223128,928ae3e34725437e91ca4ea56a2e707f,path_analyze.form_depth_1,,0.0,,,,,,,,,,,0,0,0,0,0.0,0,path_candidate
+20260524_223128,f7341786283b4d0f94c141c09089f0bb,path_analyze.form_depth_1,,0.0,,,,,,,,,,,0,0,0,0,0.0,0,path_candidate
+20260524_223128,df96933c7850445f872fb24fddf7cbc6,path_analyze.form_depth_1,,0.0,,,,,,,,,,,0,0,0,0,0.0,0,path_candidate
+20260524_223128,64ebe459e06940b49d812b4958c2d02a,path_analyze.form_depth_1,,0.0,,,,,,,,,,,0,0,0,0,0.0,0,path_candidate
+20260524_223128,67f344a6ec3b400e8f1b9547d2c1dc09,path_analyze.form_depth_1,,0.0,,,,,,,,,,,0,0,0,0,0.0,0,path_candidate
+20260524_223128,11f18a91d91b40b9a0b29d057018af6a,path_analyze.form_depth_1,,0.0,,,,,,,,,,,0,0,0,0,0.0,0,path_candidate
+20260524_223128,c580c54091894d1b8a182dbfb16e564b,path_analyze.form_depth_1,,0.0,,,,,,,,,,,0,0,0,0,0.0,0,path_candidate
+20260524_223128,4190589dc0f24f249e339f928700ba8b,path_analyze.form_depth_1,,0.0,,,,,,,,,,,0,0,0,0,0.0,0,path_candidate
+20260524_223128,d490d7da897f40129dcd34da36be5220,path_analyze.form_depth_1,,0.0,,,,,,,,,,,0,0,0,0,0.0,0,path_candidate
+20260524_223128,c66ad8bfbb454d3e958f04995137fc4b,path_analyze.form_depth_1,,0.0,,,,,,,,,,,0,0,0,0,0.0,0,path_candidate
+20260524_223128,322a654000d84147af75a576a7940ec9,path_analyze.form_depth_1,,0.0,,,,,,,,,,,0,0,0,0,0.0,0,path_candidate
+20260524_223128,0c286e213e094a8b843dc2ef3d3dd2f4,path_analyze.form_depth_1,,0.0,,,,,,,,,,,0,0,0,0,0.0,0,path_candidate
+20260524_223128,2bf2a32997af40d3ae368363833fdeb5,path_analyze.form_depth_1,,0.0,,,,,,,,,,,0,0,0,0,0.0,0,path_candidate
+20260524_223128,c7ac4c58930043c1af73388743d99837,path_analyze.form_depth_1,,0.0,,,,,,,,,,,0,0,0,0,0.0,0,path_candidate
+20260524_223128,3d302c5d73f04594959c7d35817d75d0,path_analyze.form_depth_1,,0.0,,,,,,,,,,,0,0,0,0,0.0,0,path_candidate

@@ -1,0 +1,1 @@
+POST|https://0acd004303824aed800e2b6600c7009f.web-security-academy.net/product/stock|productId=15&storeId=1|productId,storeId|https://0acd004303824aed800e2b6600c7009f.web-security-academy.net/product?productId=15

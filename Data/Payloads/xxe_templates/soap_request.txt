@@ -1,0 +1,14 @@
+POST /soap-endpoint HTTP/1.1
+Host: TARGET_HOST
+Content-Type: text/xml; charset=utf-8
+Content-Length: 290
+SOAPAction: "http://example.com/soap/action"
+
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <Search xmlns="http://example.com/">
+      <query>test</query>
+    </Search>
+  </soap:Body>
+</soap:Envelope>

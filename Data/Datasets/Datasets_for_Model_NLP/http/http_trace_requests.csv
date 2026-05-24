@@ -147904,3 +147904,386 @@ accept: */*
 connection: keep-alive
 cookie: session=<masked>
 user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",cookie_name_session,missing,,session_cookie,5,0,0,0,0.0,0,path_candidate
+20260524_223128,f255f7046e9449148779df2c525d6fda,,recon.track_redirects,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net/,/,GET,,,,,,,,session,"host: <token>.web-security-academy.net
+accept: */*
+accept-encoding: gzip, deflate, br, zstd
+connection: keep-alive
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/141.0.0.0 Safari/537.36
+cookie: session=<masked>","accept-encoding: gzip, deflate, br, zstd
+accept: */*
+connection: keep-alive
+cookie: session=<masked>
+host: <token>.web-security-academy.net
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/141.0.0.0 Safari/537.36",cookie_name_session request_override_header_present,missing,,session_cookie,6,0,0,1,0.5,1,passive_trace
+20260524_223128,885ede6b38b941429211b1dc2cbb18fa,f255f7046e9449148779df2c525d6fda,recon.response_analysis,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net/,/,GET,,,,,,,,session,"user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/141.0.0.0 Safari/537.36
+cookie: session=<masked>","cookie: session=<masked>
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/141.0.0.0 Safari/537.36",cookie_name_session,missing,,session_cookie,2,0,0,0,0.0,0,response_analysis
+20260524_223128,e63b85eb6fe14ca2b6be920ecac84a09,,path_analyze.page.depth_0,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net/,/,GET,,,,,,,,session,"user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>","accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",cookie_name_session,missing,,session_cookie,5,0,0,0,0.0,1,path_crawl_page
+20260524_223128,18ace92a847b45c4949d58451ba1f44b,e63b85eb6fe14ca2b6be920ecac84a09,path_analyze.page.depth_1,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net/product/?productId=14,/product,GET,product,productId=14,productId,productId:numeric,,productId storeId,,session,"user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>","accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",cookie_name_session,missing,,session_cookie,5,0,0,0,0.0,1,path_crawl_page
+20260524_223128,b937a286f6e84b14a8cbd42e682a4d03,e63b85eb6fe14ca2b6be920ecac84a09,path_analyze.page.depth_1,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net/product/?productId=15,/product,GET,product,productId=15,productId,productId:numeric,,productId storeId,,session,"user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>","accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",cookie_name_session,missing,,session_cookie,5,0,0,0,0.0,1,path_crawl_page
+20260524_223128,47c85ab5f84841f986a64170140fc59a,e63b85eb6fe14ca2b6be920ecac84a09,path_analyze.page.depth_1,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net/product/?productId=10,/product,GET,product,productId=10,productId,productId:numeric,,productId storeId,,session,"user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>","accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",cookie_name_session,missing,,session_cookie,5,0,0,0,0.0,1,path_crawl_page
+20260524_223128,8923bf6b63e94c7d88e8fe4d7fa1e48e,e63b85eb6fe14ca2b6be920ecac84a09,path_analyze.page.depth_1,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net/product/?productId=19,/product,GET,product,productId=19,productId,productId:numeric,,productId storeId,,session,"user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>","accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",cookie_name_session,missing,,session_cookie,5,0,0,0,0.0,1,path_crawl_page
+20260524_223128,96d49199d04b4a6997bbdbfa477f52f2,e63b85eb6fe14ca2b6be920ecac84a09,path_analyze.page.depth_1,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net/product/?productId=17,/product,GET,product,productId=17,productId,productId:numeric,,productId storeId,,session,"user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>","accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",cookie_name_session,missing,,session_cookie,5,0,0,0,0.0,1,path_crawl_page
+20260524_223128,3941f5eceadf408e9123484023a346bb,e63b85eb6fe14ca2b6be920ecac84a09,path_analyze.page.depth_1,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net/product/?productId=11,/product,GET,product,productId=11,productId,productId:numeric,,productId storeId,,session,"user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>","accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",cookie_name_session,missing,,session_cookie,5,0,0,0,0.0,1,path_crawl_page
+20260524_223128,d0e8242b5a5e407ea63bcf794b836fe7,e63b85eb6fe14ca2b6be920ecac84a09,path_analyze.page.depth_1,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net/product/?productId=2,/product,GET,product,productId=2,productId,productId:numeric,,productId storeId,,session,"user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>","accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",cookie_name_session,missing,,session_cookie,5,0,0,0,0.0,1,path_crawl_page
+20260524_223128,c9985469670344d590ae3557832ce295,e63b85eb6fe14ca2b6be920ecac84a09,path_analyze.page.depth_1,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net/product/?productId=6,/product,GET,product,productId=6,productId,productId:numeric,,productId storeId,,session,"user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>","accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",cookie_name_session,missing,,session_cookie,5,0,0,0,0.0,1,path_crawl_page
+20260524_223128,ebc80e14b8c8416294cea0d2f1cbf525,e63b85eb6fe14ca2b6be920ecac84a09,path_analyze.page.depth_1,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net/product/?productId=5,/product,GET,product,productId=5,productId,productId:numeric,,productId storeId,,session,"user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>","accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",cookie_name_session,missing,,session_cookie,5,0,0,0,0.0,1,path_crawl_page
+20260524_223128,c95498709b9542dc91a710cae35a0fb4,e63b85eb6fe14ca2b6be920ecac84a09,path_analyze.page.depth_1,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net/product/?productId=4,/product,GET,product,productId=4,productId,productId:numeric,,productId storeId,,session,"user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>","accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",cookie_name_session,missing,,session_cookie,5,0,0,0,0.0,1,path_crawl_page
+20260524_223128,f2545c68be4b416ea73be3c1a204b836,e63b85eb6fe14ca2b6be920ecac84a09,path_analyze.page.depth_1,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net/product/?productId=18,/product,GET,product,productId=18,productId,productId:numeric,,productId storeId,,session,"user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>","accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",cookie_name_session,missing,,session_cookie,5,0,0,0,0.0,1,path_crawl_page
+20260524_223128,6119dbd0ce6a4d9ca90592ae367ac31f,e63b85eb6fe14ca2b6be920ecac84a09,path_analyze.page.depth_1,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net/product/?productId=8,/product,GET,product,productId=8,productId,productId:numeric,,productId storeId,,session,"user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>","accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",cookie_name_session,missing,,session_cookie,5,0,0,0,0.0,1,path_crawl_page
+20260524_223128,10d0bc1be6e142db94a38623f5d9517a,e63b85eb6fe14ca2b6be920ecac84a09,path_analyze.page.depth_1,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net/product/?productId=12,/product,GET,product,productId=12,productId,productId:numeric,,productId storeId,,session,"user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>","accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",cookie_name_session,missing,,session_cookie,5,0,0,0,0.0,1,path_crawl_page
+20260524_223128,934f9f9292e14bc486f885d60f22f06c,e63b85eb6fe14ca2b6be920ecac84a09,path_analyze.page.depth_1,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net/product/?productId=9,/product,GET,product,productId=9,productId,productId:numeric,,productId storeId,,session,"user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>","accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",cookie_name_session,missing,,session_cookie,5,0,0,0,0.0,1,path_crawl_page
+20260524_223128,7c65541253f94b71904ae43fde742e2a,e63b85eb6fe14ca2b6be920ecac84a09,path_analyze.page.depth_1,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net/product/?productId=3,/product,GET,product,productId=3,productId,productId:numeric,,productId storeId,,session,"user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>","accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",cookie_name_session,missing,,session_cookie,5,0,0,0,0.0,1,path_crawl_page
+20260524_223128,b681cab4cf8744ae8c0bcc1be060898a,e63b85eb6fe14ca2b6be920ecac84a09,path_analyze.page.depth_1,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net/product/?productId=13,/product,GET,product,productId=13,productId,productId:numeric,,productId storeId,,session,"user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>","accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",cookie_name_session,missing,,session_cookie,5,0,0,0,0.0,1,path_crawl_page
+20260524_223128,8fad675b3cc246ceb1f48f9f1be726ad,e63b85eb6fe14ca2b6be920ecac84a09,path_analyze.page.depth_1,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net/product/?productId=16,/product,GET,product,productId=16,productId,productId:numeric,,productId storeId,,session,"user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>","accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",cookie_name_session,missing,,session_cookie,5,0,0,0,0.0,1,path_crawl_page
+20260524_223128,c7ac5c29ab9a400d8a3512bc26a4a581,e63b85eb6fe14ca2b6be920ecac84a09,path_analyze.page.depth_1,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net/product/?productId=20,/product,GET,product,productId=20,productId,productId:numeric,,productId storeId,,session,"user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>","accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",cookie_name_session,missing,,session_cookie,5,0,0,0,0.0,1,path_crawl_page
+20260524_223128,2741279be6b446adb6df9d9ffe4f550c,e63b85eb6fe14ca2b6be920ecac84a09,path_analyze.page.depth_1,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net/product/?productId=1,/product,GET,product,productId=1,productId,productId:numeric,,productId storeId,,session,"user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>","accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",cookie_name_session,missing,,session_cookie,5,0,0,0,0.0,1,path_crawl_page
+20260524_223128,5d670a3e226c4760a73b504403dfce1d,e63b85eb6fe14ca2b6be920ecac84a09,path_analyze.page.depth_1,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net/product/?productId=7,/product,GET,product,productId=7,productId,productId:numeric,,productId storeId,,session,"user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>","accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",cookie_name_session,missing,,session_cookie,5,0,0,0,0.0,1,path_crawl_page
+20260524_223128,20310ee5e1b746389ab296d3091d0718,47c85ab5f84841f986a64170140fc59a,path_analyze.form_depth_1,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net/product/stock,/product/stock,POST,product stock,,,,productId=14&storeId=,productId storeId,,session,"user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>","accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",cookie_name_session,missing,,session_cookie,5,0,0,0,0.0,0,path_candidate
+20260524_223128,279bd9fd81404c08918b55aa0fdf5277,47c85ab5f84841f986a64170140fc59a,path_analyze.form_depth_1,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net/product/stock,/product/stock,POST,product stock,,,,productId=10&storeId=,productId storeId,,session,"user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>","accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",cookie_name_session,missing,,session_cookie,5,0,0,0,0.0,0,path_candidate
+20260524_223128,ce0e91d554c148afa2a42eb5f5b60337,8923bf6b63e94c7d88e8fe4d7fa1e48e,path_analyze.form_depth_1,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net/product/stock,/product/stock,POST,product stock,,,,productId=11&storeId=,productId storeId,,session,"user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>","accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",cookie_name_session,missing,,session_cookie,5,0,0,0,0.0,0,path_candidate
+20260524_223128,21bb8de13676476bbfc8ed87e6aa1769,8923bf6b63e94c7d88e8fe4d7fa1e48e,path_analyze.form_depth_1,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net/product/stock,/product/stock,POST,product stock,,,,productId=19&storeId=,productId storeId,,session,"user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>","accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",cookie_name_session,missing,,session_cookie,5,0,0,0,0.0,0,path_candidate
+20260524_223128,acb2620b5ed94c25ab2c826db1a7f329,ebc80e14b8c8416294cea0d2f1cbf525,path_analyze.form_depth_1,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net/product/stock,/product/stock,POST,product stock,,,,productId=15&storeId=,productId storeId,,session,"user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>","accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",cookie_name_session,missing,,session_cookie,5,0,0,0,0.0,0,path_candidate
+20260524_223128,928ae3e34725437e91ca4ea56a2e707f,ebc80e14b8c8416294cea0d2f1cbf525,path_analyze.form_depth_1,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net/product/stock,/product/stock,POST,product stock,,,,productId=17&storeId=,productId storeId,,session,"user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>","accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",cookie_name_session,missing,,session_cookie,5,0,0,0,0.0,0,path_candidate
+20260524_223128,f7341786283b4d0f94c141c09089f0bb,b681cab4cf8744ae8c0bcc1be060898a,path_analyze.form_depth_1,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net/product/stock,/product/stock,POST,product stock,,,,productId=4&storeId=,productId storeId,,session,"user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>","accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",cookie_name_session,missing,,session_cookie,5,0,0,0,0.0,0,path_candidate
+20260524_223128,67f344a6ec3b400e8f1b9547d2c1dc09,b681cab4cf8744ae8c0bcc1be060898a,path_analyze.form_depth_1,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net/product/stock,/product/stock,POST,product stock,,,,productId=2&storeId=,productId storeId,,session,"user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>","accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",cookie_name_session,missing,,session_cookie,5,0,0,0,0.0,0,path_candidate
+20260524_223128,64ebe459e06940b49d812b4958c2d02a,b681cab4cf8744ae8c0bcc1be060898a,path_analyze.form_depth_1,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net/product/stock,/product/stock,POST,product stock,,,,productId=18&storeId=,productId storeId,,session,"user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>","accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",cookie_name_session,missing,,session_cookie,5,0,0,0,0.0,0,path_candidate
+20260524_223128,df96933c7850445f872fb24fddf7cbc6,b681cab4cf8744ae8c0bcc1be060898a,path_analyze.form_depth_1,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net/product/stock,/product/stock,POST,product stock,,,,productId=6&storeId=,productId storeId,,session,"user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>","accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",cookie_name_session,missing,,session_cookie,5,0,0,0,0.0,0,path_candidate
+20260524_223128,c580c54091894d1b8a182dbfb16e564b,b681cab4cf8744ae8c0bcc1be060898a,path_analyze.form_depth_1,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net/product/stock,/product/stock,POST,product stock,,,,productId=8&storeId=,productId storeId,,session,"user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>","accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",cookie_name_session,missing,,session_cookie,5,0,0,0,0.0,0,path_candidate
+20260524_223128,11f18a91d91b40b9a0b29d057018af6a,b681cab4cf8744ae8c0bcc1be060898a,path_analyze.form_depth_1,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net/product/stock,/product/stock,POST,product stock,,,,productId=5&storeId=,productId storeId,,session,"user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>","accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",cookie_name_session,missing,,session_cookie,5,0,0,0,0.0,0,path_candidate
+20260524_223128,c66ad8bfbb454d3e958f04995137fc4b,b681cab4cf8744ae8c0bcc1be060898a,path_analyze.form_depth_1,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net/product/stock,/product/stock,POST,product stock,,,,productId=1&storeId=,productId storeId,,session,"user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>","accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",cookie_name_session,missing,,session_cookie,5,0,0,0,0.0,0,path_candidate
+20260524_223128,0c286e213e094a8b843dc2ef3d3dd2f4,b681cab4cf8744ae8c0bcc1be060898a,path_analyze.form_depth_1,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net/product/stock,/product/stock,POST,product stock,,,,productId=13&storeId=,productId storeId,,session,"user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>","accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",cookie_name_session,missing,,session_cookie,5,0,0,0,0.0,0,path_candidate
+20260524_223128,4190589dc0f24f249e339f928700ba8b,b681cab4cf8744ae8c0bcc1be060898a,path_analyze.form_depth_1,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net/product/stock,/product/stock,POST,product stock,,,,productId=9&storeId=,productId storeId,,session,"user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>","accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",cookie_name_session,missing,,session_cookie,5,0,0,0,0.0,0,path_candidate
+20260524_223128,2bf2a32997af40d3ae368363833fdeb5,b681cab4cf8744ae8c0bcc1be060898a,path_analyze.form_depth_1,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net/product/stock,/product/stock,POST,product stock,,,,productId=20&storeId=,productId storeId,,session,"user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>","accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",cookie_name_session,missing,,session_cookie,5,0,0,0,0.0,0,path_candidate
+20260524_223128,d490d7da897f40129dcd34da36be5220,b681cab4cf8744ae8c0bcc1be060898a,path_analyze.form_depth_1,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net/product/stock,/product/stock,POST,product stock,,,,productId=16&storeId=,productId storeId,,session,"user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>","accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",cookie_name_session,missing,,session_cookie,5,0,0,0,0.0,0,path_candidate
+20260524_223128,c7ac4c58930043c1af73388743d99837,b681cab4cf8744ae8c0bcc1be060898a,path_analyze.form_depth_1,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net/product/stock,/product/stock,POST,product stock,,,,productId=3&storeId=,productId storeId,,session,"user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>","accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",cookie_name_session,missing,,session_cookie,5,0,0,0,0.0,0,path_candidate
+20260524_223128,322a654000d84147af75a576a7940ec9,b681cab4cf8744ae8c0bcc1be060898a,path_analyze.form_depth_1,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net/product/stock,/product/stock,POST,product stock,,,,productId=7&storeId=,productId storeId,,session,"user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>","accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",cookie_name_session,missing,,session_cookie,5,0,0,0,0.0,0,path_candidate
+20260524_223128,3d302c5d73f04594959c7d35817d75d0,b681cab4cf8744ae8c0bcc1be060898a,path_analyze.form_depth_1,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net,https://0acd004303824aed800e2b6600c7009f.web-security-academy.net/product/stock,/product/stock,POST,product stock,,,,productId=12&storeId=,productId storeId,,session,"user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>","accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: session=<masked>
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",cookie_name_session,missing,,session_cookie,5,0,0,0,0.0,0,path_candidate

