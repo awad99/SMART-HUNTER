@@ -27,7 +27,7 @@ CANONICAL_VULN_COLUMNS = [
     'prev_security_headers_count', 'prev_response_size', 'days_since_last_scan',
     'vuln_density', 'tool_effectiveness', 'security_risk_score',
     'input_vulnerability_ratio', 'previous_scan_accuracy', 'total_issues',
-    'issue_density', 'has_idor'
+    'issue_density', 'has_idor', 'has_xxe'
 ]
 
 TRUTHY_ENV_VALUES = {"1", "true", "yes", "on", "enable", "enabled"}
@@ -113,7 +113,7 @@ def extract_vulnerability_features(url, response, vulnerabilities_found):
     # 7. Vulnerability Labels (Labels: 0 or 1 based on HIGH confidence scan results)
     label_cols = [
         'sqli_vuln', 'xss_vuln', 'cmdi_vuln', 'pt_vuln', 
-        'lfi_vuln', 'rfi_vuln', 'idor_vuln'
+        'lfi_vuln', 'rfi_vuln', 'idor_vuln', 'xxe_vuln'
     ]
     for lbl in label_cols:
         features[lbl] = 0
@@ -129,7 +129,9 @@ def extract_vulnerability_features(url, response, vulnerabilities_found):
         'lfi': 'lfi_vuln',
         'remote file inclusion': 'rfi_vuln',
         'rfi': 'rfi_vuln',
-        'idor': 'idor_vuln'
+        'idor': 'idor_vuln',
+        'xxe': 'xxe_vuln',
+        'xml external entity': 'xxe_vuln'
     }
     
     for finding in vulnerabilities_found:
@@ -145,7 +147,7 @@ def extract_vulnerability_features(url, response, vulnerabilities_found):
     columns = [
         'url','has_parameters','has_forms','has_cookies','has_error_messages','has_database_errors','has_login',
         'has_upload','has_hidden_inputs','has_script_tags','has_file_includes','has_reflection',
-        'has_eval','has_exec','has_system','sqli_vuln','xss_vuln','cmdi_vuln','pt_vuln','lfi_vuln','rfi_vuln','idor_vuln'
+        'has_eval','has_exec','has_system','sqli_vuln','xss_vuln','cmdi_vuln','pt_vuln','lfi_vuln','rfi_vuln','idor_vuln','xxe_vuln'
     ]
     
     ordered_features = {}
@@ -243,6 +245,8 @@ def _confirmed_finding_families(features):
                 families.add('file_inclusion')
             elif 'idor' in finding_type:
                 families.add('idor')
+            elif 'xxe' in finding_type or 'xml external entity' in finding_type:
+                families.add('xxe')
     return families
 
 def _has_term(text, *needles):
@@ -327,6 +331,10 @@ def _build_canonical_vulnerability_row(features):
         _has_any(features, 'has_idor', 'idor_vuln'),
         int('idor' in confirmed_families),
     )
+    has_xxe = max(
+        _has_any(features, 'has_xxe', 'xxe_vuln'),
+        int('xxe' in confirmed_families),
+    )
 
     detected_total_vulns = (
         has_sql_injection +
@@ -334,7 +342,8 @@ def _build_canonical_vulnerability_row(features):
         has_command_injection +
         has_path_traversal +
         has_file_inclusion +
-        has_idor
+        has_idor +
+        has_xxe
     )
     provided_total_vulns = max(
         _to_int(features.get('total_vulnerabilities', -1), -1),
@@ -466,6 +475,7 @@ def _build_canonical_vulnerability_row(features):
         'total_issues': total_issues,
         'issue_density': issue_density,
         'has_idor': has_idor,
+        'has_xxe': has_xxe,
     })
     return row
 

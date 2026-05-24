@@ -1,0 +1,15 @@
+POST /ws/service HTTP/1.1
+Host: TARGET_HOST
+Content-Type: text/xml; charset=utf-8
+SOAPAction: "http://target/action"
+Content-Length: CONTENT_LENGTH
+
+<?xml version="1.0" encoding="UTF-8"?>
+XXEINJECT
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <GetData>
+      <Input>1</Input>
+    </GetData>
+  </soap:Body>
+</soap:Envelope>

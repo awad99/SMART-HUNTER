@@ -49,8 +49,8 @@ FEATURE_COLS = [
     'response_size', 'has_xss_protection'
 ]
 
-LABEL_COLS = ['has_sql_injection', 'has_xss', 'has_command_injection', 'has_path_traversal', 'has_idor']
-VULN_NAMES = {0: 'sql_injection', 1: 'xss', 2: 'command_injection', 3: 'path_traversal', 4: 'idor'}
+LABEL_COLS = ['has_sql_injection', 'has_xss', 'has_command_injection', 'has_path_traversal', 'has_idor', 'has_xxe']
+VULN_NAMES = {0: 'sql_injection', 1: 'xss', 2: 'command_injection', 3: 'path_traversal', 4: 'idor', 5: 'xxe'}
 
 def deduplicate_recon_dataset(path=RECON_FILE):
     try:
@@ -130,7 +130,7 @@ class VulnerabilityCheckerTraining:
         np.random.seed(42)
         rows = []
         for _ in range(n):
-            profile = np.random.choice(['vuln_sqli', 'vuln_xss', 'vuln_cmdi', 'vuln_pt', 'vuln_idor', 'secure', 'normal'])
+            profile = np.random.choice(['vuln_sqli', 'vuln_xss', 'vuln_cmdi', 'vuln_pt', 'vuln_idor', 'vuln_xxe', 'secure', 'normal'])
             r = {c: 0 for c in FEATURE_COLS}
             r['url_length']       = np.random.randint(15, 120)
             r['domain_length']    = np.random.randint(5, 40)
@@ -196,6 +196,14 @@ class VulnerabilityCheckerTraining:
                 r['status_code'] = np.random.choice([200, 401, 403], p=[.6, .2, .2])
                 for lbl in LABEL_COLS: r[lbl] = 0
                 r['has_idor'] = 1
+            elif profile == 'vuln_xxe':
+                r['has_query_params'] = np.random.choice([0,1])
+                r['has_forms'] = 1
+                r['has_inputs'] = 1; r['input_count'] = np.random.randint(1, 5)
+                r['has_error_messages'] = np.random.choice([0,1], p=[.2,.8])
+                r['status_code'] = np.random.choice([200, 500], p=[.7, .3])
+                for lbl in LABEL_COLS: r[lbl] = 0
+                r['has_xxe'] = 1
             elif profile == 'secure':
                 r['has_https'] = 1; r['final_https'] = 1
                 r['security_headers_count'] = np.random.randint(5, 8)
