@@ -1,5 +1,5 @@
 """
-hf_integration.py — SMART-HUNTER Cloud Integration Module
+hf_integration.py â€” SMART-HUNTER Cloud Integration Module
 Handles:
   1. Smart-Cache asset syncing (Payloads, Wordlists, etc.) from HF
   2. Background uploading of local CSV datasets to the HF Proxy
@@ -15,7 +15,7 @@ from pathlib import Path
 from datetime import datetime, timezone
 from queue import Queue
 
-# ── Configuration ─────────────────────────────────────────────────────────────
+# â”€â”€ Configuration â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 # IMPORTANT: The user provided this space link in their request
 PROXY_BASE_URL  = "https://smart-hunter-smarthunter-proxy.hf.space"
 UPLOAD_URL      = f"{PROXY_BASE_URL}/upload_scan"
@@ -28,7 +28,7 @@ CACHE_META_FILE = DATA_DIR / ".hf_cache_metadata.json"
 # Queue for background uploads to avoid blocking the scanner
 upload_queue = Queue()
 
-# ── Anonymous User Fingerprint ─────────────────────────────────────────────────
+# â”€â”€ Anonymous User Fingerprint â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 def _get_user_fingerprint() -> str:
     try:
@@ -42,7 +42,7 @@ def _get_user_fingerprint() -> str:
 
 USER_FINGERPRINT = _get_user_fingerprint()
 
-# ── Asset Synchronization (The "Pull") ────────────────────────────────────────
+# â”€â”€ Asset Synchronization (The "Pull") â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 def _get_hf_last_modified(filename: str, category: str) -> str | None:
     url = f"{PROXY_BASE_URL}/check_payload_version"
@@ -116,7 +116,7 @@ def _smart_download(filename: str, category: str):
     except Exception as e:
         print(f"  [-] Failed to sync {filename}: {e}")
 
-# ── Cloud Mirroring (The "Push") ─────────────────────────────────────────────
+# â”€â”€ Cloud Mirroring (The "Push") â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 def upload_data_to_cloud(relative_path: str, filename: str, records: list[dict], scan_id: str = "unknown"):
     """
@@ -178,7 +178,7 @@ def _upload_worker():
         finally:
             upload_queue.task_done()
 
-# ── Helper to determine relative path from absolute ──────────────────────────
+# â”€â”€ Helper to determine relative path from absolute â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 def sync_local_file_to_cloud(local_file_path: str, scan_id: str = "unknown"):
     """

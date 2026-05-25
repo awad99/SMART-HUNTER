@@ -36,7 +36,7 @@ def check_and_sync_all():
     scan_dir = get_scan_results_dir()
     
     print("\n" + "="*60)
-    print(" 🛡️  SMART-HUNTER: Legacy Data Scan & Sync System")
+    print(" ًں›،ï¸ڈ  SMART-HUNTER: Legacy Data Scan & Sync System")
     print("="*60)
     print(f"[*] Scanning local directory: {scan_dir}")
     
@@ -64,7 +64,7 @@ def check_and_sync_all():
         # 1. Check local marker (optional optimization)
         marker_file = scan_dir / scan_id / ".synced"
         if marker_file.exists():
-            print(f"    [✓] Session marked as already uploaded (Local Cache).")
+            print(f"    [âœ“] Session marked as already uploaded (Local Cache).")
             skipped_count += 1
             continue
 
@@ -73,7 +73,7 @@ def check_and_sync_all():
         exists = check_if_scan_exists_on_hf(scan_id)
         
         if exists:
-            print(f"    [✓] Session already exists in the cloud. Skipping.")
+            print(f"    [âœ“] Session already exists in the cloud. Skipping.")
             # Create local marker to speed up next check
             try:
                 with open(marker_file, "w") as f:
@@ -98,7 +98,7 @@ def check_and_sync_all():
                 failed_count += 1
 
     print("\n" + "="*60)
-    print(" ✅ Sync Summary:")
+    print(" âœ… Sync Summary:")
     print(f"    - Total sessions scanned: {len(all_scans)}")
     print(f"    - Sessions skipped (already uploaded): {skipped_count}")
     print(f"    - Sessions uploaded successfully: {synced_count}")

@@ -283,7 +283,7 @@ class VulnerabilityCheckerTraining:
                 print(f"    Model accuracy will be LIMITED until more real data is collected.")
             else:
                 aug_count = 0
-                print(f"[+] Sufficient real data ({real_count} rows) — skipping synthetic augmentation.")
+                print(f"[+] Sufficient real data ({real_count} rows) â€” skipping synthetic augmentation.")
             print(f"[+] Combined data (real:{real_count}, synthetic:{aug_count})")
 
             combined = pd.concat(frames, ignore_index=True)

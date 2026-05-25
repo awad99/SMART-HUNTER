@@ -309,7 +309,7 @@ def print_report(report):
     print_colored("="*80, Colors.BOLD)
     
     # Summary
-    print_colored("\n📊 SUMMARY", Colors.GREEN)
+    print_colored("\nًں“ٹ SUMMARY", Colors.GREEN)
     print_colored(f"  Total Folders: {report['summary']['total_folders']}", Colors.CYAN)
     print_colored(f"  Total Files: {report['summary']['total_files']}", Colors.CYAN)
     print_colored(f"  Total Size: {report['summary']['total_size_mb']:.2f} MB", Colors.CYAN)
@@ -322,7 +322,7 @@ def print_report(report):
     
     # Folder Hierarchy
     if report["folder_hierarchy"]:
-        print_colored("\n📁 FOLDER HIERARCHY", Colors.GREEN)
+        print_colored("\nًں“پ FOLDER HIERARCHY", Colors.GREEN)
         for path, info in list(report["folder_hierarchy"].items())[:10]:
             print_colored(f"  {path}/", Colors.BLUE)
             print_colored(f"    Files: {info['files_count']}, Size: {info['size_kb']:.2f} KB", Colors.CYAN)
@@ -331,14 +331,14 @@ def print_report(report):
     
     # Targets Found
     if report["database_mapping"]["targets"]["sample_urls"]:
-        print_colored("\n🎯 TARGETS FOUND", Colors.GREEN)
+        print_colored("\nًںژ¯ TARGETS FOUND", Colors.GREEN)
         for i, url in enumerate(report["database_mapping"]["targets"]["sample_urls"][:5], 1):
             print_colored(f"  {i}. {url}", Colors.CYAN)
         print_colored(f"  Source files: {report['database_mapping']['targets']['found_in']}", Colors.CYAN)
     
     # Critical Files
     if report["critical_files"]:
-        print_colored("\n⚠️  CRITICAL FILES (For Database Upload)", Colors.GREEN)
+        print_colored("\nâڑ ï¸ڈ  CRITICAL FILES (For Database Upload)", Colors.GREEN)
         categories = defaultdict(list)
         for item in report["critical_files"]:
             categories[item["category"]].append(item)
@@ -346,22 +346,22 @@ def print_report(report):
         for category, files in categories.items():
             print_colored(f"\n  [{category.upper()}]", Colors.YELLOW)
             for file in files[:5]:
-                print_colored(f"    • {os.path.basename(file['file'])}", Colors.CYAN)
+                print_colored(f"    â€¢ {os.path.basename(file['file'])}", Colors.CYAN)
                 print_colored(f"      Size: {file['size_kb']:.2f} KB | Type: {file['type']}", Colors.CYAN)
                 if file['details']:
                     print_colored(f"      Details: {file['details']}", Colors.CYAN)
     
     # Database Mapping
-    print_colored("\n🗄️  DATABASE MAPPING SUGGESTIONS", Colors.GREEN)
+    print_colored("\nًں—„ï¸ڈ  DATABASE MAPPING SUGGESTIONS", Colors.GREEN)
     for table, mapping in report["database_mapping"].items():
-        print_colored(f"\n  → {table}:", Colors.YELLOW)
+        print_colored(f"\n  â†’ {table}:", Colors.YELLOW)
         print_colored(f"    Source: {mapping['source']}", Colors.CYAN)
         if mapping.get('files') and mapping['files']:
             print_colored(f"    Files found: {len(mapping['files'])}", Colors.CYAN)
     
     # Recommendations
     if report["recommendations"]:
-        print_colored("\n💡 RECOMMENDATIONS", Colors.GREEN)
+        print_colored("\nًں’، RECOMMENDATIONS", Colors.GREEN)
         for i, rec in enumerate(report["recommendations"], 1):
             print_colored(f"  {i}. {rec}", Colors.CYAN)
     
@@ -382,20 +382,20 @@ def save_report_to_file(report, filename="data_analysis_report.json"):
     with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(report, f, indent=2, default=serialize)
     
-    print_colored(f"\n📄 Full report saved to: {output_path}", Colors.GREEN)
+    print_colored(f"\nًں“„ Full report saved to: {output_path}", Colors.GREEN)
     return output_path
 
 def main():
     """Main function"""
-    print_colored("\n🔍 Starting Data Structure Analysis...", Colors.BOLD)
+    print_colored("\nًں”چ Starting Data Structure Analysis...", Colors.BOLD)
     
     # Check if Data directory exists
     if not os.path.exists(BASE_PATH):
-        print_colored(f"\n❌ Error: Data directory not found at {BASE_PATH}", Colors.RED)
+        print_colored(f"\nâ‌Œ Error: Data directory not found at {BASE_PATH}", Colors.RED)
         print_colored("Please make sure you're running this script from the correct directory.", Colors.YELLOW)
         return
     
-    print_colored(f"📂 Analyzing: {BASE_PATH}", Colors.BLUE)
+    print_colored(f"ًں“‚ Analyzing: {BASE_PATH}", Colors.BLUE)
     
     # Analyze structure
     structure = analyze_folder_structure(BASE_PATH)
@@ -412,7 +412,7 @@ def main():
     # Save report to file
     report_file = save_report_to_file(report)
     
-    print_colored(f"\n✅ Analysis complete!", Colors.GREEN)
+    print_colored(f"\nâœ… Analysis complete!", Colors.GREEN)
     print_colored(f"Please share the file '{report_file}' so I can understand your data structure perfectly.", Colors.YELLOW)
 
 if __name__ == "__main__":

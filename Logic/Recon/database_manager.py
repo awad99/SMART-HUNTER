@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 # Load environment variables from .env file
 load_dotenv()
 
-# ── takes functions of Queries ──────────────────────────────
+# â”€â”€ takes functions of Queries â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 from Data.Queries.q_scans          import create_scan          as _q_create_scan
 from Data.Queries.q_scans          import update_scan_status   as _q_update_scan
 from Data.Queries.q_vulnerabilities import save_vulnerability       as _q_vuln_one
@@ -37,7 +37,7 @@ class DatabaseManager:
         }
         self.conn = None
 
-    # ── Connection ────────────────────────────────────────────
+    # â”€â”€ Connection â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
     def connect(self):
         try:
             if not self.conn or self.conn.closed:
@@ -60,7 +60,7 @@ class DatabaseManager:
         if self.conn and not self.conn.closed:
             self.conn.close()
 
-    # ── Internal helpers ──────────────────────────────────────
+    # â”€â”€ Internal helpers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
     def _execute(self, query, params=None, commit=True):
         if not self.connect(): return None
         try:
@@ -97,7 +97,7 @@ class DatabaseManager:
             self.conn.rollback()
 
     # =========================================================================
-    # Scans — delegate to q_scans.py
+    # Scans â€” delegate to q_scans.py
     # =========================================================================
     def create_scan(self, scan_id, original_url, user_agent=None, cookie=None, proxy=None):
         return _q_create_scan(self, scan_id, original_url, user_agent, cookie, proxy)
@@ -107,7 +107,7 @@ class DatabaseManager:
         return _q_update_scan(self, scan_id, status, final_url, has_waf, waf_vendors, grade, score)
 
     # =========================================================================
-    # Vulnerabilities — delegate to q_vulnerabilities.py
+    # Vulnerabilities â€” delegate to q_vulnerabilities.py
     # =========================================================================
     def add_vulnerability(self, scan_id, vuln_dict):
         return _q_vuln_one(self, scan_id, vuln_dict)
@@ -116,13 +116,13 @@ class DatabaseManager:
         return _q_vuln_batch(self, scan_id, vulns_list)
 
     # =========================================================================
-    # Features — delegate to q_features.py
+    # Features â€” delegate to q_features.py
     # =========================================================================
     def add_features(self, features):
         return _q_features(self, features)
 
     # =========================================================================
-    # Redirects, Headers, Cookies — delegate
+    # Redirects, Headers, Cookies â€” delegate
     # =========================================================================
     def add_redirect_hop(self, scan_id, hop_number, url, status_code, location, hop_type):
         return _q_redirect(self, scan_id, hop_number, url, status_code, location, hop_type)
@@ -134,7 +134,7 @@ class DatabaseManager:
         return _q_cookies(self, scan_id, url, cookies_list)
 
     # =========================================================================
-    # Forms, Endpoints, Fuzzing, Subdomains — delegate
+    # Forms, Endpoints, Fuzzing, Subdomains â€” delegate
     # =========================================================================
     def add_forms(self, scan_id, url, forms_list):
         return _q_forms(self, scan_id, url, forms_list)
@@ -149,19 +149,19 @@ class DatabaseManager:
         return _q_subdomains(self, scan_id, subdomains_list, source)
 
     # =========================================================================
-    # Raw Responses — delegate to q_raw_responses.py
+    # Raw Responses â€” delegate to q_raw_responses.py
     # =========================================================================
     def add_raw_response(self, scan_id, url, status_code, body, headers):
         return _q_raw(self, scan_id, url, status_code, body, headers)
 
     # =========================================================================
-    # Reports — delegate to q_reports.py
+    # Reports â€” delegate to q_reports.py
     # =========================================================================
     def add_report(self, scan_id, report_type, content):
         return _q_reports(self, scan_id, report_type, content)
 
     # =========================================================================
-    # HTTP NLP Traces — delegate
+    # HTTP NLP Traces â€” delegate
     # =========================================================================
     def add_http_trace(self, request_row, response_row):
         return _q_http_trace(self, request_row, response_row)

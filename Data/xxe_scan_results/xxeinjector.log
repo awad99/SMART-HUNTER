@@ -1,0 +1,231 @@
+ruby: warning: shebang line ending with \r may cause problems
+XXEinjector by Jakub Pałaczyński
+
+Enumeration options:
+"y" - enumerate currect file (default)
+"n" - skip currect file
+"a" - enumerate all files in currect directory
+"s" - skip all files in currect directory
+"q" - quit
+
+[-] Multiple instances of XML found. It may results in false-positives.
+[+] Sending request with malicious XML.
+[-] FTP/HTTP did not get response. XML parser cannot parse provided file or the application is not responsive. Wait or Next? W/n
+ruby: warning: shebang line ending with \r may cause problems
+XXEinjector by Jakub Pałaczyński
+
+Enumeration options:
+"y" - enumerate currect file (default)
+"n" - skip currect file
+"a" - enumerate all files in currect directory
+"s" - skip all files in currect directory
+"q" - quit
+
+[-] Multiple instances of XML found. It may results in false-positives.
+[+] Sending request with malicious XML.
+[-] FTP/HTTP did not get response. XML parser cannot parse provided file or the application is not responsive. Wait or Next? W/n
+/usr/lib/ruby/3.3.0/reline/line_editor.rb:195:in `handle_interrupted': Interrupt (Interrupt)
+	from /usr/lib/ruby/3.3.0/reline/line_editor.rb:167:in `handle_signal'
+	from /usr/lib/ruby/3.3.0/reline/io/ansi.rb:178:in `inner_getc'
+	from /usr/lib/ruby/3.3.0/reline/io/ansi.rb:202:in `getc'
+	from /usr/lib/ruby/3.3.0/reline.rb:384:in `block in read_io'
+	from <internal:kernel>:187:in `loop'
+	from /usr/lib/ruby/3.3.0/reline.rb:382:in `read_io'
+	from /usr/lib/ruby/3.3.0/reline.rb:344:in `block in inner_readline'
+	from <internal:kernel>:187:in `loop'
+	from /usr/lib/ruby/3.3.0/reline.rb:343:in `inner_readline'
+	from /usr/lib/ruby/3.3.0/reline.rb:280:in `block (2 levels) in readline'
+	from /usr/lib/ruby/3.3.0/reline/io/ansi.rb:164:in `block in with_raw_input'
+	from /usr/lib/ruby/3.3.0/reline/io/ansi.rb:164:in `raw'
+	from /usr/lib/ruby/3.3.0/reline/io/ansi.rb:164:in `with_raw_input'
+	from /usr/lib/ruby/3.3.0/reline.rb:279:in `block in readline'
+	from /usr/lib/ruby/3.3.0/reline.rb:278:in `synchronize'
+	from /usr/lib/ruby/3.3.0/reline.rb:278:in `readline'
+	from /usr/lib/ruby/3.3.0/forwardable.rb:240:in `readline'
+	from XXEinjector/XXEinjector.rb:1167:in `block in <main>'
+	from <internal:kernel>:187:in `loop'
+	from XXEinjector/XXEinjector.rb:1163:in `<main>'
+> [?25l[1G[K[1G[0m> [0m[?25h[3G[3G
+[1Gruby: warning: shebang line ending with \r may cause problems
+XXEinjector by Jakub Pałaczyński
+
+Enumeration options:
+"y" - enumerate currect file (default)
+"n" - skip currect file
+"a" - enumerate all files in currect directory
+"s" - skip all files in currect directory
+"q" - quit
+
+[-] Multiple instances of XML found. It may results in false-positives.
+[+] Sending request with malicious XML.
+[-] FTP/HTTP did not get response. XML parser cannot parse provided file or the application is not responsive. Wait or Next? W/n
+ruby: warning: shebang line ending with \r may cause problems
+XXEinjector by Jakub Pałaczyński
+
+Enumeration options:
+"y" - enumerate currect file (default)
+"n" - skip currect file
+"a" - enumerate all files in currect directory
+"s" - skip all files in currect directory
+"q" - quit
+
+[-] Multiple instances of XML found. It may results in false-positives.
+[+] Sending request with malicious XML.
+[-] FTP/HTTP did not get response. XML parser cannot parse provided file or the application is not responsive. Wait or Next? W/n
+> [?25l[1G[K[1G[0m> [0m[?25h[3G[?25l[1G[K[?25h[1G> n
+[1G[+] Nothing else to do. Exiting.
+ruby: warning: shebang line ending with \r may cause problems
+XXEinjector by Jakub Pałaczyński
+
+Enumeration options:
+"y" - enumerate currect file (default)
+"n" - skip currect file
+"a" - enumerate all files in currect directory
+"s" - skip all files in currect directory
+"q" - quit
+
+[-] Multiple instances of XML found. It may results in false-positives.
+[+] Sending request with malicious XML.
+[-] FTP/HTTP did not get response. XML parser cannot parse provided file or the application is not responsive. Wait or Next? W/n
+> [?25l[1G[K[1G[0m> [0m[?25h[3G[?25l[1G[K[?25h[1G> n
+[1G[+] Nothing else to do. Exiting.
+XXEinjector by Jakub Pałaczyński
+
+Enumeration options:
+"y" - enumerate currect file (default)
+"n" - skip currect file
+"a" - enumerate all files in currect directory
+"s" - skip all files in currect directory
+"q" - quit
+
+[-] Multiple instances of XML found. It may results in false-positives.
+[+] Sending request with malicious XML.
+[-] FTP/HTTP did not get response. XML parser cannot parse provided file or the application is not responsive. Wait or Next? W/n
+> [?25l[1G[K[1G[0m> [0m[?25h[3G[?25l[1G[K[?25h[1G> n
+[1G[+] Nothing else to do. Exiting.
+XXEinjector by Jakub Pałaczyński
+
+Enumeration options:
+"y" - enumerate currect file (default)
+"n" - skip currect file
+"a" - enumerate all files in currect directory
+"s" - skip all files in currect directory
+"q" - quit
+
+[-] Multiple instances of XML found. It may results in false-positives.
+[+] Sending request with malicious XML.
+[-] FTP/HTTP did not get response. XML parser cannot parse provided file or the application is not responsive. Wait or Next? W/n
+> [?25l[1G[K[1G[0m> [0m[?25h[3G[?25l[1G[K[?25h[1G> n
+[1G[+] Nothing else to do. Exiting.
+XXEinjector by Jakub Pałaczyński
+
+Enumeration options:
+"y" - enumerate currect file (default)
+"n" - skip currect file
+"a" - enumerate all files in currect directory
+"s" - skip all files in currect directory
+"q" - quit
+
+[-] Multiple instances of XML found. It may results in false-positives.
+[+] Sending request with malicious XML.
+[-] FTP/HTTP did not get response. XML parser cannot parse provided file or the application is not responsive. Wait or Next? W/n
+> [?25l[1G[K[1G[0m> [0m[?25h[3G[?25l[1G[K[?25h[1G> n
+[1G[+] Nothing else to do. Exiting.
+XXEinjector by Jakub Pałaczyński
+
+Enumeration options:
+"y" - enumerate currect file (default)
+"n" - skip currect file
+"a" - enumerate all files in currect directory
+"s" - skip all files in currect directory
+"q" - quit
+
+[-] Multiple instances of XML found. It may results in false-positives.
+[+] Sending request with malicious XML.
+[-] FTP/HTTP did not get response. XML parser cannot parse provided file or the application is not responsive. Wait or Next? W/n
+> [?25l[1G[K[1G[0m> [0m[?25h[3G[?25l[1G[K[?25h[1G> n
+[1G[+] Nothing else to do. Exiting.
+XXEinjector by Jakub Pałaczyński
+
+Enumeration options:
+"y" - enumerate currect file (default)
+"n" - skip currect file
+"a" - enumerate all files in currect directory
+"s" - skip all files in currect directory
+"q" - quit
+
+[-] Multiple instances of XML found. It may results in false-positives.
+[+] Sending request with malicious XML.
+[-] FTP/HTTP did not get response. XML parser cannot parse provided file or the application is not responsive. Wait or Next? W/n
+> [?25l[1G[K[1G[0m> [0m[?25h[3G[?25l[1G[K[?25h[1G> n
+[1G[+] Nothing else to do. Exiting.
+XXEinjector by Jakub Pałaczyński
+
+Enumeration options:
+"y" - enumerate currect file (default)
+"n" - skip currect file
+"a" - enumerate all files in currect directory
+"s" - skip all files in currect directory
+"q" - quit
+
+[-] Multiple instances of XML found. It may results in false-positives.
+[+] Sending request with malicious XML.
+[-] FTP/HTTP did not get response. XML parser cannot parse provided file or the application is not responsive. Wait or Next? W/n
+> [?25l[1G[K[1G[0m> [0m[?25h[3G[?25l[1G[K[?25h[1G> n
+[1G[+] Nothing else to do. Exiting.
+XXEinjector by Jakub Pałaczyński
+
+Enumeration options:
+"y" - enumerate currect file (default)
+"n" - skip currect file
+"a" - enumerate all files in currect directory
+"s" - skip all files in currect directory
+"q" - quit
+
+[-] Multiple instances of XML found. It may results in false-positives.
+[+] Sending request with malicious XML.
+[-] FTP/HTTP did not get response. XML parser cannot parse provided file or the application is not responsive. Wait or Next? W/n
+> [?25l[1G[K[1G[0m> [0m[?25h[3G[?25l[1G[K[?25h[1G> n
+[1G[+] Nothing else to do. Exiting.
+XXEinjector by Jakub Pałaczyński
+
+Enumeration options:
+"y" - enumerate currect file (default)
+"n" - skip currect file
+"a" - enumerate all files in currect directory
+"s" - skip all files in currect directory
+"q" - quit
+
+[-] Multiple instances of XML found. It may results in false-positives.
+[+] Sending request with malicious XML.
+[-] FTP/HTTP did not get response. XML parser cannot parse provided file or the application is not responsive. Wait or Next? W/n
+> [?25l[1G[K[1G[0m> [0m[?25h[3G[?25l[1G[K[?25h[1G> n
+[1G[+] Nothing else to do. Exiting.
+XXEinjector by Jakub Pałaczyński
+
+Enumeration options:
+"y" - enumerate currect file (default)
+"n" - skip currect file
+"a" - enumerate all files in currect directory
+"s" - skip all files in currect directory
+"q" - quit
+
+[-] Multiple instances of XML found. It may results in false-positives.
+[+] Sending request with malicious XML.
+[-] FTP/HTTP did not get response. XML parser cannot parse provided file or the application is not responsive. Wait or Next? W/n
+> [?25l[1G[K[1G[0m> [0m[?25h[3G[?25l[1G[K[?25h[1G> n
+[1G[+] Nothing else to do. Exiting.
+XXEinjector by Jakub Pałaczyński
+
+Enumeration options:
+"y" - enumerate currect file (default)
+"n" - skip currect file
+"a" - enumerate all files in currect directory
+"s" - skip all files in currect directory
+"q" - quit
+
+[-] Multiple instances of XML found. It may results in false-positives.
+[+] Sending request with malicious XML.
+[-] FTP/HTTP did not get response. XML parser cannot parse provided file or the application is not responsive. Wait or Next? W/n
+> [?25l[1G[K[1G[0m> [0m[?25h[3G[?25l[1G[K[?25h[1G> n
+[1G[+] Nothing else to do. Exiting.

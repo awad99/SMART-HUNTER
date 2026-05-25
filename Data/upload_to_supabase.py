@@ -270,7 +270,7 @@ def upload_vulnerabilities_from_csv(scan_id, csv_path, tool_name, existing_vulns
                 except Exception as e:
                     print_colored(f"    Error: {e}", Colors.RED)
             
-            print_colored(f"  ✓ Uploaded {inserted} new vulnerabilities", Colors.GREEN)
+            print_colored(f"  âœ“ Uploaded {inserted} new vulnerabilities", Colors.GREEN)
             return inserted
             
     except Exception as e:
@@ -343,7 +343,7 @@ def upload_parameter_vulnerabilities(scan_id, parameters_dir, existing_vulns):
         except Exception as e:
             print_colored(f"    Error: {e}", Colors.RED)
     
-    print_colored(f"  ✓ Uploaded {inserted} new parameters", Colors.GREEN)
+    print_colored(f"  âœ“ Uploaded {inserted} new parameters", Colors.GREEN)
 
 def upload_domain_features(scan_id, base_path, existing_features):
     """Upload domain-related features (only new ones)"""
@@ -392,7 +392,7 @@ def upload_domain_features(scan_id, base_path, existing_features):
         except Exception as e:
             print_colored(f"    Error: {e}", Colors.RED)
     
-    print_colored(f"  ✓ Uploaded {len(new_features)} new features", Colors.GREEN)
+    print_colored(f"  âœ“ Uploaded {len(new_features)} new features", Colors.GREEN)
 
 def upload_ml_features(scan_id, base_path, existing_features):
     """Upload ML features from CSV files (only new ones)"""
@@ -467,7 +467,7 @@ def upload_ml_features(scan_id, base_path, existing_features):
         except Exception as e:
             print_colored(f"    Error: {e}", Colors.RED)
     
-    print_colored(f"  ✓ Uploaded {inserted} new ML features", Colors.GREEN)
+    print_colored(f"  âœ“ Uploaded {inserted} new ML features", Colors.GREEN)
 
 def upload_sqli_report(scan_id, base_path, existing_vulns):
     """Upload SQLi report vulnerability (only if new)"""
@@ -514,9 +514,9 @@ def upload_sqli_report(scan_id, base_path, existing_vulns):
                     "tool_used": "blind_sqli_scanner"
                 }).execute()
                 existing_vulns.add(hash_key)
-                print_colored("  ✓ Uploaded", Colors.GREEN)
+                print_colored("  âœ“ Uploaded", Colors.GREEN)
             except Exception as e:
-                print_colored(f"  ✗ Error: {e}", Colors.RED)
+                print_colored(f"  âœ— Error: {e}", Colors.RED)
 
 def upload_recon_data(scan_id, base_path, existing_recon):
     """Upload reconnaissance data (only if new)"""
@@ -553,7 +553,7 @@ def upload_recon_data(scan_id, base_path, existing_recon):
         "technologies": {},
         "cookies": headers.get("Cookie")
     }).execute()
-    print_colored("  ✓ Uploaded", Colors.GREEN)
+    print_colored("  âœ“ Uploaded", Colors.GREEN)
 
 def get_all_targets_from_data(base_path):
     """Get all unique targets from all data sources"""
