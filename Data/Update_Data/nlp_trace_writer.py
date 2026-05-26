@@ -181,6 +181,15 @@ LEGACY_VULN_REQUEST_COLUMNS = [
     "Comparison_Context_Text",
     "Probe_Profile_ID",
     "Label_Source",
+    "Is_UUID_Injected",
+    "Is_Numeric_ID_Injected",
+    "Auth_Context_Switched",
+    "Base_URL_Pattern",
+    # -- NEW XXE FEATURES --
+    "Contains_XML_Declaration",
+    "Contains_DOCTYPE",
+    "Contains_ENTITY_Declaration",
+    "Is_OOB_Payload",
 ]
 
 LEGACY_VULN_RESPONSE_COLUMNS = [
@@ -201,6 +210,13 @@ LEGACY_VULN_RESPONSE_COLUMNS = [
     "Response_Security_Headers_Text",
     "Set_Cookie_Semantic_Text",
     "Label_Source",
+    "Response_Diff_Percentage",
+    "Contains_Sensitive_Data",
+    "Access_Control_Bypassed",
+    # -- NEW XXE FEATURES --
+    "Is_XML_Parsing_Error",
+    "Contains_Local_File_Content",
+    "Response_Time_Anomaly",
 ]
 
 PATHS = {
@@ -420,6 +436,14 @@ class NLPTraceWriter:
             "Comparison_Context_Text": label_row.get("analyzer_reason", ""),
             "Probe_Profile_ID": "",
             "Label_Source": label_row.get("label_source", ""),
+            "Is_UUID_Injected": request_row.get("is_uuid_injected", ""),
+            "Is_Numeric_ID_Injected": request_row.get("is_numeric_id_injected", ""),
+            "Auth_Context_Switched": request_row.get("auth_context_switched", ""),
+            "Base_URL_Pattern": request_row.get("base_url_pattern", ""),
+            "Contains_XML_Declaration": request_row.get("contains_xml_declaration", ""),
+            "Contains_DOCTYPE": request_row.get("contains_doctype", ""),
+            "Contains_ENTITY_Declaration": request_row.get("contains_entity_declaration", ""),
+            "Is_OOB_Payload": request_row.get("is_oob_payload", ""),
         }
 
     def _legacy_vulnerability_response_row(self, response_row, label_row):
@@ -441,4 +465,10 @@ class NLPTraceWriter:
             "Response_Security_Headers_Text": response_row.get("response_security_headers_text", ""),
             "Set_Cookie_Semantic_Text": response_row.get("set_cookie_semantic_text", ""),
             "Label_Source": label_row.get("label_source", ""),
+            "Response_Diff_Percentage": response_row.get("response_diff_percentage", ""),
+            "Contains_Sensitive_Data": response_row.get("contains_sensitive_data", ""),
+            "Access_Control_Bypassed": response_row.get("access_control_bypassed", ""),
+            "Is_XML_Parsing_Error": response_row.get("is_xml_parsing_error", ""),
+            "Contains_Local_File_Content": response_row.get("contains_local_file_content", ""),
+            "Response_Time_Anomaly": response_row.get("response_time_anomaly", ""),
         }
