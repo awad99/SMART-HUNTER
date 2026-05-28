@@ -1,0 +1,42 @@
+{
+    "0ae900bf04ffc9bb82c875b600740090.web-security-academy.net": {
+        "framework": "flask",
+        "confidence": "medium",
+        "evidence": [
+            "Header match: content-type",
+            "Cookie match: session"
+        ]
+    },
+    "0a97002d0361a12c80840314005d0080.web-security-academy.net": {
+        "framework": "django",
+        "confidence": "low",
+        "evidence": [
+            "Header match: content-type"
+        ]
+    },
+    "0a5400500476aa14806621e1003a00f2.web-security-academy.net": {
+        "framework": "express",
+        "confidence": "high",
+        "evidence": [
+            "Header match: content-type",
+            "HTML pattern match: express",
+            "HTML pattern match: Express"
+        ]
+    },
+    "0a5500a1036311f480dc80d1003e00c5.web-security-academy.net": {
+        "framework": "flask",
+        "confidence": "medium",
+        "evidence": [
+            "Header match: content-type",
+            "Cookie match: session"
+        ]
+    },
+    "0a8000fb04de162181f9a431008d0070.web-security-academy.net": {
+        "framework": "flask",
+        "confidence": "medium",
+        "evidence": [
+            "Header match: content-type",
+            "Cookie match: session"
+        ]
+    }
+}

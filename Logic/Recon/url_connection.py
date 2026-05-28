@@ -1435,6 +1435,28 @@ def MainRecon(url, cookie=None, scan_id=None, stats=None, interactive=True, enab
         })
 
         recon.print_request_response_details(response, recon.final_url, is_final=True)
+
+        # ── Framework Detection (for CSRF scanner) ─────────────────────
+        print("\n[*] Framework detection...")
+        try:
+            from Recon.framework_detector import FrameworkDetector
+            fw_detector = FrameworkDetector(
+                session=None,
+                cookie=cookie,
+                timeout=HTTP_TIMEOUT,
+            )
+            fw_results = fw_detector.detect(recon.final_url or url)
+            fw_detector.save_results(recon.final_url or url, fw_results)
+            fw_name = fw_results.get('framework', 'unknown')
+            fw_conf = fw_results.get('confidence', 'none')
+            print(f"    [+] Detected framework: {fw_name} (confidence: {fw_conf})")
+            if fw_results.get('evidence'):
+                for ev in fw_results['evidence'][:3]:
+                    print(f"        - {ev}")
+        except Exception as e:
+            print(f"    [-] Framework detection skipped: {e}")
+        # ───────────────────────────────────────────────────────────────
+
         recon.Get_Target_From_Response()
         recon.Get_Target_From_Request()
         recon.Analyze_Response(recon.final_url)

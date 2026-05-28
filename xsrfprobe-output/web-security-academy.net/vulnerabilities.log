@@ -1,0 +1,11 @@
+[!] https://0a8000fb04de162181f9a431008d0070.web-security-academy.net/ -> No Referer Header based Request Validation presence.
+
+[i] Response Headers: {'Content-Type': 'text/html; charset=utf-8', 'Set-Cookie': 'session=YbfcaOzhKMsNk1XmNyGWnLO5nJoxu4Vf; Secure; HttpOnly; SameSite=None', 'X-Frame-Options': 'SAMEORIGIN', 'Content-Encoding': 'gzip', 'Connection': 'close', 'Content-Length': '2369'}
+
+
+[!] https://0a8000fb04de162181f9a431008d0070.web-security-academy.net/ -> No Origin Header based request validation presence.
+
+[i] Response Headers: {'Content-Type': 'text/html; charset=utf-8', 'Set-Cookie': 'session=2JgoFRQU6Z9kHuZdqjpshmIDrkh0AYFE; Secure; HttpOnly; SameSite=None', 'X-Frame-Options': 'SAMEORIGIN', 'Content-Encoding': 'gzip', 'Connection': 'close', 'Content-Length': '2369'}
+
+
+

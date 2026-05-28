@@ -1,0 +1,893 @@
+{
+  "frameworks": {
+    "django": {
+      "name": "Django",
+      "language": "Python",
+      "headers": [
+        {"name": "X-Frame-Options", "pattern": "DENY|SAMEORIGIN"},
+        {"name": "X-Content-Type-Options", "pattern": "nosniff"},
+        {"name": "Server", "pattern": "(?i)WSGIServer|gunicorn|uvicorn"},
+        {"name": "Content-Type", "pattern": "text/html; charset=utf-8"},
+        {"name": "Vary", "pattern": "Cookie"},
+        {"name": "X-Django-Debug", "pattern": ".*"}
+      ],
+      "cookies": [
+        {"name": "csrftoken", "pattern": "^[a-zA-Z0-9]{64}$"},
+        {"name": "sessionid", "pattern": "^[a-z0-9]{32}$"},
+        {"name": "django_language", "pattern": ".*"},
+        {"name": "messages", "pattern": ".*"}
+      ],
+      "html_patterns": [
+        "csrfmiddlewaretoken",
+        "name=\"csrfmiddlewaretoken\"",
+        "{% csrf_token %}",
+        "django.contrib",
+        "django.core",
+        "__django_",
+        "CSRF_COOKIE",
+        "id=\"django-admin",
+        "django-formset",
+        "django.forms",
+        "powered by Django",
+        "djangoproject.com"
+      ],
+      "error_patterns": [
+        "CSRF verification failed",
+        "CSRF token missing or incorrect",
+        "Forbidden \\(403\\)\\s*CSRF",
+        "django\\.middleware\\.csrf",
+        "CsrfViewMiddleware",
+        "ImproperlyConfigured",
+        "django\\.core\\.exceptions",
+        "You are seeing this message because this HTTPS site requires",
+        "DisallowedHost",
+        "OperationalError at",
+        "TemplateSyntaxError at",
+        "SuspiciousOperation"
+      ],
+      "specific_paths": [
+        "/admin/",
+        "/admin/login/",
+        "/static/admin/",
+        "/media/",
+        "/api/",
+        "/accounts/login/",
+        "/accounts/logout/",
+        "/__debug__/",
+        "/jsi18n/"
+      ],
+      "csrf_token_names": [
+        "csrfmiddlewaretoken"
+      ],
+      "csrf_meta_names": [
+        "csrf-token"
+      ],
+      "csrf_cookie_names": [
+        "csrftoken"
+      ],
+      "csrf_header_names": [
+        "X-CSRFToken"
+      ],
+      "default_csrf_behavior": {
+        "token_rotation": "per-session",
+        "samesite_cookie": "Lax",
+        "double_submit": true,
+        "referer_check": true
+      }
+    },
+    "laravel": {
+      "name": "Laravel",
+      "language": "PHP",
+      "headers": [
+        {"name": "Set-Cookie", "pattern": "(?i)XSRF-TOKEN|laravel_session"},
+        {"name": "X-Powered-By", "pattern": "(?i)PHP"},
+        {"name": "Server", "pattern": "(?i)Apache|nginx"},
+        {"name": "Cache-Control", "pattern": "no-cache, private"}
+      ],
+      "cookies": [
+        {"name": "XSRF-TOKEN", "pattern": "^eyJ.*$"},
+        {"name": "laravel_session", "pattern": "^eyJ.*$"},
+        {"name": "laravel_token", "pattern": ".*"},
+        {"name": "remember_web_", "pattern": ".*"}
+      ],
+      "html_patterns": [
+        "name=\"_token\"",
+        "content=\"{{ csrf_token() }}\"",
+        "@csrf",
+        "csrf_token()",
+        "csrf_field()",
+        "laravel",
+        "Laravel",
+        "name=\"_method\"",
+        "@method",
+        "Illuminate\\\\",
+        "laravel_session",
+        "data-csrf"
+      ],
+      "error_patterns": [
+        "TokenMismatchException",
+        "CSRF token mismatch",
+        "419.*Page Expired",
+        "The page has expired due to inactivity",
+        "VerifyCsrfToken",
+        "Illuminate\\\\Session\\\\",
+        "Illuminate\\\\Foundation\\\\",
+        "Symfony\\\\Component\\\\HttpKernel",
+        "SQLSTATE\\[",
+        "Whoops, looks like something went wrong",
+        "laravel\\.log"
+      ],
+      "specific_paths": [
+        "/login",
+        "/register",
+        "/password/reset",
+        "/home",
+        "/api/",
+        "/storage/",
+        "/public/",
+        "/telescope",
+        "/horizon",
+        "/nova",
+        "/sanctum/csrf-cookie"
+      ],
+      "csrf_token_names": [
+        "_token"
+      ],
+      "csrf_meta_names": [
+        "csrf-token"
+      ],
+      "csrf_cookie_names": [
+        "XSRF-TOKEN"
+      ],
+      "csrf_header_names": [
+        "X-CSRF-TOKEN",
+        "X-XSRF-TOKEN"
+      ],
+      "default_csrf_behavior": {
+        "token_rotation": "per-session",
+        "samesite_cookie": "Lax",
+        "double_submit": true,
+        "referer_check": false
+      }
+    },
+    "flask": {
+      "name": "Flask",
+      "language": "Python",
+      "headers": [
+        {"name": "Server", "pattern": "(?i)Werkzeug|gunicorn|gevent"},
+        {"name": "X-Powered-By", "pattern": "(?i)Flask"},
+        {"name": "Content-Type", "pattern": "text/html; charset=utf-8"},
+        {"name": "Vary", "pattern": "Cookie"}
+      ],
+      "cookies": [
+        {"name": "session", "pattern": "^eyJ.*$|\\..*\\."},
+        {"name": "remember_token", "pattern": ".*"},
+        {"name": "csrf_token", "pattern": ".*"}
+      ],
+      "html_patterns": [
+        "csrf_token()",
+        "name=\"csrf_token\"",
+        "wtf.csrf",
+        "flask-wtf",
+        "Flask-WTF",
+        "{{ csrf_token() }}",
+        "{{ form.hidden_tag() }}",
+        "form.csrf_token",
+        "generate_csrf",
+        "validate_csrf",
+        "CSRFProtect",
+        "WTForms"
+      ],
+      "error_patterns": [
+        "The CSRF token is missing",
+        "The CSRF token has expired",
+        "The CSRF session token is missing",
+        "CSRFError",
+        "Bad Request.*CSRF",
+        "werkzeug\\.exceptions",
+        "Traceback \\(most recent call last\\)",
+        "jinja2\\.exceptions",
+        "TemplateNotFound",
+        "flask\\.debughelpers"
+      ],
+      "specific_paths": [
+        "/static/",
+        "/login",
+        "/logout",
+        "/register",
+        "/api/",
+        "/auth/",
+        "/uploads/"
+      ],
+      "csrf_token_names": [
+        "csrf_token"
+      ],
+      "csrf_meta_names": [
+        "csrf-token"
+      ],
+      "csrf_cookie_names": [
+        "csrf_token"
+      ],
+      "csrf_header_names": [
+        "X-CSRFToken",
+        "X-CSRF-Token"
+      ],
+      "default_csrf_behavior": {
+        "token_rotation": "per-request",
+        "samesite_cookie": "Lax",
+        "double_submit": false,
+        "referer_check": false
+      }
+    },
+    "spring": {
+      "name": "Spring / Spring Boot",
+      "language": "Java",
+      "headers": [
+        {"name": "X-Application-Context", "pattern": ".*"},
+        {"name": "X-Content-Type-Options", "pattern": "nosniff"},
+        {"name": "X-XSS-Protection", "pattern": "1; mode=block"},
+        {"name": "Cache-Control", "pattern": "no-cache, no-store, max-age=0, must-revalidate"},
+        {"name": "Pragma", "pattern": "no-cache"},
+        {"name": "X-Frame-Options", "pattern": "DENY|SAMEORIGIN"},
+        {"name": "Strict-Transport-Security", "pattern": "max-age=.*"},
+        {"name": "Server", "pattern": "(?i)Apache-Coyote|Tomcat|Jetty|Undertow"}
+      ],
+      "cookies": [
+        {"name": "JSESSIONID", "pattern": "^[A-F0-9]{32}$|^[a-zA-Z0-9._-]+$"},
+        {"name": "XSRF-TOKEN", "pattern": ".*"},
+        {"name": "remember-me", "pattern": ".*"}
+      ],
+      "html_patterns": [
+        "name=\"_csrf\"",
+        "name=\"${_csrf.parameterName}\"",
+        "content=\"${_csrf.token}\"",
+        "_csrf.token",
+        "_csrf.parameterName",
+        "_csrf.headerName",
+        "th:action",
+        "th:field",
+        "th:object",
+        "spring:",
+        "Spring Security",
+        "springframework",
+        "sec:authorize"
+      ],
+      "error_patterns": [
+        "Invalid CSRF Token",
+        "Expected CSRF token not found",
+        "Could not verify the provided CSRF token",
+        "Whitelabel Error Page",
+        "There was an unexpected error",
+        "org\\.springframework",
+        "java\\.lang\\.Exception",
+        "HTTP Status 403 – Forbidden",
+        "This application has no explicit mapping",
+        "Servlet\\.service\\(\\)",
+        "AbstractSecurityInterceptor"
+      ],
+      "specific_paths": [
+        "/login",
+        "/logout",
+        "/actuator",
+        "/actuator/health",
+        "/actuator/info",
+        "/api/",
+        "/swagger-ui.html",
+        "/swagger-ui/",
+        "/v2/api-docs",
+        "/v3/api-docs",
+        "/h2-console",
+        "/error",
+        "/webjars/"
+      ],
+      "csrf_token_names": [
+        "_csrf"
+      ],
+      "csrf_meta_names": [
+        "_csrf",
+        "_csrf_header"
+      ],
+      "csrf_cookie_names": [
+        "XSRF-TOKEN"
+      ],
+      "csrf_header_names": [
+        "X-CSRF-TOKEN",
+        "X-XSRF-TOKEN"
+      ],
+      "default_csrf_behavior": {
+        "token_rotation": "per-session",
+        "samesite_cookie": "Lax",
+        "double_submit": false,
+        "referer_check": false
+      }
+    },
+    "express": {
+      "name": "Express.js",
+      "language": "JavaScript/Node.js",
+      "headers": [
+        {"name": "X-Powered-By", "pattern": "(?i)Express"},
+        {"name": "ETag", "pattern": "W/\".*\""},
+        {"name": "Content-Type", "pattern": "text/html; charset=utf-8"}
+      ],
+      "cookies": [
+        {"name": "connect.sid", "pattern": "^s%3A.*$|^s:.*$"},
+        {"name": "_csrf", "pattern": ".*"},
+        {"name": "XSRF-TOKEN", "pattern": ".*"}
+      ],
+      "html_patterns": [
+        "name=\"_csrf\"",
+        "csurf",
+        "csrf()",
+        "csrfToken",
+        "req.csrfToken()",
+        "express",
+        "Express",
+        "node.js",
+        "ejs",
+        "pug",
+        "handlebars",
+        "{{csrfToken}}"
+      ],
+      "error_patterns": [
+        "invalid csrf token",
+        "ForbiddenError: invalid csrf token",
+        "misconfigured csrf",
+        "EBADCSRFTOKEN",
+        "Error: Forbidden",
+        "Cannot (GET|POST|PUT|DELETE)",
+        "SyntaxError: Unexpected token",
+        "ReferenceError:",
+        "TypeError:",
+        "UnhandledPromiseRejection",
+        "express-session"
+      ],
+      "specific_paths": [
+        "/api/",
+        "/auth/",
+        "/login",
+        "/logout",
+        "/register",
+        "/graphql",
+        "/socket.io/",
+        "/health",
+        "/status"
+      ],
+      "csrf_token_names": [
+        "_csrf"
+      ],
+      "csrf_meta_names": [
+        "csrf-token"
+      ],
+      "csrf_cookie_names": [
+        "_csrf",
+        "XSRF-TOKEN"
+      ],
+      "csrf_header_names": [
+        "X-CSRF-Token",
+        "X-XSRF-TOKEN",
+        "CSRF-Token"
+      ],
+      "default_csrf_behavior": {
+        "token_rotation": "per-request",
+        "samesite_cookie": "Strict",
+        "double_submit": true,
+        "referer_check": false
+      }
+    },
+    "rails": {
+      "name": "Ruby on Rails",
+      "language": "Ruby",
+      "headers": [
+        {"name": "X-Request-Id", "pattern": "^[a-f0-9-]{36}$"},
+        {"name": "X-Runtime", "pattern": "^[0-9.]+$"},
+        {"name": "X-Frame-Options", "pattern": "SAMEORIGIN"},
+        {"name": "X-XSS-Protection", "pattern": "1; mode=block"},
+        {"name": "X-Content-Type-Options", "pattern": "nosniff"},
+        {"name": "X-Download-Options", "pattern": "noopen"},
+        {"name": "X-Permitted-Cross-Domain-Policies", "pattern": "none"},
+        {"name": "Server", "pattern": "(?i)Phusion Passenger|Puma|Unicorn|Thin|WEBrick"}
+      ],
+      "cookies": [
+        {"name": "_rails_session", "pattern": ".*"},
+        {"name": "_session_id", "pattern": "^[a-f0-9]{32}$"},
+        {"name": "remember_user_token", "pattern": ".*"},
+        {"name": "_app_session", "pattern": ".*"}
+      ],
+      "html_patterns": [
+        "authenticity_token",
+        "name=\"authenticity_token\"",
+        "csrf-token",
+        "csrf-param",
+        "meta name=\"csrf-token\"",
+        "meta name=\"csrf-param\"",
+        "rails-ujs",
+        "@rails/ujs",
+        "data-turbo",
+        "data-turbolinks",
+        "Turbo.visit",
+        "Rails.ajax",
+        "form_authenticity_token",
+        "protect_from_forgery"
+      ],
+      "error_patterns": [
+        "ActionController::InvalidAuthenticityToken",
+        "Can't verify CSRF token authenticity",
+        "ActionController::RoutingError",
+        "ActiveRecord::RecordNotFound",
+        "ActionView::Template::Error",
+        "Routing Error",
+        "No route matches",
+        "We're sorry, but something went wrong",
+        "ExceptionNotification",
+        "ActionController::UnknownFormat"
+      ],
+      "specific_paths": [
+        "/rails/info",
+        "/rails/info/routes",
+        "/rails/mailers",
+        "/assets/",
+        "/packs/",
+        "/cable",
+        "/sidekiq",
+        "/admin",
+        "/users/sign_in",
+        "/users/sign_out"
+      ],
+      "csrf_token_names": [
+        "authenticity_token"
+      ],
+      "csrf_meta_names": [
+        "csrf-token",
+        "csrf-param"
+      ],
+      "csrf_cookie_names": [],
+      "csrf_header_names": [
+        "X-CSRF-Token"
+      ],
+      "default_csrf_behavior": {
+        "token_rotation": "per-session",
+        "samesite_cookie": "Lax",
+        "double_submit": false,
+        "referer_check": true
+      }
+    },
+    "aspnet": {
+      "name": "ASP.NET / ASP.NET Core",
+      "language": "C#/.NET",
+      "headers": [
+        {"name": "X-AspNet-Version", "pattern": "^[0-9.]+$"},
+        {"name": "X-AspNetMvc-Version", "pattern": "^[0-9.]+$"},
+        {"name": "X-Powered-By", "pattern": "(?i)ASP\\.NET"},
+        {"name": "Server", "pattern": "(?i)Microsoft-IIS|Kestrel"},
+        {"name": "X-SourceFiles", "pattern": ".*"},
+        {"name": "X-Frame-Options", "pattern": "SAMEORIGIN|DENY"},
+        {"name": "Strict-Transport-Security", "pattern": "max-age=.*"}
+      ],
+      "cookies": [
+        {"name": ".AspNetCore.Antiforgery.", "pattern": ".*"},
+        {"name": ".AspNetCore.Session", "pattern": ".*"},
+        {"name": ".AspNetCore.Identity.Application", "pattern": ".*"},
+        {"name": "ASP.NET_SessionId", "pattern": "^[a-z0-9]{24}$"},
+        {"name": ".ASPXAUTH", "pattern": ".*"},
+        {"name": "__RequestVerificationToken", "pattern": ".*"},
+        {"name": "ARRAffinity", "pattern": ".*"},
+        {"name": ".AspNet.ApplicationCookie", "pattern": ".*"}
+      ],
+      "html_patterns": [
+        "__RequestVerificationToken",
+        "name=\"__RequestVerificationToken\"",
+        "@Html.AntiForgeryToken()",
+        "asp-antiforgery",
+        "__VIEWSTATE",
+        "__VIEWSTATEGENERATOR",
+        "__EVENTVALIDATION",
+        "__EVENTTARGET",
+        "asp-controller",
+        "asp-action",
+        "asp-route",
+        "asp-for",
+        "data-val",
+        "data-val-required",
+        "runat=\"server\"",
+        "WebForms",
+        "Telerik",
+        "DevExpress"
+      ],
+      "error_patterns": [
+        "The required anti-forgery cookie",
+        "The anti-forgery token could not be decrypted",
+        "The provided anti-forgery token was meant for user",
+        "AntiforgeryValidationException",
+        "ValidateAntiForgeryToken",
+        "HttpAntiForgeryException",
+        "Server Error in '/' Application",
+        "Runtime Error",
+        "An unhandled exception occurred",
+        "The resource cannot be found",
+        "Yellow Screen of Death",
+        "A potentially dangerous Request",
+        "Object reference not set to an instance"
+      ],
+      "specific_paths": [
+        "/Account/Login",
+        "/Account/Register",
+        "/Home/",
+        "/api/",
+        "/Identity/Account/Login",
+        "/swagger/",
+        "/elmah.axd",
+        "/trace.axd",
+        "/WebResource.axd",
+        "/ScriptResource.axd",
+        "/signalr/",
+        "/hangfire"
+      ],
+      "csrf_token_names": [
+        "__RequestVerificationToken"
+      ],
+      "csrf_meta_names": [],
+      "csrf_cookie_names": [
+        ".AspNetCore.Antiforgery.",
+        "__RequestVerificationToken"
+      ],
+      "csrf_header_names": [
+        "RequestVerificationToken",
+        "X-CSRF-TOKEN"
+      ],
+      "default_csrf_behavior": {
+        "token_rotation": "per-session",
+        "samesite_cookie": "Strict",
+        "double_submit": true,
+        "referer_check": false
+      }
+    },
+    "wordpress": {
+      "name": "WordPress",
+      "language": "PHP",
+      "headers": [
+        {"name": "X-Powered-By", "pattern": "(?i)PHP"},
+        {"name": "Link", "pattern": "<.*>; rel=\"https://api\\.w\\.org/\""},
+        {"name": "X-Pingback", "pattern": ".*/xmlrpc\\.php$"},
+        {"name": "X-Redirect-By", "pattern": "(?i)WordPress"},
+        {"name": "Server", "pattern": "(?i)Apache|nginx|LiteSpeed"}
+      ],
+      "cookies": [
+        {"name": "wp-settings-", "pattern": ".*"},
+        {"name": "wp-settings-time-", "pattern": "^[0-9]+$"},
+        {"name": "wordpress_logged_in_", "pattern": ".*"},
+        {"name": "wordpress_test_cookie", "pattern": "WP Cookie check"},
+        {"name": "wordpress_sec_", "pattern": ".*"},
+        {"name": "wp_lang", "pattern": ".*"},
+        {"name": "comment_author_", "pattern": ".*"}
+      ],
+      "html_patterns": [
+        "wp-content",
+        "wp-includes",
+        "wp-json",
+        "wp_nonce",
+        "_wpnonce",
+        "wp-login.php",
+        "/wp-admin/",
+        "wp-emoji",
+        "wp-block-",
+        "WordPress",
+        "wp.customize",
+        "woocommerce",
+        "wp-embed",
+        "generator.*WordPress",
+        "themes/",
+        "plugins/",
+        "wp-cron.php",
+        "xmlrpc.php",
+        "wp_ajax",
+        "admin-ajax.php"
+      ],
+      "error_patterns": [
+        "Are you sure you want to do this",
+        "The link you followed has expired",
+        "wp-die",
+        "wp_nonce_ays",
+        "check_admin_referer",
+        "check_ajax_referer",
+        "wp_verify_nonce",
+        "There has been a critical error on this website",
+        "Briefly unavailable for scheduled maintenance",
+        "Error establishing a database connection",
+        "Fatal error.*wp-",
+        "Parse error.*wp-"
+      ],
+      "specific_paths": [
+        "/wp-login.php",
+        "/wp-admin/",
+        "/wp-admin/admin-ajax.php",
+        "/wp-content/",
+        "/wp-includes/",
+        "/wp-json/",
+        "/wp-json/wp/v2/",
+        "/wp-cron.php",
+        "/xmlrpc.php",
+        "/wp-config.php",
+        "/readme.html",
+        "/license.txt",
+        "/wp-trackback.php",
+        "/wp-comments-post.php",
+        "/wp-signup.php",
+        "/feed/",
+        "/wp-sitemap.xml"
+      ],
+      "csrf_token_names": [
+        "_wpnonce",
+        "wp_nonce",
+        "_wp_nonce"
+      ],
+      "csrf_meta_names": [
+        "wp-nonce"
+      ],
+      "csrf_cookie_names": [],
+      "csrf_header_names": [
+        "X-WP-Nonce"
+      ],
+      "default_csrf_behavior": {
+        "token_rotation": "time-based",
+        "token_lifetime_hours": 24,
+        "samesite_cookie": "Lax",
+        "double_submit": false,
+        "referer_check": true
+      }
+    },
+    "codeigniter": {
+      "name": "CodeIgniter",
+      "language": "PHP",
+      "headers": [
+        {"name": "X-Powered-By", "pattern": "(?i)PHP"},
+        {"name": "Set-Cookie", "pattern": "(?i)ci_session"},
+        {"name": "Server", "pattern": "(?i)Apache|nginx"}
+      ],
+      "cookies": [
+        {"name": "ci_session", "pattern": ".*"},
+        {"name": "csrf_cookie_name", "pattern": ".*"},
+        {"name": "ci_csrf_token", "pattern": ".*"}
+      ],
+      "html_patterns": [
+        "ci_csrf_token",
+        "csrf_test_name",
+        "csrf_hash",
+        "csrf_name",
+        "CodeIgniter",
+        "ci_csrf",
+        "form_open",
+        "system/core"
+      ],
+      "error_patterns": [
+        "The action you have requested is not allowed",
+        "An Error Was Encountered",
+        "A PHP Error was encountered",
+        "CodeIgniter",
+        "csrf_verify"
+      ],
+      "specific_paths": [
+        "/index.php",
+        "/application/",
+        "/system/",
+        "/public/"
+      ],
+      "csrf_token_names": [
+        "ci_csrf_token",
+        "csrf_test_name"
+      ],
+      "csrf_meta_names": [],
+      "csrf_cookie_names": [
+        "ci_csrf_token",
+        "csrf_cookie_name"
+      ],
+      "csrf_header_names": [
+        "X-CSRF-TOKEN"
+      ],
+      "default_csrf_behavior": {
+        "token_rotation": "per-request",
+        "samesite_cookie": "Lax",
+        "double_submit": true,
+        "referer_check": false
+      }
+    },
+    "symfony": {
+      "name": "Symfony",
+      "language": "PHP",
+      "headers": [
+        {"name": "X-Debug-Token", "pattern": ".*"},
+        {"name": "X-Debug-Token-Link", "pattern": ".*"},
+        {"name": "X-Powered-By", "pattern": "(?i)PHP"},
+        {"name": "Server", "pattern": "(?i)Apache|nginx"}
+      ],
+      "cookies": [
+        {"name": "PHPSESSID", "pattern": "^[a-zA-Z0-9]{26,40}$"},
+        {"name": "sf_redirect", "pattern": ".*"}
+      ],
+      "html_patterns": [
+        "name=\"_token\"",
+        "symfony",
+        "Symfony",
+        "_token",
+        "form._token",
+        "csrf_token()",
+        "isCsrfTokenValid",
+        "CsrfTokenManager",
+        "sf-toolbar",
+        "sf-minitoolbar"
+      ],
+      "error_patterns": [
+        "The CSRF token is invalid",
+        "InvalidCsrfTokenException",
+        "Symfony\\\\Component\\\\",
+        "Twig\\\\Error",
+        "NotFoundHttpException",
+        "An exception occurred",
+        "Stack Trace",
+        "Oops! An Error Occurred"
+      ],
+      "specific_paths": [
+        "/_profiler/",
+        "/_wdt/",
+        "/login",
+        "/logout",
+        "/register",
+        "/api/",
+        "/bundles/",
+        "/build/"
+      ],
+      "csrf_token_names": [
+        "_token"
+      ],
+      "csrf_meta_names": [],
+      "csrf_cookie_names": [],
+      "csrf_header_names": [
+        "X-CSRF-Token"
+      ],
+      "default_csrf_behavior": {
+        "token_rotation": "per-session",
+        "samesite_cookie": "Lax",
+        "double_submit": false,
+        "referer_check": false
+      }
+    },
+    "nextjs": {
+      "name": "Next.js",
+      "language": "JavaScript/Node.js",
+      "headers": [
+        {"name": "X-Powered-By", "pattern": "(?i)Next\\.js"},
+        {"name": "X-NextJS-Page", "pattern": ".*"},
+        {"name": "X-NextJS-Cache", "pattern": ".*"},
+        {"name": "Server", "pattern": "(?i)next"},
+        {"name": "X-Middleware-Rewrite", "pattern": ".*"}
+      ],
+      "cookies": [
+        {"name": "__next_hmr_refresh_hash__", "pattern": ".*"},
+        {"name": "next-auth.session-token", "pattern": ".*"},
+        {"name": "__Secure-next-auth.session-token", "pattern": ".*"},
+        {"name": "next-auth.csrf-token", "pattern": ".*"},
+        {"name": "__Host-next-auth.csrf-token", "pattern": ".*"}
+      ],
+      "html_patterns": [
+        "__NEXT_DATA__",
+        "__next",
+        "/_next/",
+        "_next/static",
+        "next/head",
+        "next/image",
+        "next/link",
+        "NextJS",
+        "next-auth",
+        "data-nextjs"
+      ],
+      "error_patterns": [
+        "Application error: a client-side exception has occurred",
+        "Unhandled Runtime Error",
+        "Server Error",
+        "Internal Server Error.*Next\\.js",
+        "next\\.config",
+        "getServerSideProps",
+        "getStaticProps"
+      ],
+      "specific_paths": [
+        "/_next/",
+        "/_next/static/",
+        "/_next/data/",
+        "/api/",
+        "/api/auth/",
+        "/api/auth/csrf",
+        "/api/auth/session"
+      ],
+      "csrf_token_names": [
+        "csrfToken"
+      ],
+      "csrf_meta_names": [],
+      "csrf_cookie_names": [
+        "next-auth.csrf-token",
+        "__Host-next-auth.csrf-token"
+      ],
+      "csrf_header_names": [
+        "X-CSRF-Token"
+      ],
+      "default_csrf_behavior": {
+        "token_rotation": "per-session",
+        "samesite_cookie": "Lax",
+        "double_submit": true,
+        "referer_check": false
+      }
+    },
+    "fastapi": {
+      "name": "FastAPI",
+      "language": "Python",
+      "headers": [
+        {"name": "Server", "pattern": "(?i)uvicorn|hypercorn|daphne"},
+        {"name": "Content-Type", "pattern": "application/json"}
+      ],
+      "cookies": [
+        {"name": "session", "pattern": ".*"},
+        {"name": "csrftoken", "pattern": ".*"},
+        {"name": "fastapi-csrf-token", "pattern": ".*"}
+      ],
+      "html_patterns": [
+        "FastAPI",
+        "fastapi",
+        "swagger-ui",
+        "openapi.json",
+        "Swagger UI",
+        "redoc"
+      ],
+      "error_patterns": [
+        "detail.*CSRF",
+        "Internal Server Error",
+        "422 Unprocessable Entity",
+        "pydantic",
+        "ValidationError",
+        "fastapi\\.exceptions"
+      ],
+      "specific_paths": [
+        "/docs",
+        "/redoc",
+        "/openapi.json",
+        "/api/",
+        "/health"
+      ],
+      "csrf_token_names": [
+        "csrf_token",
+        "csrftoken"
+      ],
+      "csrf_meta_names": [],
+      "csrf_cookie_names": [
+        "csrftoken",
+        "fastapi-csrf-token"
+      ],
+      "csrf_header_names": [
+        "X-CSRF-Token"
+      ],
+      "default_csrf_behavior": {
+        "token_rotation": "per-session",
+        "samesite_cookie": "Lax",
+        "double_submit": true,
+        "referer_check": false
+      }
+    }
+  },
+  "detection_config": {
+    "min_confidence_threshold": 0.3,
+    "header_match_weight": 0.25,
+    "cookie_match_weight": 0.30,
+    "html_pattern_weight": 0.25,
+    "error_pattern_weight": 0.10,
+    "path_match_weight": 0.10,
+    "max_frameworks_reported": 3
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "description": "Framework fingerprint signatures for SMART-HUNTER CSRF Scanner framework detection",
+    "last_updated": "2026-05-28",
+    "total_frameworks": 12,
+    "references": [
+      "https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/01-Information_Gathering/08-Fingerprint_Web_Application_Framework",
+      "https://portswigger.net/kb/issues/00500800_web-framework-detected",
+      "https://www.wappalyzer.com/technologies/"
+    ]
+  }
+}

@@ -117,15 +117,18 @@ def list_domains():
     return list(load_all_creds().keys())
 
 
-def prompt_for_credentials(domain):
+def prompt_for_credentials(domain, module_name="Global"):
     """
     Interactive prompt: ask the user if they want to provide credentials.
     Returns list of (username, password) tuples. Can be empty.
     """
     creds = []
-    print(f"\n    ┌─────────────────────────────────────────────────────┐")
-    print(f"    │  IDOR Authentication — Credentials for {domain[:30]:>30} │")
-    print(f"    └─────────────────────────────────────────────────────┘")
+    title = f"{module_name} Authentication"
+    text = f"  {title} — Credentials for {domain}  "
+    width = len(text)
+    print(f"\n    ┌{'─' * width}┐")
+    print(f"    │{text}│")
+    print(f"    └{'─' * width}┘")
 
     # Show saved creds first
     saved = get_creds_for_domain(domain)

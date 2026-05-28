@@ -97,7 +97,7 @@ def setup_active_scanner(target, cookie, scan_id=None):
         print("[!] ML prediction disabled: no saved model is available and the canonical training datasets are not ready yet.")
     return scanner
 
-def run_url_pentest(target, cookie, scanner, scan_id, stats, enable_oob=False, use_interactsh=False, collaborator_domain=None):
+def run_url_pentest(target, cookie, scanner, scan_id, stats, enable_oob=False, use_interactsh=False, collaborator_domain=None, interactive=False):
     print("\n" + "*"*64)
     print("*  LOGIC PHASE 1: RECON")
     print("*"*64)
@@ -129,7 +129,7 @@ def run_url_pentest(target, cookie, scanner, scan_id, stats, enable_oob=False, u
 
     quick_vulns.extend(pt_vulns)
 
-    main_vulns = URL_checkIfhaveVun.MainestVuln(target, cookie=cookie, scan_id=scan_id, stats=stats, enable_oob=enable_oob, collaborator_domain=collaborator_domain, use_interactsh=use_interactsh)
+    main_vulns = URL_checkIfhaveVun.MainestVuln(target, cookie=cookie, scan_id=scan_id, stats=stats, enable_oob=enable_oob, collaborator_domain=collaborator_domain, use_interactsh=use_interactsh, interactive=interactive)
     if main_vulns:
         quick_vulns.extend(main_vulns)
 
@@ -170,7 +170,7 @@ def run_scanner(target, cookie, enable_oob=False, use_interactsh=False, collabor
     stats.add('scans', 1)
     
     scanner = setup_active_scanner(target, cookie, scan_id=scan_id)
-    confirmed_vulns, candidate_vulns = run_url_pentest(target, cookie, scanner, scan_id, stats, enable_oob=enable_oob, use_interactsh=use_interactsh, collaborator_domain=collaborator_domain)
+    confirmed_vulns, candidate_vulns = run_url_pentest(target, cookie, scanner, scan_id, stats, enable_oob=enable_oob, use_interactsh=use_interactsh, collaborator_domain=collaborator_domain, interactive=True)
     display_scan_summary(confirmed_vulns, candidate_vulns)
     
     parsed = urllib.parse.urlparse(target)

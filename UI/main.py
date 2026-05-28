@@ -23,7 +23,7 @@ if root not in sys.path:
 
 import FullScan 
 import Mulit_Scan 
-import xss_scan, sqli_scan, rce_scan, idor_scan, xxe_scan
+import xss_scan, sqli_scan, rce_scan, idor_scan, xxe_scan, csrf_scan
 
 
 def display_banner():
@@ -45,8 +45,9 @@ def ScanOneVunlibilti():
     print("3. RCE")
     print("4. IDOR")
     print("5. XXE")
-    print("6. Back to Main Menu")
-    choice = input("Select an option (1-6): ").strip()
+    print("6. CSRF")
+    print("7. Back to Main Menu")
+    choice = input("Select an option (1-7): ").strip()
     
     if choice == '1':
         print("[*] Running XSS Scan...")
@@ -64,6 +65,9 @@ def ScanOneVunlibilti():
         print("[*] Running XXE Scan...")
         xxe_scan.main()
     elif choice == '6':
+        print("[*] Running CSRF Scan...")
+        csrf_scan.main()
+    elif choice == '7':
         return
     else:
         print("[-] Invalid Choice.")

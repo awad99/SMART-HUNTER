@@ -1,0 +1,1 @@
+{'type': 'CSRF (Missing SameSite Cookie Attribute)', 'parameter': 'Set-Cookie', 'payload': 'N/A', 'evidence': 'Session cookie missing SameSite attribute. Defaults to Lax in modern browsers.', 'tool': 'native_csrf', 'confidence': 'low'}

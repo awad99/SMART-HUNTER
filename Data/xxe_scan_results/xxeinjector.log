@@ -257,3 +257,23 @@ Enumeration options:
 [-] FTP/HTTP did not get response. XML parser cannot parse provided file or the application is not responsive. Wait or Next? W/n
 > [?25l[1G[K[1G[0m> [0m[?25h[3G[?25l[1G[K[?25h[1G> n
 [1G[+] Nothing else to do. Exiting.
+XXEinjector by Jakub Pałaczyński
+
+Enumeration options:
+"y" - enumerate currect file (default)
+"n" - skip currect file
+"a" - enumerate all files in currect directory
+"s" - skip all files in currect directory
+"q" - quit
+
+[-] Wrong HTTP file format.
+XXEinjector by Jakub Pałaczyński
+
+Enumeration options:
+"y" - enumerate currect file (default)
+"n" - skip currect file
+"a" - enumerate all files in currect directory
+"s" - skip all files in currect directory
+"q" - quit
+
+[-] Wrong HTTP file format.

