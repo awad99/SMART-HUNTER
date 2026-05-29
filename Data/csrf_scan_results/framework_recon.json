@@ -62,5 +62,13 @@
             "Header match: content-type",
             "Cookie match: session"
         ]
+    },
+    "0ab20074043a609b806a3fdf00720030.web-security-academy.net": {
+        "framework": "flask",
+        "confidence": "medium",
+        "evidence": [
+            "Header match: content-type",
+            "Cookie match: session"
+        ]
     }
 }
