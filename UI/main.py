@@ -22,7 +22,7 @@ if root not in sys.path:
     sys.path.append(os.path.join(root, "Data"))
 
 import FullScan 
-import Mulit_Scan 
+import Multi_Scan 
 import xss_scan, sqli_scan, rce_scan, idor_scan, xxe_scan, csrf_scan
 
 
@@ -38,7 +38,7 @@ def helpOption():
     print("5. Exit: Close the application.")
     print("-----------------\n")
 
-def ScanOneVunlibilti():
+def ScanOneVulnerability():
     print("\n--- Select Vulnerability to Scan ---")
     print("1. XSS")
     print("2. SQLi")
@@ -155,9 +155,9 @@ def MainOptions():
         if option == '1':
             FullScan.main()
         elif option == '2':
-            ScanOneVunlibilti()
+            ScanOneVulnerability()
         elif option == '3':
-            Mulit_Scan.main()
+            Multi_Scan.main()
         elif option == '4':
             DatabaseSettings()
         elif option == '5':

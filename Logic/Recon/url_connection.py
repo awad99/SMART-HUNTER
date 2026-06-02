@@ -130,6 +130,13 @@ class ReconWebSite:
         print(f"{'='*65}\n  Score: {present}/{len(_SEC_HEADERS)}  Grade: {grade}\n{'='*65}\n")
         return present
 
+    def extract_recon_features(self, response, original_url, final_url=None, redirect_chain=None, cookies=None, is_redirect=False):
+        """Pass-through to the feature extractor for external callers (prediction/pathAnalyze)"""
+        final_url = final_url or self.tracker.final_url or original_url
+        redirect_chain = redirect_chain or self.tracker.redirect_chain or []
+        cookies = cookies or self.tracker.cookies or {}
+        return self.extractor.extract_recon_features(response, original_url, final_url, redirect_chain, cookies, is_redirect)
+
     def save_ml_dataset(self, features, update_training=True, target_url=None):
         global _RECON_DATASET_COLUMNS_CACHE
         if features.get('error_occurred'): return

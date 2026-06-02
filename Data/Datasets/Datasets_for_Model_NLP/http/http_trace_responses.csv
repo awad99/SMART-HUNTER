@@ -130462,3 +130462,245 @@ set-cookie: pll_language=<masked>; expires=<masked>; max-age=<masked>; path=<mas
 vary: Accept-Encoding
 x-cache: MISS",response_content_type_html response_duplicate_headers response_server_disclosed security_header_permissions_policy_present set_cookie_httponly set_cookie_present set_cookie_samesite set_cookie_secure,permissions_policy,set_cookie_httponly set_cookie_present set_cookie_samesite set_cookie_secure,17,1,2,309124,0.6,1,passive_trace
 20260602_230134,6c622747343f4240860ca08491833b0a,recon.response_analysis,,0.0,,,,,,,,,,,0,0,0,0,0.0,0,response_analysis
+20260602_230800,7ae916e50245432bb4587855b5b2bfe8,recon.track_redirects,200,2719.874,text/html; charset=UTF-8,الرئيسية - شركة أكاديمية التعلم,"راءة الرئيسية"" /> {""@context"":""https:\/\/schema.org"",""@graph"":[{""@type"":""WebPage"",""@id"":""https:\/\/aol.edu.sa\/"",""url"":""https:\/\/aol.edu.sa\/"",""name"":""الرئيسية - شركة أكاديمية التعلم"",""isPartOf"":{""@id"":""https:\/\/aol.edu.sa\/#website""},""about"":{""@id"":""https:\/\/aol.edu.sa\/#organization""},""primaryImageOfPage"":{""@id"":""https:\/\/aol.edu.sa\/#primaryimage""},""image"":{""@id"":""https:\/\/aol.edu.sa\/#primaryimage""},""thumbnailUrl"":""https:\/\/aol.edu.sa\/wp-content\/uploads\/2023\/11\/1.jpg"",""datePublished"":""2023-11-01T16:35:46+00:00"",""dateModified"":""2026-05-10T14:07:31+00:00"",""breadcrumb"":{""@id"":""https:\/\/aol.edu.sa\/#breadcrumb""},""inLanguage"":""ar"",""potentialAction"":[{""@type"":""ReadAction"",""target"":[""https:\/\/aol.edu.sa\/""]}]},{""@type"":""ImageObject"",""inLanguage"":""ar"",""@id"":""https:\/\/aol.edu.sa\/#primaryimage"",""url"":""https:\/\/i0.wp.com\/aol.edu.sa\/wp-content\/uploads\/2023\/11\/1.jpg?fit=483%2C460&ssl=1"",""contentUrl"":""https:\/\/i0.wp.com\/aol.edu.sa\/wp-content\/uploads\/2023\/11\/1.jpg?fit=483%2C460&ssl=1"",""width"":483,""height"":460},{""@type"":""BreadcrumbList"",""@id"":""https:\/\/aol.edu.sa\/#breadcrumb"",""itemListElement"":[{""@type"":""ListItem"",""position"":1,""name"":""Home""}]},{""@type"":""WebSite"",""@id"":""https:\/\/aol.edu.sa\/#website"",""url"":""https:\/\/aol.edu.sa\/"",""name"":""شركة أكاديمية التعلم"",""description"":""لكم... وللمستقبل"",""publisher"":{""@id"":""https:\/\/aol.edu.sa\/#organization""},""potentialAction"":[{""@type"":""SearchAction"",""target"":{""@type"":""EntryPoint"",""urlTemplate"":""https:\/\/aol.edu.sa\/?s={search_term_string}""},""query-input"":{""@type"":""<token>"",""valueRequired"":true,""valueName"":""search_term_string""}}],""inLanguage"":""ar""},{""@type"":""Organization"",""@id"":""https:\/\/aol.edu.sa\/#organization"",""name"":""شركة أكاديمية التعلم"",""url"":""https:\/\/aol.edu.sa\/"",""logo"":{""@type"":""ImageObject"",""inLanguage"":""ar"",""@id"":""https:\/\/aol.edu.sa\/#\/schema\/logo\/image\/"",""url"":""https:\/\/i0.wp.com\/aol.edu.sa\/wp-content\/uploads\/2023\/10\/logo1.png?fit=350%2C100&ssl=1"",""contentUrl"":""https:\/\/i0.wp.com\/aol.edu.sa\/wp-content\/uploads\/2023\/10\/logo1.png?fit=350%2C100&ssl=1"",""width"":350,""height"":100,""caption"":""شركة أكاديمية التعلم""},""image"":{""@id"":""https:\/\/aol.edu.sa\/#\/schema\/logo\/image\/""},""sameAs"":[""https:\/\/x.com\/aolksa"",""https:\/\/www.snapchat.com\/add\/aolksa""]}]} var mi_version = '10.0.3'; var mi_track_user = true; var mi_no_tr",file_path_signature redirect_hint,,"date: Tue, 02 Jun 2026 20:07:48 GMT
+content-type: text/html; charset=UTF-8
+server: cloudflare
+permissions-policy: <token>=(self ""https://www.google.com"" ""https://www.gstatic.com"" ""https://recaptcha.net"" ""https://challenges.cloudflare.com"" ""https://hcaptcha.com""), <token>=(self ""https://www.google.com"" ""https://www.gstatic.com"" ""https://recaptcha.net"" ""https://challenges.cloudflare.com"" ""https://hcaptcha.com"")
+link: <https://aol.edu.sa/wp-json/>; rel=""https://api.w.org/"", <https://aol.edu.sa/wp-json/wp/v2/pages/36>; rel=""alternate""; title=""JSON""; type=""application/json"", <https://aol.edu.sa/>; rel=shortlink
+set-cookie: pll_language=<masked>; expires=<masked>; max-age=<masked>; path=<masked>; samesite=<masked>
+set-cookie: nfd-enable-cf-opt=<masked>; path=<masked>; max-age=<masked>
+cache-control: max-age=7200
+expires: Tue, 02 Jun 2026 22:07:46 GMT
+vary: Accept-Encoding
+report-to: {""group"":""cf-nel"",""max_age"":604800,""endpoints"":[{""url"":""https://a.nel.cloudflare.com/report/v4?s=<token>%<token>%2B5nQGmK3DluQ2QF89N1Q%3D""}]}
+age: 0
+x-cache: MISS
+nel: {""report_to"":""cf-nel"",""success_fraction"":0.0,""max_age"":604800}
+cf-cache-status: DYNAMIC
+content-encoding: br
+cf-ray: a05916113ecb3391-MRS","age: 0
+cache-control: max-age=7200
+cf-cache-status: DYNAMIC
+cf-ray: a05916113ecb3391-MRS
+content-encoding: br
+content-type: text/html; charset=UTF-8
+date: Tue, 02 Jun 2026 20:07:48 GMT
+expires: Tue, 02 Jun 2026 22:07:46 GMT
+link: <https://aol.edu.sa/wp-json/>; rel=""https://api.w.org/"", <https://aol.edu.sa/wp-json/wp/v2/pages/36>; rel=""alternate""; title=""JSON""; type=""application/json"", <https://aol.edu.sa/>; rel=shortlink
+nel: {""report_to"":""cf-nel"",""success_fraction"":0.0,""max_age"":604800}
+permissions-policy: <token>=(self ""https://www.google.com"" ""https://www.gstatic.com"" ""https://recaptcha.net"" ""https://challenges.cloudflare.com"" ""https://hcaptcha.com""), <token>=(self ""https://www.google.com"" ""https://www.gstatic.com"" ""https://recaptcha.net"" ""https://challenges.cloudflare.com"" ""https://hcaptcha.com"")
+report-to: {""group"":""cf-nel"",""max_age"":604800,""endpoints"":[{""url"":""https://a.nel.cloudflare.com/report/v4?s=<token>%<token>%2B5nQGmK3DluQ2QF89N1Q%3D""}]}
+server: cloudflare
+set-cookie: nfd-enable-cf-opt=<masked>; path=<masked>; max-age=<masked>
+set-cookie: pll_language=<masked>; expires=<masked>; max-age=<masked>; path=<masked>; samesite=<masked>
+vary: Accept-Encoding
+x-cache: MISS",response_content_type_html response_duplicate_headers response_server_disclosed security_header_permissions_policy_present set_cookie_httponly set_cookie_present set_cookie_samesite set_cookie_secure,permissions_policy,set_cookie_httponly set_cookie_present set_cookie_samesite set_cookie_secure,17,1,2,309124,0.6,1,passive_trace
+20260602_230800,a523a407d63143e0b7f66afc08bf9686,recon.final_response,200,,,الرئيسية - شركة أكاديمية التعلم,"حلية… متابعة قراءة الرئيسية""> {""@context"":""https:\/\/schema.org"",""@graph"":[{""@type"":""WebPage"",""@id"":""https:\/\/aol.edu.sa\/"",""url"":""https:\/\/aol.edu.sa\/"",""name"":""الرئيسية - شركة أكاديمية التعلم"",""isPartOf"":{""@id"":""https:\/\/aol.edu.sa\/#website""},""about"":{""@id"":""https:\/\/aol.edu.sa\/#organization""},""primaryImageOfPage"":{""@id"":""https:\/\/aol.edu.sa\/#primaryimage""},""image"":{""@id"":""https:\/\/aol.edu.sa\/#primaryimage""},""thumbnailUrl"":""https:\/\/aol.edu.sa\/wp-content\/uploads\/2023\/11\/1.jpg"",""datePublished"":""2023-11-01T16:35:46+00:00"",""dateModified"":""2026-05-10T14:07:31+00:00"",""breadcrumb"":{""@id"":""https:\/\/aol.edu.sa\/#breadcrumb""},""inLanguage"":""ar"",""potentialAction"":[{""@type"":""ReadAction"",""target"":[""https:\/\/aol.edu.sa\/""]}]},{""@type"":""ImageObject"",""inLanguage"":""ar"",""@id"":""https:\/\/aol.edu.sa\/#primaryimage"",""url"":""https:\/\/i0.wp.com\/aol.edu.sa\/wp-content\/uploads\/2023\/11\/1.jpg?fit=483%2C460&ssl=1"",""contentUrl"":""https:\/\/i0.wp.com\/aol.edu.sa\/wp-content\/uploads\/2023\/11\/1.jpg?fit=483%2C460&ssl=1"",""width"":483,""height"":460},{""@type"":""BreadcrumbList"",""@id"":""https:\/\/aol.edu.sa\/#breadcrumb"",""itemListElement"":[{""@type"":""ListItem"",""position"":1,""name"":""Home""}]},{""@type"":""WebSite"",""@id"":""https:\/\/aol.edu.sa\/#website"",""url"":""https:\/\/aol.edu.sa\/"",""name"":""شركة أكاديمية التعلم"",""description"":""لكم... وللمستقبل"",""publisher"":{""@id"":""https:\/\/aol.edu.sa\/#organization""},""potentialAction"":[{""@type"":""SearchAction"",""target"":{""@type"":""EntryPoint"",""urlTemplate"":""https:\/\/aol.edu.sa\/?s={search_term_string}""},""query-input"":{""@type"":""<token>"",""valueRequired"":true,""valueName"":""search_term_string""}}],""inLanguage"":""ar""},{""@type"":""Organization"",""@id"":""https:\/\/aol.edu.sa\/#organization"",""name"":""شركة أكاديمية التعلم"",""url"":""https:\/\/aol.edu.sa\/"",""logo"":{""@type"":""ImageObject"",""inLanguage"":""ar"",""@id"":""https:\/\/aol.edu.sa\/#\/schema\/logo\/image\/"",""url"":""https:\/\/i0.wp.com\/aol.edu.sa\/wp-content\/uploads\/2023\/10\/logo1.png?fit=350%2C100&ssl=1"",""contentUrl"":""https:\/\/i0.wp.com\/aol.edu.sa\/wp-content\/uploads\/2023\/10\/logo1.png?fit=350%2C100&ssl=1"",""width"":350,""height"":100,""caption"":""شركة أكاديمية التعلم""},""image"":{""@id"":""https:\/\/aol.edu.sa\/#\/schema\/logo\/image\/""},""sameAs"":[""https:\/\/x.com\/aolksa"",""https:\/\/www.snapchat.com\/add\/aolksa""]}]} var mi_version = '10.0.3'; var mi_track_user = true; var mi_no_track_reason = ''; va",file_path_signature redirect_hint,,,,,,,0,0,0,361284,0.0,0,passive_trace
+20260602_230800,34cc6f4500a348cab72d38e831caa218,recon.response_analysis,,0.0,,,,,,,,,,,0,0,0,0,0.0,0,response_analysis
+20260602_231526,8543c650f6354909a7e2f86108ca70ce,recon.track_redirects,200,3023.104,text/html; charset=UTF-8,الرئيسية - شركة أكاديمية التعلم,"راءة الرئيسية"" /> {""@context"":""https:\/\/schema.org"",""@graph"":[{""@type"":""WebPage"",""@id"":""https:\/\/aol.edu.sa\/"",""url"":""https:\/\/aol.edu.sa\/"",""name"":""الرئيسية - شركة أكاديمية التعلم"",""isPartOf"":{""@id"":""https:\/\/aol.edu.sa\/#website""},""about"":{""@id"":""https:\/\/aol.edu.sa\/#organization""},""primaryImageOfPage"":{""@id"":""https:\/\/aol.edu.sa\/#primaryimage""},""image"":{""@id"":""https:\/\/aol.edu.sa\/#primaryimage""},""thumbnailUrl"":""https:\/\/aol.edu.sa\/wp-content\/uploads\/2023\/11\/1.jpg"",""datePublished"":""2023-11-01T16:35:46+00:00"",""dateModified"":""2026-05-10T14:07:31+00:00"",""breadcrumb"":{""@id"":""https:\/\/aol.edu.sa\/#breadcrumb""},""inLanguage"":""ar"",""potentialAction"":[{""@type"":""ReadAction"",""target"":[""https:\/\/aol.edu.sa\/""]}]},{""@type"":""ImageObject"",""inLanguage"":""ar"",""@id"":""https:\/\/aol.edu.sa\/#primaryimage"",""url"":""https:\/\/i0.wp.com\/aol.edu.sa\/wp-content\/uploads\/2023\/11\/1.jpg?fit=483%2C460&ssl=1"",""contentUrl"":""https:\/\/i0.wp.com\/aol.edu.sa\/wp-content\/uploads\/2023\/11\/1.jpg?fit=483%2C460&ssl=1"",""width"":483,""height"":460},{""@type"":""BreadcrumbList"",""@id"":""https:\/\/aol.edu.sa\/#breadcrumb"",""itemListElement"":[{""@type"":""ListItem"",""position"":1,""name"":""Home""}]},{""@type"":""WebSite"",""@id"":""https:\/\/aol.edu.sa\/#website"",""url"":""https:\/\/aol.edu.sa\/"",""name"":""شركة أكاديمية التعلم"",""description"":""لكم... وللمستقبل"",""publisher"":{""@id"":""https:\/\/aol.edu.sa\/#organization""},""potentialAction"":[{""@type"":""SearchAction"",""target"":{""@type"":""EntryPoint"",""urlTemplate"":""https:\/\/aol.edu.sa\/?s={search_term_string}""},""query-input"":{""@type"":""<token>"",""valueRequired"":true,""valueName"":""search_term_string""}}],""inLanguage"":""ar""},{""@type"":""Organization"",""@id"":""https:\/\/aol.edu.sa\/#organization"",""name"":""شركة أكاديمية التعلم"",""url"":""https:\/\/aol.edu.sa\/"",""logo"":{""@type"":""ImageObject"",""inLanguage"":""ar"",""@id"":""https:\/\/aol.edu.sa\/#\/schema\/logo\/image\/"",""url"":""https:\/\/i0.wp.com\/aol.edu.sa\/wp-content\/uploads\/2023\/10\/logo1.png?fit=350%2C100&ssl=1"",""contentUrl"":""https:\/\/i0.wp.com\/aol.edu.sa\/wp-content\/uploads\/2023\/10\/logo1.png?fit=350%2C100&ssl=1"",""width"":350,""height"":100,""caption"":""شركة أكاديمية التعلم""},""image"":{""@id"":""https:\/\/aol.edu.sa\/#\/schema\/logo\/image\/""},""sameAs"":[""https:\/\/x.com\/aolksa"",""https:\/\/www.snapchat.com\/add\/aolksa""]}]} var mi_version = '10.0.3'; var mi_track_user = true; var mi_no_tr",file_path_signature redirect_hint,,"date: Tue, 02 Jun 2026 20:15:14 GMT
+content-type: text/html; charset=UTF-8
+server: cloudflare
+permissions-policy: <token>=(self ""https://www.google.com"" ""https://www.gstatic.com"" ""https://recaptcha.net"" ""https://challenges.cloudflare.com"" ""https://hcaptcha.com""), <token>=(self ""https://www.google.com"" ""https://www.gstatic.com"" ""https://recaptcha.net"" ""https://challenges.cloudflare.com"" ""https://hcaptcha.com"")
+link: <https://aol.edu.sa/wp-json/>; rel=""https://api.w.org/"", <https://aol.edu.sa/wp-json/wp/v2/pages/36>; rel=""alternate""; title=""JSON""; type=""application/json"", <https://aol.edu.sa/>; rel=shortlink
+set-cookie: pll_language=<masked>; expires=<masked>; max-age=<masked>; path=<masked>; samesite=<masked>
+set-cookie: nfd-enable-cf-opt=<masked>; path=<masked>; max-age=<masked>
+cache-control: max-age=7200
+expires: Tue, 02 Jun 2026 22:15:12 GMT
+vary: Accept-Encoding
+report-to: {""group"":""cf-nel"",""max_age"":604800,""endpoints"":[{""url"":""https://a.nel.cloudflare.com/report/v4?s=WnmRGmf1mkxb8j4aW%2FP%<token>%2FTtTGm4yTXEAGlcgDv%2FDyo%3D""}]}
+age: 0
+x-cache: MISS
+nel: {""report_to"":""cf-nel"",""success_fraction"":0.0,""max_age"":604800}
+cf-cache-status: DYNAMIC
+content-encoding: br
+cf-ray: a05920f63ac0e1c4-MRS","age: 0
+cache-control: max-age=7200
+cf-cache-status: DYNAMIC
+cf-ray: a05920f63ac0e1c4-MRS
+content-encoding: br
+content-type: text/html; charset=UTF-8
+date: Tue, 02 Jun 2026 20:15:14 GMT
+expires: Tue, 02 Jun 2026 22:15:12 GMT
+link: <https://aol.edu.sa/wp-json/>; rel=""https://api.w.org/"", <https://aol.edu.sa/wp-json/wp/v2/pages/36>; rel=""alternate""; title=""JSON""; type=""application/json"", <https://aol.edu.sa/>; rel=shortlink
+nel: {""report_to"":""cf-nel"",""success_fraction"":0.0,""max_age"":604800}
+permissions-policy: <token>=(self ""https://www.google.com"" ""https://www.gstatic.com"" ""https://recaptcha.net"" ""https://challenges.cloudflare.com"" ""https://hcaptcha.com""), <token>=(self ""https://www.google.com"" ""https://www.gstatic.com"" ""https://recaptcha.net"" ""https://challenges.cloudflare.com"" ""https://hcaptcha.com"")
+report-to: {""group"":""cf-nel"",""max_age"":604800,""endpoints"":[{""url"":""https://a.nel.cloudflare.com/report/v4?s=WnmRGmf1mkxb8j4aW%2FP%<token>%2FTtTGm4yTXEAGlcgDv%2FDyo%3D""}]}
+server: cloudflare
+set-cookie: nfd-enable-cf-opt=<masked>; path=<masked>; max-age=<masked>
+set-cookie: pll_language=<masked>; expires=<masked>; max-age=<masked>; path=<masked>; samesite=<masked>
+vary: Accept-Encoding
+x-cache: MISS",response_content_type_html response_duplicate_headers response_server_disclosed security_header_permissions_policy_present set_cookie_httponly set_cookie_present set_cookie_samesite set_cookie_secure,permissions_policy,set_cookie_httponly set_cookie_present set_cookie_samesite set_cookie_secure,17,1,2,309124,0.6,1,passive_trace
+20260602_231526,bfef0cd62efe42d4825733a0970ef8d4,recon.final_response,200,,,الرئيسية - شركة أكاديمية التعلم,"حلية… متابعة قراءة الرئيسية""> {""@context"":""https:\/\/schema.org"",""@graph"":[{""@type"":""WebPage"",""@id"":""https:\/\/aol.edu.sa\/"",""url"":""https:\/\/aol.edu.sa\/"",""name"":""الرئيسية - شركة أكاديمية التعلم"",""isPartOf"":{""@id"":""https:\/\/aol.edu.sa\/#website""},""about"":{""@id"":""https:\/\/aol.edu.sa\/#organization""},""primaryImageOfPage"":{""@id"":""https:\/\/aol.edu.sa\/#primaryimage""},""image"":{""@id"":""https:\/\/aol.edu.sa\/#primaryimage""},""thumbnailUrl"":""https:\/\/aol.edu.sa\/wp-content\/uploads\/2023\/11\/1.jpg"",""datePublished"":""2023-11-01T16:35:46+00:00"",""dateModified"":""2026-05-10T14:07:31+00:00"",""breadcrumb"":{""@id"":""https:\/\/aol.edu.sa\/#breadcrumb""},""inLanguage"":""ar"",""potentialAction"":[{""@type"":""ReadAction"",""target"":[""https:\/\/aol.edu.sa\/""]}]},{""@type"":""ImageObject"",""inLanguage"":""ar"",""@id"":""https:\/\/aol.edu.sa\/#primaryimage"",""url"":""https:\/\/i0.wp.com\/aol.edu.sa\/wp-content\/uploads\/2023\/11\/1.jpg?fit=483%2C460&ssl=1"",""contentUrl"":""https:\/\/i0.wp.com\/aol.edu.sa\/wp-content\/uploads\/2023\/11\/1.jpg?fit=483%2C460&ssl=1"",""width"":483,""height"":460},{""@type"":""BreadcrumbList"",""@id"":""https:\/\/aol.edu.sa\/#breadcrumb"",""itemListElement"":[{""@type"":""ListItem"",""position"":1,""name"":""Home""}]},{""@type"":""WebSite"",""@id"":""https:\/\/aol.edu.sa\/#website"",""url"":""https:\/\/aol.edu.sa\/"",""name"":""شركة أكاديمية التعلم"",""description"":""لكم... وللمستقبل"",""publisher"":{""@id"":""https:\/\/aol.edu.sa\/#organization""},""potentialAction"":[{""@type"":""SearchAction"",""target"":{""@type"":""EntryPoint"",""urlTemplate"":""https:\/\/aol.edu.sa\/?s={search_term_string}""},""query-input"":{""@type"":""<token>"",""valueRequired"":true,""valueName"":""search_term_string""}}],""inLanguage"":""ar""},{""@type"":""Organization"",""@id"":""https:\/\/aol.edu.sa\/#organization"",""name"":""شركة أكاديمية التعلم"",""url"":""https:\/\/aol.edu.sa\/"",""logo"":{""@type"":""ImageObject"",""inLanguage"":""ar"",""@id"":""https:\/\/aol.edu.sa\/#\/schema\/logo\/image\/"",""url"":""https:\/\/i0.wp.com\/aol.edu.sa\/wp-content\/uploads\/2023\/10\/logo1.png?fit=350%2C100&ssl=1"",""contentUrl"":""https:\/\/i0.wp.com\/aol.edu.sa\/wp-content\/uploads\/2023\/10\/logo1.png?fit=350%2C100&ssl=1"",""width"":350,""height"":100,""caption"":""شركة أكاديمية التعلم""},""image"":{""@id"":""https:\/\/aol.edu.sa\/#\/schema\/logo\/image\/""},""sameAs"":[""https:\/\/x.com\/aolksa"",""https:\/\/www.snapchat.com\/add\/aolksa""]}]} var mi_version = '10.0.3'; var mi_track_user = true; var mi_no_track_reason = ''; va",file_path_signature redirect_hint,,,,,,,0,0,0,361283,0.0,0,passive_trace
+20260602_231526,8860529dcdbe4c5c948c2cefe3e6f6eb,recon.response_analysis,,0.0,,,,,,,,,,,0,0,0,0,0.0,0,response_analysis
+20260602_231526,a01d2ca49d484ac2a30a09dba238d223,path_analyze.page.depth_0,200,2834.43,text/html; charset=UTF-8,الرئيسية - شركة أكاديمية التعلم,"راءة الرئيسية"" /> {""@context"":""https:\/\/schema.org"",""@graph"":[{""@type"":""WebPage"",""@id"":""https:\/\/aol.edu.sa\/"",""url"":""https:\/\/aol.edu.sa\/"",""name"":""الرئيسية - شركة أكاديمية التعلم"",""isPartOf"":{""@id"":""https:\/\/aol.edu.sa\/#website""},""about"":{""@id"":""https:\/\/aol.edu.sa\/#organization""},""primaryImageOfPage"":{""@id"":""https:\/\/aol.edu.sa\/#primaryimage""},""image"":{""@id"":""https:\/\/aol.edu.sa\/#primaryimage""},""thumbnailUrl"":""https:\/\/aol.edu.sa\/wp-content\/uploads\/2023\/11\/1.jpg"",""datePublished"":""2023-11-01T16:35:46+00:00"",""dateModified"":""2026-05-10T14:07:31+00:00"",""breadcrumb"":{""@id"":""https:\/\/aol.edu.sa\/#breadcrumb""},""inLanguage"":""ar"",""potentialAction"":[{""@type"":""ReadAction"",""target"":[""https:\/\/aol.edu.sa\/""]}]},{""@type"":""ImageObject"",""inLanguage"":""ar"",""@id"":""https:\/\/aol.edu.sa\/#primaryimage"",""url"":""https:\/\/i0.wp.com\/aol.edu.sa\/wp-content\/uploads\/2023\/11\/1.jpg?fit=483%2C460&ssl=1"",""contentUrl"":""https:\/\/i0.wp.com\/aol.edu.sa\/wp-content\/uploads\/2023\/11\/1.jpg?fit=483%2C460&ssl=1"",""width"":483,""height"":460},{""@type"":""BreadcrumbList"",""@id"":""https:\/\/aol.edu.sa\/#breadcrumb"",""itemListElement"":[{""@type"":""ListItem"",""position"":1,""name"":""Home""}]},{""@type"":""WebSite"",""@id"":""https:\/\/aol.edu.sa\/#website"",""url"":""https:\/\/aol.edu.sa\/"",""name"":""شركة أكاديمية التعلم"",""description"":""لكم... وللمستقبل"",""publisher"":{""@id"":""https:\/\/aol.edu.sa\/#organization""},""potentialAction"":[{""@type"":""SearchAction"",""target"":{""@type"":""EntryPoint"",""urlTemplate"":""https:\/\/aol.edu.sa\/?s={search_term_string}""},""query-input"":{""@type"":""<token>"",""valueRequired"":true,""valueName"":""search_term_string""}}],""inLanguage"":""ar""},{""@type"":""Organization"",""@id"":""https:\/\/aol.edu.sa\/#organization"",""name"":""شركة أكاديمية التعلم"",""url"":""https:\/\/aol.edu.sa\/"",""logo"":{""@type"":""ImageObject"",""inLanguage"":""ar"",""@id"":""https:\/\/aol.edu.sa\/#\/schema\/logo\/image\/"",""url"":""https:\/\/i0.wp.com\/aol.edu.sa\/wp-content\/uploads\/2023\/10\/logo1.png?fit=350%2C100&ssl=1"",""contentUrl"":""https:\/\/i0.wp.com\/aol.edu.sa\/wp-content\/uploads\/2023\/10\/logo1.png?fit=350%2C100&ssl=1"",""width"":350,""height"":100,""caption"":""شركة أكاديمية التعلم""},""image"":{""@id"":""https:\/\/aol.edu.sa\/#\/schema\/logo\/image\/""},""sameAs"":[""https:\/\/x.com\/aolksa"",""https:\/\/www.snapchat.com\/add\/aolksa""]}]} var mi_version = '10.0.3'; var mi_track_user = true; var mi_no_tr",file_path_signature redirect_hint,,"date: Tue, 02 Jun 2026 20:16:20 GMT
+content-type: text/html; charset=UTF-8
+transfer-encoding: chunked
+connection: keep-alive
+server: cloudflare
+permissions-policy: <token>=(self ""https://www.google.com"" ""https://www.gstatic.com"" ""https://recaptcha.net"" ""https://challenges.cloudflare.com"" ""https://hcaptcha.com""), <token>=(self ""https://www.google.com"" ""https://www.gstatic.com"" ""https://recaptcha.net"" ""https://challenges.cloudflare.com"" ""https://hcaptcha.com"")
+link: <https://aol.edu.sa/wp-json/>; rel=""https://api.w.org/"", <https://aol.edu.sa/wp-json/wp/v2/pages/36>; rel=""alternate""; title=""JSON""; type=""application/json"", <https://aol.edu.sa/>; rel=shortlink
+set-cookie: pll_language=<masked>; expires=<masked>; max-age=<masked>; path=<masked>; samesite=<masked>; path=<masked>; max-age=<masked>
+cache-control: max-age=7200
+expires: Tue, 02 Jun 2026 22:16:18 GMT
+vary: Accept-Encoding
+report-to: {""group"":""cf-nel"",""max_age"":604800,""endpoints"":[{""url"":""https://a.nel.cloudflare.com/report/v4?s=pC%<token>%2BlTd4Iu%2BL7knGklVBFlo2U%3D""}]}
+age: 0
+x-cache: MISS
+nel: {""report_to"":""cf-nel"",""success_fraction"":0.0,""max_age"":604800}
+cf-cache-status: DYNAMIC
+content-encoding: br
+cf-ray: a0592293bf40e1e5-MRS","age: 0
+cache-control: max-age=7200
+cf-cache-status: DYNAMIC
+cf-ray: a0592293bf40e1e5-MRS
+connection: keep-alive
+content-encoding: br
+content-type: text/html; charset=UTF-8
+date: Tue, 02 Jun 2026 20:16:20 GMT
+expires: Tue, 02 Jun 2026 22:16:18 GMT
+link: <https://aol.edu.sa/wp-json/>; rel=""https://api.w.org/"", <https://aol.edu.sa/wp-json/wp/v2/pages/36>; rel=""alternate""; title=""JSON""; type=""application/json"", <https://aol.edu.sa/>; rel=shortlink
+nel: {""report_to"":""cf-nel"",""success_fraction"":0.0,""max_age"":604800}
+permissions-policy: <token>=(self ""https://www.google.com"" ""https://www.gstatic.com"" ""https://recaptcha.net"" ""https://challenges.cloudflare.com"" ""https://hcaptcha.com""), <token>=(self ""https://www.google.com"" ""https://www.gstatic.com"" ""https://recaptcha.net"" ""https://challenges.cloudflare.com"" ""https://hcaptcha.com"")
+report-to: {""group"":""cf-nel"",""max_age"":604800,""endpoints"":[{""url"":""https://a.nel.cloudflare.com/report/v4?s=pC%<token>%2BlTd4Iu%2BL7knGklVBFlo2U%3D""}]}
+server: cloudflare
+set-cookie: pll_language=<masked>; expires=<masked>; max-age=<masked>; path=<masked>; samesite=<masked>; path=<masked>; max-age=<masked>
+transfer-encoding: chunked
+vary: Accept-Encoding
+x-cache: MISS",response_content_type_html response_server_disclosed security_header_permissions_policy_present set_cookie_httponly set_cookie_present set_cookie_samesite set_cookie_secure,permissions_policy,set_cookie_httponly set_cookie_present set_cookie_samesite set_cookie_secure,18,1,1,309144,0.45,1,path_crawl_page
+20260602_231526,f8fef838709a4b0fbedae81447dd2c30,path_analyze.resource-src,,0.0,,,,,,,,,,,0,0,0,0,0.0,1,path_candidate
+20260602_231526,542444d3774146a880bb2d63cb730394,path_analyze.resource-src,,0.0,,,,,,,,,,,0,0,0,0,0.0,1,path_candidate
+20260602_231526,aedae9327cb64bf69b1ee6c4438af662,path_analyze.resource-src,,0.0,,,,,,,,,,,0,0,0,0,0.0,1,path_candidate
+20260602_231526,883ba03ffe0c4c53808e8f699e46cc6d,path_analyze.page.depth_1,403,538.89,text/html; charset=iso-8859-1,403 Forbidden,403 Forbidden Forbidden You don't have permission to access this resource. Apache/2.4.59 (Debian) Server at aol.edu.sa Port 80,authz_barrier,,"date: Tue, 02 Jun 2026 20:16:46 GMT
+content-type: text/html; charset=iso-8859-1
+transfer-encoding: chunked
+connection: keep-alive
+server: cloudflare
+vary: Accept-Encoding
+age: 0
+x-cache: MISS
+report-to: {""group"":""cf-nel"",""max_age"":604800,""endpoints"":[{""url"":""https://a.nel.cloudflare.com/report/v4?s=BTmesNK%2B0CQKFgXd3vYC8LpMQ6uI%2FTFvdHfbo4j%2B%<token>%2B9HtHEdETKO%2BhpLSUyHxIsA5TeBclyCjI%3D""}]}
+nel: {""report_to"":""cf-nel"",""success_fraction"":0.0,""max_age"":604800}
+cf-cache-status: DYNAMIC
+content-encoding: br
+cf-ray: a059234329fc9782-MRS","age: 0
+cf-cache-status: DYNAMIC
+cf-ray: a059234329fc9782-MRS
+connection: keep-alive
+content-encoding: br
+content-type: text/html; charset=iso-8859-1
+date: Tue, 02 Jun 2026 20:16:46 GMT
+nel: {""report_to"":""cf-nel"",""success_fraction"":0.0,""max_age"":604800}
+report-to: {""group"":""cf-nel"",""max_age"":604800,""endpoints"":[{""url"":""https://a.nel.cloudflare.com/report/v4?s=BTmesNK%2B0CQKFgXd3vYC8LpMQ6uI%2FTFvdHfbo4j%2B%<token>%2B9HtHEdETKO%2BhpLSUyHxIsA5TeBclyCjI%3D""}]}
+server: cloudflare
+transfer-encoding: chunked
+vary: Accept-Encoding
+x-cache: MISS",response_content_type_html response_server_disclosed,,,13,0,0,275,0.33,1,path_crawl_page
+20260602_231526,74d3b5c6ef1e4c9281fd6cee74477210,path_analyze.page.depth_1,200,2662.863,text/html; charset=UTF-8,Homepage - شركة أكاديمية التعلم,"et-elementskit-heading"" data-id=""6335d0ee"" data-element_type=""widget"" data-e-type=""widget"" data-widget_type=""elementskit-heading.default""> The Art of Learning A unique and exceptional experience in modern digital learning and training — all in an engaging, entertaining atmosphere. A state-of-the-art female academy Fitness Health Home Theatres <section class=""elementor-section elementor-top-section elementor-ele",exception_trace_signature file_path_signature redirect_hint,,"date: Tue, 02 Jun 2026 20:16:48 GMT
+content-type: text/html; charset=UTF-8
+transfer-encoding: chunked
+connection: keep-alive
+server: cloudflare
+vary: Accept-Encoding, Accept-Encoding
+permissions-policy: <token>=(self ""https://www.google.com"" ""https://www.gstatic.com"" ""https://recaptcha.net"" ""https://challenges.cloudflare.com"" ""https://hcaptcha.com""), <token>=(self ""https://www.google.com"" ""https://www.gstatic.com"" ""https://recaptcha.net"" ""https://challenges.cloudflare.com"" ""https://hcaptcha.com"")
+link: <https://aol.edu.sa/wp-json/>; rel=""https://api.w.org/"", <https://aol.edu.sa/wp-json/wp/v2/pages/3277>; rel=""alternate""; title=""JSON""; type=""application/json"", <https://aol.edu.sa/>; rel=shortlink
+set-cookie: pll_language=<masked>; expires=<masked>; max-age=<masked>; path=<masked>; samesite=<masked>
+cache-control: max-age=7200
+expires: Tue, 02 Jun 2026 22:16:46 GMT
+age: 0
+x-cache: MISS
+report-to: {""group"":""cf-nel"",""max_age"":604800,""endpoints"":[{""url"":""https://a.nel.cloudflare.com/report/v4?s=MtCeE%2F8zeeOulSdHau%2FRny4RBhoc3Fw%2B%<token>%3D""}]}
+nel: {""report_to"":""cf-nel"",""success_fraction"":0.0,""max_age"":604800}
+cf-cache-status: DYNAMIC
+content-encoding: br
+cf-ray: a05923429fe84591-MRS","age: 0
+cache-control: max-age=7200
+cf-cache-status: DYNAMIC
+cf-ray: a05923429fe84591-MRS
+connection: keep-alive
+content-encoding: br
+content-type: text/html; charset=UTF-8
+date: Tue, 02 Jun 2026 20:16:48 GMT
+expires: Tue, 02 Jun 2026 22:16:46 GMT
+link: <https://aol.edu.sa/wp-json/>; rel=""https://api.w.org/"", <https://aol.edu.sa/wp-json/wp/v2/pages/3277>; rel=""alternate""; title=""JSON""; type=""application/json"", <https://aol.edu.sa/>; rel=shortlink
+nel: {""report_to"":""cf-nel"",""success_fraction"":0.0,""max_age"":604800}
+permissions-policy: <token>=(self ""https://www.google.com"" ""https://www.gstatic.com"" ""https://recaptcha.net"" ""https://challenges.cloudflare.com"" ""https://hcaptcha.com""), <token>=(self ""https://www.google.com"" ""https://www.gstatic.com"" ""https://recaptcha.net"" ""https://challenges.cloudflare.com"" ""https://hcaptcha.com"")
+report-to: {""group"":""cf-nel"",""max_age"":604800,""endpoints"":[{""url"":""https://a.nel.cloudflare.com/report/v4?s=MtCeE%2F8zeeOulSdHau%2FRny4RBhoc3Fw%2B%<token>%3D""}]}
+server: cloudflare
+set-cookie: pll_language=<masked>; expires=<masked>; max-age=<masked>; path=<masked>; samesite=<masked>
+transfer-encoding: chunked
+vary: Accept-Encoding, Accept-Encoding
+x-cache: MISS",response_content_type_html response_server_disclosed security_header_permissions_policy_present set_cookie_present set_cookie_samesite set_cookie_secure,permissions_policy,set_cookie_present set_cookie_samesite set_cookie_secure,18,1,1,279205,0.45,1,path_crawl_page
+20260602_231526,e0e6652b5ca74fb990a81d6a15aa2517,path_analyze.page.depth_1,520,135.549,text/html; charset=UTF-8,aol.edu.sa | 520: Web server is returning an unknown error,"aol.edu.sa | 520: Web server is returning an unknown error Web server is returning an unknown error Error code 520 Visit cloudflare.com for more information. 2026-06-02 20:16:50 UTC You Browser Working Marseille Cloudflare Working aol.edu.sa Host Error What happened? There is an unknown connection issue between Cloudflare and the origin web server. As a result, the web page can not be displayed. What can I do? If you are a visitor of this website: Please try again in a few minutes. If you are the owner of this website: There is an issue between Cloudflare's cache and your origin web server. Cloudflare monitors for these errors and automatically investigates the cause. To help support the investigation, you can pull the corresponding error log from your web server and submit it our support team. Please include the Ray ID (which is at the bottom of this error page). Additional troubleshooting resources . Cloudflare Ray ID: a059235b1908b562 &bull; Your IP: Click to reveal 5.246.68.12 &bull; Performance &amp; security by Cloudflare (function(){function d(){var b=a.getElementById(""cf-footer-item-ip""),c=a.getElementById(""cf-footer-ip-reveal"");b&&""classList""in b&&(b.classList.remove(""hidden""),c.addEventListener(""click"",function(){c.classList.add(""hidden"");a.getElementById(""cf-footer-ip"").classList.remove(""hidden"")}))}var a=document;document.addEventListener&&a.addEventListener(""DOMContentLoaded"",d)})();",server_error_status,,"date: Tue, 02 Jun 2026 20:16:50 GMT
+content-type: text/html; charset=UTF-8
+content-length: 7317
+connection: keep-alive
+retry-after: 60
+cache-control: private, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+expires: Thu, 01 Jan 1970 00:00:01 GMT
+referrer-policy: same-origin
+x-frame-options: SAMEORIGIN
+server: cloudflare
+cf-ray: a059235b1908b562-MRS","cache-control: private, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+cf-ray: a059235b1908b562-MRS
+connection: keep-alive
+content-length: 7317
+content-type: text/html; charset=UTF-8
+date: Tue, 02 Jun 2026 20:16:50 GMT
+expires: Thu, 01 Jan 1970 00:00:01 GMT
+referrer-policy: same-origin
+retry-after: 60
+server: cloudflare
+x-frame-options: SAMEORIGIN",cache_control_no_store response_content_type_html response_server_disclosed security_header_referrer_policy_present security_header_x_frame_options_present,referrer_policy x_frame_options,,11,2,0,7317,0.21,1,path_crawl_page
+20260602_231526,06faa6eb20df406bb298d0ad55028a15,path_analyze.page.depth_1,403,693.321,text/html; charset=iso-8859-1,403 Forbidden,403 Forbidden Forbidden You don't have permission to access this resource. Apache/2.4.59 (Debian) Server at aol.edu.sa Port 80,authz_barrier,,"date: Tue, 02 Jun 2026 20:16:53 GMT
+content-type: text/html; charset=iso-8859-1
+transfer-encoding: chunked
+connection: keep-alive
+server: cloudflare
+vary: Accept-Encoding
+age: 0
+x-cache: MISS
+report-to: {""group"":""cf-nel"",""max_age"":604800,""endpoints"":[{""url"":""https://a.nel.cloudflare.com/report/v4?s=BtMGW3sMPkxsMuLL6Wm6bue%<token>%<token>%3D""}]}
+nel: {""report_to"":""cf-nel"",""success_fraction"":0.0,""max_age"":604800}
+cf-cache-status: DYNAMIC
+content-encoding: br
+cf-ray: a059236fcb414e0f-MRS","age: 0
+cf-cache-status: DYNAMIC
+cf-ray: a059236fcb414e0f-MRS
+connection: keep-alive
+content-encoding: br
+content-type: text/html; charset=iso-8859-1
+date: Tue, 02 Jun 2026 20:16:53 GMT
+nel: {""report_to"":""cf-nel"",""success_fraction"":0.0,""max_age"":604800}
+report-to: {""group"":""cf-nel"",""max_age"":604800,""endpoints"":[{""url"":""https://a.nel.cloudflare.com/report/v4?s=BtMGW3sMPkxsMuLL6Wm6bue%<token>%<token>%3D""}]}
+server: cloudflare
+transfer-encoding: chunked
+vary: Accept-Encoding
+x-cache: MISS",response_content_type_html response_server_disclosed,,,13,0,0,275,0.33,1,path_crawl_page
+20260602_231526,78030e179021458aab38b8d382bd3c47,path_analyze.resource-src,,0.0,,,,,,,,,,,0,0,0,0,0.0,1,path_candidate
+20260602_231526,c493c6c1bc7a483e88a9df81c254a9c1,path_analyze.page.depth_1,403,363.531,text/html; charset=iso-8859-1,403 Forbidden,403 Forbidden Forbidden You don't have permission to access this resource. Apache/2.4.59 (Debian) Server at aol.edu.sa Port 80,authz_barrier,,"date: Tue, 02 Jun 2026 20:16:53 GMT
+content-type: text/html; charset=iso-8859-1
+transfer-encoding: chunked
+connection: keep-alive
+server: cloudflare
+vary: Accept-Encoding
+age: 0
+x-cache: MISS
+report-to: {""group"":""cf-nel"",""max_age"":604800,""endpoints"":[{""url"":""https://a.nel.cloudflare.com/report/v4?s=i7pGCm%<token>%<token>%3D""}]}
+nel: {""report_to"":""cf-nel"",""success_fraction"":0.0,""max_age"":604800}
+cf-cache-status: DYNAMIC
+content-encoding: br
+cf-ray: a059236f4fa42558-MRS","age: 0
+cf-cache-status: DYNAMIC
+cf-ray: a059236f4fa42558-MRS
+connection: keep-alive
+content-encoding: br
+content-type: text/html; charset=iso-8859-1
+date: Tue, 02 Jun 2026 20:16:53 GMT
+nel: {""report_to"":""cf-nel"",""success_fraction"":0.0,""max_age"":604800}
+report-to: {""group"":""cf-nel"",""max_age"":604800,""endpoints"":[{""url"":""https://a.nel.cloudflare.com/report/v4?s=i7pGCm%<token>%<token>%3D""}]}
+server: cloudflare
+transfer-encoding: chunked
+vary: Accept-Encoding
+x-cache: MISS",response_content_type_html response_server_disclosed,,,13,0,0,275,0.33,1,path_crawl_page
+20260602_231526,96692e06773049688c160a6c71dee576,path_analyze.resource-src,,0.0,,,,,,,,,,,0,0,0,0,0.0,1,path_candidate
+20260602_231526,c05139f04dd14d779e7b907ca8980911,path_analyze.resource-src,,0.0,,,,,,,,,,,0,0,0,0,0.0,1,path_candidate
