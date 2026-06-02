@@ -214188,3 +214188,23 @@ host: aol.edu.sa
 user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/141.0.0.0 Safari/537.36",request_override_header_present,missing,,none,passive_trace
 ,,GET,,,other,,,0,0,20260602_225125,57bf8f1c5256459586b1fa5d662665c3,recon.final_response,/,,,,,,,,missing,,none,passive_trace
 ,,GET,,user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/141.0.0.0 Safari/537.36,chrome,,,0,0,20260602_225125,64460bac88bc4b52b3487424b310ef61,recon.response_analysis,/,,,ekit_ia_b704a0,,user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/141.0.0.0 Safari/537.36,user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/141.0.0.0 Safari/537.36,,missing,,none,response_analysis
+,,GET,nfd-enable-cf-opt pll_language,"accept-encoding: gzip, deflate, br, zstd
+accept: */*
+connection: keep-alive
+cookie: pll_language=<masked>; nfd-enable-cf-opt=<masked>
+host: aol.edu.sa
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/141.0.0.0 Safari/537.36",chrome,,,0,1,20260602_230134,f67e2abf6c0d409d845062b24d9d503c,recon.track_redirects,/,,,,,"host: aol.edu.sa
+accept: */*
+accept-encoding: gzip, deflate, br, zstd
+connection: keep-alive
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/141.0.0.0 Safari/537.36
+cookie: pll_language=<masked>; nfd-enable-cf-opt=<masked>","accept-encoding: gzip, deflate, br, zstd
+accept: */*
+connection: keep-alive
+cookie: pll_language=<masked>; nfd-enable-cf-opt=<masked>
+host: aol.edu.sa
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/141.0.0.0 Safari/537.36",cookie_name_nfd-enable-cf-opt cookie_name_pll_language request_override_header_present,missing,,session_cookie,passive_trace
+,,GET,nfd-enable-cf-opt pll_language,"cookie: pll_language=<masked>; nfd-enable-cf-opt=<masked>
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/141.0.0.0 Safari/537.36",chrome,,,0,0,20260602_230134,6c622747343f4240860ca08491833b0a,recon.response_analysis,/,,,ekit_ia_b704a0,,"user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/141.0.0.0 Safari/537.36
+cookie: pll_language=<masked>; nfd-enable-cf-opt=<masked>","cookie: pll_language=<masked>; nfd-enable-cf-opt=<masked>
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/141.0.0.0 Safari/537.36",cookie_name_nfd-enable-cf-opt cookie_name_pll_language,missing,,session_cookie,response_analysis

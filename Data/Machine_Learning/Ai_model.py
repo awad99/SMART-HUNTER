@@ -321,7 +321,10 @@ class VulnerabilityCheckerTraining:
                 l2_regularization=0.1
             )
         )
-        self.model.fit(X_train_scaled, Y_train)
+        import warnings
+        with warnings.catch_warnings():
+            warnings.filterwarnings("ignore", category=UserWarning, message="Label not .* is present in all training examples.")
+            self.model.fit(X_train_scaled, Y_train)
         self.trained_label_columns = Y_train.columns.tolist()
 
         # Predict & Evaluate
