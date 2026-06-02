@@ -15,7 +15,7 @@ from vulnerability_scan.Scanner_vulnerability import URLVulnerabilityChecker
 from Recon.framework_detector import FrameworkDetector, detect_framework
 
 
-def run_standalone_csrf(url, cookie=None):
+def run_standalone_csrf(url, cookie=None, username=None, password=None):
     print(f"\n{'='*60}")
     print(f"      SMART-HUNTER: STANDALONE CSRF SCANNER")
     print(f"{'='*60}")
@@ -34,6 +34,9 @@ def run_standalone_csrf(url, cookie=None):
     # ── Phase 2: CSRF Vulnerability Scanning ──
     print(f"\n[+] Phase 2: CSRF Vulnerability Scanning...")
     checker = URLVulnerabilityChecker(cookie=cookie, interactive=True)
+    if username and password:
+        checker.csrf_user = username
+        checker.csrf_pass = password
     checker.current_target_url = url
 
     # 1. Parameter Discovery
@@ -56,7 +59,11 @@ def main():
     if not target:
         return
     cookie = input("Enter Session Cookie (optional): ").strip()
-    run_standalone_csrf(target, cookie if cookie else None)
+    username = input("Enter Username (optional): ").strip()
+    password = ""
+    if username:
+        password = input("Enter Password: ").strip()
+    run_standalone_csrf(target, cookie if cookie else None, username if username else None, password if password else None)
 
 
 if __name__ == "__main__":
@@ -64,7 +71,9 @@ if __name__ == "__main__":
         parser = argparse.ArgumentParser(description="Standalone CSRF Scanner")
         parser.add_argument("url", help="Target URL to scan")
         parser.add_argument("--cookie", help="Session cookie (optional)")
+        parser.add_argument("--username", help="Username for authentication (optional)")
+        parser.add_argument("--password", help="Password for authentication (optional)")
         args = parser.parse_args()
-        run_standalone_csrf(args.url, args.cookie)
+        run_standalone_csrf(args.url, args.cookie, args.username, args.password)
     else:
         main()

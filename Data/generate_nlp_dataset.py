@@ -7,7 +7,7 @@ import os
 # =============================================================================
 # This script generates a high-quality JSONL dataset suitable for fine-tuning
 # small LLMs (like Llama 3 8B, Mistral, or BERT-based models) to detect 
-# IDOR and XXE vulnerabilities from HTTP Request/Response pairs.
+# IDOR, XXE, and Account Creation (Mass Assignment) vulnerabilities from HTTP Request/Response pairs.
 
 DATA_DIR = r"C:\Users\awad\Downloads\SMART-HUNTER-main\SMART-HUNTER-main\Data\Datasets\Datasets_for_Model_NLP"
 OUTPUT_FILE = os.path.join(DATA_DIR, "nlp_finetuning_dataset.jsonl")
@@ -60,19 +60,37 @@ XXE_TEMPLATES = [
     }
 ]
 
+# --- Account Creation / Mass Assignment Examples ---
+ACCOUNT_CREATION_TEMPLATES = [
+    {
+        "prompt": "Analyze this HTTP request/response pair for vulnerabilities:\n\nREQUEST:\nPOST /api/register HTTP/1.1\nHost: target.com\nContent-Type: application/json\n\n{\"username\": \"testuser\", \"password\": \"Password123!\", \"email\": \"test@test.com\", \"is_admin\": true}\n\nRESPONSE:\nHTTP/1.1 201 Created\n\n{\"message\": \"User created successfully\", \"user\": {\"username\": \"testuser\", \"is_admin\": true}}",
+        "completion": "Vulnerability: Mass Assignment / Privilege Escalation\nReasoning: The account creation endpoint accepts an 'is_admin' field in the JSON payload and blindly applies it to the newly created user object. The server responds with 201 Created and confirms the user was created with admin privileges, leading to privilege escalation."
+    },
+    {
+        "prompt": "Analyze this HTTP request/response pair for vulnerabilities:\n\nREQUEST:\nPOST /signup HTTP/1.1\nHost: app.corp.local\nContent-Type: application/x-www-form-urlencoded\n\nusername=attacker&password=Pwn3d!&role=admin\n\nRESPONSE:\nHTTP/1.1 302 Found\nLocation: /admin/dashboard",
+        "completion": "Vulnerability: Mass Assignment / Privilege Escalation\nReasoning: The registration form accepts a 'role' parameter. By supplying 'role=admin', the attacker successfully created an admin account, as evidenced by the immediate redirect to the '/admin/dashboard'."
+    },
+    {
+        "prompt": "Analyze this HTTP request/response pair for vulnerabilities:\n\nREQUEST:\nPOST /api/v1/users HTTP/1.1\nHost: api.startup.io\nContent-Type: application/json\n\n{\"email\": \"hacker@evil.com\", \"password\": \"hunter2\", \"account_type\": \"premium_free\"}\n\nRESPONSE:\nHTTP/1.1 200 OK\n\n{\"status\": \"success\", \"account_type\": \"premium_free\"}",
+        "completion": "Vulnerability: Mass Assignment / Business Logic Flaw\nReasoning: The endpoint allows arbitrary assignment of the 'account_type' during registration. The attacker upgraded their account to 'premium_free' bypassing the payment flow."
+    }
+]
+
 def generate_dataset(num_samples=500):
     dataset = []
     
     # Generate variations
     for _ in range(num_samples):
-        category = random.choices(['benign', 'idor', 'xxe'], weights=[0.4, 0.3, 0.3])[0]
+        category = random.choices(['benign', 'idor', 'xxe', 'account_creation'], weights=[0.25, 0.25, 0.25, 0.25])[0]
         
         if category == 'benign':
             template = random.choice(BENIGN_TEMPLATES)
         elif category == 'idor':
             template = random.choice(IDOR_TEMPLATES)
-        else:
+        elif category == 'xxe':
             template = random.choice(XXE_TEMPLATES)
+        else:
+            template = random.choice(ACCOUNT_CREATION_TEMPLATES)
             
         # We can add randomization logic here to change IDs, hostnames, etc.
         # to make the dataset more diverse for the LLM.
@@ -83,7 +101,7 @@ def generate_dataset(num_samples=500):
         
         dataset.append({
             "messages": [
-                {"role": "system", "content": "You are an expert cybersecurity AI. Analyze HTTP traffic and identify vulnerabilities like IDOR and XXE. Explain your reasoning."},
+                {"role": "system", "content": "You are an expert cybersecurity AI. Analyze HTTP traffic and identify vulnerabilities like IDOR, XXE, and Mass Assignment (Account Creation). Explain your reasoning."},
                 {"role": "user", "content": prompt},
                 {"role": "assistant", "content": template['completion']}
             ]

@@ -70,5 +70,51 @@
             "Header match: content-type",
             "Cookie match: session"
         ]
+    },
+    "0a1800ea0495595882612fe500cc0012.web-security-academy.net": {
+        "framework": "express",
+        "confidence": "high",
+        "evidence": [
+            "Header match: content-type",
+            "HTML pattern match: express",
+            "HTML pattern match: Express"
+        ]
+    },
+    "0a6f00840427b86f80c0086400c900dc.web-security-academy.net": {
+        "framework": "flask",
+        "confidence": "medium",
+        "evidence": [
+            "Header match: content-type",
+            "Cookie match: session"
+        ]
+    },
+    "127.0.0.1:5000": {
+        "framework": "flask",
+        "confidence": "high",
+        "evidence": [
+            "Header match: content-type",
+            "Header match: vary",
+            "Cookie match: session"
+        ]
+    },
+    "aol.edu.sa": {
+        "framework": "wordpress",
+        "confidence": "high",
+        "evidence": [
+            "HTML pattern match: wp-content",
+            "HTML pattern match: wp-includes",
+            "HTML pattern match: wp-json",
+            "HTML pattern match: wp-login.php",
+            "HTML pattern match: /wp-admin/",
+            "HTML pattern match: wp-emoji",
+            "HTML pattern match: wp-block-",
+            "HTML pattern match: WordPress",
+            "HTML pattern match: woocommerce",
+            "HTML pattern match: wp-embed",
+            "HTML pattern match: themes/",
+            "HTML pattern match: plugins/",
+            "HTML pattern match: xmlrpc.php",
+            "HTML pattern match: admin-ajax.php"
+        ]
     }
 }

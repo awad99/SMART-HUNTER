@@ -42,12 +42,17 @@ def get_user_inputs():
     target = input("\nEnter URL or IP Target: ").strip()
     cookie = input("Enter Session Cookie (or leave blank to auto-detect): ").strip()
     
+    username = input("Enter Username (optional): ").strip()
+    password = ""
+    if username:
+        password = input("Enter Password: ").strip()
+    
     # Enable OOB via Interactsh by default for full scans
     enable_oob = True
     use_interactsh = True
     collaborator_domain = None
 
-    return target, cookie, enable_oob, use_interactsh, collaborator_domain
+    return target, cookie, username, password, enable_oob, use_interactsh, collaborator_domain
 
 def auto_extract_cookie(target):
     print(f"\n[*] Attempting to extract session cookie automatically from {target}...")
@@ -102,7 +107,11 @@ def run_url_pentest(target, cookie, scanner, scan_id, stats, enable_oob=False, u
     print("*  LOGIC PHASE 1: RECON")
     print("*"*64)
 
-    recon_ok = url_connection.MainRecon(target, cookie=cookie, scan_id=scan_id, stats=stats)
+    recon_result = url_connection.MainRecon(target, cookie=cookie, scan_id=scan_id, stats=stats, return_details=True)
+    recon_ok = recon_result.get("ok", False) if isinstance(recon_result, dict) else recon_result
+    waf_bypass_cookies = recon_result.get("waf_bypass_cookies", {}) if isinstance(recon_result, dict) else {}
+    if waf_bypass_cookies:
+        print(f"\n[+] WAF bypass cookies available — will inject into vulnerability scanner")
     if recon_ok:
         print("\n[+] Recon phase complete")
     else:
@@ -129,7 +138,7 @@ def run_url_pentest(target, cookie, scanner, scan_id, stats, enable_oob=False, u
 
     quick_vulns.extend(pt_vulns)
 
-    main_vulns = URL_checkIfhaveVun.MainestVuln(target, cookie=cookie, scan_id=scan_id, stats=stats, enable_oob=enable_oob, collaborator_domain=collaborator_domain, use_interactsh=use_interactsh, interactive=interactive)
+    main_vulns = URL_checkIfhaveVun.MainestVuln(target, cookie=cookie, scan_id=scan_id, stats=stats, enable_oob=enable_oob, collaborator_domain=collaborator_domain, use_interactsh=use_interactsh, interactive=interactive, waf_bypass_cookies=waf_bypass_cookies)
     if main_vulns:
         quick_vulns.extend(main_vulns)
 
@@ -179,9 +188,13 @@ def run_scanner(target, cookie, enable_oob=False, use_interactsh=False, collabor
 
 def main():
     display_banner()
-    target, cookie, enable_oob, use_interactsh, collaborator_domain = get_user_inputs()
+    target, cookie, username, password, enable_oob, use_interactsh, collaborator_domain = get_user_inputs()
     if not target:
         print("[-] No target"); return
+        
+    if username and password:
+        os.environ['CSRF_USER'] = username
+        os.environ['CSRF_PASS'] = password
         
     if target.startswith(("http://", "https://")):
         if not cookie:

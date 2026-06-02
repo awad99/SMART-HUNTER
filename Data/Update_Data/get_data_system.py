@@ -27,7 +27,8 @@ CANONICAL_VULN_COLUMNS = [
     'prev_security_headers_count', 'prev_response_size', 'days_since_last_scan',
     'vuln_density', 'tool_effectiveness', 'security_risk_score',
     'input_vulnerability_ratio', 'previous_scan_accuracy', 'total_issues',
-    'issue_density', 'has_idor', 'has_xxe'
+    'issue_density', 'has_idor', 'has_xxe', 'has_account_creation',
+    'nlp_model_finding', 'nlp_confidence'
 ]
 
 TRUTHY_ENV_VALUES = {"1", "true", "yes", "on", "enable", "enabled"}
@@ -247,6 +248,8 @@ def _confirmed_finding_families(features):
                 families.add('idor')
             elif 'xxe' in finding_type or 'xml external entity' in finding_type:
                 families.add('xxe')
+            elif 'account creation' in finding_type or 'mass assignment' in finding_type or 'privilege escalation' in finding_type:
+                families.add('account_creation')
     return families
 
 def _has_term(text, *needles):
@@ -335,6 +338,12 @@ def _build_canonical_vulnerability_row(features):
         _has_any(features, 'has_xxe', 'xxe_vuln'),
         int('xxe' in confirmed_families),
     )
+    has_account_creation = max(
+        _has_any(features, 'has_account_creation', 'acct_vuln'),
+        int('account_creation' in confirmed_families),
+    )
+    nlp_model_finding = _to_int(features.get('nlp_model_finding', 0))
+    nlp_confidence = _to_float(features.get('nlp_confidence', 0.0))
 
     detected_total_vulns = (
         has_sql_injection +
@@ -343,7 +352,8 @@ def _build_canonical_vulnerability_row(features):
         has_path_traversal +
         has_file_inclusion +
         has_idor +
-        has_xxe
+        has_xxe +
+        has_account_creation
     )
     provided_total_vulns = max(
         _to_int(features.get('total_vulnerabilities', -1), -1),
@@ -476,6 +486,9 @@ def _build_canonical_vulnerability_row(features):
         'issue_density': issue_density,
         'has_idor': has_idor,
         'has_xxe': has_xxe,
+        'has_account_creation': has_account_creation,
+        'nlp_model_finding': nlp_model_finding,
+        'nlp_confidence': nlp_confidence,
     })
     return row
 

@@ -82,12 +82,12 @@ class ScanStats:
         w_table, w_num = 22, 8
         line_len = w_table + w_num * 3 + 11
 
-        border_top  = '╔' + '═'*(w_table+2) + '╦' + '═'*(w_num+2) + '╦' + '═'*(w_num+2) + '╦' + '═'*(w_num+2) + '╗'
-        border_head = '╠' + '═'*(w_table+2) + '╬' + '═'*(w_num+2) + '╬' + '═'*(w_num+2) + '╬' + '═'*(w_num+2) + '╣'
-        border_mid  = '╟' + '─'*(w_table+2) + '╫' + '─'*(w_num+2) + '╫' + '─'*(w_num+2) + '╫' + '─'*(w_num+2) + '╢'
-        border_bot  = '╚' + '═'*(w_table+2) + '╩' + '═'*(w_num+2) + '╩' + '═'*(w_num+2) + '╩' + '═'*(w_num+2) + '╝'
+        border_top  = '+' + '-'*(w_table+2) + '+' + '-'*(w_num+2) + '+' + '-'*(w_num+2) + '+' + '-'*(w_num+2) + '+'
+        border_head = '+' + '='*(w_table+2) + '+' + '='*(w_num+2) + '+' + '='*(w_num+2) + '+' + '='*(w_num+2) + '+'
+        border_mid  = '+' + '-'*(w_table+2) + '+' + '-'*(w_num+2) + '+' + '-'*(w_num+2) + '+' + '-'*(w_num+2) + '+'
+        border_bot  = '+' + '-'*(w_table+2) + '+' + '-'*(w_num+2) + '+' + '-'*(w_num+2) + '+' + '-'*(w_num+2) + '+'
 
-        def row(name, added, modified, deleted, sep='║'):
+        def row(name, added, modified, deleted, sep='|'):
             n = name[:w_table].ljust(w_table)
             a = str(added).rjust(w_num)
             m = str(modified).rjust(w_num)
@@ -95,8 +95,8 @@ class ScanStats:
             return f"{sep} {n} {sep} {a} {sep} {m} {sep} {d} {sep}"
 
         print(f"\n{border_top}")
-        print(f"║{'📊 SCAN DATABASE STATISTICS':^{line_len}}║")
-        print(f"║{'Scan ID: ' + self.scan_id:^{line_len}}║")
+        print(f"|{'SCAN DATABASE STATISTICS':^{line_len}}|")
+        print(f"|{'Scan ID: ' + self.scan_id:^{line_len}}|")
         print(border_head)
         print(row('Table', 'Added', 'Modified', 'Deleted'))
         print(border_head)
@@ -116,7 +116,7 @@ class ScanStats:
         print(border_head)
         print(row('TOTAL', self.total_added(), self.total_modified(), self.total_deleted()))
         print(border_bot)
-        print(f"  ⏱  Duration: {self.duration()}   |   Completed: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
+        print(f"  Duration: {self.duration()}   |   Completed: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
 
     def save_to_file(self, path: str):
         """حفظ ملخص الإحصاءات إلى ملف نصي."""

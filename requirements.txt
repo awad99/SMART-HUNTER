@@ -32,3 +32,5 @@ jupyter
 ipykernel
 python-dotenv
 psycopg2-binary
+wafw00f
+botasaurus
