@@ -148450,3 +148450,108 @@ accept: */*
 connection: keep-alive
 cookie: pll_language=<masked>; nfd-enable-cf-opt=<masked>
 user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",cookie_name_nfd-enable-cf-opt cookie_name_pll_language,missing,,session_cookie,5,0,0,0,0.0,1,path_candidate
+20260603_232540,bd1d07a366bf4945bed9f9d15e8f8b16,,recon.track_redirects,https://aol.edu.sa,https://aol.edu.sa/,/,GET,,,,,,,,nfd-enable-cf-opt pll_language,"host: aol.edu.sa
+accept: */*
+accept-encoding: gzip, deflate, br, zstd
+connection: keep-alive
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/141.0.0.0 Safari/537.36
+cookie: pll_language=<masked>; nfd-enable-cf-opt=<masked>","accept-encoding: gzip, deflate, br, zstd
+accept: */*
+connection: keep-alive
+cookie: pll_language=<masked>; nfd-enable-cf-opt=<masked>
+host: aol.edu.sa
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/141.0.0.0 Safari/537.36",cookie_name_nfd-enable-cf-opt cookie_name_pll_language request_override_header_present,missing,,session_cookie,6,0,0,1,0.5,1,passive_trace
+20260603_232540,f79b6783c33a473d97022d14914f6d83,bd1d07a366bf4945bed9f9d15e8f8b16,recon.final_response,https://aol.edu.sa,https://aol.edu.sa/,/,GET,,,,,,,,,,,,missing,,none,0,0,0,0,0.0,0,passive_trace
+20260603_232540,5c50bf671ff84ebc8fc3a3417d3d408a,f79b6783c33a473d97022d14914f6d83,recon.response_analysis,https://aol.edu.sa,https://aol.edu.sa/,/,GET,,,,,,ekit_ia_b704a0,,nfd-enable-cf-opt pll_language,"user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/141.0.0.0 Safari/537.36
+cookie: pll_language=<masked>; nfd-enable-cf-opt=<masked>","cookie: pll_language=<masked>; nfd-enable-cf-opt=<masked>
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/141.0.0.0 Safari/537.36",cookie_name_nfd-enable-cf-opt cookie_name_pll_language,missing,,session_cookie,2,0,0,0,0.0,0,response_analysis
+20260603_232540,41cee39d73664e6397ba227add4d2c00,,path_analyze.page.depth_0,https://aol.edu.sa,https://aol.edu.sa/,/,GET,,,,,,ekit_ia_b704a0 ekit_ia_b704a0 ekit_ia_b704a0 ekit_ia_b704a0 ekit_ia_b704a0,,nfd-enable-cf-opt pll_language,"user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: pll_language=<masked>; nfd-enable-cf-opt=<masked>","accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: pll_language=<masked>; nfd-enable-cf-opt=<masked>
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",cookie_name_nfd-enable-cf-opt cookie_name_pll_language,missing,,session_cookie,5,0,0,0,0.0,1,path_crawl_page
+20260603_232540,30a89c4320964da089f0d2f2bc17010b,41cee39d73664e6397ba227add4d2c00,path_analyze.resource-src,https://www.facebook.com,https://www.facebook.com/tr?id=1167799954362823&ev=PageView&noscript=1,/tr,GET,tr,id=1167799954362823&ev=PageView&noscript=1,id ev noscript,id:numeric ev:short_text noscript:numeric,,id ev noscript,,nfd-enable-cf-opt pll_language,"user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: pll_language=<masked>; nfd-enable-cf-opt=<masked>","accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: pll_language=<masked>; nfd-enable-cf-opt=<masked>
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",cookie_name_nfd-enable-cf-opt cookie_name_pll_language,missing,,session_cookie,5,0,0,0,0.0,1,path_candidate
+20260603_232540,a02d4ab44dfe41409cf76159b05278d5,30a89c4320964da089f0d2f2bc17010b,path_analyze.resource-src,https://www.facebook.com,https://www.facebook.com/tr?id=766262729154759&ev=PageView&noscript=1,/tr,GET,tr,id=766262729154759&ev=PageView&noscript=1,id ev noscript,id:numeric ev:short_text noscript:numeric,,id ev noscript,,nfd-enable-cf-opt pll_language,"user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: pll_language=<masked>; nfd-enable-cf-opt=<masked>","accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: pll_language=<masked>; nfd-enable-cf-opt=<masked>
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",cookie_name_nfd-enable-cf-opt cookie_name_pll_language,missing,,session_cookie,5,0,0,0,0.0,1,path_candidate
+20260603_232540,fa139de1765e481d86fdf610029a058b,a02d4ab44dfe41409cf76159b05278d5,path_analyze.resource-src,https://www.facebook.com,https://www.facebook.com/tr?id=1167799954362823&ev=PageView&noscript=1,/tr,GET,tr,id=1167799954362823&ev=PageView&noscript=1,id ev noscript,id:numeric ev:short_text noscript:numeric,,id ev noscript,,nfd-enable-cf-opt pll_language,"user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: pll_language=<masked>; nfd-enable-cf-opt=<masked>","accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: pll_language=<masked>; nfd-enable-cf-opt=<masked>
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",cookie_name_nfd-enable-cf-opt cookie_name_pll_language,missing,,session_cookie,5,0,0,0,0.0,1,path_candidate
+20260603_232540,1e51c5c3c7f84ea79eed6d4bb8673679,fa139de1765e481d86fdf610029a058b,path_analyze.page.depth_1,https://aol.edu.sa,https://aol.edu.sa/wp-content/plugins/jetpack/jetpack_vendor/automattic/woocommerce-analytics/src/../build/,/wp-content/plugins/jetpack/jetpack_vendor/automattic/woocommerce-analytics/src/../build,GET,wp content plugins jetpack jetpack vendor automattic woocommerce analytics src build,,,,,,,nfd-enable-cf-opt pll_language,"user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: pll_language=<masked>; nfd-enable-cf-opt=<masked>","accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: pll_language=<masked>; nfd-enable-cf-opt=<masked>
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",cookie_name_nfd-enable-cf-opt cookie_name_pll_language,missing,,session_cookie,5,0,0,0,0.0,1,path_crawl_page
+20260603_232540,c79a6783650b4a2b86fdda228dc4c6e3,fa139de1765e481d86fdf610029a058b,path_analyze.url-depth-1,https://aol.edu.sa,https://aol.edu.sa/wp-json/oembed/1.0/embed/?url=https%3A%2F%2Faol.edu.sa%2F&,/wp-json/oembed/1.0/embed,GET,wp json oembed 1 0 embed,url=https%3A%2F%2Faol.edu.sa%2F&,url,url:path_like,,url,,nfd-enable-cf-opt pll_language,"user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: pll_language=<masked>; nfd-enable-cf-opt=<masked>","accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: pll_language=<masked>; nfd-enable-cf-opt=<masked>
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",cookie_name_nfd-enable-cf-opt cookie_name_pll_language,missing,,session_cookie,5,0,0,0,0.0,1,path_candidate
+20260603_232540,620f76a98d7a434bbac0c1507e188be2,c79a6783650b4a2b86fdda228dc4c6e3,path_analyze.page.depth_1,https://aol.edu.sa,https://aol.edu.sa/xmlrpc.php?rsd,/xmlrpc.php,GET,xmlrpc php,rsd,rsd,rsd:empty,,,php,nfd-enable-cf-opt pll_language,"user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: pll_language=<masked>; nfd-enable-cf-opt=<masked>","accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: pll_language=<masked>; nfd-enable-cf-opt=<masked>
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",cookie_name_nfd-enable-cf-opt cookie_name_pll_language,missing,,session_cookie,5,0,0,0,0.0,1,path_crawl_page
+20260603_232540,b690ce03a2da4b29bc764ede2bac341d,c79a6783650b4a2b86fdda228dc4c6e3,path_analyze.page.depth_1,https://aol.edu.sa,https://aol.edu.sa/wp-content/plugins/essential-addons-for-elementor-lite/assets/front-end/img/image-masking/svg-shapes/,/wp-content/plugins/essential-addons-for-elementor-lite/assets/front-end/img/image-masking/svg-shapes,GET,wp content plugins essential addons for elementor lite assets front end img image masking svg shapes,,,,,,,nfd-enable-cf-opt pll_language,"user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: pll_language=<masked>; nfd-enable-cf-opt=<masked>","accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: pll_language=<masked>; nfd-enable-cf-opt=<masked>
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",cookie_name_nfd-enable-cf-opt cookie_name_pll_language,missing,,session_cookie,5,0,0,0,0.0,1,path_crawl_page
+20260603_232540,4d16d4e556a54750a363f5554bd57a4f,c79a6783650b4a2b86fdda228dc4c6e3,path_analyze.page.depth_1,https://aol.edu.sa,https://aol.edu.sa/wp-content/plugins/ultimate-post/,/wp-content/plugins/ultimate-post,GET,wp content plugins ultimate post,,,,,,,nfd-enable-cf-opt pll_language,"user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: pll_language=<masked>; nfd-enable-cf-opt=<masked>","accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: pll_language=<masked>; nfd-enable-cf-opt=<masked>
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",cookie_name_nfd-enable-cf-opt cookie_name_pll_language,missing,,session_cookie,5,0,0,0,0.0,1,path_crawl_page
+20260603_232540,8833d50860c54cb1b2b554abfbbe0038,620f76a98d7a434bbac0c1507e188be2,path_analyze.page.depth_1,https://aol.edu.sa,https://aol.edu.sa/wp-admin/admin.php,/wp-admin/admin.php,GET,wp admin admin php,,,,,,php,nfd-enable-cf-opt pll_language,"user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: pll_language=<masked>; nfd-enable-cf-opt=<masked>","accept-encoding: gzip, deflate, br
+accept: */*
+connection: keep-alive
+cookie: pll_language=<masked>; nfd-enable-cf-opt=<masked>
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",cookie_name_nfd-enable-cf-opt cookie_name_pll_language,missing,,session_cookie,5,0,0,0,0.0,1,path_crawl_page
