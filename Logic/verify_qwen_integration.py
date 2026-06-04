@@ -40,7 +40,7 @@ def test_model_manager():
     print(f"  Device: {status['device']}")
     print(f"  Loaded: {status['loaded']}")
 
-    _assert(status["model_id"] == "Qwen/Qwen2.5-Coder-1.5B-Instruct", "Correct model ID")
+    _assert(status["model_id"] == "Qwen/Qwen2.5-Coder-7B-Instruct", "Correct model ID")
     _assert(status["device"] in ("cuda", "cpu"), "Valid device detected")
 
     # Check if CUDA is available
@@ -183,10 +183,10 @@ def test_vuln_advisor(analyzer):
 
 
 def main():
-    print("\n" + "#" * 60)
+    print("############################################################")
     print("#  SMART-HUNTER AI Integration Verification")
-    print("#  Model: Qwen/Qwen2.5-Coder-1.5B-Instruct")
-    print("#" * 60)
+    print("#  Model: Qwen/Qwen2.5-Coder-7B-Instruct")
+    print("############################################################")
 
     # Test 1: Model manager
     manager = test_model_manager()

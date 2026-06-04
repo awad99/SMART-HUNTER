@@ -155,6 +155,25 @@ class ReconWebSite:
             with DATASET_LOCK:
                 os.makedirs(os.path.dirname(ML_DATASET_FILE), exist_ok=True)
                 file_exists = os.path.exists(ML_DATASET_FILE) and os.path.getsize(ML_DATASET_FILE) > 0
+                
+                # Check for duplicates to prevent appending already scanned URLs
+                if file_exists:
+                    try:
+                        existing_cols = pd.read_csv(ML_DATASET_FILE, nrows=0).columns.tolist()
+                        url_cols_present = [c for c in ["target_url", "original_url", "url", "page_url"] if c in existing_cols]
+                        is_duplicate = False
+                        if url_cols_present:
+                            existing_urls = pd.read_csv(ML_DATASET_FILE, usecols=url_cols_present)
+                            for col in url_cols_present:
+                                if col in features and features[col]:
+                                    if features[col] in existing_urls[col].values:
+                                        is_duplicate = True
+                                        break
+                        if is_duplicate:
+                            return  # Skip duplicate URL to ensure clear data
+                    except Exception:
+                        pass
+                
                 columns = list(_RECON_DATASET_COLUMNS_CACHE or [])
                 if not columns:
                     columns = pd.read_csv(ML_DATASET_FILE, nrows=0).columns.tolist() if file_exists else list(features.keys())

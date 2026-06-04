@@ -67,14 +67,40 @@ def append_target_scan_row(features, target_url=None, scan_id=None, record_type=
     with lock:
         file_exists = os.path.exists(path) and os.path.getsize(path) > 0
         if file_exists:
-            columns = pd.read_csv(path, nrows=0).columns.tolist()
-            new_columns = [col for col in row.keys() if col not in columns]
-            if new_columns:
-                existing = pd.read_csv(path)
-                for col in new_columns:
-                    existing[col] = 0
-                columns = columns + new_columns
-                existing.to_csv(path, index=False)
+            # Check for duplicate URLs before appending
+            try:
+                existing_cols = pd.read_csv(path, nrows=0).columns.tolist()
+                url_cols_present = [c for c in ["page_url", "target_url", "url", "original_url"] if c in existing_cols]
+                
+                is_duplicate = False
+                if url_cols_present:
+                    existing_urls = pd.read_csv(path, usecols=url_cols_present)
+                    for col in url_cols_present:
+                        if col in row and row[col]:
+                            if row[col] in existing_urls[col].values:
+                                is_duplicate = True
+                                break
+                
+                if is_duplicate:
+                    return path  # URL already scanned, skip to keep data clear and non-duplicated
+                
+                columns = existing_cols
+                new_columns = [col for col in row.keys() if col not in columns]
+                if new_columns:
+                    existing = pd.read_csv(path)
+                    for col in new_columns:
+                        existing[col] = 0
+                    columns = columns + new_columns
+                    existing.to_csv(path, index=False)
+            except Exception:
+                columns = pd.read_csv(path, nrows=0).columns.tolist()
+                new_columns = [col for col in row.keys() if col not in columns]
+                if new_columns:
+                    existing = pd.read_csv(path)
+                    for col in new_columns:
+                        existing[col] = 0
+                    columns = columns + new_columns
+                    existing.to_csv(path, index=False)
         else:
             columns = list(row.keys())
 

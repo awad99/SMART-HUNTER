@@ -12,14 +12,14 @@ import gc
 import os
 import threading
 
-MODEL_ID = "Qwen/Qwen2.5-Coder-1.5B-Instruct"
+MODEL_ID = "Qwen/Qwen2.5-Coder-7B-Instruct"
 DEFAULT_MAX_NEW_TOKENS = 1024
 DEFAULT_TEMPERATURE = 0.3
 DEFAULT_TOP_P = 0.9
 
 
 class QwenModelManager:
-    """Thread-safe singleton manager for the Qwen2.5-Coder-1.5B-Instruct model."""
+    """Thread-safe singleton manager for the Qwen2.5-Coder-7B-Instruct model."""
 
     _instance = None
     _lock = threading.Lock()
@@ -55,7 +55,7 @@ class QwenModelManager:
             if torch.cuda.is_available():
                 self._device = "cuda"
                 gpu_name = torch.cuda.get_device_name(0)
-                gpu_mem = torch.cuda.get_device_properties(0).total_mem / (1024 ** 3)
+                gpu_mem = torch.cuda.get_device_properties(0).total_memory / (1024 ** 3)
                 print(f"  [+] CUDA detected: {gpu_name} ({gpu_mem:.1f} GB)")
             else:
                 self._device = "cpu"
@@ -104,6 +104,12 @@ class QwenModelManager:
         if self.device == "cuda":
             load_kwargs["torch_dtype"] = torch.float16
             load_kwargs["device_map"] = "auto"
+            try:
+                import bitsandbytes
+                load_kwargs["load_in_4bit"] = True
+                print("  [+] Using 4-bit quantization")
+            except ImportError:
+                print("  [!] bitsandbytes not installed, skipping 4-bit quantization")
         else:
             load_kwargs["torch_dtype"] = torch.float32
 
@@ -127,6 +133,7 @@ class QwenModelManager:
         max_new_tokens: int = DEFAULT_MAX_NEW_TOKENS,
         temperature: float = DEFAULT_TEMPERATURE,
         top_p: float = DEFAULT_TOP_P,
+        json_schema: dict | None = None,
     ) -> str:
         """Generate a response for the given prompt using chat template."""
         self.load()
@@ -150,13 +157,30 @@ class QwenModelManager:
                 inputs = {k: v.to("cuda") for k, v in inputs.items()}
 
             with torch.no_grad():
+                gen_kwargs = {
+                    "max_new_tokens": max_new_tokens,
+                    "temperature": max(temperature, 0.01),
+                    "top_p": top_p,
+                    "do_sample": temperature > 0.01,
+                    "pad_token_id": self._tokenizer.eos_token_id,
+                }
+                
+                if json_schema:
+                    try:
+                        from lmformatenforcer import JsonSchemaParser
+                        from lmformatenforcer.integrations.transformers import build_transformers_prefix_allowed_tokens_fn
+                        
+                        parser = JsonSchemaParser(json_schema)
+                        prefix_function = build_transformers_prefix_allowed_tokens_fn(
+                            self._tokenizer, parser
+                        )
+                        gen_kwargs["prefix_allowed_tokens_fn"] = prefix_function
+                    except ImportError:
+                        print("  [!] lm-format-enforcer not installed, falling back to standard generation")
+
                 outputs = self._model.generate(
                     **inputs,
-                    max_new_tokens=max_new_tokens,
-                    temperature=max(temperature, 0.01),
-                    top_p=top_p,
-                    do_sample=temperature > 0.01,
-                    pad_token_id=self._tokenizer.eos_token_id,
+                    **gen_kwargs
                 )
 
             # Decode only the newly generated tokens
@@ -194,7 +218,7 @@ class QwenModelManager:
         info = {
             "model_id": self.model_id,
             "loaded": self.is_loaded,
-            "device": self._device or "not_detected",
+            "device": self.device or "not_detected",
         }
         if self.is_loaded and self.device == "cuda":
             try:

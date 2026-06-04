@@ -11,6 +11,7 @@ Uses Qwen2.5-Coder-1.5B-Instruct to:
 import json
 import re
 import time
+from pydantic import BaseModel, Field
 
 from Logic.NLP.qwen_model_manager import QwenModelManager
 from Logic.NLP.http_text_normalizer import (
@@ -92,6 +93,42 @@ Respond ONLY in valid JSON format with this structure:
 """
 
 
+class HeaderFinding(BaseModel):
+    category: str
+    severity: str
+    header: str
+    issue: str
+    recommendation: str
+
+class HeaderAnalysisResult(BaseModel):
+    risk_level: str
+    findings: list[HeaderFinding]
+    summary: str
+
+class AttackChain(BaseModel):
+    name: str
+    steps: list[str]
+    impact: str
+    likelihood: str
+
+class PriorityAction(BaseModel):
+    action: str
+    reason: str
+    priority: int
+
+class AdditionalTest(BaseModel):
+    test: str
+    reason: str
+    technique: str
+
+class VulnerabilityAnalysisResult(BaseModel):
+    threat_assessment: str
+    attack_chains: list[AttackChain]
+    priority_actions: list[PriorityAction]
+    additional_tests: list[AdditionalTest]
+    deeper_insights: str
+    executive_summary: str
+
 class QwenHeaderAnalyzer:
     """AI-powered HTTP header and vulnerability analysis using Qwen2.5-Coder."""
 
@@ -133,6 +170,7 @@ class QwenHeaderAnalyzer:
             system_prompt=HEADER_ANALYSIS_SYSTEM_PROMPT,
             max_new_tokens=1024,
             temperature=0.2,
+            json_schema=HeaderAnalysisResult.model_json_schema(),
         )
         elapsed = time.time() - start_time
         print(f"  [+] AI header analysis complete ({elapsed:.1f}s)")
@@ -182,29 +220,77 @@ class QwenHeaderAnalyzer:
         risk_score: int = 0,
     ) -> dict:
         """Analyze vulnerability scan results and provide AI recommendations."""
-        prompt = self._build_vuln_prompt(
-            url=url,
-            confirmed=confirmed_findings,
-            candidates=candidate_findings,
-            headers=response_headers,
-            targets=targets,
-            risk_score=risk_score,
-        )
-
+        max_confirmed = 15
+        max_candidates = 10
+        
         print("\n" + "=" * 60)
         print("  [*] AI VULNERABILITY ADVISOR — Analyzing scan results...")
         print("=" * 60)
         start_time = time.time()
-        raw = self._manager.generate(
-            prompt=prompt,
-            system_prompt=VULN_ADVISOR_SYSTEM_PROMPT,
-            max_new_tokens=1536,
-            temperature=0.3,
-        )
+        
+        if len(confirmed_findings) <= max_confirmed and len(candidate_findings) <= max_candidates:
+            prompt = self._build_vuln_prompt(
+                url=url,
+                confirmed=confirmed_findings,
+                candidates=candidate_findings,
+                headers=response_headers,
+                targets=targets,
+                risk_score=risk_score,
+            )
+
+            raw = self._manager.generate(
+                prompt=prompt,
+                system_prompt=VULN_ADVISOR_SYSTEM_PROMPT,
+                max_new_tokens=1536,
+                temperature=0.3,
+                json_schema=VulnerabilityAnalysisResult.model_json_schema(),
+            )
+            result_raw = raw
+        else:
+            batches = []
+            c_idx, cand_idx = 0, 0
+            while c_idx < len(confirmed_findings) or cand_idx < len(candidate_findings):
+                c_batch = confirmed_findings[c_idx : c_idx + max_confirmed]
+                cand_batch = candidate_findings[cand_idx : cand_idx + max_candidates]
+                c_idx += max_confirmed
+                cand_idx += max_candidates
+                
+                prompt = self._build_vuln_prompt(
+                    url=url,
+                    confirmed=c_batch,
+                    candidates=cand_batch,
+                    headers=response_headers,
+                    targets=targets,
+                    risk_score=risk_score,
+                )
+                print(f"  [*] Analyzing batch {len(batches)+1}...")
+                raw = self._manager.generate(
+                    prompt=prompt,
+                    system_prompt=VULN_ADVISOR_SYSTEM_PROMPT,
+                    max_new_tokens=1536,
+                    temperature=0.3,
+                    json_schema=VulnerabilityAnalysisResult.model_json_schema(),
+                )
+                batches.append(raw)
+                
+            print(f"  [*] Synthesizing {len(batches)} batches...")
+            synthesis_prompt = f"Synthesize the following {len(batches)} vulnerability reports into one final unified report.\n\n"
+            for i, batch_raw in enumerate(batches):
+                synthesis_prompt += f"=== REPORT {i+1} ===\n{batch_raw}\n\n"
+                
+            raw_final = self._manager.generate(
+                prompt=synthesis_prompt,
+                system_prompt=VULN_ADVISOR_SYSTEM_PROMPT,
+                max_new_tokens=2048,
+                temperature=0.3,
+                json_schema=VulnerabilityAnalysisResult.model_json_schema(),
+            )
+            result_raw = raw_final
+
         elapsed = time.time() - start_time
         print(f"  [+] AI analysis complete ({elapsed:.1f}s)")
 
-        result = self._parse_json_response(raw, fallback_type="vuln_analysis")
+        result = self._parse_json_response(result_raw, fallback_type="vuln_analysis")
         self._print_ai_report(result)
         return result
 
@@ -221,7 +307,7 @@ class QwenHeaderAnalyzer:
         # Confirmed findings
         lines.append(f"=== CONFIRMED VULNERABILITIES ({len(confirmed)}) ===")
         if confirmed:
-            for i, v in enumerate(confirmed[:15], 1):
+            for i, v in enumerate(confirmed, 1):
                 vtype = v.get("type") or v.get("vulnerability_type") or "Unknown"
                 lines.append(
                     f"  [{i}] Type: {vtype}\n"
@@ -237,7 +323,7 @@ class QwenHeaderAnalyzer:
         # Candidate findings
         lines.append(f"\n=== CANDIDATE/SUSPECTED FINDINGS ({len(candidates)}) ===")
         if candidates:
-            for i, v in enumerate(candidates[:10], 1):
+            for i, v in enumerate(candidates, 1):
                 vtype = v.get("type") or v.get("vulnerability_type") or "Unknown"
                 lines.append(
                     f"  [{i}] Type: {vtype}\n"

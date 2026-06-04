@@ -39,3 +39,6 @@ transformers>=4.40.0
 torch>=2.1.0
 accelerate>=0.28.0
 sentencepiece
+bitsandbytes>=0.41.0
+lm-format-enforcer>=0.9.8
+pydantic>=2.0.0
