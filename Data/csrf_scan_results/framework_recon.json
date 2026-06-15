@@ -116,5 +116,37 @@
             "HTML pattern match: xmlrpc.php",
             "HTML pattern match: admin-ajax.php"
         ]
+    },
+    "0ab2003d03efef4682ec806100e90096.web-security-academy.net": {
+        "framework": "flask",
+        "confidence": "medium",
+        "evidence": [
+            "Header match: content-type",
+            "Cookie match: session"
+        ]
+    },
+    "nour.net.sa": {
+        "framework": "wordpress",
+        "confidence": "high",
+        "evidence": [
+            "HTML pattern match: wp-content",
+            "HTML pattern match: wp-includes",
+            "HTML pattern match: wp-json",
+            "HTML pattern match: wp-block-",
+            "HTML pattern match: WordPress",
+            "HTML pattern match: wp-embed",
+            "HTML pattern match: themes/",
+            "HTML pattern match: admin-ajax.php"
+        ]
+    },
+    "app.sa.zain.com": {
+        "framework": "laravel",
+        "confidence": "high",
+        "evidence": [
+            "Header match: cache-control",
+            "Cookie match: XSRF-TOKEN",
+            "Cookie match: laravel_session",
+            "HTML pattern match: name=\"_token\""
+        ]
     }
 }

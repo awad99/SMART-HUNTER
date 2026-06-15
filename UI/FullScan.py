@@ -9,6 +9,7 @@ if root not in sys.path:
     sys.path.append(os.path.join(root, "Logic", "vulnerability_scan"))
     sys.path.append(os.path.join(root, "Data"))
 
+
 import Recon.url_connection as url_connection
 
 import vulnerability_scan.Scanner_vulnerability as URL_checkIfhaveVun
@@ -41,18 +42,19 @@ def display_banner():
 def get_user_inputs():
     target = input("\nEnter URL or IP Target: ").strip()
     cookie = input("Enter Session Cookie (or leave blank to auto-detect): ").strip()
-    
+
     username = input("Enter Username (optional): ").strip()
     password = ""
     if username:
         password = input("Enter Password: ").strip()
-    
+
     # Enable OOB via Interactsh by default for full scans
     enable_oob = True
     use_interactsh = True
     collaborator_domain = None
 
-    return target, cookie, username, password, enable_oob, use_interactsh, collaborator_domain
+    return (target, cookie, username, password,
+            enable_oob, use_interactsh, collaborator_domain)
 
 def auto_extract_cookie(target):
     print(f"\n[*] Attempting to extract session cookie automatically from {target}...")
@@ -169,43 +171,57 @@ def display_scan_summary(confirmed_vulns, candidate_vulns=None):
         print(f"    [{finding_type:13}] [{v.get('confidence', 'unknown').upper():6}] {v.get('type', ''):<35} param: {v.get('parameter', '')}")
     print(f"{'='*64}")
 
-def run_scanner(target, cookie, enable_oob=False, use_interactsh=False, collaborator_domain=None):
+def run_scanner(target, cookie, enable_oob=False, use_interactsh=False,
+               collaborator_domain=None):
     from datetime import datetime
     scan_id = datetime.now().strftime('%Y%m%d_%H%M%S')
     print(f"[*] Starting Global Scan Session: {scan_id}")
-    
+
     # Initialize session-wide statistics
     stats = ScanStats(scan_id)
     stats.add('scans', 1)
-    
+
     scanner = setup_active_scanner(target, cookie, scan_id=scan_id)
-    confirmed_vulns, candidate_vulns = run_url_pentest(target, cookie, scanner, scan_id, stats, enable_oob=enable_oob, use_interactsh=use_interactsh, collaborator_domain=collaborator_domain, interactive=True)
+    confirmed_vulns, candidate_vulns = run_url_pentest(
+        target, cookie, scanner, scan_id, stats,
+        enable_oob=enable_oob, use_interactsh=use_interactsh,
+        collaborator_domain=collaborator_domain, interactive=True,
+    )
     display_scan_summary(confirmed_vulns, candidate_vulns)
-    
+
     parsed = urllib.parse.urlparse(target)
     if not parsed.scheme and not parsed.netloc:
         run_ip_pentest(target, scan_id, stats)
 
+
 def main():
     display_banner()
-    target, cookie, username, password, enable_oob, use_interactsh, collaborator_domain = get_user_inputs()
+    result = get_user_inputs()
+    (target, cookie, username, password,
+     enable_oob, use_interactsh, collaborator_domain) = result
+
     if not target:
         print("[-] No target"); return
-        
+
     if username and password:
         os.environ['CSRF_USER'] = username
         os.environ['CSRF_PASS'] = password
-        
+
     if target.startswith(("http://", "https://")):
         if not cookie:
             cookie = auto_extract_cookie(target)
-        
+
         print(f"\n[*] Target URL: {target}")
         if cookie: print(f"[*] Using Cookie: {cookie}")
-
-        run_scanner(target, cookie, enable_oob=enable_oob, use_interactsh=use_interactsh, collaborator_domain=collaborator_domain)
+        run_scanner(
+            target, cookie,
+            enable_oob=enable_oob,
+            use_interactsh=use_interactsh,
+            collaborator_domain=collaborator_domain,
+        )
     else:
         run_ip_pentest(target)
+
 
 if __name__ == "__main__":
     main()
